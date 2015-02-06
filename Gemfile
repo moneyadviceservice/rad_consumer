@@ -11,6 +11,11 @@ ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 
+gem 'bowndler', github: 'moneyadviceservice/bowndler'
+gem 'dough-ruby',
+    github: 'moneyadviceservice/dough',
+    require: 'dough',
+    ref: 'cf08913'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
