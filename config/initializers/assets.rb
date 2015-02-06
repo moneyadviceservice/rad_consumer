@@ -1,11 +1,30 @@
-# Be sure to restart your server when you modify this file.
+Rails.application.configure do
+  # Version of your assets, change this if you want to expire all your assets.
+  config.assets.version = '1.0'
 
-# Version of your assets, change this if you want to expire all your assets.
-Rails.application.config.assets.version = '1.0'
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
 
-# Add additional assets to the asset load path
-# Rails.application.config.assets.paths << Emoji.images_path
+  # Application Stylesheets
+  config.assets.precompile += %w(
+    enhanced_fixed.css
+    enhanced_responsive.css
+    dough/assets/stylesheets/basic.css
+    dough/assets/stylesheets/font_files.css
+    dough/assets/stylesheets/font_base64.css
+  )
 
-# Precompile additional assets.
-# application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+  # Application JavaScript
+  config.assets.precompile += %w(
+
+  )
+
+  # Vendor JavaScript
+  config.assets.precompile += %w(
+    jquery/dist/jquery.js
+    jquery-ujs/src/rails.js
+    eventsWithPromises/src/eventsWithPromises.js
+    rsvp/rsvp.amd.js
+    requirejs/require.js
+    modernizer-flexbox-cssclasses.js
+  )
+end
