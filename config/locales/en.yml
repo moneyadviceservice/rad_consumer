@@ -1,3 +1,72 @@
-en:
-  title_tag: Retirement Adviser Directory | Find regulated financial advisers who specialise in pensions and retirement
-  meta_tag: Use the Retirement Adviser Directory to find FCA regulated pensions and retirement advisers by postcode, specialisms, qualifications of advisers, costs and more.
+ en:
+  title_tag: 'Retirement Adviser Directory | Find regulated financial advisers who specialise in pensions and retirement'
+  meta_tag: 'Use the Retirement Adviser Directory to find FCA regulated pensions and retirement advisers by postcode, specialisms, qualifications of advisers, costs and more.'
+
+  page_title: Retirement adviser directory
+  learn_more: Learn more
+
+  trust_banner:
+    heading: The directory contains details of hundreds of financial advisers who can help you with your financial decisions whether you are thinking about retirement; semi-retired but still working or fully retired.
+    items:
+      - text: We are independent and set up by government so our results are impartial.
+        tooltip:
+      - text: All the advisers on the directory are registered with the Financial Conduct Authority (FCA) so you can have peace of mind that you are dealing with a regulated firm and are fully protected.
+        tooltip: The FCA is the UK’s financial regulator and sets rules which advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which is set by the FCA.
+      - text: All the advisers on the directory offer personalised financial advice and can choose from a wide range of products and providers.
+        tooltip: This means Advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the firm the Adviser works for and then the Financial Ombudsman if your complaint is turned down. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
+
+  workplace_scheme:
+    question: Are you a member of a union or other affinity group?
+    tooltip: Some unions or other affinity groups (and some of the larger pension schemes) may have already selected an Adviser or panel of Advisers you can choose from. You might want to check this before finding one on your own. If there is a pre-selected firm you can use you can always speak to them and one or two more from the directory to compare service and costs.
+
+  find_retirement_adviser:
+    heading: Find a retirement adviser
+    description: Retirement advisers can provide advice in person, online or by phone.  How would you like to receive your advice?
+    subheading: How other people have benefited from advisers?
+    video:
+      description: Watch this short video to find out how people have benefited from advisers.
+      download_transcript_text: (Download the video transcript)
+      download_transcript_link: 'https://moneyadviceservice.org.uk'
+
+  why_regulated_adviser:
+    heading: Why use a financial adviser?
+    key_points:
+    - text: Financial advisers are regulated so you are protected if things go wrong.
+    - text: They have access to a wide range of products and providers.
+    - text: They can recommend a course of action that is personal to you and help you avoid expensive mistakes.
+    more_info_html: Our guides <a href="">Do you need a financial adviser</a> and <a href="">Choosing a financial adviser</a> will tell you more.
+    video:
+      description: Watch this short video to find out how people have benefited from advisers
+      download_transcript_text: (Download the video transcript)
+      download_transcript_link: 'https://moneyadviceservice.org.uk'
+
+  free_guidance:
+    heading: Have you had your free guidance appointment yet?
+    introduction: The government is offering everyone over the age of 55 who is thinking about accessing their pension pot a free guidance session to help you decide what to do.  You can have this over the telephone or face to face. We strongly recommend that you have your free guidance session first before seeking financial advice.
+    guide_html: Our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/free-financial-advice-your-options">Getting free financial help and information</a> tells you more.
+    free_session_html: <a href="https://www.gov.uk/pensionwise">Book your free government guidance session now</a>.
+
+  retirement_income_options:
+    heading: Retirement income options
+    content:
+      - text: The retirement landscape is changing fast and it’s tricky to understand all the retirement income options available to you.
+      - text: Use our retirement income options tool to understand the key considerations and pension income products available to you.
+    link_text: Explore your options
+    link_url: 'https://moneyadviceservice.org.uk'
+
+  useful_links:
+    heading: Useful links
+    links:
+      - text: Why save into a pension?
+        url: 'https://moneyadviceservice.org.uk'
+      - text: Checklist – things to do as retirement approaches
+        url: 'https://moneyadviceservice.org.uk'
+      - text: New rules about pensions from April 2015
+        url: 'https://moneyadviceservice.org.uk'
+
+  our_promise:
+    heading: Our promise to you
+    key_points:
+      - text: We are set up by government so our tables andresults are unbiased.
+      - text: We don’t receive any incentive or commission.
+      - text: We will not contact you or share your details.

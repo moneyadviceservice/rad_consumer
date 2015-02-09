@@ -1,0 +1,8 @@
+.video {
+  margin-top: $baseline-unit*2;
+}
+
+.video__description,
+.video__transcript-link {
+  @include body(16, 24);
+}

@@ -1,0 +1,8 @@
+.tooltip {
+  // styles coming in another story
+}
+
+.tooltip__link {
+  @include body(14,18);
+  text-decoration: underline;
+}

@@ -1,0 +1,41 @@
+.l-landing-page__1col {
+  @include column(12);
+  padding-bottom: $baseline-unit*8;
+}
+
+.l-landing-page__2col {
+  @include column(12);
+  margin-top: $baseline-unit*2;
+  margin-bottom: $baseline-unit*10;
+
+  @include respond-to($mq-m) {
+    @include column(6);
+  }
+}
+
+.l-landing-page__banner {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(7);
+  }
+}
+
+.l-landing-page__2col--right {
+  @include respond-to($mq-m) {
+    margin-top: $baseline-unit*14;
+    float: right;
+  }
+}
+
+.l-landing-page__2col--padded {
+  margin-top: $baseline-unit*8;
+}
+
+.l-landing-page__background {
+  background-color: $background-color;
+}
+
+.l-landing-page__button {
+  margin-top: $baseline-unit*6;
+}

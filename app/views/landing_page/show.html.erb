@@ -1,1 +1,105 @@
-<h1>Retirement adviser directory</h1>
+<div class="l-constrained">
+  <section class="l-landing-page__1col l-landing-page__banner">
+    <%= heading_tag(t('page_title'), level: 1) %>
+    <p><%= t('trust_banner.heading') %></p>
+
+    <ul class="list-benefits">
+      <% t('trust_banner.items').each do |item| %>
+        <li><%= raw item[:text] %>
+          <a class="tooltip__link" href=""><%= t('learn_more') %></a>
+          <p class="is-hidden"><%= t('workplace_scheme.tooltip') %></p>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="l-landing-page__1col">
+    <!-- This addition needs design consideration -->
+    <p><%= t('workplace_scheme.question') %> <a class="tooltip__link" href=""><%= t('learn_more') %></a></p>
+    <p class="is-hidden"><%= t('workplace_scheme.tooltip') %></p>
+  </section>
+</div>
+
+<div class="l-landing-page__background">
+  <div class="l-constrained">
+    <section class="l-landing-page__1col">
+      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
+      <p><%= t('find_retirement_adviser.description') %></p>
+
+      <section class="l-landing-page__2col">
+        <!-- Filter to be included here -->
+      </section>
+
+      <section class="l-landing-page__2col">
+        <%= heading_tag(t('find_retirement_adviser.subheading'), level: 3) %>
+        <img class="video" src="http://placehold.it/600x360" />
+        <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
+        <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+      </section>
+    </section>
+  </div>
+</div>
+
+<section class="l-constrained">
+  <div class="l-landing-page__2col l-landing-page__2col--right">
+    <%= heading_tag(t('why_regulated_adviser.heading'), level: 3) %>
+
+    <ul class="list-benefits">
+      <% t('why_regulated_adviser.key_points').each do |item| %>
+        <li><%= item[:text] %></li>
+      <% end %>
+    </ul>
+    <p><%= t('why_regulated_adviser.more_info_html') %></p>
+  </div>
+
+  <div class="l-landing-page__2col l-landing-page__2col--padded">
+    <img class="video" src="http://placehold.it/600x360" />
+    <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
+    <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+  </div>
+</section>
+
+<div class="l-landing-page__background">
+  <div class="l-constrained">
+    <section class="l-landing-page__2col">
+      <%= heading_tag(t('free_guidance.heading'), level: 2, class: 'heading-small') %>
+      <p><%= t('free_guidance.introduction') %></p>
+      <p><%= t('free_guidance.guide_html') %></p>
+
+      <div class="advert">
+        <p class="advert__intro"><%= t('free_guidance.free_session_html') %></p>
+        <%= image_tag('pensionwise_logo.png', class: 'advert__img') %>
+      </div>
+    </section>
+
+    <section class="l-landing-page__2col">
+      <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'heading-small') %>
+      <% t('retirement_income_options.content').each do |item| %>
+        <p><%= item[:text] %></p>
+      <% end %>
+      <div class="l-landing-page__button">
+        <a class="button button--primary" href="<%= t('retirement_income_options.link_url') %>"><%= t('retirement_income_options.link_text') %></a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="l-constrained">
+  <section class="l-landing-page__2col">
+    <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__subheading') %>
+    <ul class="unstyled-list">
+      <% t('useful_links.links').each do |item| %>
+        <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
+      <% end %>
+    </ul>
+  </section>
+
+  <section class="l-landing-page__2col">
+    <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__subheading') %>
+    <ul class="list-benefits">
+      <% t('our_promise.key_points').each do |item| %>
+        <li><%= item[:text] %></li>
+      <% end %>
+    </ul>
+  </section>
+</div>
