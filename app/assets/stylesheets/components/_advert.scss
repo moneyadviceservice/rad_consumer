@@ -1,0 +1,23 @@
+.advert {
+  @include clearfix();
+  padding: 0 $baseline-unit*4;
+  margin-top: $baseline-unit*6;
+  background-color: white;
+  max-width: 500px;
+}
+
+.advert__intro {
+  @include body(16, 24);
+  margin: $baseline-unit*4 0;
+
+  @include respond-to($mq-m) {
+    max-width: 180px;
+    float: left;
+  }
+}
+
+.advert__img {
+  margin: $baseline-unit*2 0;
+  float: right;
+  max-width: 200px;
+}

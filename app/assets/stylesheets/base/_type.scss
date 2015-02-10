@@ -1,0 +1,10 @@
+p {
+  @include body(16, 24);
+}
+
+ul,
+ol {
+  @include body(16, 24);
+  margin-top: $baseline-unit*4;
+}
+
