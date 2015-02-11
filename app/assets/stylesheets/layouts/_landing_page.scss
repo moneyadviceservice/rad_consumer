@@ -37,5 +37,10 @@
 }
 
 .l-landing-page__button {
-  margin-top: $baseline-unit*6;
+  @include body(16, 24);
+  margin-top: $baseline-unit*3;
+}
+
+.l-landing-page__union-statement {
+    @include row(12);
 }

@@ -5,18 +5,13 @@
 
     <ul class="list-benefits">
       <% t('trust_banner.items').each do |item| %>
-        <li><%= raw item[:text] %>
-          <a class="tooltip__link" href=""><%= t('learn_more') %></a>
-          <p class="is-hidden"><%= t('workplace_scheme.tooltip') %></p>
+        <li data-further-info>
+          <%= raw item[:text] %>
+          <a class="further_info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+          <p class="further_info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
         </li>
       <% end %>
     </ul>
-  </section>
-
-  <section class="l-landing-page__1col">
-    <!-- This addition needs design consideration -->
-    <p><%= t('workplace_scheme.question') %> <a class="tooltip__link" href=""><%= t('learn_more') %></a></p>
-    <p class="is-hidden"><%= t('workplace_scheme.tooltip') %></p>
   </section>
 </div>
 
@@ -25,6 +20,14 @@
     <section class="l-landing-page__1col">
       <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
       <p><%= t('find_retirement_adviser.description') %></p>
+
+      <div class="l-landing-page__union-statement">
+        <div class="l-landing-page__2col" data-further-info>
+          <%= t('workplace_scheme.question') %>
+          <a class="further_info__trigger" href="" data-further-info-trigger><%= t('learn_more') %></a>
+          <p class="further_info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
+        </div>
+      </div>
 
       <section class="l-landing-page__2col">
         <!-- Filter to be included here -->
@@ -77,9 +80,7 @@
       <% t('retirement_income_options.content').each do |item| %>
         <p><%= item[:text] %></p>
       <% end %>
-      <div class="l-landing-page__button">
-        <a class="button button--primary" href="<%= t('retirement_income_options.link_url') %>"><%= t('retirement_income_options.link_text') %></a>
-      </div>
+      <a class="button button--primary l-landing-page__button" href="<%= t('retirement_income_options.link_url') %>"><%= t('retirement_income_options.link_text') %></a>
     </section>
   </div>
 </div>

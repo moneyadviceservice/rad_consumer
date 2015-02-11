@@ -15,7 +15,7 @@ Rails.application.configure do
 
   # Application JavaScript
   config.assets.precompile += %w(
-
+    modules/FurtherInfo.js
   )
 
   # Vendor JavaScript
