@@ -1,0 +1,25 @@
+.advert {
+  @include clearfix();
+  padding: 0 $advert-padding;
+  margin-top: $baseline-unit*6;
+  background-color: $advert-background-color;
+  max-width: $mq-s;
+}
+
+.advert__intro {
+  margin: $advert-padding 0;
+
+  @include respond-to($mq-s) {
+    max-width: $advert-text-width;
+  }
+}
+
+.advert__img {
+  margin: $advert-padding 0;
+  float: right;
+  max-width: auto;
+
+  @include respond-to($mq-s) {
+    max-width: $advert-image-width;
+  }
+}
