@@ -1,0 +1,20 @@
+//= depend_on_asset jquery/dist/jquery
+//= depend_on_asset modules/FurtherInfo
+
+<%
+  def requirejs_path(asset)
+    javascript_path(asset).sub(/.js\z/, '')
+  end
+
+  requirejs_config = {
+    paths: {
+      jquery: requirejs_path('jquery/dist/jquery'),
+      FurtherInfo: requirejs_path('modules/FurtherInfo')
+    }
+  }
+%>
+
+// If requirejs is present convert the requirejs_config hash to a JSON object
+if(window.requirejs) {
+  requirejs.config(<%= JSON.pretty_generate(requirejs_config) %>);
+}

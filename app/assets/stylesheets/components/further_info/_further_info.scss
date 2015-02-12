@@ -1,0 +1,11 @@
+.further_info {
+  @include body(14, 24);
+  border-left: 5px solid $further-info-border-color;
+  padding-left: $baseline-unit*2;
+  margin-bottom: $baseline-unit*6;
+}
+
+.further_info__trigger {
+  @include body(14, 24);
+  white-space: nowrap;
+}
