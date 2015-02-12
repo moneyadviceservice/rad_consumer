@@ -87,7 +87,7 @@
 
 <div class="l-constrained">
   <section class="l-landing-page__2col">
-    <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__subheading') %>
+    <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
     <ul class="unstyled-list">
       <% t('useful_links.links').each do |item| %>
         <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
@@ -96,7 +96,7 @@
   </section>
 
   <section class="l-landing-page__2col">
-    <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__subheading') %>
+    <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
     <ul class="list-benefits">
       <% t('our_promise.key_points').each do |item| %>
         <li><%= item[:text] %></li>
