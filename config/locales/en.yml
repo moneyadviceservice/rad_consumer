@@ -45,7 +45,7 @@
     heading: Have you had your free guidance appointment yet?
     introduction: The government is offering everyone over the age of 55 who is thinking about accessing their pension pot a free guidance session to help you decide what to do.  You can have this over the telephone or face to face. We strongly recommend that you have your free guidance session first before seeking financial advice.
     guide_html: Our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/free-financial-advice-your-options">Getting free financial help and information</a> tells you more.
-    free_session_html: <a href="https://www.gov.uk/pensionwise">Book your free government guidance session now</a>.
+    free_session_html: <a href="https://www.gov.uk/pensionwise" target="blank">Book your free government guidance session now</a>.
 
   retirement_income_options:
     heading: Retirement income options
