@@ -71,3 +71,24 @@
       - text: We are set up by government so our tables and results are unbiased.
       - text: We don’t receive any incentive or commission.
       - text: We will not contact you or share your details.
+
+  search_filter:
+    in_person:
+      heading: Find advisers who offer advice in person
+      postcode_label: Your postcode
+      button_text: Search
+      description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
+      subheading: 'Select from the options below if you know the type of advice you need:'
+      options:
+        - title: Retirement income products
+          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+        - title: Long term care
+          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+        - title: Equity release
+          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+        - title: Inheritance tax
+          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+        - title: 'Wills & probate'
+          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+    remote:
+      heading: Find advisers who offer advice by phone or online
