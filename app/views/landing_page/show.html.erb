@@ -7,8 +7,8 @@
       <% t('trust_banner.items').each do |item| %>
         <li data-further-info>
           <%= raw item[:text] %>
-          <a class="further_info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-          <p class="further_info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
+          <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+          <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
         </li>
       <% end %>
     </ul>
@@ -24,23 +24,25 @@
       <div class="l-landing-page__union-statement">
         <div class="l-landing-page__2col" data-further-info>
           <%= t('workplace_scheme.question') %>
-          <a class="further_info__trigger" href="" data-further-info-trigger><%= t('learn_more') %></a>
-          <p class="further_info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
+          <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %></a>
+          <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
         </div>
       </div>
 
-      <section class="l-landing-page__2col">
-        <!-- Filter to be included here -->
-      </section>
+      <div class="l-landing-page__union-statement">
+        <section class="l-landing-page__2col">
+        <%= render 'search_filter.html.erb' %>
+        </section>
 
-      <section class="l-landing-page__2col">
+        <section class="l-landing-page__2col">
         <%= heading_tag(t('find_retirement_adviser.subheading'), level: 3) %>
         <img class="video" src="http://placehold.it/600x360" />
         <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
         <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+        </section>
+      </div>
       </section>
-    </section>
-  </div>
+    </div>
 </div>
 
 <section class="l-constrained">
