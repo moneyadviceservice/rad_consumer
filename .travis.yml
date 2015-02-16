@@ -10,7 +10,6 @@ before_script:
   - cp config/example.database.yml config/database.yml
   - psql -c "create database rad_test;" -U postgres
   - bundle exec rake db:migrate
-  - npm install
   - npm install -g bower
   - bundle exec bowndler update
 script:
