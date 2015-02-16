@@ -1,0 +1,11 @@
+.beta-tag {
+  @include inline-block();
+  @include body(18, 24);
+  font-weight: 700;
+  position: relative;
+  bottom: -$baseline-unit*5;
+  padding: $baseline-unit $baseline-unit*3;
+  margin: 0;
+  background-color: $beta-tag-background-color;
+  color: $beta-tag-text-color;
+}
