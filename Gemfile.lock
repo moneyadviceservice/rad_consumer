@@ -53,17 +53,30 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (6.0.0)
     builder (3.2.2)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
     coderay (1.1.0)
+    diff-lcs (1.2.5)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubis (2.7.0)
     eventmachine (1.0.6)
     execjs (2.3.0)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
     globalid (0.3.2)
@@ -102,6 +115,10 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mas-rad_core (0.0.2)
+      pg
+      rails (~> 4.2.0)
+      statsd-ruby
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -118,6 +135,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     rack (1.6.0)
     rack-livereload (0.3.15)
       rack
@@ -152,6 +171,23 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    rspec-core (3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-expectations (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-mocks (3.2.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.2.0)
+    rspec-rails (3.2.0)
+      actionpack (>= 3.0, <= 4.2)
+      activesupport (>= 3.0, <= 4.2)
+      railties (>= 3.0, <= 4.2)
+      rspec-core (~> 3.2.0)
+      rspec-expectations (~> 3.2.0)
+      rspec-mocks (~> 3.2.0)
+      rspec-support (~> 3.2.0)
+    rspec-support (3.2.1)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -159,6 +195,9 @@ GEM
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
     shellany (0.0.1)
+    site_prism (2.6)
+      addressable (~> 2.3.3)
+      capybara (>= 2.1, < 3.0)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -170,6 +209,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
+    statsd-ruby (1.2.1)
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -184,21 +224,29 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   bowndler!
+  capybara
   dough-ruby!
+  factory_girl_rails
   guard
   guard-livereload
   guard-rails
   jquery-rails
+  mas-rad_core
   pg
+  pry-rails
   rack-livereload
   rails (= 4.2.0)
+  rspec-rails
   sass-rails
+  site_prism
   spring
   uglifier (>= 1.3.0)
   unicorn
