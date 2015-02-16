@@ -19,6 +19,6 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def then_i_am_told_the_postcode_is_incorrect
-    skip
+    expect(landing_page.in_person).to be_invalid_postcode
   end
 end

@@ -4,6 +4,12 @@ class LandingPageController < ApplicationController
   end
 
   def search
-    render nothing: true
+    @form = SearchForm.new(params[:search_form])
+
+    if @form.valid?
+      render nothing: true
+    else
+      render :show
+    end
   end
 end
