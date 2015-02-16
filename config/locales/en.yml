@@ -81,14 +81,14 @@
       subheading: 'Select from the options below if you know the type of advice you need:'
       options:
         - title: Retirement income products
-          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+          tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: Long term care
-          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+          tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: Equity release
-          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+          tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: Inheritance tax
-          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+          tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: 'Wills & probate'
-          tooltip: This is a tooltip that will probably be at least 300 words long and I am assuming will also change four hundred and twenty tim     es before release.
+          tooltip: This is a tooltip that will probably be at least 300 words long.
     remote:
       heading: Find advisers who offer advice by phone or online
