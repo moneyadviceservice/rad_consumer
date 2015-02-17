@@ -1,7 +1,7 @@
 <%= form_for @form, url: '/search', html: { class: 'form search' }, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
-  <section class="search__option">
+  <section class="search__option t-in-person">
     <%= heading_tag( level: 3, class: 'search__heading') do %>
       <span class="search__icon"></span>
       <a href="" class="search__heading-link"><%= t('search_filter.in_person.heading') %></a>
@@ -11,27 +11,7 @@
       <%= f.form_row(:postcode) do %>
         <%= f.errors_for :postcode %>
         <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search__label' %>
-        <%= f.text_field :postcode, class: 'search__field', maxlength: 6 %>
-        <%= button_primary t('search_filter.in_person.button_text') %>
-
-        <p><%= t('search_filter.in_person.description') %></p>
-      <% end %>
-    </div>
-
-    <%= render partial: 'search_filter_options', locals: { f: f } %>
-  </section>
-
-  <section class="search__option">
-    <%= heading_tag(level: 3, class: 'search__heading search__heading--alt') do %>
-      <span class="search__icon"></span>
-      <a href="" class="search__heading-link"><%= t('search_filter.remote.heading') %></a>
-    <% end %>
-
-    <div class="search__component">
-      <%= f.form_row(:postcode) do %>
-        <%= f.errors_for :postcode %>
-        <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search__label' %>
-        <%= f.text_field :postcode, class: 'search__field', maxlength: 6 %>
+        <%= f.text_field :postcode, class: 'search__field t-postcode', maxlength: 8 %>
         <%= button_primary t('search_filter.in_person.button_text') %>
 
         <p><%= t('search_filter.in_person.description') %></p>
