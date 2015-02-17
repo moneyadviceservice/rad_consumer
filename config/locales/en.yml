@@ -93,4 +93,6 @@
         - title: 'Wills & probate'
           tooltip: This is a tooltip that will probably be at least 300 words long.
     remote:
+      online: Online
+      phone: Phone
       heading: Find advisers who offer advice by phone or online

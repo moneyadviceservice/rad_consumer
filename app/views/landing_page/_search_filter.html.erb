@@ -13,10 +13,35 @@
         <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search__label' %>
         <%= f.text_field :postcode, class: 'search__field t-postcode', maxlength: 8 %>
         <%= button_primary t('search_filter.in_person.button_text') %>
-
         <p><%= t('search_filter.in_person.description') %></p>
       <% end %>
     </div>
+
+    <%= render partial: 'search_filter_options', locals: { f: f } %>
+  </section>
+
+  <section class="search__option">
+    <%= heading_tag(level: 3, class: 'search__heading search__heading--alt') do %>
+      <span class="search__icon"></span>
+      <a href="" class="search__heading-link"><%= t('search_filter.remote.heading') %></a>
+    <% end %>
+
+    <div class="search__component form__group form__group--inline">
+      <%= f.form_row(:postcode) do %>
+        <%= f.errors_for :postcode %>
+        <div class="form__group-item">
+          <%= f.check_box :checkbox, class: 'form__group-input' %>
+          <%= f.label :checkbox, t('remote.phone'), class: '' %>
+        </div>
+        <div class="form__group-item">
+          <%= f.check_box :checkbox, class: 'form__group-input' %>
+          <%= f.label :checkbox, t('remote.online'), class: '' %>
+        </div>
+        <%= button_primary t('search_filter.in_person.button_text') %>
+      <% end %>
+    </div>
+
+    <hr>
 
     <%= render partial: 'search_filter_options', locals: { f: f } %>
   </section>
