@@ -1,7 +1,9 @@
 <div class="l-constrained">
   <section class="l-landing-page__1col l-landing-page__banner">
-    <p class="beta-tag"><%= t('beta_tag') %></p>
-    <%= heading_tag(t('page_title'), level: 1) %>
+    <%= heading_tag(level: 1) do %>
+      <%= t('page_title') %>
+      <sup class="beta-tag"><%= t('beta_tag') %></sup>
+    <% end %>
     <p><%= t('trust_banner.heading') %></p>
 
     <ul class="list-benefits">
