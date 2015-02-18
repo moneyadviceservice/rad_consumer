@@ -1,7 +1,7 @@
 .search-filter {
-  background: $search-background-color;
-  border-radius: $search-radius;
-  border: 1px solid $search-border-color;
+  background: $search-filter-background-color;
+  border: 1px solid $search-filter-border-color;
+  border-radius: $search-filter-radius;
 }
 
 .search-filter__component {
@@ -10,26 +10,27 @@
 
 .search-filter__heading {
   @include body(16, 64);
-  margin-top: 0;
-  margin-bottom: 0;
-  border-top-left-radius: $search-radius;
-  border-top-right-radius: $search-radius;
-  background-color: #4E4F4F;
-  padding: 0 $baseline-unit*4;
   font-weight: 500;
+  background-color: $search-filter-heading-background-color;
+  margin: 0;
+  padding: 0 $baseline-unit*4;
+  border-radius: 0;
 }
 
 .search-filter__heading--first {
+  border-top-left-radius: $search-filter-radius;
+  border-top-right-radius: $search-filter-radius;
   margin-bottom: $baseline-unit/3;
 }
 
-.search-filter__heading--alt {
-  border-radius: 0;
+.search-filter__heading--second {
+  border-bottom-left-radius: $search-filter-radius;
+  border-bottom-right-radius: $search-filter-radius;
 }
 
 .search-filter__heading-link:link,
 .search-filter__heading-link:visited {
-  color: $color-white;
+  color: $search-filter-heading-color;
 }
 
 .search-filter__label {
@@ -40,8 +41,8 @@
   width: 100%;
   max-width: 300px;
   height: $baseline-unit*8;
-  border-radius: 5px;
-  border: 1px solid $color-grey-normal;
+  border-radius: $search-filter-radius;
+  border: 1px solid $search-filter-border-color;
   margin-right: $baseline-unit*2;
 }
 
@@ -59,12 +60,12 @@
     height: 0;
     border-style: solid;
     border-width: 12px 0 12px 15px;
-    border-color: transparent transparent transparent #ffffff;
+    border-color: transparent transparent transparent $search-filter-icon-color;
   }
 }
 
 .search-filter__triangle-icon--down:before {
   top: 3px;
   border-width: 15px 12px 0 12px;
-  border-color: #ffffff transparent transparent transparent;
+  border-color: $search-filter-icon-color transparent transparent transparent;
 }
