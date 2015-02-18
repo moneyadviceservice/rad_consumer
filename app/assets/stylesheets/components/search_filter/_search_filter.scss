@@ -1,14 +1,14 @@
-.search {
+.search-filter {
   background: $search-background-color;
   border-radius: $search-radius;
   border: 1px solid $search-border-color;
 }
 
-.search__component {
+.search-filter__component {
   margin: $baseline-unit*4 $baseline-unit*4 0 $baseline-unit*4;
 }
 
-.search__heading {
+.search-filter__heading {
   @include body(16, 64);
   margin-top: 0;
   margin-bottom: 0;
@@ -19,24 +19,24 @@
   font-weight: 500;
 }
 
-.search__heading--first {
+.search-filter__heading--first {
   margin-bottom: $baseline-unit/3;
 }
 
-.search__heading--alt {
+.search-filter__heading--alt {
   border-radius: 0;
 }
 
-.search__heading-link:link,
-.search__heading-link:visited {
+.search-filter__heading-link:link,
+.search-filter__heading-link:visited {
   color: $color-white;
 }
 
-.search__label {
+.search-filter__label {
   font-weight: 700;
 }
 
-.search__field[type="text"] {
+.search-filter__field[type="text"] {
   width: 100%;
   max-width: 300px;
   height: $baseline-unit*8;
@@ -45,25 +45,25 @@
   margin-right: $baseline-unit*2;
 }
 
-.search__triangle-icon {
+.search-filter__triangle-icon {
   @include inline-block();
   width: 30px;
   margin-right: $baseline-unit*2;
+
+  &:before {
+    @include inline-block();
+    position: relative;
+    top: 6px;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 15px;
+    border-color: transparent transparent transparent #ffffff;
+  }
 }
 
-.search__triangle-icon:before {
-  @include inline-block();
-  position: relative;
-  top: 6px;
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 0 12px 15px;
-  border-color: transparent transparent transparent #ffffff;
-}
-
-.search__triangle-icon--down:before {
+.search-filter__triangle-icon--down:before {
   top: 3px;
   border-width: 15px 12px 0 12px;
   border-color: #ffffff transparent transparent transparent;

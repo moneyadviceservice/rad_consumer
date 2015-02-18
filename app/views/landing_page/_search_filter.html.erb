@@ -1,18 +1,18 @@
-<%= form_for @form, url: '/search', html: { class: 'form search' }, builder: Dough::Forms::Builders::Validation do |f| %>
+<%= form_for @form, url: '/search', html: { class: 'form search-filter' }, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
-  <section class="search__option t-in-person" data-search-filter>
-    <%= heading_tag( level: 3, class: 'search__heading search__heading--first') do %>
-    <span class="search__triangle-icon search__triangle-icon--down" data-search-filter-icon></span>
-      <a href="" class="search__heading-link" data-search-filter-trigger><%= t('search_filter.in_person.heading') %></a>
+  <section class="search-filter__option t-in-person" data-search-filter>
+    <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first') do %>
+    <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
+      <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.in_person.heading') %></a>
     <% end %>
 
     <div data-search-filter-target>
-      <div class="search__component">
+      <div class="search-filter__component">
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
-          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search__label' %>
-          <%= f.text_field :postcode, class: 'search__field t-postcode', maxlength: 8 %>
+          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
+          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
           <%= button_primary t('search_filter.in_person.button_text') %>
           <p><%= t('search_filter.in_person.description') %></p>
         <% end %>
@@ -22,14 +22,14 @@
     </div>
   </section>
 
-  <section class="search__option" data-search-filter>
-    <%= heading_tag(level: 3, class: 'search__heading search__heading--alt') do %>
-      <span class="search__triangle-icon" data-search-filter-icon></span>
-      <a href="" class="search__heading-link" data-search-filter-trigger><%= t('search_filter.remote.heading') %></a>
+  <section class="search-filter__option" data-search-filter>
+    <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--alt') do %>
+      <span class="search-filter__triangle-icon" data-search-filter-icon></span>
+      <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.remote.heading') %></a>
     <% end %>
 
     <div class="is-hidden" data-search-filter-target>
-      <div class="search__component form__group form__group--inline">
+      <div class="search-filter__component form__group form__group--inline">
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
           <div class="form__group-item">
