@@ -1,5 +1,6 @@
 //= depend_on_asset jquery/dist/jquery
 //= depend_on_asset modules/FurtherInfo
+//= depend_on_asset modules/SearchFilter
 
 <%
   def requirejs_path(asset)
@@ -9,7 +10,8 @@
   requirejs_config = {
     paths: {
       jquery: requirejs_path('jquery/dist/jquery'),
-      FurtherInfo: requirejs_path('modules/FurtherInfo')
+      FurtherInfo: requirejs_path('modules/FurtherInfo'),
+      SearchFilter: requirejs_path('modules/SearchFilter')
     }
   }
 %>

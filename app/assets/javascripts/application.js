@@ -2,4 +2,5 @@
 
 require(['jquery'], function ($) {
   require(['FurtherInfo']);
+  require(['SearchFilter']);
 });
