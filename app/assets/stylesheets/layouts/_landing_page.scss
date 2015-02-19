@@ -53,3 +53,7 @@
 .l-landing-page__union-statement {
   @include row(12);
 }
+
+.l-landing-page__validation-summary {
+  @include column(12);
+}
