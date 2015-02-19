@@ -81,9 +81,12 @@
       button_text: Search
       description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
       subheading: 'Select from the options below if you know the type of advice you need:'
+
+      retirement_income_products:
+        heading: Retirement income products
+        tooltip: This is a tooltip that will probably be at least 300 words long.
+
       options:
-        - title: Retirement income products
-          tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: Long term care
           tooltip: This is a tooltip that will probably be at least 300 words long.
         - title: Equity release
@@ -93,4 +96,6 @@
         - title: 'Wills & probate'
           tooltip: This is a tooltip that will probably be at least 300 words long.
     remote:
+      online: Online
+      phone: Phone
       heading: Find advisers who offer advice by phone or online
