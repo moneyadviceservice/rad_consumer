@@ -39,3 +39,8 @@ group :development, :test do
   gem 'site_prism'
   gem 'spring'
 end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+end

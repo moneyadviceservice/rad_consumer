@@ -8,9 +8,11 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   scenario 'Postcode cannot be geocoded' do
-    given_i_am_on_the_rad_landing_page
-    when_i_submit_a_postcode_that_cannot_be_geocoded
-    then_i_am_told_the_postcode_is_incorrect
+    VCR.use_cassette(:postcode_cannot_be_geocoded) do
+      given_i_am_on_the_rad_landing_page
+      when_i_submit_a_postcode_that_cannot_be_geocoded
+      then_i_am_told_the_postcode_is_incorrect
+    end
   end
 
   def given_i_am_on_the_rad_landing_page
@@ -25,8 +27,6 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def when_i_submit_a_postcode_that_cannot_be_geocoded
-    pending
-
     landing_page.in_person.tap do |section|
       section.postcode.set 'ZZ1 1ZZ'
       section.search.click

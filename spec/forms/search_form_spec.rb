@@ -1,7 +1,9 @@
 RSpec.describe SearchForm do
   describe 'validation' do
     it 'is valid with valid attributes' do
-      expect(described_class.new(postcode: 'RG2 1AA')).to be_valid
+      VCR.use_cassette(:rg2_1aa) do
+        expect(described_class.new(postcode: 'RG2 1AA')).to be_valid
+      end
     end
 
     it 'requires a postcode' do

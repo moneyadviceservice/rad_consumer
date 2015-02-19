@@ -6,9 +6,11 @@ RSpec.describe Geocode do
   end
 
   it 'returns the lat/long pair' do
-    latitude, longitude = Geocode.call('RG11GG')
+    VCR.use_cassette(:rg11gg) do
+      latitude, longitude = Geocode.call('RG11GG')
 
-    expect(latitude).to  be
-    expect(longitude).to be
+      expect(latitude).to  be
+      expect(longitude).to be
+    end
   end
 end
