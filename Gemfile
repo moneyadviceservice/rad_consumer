@@ -16,6 +16,7 @@ gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
     ref: 'cf08913'
+gem 'geocoder'
 gem 'mas-rad_core'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'

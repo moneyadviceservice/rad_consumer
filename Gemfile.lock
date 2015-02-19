@@ -79,6 +79,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
+    geocoder (1.2.7)
     globalid (0.3.2)
       activesupport (>= 4.1.0)
     guard (2.11.1)
@@ -235,6 +236,7 @@ DEPENDENCIES
   capybara
   dough-ruby!
   factory_girl_rails
+  geocoder
   guard
   guard-livereload
   guard-rails

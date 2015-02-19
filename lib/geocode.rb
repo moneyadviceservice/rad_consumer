@@ -1,5 +1,7 @@
 class Geocode
   def self.call(postcode)
-    true
+    normalised_postcode = postcode.upcase.delete(' ')
+
+    Geocoder.coordinates("#{normalised_postcode}, United Kingdom")
   end
 end
