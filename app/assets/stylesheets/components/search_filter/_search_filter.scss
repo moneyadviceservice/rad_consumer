@@ -4,16 +4,15 @@
   border-radius: $search-filter-radius;
 }
 
-.search-filter__component {
+.search-filter__section {
   margin: $baseline-unit*4 $baseline-unit*4 0 $baseline-unit*4;
 }
 
 .search-filter__heading {
-  @include body(16, 64);
-  font-weight: 500;
+  @include body(16, 18);
   background-color: $search-filter-heading-background-color;
   margin: 0;
-  padding: 0 $baseline-unit*4;
+  padding: $baseline-unit*3 $baseline-unit*4;
   border-radius: 0;
 }
 
@@ -28,44 +27,78 @@
   border-bottom-right-radius: $search-filter-radius;
 }
 
+.search-filter__heading-text {
+  display: block;
+  padding-left: 28px;
+}
+
 .search-filter__heading-link:link,
 .search-filter__heading-link:visited {
   color: $search-filter-heading-color;
 }
 
 .search-filter__label {
+  @include body(16, 24);
   font-weight: 700;
+}
+
+.search-filter__option {
+  @include body(16, 18);
+  padding-left: 24px;
+  display: block;
+}
+
+.search-filter__button {
+  @include body(16, 18);
+}
+
+.search-filter__button--inline {
+  vertical-align: top;
+}
+
+.search-filter__description {
+  @include body(14, 18);
+  margin-bottom: 0;
+}
+
+.search-filter__checkbox-container {
+  margin-bottom: $baseline-unit*4;
+}
+
+.search-filter__checkbox {
+  margin-top: 2px;
+  margin-right: 10px;
+  float: left;
 }
 
 .search-filter__field[type="text"] {
   width: 100%;
-  max-width: 300px;
-  height: $baseline-unit*8;
+  max-width: 150px;
+  height: 42px;
   border-radius: $search-filter-radius;
   border: 1px solid $search-filter-border-color;
-  margin-right: $baseline-unit*2;
 }
 
 .search-filter__triangle-icon {
-  @include inline-block();
-  width: 30px;
-  margin-right: $baseline-unit*2;
+  float: left;
 
   &:before {
     @include inline-block();
     position: relative;
-    top: 6px;
+    top: 0px;
+    left: 4px;
     content: '';
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 12px 0 12px 15px;
+    border-width: 8px 0 8px 10px;
     border-color: transparent transparent transparent $search-filter-icon-color;
   }
 }
 
 .search-filter__triangle-icon--down:before {
-  top: 3px;
-  border-width: 15px 12px 0 12px;
+  top: -2px;
+  left: 0;
+  border-width: 10px 8px 0 8px;
   border-color: $search-filter-icon-color transparent transparent transparent;
 }
