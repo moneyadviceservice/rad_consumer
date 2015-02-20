@@ -1,5 +1,12 @@
 <%= form_for @form, url: '/search', html: { class: 'form search-filter' }, builder: Dough::Forms::Builders::Validation do |f| %>
-  <%= f.validation_summary %>
+
+  <% content_for :validation_summary do %>
+    <div class="l-constrained">
+      <div class="l-landing-page__validation-summary">
+        <%= f.validation_summary %>
+      </div>
+    </div>
+  <% end %>
 
   <section class="t-in-person" data-search-filter>
     <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first') do %>
@@ -14,8 +21,8 @@
           <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
           <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
           <%= button_primary t('search_filter.in_person.button_text') %>
-          <p><%= t('search_filter.in_person.description') %></p>
         <% end %>
+        <p><%= t('search_filter.in_person.description') %></p>
       </div>
 
       <%= render partial: 'search_filter_options', locals: { f: f } %>
