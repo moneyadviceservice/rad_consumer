@@ -1,4 +1,8 @@
  en:
+  search:
+    errors:
+      geocode_failure: is incorrect
+
   title_tag: 'Retirement Adviser Directory | Find regulated financial advisers who specialise in pensions and retirement'
   meta_tag: 'Use the Retirement Adviser Directory to find FCA regulated pensions and retirement advisers by postcode, specialisms, qualifications of advisers, costs and more.'
 

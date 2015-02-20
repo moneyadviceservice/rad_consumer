@@ -16,6 +16,7 @@ gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
     ref: 'cf08913'
+gem 'geocoder'
 gem 'mas-rad_core'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
@@ -37,4 +38,9 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'site_prism'
   gem 'spring'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
