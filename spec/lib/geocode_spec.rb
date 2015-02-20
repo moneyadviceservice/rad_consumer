@@ -1,4 +1,4 @@
-RSpec.describe Geocode do
+RSpec.describe Geocode, '#call' do
   it 'normalises the postcode' do
     expect(Geocoder).to receive(:coordinates).with('RG11GG, United Kingdom')
 
@@ -9,8 +9,8 @@ RSpec.describe Geocode do
     VCR.use_cassette(:rg11gg) do
       latitude, longitude = Geocode.call('RG11GG')
 
-      expect(latitude).to  be
-      expect(longitude).to be
+      expect(latitude).to  eql(51.45326439999999)
+      expect(longitude).to eql(-0.9634222000000001)
     end
   end
 end
