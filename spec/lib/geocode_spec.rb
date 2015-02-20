@@ -2,7 +2,7 @@ RSpec.describe Geocode, '#call' do
   it 'normalises the postcode' do
     expect(Geocoder).to receive(:coordinates).with('RG11GG, United Kingdom')
 
-    Geocode.call('rg1 1gg')
+    Geocode.call('RG1 1GG')
   end
 
   it 'returns the lat/long pair' do
