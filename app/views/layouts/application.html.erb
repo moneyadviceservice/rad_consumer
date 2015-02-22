@@ -9,7 +9,119 @@
   <%= stylesheet_link_tag 'dough/assets/stylesheets/basic' %>
   <%= stylesheet_link_tag 'dough/assets/stylesheets/font_files' %>
 
-  <%= render 'layouts/mas_head' %>
+  <link href="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/dough/assets/stylesheets/basic-ea7670b1f707d74ea3995dc089465c3a.css" media="screen" rel="stylesheet" />
+
+  <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
+  <link href="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/dough/assets/stylesheets/font_files-ff703b1d1494bc230ea71275731abdde.css" media="screen" rel="stylesheet" />
+  <link href="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/enhanced_fixed-ec3120ee9d7ff3a43394b5e68669525f.css" media="all" rel="stylesheet" />
+  <script src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/html5shiv/dist/html5shiv-fee07e49a2d47f6e8f4f18d64a93ed5e.js"></script>
+  <script>var responsiveStyle = false;</script>
+  <![endif]-->
+
+  <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
+  <link href="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/enhanced_responsive-b06b59642cc009662e29331e12b6a2a1.css" media="only all" rel="stylesheet" />
+  <script>var responsiveStyle = true;</script>
+  <!--<![endif]-->
+
+  <script type="text/javascript">
+    var dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'Responsive page': 'Yes',
+      'event': 'Responsive page'
+    });
+
+    var require = {
+      config: {
+        globals: (function(w, d) {
+          var html, appendFile, bootstrap, fonts, supports;
+
+          appendFile = function(tag, src, content) {
+            var position = d.getElementsByTagName('script')[0],
+                file = d.createElement(tag);
+            if (tag === 'script') {
+              file.async = true;
+              file.type = "text/javascript";
+            }
+            if (src) file.src = src;
+            if (content) file.innerHTML = content;
+            position.parentNode.insertBefore(file, position);
+          };
+
+          html = d.getElementsByTagName('html')[0];
+
+          bootstrap = {
+            env: 'production',
+            timestamp: new Date().getTime(),
+            i18nLocale: 'en',
+            googleApiCx: '011931388747222259444:qxgwfm5hlog'
+          };
+
+          fonts = {
+            url: 'https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/dough/assets/stylesheets/font_base64-348ce9151db29f9a692d5d63f1b30b36.css',
+            cacheName: 'MAS.fonts',
+            loadClass: 'wf-museosans-n4-active fontsLoaded',
+            localstorage: undefined,
+            loadWithJS: responsiveStyle
+          };
+
+          supports = (function() {
+            var S = {};
+
+            function supportTest(prop, context) {
+              try {
+                return prop in context && context[prop] !== null;
+              } catch (e) {
+                return false;
+              }
+            }
+
+            S.js = supportTest('querySelector', d) && supportTest('localStorage', w) && supportTest('addEventListener', w) ? 'advanced' : 'basic';
+            S.touch = supportTest('ontouchstart', w) || supportTest('onmsgesturechange', w);
+            S.localstorage = supportTest('localStorage', w);
+            S.svg = (function() {
+              return !!d.createElementNS && !!d.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect
+            })();
+            S.test = supportTest;
+
+            return S
+          })();
+
+
+          if (supports.localstorage && localStorage.getItem(fonts.cacheName) !== null) {
+            html.className = html.className += (' ' + fonts.loadClass);
+            appendFile('style', false, localStorage.getItem(fonts.cacheName));
+            fonts.localstorage = true;
+          }
+
+          html.className = html.className.replace('supports-js', 'supports-js js js-' + supports.js);
+
+          setTimeout(function() {
+            var src = d.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0018/4438.js?" + Math.floor(new Date().getTime() / 3600000);
+            appendFile('script', src);
+          }, 1);
+
+          var vp, ua, gs, sf;
+          vp = d.querySelector && d.querySelector('meta[name="viewport"]');
+          ua = navigator.userAgent;
+          sf = function() {
+            if (vp && /iPhone|iPad|iPod/.test(ua) && !/Opera Mini/.test(ua)) {
+              vp.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+              d.addEventListener("gesturestart", gs, false);
+            }
+          };
+          gs = function() {
+            vp.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          };
+
+          return {
+            bootstrap: bootstrap,
+            fonts: fonts,
+            supports: supports
+          };
+        })(window, document)
+      }
+    };
+  </script>
 
   <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
     <%= stylesheet_link_tag 'enhanced_fixed', media: 'all' %>
@@ -27,11 +139,306 @@
   </script>
 </head>
 <body>
+  <a class="skip-to-link" href="#main">Skip to main content</a>
+  <a class="skip-to-link" href="https://www.moneyadviceservice.org.uk/en/static/accessibility">Accessibility Statement</a>
 
-<main role="main" id="main">
-  <%= yield %>
-</main>
+  <header class="l-header" role="banner">
+    <div class="l-constrained">
+      <div class="mas-logo">
+        <a class="mas-logo__link" href="https://www.moneyadviceservice.org.uk/en">
+          <img alt="Money Advice Service" class="mas-logo__img" src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png" />
+        </a>
+      </div>
+
+      <div class="l-header__welsh">
+        <a class="l-header__welsh-link" href="/cy/">Cymraeg</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="l-context-bar">
+    <div class="l-constrained">
+      <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+        <ul class="unstyled-list">
+          <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a class="breadcrumbs__link" href="https://www.moneyadviceservice.org.uk/en" itemprop="url">
+              <span itemprop="title">Home</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span class="visually-hidden">&gt;</span>
+            <span class="breadcrumbs__divider" aria-hidden="true"></span>
+            <a class="breadcrumbs__link" href="https://www.moneyadviceservice.org.uk/en/categories/work-pensions-and-retirement" itemprop="url">
+              <span itemprop="title">Work, pensions and retirement</span>
+            </a>
+          </li>
+          <li class="breadcrumbs__item breadcrumbs__item--local" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span class="visually-hidden">&gt;</span>
+            <span class="breadcrumbs__divider" aria-hidden="true"></span>
+            <span itemprop="title">Retirement Adviser Directory</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <main role="main" id="main">
+    <%= yield %>
+
+    <div class="l-constrained">
+      <div class="l-contact-panels t-contact-panels  ">
+
+        <div class="l-contact-panel">
+          <div class="contact-panel contact-panel__chat-open t-chat" id="js-chat">
+            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--web-chat"></span>Web chat</h2>
+            <p class="contact-panel__chat-javascript t-chat-javascript">
+              Sorry, web chat is only available on <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
+            </p>
+
+            <div class="contact-panel__dynamic-content is-loading" id="js-chat-content">
+              <div class="contact-panel__preloader"></div>
+
+              <p class="contact-panel__chat-description t-chat-description" id="js-chat-description">
+                Got a question? Our advisers will point you in the right direction.
+              </p>
+
+              <div class="contact-panel__button-container" id="js-chat-cta">
+                <div class="contact-panel__button button is-disabled t-chat-button">
+                  Unavailable
+                </div>
+              </div>
+            </div>
+
+            <ul class="t-chat-opening-times contact-panel__list unstyled-list">
+                <li class="contact-panel__additional-info">Monday to Friday, 8am&nbsp;to&nbsp;10pm</li>
+                <li class="contact-panel__additional-info">Saturday, 9am&nbsp;to&nbsp;10pm</li>
+                <li class="contact-panel__additional-info">Sunday, 10am&nbsp;to&nbsp;10pm</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-panel__border"></div>
+
+        <div class="l-contact-panel">
+          <div class="contact-panel">
+            <h2 aria-level="2" class="contact-panel__heading t-contact-heading" role="heading"><span class="icon icon--call-us"></span>Call us</h2>
+            <p class="t-contact-introduction">Give us a call for free and impartial money advice.</p>
+            <p><a class="contact-panel__telephone t-contact-number" href="tel:+443005005000">0300 500 5000 *</a></p>
+
+            <ul class="contact-panel__list">
+              <li class="contact-panel__additional-info">Monday to Friday, 8am to 8pm</li>
+              <li class="contact-panel__additional-info">Saturday, 9am to 1pm</li>
+            </ul>
+
+            <p class="smallprint">* Calls cost the same as a normal call, if your calls are free, it&#39;s included.</p>
+          </div>
+        </div>
+
+        <div class="contact-panel__border"></div>
+
+        <div class="l-contact-panel">
+          <div class="contact-panel contact-panel--last t-footer-social-links">
+            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--sharing"></span>Follow us</h2>
+            <p>Get up-to-date money advice from Twitter, Facebook and YouTube.</p>
+
+            <div class="contact-panel__button-container">
+              <a class="button contact-panel__button contact-panel__button--sharing t-twitter-link" lang="en" href="https://twitter.com/YourMoneyAdvice">
+                <span class="icon icon--twitter"></span>
+                <span class="visually-hidden">Twitter</span>
+              </a>
+
+              <a class="button contact-panel__button contact-panel__button--sharing t-facebook-link" lang="en" href="https://www.facebook.com/MoneyAdviceService?ref=mas">
+                <span class="icon icon--facebook"></span>
+                <span class="visually-hidden">Facebook</span>
+              </a>
+
+              <a class="button contact-panel__button contact-panel__button--sharing t-youtube-link" lang="en" href="https://www.youtube.com/user/MoneyAdviceService">
+                <span class="icon icon--youtube"></span>
+                <span class="visually-hidden">YouTube</span>
+              </a>
+            </div>
+
+            <p class="contact-panel__additional-info">For more ways to get in touch, go to our <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">contact us</a> page.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="l-footer">
+    <div class="l-footer-primary t-footer-primary">
+      <div class="l-constrained">
+
+        <div class="l-footer-primary__left">
+          <form accept-charset="UTF-8" action="/en/newsletter-subscription" class="newsletter-signup t-newsletter" data-remote="true" method="post">
+            <div style="display:none">
+              <input name="utf8" type="hidden" value="&#x2713;" />
+            </div>
+
+            <input id="authenticity_token" name="authenticity_token" type="hidden" value="jeMmyTCj0dxGGMlOBX36RByXc9uH5VZe4/2aGpTnnoI=" />
+            <h2 aria-level="2" class="newsletter-signup__heading" role="heading">Newsletter</h2>
+
+            <ul class="newsletter-signup__benefits-list list-benefits">
+                <li>Top tips on managing money</li>
+                <li>Useful tools and money news</li>
+                <li>All free and unbiased</li>
+            </ul>
+
+            <fieldset class="newsletter-signup__form js-newsletter-form" id="newsletter_signup">
+                <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us#newsletter_signup" class="t-newsletter-button button newsletter-signup__button newsletter-signup__button--third-party">Sign up to our free newsletter</a>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="l-footer-primary__right">
+          <nav role="navigation" aria-label="footer">
+            <ul class="l-footer-primary__list l-footer-primary__list--left">
+              <li class="footer-primary__list-item">
+                <a href="https://www.moneyadviceservice.org.uk/en/static/about-us">About us</a>
+              </li>
+
+              <li class="footer-primary__list-item">
+                <a href="https://www.moneyadviceservice.org.uk/en/static/media-centre">Media centre</a>
+              </li>
+
+              <li class="footer-primary__list-item t-partners-link">
+                <a href="https://www.moneyadviceservice.org.uk/en/categories/partners">Partners</a>
+              </li>
+
+              <li class="footer-primary__list-item">
+                <a href="https://www.moneyadviceservice.org.uk/en/static/jobs">Jobs</a>
+              </li>
+            </ul>
+
+            <ul class="l-footer-primary__list l-footer-primary__list--right">
+              <li class="footer-primary__list-item">
+                <a href="https://www.moneyadviceservice.org.uk/en/categories/our-debt-work">Our debt work</a>
+              </li>
+
+              <li class="footer-primary__list-item">
+                <a href="https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators">Tools &amp; calculators</a>
+              </li>
+
+              <li class="footer-primary__list-item">
+                <a href="https://blog.moneyadviceservice.org.uk">Your Money Advice blog</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="l-footer-secondary t-footer-secondary">
+      <div class="l-constrained">
+
+        <div class="l-footer-secondary__list--left">
+          <ul class="footer-secondary__list">
+            <li class="footer-secondary__list-item l-language-link">
+              <a class="t-cy-link" href="https://www.moneyadviceservice.org.uk/cy/empty" lang="cy">
+                <span class="icon icon--globe"></span>
+                Cymraeg
+              </a>
+            </li>
+
+            <li class="footer-secondary__list-item accessibility-feedback-link">
+              <a class="footer-secondary__link" href="http://accessin.org/usersubmit_mas.php?param=nojscript"
+                 onclick="window.open('http://accessin.org/usersubmit_mas.php?param=' + window.location,'',
+                     'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800');
+                     return false;" title="Please use this button to tell us if you have an accessibility issue on our website"
+                 target="_blank">
+                <span class="icon icon--accessibility"></span>Report an accessibility problem
+                <span class="visually-hidden">Feedback form opens in a new window</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="l-footer-secondary__list--right">
+          <ul class="footer-secondary__list">
+            <li class="footer-secondary__list-item">
+              <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">Contact us</a>
+            </li>
+
+            <li class="footer-secondary__list-item">
+              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions">Terms &amp; conditions</a>
+            </li>
+
+            <li class="footer-secondary__list-item">
+              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/privacy">Privacy</a>
+            </li>
+
+            <li class="footer-secondary__list-item">
+              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/accessibility">Accessibility</a>
+            </li>
+
+            <li class="footer-secondary__list-item">
+              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en">Cookies</a>
+            </li>
+
+            <li class="footer-secondary__list-item">
+              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/sitemap">Sitemap</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
 
 <%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
+
+<script src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/webchat-2c865ab48399b819f20cdd4525fc8b4f.js"></script>
+<script type='text/javascript'>
+  sWODomain = 'www.moneyadviceservice.org.uk';
+
+  sWOImageLoaded = function() {
+
+    var chatCTA = document.getElementById('js-chat-cta'),
+        chatDescription = document.getElementById('js-chat-description'),
+        chatContent = document.getElementById('js-chat-content');
+
+    if (sWOImage.width == 1) {
+
+      var sWOChatElement = document.createElement('div');
+      var sWOChatElementText = document.createTextNode("Currently busy");
+
+      sWOChatElement.className = "contact-panel__button button is-disabled t-chat-button";
+      sWOChatElement.appendChild(sWOChatElementText);
+
+      chatCTA.innerHTML = "";
+      chatCTA.appendChild(sWOChatElement);
+      chatDescription.innerHTML = "Sorry, all of our advisers are currently busy. Please try again later.";
+
+      chatContent.className = "contact-panel__dynamic-content is-loaded";
+
+    } else {
+
+      var sWOChatElement = document.createElement('a');
+      var sWOChatElementText = document.createTextNode("Launch chat");
+      sWOChatElement.className = "contact-panel__button button t-chat-button";
+      sWOChatElement.appendChild(sWOChatElementText);
+
+      chatCTA.innerHTML = "";
+      chatCTA.appendChild(sWOChatElement);
+      chatDescription.innerHTML = "Got a question? Our advisers will point you in the right direction.";
+      chatContent.className = "contact-panel__dynamic-content is-loaded";
+
+
+      sWOChatElement.onclick = function() {
+        window.open(sWOChatElement.href, "Chat", "width=484,height=361,scrollbars=yes,resizable=yes");
+        return false;
+      };
+
+      sWOChatElement.href = sWOChatstart;
+      sWOChatElement.target = "_blank";
+    }
+  };
+
+  if (typeof sWOTrackPage == 'function') {
+    sWOTrackPage();
+    setTimeout("sWOInvite='';sWOResponse='N';sWOPage=(sWOPage || '')+'%3Ftimer%3Dtrue';sWOTrackPage();", 30000);
+  }
+</script>
 </body>
 </html>
