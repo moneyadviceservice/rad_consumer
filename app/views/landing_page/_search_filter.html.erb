@@ -1,59 +1,54 @@
-<%= form_for @form, url: '/search', html: { class: 'form search-filter' }, builder: Dough::Forms::Builders::Validation do |f| %>
+<%= form_for @form, url: '/search', html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= f.validation_summary %>
 
-  <% content_for :validation_summary do %>
-    <div class="l-constrained">
-      <div class="l-landing-page__validation-summary">
-        <%= f.validation_summary %>
+  <div class="search-filter">
+    <section class="t-in-person" data-search-filter>
+      <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first') do %>
+      <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
+        <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.in_person.heading') %></a>
+      <% end %>
+
+      <div data-search-filter-target>
+        <div class="search-filter__component">
+          <%= f.form_row(:postcode) do %>
+            <%= f.errors_for :postcode %>
+            <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
+            <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
+            <%= button_primary t('search_filter.in_person.button_text') %>
+          <% end %>
+          <p><%= t('search_filter.in_person.description') %></p>
+        </div>
+
+        <%= render partial: 'search_filter_options', locals: { f: f } %>
       </div>
-    </div>
-  <% end %>
+    </section>
 
-  <section class="t-in-person" data-search-filter>
-    <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first') do %>
-    <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
-      <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.in_person.heading') %></a>
-    <% end %>
+    <section class="" data-search-filter>
+    <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: ''}) do %>
+        <span class="search-filter__triangle-icon" data-search-filter-icon></span>
+        <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.remote.heading') %></a>
+      <% end %>
 
-    <div data-search-filter-target>
-      <div class="search-filter__component">
-        <%= f.form_row(:postcode) do %>
-          <%= f.errors_for :postcode %>
-          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
-          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
-          <%= button_primary t('search_filter.in_person.button_text') %>
-        <% end %>
-        <p><%= t('search_filter.in_person.description') %></p>
+      <div class="is-hidden" data-search-filter-target>
+        <div class="search-filter__component form__group form__group--inline">
+          <%= f.form_row(:postcode) do %>
+            <%= f.errors_for :postcode %>
+            <div class="form__group-item">
+              <%= f.check_box :checkbox, class: 'form__group-input' %>
+              <%= f.label :checkbox, t('remote.phone'), class: '' %>
+            </div>
+            <div class="form__group-item">
+              <%= f.check_box :checkbox, class: 'form__group-input' %>
+              <%= f.label :checkbox, t('remote.online'), class: '' %>
+            </div>
+            <%= button_primary t('search_filter.in_person.button_text') %>
+          <% end %>
+        </div>
+
+        <hr>
+
+        <%= render partial: 'search_filter_options', locals: { f: f } %>
       </div>
-
-      <%= render partial: 'search_filter_options', locals: { f: f } %>
-    </div>
-  </section>
-
-  <section class="" data-search-filter>
-  <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: ''}) do %>
-      <span class="search-filter__triangle-icon" data-search-filter-icon></span>
-      <a href="" class="search-filter__heading-link" data-search-filter-trigger><%= t('search_filter.remote.heading') %></a>
-    <% end %>
-
-    <div class="is-hidden" data-search-filter-target>
-      <div class="search-filter__component form__group form__group--inline">
-        <%= f.form_row(:postcode) do %>
-          <%= f.errors_for :postcode %>
-          <div class="form__group-item">
-            <%= f.check_box :checkbox, class: 'form__group-input' %>
-            <%= f.label :checkbox, t('remote.phone'), class: '' %>
-          </div>
-          <div class="form__group-item">
-            <%= f.check_box :checkbox, class: 'form__group-input' %>
-            <%= f.label :checkbox, t('remote.online'), class: '' %>
-          </div>
-          <%= button_primary t('search_filter.in_person.button_text') %>
-        <% end %>
-      </div>
-
-      <hr>
-
-      <%= render partial: 'search_filter_options', locals: { f: f } %>
-    </div>
-  </section>
+    </section>
+  </div>
 <% end %>
