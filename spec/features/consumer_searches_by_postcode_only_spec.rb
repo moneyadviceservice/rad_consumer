@@ -15,8 +15,47 @@ RSpec.feature 'Consumer searches by postcode only' do
     end
   end
 
+  scenario 'Consumer enters a valid postcode' do
+    given_i_am_on_the_rad_landing_page
+    and_firms_with_advisers_covering_my_postcode_were_previously_indexed
+    when_i_search_with_a_reading_postcode
+    then_i_am_shown_firms_with_advisers_covering_my_postcode
+    and_i_am_not_shown_non_postcode_searchable_firms
+    and_the_firms_are_ordered_by_distance_in_miles_to_me
+  end
+
+
   def given_i_am_on_the_rad_landing_page
     landing_page.load
+  end
+
+  def and_firms_with_advisers_covering_my_postcode_were_previously_indexed
+    skip
+
+    @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616)
+    @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257)
+    @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082)
+  end
+
+  def when_i_search_with_a_reading_postcode
+    skip
+
+    landing_page.in_person.tap do |section|
+      section.postcode.set 'RG2 9FL'
+      section.search.click
+    end
+  end
+
+  def then_i_am_shown_firms_with_advisers_covering_my_postcode
+    skip
+  end
+
+  def and_i_am_not_shown_non_postcode_searchable_firms
+    skip
+  end
+
+  def and_the_firms_are_ordered_by_distance_in_miles_to_me
+    skip
   end
 
   def when_i_submit_a_invalid_postcode_search

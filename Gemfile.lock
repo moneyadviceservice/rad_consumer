@@ -15,6 +15,19 @@ GIT
       rails (>= 3.2)
       sass-rails (~> 4.0.0)
 
+GIT
+  remote: git://github.com/moneyadviceservice/mas-rad_core.git
+  revision: 9a95aee7c9d19d118bc284c7cfa2418e2e993480
+  branch: 5298-indexing-firms-and-advisers
+  specs:
+    mas-rad_core (0.0.5)
+      active_model_serializers
+      geocoder
+      http
+      pg
+      rails (~> 4.2.0)
+      statsd-ruby
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,6 +50,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activejob (4.2.0)
       activesupport (= 4.2.0)
       globalid (>= 0.3.0)
@@ -80,6 +95,7 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.6)
+    form_data (0.1.0)
     formatador (0.2.5)
     geocoder (1.2.7)
     globalid (0.3.2)
@@ -101,6 +117,9 @@ GEM
       guard (~> 2.0)
     hike (1.2.3)
     hitimes (1.2.2)
+    http (0.7.1)
+      form_data (~> 0.1.0)
+      http_parser.rb (~> 0.6.0)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     jquery-rails (4.0.3)
@@ -118,10 +137,6 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.2)
-      pg
-      rails (~> 4.2.0)
-      statsd-ruby
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -248,7 +263,7 @@ DEPENDENCIES
   guard-livereload
   guard-rails
   jquery-rails
-  mas-rad_core
+  mas-rad_core!
   pg
   pry-rails
   rack-livereload
