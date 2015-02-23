@@ -32,9 +32,16 @@
   padding-left: 28px;
 }
 
-.search-filter__heading-link:link,
-.search-filter__heading-link:visited {
+.search-filter__heading-trigger {
+  background: transparent;
+  border: 0;
   color: $search-filter-heading-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline: none;
+  }
 }
 
 .search-filter__label {

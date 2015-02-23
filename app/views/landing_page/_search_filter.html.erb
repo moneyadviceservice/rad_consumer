@@ -3,11 +3,9 @@
 
   <div class="search-filter">
     <section class="t-in-person" data-search-filter>
-      <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first') do %>
-        <a href="" class="search-filter__heading-link" data-search-filter-trigger>
-          <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
-          <span class="search-filter__heading-text"><%= t('search_filter.in_person.heading') %></span>
-        </a>
+      <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first', data: { search_filter_heading: ''}) do %>
+        <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
+        <span class="search-filter__heading-text"><%= t('search_filter.in_person.heading') %></span>
       <% end %>
 
       <div data-search-filter-target>
@@ -26,11 +24,9 @@
     </section>
 
     <section class="" data-search-filter>
-      <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: ''}) do %>
-        <a href="" class="search-filter__heading-link" data-search-filter-trigger>
+      <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
           <span class="search-filter__triangle-icon" data-search-filter-icon></span>
           <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>
-        </a>
       <% end %>
 
       <div class="is-hidden" data-search-filter-target>
