@@ -6,6 +6,11 @@
 }
 
 .further-info__trigger {
-  font-size: 75%;
-  white-space: nowrap;
+  display: none;
+
+  .js & {
+    display: inline;
+    font-size: 75%;
+    white-space: nowrap;
+  }
 }

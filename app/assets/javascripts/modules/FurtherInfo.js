@@ -4,14 +4,22 @@ define(['jquery'], function($) {
 
   var $element = $('[data-further-info]'),
       $trigger = $('[data-further-info-trigger]'),
-      $target = $('[data-further-info-target]');
+      $target = $('[data-further-info-target]'),
+      statusHidden = 'is-hidden';
 
-  $element.each(function() {
-    var $this = $(this);
+  $element.each(function(indexInArray, objectInArray) {
+    var $elementTrigger = $(objectInArray).find($trigger),
+        $elementTarget = $(objectInArray).find($target);
 
-    $this.find($trigger).on('click', function(event) {
-      $this.find($target).toggleClass('is-hidden');
+    $elementTrigger.on('click', function(event) {
       event.preventDefault();
+
+      if ($elementTarget.hasClass(statusHidden)) {
+        $target.addClass(statusHidden);
+        $elementTarget.removeClass(statusHidden);
+      } else {
+        $elementTarget.addClass(statusHidden);
+      }
     });
   });
 
