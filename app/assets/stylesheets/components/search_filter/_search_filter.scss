@@ -10,6 +10,7 @@
 
 .search-filter__heading {
   @include body(16, 18);
+  color: $search-filter-heading-color;
   background-color: $search-filter-heading-background-color;
   margin: 0;
   padding: $baseline-unit*3 $baseline-unit*4;
@@ -27,15 +28,18 @@
   border-bottom-right-radius: $search-filter-radius;
 }
 
-.search-filter__heading-text {
+.js .search-filter__heading-text {
   display: block;
   padding-left: 28px;
 }
 
 .search-filter__heading-trigger {
   background: transparent;
+  text-align: left;
   border: 0;
   color: $search-filter-heading-color;
+  width: 100%;
+  padding: 0;
 
   &:hover,
   &:focus {
@@ -87,19 +91,24 @@
 }
 
 .search-filter__triangle-icon {
-  float: left;
+  display: none;
 
-  &:before {
-    @include inline-block();
-    position: relative;
-    top: 0px;
-    left: 4px;
-    content: '';
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 0 8px 10px;
-    border-color: transparent transparent transparent $search-filter-icon-color;
+  .js & {
+    display: block;
+    float: left;
+
+    &:before {
+      @include inline-block();
+      position: relative;
+      top: 0px;
+      left: 4px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 10px;
+      border-color: transparent transparent transparent $search-filter-icon-color;
+    }
   }
 }
 

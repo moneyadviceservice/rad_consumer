@@ -17,7 +17,7 @@ define(['jquery'], function($) {
       $button = $('<button type="button" class="search-filter__heading-trigger" data-search-filter-trigger></button>'),
       $target = $('[data-search-filter-target]');
 
-  $triggerHeading.wrapInner($button);
+  $triggerHeading.wrap($button);
 
   $elements.each(function(indexInArray, objectInArray) {
     var $elementTarget = $(objectInArray).find($target),
@@ -41,7 +41,7 @@ define(['jquery'], function($) {
         $elementTriggerHeading.removeClass(borderRadius);
       } else {
         $triggerHeadingSecond.addClass(borderRadius);
-      };
+      }
 
     });
   });
