@@ -1,0 +1,87 @@
+ cy:
+  skip_links:
+    to_main: Skip to main content
+    to_accessibility: Accessibility Statement
+    to_accessibility_link: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
+
+  translate:
+    welsh: Cymraeg
+    english: English
+
+  mas_home_url: https://www.moneyadviceservice.org.uk/cy
+
+  breadcrumbs:
+    home: Hafan
+    parent: Gwaith, pensiynau ac ymddeol
+    parent_url: https://www.moneyadviceservice.org.uk/cy/categories/work-pensions-and-retirement
+    child: Retirement Adviser Directory
+
+  contact_panels:
+    webchat:
+      heading: Gwe-sgwrs
+      nojs_html: Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
+      directions: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
+      default_status: Ddim ar gael
+      opening_hours:
+        weekdays_html: Monday to Friday, 8am&nbsp;to&nbsp;10pm
+        saturday_html: Saturday, 9am&nbsp;to&nbsp;10pm
+        sunday_html: Sunday, 10am&nbsp;to&nbsp;10pm
+    call_us:
+      heading: Ffoniwch ni
+      description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
+      telephone_number: 0300 500 5555
+      telephone_number_url: tel:+443005005555
+      opening_hours:
+        weekdays: Llun i Wener, 8am i 8pm
+        saturday: Dydd Sadwrn, 9am i 1pm
+      smallprint_html: Yr un gost â galwad arferol, os yw eich galwadau am ddim, caiff ei gynnwys.
+    social:
+      heading: Dilynwch ni
+      description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
+      twitter: Twitter
+      facebook: Facebook
+      youtube: YouTube
+      contact_html: Am ragor o ffyrdd i gysylltu, ewch i'n tudalen <a href="/cy/static/cysylltu-a-ni">cysylltwch â ni</a>
+
+  footer_primary:
+    newsletter:
+      heading: Newyddlen
+      benefits_html: |
+        <li>Offer da a newyddion am arian</li>
+        <li>Diolch am gofrestru</li>
+        <li>Awgrymiadau da ar reoli arian</li>
+      sign_up: Tanysgrifiwch i'n newyddlen rhad ac am ddim
+    links_left:
+      - title: Amdanom ni
+        url: https://www.moneyadviceservice.org.uk/cy/static/amdanom-ni
+      - title: Canolfan y cyfryngau
+        url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
+      - title: Partneriaid
+        url: https://www.moneyadviceservice.org.uk/cy/categories/Partners
+      - title: Swyddi
+        url: https://www.moneyadviceservice.org.uk/cy/static/swyddi
+    links_right:
+      - title: Ein gwaith dyledion
+        url: https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work
+      - title: Offer a chyfrifianellau
+        url: https://www.moneyadviceservice.org.uk/cy/categories/tools-and-calculators
+      - title: Your Money Advice blog
+        url: https://blog.moneyadviceservice.org.uk
+
+  footer_secondary:
+    accessin:
+      button: Adrodd ar broblem hygyrchedd
+      hidden_text: Ffurflen adborth yn agor mewn ffenestr newydd
+    links:
+      - title: Cysylltu â ni
+        url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
+      - title: Amodau a Thelerau
+        url: https://www.moneyadviceservice.org.uk/cy/static/telerau-ac-amodau
+      - title: Preifatrwydd
+        url: https://www.moneyadviceservice.org.uk/cy/static/polisipreifatrwydd
+      - title: Hygyrchedd
+        url: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
+      - title: Cwcis
+        url: https://www.moneyadviceservice.org.uk/cy/static/cookie_notice_cy
+      - title: Map safle
+        url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
