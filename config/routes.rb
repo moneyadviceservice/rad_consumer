@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  root 'landing_page#show'
+  get '/' => redirect('/en')
 
-  post '/search', to: 'landing_page#search'
+  scope '/:locale', locale: /en|cy/ do
+    root 'landing_page#show'
+
+    post '/search', to: 'landing_page#search'
+  end
 end

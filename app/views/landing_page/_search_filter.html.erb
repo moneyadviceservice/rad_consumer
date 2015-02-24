@@ -1,4 +1,4 @@
-<%= form_for @form, url: '/search', html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+<%= form_for @form, url: search_path, html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.validation_summary %>
 
   <div class="search-filter">

@@ -1,0 +1,17 @@
+.l-header {
+  // override to force the header to be the correct height
+  min-height: 73px;
+}
+
+.l-header__welsh {
+  @include column(5);
+  float: right;
+  text-align: right;
+  margin-top: 24px;
+}
+
+.l-header__welsh-link {
+  @extend %link-nav-primary;
+  @include body(14, 18);
+  font-weight: 500;
+}
