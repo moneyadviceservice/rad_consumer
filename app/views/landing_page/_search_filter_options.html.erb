@@ -1,11 +1,11 @@
-<fieldset class="search-filter__component">
+<fieldset class="search-filter__section">
   <legend class="search-filter__label"><%= t('search_filter.in_person.subheading') %></legend>
   <%= f.form_row(:checkbox) do %>
     <%= f.errors_for :checkbox %>
 
     <div class="form__group-item" data-further-info>
-      <%= f.check_box :checkbox, class: 'form__group-input' %>
-      <%= f.label :checkbox, class: '' do %>
+      <%= f.check_box :checkbox, class: 'form__group-input search-filter__checkbox' %>
+      <%= f.label :checkbox, class: 'search-filter__option' do %>
         <%= t('search_filter.in_person.retirement_income_products.heading') %>
         <a href="" class="further-info__trigger" data-further-info-trigger>(what's this?)</a>
         <p class="is-hidden further-info" data-further-info-target><%= t('search_filter.in_person.retirement_income_products.tooltip') %></p>
@@ -14,8 +14,8 @@
 
     <% t('search_filter.in_person.options').each do |item| %>
       <div class="form__group-item" data-further-info>
-        <%= f.check_box :checkbox, class: 'form__group-input' %>
-        <%= f.label :checkbox, class: '' do %>
+        <%= f.check_box :checkbox, class: 'form__group-input search-filter__checkbox' %>
+        <%= f.label :checkbox, class: 'search-filter__option' do %>
           <%= item[:title] %>
           <a href="" class="further-info__trigger" data-further-info-trigger>(what's this?)</a>
           <p class="is-hidden further-info" data-further-info-target><%= item[:tooltip] %></p>
