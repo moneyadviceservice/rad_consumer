@@ -139,19 +139,19 @@
   </script>
 </head>
 <body>
-  <a class="skip-to-link" href="#main">Skip to main content</a>
-  <a class="skip-to-link" href="https://www.moneyadviceservice.org.uk/en/static/accessibility">Accessibility Statement</a>
+  <a class="skip-to-link" href="#main"><%= t('skip_links.to_main') %></a>
+  <a class="skip-to-link" href="<%= t('skip_links.to_accessibility_link') %>"><%= t('skip_links.to_accessibility') %></a>
 
   <header class="l-header" role="banner">
     <div class="l-constrained">
       <div class="mas-logo">
-        <a class="mas-logo__link" href="https://www.moneyadviceservice.org.uk/en">
+        <a class="mas-logo__link" href="<%= t('mas_home_url') %>">
           <img alt="Money Advice Service" class="mas-logo__img" src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png" />
         </a>
       </div>
 
       <div class="l-header__welsh">
-        <a class="l-header__welsh-link" href="/cy/">Cymraeg</a>
+        <a class="l-header__welsh-link" href="/cy/"><%= t('translate.welsh') %></a>
       </div>
     </div>
   </header>
@@ -161,21 +161,21 @@
       <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
         <ul class="unstyled-list">
           <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-            <a class="breadcrumbs__link" href="https://www.moneyadviceservice.org.uk/en" itemprop="url">
-              <span itemprop="title">Home</span>
+            <a class="breadcrumbs__link" href="<%= t('mas_home_url') %>" itemprop="url">
+              <span itemprop="title"><%= t('breadcrumbs.home') %></span>
             </a>
           </li>
           <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
             <span class="visually-hidden">&gt;</span>
             <span class="breadcrumbs__divider" aria-hidden="true"></span>
-            <a class="breadcrumbs__link" href="https://www.moneyadviceservice.org.uk/en/categories/work-pensions-and-retirement" itemprop="url">
-              <span itemprop="title">Work, pensions and retirement</span>
+            <a class="breadcrumbs__link" href="<%= t('breadcrumbs.parent_url') %>" itemprop="url">
+              <span itemprop="title"><%= t('breadcrumbs.parent') %></span>
             </a>
           </li>
           <li class="breadcrumbs__item breadcrumbs__item--local" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
             <span class="visually-hidden">&gt;</span>
             <span class="breadcrumbs__divider" aria-hidden="true"></span>
-            <span itemprop="title">Retirement Adviser Directory</span>
+            <span itemprop="title"><%= t('breadcrumbs.child') %></span>
           </li>
         </ul>
       </nav>
@@ -190,29 +190,29 @@
 
         <div class="l-contact-panel">
           <div class="contact-panel contact-panel__chat-open t-chat" id="js-chat">
-            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--web-chat"></span>Web chat</h2>
+            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--web-chat"></span><%= t('contact_panels.webchat.heading') %></h2>
             <p class="contact-panel__chat-javascript t-chat-javascript">
-              Sorry, web chat is only available on <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
+              <%= t('contact_panels.webchat.nojs_html') %></a>.
             </p>
 
             <div class="contact-panel__dynamic-content is-loading" id="js-chat-content">
               <div class="contact-panel__preloader"></div>
 
               <p class="contact-panel__chat-description t-chat-description" id="js-chat-description">
-                Got a question? Our advisers will point you in the right direction.
+                <%= t('contact_panels.webchat.directions') %>
               </p>
 
               <div class="contact-panel__button-container" id="js-chat-cta">
                 <div class="contact-panel__button button is-disabled t-chat-button">
-                  Unavailable
+                  <%= t('contact_panels.webchat.default_status') %>
                 </div>
               </div>
             </div>
 
             <ul class="t-chat-opening-times contact-panel__list unstyled-list">
-                <li class="contact-panel__additional-info">Monday to Friday, 8am&nbsp;to&nbsp;10pm</li>
-                <li class="contact-panel__additional-info">Saturday, 9am&nbsp;to&nbsp;10pm</li>
-                <li class="contact-panel__additional-info">Sunday, 10am&nbsp;to&nbsp;10pm</li>
+              <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.weekdays_html') %></li>
+              <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.saturday_html') %></li>
+              <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.sunday_html') %></li>
             </ul>
           </div>
         </div>
@@ -221,16 +221,16 @@
 
         <div class="l-contact-panel">
           <div class="contact-panel">
-            <h2 aria-level="2" class="contact-panel__heading t-contact-heading" role="heading"><span class="icon icon--call-us"></span>Call us</h2>
-            <p class="t-contact-introduction">Give us a call for free and impartial money advice.</p>
-            <p><a class="contact-panel__telephone t-contact-number" href="tel:+443005005000">0300 500 5000 *</a></p>
+            <h2 aria-level="2" class="contact-panel__heading t-contact-heading" role="heading"><span class="icon icon--call-us"></span><%= t('contact_panels.call_us.heading') %></h2>
+            <p class="t-contact-introduction"><%= t('contact_panels.call_us.description') %></p>
+            <p><a class="contact-panel__telephone t-contact-number" href="<%= t('contact_panels.call_us.telephone_number_url') %>"><%= t('contact_panels.call_us.telephone_number') %> *</a></p>
 
             <ul class="contact-panel__list">
-              <li class="contact-panel__additional-info">Monday to Friday, 8am to 8pm</li>
-              <li class="contact-panel__additional-info">Saturday, 9am to 1pm</li>
+              <li class="contact-panel__additional-info"><%= t('contact_panels.call_us.opening_hours.weekdays') %></li>
+              <li class="contact-panel__additional-info"><%= t('contact_panels.call_us.opening_hours.saturday') %></li>
             </ul>
 
-            <p class="smallprint">* Calls cost the same as a normal call, if your calls are free, it&#39;s included.</p>
+            <p class="smallprint">* <%= t('contact_panels.call_us.smallprint_html') %></p>
           </div>
         </div>
 
@@ -238,27 +238,27 @@
 
         <div class="l-contact-panel">
           <div class="contact-panel contact-panel--last t-footer-social-links">
-            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--sharing"></span>Follow us</h2>
-            <p>Get up-to-date money advice from Twitter, Facebook and YouTube.</p>
+            <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--sharing"></span><%= t('contact_panels.social.heading') %></h2>
+            <p><%= t('contact_panels.social.description') %></p>
 
             <div class="contact-panel__button-container">
               <a class="button contact-panel__button contact-panel__button--sharing t-twitter-link" lang="en" href="https://twitter.com/YourMoneyAdvice">
                 <span class="icon icon--twitter"></span>
-                <span class="visually-hidden">Twitter</span>
+                <span class="visually-hidden"><%= t('contact_panels.social.twitter') %></span>
               </a>
 
               <a class="button contact-panel__button contact-panel__button--sharing t-facebook-link" lang="en" href="https://www.facebook.com/MoneyAdviceService?ref=mas">
                 <span class="icon icon--facebook"></span>
-                <span class="visually-hidden">Facebook</span>
+                <span class="visually-hidden"><%= t('contact_panels.social.facebook') %></span>
               </a>
 
               <a class="button contact-panel__button contact-panel__button--sharing t-youtube-link" lang="en" href="https://www.youtube.com/user/MoneyAdviceService">
                 <span class="icon icon--youtube"></span>
-                <span class="visually-hidden">YouTube</span>
+                <span class="visually-hidden"><%= t('contact_panels.social.youtube') %></span>
               </a>
             </div>
 
-            <p class="contact-panel__additional-info">For more ways to get in touch, go to our <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">contact us</a> page.</p>
+            <p class="contact-panel__additional-info"><%= t('contact_panels.social.contact_html') %></p>
           </div>
         </div>
       </div>
@@ -276,16 +276,14 @@
             </div>
 
             <input id="authenticity_token" name="authenticity_token" type="hidden" value="jeMmyTCj0dxGGMlOBX36RByXc9uH5VZe4/2aGpTnnoI=" />
-            <h2 aria-level="2" class="newsletter-signup__heading" role="heading">Newsletter</h2>
+            <h2 aria-level="2" class="newsletter-signup__heading" role="heading"><%= t('footer_primary.newsletter.heading') %></h2>
 
             <ul class="newsletter-signup__benefits-list list-benefits">
-                <li>Top tips on managing money</li>
-                <li>Useful tools and money news</li>
-                <li>All free and unbiased</li>
+              <%= t('footer_primary.newsletter.benefits_html') %>
             </ul>
 
             <fieldset class="newsletter-signup__form js-newsletter-form" id="newsletter_signup">
-                <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us#newsletter_signup" class="t-newsletter-button button newsletter-signup__button newsletter-signup__button--third-party">Sign up to our free newsletter</a>
+                <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us#newsletter_signup" class="t-newsletter-button button newsletter-signup__button newsletter-signup__button--third-party"><%= t('footer_primary.newsletter.sign_up') %></a>
             </fieldset>
           </form>
         </div>
@@ -293,35 +291,19 @@
         <div class="l-footer-primary__right">
           <nav role="navigation" aria-label="footer">
             <ul class="l-footer-primary__list l-footer-primary__list--left">
+              <% t('footer_primary.links_left').each do |item| %>
               <li class="footer-primary__list-item">
-                <a href="https://www.moneyadviceservice.org.uk/en/static/about-us">About us</a>
+                <a href="<%= item[:url] %>"><%= item[:title] %></a>
               </li>
-
-              <li class="footer-primary__list-item">
-                <a href="https://www.moneyadviceservice.org.uk/en/static/media-centre">Media centre</a>
-              </li>
-
-              <li class="footer-primary__list-item t-partners-link">
-                <a href="https://www.moneyadviceservice.org.uk/en/categories/partners">Partners</a>
-              </li>
-
-              <li class="footer-primary__list-item">
-                <a href="https://www.moneyadviceservice.org.uk/en/static/jobs">Jobs</a>
-              </li>
+              <% end %>
             </ul>
 
             <ul class="l-footer-primary__list l-footer-primary__list--right">
+              <% t('footer_primary.links_right').each do |item| %>
               <li class="footer-primary__list-item">
-                <a href="https://www.moneyadviceservice.org.uk/en/categories/our-debt-work">Our debt work</a>
+                <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
               </li>
-
-              <li class="footer-primary__list-item">
-                <a href="https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators">Tools &amp; calculators</a>
-              </li>
-
-              <li class="footer-primary__list-item">
-                <a href="https://blog.moneyadviceservice.org.uk">Your Money Advice blog</a>
-              </li>
+              <% end %>
             </ul>
           </nav>
         </div>
@@ -347,8 +329,8 @@
                      'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800');
                      return false;" title="Please use this button to tell us if you have an accessibility issue on our website"
                  target="_blank">
-                <span class="icon icon--accessibility"></span>Report an accessibility problem
-                <span class="visually-hidden">Feedback form opens in a new window</span>
+                <span class="icon icon--accessibility"></span><%= t('footer_secondary.accessin.button') %>
+                <span class="visually-hidden"><%= t('footer_secondary.accessin.hidden_text') %></span>
               </a>
             </li>
           </ul>
@@ -356,29 +338,11 @@
 
         <div class="l-footer-secondary__list--right">
           <ul class="footer-secondary__list">
+            <% t('footer_secondary.links').each do |item| %>
             <li class="footer-secondary__list-item">
-              <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">Contact us</a>
+              <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
             </li>
-
-            <li class="footer-secondary__list-item">
-              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions">Terms &amp; conditions</a>
-            </li>
-
-            <li class="footer-secondary__list-item">
-              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/privacy">Privacy</a>
-            </li>
-
-            <li class="footer-secondary__list-item">
-              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/accessibility">Accessibility</a>
-            </li>
-
-            <li class="footer-secondary__list-item">
-              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en">Cookies</a>
-            </li>
-
-            <li class="footer-secondary__list-item">
-              <a class="footer-secondary__link" href="https://www.moneyadviceservice.org.uk/en/sitemap">Sitemap</a>
-            </li>
+            <% end %>
           </ul>
         </div>
 
