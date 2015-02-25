@@ -1,0 +1,12 @@
+.locale__link {
+  @include column(5);
+  float: right;
+  text-align: right;
+  margin-top: 24px;
+ }
+
+ .locale__link {
+   @extend %link-nav-primary;
+   @include body(14, 18);
+   font-weight: 500;
+ }
