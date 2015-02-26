@@ -1,5 +1,6 @@
 RSpec.feature 'Consumer searches by postcode only' do
   let(:landing_page) { LandingPage.new }
+  let(:results_page) { ResultsPage.new }
 
   scenario 'Consumer enters a invalid postcode' do
     given_i_am_on_the_rad_landing_page
@@ -16,12 +17,20 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   scenario 'Consumer enters a valid postcode' do
-    given_i_am_on_the_rad_landing_page
-    and_firms_with_advisers_covering_my_postcode_were_previously_indexed
-    when_i_search_with_a_reading_postcode
-    then_i_am_shown_firms_with_advisers_covering_my_postcode
-    and_i_am_not_shown_non_postcode_searchable_firms
-    and_the_firms_are_ordered_by_distance_in_miles_to_me
+    VCR.turned_off do
+      begin
+        WebMock.allow_net_connect!
+
+        given_i_am_on_the_rad_landing_page
+        and_firms_with_advisers_covering_my_postcode_were_previously_indexed
+        when_i_search_with_a_reading_postcode
+        then_i_am_shown_firms_with_advisers_covering_my_postcode
+        and_i_am_not_shown_non_postcode_searchable_firms
+        and_the_firms_are_ordered_by_distance_in_miles_to_me
+      ensure
+        WebMock.disable_net_connect!
+      end
+    end
   end
 
 
@@ -30,33 +39,25 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def and_firms_with_advisers_covering_my_postcode_were_previously_indexed
-    VCR.turned_off do
-      begin
-        WebMock.allow_net_connect!
+    # FIXME: Entirely temporary - hold on to your hats!
+    `curl -XDELETE -sS http://127.0.0.1:9200/rad_test`
 
-        # FIXME: Entirely temporary - hold on to your hats!
-        `curl -XDELETE -sS http://127.0.0.1:9200/rad_test`
-
-        @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616)
-        @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257)
-        @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082)
-      ensure
-        WebMock.disable_net_connect!
-      end
-    end
+    @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616)
+    @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257)
+    @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082)
   end
 
   def when_i_search_with_a_reading_postcode
-    VCR.use_cassette(:rg2_9fl) do
-      landing_page.in_person.tap do |section|
-        section.postcode.set 'RG2 9FL'
-        section.search.click
-      end
+    landing_page.in_person.tap do |section|
+      section.postcode.set 'RG2 9FL'
+      section.search.click
     end
   end
 
   def then_i_am_shown_firms_with_advisers_covering_my_postcode
-    skip
+    pending
+
+    expect(results_page.firms).to be_displayed
   end
 
   def and_i_am_not_shown_non_postcode_searchable_firms

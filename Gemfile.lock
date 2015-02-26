@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/mas-rad_core.git
-  revision: 9a95aee7c9d19d118bc284c7cfa2418e2e993480
+  revision: 464bc463f423f7fd299fb2d4a60be0d8664f5746
   branch: 5298-indexing-firms-and-advisers
   specs:
     mas-rad_core (0.0.5)
