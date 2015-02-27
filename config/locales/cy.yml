@@ -11,9 +11,9 @@
     to_accessibility: Accessibility Statement
     to_accessibility_link: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
 
-  translate:
-    welsh: Cymraeg
-    english: English
+  locales:
+    cy: Cymraeg
+    en: English
 
   mas_home_url: https://www.moneyadviceservice.org.uk/cy
 
