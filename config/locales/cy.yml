@@ -119,7 +119,7 @@
       download_transcript_text: (Lawrlwythwch sgript y fideo)
       download_transcript_link: 'https://moneyadviceservice.org.uk/cy'
 
-  why_regulated_adviser:
+  more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
     key_points:
     - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
@@ -168,8 +168,8 @@
       description: Os ydych yn aelod o gynllun pensiwn preifat, yna cysylltwch â nhw, efallai y byddant yn cael eu cynghorwyr eu hunain.
 
       retirement_income_products:
-        heading: Retirement income products
-        tooltip: This is a tooltip that will probably be at least 300 words long.
+        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
+        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
 
       pension_pot:
         heading: Maint eich cronfa bensiwn/buddsoddiad

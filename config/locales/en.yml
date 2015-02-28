@@ -167,8 +167,8 @@
       description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
 
       retirement_income_products:
-        heading: Retirement income products
-        tooltip: This is a tooltip that will probably be at least 300 words long.
+        heading: Transferring a current or previous pension
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm that has an adviser with the necessary qualifications.
 
       pension_pot:
         heading: My pension pot(s)/other savings or investments
