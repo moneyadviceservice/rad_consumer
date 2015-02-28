@@ -1,11 +1,10 @@
 language: ruby
 sudo: false
-cache:
-bundler: true
-directories:
-  - node_modules
+cache: bundler
 rvm:
   - 2.2.0
+services:
+  - elasticsearch
 before_script:
   - cp config/example.database.yml config/database.yml
   - psql -c "create database rad_test;" -U postgres

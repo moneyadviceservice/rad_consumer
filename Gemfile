@@ -11,6 +11,7 @@ ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 
+gem 'active_model_serializers'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
@@ -41,6 +42,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'faker'
   gem 'vcr'
   gem 'webmock'
 end

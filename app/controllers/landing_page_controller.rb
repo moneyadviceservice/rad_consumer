@@ -7,7 +7,7 @@ class LandingPageController < ApplicationController
     @form = SearchForm.new(params[:search_form])
 
     if @form.valid?
-      render nothing: true
+      @result = FirmRepository.new.search(@form.to_query)
     else
       render :show
     end

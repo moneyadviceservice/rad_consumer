@@ -30,4 +30,21 @@ RSpec.describe SearchForm do
       expect(described_class.new(postcode: 'ZZ1 1ZZ')).to_not be_valid
     end
   end
+
+  describe '#to_query' do
+    let(:serializer) { double }
+
+    before do
+      allow(Geocode).to receive(:call).and_return(true)
+      allow(SearchFormSerializer).to receive(:new).and_return(serializer)
+    end
+
+    subject { described_class.new(postcode: 'ABC 123') }
+
+    it 'builds the query JSON via the `SearchFormSerializer`' do
+      expect(serializer).to receive(:as_json)
+
+      subject.to_query
+    end
+  end
 end

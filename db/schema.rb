@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209144836) do
+ActiveRecord::Schema.define(version: 20150228095315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150209144836) do
     t.boolean  "confirmed_disclaimer",              null: false
     t.string   "postcode",             default: "", null: false
     t.integer  "travel_distance",      default: 0,  null: false
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "advisers_professional_bodies", id: false, force: :cascade do |t|
@@ -99,6 +101,8 @@ ActiveRecord::Schema.define(version: 20150209144836) do
     t.integer  "wills_and_probate_percent"
     t.integer  "other_percent"
     t.integer  "parent_id"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "firms", ["initial_meeting_duration_id"], name: "index_firms_on_initial_meeting_duration_id", using: :btree
@@ -203,6 +207,7 @@ ActiveRecord::Schema.define(version: 20150209144836) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "order",      default: 0, null: false
+    t.string   "cy_name"
   end
 
   create_table "principals", force: :cascade do |t|
