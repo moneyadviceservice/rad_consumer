@@ -94,98 +94,89 @@
         url: https://www.moneyadviceservice.org.uk/en/sitemap
 
   page_title: Retirement adviser directory
+  beta_tag: Beta
+
   learn_more: Learn more
   learn_more_hidden_text: (click this link and further information will appear directly below)
 
-  beta_tag: Beta
   trust_banner:
-    heading: The directory contains details of hundreds of financial advisers who can help you with your financial decisions whether you are thinking about retirement; semi-retired but still working or fully retired.
+    heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or already retired.
     items:
-      - text: We are independent and set up by government so our results are impartial.
-        tooltip:
-      - text: All the advisers on the directory are registered with the Financial Conduct Authority (FCA) so you can have peace of mind that you are dealing with a regulated firm and are fully protected.
-        tooltip: The FCA is the UK’s financial regulator and sets rules which advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which is set by the FCA.
-      - text: All the advisers on the directory offer personalised financial advice and can choose from a wide range of products and providers.
-        tooltip: This means Advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the firm the Adviser works for and then the Financial Ombudsman if your complaint is turned down. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
-
-  workplace_scheme:
-    question: Are you a member of a union or other affinity group?
-    tooltip: Some unions or other affinity groups (and some of the larger pension schemes) may have already selected an Adviser or panel of Advisers you can choose from. You might want to check this before finding one on your own. If there is a pre-selected firm you can use you can always speak to them and one or two more from the directory to compare service and costs.
+      - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
+        tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
+      - text: All the advisers on the directory offer personalised financial advice.
+        tooltip: This means advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the adviser’s firm and then to the Financial Ombudsman if your complaint is rejected. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
+      - text: All the advisers on the directory can choose from a wide range of providers.
 
   find_retirement_adviser:
-    heading: Find a retirement adviser
-    description: Retirement advisers can provide advice in person, online or by phone.  How would you like to receive your advice?
-    subheading: How other people have benefited from advisers?
+    heading: Find a financial adviser
+    description: Financial advisers can provide advice in person, online or by phone. How would you like to receive your advice?
+    subheading: Why use a financial adviser?
     video:
       description: Watch this short video to find out how people have benefited from advisers.
       download_transcript_text: (Download the video transcript)
       download_transcript_link: 'https://moneyadviceservice.org.uk'
 
+  workplace_scheme:
+    question: Are you a member of a union or other affinity group?
+    tooltip: Some unions or other affinity groups (and some of the larger pension schemes) select a financial adviser or panel of advisers for their members to choose from. You might want to check this before finding one of your own. If there is a pre-selected firm available, you can always speak to them and one or two more from the directory to compare services and costs.
+
   why_regulated_adviser:
-    heading: Why use a financial adviser?
+    heading: More reasons to take financial advice
     key_points:
     - text: Financial advisers are regulated so you are protected if things go wrong.
-    - text: They have access to a wide range of products and providers.
-    - text: They can recommend a course of action that is personal to you and help you avoid expensive mistakes.
-    more_info_html: Our guides <a href="">Do you need a financial adviser</a> and <a href="">Choosing a financial adviser</a> will tell you more.
+    - text: They can choose products from a wide range of providers.
+    - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
     video:
       description: Watch this short video to find out how people have benefited from advisers
       download_transcript_text: (Download the video transcript)
       download_transcript_link: 'https://moneyadviceservice.org.uk'
 
-  free_guidance:
+  pension_wise:
     heading: Have you had your free guidance appointment yet?
-    introduction: The government is offering everyone over the age of 55 who is thinking about accessing their pension pot a free guidance session to help you decide what to do.  You can have this over the telephone or face to face. We strongly recommend that you have your free guidance session first before seeking financial advice.
-    guide_html: Our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/free-financial-advice-your-options">Getting free financial help and information</a> tells you more.
-    free_session_html: <a href="https://www.gov.uk/pensionwise" target="_blank">Book your free government guidance session now</a>.
+    description_html: Find out more from <a href="https://www.pensionwise.gov.uk" target="_blank">Pension wise</a>
 
   retirement_income_options:
     heading: Retirement income options
     content:
-      - text: The retirement landscape is changing fast and it’s tricky to understand all the retirement income options available to you.
-      - text: Use our retirement income options tool to understand the key considerations and pension income products available to you.
-      - text: The retirement income options tool will be available in early 2015.
+      - text: Coming soon&hellip;
+      - text: The retirement landscape is changing fast and it’s tricky to understand all the options available to you.
     link_text: Explore your options
     link_url: 'https://moneyadviceservice.org.uk'
 
   useful_links:
     heading: Useful links
     links:
-      - text: Why save into a pension?
-        url: 'https://moneyadviceservice.org.uk'
-      - text: Checklist – things to do as retirement approaches
-        url: 'https://moneyadviceservice.org.uk'
-      - text: New rules about pensions from April 2015
-        url: 'https://moneyadviceservice.org.uk'
+      - text: Choosing a financial adviser
+        url: 'https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser'
 
   our_promise:
     heading: Our promise to you
     key_points:
-      - text: We are set up by government so our tables and results are unbiased.
-      - text: We don’t receive any incentive or commission.
-      - text: We will not contact you or share your details.
+      - text: We are set up by government to give independent and impartial advice.
+      - text: We respect your privacy and won’t share your details.
 
   search_filter:
     in_person:
-      heading: Find advisers who offer advice in person
-      postcode_label: Your postcode
+      heading: Find financial advisers who offer face to face advice
+      postcode_label: Enter your postcode
       button_text: Search
       description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
-      subheading: 'Select from the options below if you know the type of advice you need:'
+      subheading: What do you need help with? Tick all that apply. If none apply leave blank.
 
       retirement_income_products:
         heading: Retirement income products
         tooltip: This is a tooltip that will probably be at least 300 words long.
 
       options:
-        - title: Long term care
-          tooltip: This is a tooltip that will probably be at least 300 words long.
+        - title: Options when paying for care
+          tooltip: If you, or someone you know, wants to find out more about paying for residential care or care at home, then choose this option. Not all advisers work in this field, so if you choose this option we will match you to firms that have advisers with the necessary qualifications.
         - title: Equity release
-          tooltip: This is a tooltip that will probably be at least 300 words long.
-        - title: Inheritance tax
-          tooltip: This is a tooltip that will probably be at least 300 words long.
-        - title: 'Wills & probate'
-          tooltip: This is a tooltip that will probably be at least 300 words long.
+          tooltip: In order to be able to give you advice on equity release schemes, financial advisers must have a specific qualification. If you choose this option we will match you to firms with an adviser who has the necessary qualification. You can read more about equity release here <a href="https://www.moneyadviceservice.org.uk/en/articles/equity-release">equity release here</a>.
+        - title: Inheritance tax planning
+          tooltip: If you want to speak to a financial adviser who can help you with inheritance tax, choose this option. We will match you to firms with advisers who deal with this area of financial planning.
+        - title: 'Wills &amp; probate'
+          tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
     remote:
       online: Online
       phone: Phone
