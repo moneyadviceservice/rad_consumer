@@ -1,1 +1,9 @@
+<h1>Search Results</h1>
 
+<ol>
+  <% @result.firms.each do |firm| %>
+    <li class="t-firm">
+      <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
+    </li>
+  <% end %>
+</ol>

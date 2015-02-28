@@ -9,7 +9,7 @@ class SearchForm
   validate :geocode_postcode
 
   def to_query
-    SearchFormSerializer.new(self).as_json
+    SearchFormSerializer.new(self).to_json
   end
 
   def coordinates

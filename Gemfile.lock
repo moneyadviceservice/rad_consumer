@@ -17,10 +17,10 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/mas-rad_core.git
-  revision: 464bc463f423f7fd299fb2d4a60be0d8664f5746
+  revision: e9594e2738669e22afec900f92b571942d17d9d1
   branch: 5298-indexing-firms-and-advisers
   specs:
-    mas-rad_core (0.0.5)
+    mas-rad_core (0.0.7)
       active_model_serializers
       geocoder
       http
