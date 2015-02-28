@@ -31,11 +31,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
-  gem 'guard', require: false
-  gem 'guard-livereload', require: false
-  gem 'guard-rails', require: false
   gem 'pry-rails'
-  gem 'rack-livereload'
   gem 'rspec-rails'
   gem 'site_prism'
   gem 'spring'
