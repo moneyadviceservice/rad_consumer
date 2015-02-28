@@ -53,10 +53,10 @@
 <div class="l-landing-page__background">
   <section class="l-constrained">
     <div class="l-landing-page__2col l-landing-page__2col--right">
-      <%= heading_tag(t('why_regulated_adviser.heading'), level: 3) %>
+      <%= heading_tag(t('more_reasons.heading'), level: 3) %>
 
       <ul class="list-benefits">
-        <% t('why_regulated_adviser.key_points').each do |item| %>
+        <% t('more_reasons.key_points').each do |item| %>
           <li><%= item[:text] %></li>
         <% end %>
       </ul>
@@ -64,8 +64,8 @@
 
     <div class="l-landing-page__2col l-landing-page__2col--padded">
       <img class="video" src="http://placehold.it/600x360" />
-      <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
-      <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+      <p class="video__description"><%= t('more_reasons.video.description') %></p>
+      <a class="video__transcript-link" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
     </div>
   </section>
 </div>

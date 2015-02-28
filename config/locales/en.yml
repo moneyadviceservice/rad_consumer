@@ -118,14 +118,14 @@
       download_transcript_text: (Download the video transcript)
       download_transcript_link: 'https://moneyadviceservice.org.uk'
 
-  why_regulated_adviser:
+  more_reasons:
     heading: More reasons to take financial advice
     key_points:
     - text: Financial advisers are regulated so you are protected if things go wrong.
     - text: They can choose products from a wide range of providers.
     - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
     video:
-      description: Watch this short video to find out how people have benefited from advisers
+      description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
       download_transcript_link: 'https://moneyadviceservice.org.uk'
 
