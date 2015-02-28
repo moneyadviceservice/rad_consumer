@@ -18,9 +18,7 @@ gem 'dough-ruby',
     require: 'dough',
     ref: 'cf08913'
 gem 'geocoder'
-gem 'mas-rad_core',
-  github: 'moneyadviceservice/mas-rad_core',
-  branch: '5298-indexing-firms-and-advisers'
+gem 'mas-rad_core'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
