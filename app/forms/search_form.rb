@@ -2,7 +2,7 @@ class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :postcode, :checkbox, :coordinates
+  attr_accessor :postcode, :checkbox, :coordinates, :pension_transfer
 
   before_validation :upcase_postcode
 
