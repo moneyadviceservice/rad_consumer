@@ -14,6 +14,7 @@ define(['jquery'], function($) {
 
   $element.each(function(indexInArray, objectInArray) {
     var $elementTrigger = $(objectInArray).find($trigger),
+        $elementTriggerAlt = $(objectInArray).find($triggerAlt),
         $elementTarget = $(objectInArray).find($target);
 
     $elementTrigger.on('click', function(event) {
@@ -27,5 +28,4 @@ define(['jquery'], function($) {
       }
     });
   });
-
 });

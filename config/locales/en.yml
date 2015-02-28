@@ -160,6 +160,19 @@
   search_filter:
     subheading: What do you need help with?
     instructions: Tick all that apply. If none apply leave blank.
+
+    pension_pot:
+      heading: My pension pot(s)/other savings or investments
+      options:
+        - number: 'Under £50,000'
+        - number: '£50,000 - £99,999'
+        - number: '£100,000 - £149,999'
+        - number: 'Over £150,000'
+        - number: "I don't know / Don't wish to say"
+
+    pension_transfer:
+      heading: Pension transfer
+
     in_person:
       heading: Find financial advisers who offer face to face advice
       postcode_label: Enter your postcode
@@ -169,19 +182,6 @@
       retirement_income_products:
         heading: Transferring a current or previous pension
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm that has an adviser with the necessary qualifications.
-
-      pension_pot:
-        heading: My pension pot(s)/other savings or investments
-        options:
-          - number: 'Under £50,000'
-          - number: '£50,000 - £99,999'
-          - number: '£100,000 - £149,999'
-          - number: 'Over £150,000'
-          - number: "I don't know / Don't wish to say"
-
-      pension_transfer:
-        heading: Transferring a current or previous pension
-        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring.  If you choose this option we will match you to a firm that has an adviser with the necessary qualifications.
 
       options:
         - title: Options when paying for care

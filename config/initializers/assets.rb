@@ -17,6 +17,7 @@ Rails.application.configure do
   config.assets.precompile += %w(
     modules/FurtherInfo.js
     modules/SearchFilter.js
+    modules/NestedOptions.js
   )
 
   # Vendor JavaScript
