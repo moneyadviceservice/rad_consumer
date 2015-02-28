@@ -30,9 +30,10 @@
       directions: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
       default_status: Ddim ar gael
       opening_hours:
-        weekdays_html: Monday to Friday, 8am&nbsp;to&nbsp;10pm
-        saturday_html: Saturday, 9am&nbsp;to&nbsp;10pm
-        sunday_html: Sunday, 10am&nbsp;to&nbsp;10pm
+        weekdays_html: Dydd Llun i Dydd Gwener, 8am i 10pm
+        saturday_html: Dydd Sadwrn, 9am i 10pm
+        sunday_html: Dydd Sul, 10am i 10pm
+
     call_us:
       heading: Ffoniwch ni
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
@@ -42,6 +43,7 @@
         weekdays: Llun i Wener, 8am i 8pm
         saturday: Dydd Sadwrn, 9am i 1pm
       smallprint_html: Yr un gost â galwad arferol, os yw eich galwadau am ddim, caiff ei gynnwys.
+
     social:
       heading: Dilynwch ni
       description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
@@ -93,100 +95,105 @@
       - title: Map safle
         url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
 
-  page_title: Retirement adviser directory
-  learn_more: Learn more
+  page_title: Cyfeirlyfr cynghorydd ymddeoliad
+  beta_tag: Beta
+
+  learn_more: '?'
   learn_more_hidden_text: (click this link and further information will appear directly below)
 
-  beta_tag: Beta
   trust_banner:
-    heading: The directory contains details of hundreds of financial advisers who can help you with your financial decisions whether you are thinking about retirement; semi-retired but still working or fully retired.
+    heading: Dewch o hyd i gynghorydd ariannol i roi cymorth i chi wrth gynllunio’ch ymddeoliad, pa un ai’ch bod yn ystyried ymddeol yn unig neu wedi gwneud hynny’n barod.
     items:
-      - text: We are independent and set up by government so our results are impartial.
-        tooltip:
-      - text: All the advisers on the directory are registered with the Financial Conduct Authority (FCA) so you can have peace of mind that you are dealing with a regulated firm and are fully protected.
-        tooltip: The FCA is the UK’s financial regulator and sets rules which advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which is set by the FCA.
-      - text: All the advisers on the directory offer personalised financial advice and can choose from a wide range of products and providers.
-        tooltip: This means Advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the firm the Adviser works for and then the Financial Ombudsman if your complaint is turned down. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
-
-  workplace_scheme:
-    question: Are you a member of a union or other affinity group?
-    tooltip: Some unions or other affinity groups (and some of the larger pension schemes) may have already selected an Adviser or panel of Advisers you can choose from. You might want to check this before finding one on your own. If there is a pre-selected firm you can use you can always speak to them and one or two more from the directory to compare service and costs.
+      - text: Mae pob un o’r cynghorwyr sydd ar y cyfeirlyfr wedi’u hawdurdodi a’u rheoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA).
+        tooltip: Yr FCA yw rheoleiddiwr ariannol y Deyrnas Unedig gan osod rheolau sydd yn ofynnol i gwmnïau sy’n cyflogi cynghorwyr ariannol eu dilyn wrth gynnig cyngor a gwerthu cynnyrch ariannol. Golyga hyn eich bod wedi’ch diogelu os aiff pethau o chwith a gallant wynebu dirwy neu gael eu cau i lawr os byddant yn tramgwyddo’r rheolau. Rhaid i gynghorwyr ariannol a reoleiddir ennill rhai cymwysterau neilltuol cyn iddynt fedru gweithio, a phennir y cymwysterau hyn gan yr FCA.
+      - text: Mae pob un o’r cynghorwyr sydd ar y cyfeirlyfr yn cynnig cyngor ariannol personol.
+        tooltip: Golyga hyn y bydd raid i gynghorwyr gasglu digon o wybodaeth gennych er mwyn medru cynnig argymhelliad personol. Os gwelwch yn y pen draw bod yr argymhelliad yn anaddas, gallwch gwyno yn gyntaf wrth gwmni’r cynghorydd ac yna wrth yr Ombwdsmon Ariannol os caiff eich cwyn ei gwrthod. Diogelir cynghorwyr sydd ar y gofrestr gan Gynllun Iawndal y Gwasanaethau Ariannol hefyd sy’n golygu y gallwch hawlio iawndal os collwch eich arian o ganlyniad uniongyrchol i’r cynghorydd fynd i’r wal.
+      - text: Gall pob un o’r cynghorwyr sydd ar y cyfeirlyfr gynnig gwasanaeth gan ystod eang o ddarparwyr.
 
   find_retirement_adviser:
-    heading: Find a retirement adviser
-    description: Retirement advisers can provide advice in person, online or by phone.  How would you like to receive your advice?
-    subheading: How other people have benefited from advisers?
+    heading: Dod o hyd i gynghorydd ariannol
+    description: Gall cynghorwyr ariannol gynnig cyngor yn bersonol, ar-lein neu dros y ffôn. Sut hoffech chi gael eich cyngor?
+    subheading: Pam defnyddio cynghorydd ariannol?
     video:
-      description: Watch this short video to find out how people have benefited from advisers.
-      download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://moneyadviceservice.org.uk'
+      description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
+      download_transcript_text: (Lawrlwythwch sgript y fideo)
+      download_transcript_link: 'https://moneyadviceservice.org.uk/cy'
 
   why_regulated_adviser:
-    heading: Why use a financial adviser?
+    heading: Rhagor o resymau dros gymryd cyngor ariannol
     key_points:
-    - text: Financial advisers are regulated so you are protected if things go wrong.
-    - text: They have access to a wide range of products and providers.
-    - text: They can recommend a course of action that is personal to you and help you avoid expensive mistakes.
-    more_info_html: Our guides <a href="">Do you need a financial adviser</a> and <a href="">Choosing a financial adviser</a> will tell you more.
+    - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
+    - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
+    - text: Gallant argymell gweithred sydd wedi ei deilwra ar eich cyfer chi a rhoi cymorth i chi beidio gwneud penderfyniadau costus.
     video:
-      description: Watch this short video to find out how people have benefited from advisers
-      download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://moneyadviceservice.org.uk'
+      description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
+      download_transcript_text: (Lawrlwythwch sgript y fideo)
+      download_transcript_link: 'https://moneyadviceservice.org.uk/cy'
 
-  free_guidance:
-    heading: Have you had your free guidance appointment yet?
-    introduction: The government is offering everyone over the age of 55 who is thinking about accessing their pension pot a free guidance session to help you decide what to do.  You can have this over the telephone or face to face. We strongly recommend that you have your free guidance session first before seeking financial advice.
-    guide_html: Our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/free-financial-advice-your-options">Getting free financial help and information</a> tells you more.
-    free_session_html: <a href="https://www.gov.uk/pensionwise" target="_blank">Book your free government guidance session now</a>.
+  pension_wise:
+    heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
+    description_html: Dysgwch ragor gan <a href="https://www.pensionwise.gov.uk" target="_blank">Pension wise</a>
+
+  workplace_scheme:
+    question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
+    tooltip: Mae rhai undebau neu grwpiau affinedd eraill (a rhai cynlluniau pensiwn mwy eu maint) yn dewis cynghorydd ariannol neu banel o gynghorwyr ariannol i’w haelodau ddewis ohonynt. Efallai y byddai’n syniad da i chi wirio hyn cyn dod o hyd i un eich hun. Os oes cwmni ar gael a ddewiswyd eisoes, gallwch bob amser gael sgwrs â’r cwmni hwnnw ac un neu ddau o rai eraill o’r cyfeirlyfr er mwyn cymharu gwasanaethau a chostau.
 
   retirement_income_options:
-    heading: Retirement income options
+    heading: Dewisiadau incwm ymddeol
     content:
-      - text: The retirement landscape is changing fast and it’s tricky to understand all the retirement income options available to you.
-      - text: Use our retirement income options tool to understand the key considerations and pension income products available to you.
-      - text: The retirement income options tool will be available in early 2015.
-    link_text: Explore your options
-    link_url: 'https://moneyadviceservice.org.uk'
+      - text: Yn dod yn fuan&hellip;
+      - text: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi.
+    link_text: Ystyried eich dewisiadau
+    link_url: 'https://moneyadviceservice.org.uk/cy'
 
   useful_links:
-    heading: Useful links
+    heading: Dolen ddefnyddiol
     links:
-      - text: Why save into a pension?
-        url: 'https://moneyadviceservice.org.uk'
-      - text: Checklist – things to do as retirement approaches
-        url: 'https://moneyadviceservice.org.uk'
-      - text: New rules about pensions from April 2015
-        url: 'https://moneyadviceservice.org.uk'
+      - text: Dewis cynghorydd ariannol
+        url: 'https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol'
 
   our_promise:
-    heading: Our promise to you
+    heading: Ein haddewid i chi
     key_points:
-      - text: We are set up by government so our tables and results are unbiased.
-      - text: We don’t receive any incentive or commission.
-      - text: We will not contact you or share your details.
+      - text: Cawsom ein sefydlu gan y llywodraeth i ddarparu cyngor ariannol am ddim ac yn ddiduedd.
+      - text: Rydym yn parchu’ch preifatrwydd ac ni fyddwn yn rhannu’ch manylion.
 
   search_filter:
+    subheading: Sut fath o help sydd ei angen arnoch?
+    instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
     in_person:
-      heading: Find advisers who offer advice in person
-      postcode_label: Your postcode
-      button_text: Search
-      description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
-      subheading: 'Select from the options below if you know the type of advice you need:'
+      heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
+      postcode_label: Eich cod post
+      button_text: Chwilio
+      description: Os ydych yn aelod o gynllun pensiwn preifat, yna cysylltwch â nhw, efallai y byddant yn cael eu cynghorwyr eu hunain.
 
       retirement_income_products:
         heading: Retirement income products
         tooltip: This is a tooltip that will probably be at least 300 words long.
 
+      pension_pot:
+        heading: Maint eich cronfa bensiwn/buddsoddiad
+        options:
+          - number: 'Dan £50,000'
+          - number: '£50,000 - £99,999'
+          - number: '£100,000 - £149,999'
+          - number: 'Dros £150,000'
+          - number: "Dwi ddim yn gwybod / Nid wyf am ddweud"
+
+      pension_transfer:
+        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
+        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
+
       options:
-        - title: Long term care
-          tooltip: This is a tooltip that will probably be at least 300 words long.
-        - title: Equity release
-          tooltip: This is a tooltip that will probably be at least 300 words long.
-        - title: Inheritance tax
-          tooltip: This is a tooltip that will probably be at least 300 words long.
-        - title: 'Wills & probate'
-          tooltip: This is a tooltip that will probably be at least 300 words long.
+        - title: Dewisiadau wrth dalu am ofal
+          tooltip: Os hoffech chi, neu rywun yr ydych yn ei adnabod, ddysgu rhagor am dalu am ofal preswyl neu ofal yn y cartref, yna dewiswch yr opsiwn hwn. Nid yw pob cynghorydd yn gweithio yn y maes hwn, felly os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
+        - title: Rhyddhau ecwiti
+          tooltip: Er mwyn medru rhoi cyngor i chi ar gynlluniau rhyddhau ecwiti, rhaid i gynghorwyr ariannol gael cymhwyster penodol. Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmnïau addas sydd â chynghorydd â’r cymwysterau gofynnol. Gallwch ddarllen rhagor am <a href="https://www.moneyadviceservice.org.uk/cy/articles/rhyddhau-ecwiti">ryddhau ecwiti yma</a>.
+        - title: Cynllunio ar gyfer treth etifeddiant
+          tooltip: Os hoffech chi siarad â chynghorydd ariannol a all roi cymorth i chi gyda threth etifeddiaeth, dewiswch yr opsiwn hwn.  Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
+        - title: 'Ewyllysiau a phrofiant'
+          tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
     remote:
-      online: Online
-      phone: Phone
-      heading: Find advisers who offer advice by phone or online
+      heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
+      online: Ar-lein
+      phone: Ffôn

@@ -11,6 +11,32 @@
   .js & {
     display: inline;
     font-size: 75%;
-    white-space: nowrap;
+    vertical-align: super;
+    font-weight: 700;
+    padding: $baseline-unit;
+    margin-left: -$baseline-unit;
+  }
+}
+
+.further-info__heading {
+  @include body(20, 30);
+
+  .js &:before {
+    content: '+';
+    color: $color-black;
+    margin-right: $baseline-unit;
+  }
+}
+
+.further-info__button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    text-decoration: underline;
   }
 }

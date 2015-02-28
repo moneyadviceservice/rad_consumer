@@ -1,97 +1,77 @@
-<div class="l-constrained">
-  <section class="l-landing-page__1col l-landing-page__banner">
-    <%= heading_tag(level: 1) do %>
-      <%= t('page_title') %>
-      <sup class="beta-tag"><%= t('beta_tag') %></sup>
-    <% end %>
-    <p><%= t('trust_banner.heading') %></p>
-
-    <ul class="list-benefits">
-      <% t('trust_banner.items').each do |item| %>
-        <li data-further-info>
-          <%= raw item[:text] %>
-          <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-          <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
-        </li>
-      <% end %>
-    </ul>
-  </section>
-</div>
-
 <div class="l-landing-page__background">
   <div class="l-constrained">
     <section class="l-landing-page__1col">
-      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
-      <p><%= t('find_retirement_adviser.description') %></p>
-
-      <div class="l-landing-page__union-statement">
-        <div class="l-landing-page__2col" data-further-info>
-          <%= t('workplace_scheme.question') %>
-          <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %></a>
-          <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
-        </div>
-      </div>
-
-      <div class="l-landing-page__union-statement">
-        <section class="l-landing-page__2col">
-          <%= render 'search_filter.html.erb' %>
-        </section>
-
-        <section class="l-landing-page__2col">
-        <%= heading_tag(t('find_retirement_adviser.subheading'), level: 3) %>
-        <img class="video" src="http://placehold.it/600x360" />
-        <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
-        <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
-        </section>
-      </div>
-      </section>
-    </div>
-</div>
-
-<section class="l-constrained">
-  <div class="l-landing-page__2col l-landing-page__2col--right">
-    <%= heading_tag(t('why_regulated_adviser.heading'), level: 3) %>
-
-    <ul class="list-benefits">
-      <% t('why_regulated_adviser.key_points').each do |item| %>
-        <li><%= item[:text] %></li>
+      <%= heading_tag(level: 1) do %>
+        <%= t('page_title') %>
+        <sup class="beta-tag"><%= t('beta_tag') %></sup>
       <% end %>
-    </ul>
-    <p><%= t('why_regulated_adviser.more_info_html') %></p>
-  </div>
+      <p><%= t('trust_banner.heading') %></p>
 
-  <div class="l-landing-page__2col l-landing-page__2col--padded">
-    <img class="video" src="http://placehold.it/600x360" />
-    <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
-    <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
-  </div>
-</section>
-
-<div class="l-landing-page__background">
-  <div class="l-constrained">
-    <section class="l-landing-page__2col">
-      <%= heading_tag(t('free_guidance.heading'), level: 2, class: 'heading-small') %>
-      <p><%= t('free_guidance.introduction') %></p>
-      <p><%= t('free_guidance.guide_html') %></p>
-
-      <div class="advert">
-        <%= image_tag('pensionwise_logo.png', class: 'advert__img') %>
-        <p class="advert__intro"><%= t('free_guidance.free_session_html') %></p>
-      </div>
-    </section>
-
-    <section class="l-landing-page__2col">
-      <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'heading-small') %>
-      <% t('retirement_income_options.content').each do |item| %>
-        <p><%= item[:text] %></p>
-      <% end %>
-      <a class="button button--primary l-landing-page__button is-disabled" href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
+      <ul class="list-benefits banner-list">
+        <% t('trust_banner.items').each do |item| %>
+          <li data-further-info>
+            <%= raw item[:text] %>
+            <% if item[:tooltip] %>
+              <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              <p class="further-info is-hidden" data-further-info-target><%= item[:tooltip] %></p>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
     </section>
   </div>
 </div>
 
 <div class="l-constrained">
   <section class="l-landing-page__2col">
+    <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
+    <p><%= t('find_retirement_adviser.description') %></p>
+    <%= render 'search_filter.html.erb' %>
+  </section>
+
+  <section class="l-landing-page__2col">
+    <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
+    <img class="video" src="http://placehold.it/600x360" />
+    <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
+    <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+
+    <div class="advert">
+      <%= image_tag('pensionwise_logo.png', class: 'advert__img') %>
+      <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
+      <p class="advert__intro"><%= t('pension_wise.description_html') %></p>
+    </div>
+
+    <div data-further-info>
+      <%= heading_tag(level: 3, class: 'further-info__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
+        <%= t('workplace_scheme.question') %>
+      <% end %>
+      <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
+    </div>
+  </section>
+</div>
+
+<div class="l-landing-page__background">
+  <section class="l-constrained">
+    <div class="l-landing-page__2col l-landing-page__2col--right">
+      <%= heading_tag(t('why_regulated_adviser.heading'), level: 3) %>
+
+      <ul class="list-benefits">
+        <% t('why_regulated_adviser.key_points').each do |item| %>
+          <li><%= item[:text] %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="l-landing-page__2col l-landing-page__2col--padded">
+      <img class="video" src="http://placehold.it/600x360" />
+      <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
+      <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+    </div>
+  </section>
+</div>
+
+<div class="l-constrained">
+  <section class="l-landing-page__3col">
     <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
     <ul class="unstyled-list">
       <% t('useful_links.links').each do |item| %>
@@ -100,12 +80,20 @@
     </ul>
   </section>
 
-  <section class="l-landing-page__2col">
+  <section class="l-landing-page__3col">
     <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
     <ul class="list-benefits">
       <% t('our_promise.key_points').each do |item| %>
         <li><%= item[:text] %></li>
       <% end %>
     </ul>
+  </section>
+
+  <section class="l-landing-page__3col">
+    <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
+    <% t('retirement_income_options.content').each do |item| %>
+      <p><%= raw item[:text] %></p>
+    <% end %>
+    <a class="button button--secondary l-landing-page__button is-disabled" href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
   </section>
 </div>
