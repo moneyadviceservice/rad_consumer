@@ -57,16 +57,16 @@ RSpec.feature 'Consumer searches by postcode only' do
 
   def and_i_am_not_shown_non_postcode_searchable_firms
     expect(
-      results_page.firms.map(&:name).map(&:text)
+      results_page.firms.map(&:name)
     ).to_not include(@missing.registered_name)
   end
 
   def and_the_firms_are_ordered_by_distance_in_miles_to_me
-    results_page.firms.tap do |firms|
-      expect(firms[0].name.text).to eq(@reading.firm.registered_name)
-      expect(firms[1].name.text).to eq(@leicester.firm.registered_name)
-      expect(firms[2].name.text).to eq(@glasgow.firm.registered_name)
-    end
+    expect(results_page.firms.map(&:name)).to contain_exactly(
+      @reading.firm.registered_name,
+      @leicester.firm.registered_name,
+      @glasgow.firm.registered_name
+    )
   end
 
   def when_i_submit_a_invalid_postcode_search
