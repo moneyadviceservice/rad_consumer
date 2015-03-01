@@ -22,23 +22,31 @@ RSpec.describe SearchFormSerializer do
   end
 
   describe 'the `query` element' do
-    describe 'the `nested` element' do
-      let(:element) { subject['query']['nested'] }
+    describe 'the boolean `must` elements' do
+      let(:must) { subject['query']['bool']['must'] }
 
-      it 'exposes the `path` as `advisers`' do
-        expect(element['path']).to eq('advisers')
+      it 'exposes  the `postcode_searchable` predicate' do
+        expect(must[0]['match']['postcode_searchable']).to eq(true)
       end
 
-      describe 'the `filter` element' do
-        describe 'the `geo_distance` element' do
-          let(:element) { subject['query']['nested']['filter']['geo_distance'] }
+      describe 'the `nested` element' do
+        let(:nested) { must[1]['nested'] }
 
-          it 'exposes the `distance` as `650miles`' do
-            expect(element['distance']).to eq('650miles')
-          end
+        it 'exposes the `path` as `advisers`' do
+          expect(nested['path']).to eq('advisers')
+        end
 
-          it 'exposes the `location` coordinates as lon/lat' do
-            expect(element['location']).to eq(form.coordinates.reverse)
+        describe 'the `filter` element' do
+          describe 'the `geo_distance` element' do
+            let(:geo_distance) { nested['filter']['geo_distance'] }
+
+            it 'exposes the `distance` as `650miles`' do
+              expect(geo_distance['distance']).to eq('650miles')
+            end
+
+            it 'exposes the `location` coordinates as lon/lat' do
+              expect(geo_distance['location']).to eq(form.coordinates.reverse)
+            end
           end
         end
       end
