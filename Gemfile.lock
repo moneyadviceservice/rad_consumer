@@ -15,6 +15,19 @@ GIT
       rails (>= 3.2)
       sass-rails (~> 4.0.0)
 
+GIT
+  remote: git://github.com/moneyadviceservice/mas-rad_core.git
+  revision: 5f8ff41d3d59e35e58fbcf1f11e157aed4d08d19
+  branch: 5673-pagination
+  specs:
+    mas-rad_core (0.0.9)
+      active_model_serializers
+      geocoder
+      http
+      pg
+      rails (~> 4.2.0)
+      statsd-ruby
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -99,13 +112,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.9)
-      active_model_serializers
-      geocoder
-      http
-      pg
-      rails (~> 4.2.0)
-      statsd-ruby
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -219,7 +225,7 @@ DEPENDENCIES
   faker
   geocoder
   jquery-rails
-  mas-rad_core
+  mas-rad_core!
   pg
   pry-rails
   rails (= 4.2.0)
