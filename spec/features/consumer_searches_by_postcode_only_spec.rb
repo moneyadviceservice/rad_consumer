@@ -37,6 +37,10 @@ RSpec.feature 'Consumer searches by postcode only' do
       @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616)
       @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257)
       @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082)
+
+      @missing = create(:firm, in_person_advice_methods: []) do |firm|
+        create(:adviser, firm: firm, latitude: 51.428473, longitude: -0.943616)
+      end
     end
   end
 
@@ -52,15 +56,17 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def and_i_am_not_shown_non_postcode_searchable_firms
-    # TODO
+    expect(
+      results_page.firms.map(&:name)
+    ).to_not include(@missing.registered_name)
   end
 
   def and_the_firms_are_ordered_by_distance_in_miles_to_me
-    results_page.firms.tap do |firms|
-      expect(firms[0].name.text).to eq(@reading.firm.registered_name)
-      expect(firms[1].name.text).to eq(@leicester.firm.registered_name)
-      expect(firms[2].name.text).to eq(@glasgow.firm.registered_name)
-    end
+    expect(results_page.firms.map(&:name)).to contain_exactly(
+      @reading.firm.registered_name,
+      @leicester.firm.registered_name,
+      @glasgow.firm.registered_name
+    )
   end
 
   def when_i_submit_a_invalid_postcode_search

@@ -1,3 +1,5 @@
 class FirmSection < SitePrism::Section
-  element :name, '.t-name'
+  def name
+    root_element.find('.t-name').text
+  end
 end
