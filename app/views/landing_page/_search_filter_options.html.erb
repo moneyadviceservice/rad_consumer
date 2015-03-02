@@ -7,25 +7,27 @@
     <div class="form__group-item" data-further-info>
       <%= f.check_box :checkbox, class: 'form__group-input search-filter__checkbox', data: { nested_options_trigger: '' } %>
       <%= f.label :checkbox, class: 'search-filter__option' do %>
-        <%= t('search_filter.in_person.retirement_income_products.heading') %>
-        <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
-        <p class="is-hidden further-info" data-further-info-target><%= t('search_filter.in_person.retirement_income_products.tooltip') %></p>
+        <%= t('search_filter.pension_pot.heading') %>
       <% end %>
     </div>
 
     <div class="search-filter__nested-options is-hidden" data-nested-options>
       <div class="form__group-item" data-further-info>
-        <%= f.label :checkbox, t('search_filter.pension_pot.heading'), class: 'form__label-heading' %>
-        <%= f.select :checkbox, PotSize.all, { include_blank: true }, { class: 'search-filter__inset' } %>
+        <%= f.label :checkbox, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading' %>
+        <%= f.select :checkbox, PotSize.all, { include_blank: false }, { class: 'search-filter__inset' } %>
       </div>
 
       <div class="form__group-item" data-further-info>
         <%= f.check_box :pension_transfer, class: 'form__group-input search-filter__checkbox' %>
-        <%= f.label :pension_transfer, t('search_filter.pension_transfer.heading'), class: 'search-filter__option' %>
+        <%= f.label :pension_transfer, class: 'search-filter__option' do %>
+          <%= t('search_filter.pension_pot.pension_transfer.heading') %>
+          <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
+          <p class="is-hidden further-info" data-further-info-target><%= t('search_filter.pension_pot.pension_transfer.tooltip') %></p>
+        <% end %>
       </div>
     </div>
 
-    <% t('search_filter.in_person.options').each do |item| %>
+    <% t('search_filter.options').each do |item| %>
       <div class="form__group-item" data-further-info>
         <%= f.check_box :checkbox, class: 'form__group-input search-filter__checkbox' %>
         <%= f.label :checkbox, class: 'search-filter__option' do %>
