@@ -2,7 +2,14 @@ class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :postcode, :checkbox, :coordinates, :pension_transfer
+  attr_accessor :postcode,
+    :checkbox,
+    :coordinates,
+    :pension_transfer,
+    :options_when_paying_for_care,
+    :equity_release,
+    :inheritance_tax_planning,
+    :wills_and_probate
 
   before_validation :upcase_postcode
 
