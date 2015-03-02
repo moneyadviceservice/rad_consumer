@@ -4,6 +4,10 @@
       "properties": {
         "registered_name": { "type": "string", "index": "not_analyzed" },
         "postcode_searchable": { "type": "boolean" },
+        "options_when_paying_for_care": { "type": "boolean" },
+        "equity_release": { "type": "boolean" },
+        "inheritance_tax_planning": { "type": "boolean" },
+        "wills_and_probate": { "type": "boolean" },
 
         "advisers": {
           "type": "nested",
