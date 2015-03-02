@@ -169,13 +169,17 @@
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
 
     options:
-      - title: Options when paying for care
+      options_when_paying_for_care:
+        title: Options when paying for care
         tooltip: If you, or someone you know, wants to find out more about paying for residential care or care at home, then choose this option. Not all advisers work in this field, so if you choose this option we will match you to firms that have advisers with the necessary qualifications.
-      - title: Equity release
+      equity_release:
+        title: Equity release
         tooltip: In order to be able to give you advice on equity release schemes, financial advisers must have a specific qualification. If you choose this option we will match you to firms with an adviser who has the necessary qualification. You can read more about <a href="https://www.moneyadviceservice.org.uk/en/articles/equity-release">equity release here</a>.
-      - title: Inheritance tax planning
+      inheritance_tax_planning:
+        title: Inheritance tax planning
         tooltip: If you want to speak to a financial adviser who can help you with inheritance tax, choose this option. We will match you to firms with advisers who deal with this area of financial planning.
-      - title: 'Wills &amp; probate'
+      wills_and_probate:
+        title: 'Wills &amp; probate'
         tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
 
     in_person:
@@ -183,6 +187,7 @@
       postcode_label: Enter your postcode
       button_text: Search
       description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
+
     remote:
       heading: Find advisers who offer advice by phone or online
       online: Online
