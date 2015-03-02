@@ -21,3 +21,6 @@ config/database.yml
 # bower components
 bower.json
 /vendor/assets/bower_components
+
+# node modules
+/node_modules/
