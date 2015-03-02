@@ -7,10 +7,6 @@ define(['jquery'], function($) {
       statusHidden = 'is-hidden';
 
   $nestedOptionTrigger.on('change', function() {
-    if ($nestedOptions.hasClass(statusHidden) ) {
-      $($nestedOptions).removeClass(statusHidden);
-    } else {
-      $($nestedOptions).addClass(statusHidden);
-    }
+    $nestedOptions.toggleClass(statusHidden);
   });
 });
