@@ -2,11 +2,17 @@ define(['jquery'], function($) {
 
   'use strict';
 
-  var $nestedOptionTrigger = $('[data-nested-options-trigger]'),
+  var $nestedOptionsComponent = $('[data-nested-options-component]'),
+      $nestedOptionTrigger = $('[data-nested-options-trigger]'),
       $nestedOptions = $('[data-nested-options]'),
       statusHidden = 'is-hidden';
 
-  $nestedOptionTrigger.on('change', function() {
-    $nestedOptions.toggleClass(statusHidden);
+  $nestedOptionsComponent.each(function(indexInArray, objectInArray) {
+    var $elementTrigger = $(objectInArray).find($nestedOptionTrigger),
+        $elementOptions = $(objectInArray).find($nestedOptions);
+
+    $elementTrigger.change(function() {
+      $elementOptions.toggleClass(statusHidden);
+    });
   });
 });
