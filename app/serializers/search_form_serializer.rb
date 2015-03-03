@@ -41,11 +41,10 @@ class SearchFormSerializer < ActiveModel::Serializer
   end
 
   def build_types_of_advice_filters
-    [].tap do |filters|
-      filters << { match: { 'options_when_paying_for_care': true } } if object.options_when_paying_for_care == '1'
-      filters << { match: { 'equity_release': true } } if object.equity_release == '1'
-      filters << { match: { 'inheritance_tax_planning': true } } if object.inheritance_tax_planning == '1'
-      filters << { match: { 'wills_and_probate': true } } if object.wills_and_probate == '1'
-    end
+    object.types_of_advice.map do |advice_type|
+      if object.public_send("#{advice_type}?")
+        { 'match': { advice_type => true } }
+      end
+    end.compact
   end
 end
