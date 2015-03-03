@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   scope '/:locale', locale: /en|cy/ do
     root 'landing_page#show'
 
-    post '/search', to: 'landing_page#search'
+    get '/search', to: 'landing_page#search'
   end
 end

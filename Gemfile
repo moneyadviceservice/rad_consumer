@@ -18,6 +18,7 @@ gem 'dough-ruby',
     require: 'dough',
     ref: 'cf08913'
 gem 'geocoder'
+gem 'kaminari'
 gem 'mas-rad_core'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
