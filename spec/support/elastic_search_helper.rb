@@ -4,6 +4,7 @@ module ElasticSearchHelper
     `curl -XPOST -sS http://127.0.0.1:9200/rad_test -d @elastic_search_mapping.json`
     yield
     `curl -XPOST -sS http://127.0.0.1:9200/rad_test/_refresh`
+    `sleep 3` if ENV['TRAVIS']
   end
 
   def with_elastic_search!
