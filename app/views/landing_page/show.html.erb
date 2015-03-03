@@ -26,7 +26,7 @@
   <section class="l-landing-page__2col">
     <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
     <p><%= t('find_retirement_adviser.description') %></p>
-    <%= form_for @form, url: search_path, html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+    <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
       <%= f.validation_summary %>
 
       <div class="search-filter">
