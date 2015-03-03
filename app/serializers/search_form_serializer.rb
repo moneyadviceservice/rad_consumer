@@ -25,14 +25,18 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def build_postcode_filters
     [
-      {'match': {'postcode_searchable': true }},
       {
-        'nested' => {
-          'path' => 'advisers',
-          'filter' => {
-            'geo_distance' => {
-              'distance' => '650miles',
-              'location' => object.coordinates.reverse
+        'match': {
+          'postcode_searchable': true
+        }
+      },
+      {
+        'nested': {
+          'path': 'advisers',
+          'filter': {
+            'geo_distance': {
+              'distance': '650miles',
+              'location': object.coordinates.reverse
             }
           }
         }
