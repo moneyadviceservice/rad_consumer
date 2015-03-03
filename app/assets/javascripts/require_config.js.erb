@@ -1,6 +1,7 @@
 //= depend_on_asset jquery/dist/jquery
 //= depend_on_asset modules/FurtherInfo
 //= depend_on_asset modules/SearchFilter
+//= depend_on_asset modules/NestedOptions
 
 <%
   def requirejs_path(asset)
@@ -11,7 +12,8 @@
     paths: {
       jquery: requirejs_path('jquery/dist/jquery'),
       FurtherInfo: requirejs_path('modules/FurtherInfo'),
-      SearchFilter: requirejs_path('modules/SearchFilter')
+      SearchFilter: requirejs_path('modules/SearchFilter'),
+      NestedOptions: requirejs_path('modules/NestedOptions')
     }
   }
 %>

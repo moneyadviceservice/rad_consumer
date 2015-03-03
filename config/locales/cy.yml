@@ -161,38 +161,29 @@
   search_filter:
     subheading: Sut fath o help sydd ei angen arnoch?
     instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+
+    pension_pot:
+      heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
+      pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
+      pension_transfer:
+        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
+        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
+
+    options:
+      - title: Dewisiadau wrth dalu am ofal
+        tooltip: Os hoffech chi, neu rywun yr ydych yn ei adnabod, ddysgu rhagor am dalu am ofal preswyl neu ofal yn y cartref, yna dewiswch yr opsiwn hwn. Nid yw pob cynghorydd yn gweithio yn y maes hwn, felly os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
+      - title: Rhyddhau ecwiti
+        tooltip: Er mwyn medru rhoi cyngor i chi ar gynlluniau rhyddhau ecwiti, rhaid i gynghorwyr ariannol gael cymhwyster penodol. Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmnïau addas sydd â chynghorydd â’r cymwysterau gofynnol. Gallwch ddarllen rhagor am <a href="https://www.moneyadviceservice.org.uk/cy/articles/rhyddhau-ecwiti">ryddhau ecwiti yma</a>.
+      - title: Cynllunio ar gyfer treth etifeddiant
+        tooltip: Os hoffech chi siarad â chynghorydd ariannol a all roi cymorth i chi gyda threth etifeddiaeth, dewiswch yr opsiwn hwn.  Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
+      - title: 'Ewyllysiau a phrofiant'
+        tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
+
     in_person:
       heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
       postcode_label: Eich cod post
       button_text: Chwilio
       description: Os ydych yn aelod o gynllun pensiwn preifat, yna cysylltwch â nhw, efallai y byddant yn cael eu cynghorwyr eu hunain.
-
-      retirement_income_products:
-        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
-        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
-
-      pension_pot:
-        heading: Maint eich cronfa bensiwn/buddsoddiad
-        options:
-          - number: 'Dan £50,000'
-          - number: '£50,000 - £99,999'
-          - number: '£100,000 - £149,999'
-          - number: 'Dros £150,000'
-          - number: "Dwi ddim yn gwybod / Nid wyf am ddweud"
-
-      pension_transfer:
-        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
-        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
-
-      options:
-        - title: Dewisiadau wrth dalu am ofal
-          tooltip: Os hoffech chi, neu rywun yr ydych yn ei adnabod, ddysgu rhagor am dalu am ofal preswyl neu ofal yn y cartref, yna dewiswch yr opsiwn hwn. Nid yw pob cynghorydd yn gweithio yn y maes hwn, felly os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
-        - title: Rhyddhau ecwiti
-          tooltip: Er mwyn medru rhoi cyngor i chi ar gynlluniau rhyddhau ecwiti, rhaid i gynghorwyr ariannol gael cymhwyster penodol. Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmnïau addas sydd â chynghorydd â’r cymwysterau gofynnol. Gallwch ddarllen rhagor am <a href="https://www.moneyadviceservice.org.uk/cy/articles/rhyddhau-ecwiti">ryddhau ecwiti yma</a>.
-        - title: Cynllunio ar gyfer treth etifeddiant
-          tooltip: Os hoffech chi siarad â chynghorydd ariannol a all roi cymorth i chi gyda threth etifeddiaeth, dewiswch yr opsiwn hwn.  Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
-        - title: 'Ewyllysiau a phrofiant'
-          tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
     remote:
       heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
       online: Ar-lein

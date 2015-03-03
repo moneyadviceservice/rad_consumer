@@ -1,5 +1,5 @@
 //= require require_config.js.erb
 
 require(['jquery'], function ($) {
-  require(['FurtherInfo', 'SearchFilter']);
+  require(['FurtherInfo', 'SearchFilter', 'NestedOptions']);
 });

@@ -61,8 +61,12 @@
 
 .search-filter__option {
   @include body(16, 18);
-  padding-left: 24px;
-  display: block;
+  display: inline;
+}
+
+.search-filter__nested-options {
+  margin-bottom: $baseline-unit*6;
+  margin-left: $baseline-unit*7;
 }
 
 .search-filter__button {
@@ -83,9 +87,7 @@
 }
 
 .search-filter__checkbox {
-  margin-top: 7px;
   margin-right: 10px;
-  float: left;
 }
 
 .search-filter__field[type="text"] {
