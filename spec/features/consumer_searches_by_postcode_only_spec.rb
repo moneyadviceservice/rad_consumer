@@ -34,6 +34,8 @@ RSpec.feature 'Consumer searches by postcode only' do
       when_i_search_with_a_reading_postcode
       then_i_see_ten_results
       and_i_see_i_am_viewing_firms_one_to_ten_of_twenty_one
+      when_i_click_next
+      then_i_see_i_am_viewing_firms_eleven_to_twenty_of_twenty_one
     end
   end
 
@@ -53,9 +55,15 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def and_i_see_i_am_viewing_firms_one_to_ten_of_twenty_one
-    pending 'WIP'
-
     expect(results_page).to be_showing_firms(1, to: 10, of: 21)
+  end
+
+  def when_i_click_next
+    results_page.next_page
+  end
+
+  def then_i_see_i_am_viewing_firms_eleven_to_twenty_of_twenty_one
+    expect(results_page).to be_showing_firms(11, to: 20, of: 21)
   end
 
   def and_firms_with_advisers_covering_my_postcode_were_previously_indexed

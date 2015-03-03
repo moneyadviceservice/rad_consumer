@@ -1,7 +1,7 @@
 <h1>Search Results</h1>
 
 <div>
-  Showing <span class="t-first-record"></span> to <span class="t-last-record"></span> of <span class="t-total-records"></span>
+  Showing <span class="t-first-record"><%= @result.first_record %></span> to <span class="t-last-record"><%= @result.last_record %></span> of <span class="t-total-records"><%= @result.total_records %></span>
 </div>
 
 <ol>
@@ -11,3 +11,5 @@
     </li>
   <% end %>
 </ol>
+
+<%= paginate(@result) %>

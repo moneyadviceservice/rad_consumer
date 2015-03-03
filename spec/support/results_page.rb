@@ -10,7 +10,23 @@ class ResultsPage < SitePrism::Page
   element :last_record, '.t-last-record'
   element :total_records, '.t-total-records'
 
+  def next_page
+    first("a[rel='next']").click
+  end
+
   def showing_firms?(first, to:, of:)
-    first_record.text == first && last_record.text == to && total_records.text == of
+    first?(first) && last?(to) && total?(of)
+  end
+
+  def first?(n)
+    first_record.text == n.to_s
+  end
+
+  def last?(n)
+    last_record.text == n.to_s
+  end
+
+  def total?(n)
+    total_records.text == n.to_s
   end
 end
