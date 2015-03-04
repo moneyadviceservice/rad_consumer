@@ -1,3 +1,5 @@
+require_relative 'in_person_section'
+
 class LandingPage < SitePrism::Page
   set_url '/en'
   set_url_matcher %r{/(en|cy)}
