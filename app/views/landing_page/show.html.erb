@@ -47,7 +47,7 @@
                 <p class="search-filter__description"><%= t('search_filter.in_person.description') %></p>
               </div>
 
-              <%= render partial: 'search_filter_options', locals: { f: f } %>
+              <%= render partial: 'landing_page/search_filter_options', locals: { f: f } %>
             </div>
           <% end %>
         </section>
@@ -75,10 +75,11 @@
                 <% end %>
               </div>
 
-              <%= render partial: 'search_filter_options', locals: { f: f } %>
+              <%= render partial: 'landing_page/search_filter_options', locals: { f: f } %>
             </div>
           <% end %>
         </section>
+
       </div>
   </section>
 
@@ -94,12 +95,12 @@
       <p class="advert__intro"><%= t('pension_wise.description_html') %></p>
     </div>
 
-    <div data-further-info>
+    <section data-further-info>
       <%= heading_tag(level: 3, class: 'further-info__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
         <%= t('workplace_scheme.question') %>
       <% end %>
       <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
-    </div>
+    </section>
   </section>
 </div>
 
