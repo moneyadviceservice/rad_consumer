@@ -29,7 +29,7 @@
 
       <div class="search-filter">
         <section class="t-in-person" data-search-filter>
-          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
             <%= f.validation_summary %>
             <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first', data: { search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
@@ -51,8 +51,9 @@
             </div>
           <% end %>
         </section>
-        <section class="" data-search-filter>
-          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+
+        <section data-search-filter>
+          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
             <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon" data-search-filter-icon></span>
               <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>

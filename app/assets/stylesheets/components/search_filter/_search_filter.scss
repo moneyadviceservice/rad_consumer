@@ -8,6 +8,11 @@
   margin: $baseline-unit*4 $baseline-unit*4 0 $baseline-unit*4;
 }
 
+.search-filter__form {
+  // this is needed to override the required Dough class 'form' that applies a margin to forms
+  margin-top: 0;
+}
+
 .search-filter__heading {
   @include body(16, 18);
   color: $search-filter-heading-color;
