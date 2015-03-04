@@ -2,6 +2,10 @@
   search:
     errors:
       geocode_failure: is incorrect
+  activemodel:
+    attributes:
+      search_form:
+        postcode: Postcode
 
   title_tag: 'Retirement Adviser Directory | Find a regulated financial adviser'
   meta_tag: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
