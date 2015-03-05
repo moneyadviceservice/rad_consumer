@@ -4,7 +4,7 @@ class RemoteSearchController < ApplicationController
 
     @result = FirmRepository.new.search(@remote_form.to_query, page: page)
 
-    render 'landing_page/search'
+    render 'search/index'
   end
 
   private

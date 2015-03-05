@@ -2,7 +2,8 @@ class RemoteSearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
-  attr_accessor :online_checkbox, :by_phone_checkbox,
+  attr_accessor :online_checkbox,
+    :by_phone_checkbox,
     :pension_transfer,
     :checkbox,
     *SearchForm::TYPES_OF_ADVICE
