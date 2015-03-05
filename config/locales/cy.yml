@@ -8,8 +8,9 @@
         postcode: Cod post
 
   landing_page:
-    title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
-    meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+    show:
+      title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
+      meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
 
   skip_links:
     to_main: Skip to main content
@@ -199,5 +200,6 @@
       phone: Ffôn
 
   search_results:
-    title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
-    meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+    index:
+      title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
+      meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.

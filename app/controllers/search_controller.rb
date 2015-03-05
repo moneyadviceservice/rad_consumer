@@ -1,8 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @page_title = t('search_results.title_tag')
-    @meta_tag_description = t('search_results.meta_tag_description')
-
     @form = SearchForm.new(params[:search_form])
 
     if @form.valid?
