@@ -13,6 +13,8 @@ class SearchForm
     :checkbox,
     :coordinates,
     :pension_transfer,
+    :pension_pot,
+    :pension_pot_size,
     *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode
@@ -29,6 +31,12 @@ class SearchForm
 
   def types_of_advice
     TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
+  end
+
+  def pension_pot_sizes
+    InvestmentSize.all.map do |investment_size|
+      [investment_size.localized_name, investment_size.id]
+    end << [I18n.t('search_filter.pension_pot.include_all_option.'), 0]
   end
 
   private
