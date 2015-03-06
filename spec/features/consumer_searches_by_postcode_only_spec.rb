@@ -96,11 +96,11 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
   def and_the_firms_are_ordered_by_distance_in_miles_to_me
-    expect(results_page.firms.map(&:name)).to contain_exactly(
+    expect(results_page.firms.map(&:name)).to eql([
       @reading.firm.registered_name,
       @leicester.firm.registered_name,
       @glasgow.firm.registered_name
-    )
+    ])
   end
 
   def when_i_submit_a_invalid_postcode_search
