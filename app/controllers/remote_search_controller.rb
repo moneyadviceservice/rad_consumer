@@ -6,10 +6,4 @@ class RemoteSearchController < ApplicationController
 
     render 'search/index'
   end
-
-  private
-
-  def page
-    params[:page].try(:to_i) || 1
-  end
 end

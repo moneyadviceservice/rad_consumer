@@ -9,10 +9,4 @@ class SearchController < ApplicationController
       render 'landing_page/show'
     end
   end
-
-  private
-
-  def page
-    params[:page].try(:to_i) || 1
-  end
 end
