@@ -36,7 +36,7 @@ class SearchForm
   def pension_pot_sizes
     InvestmentSize.all.map do |investment_size|
       [investment_size.localized_name, investment_size.id]
-    end << [I18n.t('search_filter.pension_pot.include_all_option.'), 0]
+    end << [I18n.t('search_filter.pension_pot.any_size_option'), 0]
   end
 
   private
