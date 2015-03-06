@@ -2,7 +2,7 @@
   <section class="l-results__main">
     <%= heading_tag( t('search.page_title'), level: 1) %>
 
-    <p>Showing <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> to <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> of <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> firms</p>
+    <p><%= t('search.summary.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary.firms') %></p>
 
     <%= render 'pagination' %>
 
