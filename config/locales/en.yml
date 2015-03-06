@@ -198,13 +198,12 @@
       online: Online
       phone: Phone
 
-  search_results:
+  search:
     index:
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
     page_title: Search results
-
     education_one:
       heading: How were these results decided?
       content:
