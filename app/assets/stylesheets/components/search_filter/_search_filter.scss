@@ -82,11 +82,6 @@
   vertical-align: top;
 }
 
-.search-filter__description {
-  @include body(14, 18);
-  margin-bottom: 0;
-}
-
 .search-filter__checkbox-container {
   margin-bottom: $baseline-unit*4;
 }

@@ -192,7 +192,6 @@
       heading: Find financial advisers who offer face to face advice
       postcode_label: Enter your postcode
       button_text: Search
-      description: If you are a member of a private pension scheme then contact them, they might have their own advisers.
 
     remote:
       heading: Find advisers who offer advice by phone or online
