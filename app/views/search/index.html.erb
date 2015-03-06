@@ -4,17 +4,15 @@
 
     <p><%= t('search.summary.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary.firms') %></p>
 
-    <%= render 'pagination' %>
-
     <ol>
       <% @result.firms.each do |firm| %>
         <li class="t-firm">
-        <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
+          <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
         </li>
       <% end %>
     </ol>
 
-    <%= render 'pagination' %>
+    <%= paginate @result %>
   </section>
 
   <div class="l-results__side">

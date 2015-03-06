@@ -7,6 +7,13 @@
       search_form:
         postcode: Postcode
 
+  pagination:
+    previous: 'Prev'
+    next: 'Next'
+    truncate: "&hellip;"
+    page: Page
+    of: of
+
   landing_page:
     show:
       title_tag: 'Retirement Adviser Directory | Find a regulated financial adviser'
