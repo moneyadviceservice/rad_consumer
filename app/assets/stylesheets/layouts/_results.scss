@@ -1,0 +1,27 @@
+.l-results__main {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(8);
+  }
+}
+
+.l-results__emphasised {
+  font-weight: 700;
+}
+
+.l-results__filter {
+  // TEMP
+  height: 500px;
+  background-color: #EDF0F0;
+  margin-top: 6rem;
+}
+
+.l-results__side {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(4);
+    float: right;
+  }
+}

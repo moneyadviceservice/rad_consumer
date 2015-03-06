@@ -1,15 +1,48 @@
-<h1>Search Results</h1>
+<div class="l-constrained">
+  <section class="l-results__main">
+    <%= heading_tag( t('search_results.page_title'), level: 1) %>
 
-<div>
-  Showing <span class="t-first-record"><%= @result.first_record %></span> to <span class="t-last-record"><%= @result.last_record %></span> of <span class="t-total-records"><%= @result.total_records %></span>
+    <p>Showing <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> to <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> of <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> firms</p>
+
+    <%= render 'pagination' %>
+
+    <ol>
+      <% @result.firms.each do |firm| %>
+        <li class="t-firm">
+        <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
+        </li>
+      <% end %>
+    </ol>
+
+    <%= render 'pagination' %>
+  </section>
+
+  <div class="l-results__side">
+    <section class="l-results__filter">
+    </section>
+
+    <section class="education" data-further-info>
+      <%= heading_tag(level: 3, class: 'education__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
+        <span class="education__icon" data-further-info-icon></span><%= t('search_results.education_one.heading') %>
+      <% end %>
+
+      <div class="education__content is-hidden" data-further-info-target>
+        <% t('search_results.education_one.content').each do |item| %>
+          <p><%= item[:text] %></p>
+        <% end %>
+      </div>
+    </section>
+
+    <section class="education" data-further-info>
+      <%= heading_tag(level: 3, class: 'education__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
+        <span class="education__icon" data-further-info-icon></span><%= t('search_results.education_two.heading') %>
+      <% end %>
+
+      <div class="education__content is-hidden" data-further-info-target>
+        <% t('search_results.education_two.content').each do |item| %>
+          <p><%= item[:text] %></p>
+        <% end %>
+      </div>
+    </section>
+  </div>
 </div>
-
-<ol>
-  <% @result.firms.each do |firm| %>
-    <li class="t-firm">
-      <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
-    </li>
-  <% end %>
-</ol>
-
-<%= paginate(@result) %>
