@@ -8,6 +8,8 @@
         "equity_release": { "type": "boolean" },
         "inheritance_tax_planning": { "type": "boolean" },
         "wills_and_probate": { "type": "boolean" },
+        "other_advice_methods": { "type": "integer" },
+        "investment_sizes": { "type": "integer" },
 
         "advisers": {
           "type": "nested",
