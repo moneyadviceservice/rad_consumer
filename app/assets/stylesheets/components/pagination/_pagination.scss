@@ -1,0 +1,14 @@
+.pagination {
+  margin: $pagination-margin 0;
+}
+
+.pagination__button {
+  color: $pagination-text-color;
+}
+
+.pagination__icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  width: 8px;
+}

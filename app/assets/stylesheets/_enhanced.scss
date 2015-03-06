@@ -5,6 +5,8 @@
 
 @import 'settings';
 
+@import 'temp_overrides';
+
 @import 'base/type';
 
 @import 'layouts/header';
@@ -21,5 +23,6 @@
 @import 'components/education/all';
 @import 'components/further_info/all';
 @import 'components/locale';
+@import 'components/pagination/all';
 @import 'components/search_filter/all';
 @import 'components/video';
