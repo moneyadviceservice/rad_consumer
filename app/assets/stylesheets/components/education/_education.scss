@@ -1,0 +1,18 @@
+.education {
+  padding-top: $baseline-unit*4;
+}
+
+.education__heading {
+  @include body(18, 24);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.education__content {
+  padding-left: 20px;
+}
+
+.education__icon {
+  @include inline-block();
+  width: 20px;
+}
