@@ -19,24 +19,24 @@
     <section class="l-results__filter">
     </section>
 
-    <section class="education" data-further-info>
-      <%= heading_tag(level: 3, class: 'education__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
-        <span class="education__icon" data-further-info-icon></span><%= t('search.education_one.heading') %>
+    <section class="education">
+      <%= heading_tag(level: 3, class: 'education__heading') do %>
+        <span class="education__icon"></span><%= t('search.education_one.heading') %>
       <% end %>
 
-      <div class="education__content is-hidden" data-further-info-target>
+      <div class="education__content is-hidden">
         <% t('search.education_one.content').each do |item| %>
           <p><%= item[:text] %></p>
         <% end %>
       </div>
     </section>
 
-    <section class="education" data-further-info>
-      <%= heading_tag(level: 3, class: 'education__heading', data: { further_info_trigger: '', further_info_trigger_alt: '' }) do %>
-        <span class="education__icon" data-further-info-icon></span><%= t('search.education_two.heading') %>
+    <section class="education">
+      <%= heading_tag(level: 3, class: 'education__heading') do %>
+        <span class="education__icon"></span><%= t('search.education_two.heading') %>
       <% end %>
 
-      <div class="education__content is-hidden" data-further-info-target>
+      <div class="education__content is-hidden">
         <% t('search.education_two.content').each do |item| %>
           <p><%= item[:text] %></p>
         <% end %>
