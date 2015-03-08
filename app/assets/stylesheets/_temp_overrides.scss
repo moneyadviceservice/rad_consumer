@@ -1,0 +1,9 @@
+// these two can be removed then PR #939 is merged into frontend and we point RADC to the new stylesheet hash.
+
+.button--compact {
+  min-width: 80px;
+}
+
+.pagination__counter {
+  margin: 0 $baseline-unit;
+}

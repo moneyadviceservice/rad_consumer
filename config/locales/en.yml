@@ -7,6 +7,13 @@
       search_form:
         postcode: Postcode
 
+  pagination:
+    previous: 'Prev'
+    next: 'Next'
+    truncate: "&hellip;"
+    page: Page
+    of: of
+
   landing_page:
     show:
       title_tag: 'Retirement Adviser Directory | Find a regulated financial adviser'
@@ -198,21 +205,28 @@
       online: Online
       phone: Phone
 
-  search_results:
+  search:
     index:
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
     page_title: Search results
+    summary_of_results:
+      showing: Showing
+      to: to
+      of: of
+      firms: firms
 
-    education_one:
+    education_module_one:
       heading: How were these results decided?
       content:
         - text: Our Retirement Adviser Directory matches you with firms based on the information you give us.
         - text: If you told us that you need a certain type of advice, only firms that offer it will be shown.
         - text: If you’ve entered a postcode, only firms willing to meet you in person will be shown.
-    education_two:
-      heading: Receiving financial advice remotely
+
+    education_module_two:
+      heading: Remote financial advice
       content:
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
-        - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face to face adviser. Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.
+        - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face to face adviser.
+        - text: Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.

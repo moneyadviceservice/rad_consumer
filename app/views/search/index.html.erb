@@ -1,15 +1,25 @@
-<h1>Search Results</h1>
+<div class="l-constrained">
+  <section class="l-results__main">
+    <%= heading_tag( t('search.page_title'), level: 1) %>
 
-<div>
-  Showing <span class="t-first-record"><%= @result.first_record %></span> to <span class="t-last-record"><%= @result.last_record %></span> of <span class="t-total-records"><%= @result.total_records %></span>
+    <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
+
+    <ol>
+      <% @result.firms.each do |firm| %>
+        <li class="t-firm">
+          <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
+        </li>
+      <% end %>
+    </ol>
+
+    <%= paginate @result %>
+  </section>
+
+  <div class="l-results__side">
+    <section class="l-results__filter">
+    </section>
+
+    <%= render partial: 'education_module', locals: { key: 'search.education_module_one' } %>
+    <%= render partial: 'education_module', locals: { key: 'search.education_module_two' } %>
+  </div>
 </div>
-
-<ol>
-  <% @result.firms.each do |firm| %>
-    <li class="t-firm">
-      <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
-    </li>
-  <% end %>
-</ol>
-
-<%= paginate(@result) %>
