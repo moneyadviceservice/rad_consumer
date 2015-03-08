@@ -2,7 +2,7 @@
   <section class="l-results__main">
     <%= heading_tag( t('search.page_title'), level: 1) %>
 
-    <p><%= t('search.summary.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary.firms') %></p>
+    <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
     <ol>
       <% @result.firms.each do |firm| %>
@@ -19,28 +19,7 @@
     <section class="l-results__filter">
     </section>
 
-    <section class="education">
-      <%= heading_tag(level: 3, class: 'education__heading') do %>
-        <span class="education__icon"></span><%= t('search.education_one.heading') %>
-      <% end %>
-
-      <div class="education__content">
-        <% t('search.education_one.content').each do |item| %>
-          <p><%= item[:text] %></p>
-        <% end %>
-      </div>
-    </section>
-
-    <section class="education">
-      <%= heading_tag(level: 3, class: 'education__heading') do %>
-        <span class="education__icon"></span><%= t('search.education_two.heading') %>
-      <% end %>
-
-      <div class="education__content">
-        <% t('search.education_two.content').each do |item| %>
-          <p><%= item[:text] %></p>
-        <% end %>
-      </div>
-    </section>
+    <%= render partial: 'education_module', locals: { key: 'search.education_module_one' } %>
+    <%= render partial: 'education_module', locals: { key: 'search.education_module_two' } %>
   </div>
 </div>

@@ -211,18 +211,20 @@
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
     page_title: Search results
-    summary:
+    summary_of_results:
       showing: Showing
       to: to
       of: of
       firms: firms
-    education_one:
+
+    education_module_one:
       heading: How were these results decided?
       content:
         - text: Our Retirement Adviser Directory matches you with firms based on the information you give us.
         - text: If you told us that you need a certain type of advice, only firms that offer it will be shown.
         - text: If you’ve entered a postcode, only firms willing to meet you in person will be shown.
-    education_two:
+
+    education_module_two:
       heading: Remote financial advice
       content:
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
