@@ -1,0 +1,14 @@
+.keyword {
+  float: left;
+  margin-top: $baseline-unit*2;
+  margin-right: $baseline-unit*2;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.keyword__text {
+  padding: $baseline-unit;
+  background: $background-color;
+}

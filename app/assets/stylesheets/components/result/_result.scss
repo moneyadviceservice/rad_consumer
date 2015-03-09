@@ -70,27 +70,12 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: red;
+  background: #f3f3f3;
   vertical-align: middle;
 }
 
 .result__list {
 
-}
-
-.result__keyword {
-  float: left;
-  margin: $baseline-unit;
-
-}
-
-.result__keyword-container {
-
-}
-
-.result__keyword-text {
-  padding: $baseline-unit;
-  background: $background-color;
 }
 
 .result__accreditations {
@@ -106,4 +91,9 @@
 
 .result__logos {
   @include column(6);
+}
+
+.result__keyword {
+  @include column(12);
+  margin-bottom: $baseline-unit*2;
 }

@@ -218,6 +218,18 @@
       of: of
       firms: firms
 
+    keywords:
+      - title: Free initial meeting
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      - title: 'Minimum fee: £1,000'
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      - title: 'Minimum pot size/savings: £50,000'
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+
+    accreditations:
+      heading: This firm has advisers with the following qualification/accreditations
+      tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+
     education_module_one:
       heading: How were these results decided?
       content:

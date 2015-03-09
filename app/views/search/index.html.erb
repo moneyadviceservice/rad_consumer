@@ -63,38 +63,22 @@
             </ul>
           </div>
 
-          <div class="result__keyword-container">
-            <div class="result__keyword" data-further-info>
-              <span class="result__keyword-text">Free initial meeting
-                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-              </span>
-              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
-            </div>
-          </div>
-
-          <div class="result__keyword-container">
-            <div class="result__keyword" data-further-info>
-              <span class="result__keyword-text">Minimum fee: £1,000
-                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-              </span>
-              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
-            </div>
-          </div>
-
-          <div class="result__keyword-container">
-            <div class="result__keyword" data-further-info>
-              <span class="result__keyword-text">Minimum pot size/savings: £50,000
-                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-              </span>
-              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
-            </div>
+          <div class="result__keyword">
+            <% t('search.keywords').each do |item| %>
+              <div class="keyword" data-further-info>
+                <span class="keyword__text"><%= item[:title] %>
+                  <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+                </span>
+                <p class="further-info is-hidden" data-further-info-target><%= item[:tooltip] %></p>
+              </div>
+            <% end %>
           </div>
 
           <div class="result__accreditations" data-further-info>
             <div class="result__qualifications">
-              This firm has advisers with the following qualification/accreditations
+              <%= t('search.accreditations.heading') %>
               <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
+              <p class="further-info is-hidden" data-further-info-target><%= t('search.accreditations.tooltip') %></p>
             </div>
 
             <div class="result__logos"></div>
