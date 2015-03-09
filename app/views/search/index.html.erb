@@ -99,15 +99,13 @@
 
             <div class="result__logos"></div>
           </div>
-
-          <!-- advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>) -->
         </li>
       <% end %>
     </ol>
 
     <%= paginate @result %>
 
-    <div class="l-back-to-top back-to-top">
+    <div class="l-results__back-to-top back-to-top">
       <%= link_to '#top', class: 'back-to-top__link' do  %>
         <%= t('search.back_to_top') %>
         <svg xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">

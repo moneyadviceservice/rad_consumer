@@ -41,7 +41,7 @@
   }
 }
 
-.l-back-to-top {
+.l-results__back-to-top {
   @include column(12);
 
   @include respond-to ($mq-m) {
