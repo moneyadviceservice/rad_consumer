@@ -2,9 +2,9 @@
   <% unless current_page.last? %>
     <%= link_to(url, rel: 'next', class: 'pagination__button button button--compact') do %>
     <span class="button--compact__text"><%= t('pagination.next').html_safe %></span>
-      <span class="pagination__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="680.1 0 161.8 278.5" enable-background="new 680.1 0 161.8 278.5"><path fill="#010202" d="M702.1 278.5l-22-22 117.3-117.3L680.1 22l22-22 139.8 139.8-139.8 138.7z"/></svg>
-      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="pagination__icon">
+        <use xlink:href="#icon-pagination-next"></use>
+      </svg>
     <% end %>
   <% end %>
 </span>
