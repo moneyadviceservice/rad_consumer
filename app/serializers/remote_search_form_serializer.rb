@@ -22,10 +22,6 @@ class RemoteSearchFormSerializer < ActiveModel::Serializer
   private
 
   def remote_advice_method_ids
-    methods = []
-    methods << 'Advice online (e.g. by video call / conference / email)' if object.online_checkbox == '1'
-    methods << 'Advice by telephone' if object.by_phone_checkbox == '1'
-
-    OtherAdviceMethod.where("name in (?)", methods).ids
+    object.advice_methods.select(&:present?)
   end
 end

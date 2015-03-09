@@ -60,16 +60,17 @@
 
             <div class="is-hidden" data-search-filter-target>
               <div class="search-filter__section form__group form__group--inline">
-                <%= f.form_row(:postcode) do %>
-                  <%= f.errors_for :postcode %>
-                  <div class="form__group-item search-filter__checkbox-container">
-                    <%= f.check_box :by_phone_checkbox, class: 'form__group-input' %>
-                    <%= f.label :by_phone_checkbox, t('remote.phone') %>
-                  </div>
-                  <div class="form__group-item search-filter__checkbox-container">
-                    <%= f.check_box :online_checkbox, class: 'form__group-input' %>
-                    <%= f.label :online_checkbox, t('remote.online') %>
-                  </div>
+                <%= f.form_row(:advice_methods) do %>
+                  <%= f.errors_for :advice_methods %>
+                  <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
+                    <div class="form__group-item search-filter__checkbox-container">
+                      <%= advice_method.check_box class: 'form__group-input' %>
+                      <%= advice_method.label do %>
+                        <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
+                      <% end %>
+                    </div>
+                  <% end %>
+
                   <button class="button button--primary search-filter__button"><%= t('search_filter.in_person.button_text') %></button>
                 <% end %>
               </div>
