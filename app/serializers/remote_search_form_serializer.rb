@@ -18,10 +18,4 @@ class RemoteSearchFormSerializer < ActiveModel::Serializer
       }
     }
   end
-
-  private
-
-  def remote_advice_method_ids
-    object.advice_methods.select(&:present?)
-  end
 end
