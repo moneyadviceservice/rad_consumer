@@ -5,20 +5,38 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def sort
     {
-      '_geo_distance' => {
-        'advisers.location' => object.coordinates.reverse,
-        'order' => 'asc',
-        'unit' => 'miles'
+      '_script': {
+        'script': types_of_advice_sorting_expression,
+        'type': 'number',
+        'order': 'desc'
+      },
+      '_geo_distance': {
+        'advisers.location': object.coordinates.reverse,
+        'order': 'asc',
+        'unit': 'miles'
       }
-    }
+    }.tap do |expression|
+      expression.delete(:_script) unless types_of_advice?
+    end
   end
 
   def query
     {
-      'bool': {
-        'must': (build_postcode_filters + build_types_of_advice_filters)
+      'filtered': {
+        'filter': {
+          'script': {
+            'script': types_of_advice_filter_expression
+          }
+        },
+        'query': {
+          'bool': {
+            'must': build_postcode_filters,
+          }
+        }
       }
-    }
+    }.tap do |expression|
+      expression[:filtered].delete(:filter) unless types_of_advice?
+    end
   end
 
   private
@@ -44,11 +62,19 @@ class SearchFormSerializer < ActiveModel::Serializer
     ]
   end
 
-  def build_types_of_advice_filters
-    object.types_of_advice.map do |advice_type|
-      if object.public_send("#{advice_type}?")
-        { 'match': { advice_type => true } }
-      end
-    end.compact
+  def types_of_advice?
+    object.types_of_advice.present?
+  end
+
+  def types_of_advice_filter_expression
+    chosen_types_of_advice_fields.map { |field| "#{field} > 0" }.join(' && ')
+  end
+
+  def types_of_advice_sorting_expression
+    chosen_types_of_advice_fields.join(' + ')
+  end
+
+  def chosen_types_of_advice_fields
+    object.types_of_advice.map { |type| "doc['#{type}'].value" }
   end
 end

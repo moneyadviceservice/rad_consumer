@@ -1,8 +1,6 @@
 RSpec.feature 'Consumer searches by postcode with types of advice filters' do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
-  let(:latitude) { rand(51.428473..55.856191) }
-  let(:longitude) { rand(-4.247082..-0.943616) }
 
   scenario 'Types of advice search' do
     with_elastic_search! do
@@ -10,6 +8,7 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
       and_firms_that_provide_various_types_of_advice_were_previously_indexed
       when_i_submit_a_valid_postcode_search_with_selected_types_of_advice_filters
       then_i_am_shown_firms_that_provide_the_selected_types_of_advice
+      and_they_are_ordered_by_business_split_and_location
     end
   end
 
@@ -19,11 +18,21 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
 
   def and_firms_that_provide_various_types_of_advice_were_previously_indexed
     with_fresh_index! do
-      @equity_and_wills_firm = create(:firm_with_no_business_split, equity_release_percent: 50, wills_and_probate_percent: 50)
-      create_list(:adviser, 3, firm: @equity_and_wills_firm, latitude: latitude, longitude: longitude)
+      @first = create(:firm_with_no_business_split, equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50) do |f|
+        @glasgow = create(:adviser, firm: f, latitude: 55.856191, longitude: -4.247082)
+      end
 
-      @pension_and_other_firm = create(:firm_with_no_business_split, pension_transfer_percent: 50, other_percent: 50)
-      create_list(:adviser, 3, firm: @pension_and_other_firm, latitude: latitude, longitude: longitude)
+      @second = create(:firm_with_no_business_split, equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51) do |f|
+        @leicester = create(:adviser, firm: f, latitude: 52.633013, longitude: -1.131257)
+      end
+
+      create(:firm_with_no_business_split, equity_release_percent: 49, other_percent: 51) do |f|
+        create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
+      end
+
+      create(:firm_with_no_business_split, pension_transfer_percent: 100) do |f|
+        create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
+      end
     end
   end
 
@@ -38,7 +47,12 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
 
   def then_i_am_shown_firms_that_provide_the_selected_types_of_advice
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms count: 1
-    expect(results_page.firms.first.name).to include(@equity_and_wills_firm.registered_name)
+    expect(results_page).to have_firms(count: 2)
+  end
+
+  def and_they_are_ordered_by_business_split_and_location
+    ordered_results = [@first, @second].map(&:registered_name)
+
+    expect(results_page.firms.map(&:name)).to eql(ordered_results)
   end
 end
