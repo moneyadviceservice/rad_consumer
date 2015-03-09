@@ -1,0 +1,12 @@
+.back-to-top {
+  text-align: right;
+}
+
+.back-to-top__icon {
+  position: relative;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  margin-left: $baseline-unit*2;
+  fill: $back-to-top-icon-color;
+}

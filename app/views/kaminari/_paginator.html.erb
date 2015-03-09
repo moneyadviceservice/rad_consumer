@@ -1,5 +1,5 @@
 <%= paginator.render do -%>
-  <nav class="pagination">
+  <nav class="l-results__pagination">
     <%= prev_page_tag unless current_page.first? %>
     <div class="pagination__counter">
       <%= t('pagination.page') %> <%= current_page %> <%= t('pagination.of') %> <%= total_pages %>

@@ -4,15 +4,117 @@
 
     <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
-    <ol>
+    <ol class="l-results__list">
       <% @result.firms.each do |firm| %>
-        <li class="t-firm">
-          <span class="t-name"><%= firm.name %></span>, advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>)
+        <li class="result t-firm">
+          <div class="result__heading-container">
+            <%= heading_tag(firm.name, level: 2, class: 'result__heading t-name') %>
+            <p class="result__adviser-distance">Adviser 1.7 miles away</p>
+          </div>
+
+          <div class="result__section result__section--first">
+            <%= heading_tag('Main office', level: 3, class: 'result__sub-heading') %>
+
+            <p class="result__address">
+              Bircham road<br>
+              Stanhoe<br>
+              Norfolk<br>
+              PE31 8PT
+            </p>
+
+            <a href="" class="result__address-link">
+              <span class="result__icon result__icon--phone"></span>
+              <%= t('Phone number') %>
+            </a>
+
+            <a href="" class="result__address-link">
+              <span class="result__icon result__icon--email"></span>
+              <%= t('Email address') %>
+            </a>
+
+            <a href="" class="result__address-link">
+              <span class="result__icon result__icon--url"></span>
+              <%= t('Website URL') %>
+            </a>
+          </div>
+
+          <div class="result__section">
+            <%= heading_tag('Receive advice:', level: 3, class: 'result__sub-heading') %>
+
+            <ul class="result__list unstyled-list">
+              <li>At your home</li>
+              <li>At the firm’s office</li>
+              <li>At agreed location</li>
+              <li>Online</li>
+              <li>Telephone</li>
+            </ul>
+          </div>
+
+          <div class="result__section">
+            <%= heading_tag('Advice offered on:', level: 3, class: 'result__sub-heading') %>
+
+            <ul class="result__list unstyled-list">
+              <li>Pension pot(s)/savings</li>
+              <li>Transferring a pension</li>
+              <li>Paying for care</li>
+              <li>Equity release</li>
+              <li>Inheritance tax planning</li>
+              <li>Wills & probate</li>
+            </ul>
+          </div>
+
+          <div class="result__keyword-container">
+            <div class="result__keyword" data-further-info>
+              <span class="result__keyword-text">Free initial meeting
+                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              </span>
+              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
+            </div>
+          </div>
+
+          <div class="result__keyword-container">
+            <div class="result__keyword" data-further-info>
+              <span class="result__keyword-text">Minimum fee: £1,000
+                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              </span>
+              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
+            </div>
+          </div>
+
+          <div class="result__keyword-container">
+            <div class="result__keyword" data-further-info>
+              <span class="result__keyword-text">Minimum pot size/savings: £50,000
+                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              </span>
+              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
+            </div>
+          </div>
+
+          <div class="result__accreditations" data-further-info>
+            <div class="result__qualifications">
+              This firm has advisers with the following qualification/accreditations
+              <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              <p class="further-info is-hidden" data-further-info-target>Tooltip</p>
+            </div>
+
+            <div class="result__logos"></div>
+          </div>
+
+          <!-- advisers: <%= firm.total_advisers %> (<%= firm.closest_adviser %>) -->
         </li>
       <% end %>
     </ol>
 
     <%= paginate @result %>
+
+    <div class="l-back-to-top back-to-top">
+      <%= link_to '#top', class: 'back-to-top__link' do  %>
+        <%= t('search.back_to_top') %>
+        <svg xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
+          <use xlink:href="#icon-back-to-top"></use>
+        </svg>
+      <% end %>
+    </div>
   </section>
 
   <div class="l-results__side">
