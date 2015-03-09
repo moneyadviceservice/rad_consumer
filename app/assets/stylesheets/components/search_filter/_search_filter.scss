@@ -57,6 +57,7 @@
   @include body(16, 24);
   font-weight: 700;
   margin-bottom: 0;
+  color: $search-filter-label-color;
 }
 
 .search-filter__label-instructions {
