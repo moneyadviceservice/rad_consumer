@@ -51,8 +51,9 @@
           <% end %>
         </section>
 
-        <section data-search-filter>
-          <%= form_for @remote_form, url: search_remote_advice_path, method: 'GET', html: { class: 'form search-filter__form t-remote' }, builder: Dough::Forms::Builders::Validation do |f| %>
+        <section class="t-remote" data-search-filter>
+          <%= form_for @remote_form, url: search_remote_advice_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+            <%= f.validation_summary %>
             <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon" data-search-filter-icon></span>
               <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>
@@ -64,7 +65,7 @@
                   <%= f.errors_for :advice_methods %>
                   <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
                     <div class="form__group-item search-filter__checkbox-container">
-                      <%= advice_method.check_box class: "form__group-input t-advice-method-#{advice_method.object.order}" %>
+                      <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
                       <%= advice_method.label do %>
                         <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
                       <% end %>
