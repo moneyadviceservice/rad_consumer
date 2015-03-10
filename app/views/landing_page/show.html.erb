@@ -52,7 +52,7 @@
         </section>
 
         <section data-search-filter>
-          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+          <%= form_for @remote_form, url: search_remote_advice_path, method: 'GET', html: { class: 'form search-filter__form t-remote' }, builder: Dough::Forms::Builders::Validation do |f| %>
             <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon" data-search-filter-icon></span>
               <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>
@@ -60,16 +60,17 @@
 
             <div class="is-hidden" data-search-filter-target>
               <div class="search-filter__section form__group form__group--inline">
-                <%= f.form_row(:postcode) do %>
-                  <%= f.errors_for :postcode %>
-                  <div class="form__group-item search-filter__checkbox-container">
-                    <%= f.check_box :checkbox, class: 'form__group-input' %>
-                    <%= f.label :checkbox, t('search_filter.remote.phone') %>
-                  </div>
-                  <div class="form__group-item search-filter__checkbox-container">
-                    <%= f.check_box :checkbox, class: 'form__group-input' %>
-                    <%= f.label :checkbox, t('search_filter.remote.online') %>
-                  </div>
+                <%= f.form_row(:advice_methods) do %>
+                  <%= f.errors_for :advice_methods %>
+                  <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
+                    <div class="form__group-item search-filter__checkbox-container">
+                      <%= advice_method.check_box class: "form__group-input t-advice-method-#{advice_method.object.order}" %>
+                      <%= advice_method.label do %>
+                        <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
+                      <% end %>
+                    </div>
+                  <% end %>
+
                   <button class="button button--primary search-filter__button"><%= t('search_filter.in_person.button_text') %></button>
                 <% end %>
               </div>

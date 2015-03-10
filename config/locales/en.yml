@@ -229,3 +229,8 @@
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
         - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face to face adviser.
         - text: Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.
+
+  advice_methods:
+    ordinal:
+      "1": "Phone"
+      "2": "Online"
