@@ -9,19 +9,13 @@ class RemoteSearchFormSerializer < ActiveModel::Serializer
 
   def query
     {
-      'filtered' => {
-        'filter' => {
-          'in' => {
-            'other_advice_methods' => remote_advice_method_ids
+      'filtered': {
+        'filter': {
+          'in': {
+            'other_advice_methods': object.remote_advice_method_ids
           }
         }
       }
     }
-  end
-
-  private
-
-  def remote_advice_method_ids
-    object.advice_methods.select(&:present?)
   end
 end
