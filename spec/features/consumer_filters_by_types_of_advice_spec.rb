@@ -53,6 +53,6 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
   def and_they_are_ordered_by_business_split_and_location
     ordered_results = [@first, @second].map(&:registered_name)
 
-    expect(results_page.firms.map(&:name)).to eql(ordered_results)
+    expect(results_page.firm_names).to eql(ordered_results)
   end
 end

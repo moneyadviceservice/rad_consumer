@@ -29,4 +29,8 @@ class ResultsPage < SitePrism::Page
   def total?(n)
     total_records.text == n.to_s
   end
+
+  def firm_names
+    firms.collect(&:name)
+  end
 end
