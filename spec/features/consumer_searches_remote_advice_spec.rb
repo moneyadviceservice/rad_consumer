@@ -2,8 +2,8 @@ RSpec.feature 'Consumer searches for phone or online advice' do
   let(:landing_page)        { LandingPage.new }
   let(:remote_results_page) { RemoteResultsPage.new }
 
-  let!(:phone_advice)  { create(:other_advice_method, id: 1, name: 'Advice by telephone', order: 1) }
-  let!(:online_advice) { create(:other_advice_method, id: 2, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
+  let!(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
+  let!(:online_advice) { create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
 
   scenario 'Selecting online advice' do
     with_elastic_search! do
