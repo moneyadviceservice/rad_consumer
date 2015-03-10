@@ -80,6 +80,10 @@
               </div>
             <% end %>
           </fieldset>
+
+          <div class="search-filter__section search-filter__section--button">
+            <%= button_primary t('search.filter.button_text') %>
+          </div>
         <% end %>
       </section>
     </div>
@@ -124,7 +128,7 @@
             <div class="result__section">
               <%= heading_tag('Receive advice:', level: 3, class: 'result__sub-heading') %>
 
-              <ul class="result__list unstyled-list">
+              <ul class="unstyled-list">
                 <li>At your home</li>
                 <li>At the firm’s office</li>
                 <li>At agreed location</li>
@@ -136,7 +140,7 @@
             <div class="result__section">
               <%= heading_tag('Advice offered on:', level: 3, class: 'result__sub-heading') %>
 
-              <ul class="result__list unstyled-list">
+              <ul class="unstyled-list">
                 <li>Pension pot(s)/savings</li>
                 <li>Transferring a pension</li>
                 <li>Paying for care</li>
@@ -159,12 +163,14 @@
 
             <div class="result__accreditations" data-further-info>
               <div class="result__qualifications">
-                <%= t('search.accreditations.heading') %>
+                <span class="result__qualifications-text"><%= t('search.accreditations.heading') %></span>
                 <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
                 <p class="further-info is-hidden" data-further-info-target><%= t('search.accreditations.tooltip') %></p>
               </div>
 
-              <div class="result__logos"></div>
+              <div class="result__logos">
+                <%= image_tag("adviser_qualifications.png", alt: "t('search.accreditations.logo_alt_text')") %>
+              </div>
             </div>
           </li>
         <% end %>

@@ -1,6 +1,7 @@
 .keyword {
-  float: left;
+  // float: left;
   margin-top: $baseline-unit*2;
+  margin-bottom: $baseline-unit*2;
   margin-right: $baseline-unit*2;
 
   &:last-of-type {
@@ -9,6 +10,7 @@
 }
 
 .keyword__text {
-  padding: $baseline-unit;
+  display: inline-block;
+  padding: $baseline-unit $baseline-unit*2 $baseline-unit*1.5 $baseline-unit*2;
   background: $background-color;
 }
