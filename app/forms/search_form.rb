@@ -28,13 +28,7 @@ class SearchForm
   end
 
   def types_of_advice
-    TYPES_OF_ADVICE
-  end
-
-  TYPES_OF_ADVICE.each do |advice_type|
-    define_method "#{advice_type}?" do
-      public_send(advice_type) == '1'
-    end
+    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
 
   private
