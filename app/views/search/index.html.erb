@@ -102,27 +102,30 @@
             <div class="result__section result__section--first">
               <%= heading_tag('Main office', level: 3, class: 'result__sub-heading') %>
 
-              <p class="address">
-                <span class="address__line">Bircham road</span>
-                <span class="address__line">Stanhoe</span>
-                <span class="address__line">Norfolk</span>
-                <span class="address__line">PE31 8PT</span>
-              </p>
+              <div class="vcard">
+                <p class="address adr">
+                  <span class="visually-hidden fn org"><%= firm.name %></span>
+                  <span class="address__line street-address">Bircham road</span>
+                  <span class="address__line locality">Stanhoe</span>
+                  <span class="address__line region">Norfolk</span>
+                  <span class="address__line post-code">PE31 8PT</span>
+                </p>
 
-              <a href="/" class="address__link">
-                <span class="result__icon result__icon--phone"></span>
-                <%= t('Phone number') %>
-              </a>
+                <a href="/" class="address__link tel">
+                  <span class="result__icon result__icon--phone"></span>
+                  <span class="value"><%= t('Phone number') %></span>
+                </a>
 
-              <a href="/" class="address__link">
-                <span class="result__icon result__icon--email"></span>
-                <%= t('Email address') %>
-              </a>
+                <a href="/" class="address__link email">
+                  <span class="result__icon result__icon--email"></span>
+                  <span class="value"><%= t('Email address') %></span>
+                </a>
 
-              <a href="/" class="address__link">
-                <span class="result__icon result__icon--url"></span>
-                <%= t('Website URL') %>
-              </a>
+                <a href="/" class="address__link url">
+                  <span class="result__icon result__icon--url"></span>
+                  <span class="value"><%= t('Website URL') %></span>
+                </a>
+              </div>
             </div>
 
             <div class="result__section">
