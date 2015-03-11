@@ -35,6 +35,16 @@ RSpec.feature 'Consumer searches for phone or online advice' do
     end
   end
 
+  scenario 'Consumer tries to run remote advice search WITHOUT selecting phone or online' do
+    with_elastic_search! do
+      given_i_am_on_the_rad_landing_page
+      and_firms_providing_remote_services_were_previously_indexed
+      when_i_submit_a_search_without_selecting_advice_methods
+      then_i_am_shown_an_error_message
+      and_i_am_still_on_landing_page
+    end
+  end
+
 
   def and_firms_providing_remote_services_were_previously_indexed
     with_fresh_index! do
@@ -91,5 +101,19 @@ RSpec.feature 'Consumer searches for phone or online advice' do
     expect(remote_results_page).to have_firms(count: 3)
 
     expect(remote_results_page.firm_names).not_to include(@only_in_person.registered_name)
+  end
+
+  def when_i_submit_a_search_without_selecting_advice_methods
+    landing_page.remote.tap do |section|
+      section.search.click
+    end
+  end
+
+  def then_i_am_shown_an_error_message
+    expect(landing_page.remote).to be_invalid_advice_methods
+  end
+
+  def and_i_am_still_on_landing_page
+    expect(landing_page).to be_displayed
   end
 end
