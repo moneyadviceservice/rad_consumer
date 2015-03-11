@@ -33,6 +33,10 @@ class SearchForm
     TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
 
+  def pension_pot?
+    pension_pot == '1'
+  end
+
   def pension_pot_sizes
     InvestmentSize.all.map do |investment_size|
       [investment_size.localized_name, investment_size.id]

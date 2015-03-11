@@ -31,6 +31,24 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#pension_pot?' do
+    let(:form) { described_class.new(pension_pot: pension_pot) }
+
+    subject(:pension_pot?) { form.pension_pot? }
+
+    context 'when the value for `pension_pot` is 1' do
+      let(:pension_pot) { '1' }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when the value for `pension_pot` is an empty string' do
+      let(:pension_pot) { '' }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
 
