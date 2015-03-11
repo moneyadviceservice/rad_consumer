@@ -9,6 +9,8 @@ class SearchForm
     :wills_and_probate
   ]
 
+  ANY_SIZE_VALUE = 'any'
+
   attr_accessor :postcode,
     :checkbox,
     :coordinates,
@@ -40,7 +42,7 @@ class SearchForm
   def pension_pot_sizes
     InvestmentSize.all.map do |investment_size|
       [investment_size.localized_name, investment_size.id]
-    end << [I18n.t('search_filter.pension_pot.any_size_option'), 0]
+    end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
   end
 
   private
