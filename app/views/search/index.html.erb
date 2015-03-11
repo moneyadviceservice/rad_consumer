@@ -97,7 +97,7 @@
           <li class="result t-firm">
             <div class="result__heading">
               <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
-              <p class="result__adviser-distance">Adviser 1.7 miles away</p>
+              <p class="result__adviser-distance">Adviser <%= number_to_human(firm.closest_adviser, significant: true) %> miles away</p>
             </div>
 
             <div class="result__address">
@@ -162,10 +162,6 @@
                 <a class="keyword__link" href="#glossary"><%= t('search.glossary.link') %></a>
               </div>
             </div>
-
-
-
-
 
             <div class="result__qualifications">
               <div class="result__qualifications-inner">
