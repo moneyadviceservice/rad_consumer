@@ -35,6 +35,16 @@ RSpec.feature 'Consumer searches for phone or online advice' do
     end
   end
 
+  scenario 'Selecting phone and/or online advice with advice filters' do
+    with_elastic_search! do
+      given_i_am_on_the_rad_landing_page
+      and_firms_providing_various_types_of_remote_services_were_indexed
+      when_i_submit_a_search_selecting_remote_advice_and_types_of_advice
+      then_i_am_shown_filtered_firms_list
+      and_they_are_ordered_alphabetically
+    end
+  end
+
   scenario 'Consumer tries to run remote advice search WITHOUT selecting phone or online' do
     with_elastic_search! do
       given_i_am_on_the_rad_landing_page
@@ -52,6 +62,15 @@ RSpec.feature 'Consumer searches for phone or online advice' do
       @online_and_phone = create(:firm, registered_name: 'Remoteley Advisory',     other_advice_methods: [ online_advice, phone_advice ])
       @phone_only       = create(:firm, registered_name: 'Cold Callers Limited',   other_advice_methods: [ phone_advice ])
       @only_in_person   = create(:firm, registered_name: 'ACME Retirement Advice', other_advice_methods: [])
+    end
+  end
+
+  def and_firms_providing_various_types_of_remote_services_were_indexed
+    with_fresh_index! do
+      @equity           = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
+      @wills            = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @probate          = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
     end
   end
 
@@ -115,5 +134,22 @@ RSpec.feature 'Consumer searches for phone or online advice' do
 
   def and_i_am_still_on_landing_page
     expect(landing_page).to be_displayed
+  end
+
+  def when_i_submit_a_search_selecting_remote_advice_and_types_of_advice
+    landing_page.remote.tap do |section|
+      section.equity_release.set(true)
+      section.wills_and_probate.set(true)
+      section.online.set(true)
+      section.by_phone.set(true)
+      section.search.click
+    end
+  end
+
+  def then_i_am_shown_filtered_firms_list
+    expect(remote_results_page).to have_firms(count: 2)
+
+    expect(remote_results_page.firm_names).
+      to include(@probate.registered_name, @wills_and_equity.registered_name)
   end
 end

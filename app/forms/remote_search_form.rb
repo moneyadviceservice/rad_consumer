@@ -1,10 +1,17 @@
 class RemoteSearchForm
   include ActiveModel::Model
 
+  TYPES_OF_ADVICE = [
+    :options_when_paying_for_care,
+    :equity_release,
+    :inheritance_tax_planning,
+    :wills_and_probate
+  ]
+
   attr_accessor :advice_methods,
     :pension_transfer,
     :checkbox,
-    *SearchForm::TYPES_OF_ADVICE
+    *TYPES_OF_ADVICE
 
   validate :advice_methods_present
 
@@ -20,5 +27,9 @@ class RemoteSearchForm
     if remote_advice_method_ids.empty?
       errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
     end
+  end
+
+  def types_of_advice
+    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
 end
