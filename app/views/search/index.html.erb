@@ -93,14 +93,15 @@
 
       <ol class="l-results__list">
         <% @result.firms.each do |firm| %>
+
           <li class="result t-firm">
-            <div class="result__heading-container">
-              <%= heading_tag(firm.name, level: 2, class: 'result__heading t-name') %>
+            <div class="result__heading">
+              <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
               <p class="result__adviser-distance">Adviser 1.7 miles away</p>
             </div>
 
-            <div class="result__section result__section--first">
-              <%= heading_tag('Main office', level: 3, class: 'result__sub-heading') %>
+            <div class="result__address">
+              <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
 
               <div class="vcard">
                 <p class="address adr">
@@ -128,51 +129,44 @@
               </div>
             </div>
 
-            <div class="result__section">
-              <%= heading_tag('Receive advice:', level: 3, class: 'result__sub-heading') %>
+            <div class="result__advice">
+              <div class="result__2col">
+                <%= heading_tag(t('search.result.receive_advice'), level: 3, class: 'result__sub-heading') %>
 
-              <ul class="unstyled-list">
-                <li>At your home</li>
-                <li>At the firm’s office</li>
-                <li>At agreed location</li>
-                <li>Online</li>
-                <li>Telephone</li>
-              </ul>
-            </div>
-
-            <div class="result__section">
-              <%= heading_tag('Advice offered on:', level: 3, class: 'result__sub-heading') %>
-
-              <ul class="unstyled-list">
-                <li>Pension pot(s)/savings</li>
-                <li>Transferring a pension</li>
-                <li>Paying for care</li>
-                <li>Equity release</li>
-                <li>Inheritance tax planning</li>
-                <li>Wills & probate</li>
-              </ul>
-            </div>
-
-            <div class="result__keyword">
-              <% t('search.keywords').each do |item| %>
-                <div class="keyword" data-further-info>
-                  <span class="keyword__text"><%= item[:title] %>
-                    <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-                  </span>
-                  <p class="further-info is-hidden" data-further-info-target><%= item[:tooltip] %></p>
-                </div>
-              <% end %>
-            </div>
-
-            <div class="result__accreditations" data-further-info>
-              <div class="result__qualifications">
-                <span class="result__qualifications-text"><%= t('search.accreditations.heading') %></span>
-                <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
-                <p class="further-info is-hidden" data-further-info-target><%= t('search.accreditations.tooltip') %></p>
+                <ul class="result__list">
+                  <li>At your home</li>
+                  <li>At the firm’s office</li>
+                  <li>At agreed location</li>
+                  <li>Online</li>
+                  <li>Telephone</li>
+                </ul>
               </div>
 
-              <div class="result__logos">
-                <%= image_tag("adviser_qualifications.png", alt: "t('search.accreditations.logo_alt_text')") %>
+              <div class="result__2col">
+                <%= heading_tag(t('search.result.type_of_advice'), level: 3, class: 'result__sub-heading') %>
+
+                <ul class="result__list">
+                  <li>Pension pot(s)/savings</li>
+                  <li>Transferring a pension</li>
+                  <li>Paying for care</li>
+                  <li>Equity release</li>
+                  <li>Inheritance tax planning</li>
+                  <li>Wills & probate</li>
+                </ul>
+              </div>
+
+              <div class="result__keyword">
+                <% t('search.keywords').each do |item| %>
+                  <p class="keyword"><%= item[:title] %></p>
+                <% end %>
+                <a class="keyword__link" href="#glossary"><%= t('search.glossary.link') %></a>
+              </div>
+            </div>
+
+            <div class="result__qualifications">
+              <div class="result__qualifications-inner">
+                <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+                <%= image_tag("adviser_qualifications.png", alt: "t('search.accreditations.logo_alt_text')", class: 'result__logos') %>
               </div>
             </div>
           </li>
@@ -180,6 +174,13 @@
       </ol>
 
       <%= paginate @result %>
+
+      <div class="glossary" id="glossary">
+        <% t('search.keywords').each do |item| %>
+          <%= heading_tag(item[:title], level: 3, class: 'glossary__heading') %>
+          <p class="glossary__explanation"><%= item[:tooltip] %></p>
+        <% end %>
+      </div>
 
       <div class="l-results__back-to-top back-to-top">
         <%= link_to '#top', class: 'back-to-top__link' do  %>

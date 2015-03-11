@@ -1,7 +1,8 @@
 .keyword {
-  // float: left;
-  margin-top: $baseline-unit*2;
-  margin-bottom: $baseline-unit*2;
+  float: left;
+  margin-top: 0;
+  padding: $baseline-unit $baseline-unit*2 $baseline-unit*1.5 $baseline-unit*2;
+  background: $background-color;
   margin-right: $baseline-unit*2;
 
   &:last-of-type {
@@ -9,8 +10,9 @@
   }
 }
 
-.keyword__text {
-  display: inline-block;
-  padding: $baseline-unit $baseline-unit*2 $baseline-unit*1.5 $baseline-unit*2;
-  background: $background-color;
+.keyword__link {
+  @include body(14, 18);
+  margin: $baseline-unit*2 0;
+  display: block;
+  float: right;
 }
