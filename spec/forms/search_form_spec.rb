@@ -67,6 +67,24 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#any_pension_pot_size?' do
+    let(:form) { described_class.new(pension_pot_size: pension_pot_size) }
+
+    subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
+
+    context 'when any pension pot size is indicated' do
+      let(:pension_pot_size) { 'any' }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when a particular pension pot size is specified' do
+      let(:pension_pot_size) { '3' }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
 

@@ -82,6 +82,9 @@ class SearchFormSerializer < ActiveModel::Serializer
     [].tap do |filters|
       if object.pension_pot?
         filters << { 'match': { 'advises_on_investments' => true } }
+        unless object.any_pension_pot_size?
+          filters << { 'match': { 'investment_sizes' => object.pension_pot_size } }
+        end
       end
     end
   end

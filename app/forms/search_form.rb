@@ -45,6 +45,10 @@ class SearchForm
     end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
   end
 
+  def any_pension_pot_size?
+    pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
+  end
+
   private
 
   def geocode_postcode
