@@ -49,6 +49,24 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#pension_pot_sizes' do
+    let(:form) { described_class.new }
+
+    let(:investment_sizes) { create_list(:investment_size, 3) }
+
+    before { allow(InvestmentSize).to receive(:all).and_return(investment_sizes) }
+
+    it 'returns the localized name and ID for each investment size' do
+      tuples = investment_sizes.map { |i| [i.localized_name, i.id] }
+
+      expect(form.pension_pot_sizes).to include(*tuples)
+    end
+
+    it 'returns the any size option as the last element' do
+      expect(form.pension_pot_sizes.last).to eql([I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE])
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
 
