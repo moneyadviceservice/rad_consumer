@@ -1,5 +1,5 @@
 class RemoteSearchController < ApplicationController
-  def show
+  def index
     @form        = SearchForm.new(params[:search_form])
     @remote_form = RemoteSearchForm.new(params[:remote_search_form])
 

@@ -202,7 +202,7 @@
       online: Online
       phone: Phone
 
-  search:
+  search: &search
     errors:
       geocode_failure: is incorrect
       missing_advice_method: To continue please select online, telephone or both and run your search again.
@@ -263,6 +263,8 @@
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
         - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face to face adviser.
         - text: Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.
+
+  remote_search: *search
 
   advice_methods:
     ordinal:
