@@ -32,18 +32,16 @@ RSpec.describe SearchForm do
   end
 
   describe '#pension_pot?' do
-    let(:form) { described_class.new(pension_pot: pension_pot) }
-
     subject(:pension_pot?) { form.pension_pot? }
 
     context 'when the value for `pension_pot` is 1' do
-      let(:pension_pot) { '1' }
+      let(:form) { described_class.new(pension_pot: '1') }
 
       it { is_expected.to be_truthy }
     end
 
     context 'when the value for `pension_pot` is an empty string' do
-      let(:pension_pot) { '' }
+      let(:form) { described_class.new(pension_pot: '') }
 
       it { is_expected.to be_falsey }
     end
@@ -68,18 +66,16 @@ RSpec.describe SearchForm do
   end
 
   describe '#any_pension_pot_size?' do
-    let(:form) { described_class.new(pension_pot_size: pension_pot_size) }
-
     subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
 
     context 'when any pension pot size is indicated' do
-      let(:pension_pot_size) { 'any' }
+      let(:form) { described_class.new(pension_pot_size: SearchForm::ANY_SIZE_VALUE) }
 
       it { is_expected.to be_truthy }
     end
 
     context 'when a particular pension pot size is specified' do
-      let(:pension_pot_size) { '3' }
+      let(:form) { described_class.new(pension_pot_size: '3') }
 
       it { is_expected.to be_falsey }
     end
