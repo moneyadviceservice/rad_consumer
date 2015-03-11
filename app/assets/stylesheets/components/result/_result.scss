@@ -1,6 +1,5 @@
 .result {
   @include clearfix();
-  overflow: hidden;
   border: 1px solid $result-border-color;
   border-radius: $result-radius;
   margin-bottom: $baseline-unit*6;
@@ -84,10 +83,10 @@
 
 .result__list {
   @extend .unstyled-list;
+}
 
-  > li {
-    margin-bottom: $baseline-unit;
-  }
+.result__list-item {
+  margin-bottom: $baseline-unit;
 }
 
 .result__icon {
