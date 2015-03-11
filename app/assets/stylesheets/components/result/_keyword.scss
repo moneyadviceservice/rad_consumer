@@ -1,0 +1,18 @@
+.keyword {
+  float: left;
+  margin-top: 0;
+  padding: $baseline-unit $baseline-unit*2 $baseline-unit*1.5 $baseline-unit*2;
+  background: $background-color;
+  margin-right: $baseline-unit*2;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.keyword__link {
+  @include body(14, 18);
+  margin: $baseline-unit*2 0;
+  display: block;
+  float: right;
+}

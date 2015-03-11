@@ -211,11 +211,44 @@
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
     page_title: Search results
+    back_to_top: Back to top
     summary_of_results:
       showing: Showing
       to: to
       of: of
       firms: firms
+
+    glossary:
+      link: What do these mean?
+
+    filter:
+      heading: Refine your search
+      receive_advice:
+        heading: Receive advice
+        face_to_face: Face to face
+        phone_online: Online/Telephone
+        postcode_label: Postcode
+      button_text: Search
+      type_of_advice: Type of advice
+      pension_pot_savings: Pension pot(s)/savings
+
+    result:
+      office: Main office
+      recieve_advice: Receive advice
+      type_of_advice: Type of advice
+
+    keywords:
+      - title: Free initial meeting
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      - title: 'Minimum fee: £1,000'
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      - title: 'Minimum pot size/savings: £50,000'
+        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+
+    accreditations:
+      heading: This firm has advisers with the following qualification / accreditations
+      tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
 
     education_module_one:
       heading: How were these results decided?

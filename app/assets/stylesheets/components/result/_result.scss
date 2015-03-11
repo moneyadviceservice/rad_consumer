@@ -1,0 +1,133 @@
+.result {
+  @include clearfix();
+  border: 1px solid $result-border-color;
+  border-radius: $result-radius;
+  margin-bottom: $baseline-unit*6;
+}
+
+.result__heading {
+  @include clearfix();
+  background-color: $background-color;
+}
+
+.result__heading-text {
+  @include column(12);
+  @include body(18, 27);
+  color: $result-heading-color;
+  margin-top: $baseline-unit*2;
+  margin-bottom: 0;
+
+  @include respond-to ($mq-m) {
+    @include column(8);
+    margin-bottom: $baseline-unit*2;
+  }
+}
+
+.result__adviser-distance {
+  @include column(12);
+  margin-bottom: $baseline-unit*2;
+  margin-top: 0;
+
+  @include respond-to ($mq-m) {
+    @include column(4);
+    margin-top: $baseline-unit*2;
+    text-align: right;
+  }
+}
+
+.result__sub-heading {
+  @include body(16, 24);
+  color: $result-heading-color;
+  margin-top: 0;
+}
+
+.result__address {
+  @include column(12);
+  margin-top: $baseline-unit*4;
+
+  @include respond-to ($mq-m) {
+    @include column(3);
+  }
+}
+
+.result__advice {
+  @include column(12);
+
+  @include respond-to ($mq-m) {
+    @include column(9);
+    margin-top: $baseline-unit*4;
+    margin-bottom: $baseline-unit*4;
+    padding-left: $baseline-unit*2;
+    border-left: 1px solid $result-border-color;
+  }
+}
+
+.result__2col {
+  margin-top: $baseline-unit*4;
+
+  @include respond-to ($mq-m) {
+    @include column(6);
+    margin-top: 0;
+    margin-bottom: $baseline-unit;
+  }
+}
+
+.result__keyword {
+  margin-top: $baseline-unit*2;
+  float: left;
+
+  @include respond-to ($mq-m) {
+    @include column(12);
+  }
+}
+
+.result__list {
+  @extend .unstyled-list;
+}
+
+.result__list-item {
+  margin-bottom: $baseline-unit;
+}
+
+.result__icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: #f3f3f3; // to be replaced with an icon when ready
+  vertical-align: middle;
+}
+
+.result__qualifications {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    border-top: 1px solid $result-border-color;
+  }
+}
+
+.result__qualifications-inner {
+  @include row(12);
+}
+
+.result__qualifications-heading {
+  @include column(12);
+  margin-bottom: $baseline-unit*3;
+  font-weight: 700;
+  color: $color-black;
+
+  @include respond-to($mq-m) {
+    @include column(6);
+    min-height: 51px;
+    margin-top: $baseline-unit*3;
+  }
+}
+
+.result__logos {
+  @include column(12);
+  margin-bottom: $baseline-unit*3;
+
+  @include respond-to($mq-m) {
+    @include column(6);
+    margin-top: $baseline-unit*3;
+  }
+}

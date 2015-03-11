@@ -1,0 +1,12 @@
+.address {
+  margin: $baseline-unit 0;
+}
+
+.address__line {
+  display: block;
+}
+
+.address__link {
+  display: block;
+  line-height: 2;
+}

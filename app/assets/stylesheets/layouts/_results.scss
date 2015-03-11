@@ -1,3 +1,7 @@
+.l-results {
+  padding-top: $baseline-unit*10;
+}
+
 .l-results__main {
   @include column(12);
 
@@ -6,15 +10,12 @@
   }
 }
 
-.l-results__emphasised {
-  font-weight: 700;
+.l-results__heading {
+  margin-top: 0;
 }
 
-.l-results__filter {
-  // TEMP
-  height: 500px;
-  background-color: #EDF0F0;
-  margin-top: 6rem;
+.l-results__emphasised {
+  font-weight: 700;
 }
 
 .l-results__side {
@@ -23,5 +24,19 @@
   @include respond-to($mq-m) {
     @include column(4);
     float: right;
+    clear: right;
   }
+}
+
+.l-results__list {
+  @extend .unstyled-list;
+}
+
+.l-results__pagination {
+  @include column(12);
+  margin-bottom: $baseline-unit*4;
+}
+
+.l-results__back-to-top {
+  @include column(12);
 }

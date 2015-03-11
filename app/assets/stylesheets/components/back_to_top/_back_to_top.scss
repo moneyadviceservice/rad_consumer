@@ -1,0 +1,14 @@
+.back-to-top {
+  @include body(14, 18);
+  margin: $baseline-unit*2 0;
+  text-align: right;
+}
+
+.back-to-top__icon {
+  position: relative;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  margin-left: $baseline-unit;
+  fill: $back-to-top-icon-color;
+}

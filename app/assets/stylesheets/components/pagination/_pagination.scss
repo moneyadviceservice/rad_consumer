@@ -1,7 +1,3 @@
-.pagination {
-  margin: $pagination-margin 0;
-}
-
 .pagination__button {
   color: $pagination-text-color;
 }
@@ -11,4 +7,6 @@
   top: 1px;
   display: inline-block;
   width: 8px;
+  height: 14px;
+  fill: $pagination-icon-color;
 }

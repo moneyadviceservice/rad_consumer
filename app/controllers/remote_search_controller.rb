@@ -1,5 +1,6 @@
 class RemoteSearchController < ApplicationController
   def show
+    @form        = SearchForm.new(params[:search_form])
     @remote_form = RemoteSearchForm.new(params[:remote_search_form])
 
     if @remote_form.valid?
@@ -7,8 +8,6 @@ class RemoteSearchController < ApplicationController
 
       render 'search/index'
     else
-      @form = SearchForm.new(params[:search_form])
-
       render 'landing_page/show'
     end
   end

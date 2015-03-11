@@ -1,0 +1,17 @@
+.glossary {
+  @include column(12);
+  margin-top: $baseline-unit*10;
+  border-top: 1px solid $result-border-color;
+}
+
+.glossary__heading {
+  @include body(14, auto);
+  color: $color-grey-primary;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.glossary__explanation {
+  @include body(14, 20);
+  margin-top: 0;
+}
