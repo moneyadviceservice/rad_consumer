@@ -4,6 +4,13 @@
       search_form:
         postcode: Cod post
 
+  pagination:
+    previous: 'Flaenorol'
+    next: 'Nesaf'
+    truncate: "&hellip;"
+    page: Tudalen
+    of: o
+
   landing_page:
     show:
       title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
@@ -227,7 +234,7 @@
 
     result:
       adviser: Cynghorydd
-      miles_away: O filltiroedd i ffwrdd
+      miles_away: o filltiroedd i ffwrdd
       office: Prif swyddfa
       email_firm: Cwmni e-bost
       website: Gwefan cwmni
