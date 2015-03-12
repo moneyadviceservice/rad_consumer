@@ -130,8 +130,8 @@
             </div>
 
             <div class="result__advice">
-              <%= render partial: 'result_list', locals: { key: 'search.result.recieve_advice' } %>
-              <%= render partial: 'result_list', locals: { key: 'search.result.type_of_advice' } %>
+              <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
+              <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
 
               <div class="result__keyword">
                 <% t('search.keywords').each do |item| %>
