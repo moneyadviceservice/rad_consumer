@@ -86,7 +86,9 @@
 
   <section class="l-landing-page__2col">
     <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
-    <img class="video" src="http://placehold.it/600x360" />
+    <div class="video-wrapper">
+      <iframe class="video" src="https://player.vimeo.com/video/121550879" width="560" height="284" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
     <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
     <a class="video__transcript-link" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
 
@@ -118,7 +120,9 @@
     </div>
 
     <div class="l-landing-page__2col l-landing-page__2col--padded">
-      <img class="video" src="http://placehold.it/600x360" />
+      <div class="video-wrapper">
+        <img class="video" src="http://placehold.it/600x360" />
+      </div>
       <p class="video__description"><%= t('more_reasons.video.description') %></p>
       <a class="video__transcript-link" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
     </div>
