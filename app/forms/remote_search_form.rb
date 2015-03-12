@@ -1,17 +1,8 @@
 class RemoteSearchForm
   include ActiveModel::Model
+  include SearchFormFilters
 
-  TYPES_OF_ADVICE = [
-    :options_when_paying_for_care,
-    :equity_release,
-    :inheritance_tax_planning,
-    :wills_and_probate
-  ]
-
-  attr_accessor :advice_methods,
-    :pension_transfer,
-    :checkbox,
-    *TYPES_OF_ADVICE
+  attr_accessor :advice_methods
 
   validate :advice_methods_present
 

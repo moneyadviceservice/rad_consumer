@@ -1,19 +1,9 @@
 class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
+  include SearchFormFilters
 
-  TYPES_OF_ADVICE = [
-    :options_when_paying_for_care,
-    :equity_release,
-    :inheritance_tax_planning,
-    :wills_and_probate
-  ]
-
-  attr_accessor :postcode,
-    :checkbox,
-    :coordinates,
-    :pension_transfer,
-    *TYPES_OF_ADVICE
+  attr_accessor :postcode, :coordinates
 
   before_validation :upcase_postcode
 
@@ -25,10 +15,6 @@ class SearchForm
 
   def coordinates
     @coordinates ||= Geocode.call(postcode)
-  end
-
-  def types_of_advice
-    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
 
   private

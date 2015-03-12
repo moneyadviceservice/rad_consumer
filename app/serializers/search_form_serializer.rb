@@ -30,7 +30,7 @@ class SearchFormSerializer < ActiveModel::Serializer
         },
         'query': {
           'bool': {
-            'must': build_postcode_filters,
+            'must': (build_postcode_filters + build_investment_sizes_filter)
           }
         }
       }
@@ -76,5 +76,15 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def chosen_types_of_advice_fields
     object.types_of_advice.map { |type| "doc['#{type}'].value" }
+  end
+
+  def build_investment_sizes_filter
+    [].tap do |filters|
+      if object.pension_pot?
+        filters << { 'match': { 'advises_on_investments' => true } }
+        filters << { 'match': { 'investment_sizes' => object.pension_pot_size } } unless object.any_pension_pot_size?
+        filters << { 'match': { 'investment_transfers' => true } } if object.pension_pot_transfer?
+      end
+    end
   end
 end

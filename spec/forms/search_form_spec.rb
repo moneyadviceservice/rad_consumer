@@ -31,6 +31,72 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#pension_pot?' do
+    subject(:pension_pot?) { form.pension_pot? }
+
+    context 'when the value for `pension_pot` is 1' do
+      let(:form) { described_class.new(pension_pot: '1') }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when the value for `pension_pot` is not present' do
+      let(:form) { described_class.new(pension_pot: nil) }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
+  describe '#pension_pot_sizes' do
+    let(:form) { described_class.new }
+
+    let(:investment_sizes) { create_list(:investment_size, 3) }
+
+    before { allow(InvestmentSize).to receive(:all).and_return(investment_sizes) }
+
+    it 'returns the localized name and ID for each investment size' do
+      tuples = investment_sizes.map { |i| [i.localized_name, i.id] }
+
+      expect(form.pension_pot_sizes).to include(*tuples)
+    end
+
+    it 'returns the any size option as the last element' do
+      expect(form.pension_pot_sizes.last).to eql([I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE])
+    end
+  end
+
+  describe '#any_pension_pot_size?' do
+    subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
+
+    context 'when any pension pot size is indicated' do
+      let(:form) { described_class.new(pension_pot_size: SearchForm::ANY_SIZE_VALUE) }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when a particular pension pot size is specified' do
+      let(:form) { described_class.new(pension_pot_size: '3') }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
+  describe '#pension_pot_transfer?' do
+    subject(:pension_pot_transfer?) { form.pension_pot_transfer? }
+
+    context 'when `pension_pot_transfer` is 1' do
+      let(:form) { described_class.new(pension_pot_transfer: '1') }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when `pension_pot_transfer` is not present' do
+      let(:form) { described_class.new(pension_pot_transfer: nil) }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
 
