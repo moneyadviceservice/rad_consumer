@@ -40,8 +40,8 @@ RSpec.describe SearchForm do
       it { is_expected.to be_truthy }
     end
 
-    context 'when the value for `pension_pot` is an empty string' do
-      let(:form) { described_class.new(pension_pot: '') }
+    context 'when the value for `pension_pot` is not present' do
+      let(:form) { described_class.new(pension_pot: nil) }
 
       it { is_expected.to be_falsey }
     end
@@ -76,6 +76,22 @@ RSpec.describe SearchForm do
 
     context 'when a particular pension pot size is specified' do
       let(:form) { described_class.new(pension_pot_size: '3') }
+
+      it { is_expected.to be_falsey }
+    end
+  end
+
+  describe '#pension_pot_transfer?' do
+    subject(:pension_pot_transfer?) { form.pension_pot_transfer? }
+
+    context 'when `pension_pot_transfer` is 1' do
+      let(:form) { described_class.new(pension_pot_transfer: '1') }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when `pension_pot_transfer` is not present' do
+      let(:form) { described_class.new(pension_pot_transfer: nil) }
 
       it { is_expected.to be_falsey }
     end

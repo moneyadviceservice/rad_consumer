@@ -11,7 +11,7 @@ module SearchFormFilters
   attr_accessor :checkbox,
     :pension_pot,
     :pension_pot_size,
-    :pension_transfer,
+    :pension_pot_transfer,
     *TYPES_OF_ADVICE
 
   def pension_pot?
@@ -26,6 +26,10 @@ module SearchFormFilters
 
   def any_pension_pot_size?
     pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
+  end
+
+  def pension_pot_transfer?
+    pension_pot_transfer == '1'
   end
 
   def types_of_advice
