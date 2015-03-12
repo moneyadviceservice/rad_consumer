@@ -18,7 +18,7 @@
   margin-bottom: 0;
 
   @include respond-to ($mq-m) {
-    @include column(8);
+    @include column(7);
     margin-bottom: $baseline-unit*2;
   }
 }
@@ -29,7 +29,7 @@
   margin-top: 0;
 
   @include respond-to ($mq-m) {
-    @include column(4);
+    @include column(5);
     margin-top: $baseline-unit*2;
     text-align: right;
   }

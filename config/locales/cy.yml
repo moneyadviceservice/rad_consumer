@@ -203,7 +203,78 @@
     index:
       title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+    page_title: Canlyniadau chwilio
     back_to_top: "Ewch i'r brig"
+    summary_of_results:
+      showing: Yn dangos
+      to: i
+      of: o
+      firms: cwmnïau
+
+    glossary:
+      link: Beth mae hyn yn ei olygu?
+
+    filter:
+      heading: Chwiliwch yn fwy penodol
+      receive_advice:
+        heading: Cael cyngor
+        face_to_face: Wyneb yn wyneb
+        phone_online: Ffôn / Ar-lein
+        postcode_label: Cod post
+      button_text: Chwilio
+      type_of_advice: Math o gyngor
+      pension_pot_savings: Cronfa(feydd)/cynilion pensiwn
+
+    result:
+      adviser: Cynghorydd
+      miles_away: O filltiroedd i ffwrdd
+      office: Prif swyddfa
+      email_firm: Cwmni e-bost
+      website: Gwefan cwmni
+      recieve_advice:
+        heading: Cael cyngor
+        items:
+          - text: Yn eich cartref
+          - text: Yn swyddfa’r cwmni
+          - text: Yn rhywle a gytunwyd
+          - text: Ar-lein
+          - text: Ffôn
+      type_of_advice:
+        heading: Math o gyngor
+        items:
+          - text: Cronfa(feydd)/cynilion pensiwn
+          - text: Trosglwyddo pensiwn
+          - text: Talu am ofal
+          - text: Rhyddhau ecwiti
+          - text: Cynllunio ar gyfer treth etifeddiant
+          - text: Ewyllysiau a phrofiant
+
+    keywords:
+      - title: Cyfarfod cychwynnol am ddim
+        tooltip: Bydd y cwmni hwn yn cynnig cyfarfod cychwynnol dros y ffôn neu wyneb yn wyneb ar ei gost ei hun. Bydd y cwmni’n defnyddio’r cyfarfod hwn i ddeall eich anghenion ac i weld a all fod o gymorth i chi.
+      - title: 'Ffioedd gofynnol'
+        tooltip: Mae cynghorwyr ariannol yn codi ffioedd am gyngor ac mae gan rai ohonynt ffi ofynnol. Gall hyn amrywio yn ddibynnol ar y math o gyngor sydd ei angen arnoch, felly efallai mai canllaw yn unig fydd y ffigwr a roddir. Rhaid i bob cynghorydd roi amcangyfrif i chi o gyfanswm cost ei wasanaeth cyn i chi ymrwymo. Gweler ein canllaw ‘Talu am gyngor ariannol’ am ragor o wybodaeth.
+      - title: 'Isafswm maint y gronfa / cynilion'
+        tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
+
+    accreditations:
+      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol
+      tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
+
+    education_module_one:
+      heading: Sur benderfynwyd ar y canlyniadau?
+      content:
+        - text: Mae ein Cyfeirlyfr Cynghorydd Ymddeoliad yn eich paru â chwmnïau, yn seiliedig ar y wybodaeth a rowch i ni.
+        - text: Os dywedwch wrthym bod angen math penodol o gyngor arnoch, dangosir y cwmnïau sy’n cynnig y math hwnnw o gyngor yn unig.
+        - text: Os rhoesoch god post, dangosir cwmnïau sy’n fodlon cwrdd â chi’n bersonol yn unig.
+
+    education_module_two:
+      heading: Cyngor ariannol o bell
+      content:
+        - text: Efallai y byddwch yn gallu arbed arian drwy ddod o hyd i gynghorydd a fydd yn delio â chi ar-lein neu dros y ffôn.
+        - text: Rheoleiddir y cynghorwyr hyn yn yr union yr un ffordd a chewch eich diogelu yn yr un modd â phetaech wedi defnyddio cynghorydd wyneb yn wyneb.
+        - text: Dewiswch ‘ar-lein’ neu ‘ffôn’ yn yr adran Derbyn cyngor uchod os hoffech gael cyngor o bell.
 
   remote_search: *search
 
