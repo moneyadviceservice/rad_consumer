@@ -89,13 +89,13 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
   def then_i_am_shown_firms_that_can_advise_on_my_chosen_investment_pot_size
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms count: 1
+    expect(results_page).to have_firms(count: 1)
     expect(results_page.firm_names).to include(@small_pot_size_firm.registered_name)
   end
 
   def then_i_am_shown_firms_that_can_advise_on_pension_pots
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms count: 3
+    expect(results_page).to have_firms(count: 3)
     expect(results_page.firm_names).to include(
       @small_pot_size_firm.registered_name,
       @pot_transfers_firm.registered_name,
@@ -105,7 +105,7 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
   def then_i_am_shown_firms_that_can_assist_with_pension_transfers
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms count: 1
+    expect(results_page).to have_firms(count: 1)
     expect(results_page.firm_names).to include(@pot_transfers_firm.registered_name)
   end
 end
