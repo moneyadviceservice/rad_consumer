@@ -97,7 +97,7 @@
           <li class="result t-firm">
             <div class="result__heading">
               <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
-              <p class="result__adviser-distance">Adviser <%= number_to_human(firm.closest_adviser, significant: true) %> miles away</p>
+              <p class="result__adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
             </div>
 
             <div class="result__address">
@@ -119,41 +119,19 @@
 
                 <a href="/" class="address__link email">
                   <span class="result__icon result__icon--email"></span>
-                  <span class="value"><%= t('Email address') %></span>
+                  <span class="value"><%= t('search.result.email_firm') %></span>
                 </a>
 
                 <a href="/" class="address__link url">
                   <span class="result__icon result__icon--url"></span>
-                  <span class="value"><%= t('Website URL') %></span>
+                  <span class="value"><%= t('search.result.website') %></span>
                 </a>
               </div>
             </div>
 
             <div class="result__advice">
-              <div class="result__2col">
-                <%= heading_tag(t('search.result.receive_advice'), level: 3, class: 'result__sub-heading') %>
-
-                <ul class="result__list">
-                  <li class="result__list-item">At your home</li>
-                  <li class="result__list-item">At the firm’s office</li>
-                  <li class="result__list-item">At agreed location</li>
-                  <li class="result__list-item">Online</li>
-                  <li class="result__list-item">Telephone</li>
-                </ul>
-              </div>
-
-              <div class="result__2col">
-                <%= heading_tag(t('search.result.type_of_advice'), level: 3, class: 'result__sub-heading') %>
-
-                <ul class="result__list">
-                  <li class="result__list-item">Pension pot(s)/savings</li>
-                  <li class="result__list-item">Transferring a pension</li>
-                  <li class="result__list-item">Paying for care</li>
-                  <li class="result__list-item">Equity release</li>
-                  <li class="result__list-item">Inheritance tax planning</li>
-                  <li class="result__list-item">Wills & probate</li>
-                </ul>
-              </div>
+              <%= render partial: 'result_list', locals: { key: 'search.result.recieve_advice' } %>
+              <%= render partial: 'result_list', locals: { key: 'search.result.type_of_advice' } %>
 
               <div class="result__keyword">
                 <% t('search.keywords').each do |item| %>
