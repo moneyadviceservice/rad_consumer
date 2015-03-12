@@ -1,0 +1,9 @@
+<div class="result__2col">
+  <%= heading_tag(t("#{key}.heading"), level: 3, class: 'result__sub-heading') %>
+
+  <ul class="result__list">
+    <% t("#{key}.items").each do |item| %>
+      <li class="result__list-item"><%= item[:text] %></li>
+    <% end %>
+  </ul>
+</div>

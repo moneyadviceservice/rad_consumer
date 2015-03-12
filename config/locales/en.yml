@@ -233,9 +233,28 @@
       pension_pot_savings: Pension pot(s)/savings
 
     result:
+      adviser: Adviser
+      miles_away: miles away
       office: Main office
-      recieve_advice: Receive advice
-      type_of_advice: Type of advice
+      email_firm: Email firm
+      website: Firm's website
+      recieve_advice:
+        heading: Receive advice
+        items:
+          - text: At your home
+          - text: At the firm's office
+          - text: At agreed location
+          - text: Online
+          - text: Telephone
+      type_of_advice:
+        heading: Type of advice
+        items:
+          - text: Pension pot(s)/savings
+          - text: Transferring a pension
+          - text: Paying for care
+          - text: Equity release
+          - text: Inheritance tax planning
+          - text: Wills and probate
 
     keywords:
       - title: Free initial meeting
