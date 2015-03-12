@@ -236,8 +236,21 @@
       adviser: Cynghorydd
       miles_away: o filltiroedd i ffwrdd
       office: Prif swyddfa
-      email_firm: Cwmni e-bost
-      website: Gwefan cwmni
+
+      contact_details:
+        - text: 0800 0880 887
+          href: 'tel:'
+          link_class: tel
+          icon_class: result__icon--email
+        - text: Gwefan cwmni
+          href: https://
+          link_class: url
+          icon_class: result__icon--url
+        - text: Cwmni e-bost
+          href: 'mailto:'
+          link_class: email
+          icon_class: result__icon--phone
+
       recieve_advice:
         heading: Cael cyngor
         items:
