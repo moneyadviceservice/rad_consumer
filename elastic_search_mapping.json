@@ -1,8 +1,17 @@
 {
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "firm_name_analyzer": { "tokenizer": "keyword", "filter": "lowercase" }
+        }
+      }
+    }
+  },
   "mappings": {
     "firms": {
       "properties": {
-        "registered_name": { "type": "string", "index": "not_analyzed" },
+        "registered_name": { "type": "string", "analyzer": "firm_name_analyzer" },
         "postcode_searchable": { "type": "boolean" },
         "other_advice_methods": { "type": "integer" },
         "investment_sizes": { "type": "integer" },
