@@ -3,11 +3,22 @@ class SearchForm
   include ActiveModel::Validations::Callbacks
   include SearchFormFilters
 
-  attr_accessor :postcode, :coordinates
+  ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
+  ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
+
+  attr_accessor :advice_method, :postcode, :coordinates
 
   before_validation :upcase_postcode
 
   validate :geocode_postcode
+
+  def face_to_face?
+    advice_method == ADVICE_METHOD_FACE_TO_FACE
+  end
+
+  def phone_or_online?
+    advice_method == ADVICE_METHOD_PHONE_OR_ONLINE
+  end
 
   def to_query
     SearchFormSerializer.new(self).to_json

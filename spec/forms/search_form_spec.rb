@@ -1,4 +1,40 @@
 RSpec.describe SearchForm do
+  describe 'advice method predicates' do
+    let(:form) { described_class.new(advice_method: advice_method) }
+
+    context 'when advice method is face to face' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+
+      describe '#face_to_face?' do
+        it 'returns truthy' do
+          expect(form.face_to_face?).to be_truthy
+        end
+      end
+
+      describe '#phone_or_online?' do
+        it 'returns falsey' do
+          expect(form.phone_or_online?).to be_falsey
+        end
+      end
+    end
+
+    context 'when advice method is phone or online' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+
+      describe '#face_to_face?' do
+        it 'returns falsey' do
+          expect(form.face_to_face?).to be_falsey
+        end
+      end
+
+      describe '#phone_or_online?' do
+        it 'returns truthy' do
+          expect(form.phone_or_online?).to be_truthy
+        end
+      end
+    end
+  end
+
   it 'upcases the postcode before validation' do
     VCR.use_cassette(:rg2_1aa) do
       described_class.new(postcode: 'rg2 1aa').tap do |search|
