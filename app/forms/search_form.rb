@@ -1,18 +1,39 @@
 class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
-  include SearchFormFilters
 
   ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
   ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
 
-  attr_accessor :advice_method, :postcode, :coordinates
+  ANY_SIZE_VALUE = 'any'
+
+  TYPES_OF_ADVICE = [
+    :pension_transfer,
+    :options_when_paying_for_care,
+    :equity_release,
+    :inheritance_tax_planning,
+    :wills_and_probate
+  ]
+
+  attr_accessor :checkbox,
+    :advice_method,
+    :postcode,
+    :coordinates,
+    :pension_pot,
+    :pension_pot_size,
+    :pension_pot_transfer,
+    :advice_methods,
+    *TYPES_OF_ADVICE
+
+  alias :pension_transfer :pension_pot
 
   before_validation :upcase_postcode, if: :face_to_face?
 
   validates :advice_method, presence: true
 
   validate :geocode_postcode, if: :face_to_face?
+
+  validate :advice_methods_present, if: :phone_or_online?
 
   def face_to_face?
     advice_method == ADVICE_METHOD_FACE_TO_FACE
@@ -24,6 +45,38 @@ class SearchForm
 
   def coordinates
     @coordinates ||= Geocode.call(postcode)
+  end
+
+  def pension_pot?
+    pension_pot == '1'
+  end
+
+  def pension_pot_sizes
+    InvestmentSize.all.map do |investment_size|
+      [investment_size.localized_name, investment_size.id]
+    end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
+  end
+
+  def any_pension_pot_size?
+    pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
+  end
+
+  def pension_pot_transfer?
+    pension_pot_transfer == '1'
+  end
+
+  def types_of_advice
+    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
+  end
+
+  def remote_advice_method_ids
+    advice_methods.select(&:present?)
+  end
+
+  def advice_methods_present
+    if remote_advice_method_ids.empty?
+      errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
+    end
   end
 
   def to_query
