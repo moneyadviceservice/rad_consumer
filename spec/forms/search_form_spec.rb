@@ -35,12 +35,14 @@ RSpec.describe SearchForm do
     end
   end
 
-  it 'upcases the postcode before validation' do
-    VCR.use_cassette(:rg2_1aa) do
-      described_class.new(postcode: 'rg2 1aa').tap do |search|
-        search.validate
+  context 'for the face to face advice method' do
+    let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa') }
 
-        expect(search.postcode).to eql('RG2 1AA')
+    it 'upcases the postcode before validation' do
+      VCR.use_cassette(:rg2_1aa) do
+        form.validate
+
+        expect(form.postcode).to eql('RG2 1AA')
       end
     end
   end

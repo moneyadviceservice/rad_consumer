@@ -8,7 +8,7 @@ class SearchForm
 
   attr_accessor :advice_method, :postcode, :coordinates
 
-  before_validation :upcase_postcode
+  before_validation :upcase_postcode, if: :face_to_face?
 
   validates :advice_method, presence: true
 
