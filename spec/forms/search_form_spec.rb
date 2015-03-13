@@ -46,6 +46,16 @@ RSpec.describe SearchForm do
   end
 
   describe 'validation' do
+    let(:form) { described_class.new(advice_method: advice_method) }
+
+    context 'when no advice method is present' do
+      let(:advice_method) { nil }
+
+      it 'is not valid' do
+        expect(form).not_to be_valid
+      end
+    end
+
     it 'is valid with valid attributes' do
       VCR.use_cassette(:rg2_1aa) do
         expect(described_class.new(postcode: 'RG2 1AA')).to be_valid

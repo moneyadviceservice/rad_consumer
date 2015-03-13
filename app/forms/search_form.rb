@@ -10,6 +10,8 @@ class SearchForm
 
   before_validation :upcase_postcode
 
+  validates :advice_method, presence: true
+
   validate :geocode_postcode
 
   def face_to_face?
