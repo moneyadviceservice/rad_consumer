@@ -41,6 +41,7 @@ RSpec.feature 'Consumer searches for phone or online advice' do
       and_firms_providing_various_types_of_remote_services_were_indexed
       when_i_submit_a_search_selecting_remote_advice_and_types_of_advice
       then_i_am_shown_filtered_firms_list
+      and_the_list_does_not_include_offline_only_advisories
       and_they_are_ordered_alphabetically
     end
   end
@@ -67,10 +68,11 @@ RSpec.feature 'Consumer searches for phone or online advice' do
 
   def and_firms_providing_various_types_of_remote_services_were_indexed
     with_fresh_index! do
-      @equity           = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
-      @wills            = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @probate          = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
+      @equity            = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
+      @wills             = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @probate           = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @wills_and_equity  = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
+      @offline_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Offliney Advisory Ltd', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [])
     end
   end
 
@@ -106,6 +108,8 @@ RSpec.feature 'Consumer searches for phone or online advice' do
   def then_i_am_shown_firms_that_provide_advice_by_telephone
     expect(remote_results_page.firm_names).
       to include(@phone_only.registered_name, @online_and_phone.registered_name)
+    expect(remote_results_page.firm_names).
+      not_to include(@only_in_person.registered_name, @online_only.registered_name)
   end
 
   def when_i_submit_a_search_selecting_online_and_telephone_advice
@@ -147,9 +151,14 @@ RSpec.feature 'Consumer searches for phone or online advice' do
   end
 
   def then_i_am_shown_filtered_firms_list
-    expect(remote_results_page).to have_firms(count: 2)
-
     expect(remote_results_page.firm_names).
       to include(@probate.registered_name, @wills_and_equity.registered_name)
+
+    expect(remote_results_page).to have_firms(count: 2)
+  end
+
+  def and_the_list_does_not_include_offline_only_advisories
+    expect(remote_results_page.firm_names).
+      not_to include(@offline_and_wills.registered_name)
   end
 end
