@@ -5,8 +5,6 @@ class SearchController < ApplicationController
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
     else
-      @remote_form = RemoteSearchForm.new(params[:remote_search_form])
-
       render 'landing_page/show'
     end
   end
