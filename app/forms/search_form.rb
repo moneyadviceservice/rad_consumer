@@ -22,12 +22,17 @@ class SearchForm
     advice_method == ADVICE_METHOD_PHONE_OR_ONLINE
   end
 
-  def to_query
-    SearchFormSerializer.new(self).to_json
-  end
-
   def coordinates
     @coordinates ||= Geocode.call(postcode)
+  end
+
+  def to_query
+    case advice_method
+    when ADVICE_METHOD_FACE_TO_FACE
+      SearchFormSerializer.new(self).to_json
+    when ADVICE_METHOD_PHONE_OR_ONLINE
+      RemoteSearchFormSerializer.new(self).to_json
+    end
   end
 
   private
