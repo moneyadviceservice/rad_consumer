@@ -12,7 +12,7 @@ class SearchForm
 
   validates :advice_method, presence: true
 
-  validate :geocode_postcode
+  validate :geocode_postcode, if: :face_to_face?
 
   def face_to_face?
     advice_method == ADVICE_METHOD_FACE_TO_FACE
