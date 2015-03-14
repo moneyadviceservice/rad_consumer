@@ -2,6 +2,7 @@ module SearchFormFilters
   ANY_SIZE_VALUE = 'any'
 
   TYPES_OF_ADVICE = [
+    :pension_transfer,
     :options_when_paying_for_care,
     :equity_release,
     :inheritance_tax_planning,
@@ -13,6 +14,8 @@ module SearchFormFilters
     :pension_pot_size,
     :pension_pot_transfer,
     *TYPES_OF_ADVICE
+
+  alias :pension_transfer :pension_pot
 
   def pension_pot?
     pension_pot == '1'
