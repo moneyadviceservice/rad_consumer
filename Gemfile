@@ -21,6 +21,7 @@ gem 'geocoder'
 gem 'kaminari'
 gem 'mas-rad_core'
 gem 'pg'
+gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
