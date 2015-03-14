@@ -15,6 +15,7 @@
         "postcode_searchable": { "type": "boolean" },
         "other_advice_methods": { "type": "integer" },
         "investment_sizes": { "type": "integer" },
+        "pension_pot": { "type": "integer" },
         "options_when_paying_for_care": { "type": "integer" },
         "equity_release": { "type": "integer" },
         "inheritance_tax_planning": { "type": "integer" },
