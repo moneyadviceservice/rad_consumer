@@ -1,4 +1,8 @@
 .l-header {
   // override to force the header to be the correct height
   min-height: 73px;
+
+  .mas-logo {
+    margin-top: 12px;
+  }
 }
