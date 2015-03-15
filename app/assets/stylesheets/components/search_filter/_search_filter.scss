@@ -1,11 +1,24 @@
-.search-filter {
-  background: $search-filter-background-color;
-  border: 1px solid $search-filter-border-color;
-  border-radius: $search-filter-radius;
+.search-filter__border {
+  border-left: 1px solid $search-filter-border-color;
+  border-right: 1px solid $search-filter-border-color;
+}
+
+.search-filter__border--bottom {
+  border-bottom: 1px solid $search-filter-border-color;
+  border-bottom-left-radius: $search-filter-radius;
+  border-bottom-right-radius: $search-filter-radius;
+}
+
+.search-filter__divider {
+  border-bottom: 2px solid $color-white;
 }
 
 .search-filter__section {
-  margin: $baseline-unit*4 $baseline-unit*4 0 $baseline-unit*4;
+  margin: 0 $baseline-unit*4;
+}
+
+.search-filter__section--first {
+  padding-top: $baseline-unit*4;
 }
 
 .search-filter__section--button {
@@ -30,7 +43,6 @@
 .search-filter__heading--first {
   border-top-left-radius: $search-filter-radius;
   border-top-right-radius: $search-filter-radius;
-  margin-bottom: $baseline-unit/3;
 }
 
 .js .search-filter__heading--second {
