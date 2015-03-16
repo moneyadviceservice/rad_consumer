@@ -4,7 +4,8 @@
       search_form:
         postcode: Cod post
 
-  company: Y Gwasanaeth Cynghori Ariannol
+  mas: Y Gwasanaeth Cynghori Ariannol
+  mas_home_url: https://www.moneyadviceservice.org.uk/cy
 
   pagination:
     previous: 'Flaenorol'
@@ -26,8 +27,6 @@
   locales:
     cy: Cymraeg
     en: English
-
-  mas_home_url: https://www.moneyadviceservice.org.uk/cy
 
   breadcrumbs:
     home: Hafan
