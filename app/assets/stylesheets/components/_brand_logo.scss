@@ -13,33 +13,33 @@
 }
 
 .brand-logo__img {
-  display: block;
-  height: 45px;
-  background-image: url("https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png");
-  background-repeat: no-repeat;
-  background-size: auto 34px;
-  background-position-x: 88%;
+  display: none;
 
-  @include respond-to($mq-m) {
-    background-size: auto 43px;
-  }
+  .ie8 & {
+    display: block;
+    height: 45px;
+    background-image: url("https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png");
+    background-repeat: no-repeat;
+    background-size: auto 34px;
+    background-position-x: 88%;
 
-  .svg & {
-    display: none;
+    @include respond-to($mq-m) {
+      background-size: auto 43px;
+    }
   }
 }
 
 .brand-logo__svg {
-  display: none;
+  display: block;
+  height: 30px;
+  width: 100%;
 
-  .svg & {
-    display: block;
-    height: 30px;
-    width: 100%;
+  @include respond-to($mq-m) {
+    height: 43px;
+  }
 
-    @include respond-to($mq-m) {
-      height: 43px;
-    }
+  .ie8 & {
+    display: none;
   }
 }
 
