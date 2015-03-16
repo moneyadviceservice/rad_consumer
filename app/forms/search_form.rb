@@ -9,6 +9,7 @@ class SearchForm
 
   TYPES_OF_ADVICE = [
     :pension_transfer,
+    :retirement_income_products,
     :options_when_paying_for_care,
     :equity_release,
     :inheritance_tax_planning,
@@ -19,13 +20,9 @@ class SearchForm
     :advice_method,
     :postcode,
     :coordinates,
-    :pension_pot,
     :pension_pot_size,
-    :pension_pot_transfer,
     :advice_methods,
     *TYPES_OF_ADVICE
-
-  alias :pension_transfer :pension_pot
 
   before_validation :upcase_postcode, if: :face_to_face?
 
@@ -47,10 +44,6 @@ class SearchForm
     @coordinates ||= Geocode.call(postcode)
   end
 
-  def pension_pot?
-    pension_pot == '1'
-  end
-
   def pension_pot_sizes
     InvestmentSize.all.map do |investment_size|
       [investment_size.localized_name, investment_size.id]
@@ -61,8 +54,8 @@ class SearchForm
     pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
   end
 
-  def pension_pot_transfer?
-    pension_pot_transfer == '1'
+  def retirement_income_products?
+    retirement_income_products == '1'
   end
 
   def types_of_advice

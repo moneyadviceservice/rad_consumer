@@ -97,19 +97,21 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#pension_pot?' do
-    subject(:pension_pot?) { form.pension_pot? }
+  describe '#retirement_income_products?' do
+    context 'when the option is selected' do
+      subject { described_class.new(retirement_income_products: '1') }
 
-    context 'when the value for `pension_pot` is 1' do
-      let(:form) { described_class.new(pension_pot: '1') }
-
-      it { is_expected.to be_truthy }
+      it 'is truthy' do
+        expect(subject).to be_retirement_income_products
+      end
     end
 
-    context 'when the value for `pension_pot` is not present' do
-      let(:form) { described_class.new(pension_pot: nil) }
+    context 'when the option is not selected' do
+      subject { described_class.new(retirement_income_products: nil) }
 
-      it { is_expected.to be_falsey }
+      it 'is falsey' do
+        expect(subject).to_not be_retirement_income_products
+      end
     end
   end
 
@@ -142,22 +144,6 @@ RSpec.describe SearchForm do
 
     context 'when a particular pension pot size is specified' do
       let(:form) { described_class.new(pension_pot_size: '3') }
-
-      it { is_expected.to be_falsey }
-    end
-  end
-
-  describe '#pension_pot_transfer?' do
-    subject(:pension_pot_transfer?) { form.pension_pot_transfer? }
-
-    context 'when `pension_pot_transfer` is 1' do
-      let(:form) { described_class.new(pension_pot_transfer: '1') }
-
-      it { is_expected.to be_truthy }
-    end
-
-    context 'when `pension_pot_transfer` is not present' do
-      let(:form) { described_class.new(pension_pot_transfer: nil) }
 
       it { is_expected.to be_falsey }
     end

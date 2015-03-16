@@ -15,13 +15,12 @@
         "postcode_searchable": { "type": "boolean" },
         "other_advice_methods": { "type": "integer" },
         "investment_sizes": { "type": "integer" },
+        "retirement_income_products": { "type": "integer" },
         "pension_transfer": { "type": "integer" },
         "options_when_paying_for_care": { "type": "integer" },
         "equity_release": { "type": "integer" },
         "inheritance_tax_planning": { "type": "integer" },
         "wills_and_probate": { "type": "integer" },
-        "advises_on_investments": { "type": "boolean" },
-        "investment_sizes": { "type": "integer" },
 
         "advisers": {
           "type": "nested",

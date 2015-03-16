@@ -3,6 +3,8 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
   let(:results_page) { ResultsPage.new }
 
   scenario 'Types of advice search' do
+    pending 'WIP'
+
     with_elastic_search! do
       given_that_i_am_on_the_rad_landing_page
       and_firms_that_provide_various_types_of_advice_were_previously_indexed

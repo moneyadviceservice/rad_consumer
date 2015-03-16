@@ -15,6 +15,20 @@ GIT
       rails (>= 3.2)
       sass-rails (~> 4.0.0)
 
+GIT
+  remote: git://github.com/moneyadviceservice/mas-rad_core.git
+  revision: 2398c1c010fa2f36394e9a9e101b6cc98adf8b7b
+  branch: 6036-pension-search
+  specs:
+    mas-rad_core (0.0.22)
+      active_model_serializers
+      geocoder
+      http
+      pg
+      rails (~> 4.2.0)
+      redis
+      statsd-ruby
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,14 +114,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.22)
-      active_model_serializers
-      geocoder
-      http
-      pg
-      rails (~> 4.2.0)
-      redis
-      statsd-ruby
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.2)
@@ -225,7 +231,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   kaminari
-  mas-rad_core
+  mas-rad_core!
   pg
   pry-rails
   rails (= 4.2.0)

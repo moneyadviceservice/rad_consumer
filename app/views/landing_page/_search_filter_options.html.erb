@@ -6,8 +6,8 @@
 
     <div data-nested-options-component>
       <div class="form__group-item" data-further-info>
-        <%= f.check_box :pension_pot, class: 'form__group-input', data: { nested_options_trigger: '' } %>
-        <%= f.label :pension_pot, class: 'search-filter__option' do %>
+        <%= f.check_box :retirement_income_products, class: 'form__group-input', data: { nested_options_trigger: '' } %>
+        <%= f.label :retirement_income_products, class: 'search-filter__option' do %>
           <%= t('search_filter.pension_pot.heading') %>
         <% end %>
       </div>
@@ -19,8 +19,8 @@
         </div>
 
         <div class="form__group-item" data-further-info>
-          <%= f.check_box :pension_pot_transfer, class: 'form__group-input' %>
-          <%= f.label :pension_pot_transfer, class: 'search-filter__option' do %>
+          <%= f.check_box :pension_transfer, class: 'form__group-input' %>
+          <%= f.label :pension_transfer, class: 'search-filter__option' do %>
             <%= t('search_filter.pension_pot.pension_transfer.heading') %>
             <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
             <p class="is-hidden further-info" data-further-info-target><%= t('search_filter.pension_pot.pension_transfer.tooltip') %></p>
