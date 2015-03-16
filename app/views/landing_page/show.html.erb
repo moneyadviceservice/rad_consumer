@@ -31,6 +31,7 @@
         <section class="t-in-person" data-search-filter>
           <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
             <%= f.validation_summary %>
+            <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
             <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first', data: { search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
               <span class="search-filter__heading-text"><%= t('search_filter.in_person.heading') %></span>
@@ -52,8 +53,9 @@
         </section>
 
         <section class="t-remote" data-search-filter>
-          <%= form_for @remote_form, url: search_remote_advice_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+          <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
             <%= f.validation_summary %>
+              <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
             <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
               <span class="search-filter__triangle-icon" data-search-filter-icon></span>
               <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>

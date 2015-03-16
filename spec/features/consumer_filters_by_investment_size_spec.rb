@@ -65,7 +65,7 @@ RSpec.feature 'Consumer filters by pension pot size' do
   end
 
   def and_i_see_the_default_option_is_i_dont_know_or_wish_to_say
-    expect(landing_page.in_person.pension_pot_size.value).to eql(SearchFormFilters::ANY_SIZE_VALUE)
+    expect(landing_page.in_person.pension_pot_size.value).to eql(SearchForm::ANY_SIZE_VALUE)
   end
 
   def and_i_select_an_applicable_pot_size_band_from_the_available_options

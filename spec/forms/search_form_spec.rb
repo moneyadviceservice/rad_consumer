@@ -1,33 +1,99 @@
 RSpec.describe SearchForm do
-  it 'upcases the postcode before validation' do
-    VCR.use_cassette(:rg2_1aa) do
-      described_class.new(postcode: 'rg2 1aa').tap do |search|
-        search.validate
+  describe 'advice method predicates' do
+    let(:form) { described_class.new(advice_method: advice_method) }
 
-        expect(search.postcode).to eql('RG2 1AA')
+    context 'when advice method is face to face' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+
+      describe '#face_to_face?' do
+        it 'returns truthy' do
+          expect(form.face_to_face?).to be_truthy
+        end
+      end
+
+      describe '#phone_or_online?' do
+        it 'returns falsey' do
+          expect(form.phone_or_online?).to be_falsey
+        end
+      end
+    end
+
+    context 'when advice method is phone or online' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+
+      describe '#face_to_face?' do
+        it 'returns falsey' do
+          expect(form.face_to_face?).to be_falsey
+        end
+      end
+
+      describe '#phone_or_online?' do
+        it 'returns truthy' do
+          expect(form.phone_or_online?).to be_truthy
+        end
+      end
+    end
+  end
+
+  context 'for the face to face advice method' do
+    let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa') }
+
+    it 'upcases the postcode before validation' do
+      VCR.use_cassette(:rg2_1aa) do
+        form.validate
+
+        expect(form.postcode).to eql('RG2 1AA')
       end
     end
   end
 
   describe 'validation' do
-    it 'is valid with valid attributes' do
-      VCR.use_cassette(:rg2_1aa) do
-        expect(described_class.new(postcode: 'RG2 1AA')).to be_valid
+    let(:form) { described_class.new(advice_method: advice_method) }
+
+    context 'when no advice method is present' do
+      let(:advice_method) { nil }
+
+      it 'is not valid' do
+        expect(form).not_to be_valid
       end
     end
 
-    it 'requires a postcode' do
-      expect(described_class.new).to_not be_valid
-    end
+    context 'when the advice method is face to face' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
 
-    it 'requires a correctly formatted postcode' do
-      expect(described_class.new(postcode: 'ABC')).to_not be_valid
-    end
+      context 'and a correctly formatted postcode is present' do
+        before { form.postcode = 'RG2 1AA' }
 
-    it 'requires a geocoded postcode' do
-      allow(Geocode).to receive(:call).and_return(false)
+        it 'is valid' do
+          VCR.use_cassette(:rg2_1aa) do
+            expect(form).to be_valid
+          end
+        end
 
-      expect(described_class.new(postcode: 'ZZ1 1ZZ')).to_not be_valid
+        context 'but cannot be geocoded' do
+          before { form.postcode = 'ZZ1 1ZZ' }
+
+          it 'is not valid' do
+            allow(Geocode).to receive(:call).and_return(false)
+
+            expect(form).to_not be_valid
+          end
+        end
+      end
+
+      context 'and no postcode is present' do
+        it 'is not valid' do
+          expect(form).to_not be_valid
+        end
+      end
+
+      context 'and a badly formatted postcode is present' do
+        before { form.postcode = 'ABC' }
+
+        it 'is not valid' do
+          expect(form).to_not be_valid
+        end
+      end
     end
   end
 
@@ -100,17 +166,31 @@ RSpec.describe SearchForm do
   describe '#to_query' do
     let(:serializer) { double }
 
-    before do
-      allow(Geocode).to receive(:call).and_return(true)
-      allow(SearchFormSerializer).to receive(:new).and_return(serializer)
+    context 'when advice method is face to face' do
+      let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'ABC 123') }
+
+      before do
+        allow(Geocode).to receive(:call).and_return(true)
+        allow(SearchFormSerializer).to receive(:new).and_return(serializer)
+      end
+
+      it 'builds the query JSON via the `SearchFormSerializer`' do
+        expect(serializer).to receive(:as_json)
+
+        form.to_query
+      end
     end
 
-    subject { described_class.new(postcode: 'ABC 123') }
+    context 'when advice method is phone or online' do
+      let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE) }
 
-    it 'builds the query JSON via the `SearchFormSerializer`' do
-      expect(serializer).to receive(:as_json)
+      before { allow(RemoteSearchFormSerializer).to receive(:new).and_return(serializer) }
 
-      subject.to_query
+      it 'builds the query JSON via the `RemoteSearchFormSerializer`' do
+        expect(serializer).to receive(:as_json)
+
+        form.to_query
+      end
     end
   end
 end
