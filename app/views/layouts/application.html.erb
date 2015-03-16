@@ -144,13 +144,13 @@
 
   <header class="l-header" role="banner">
     <div class="l-constrained">
-      <div class="mas-logo">
+      <div class="l-header__logo">
         <a class="mas-logo__link" href="<%= t('mas_home_url') %>">
           <img alt="Money Advice Service" class="mas-logo__img" src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png" />
         </a>
       </div>
 
-      <div class="locale">
+      <div class="l-header__locale locale">
         <% if I18n.locale == :en %>
           <%= link_to(t('locales.cy'), root_path(locale: 'cy'), class: 'locale__link') %>
         <% else %>
