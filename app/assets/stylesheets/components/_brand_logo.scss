@@ -1,0 +1,49 @@
+.brand-logo {
+  display: block;
+  overflow: hidden;
+  width: 200px;
+
+  @include respond-to($mq-m) {
+    width: 245px;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $color-primary-nav;
+  }
+}
+
+.brand-logo__img {
+  display: block;
+  height: 45px;
+  background-image: url("https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png");
+  background-repeat: no-repeat;
+  background-size: auto 34px;
+  background-position-x: 88%;
+
+  @include respond-to($mq-m) {
+    background-size: auto 43px;
+  }
+
+  .svg & {
+    display: none;
+  }
+}
+
+.brand-logo__svg {
+  display: none;
+
+  .svg & {
+    display: block;
+    height: 30px;
+    width: 100%;
+
+    @include respond-to($mq-m) {
+      height: 43px;
+    }
+  }
+}
+
+.brand-logo__text,
+.brand-logo__arch {
+  fill: $color-white;
+}

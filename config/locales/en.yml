@@ -4,6 +4,8 @@
       search_form:
         postcode: Postcode
 
+  company: The Money Advice Service
+
   pagination:
     previous: 'Prev'
     next: 'Next'
@@ -251,7 +253,7 @@
           href: 'mailto:'
           link_class: email
           icon_class: result__icon--phone
-      
+
       recieve_advice:
         heading: Receive advice
         items:

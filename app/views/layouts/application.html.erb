@@ -144,9 +144,14 @@
 
   <header class="l-header" role="banner">
     <div class="l-constrained">
+
       <div class="l-header__logo">
-        <a class="mas-logo__link" href="<%= t('mas_home_url') %>">
-          <img alt="Money Advice Service" class="mas-logo__img" src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png" />
+        <a class="brand-logo" href="<%= t('mas_home_url') %>">
+          <span class="visually-hidden"><%= t('company') %></span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="brand-logo__svg">
+            <use xlink:href="#brand-logo"></use>
+          </svg>
+          <div class="brand-logo__img"></div>
         </a>
       </div>
 

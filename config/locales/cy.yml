@@ -4,6 +4,8 @@
       search_form:
         postcode: Cod post
 
+  company: Y Gwasanaeth Cynghori Ariannol
+
   pagination:
     previous: 'Flaenorol'
     next: 'Nesaf'
