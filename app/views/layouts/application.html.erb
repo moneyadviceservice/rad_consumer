@@ -143,6 +143,8 @@
   <a class="skip-to-link" href="#main"><%= t('skip_links.to_main') %></a>
   <a class="skip-to-link" href="<%= t('skip_links.to_accessibility_link') %>"><%= t('skip_links.to_accessibility') %></a>
 
+  <%= render 'shared/svg_icons' %>
+
   <header class="l-header" role="banner">
     <div class="l-constrained">
 
@@ -358,8 +360,6 @@
       </div>
     </div>
   </footer>
-
-<%= render 'shared/svg_icons' %>
 
 <%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
 
