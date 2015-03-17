@@ -242,16 +242,13 @@
       contact_details:
         - text: 0800 0880 887
           href: 'tel:'
-          link_class: tel
-          icon_class: result__icon--email
+          icon_class: phone
         - text: Firm's website
           href: https://
-          link_class: url
-          icon_class: result__icon--url
+          icon_class: url
         - text: Email firm
           href: 'mailto:'
-          link_class: email
-          icon_class: result__icon--phone
+          icon_class: email
 
       recieve_advice:
         heading: Receive advice

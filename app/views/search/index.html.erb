@@ -7,7 +7,7 @@
 
     <div class="l-results__side">
       <section class="search-filter t-criteria">
-        <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+        <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
           <fieldset class="form__group search-filter__section">
@@ -108,8 +108,10 @@
                 </p>
 
                 <% t('search.result.contact_details').each do |item| %>
-                  <a href="<%= item[:href] %>" class="address__link <%= item[:link_class] %>">
-                    <span class="result__icon <%= item[:icon_class] %>"></span>
+                  <a href="<%= item[:href] %>" class="address__link">
+                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
+                      <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
+                    </svg>
                     <span class="value"><%= item[:text] %></span>
                   </a>
                 <% end %>
