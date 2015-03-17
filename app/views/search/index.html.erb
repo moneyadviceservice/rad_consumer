@@ -71,7 +71,7 @@
               <%= f.errors_for :checkbox %>
               <div class="form__group-item">
                 <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading search-filter__label' %>
-                <%= f.select :pension_pot_size, @form.pension_pot_sizes, { include_blank: false }, { class: 'search-filter__inset' } %>
+                <%= f.select :pension_pot_size, @form.pension_pot_sizes, { include_blank: false }, { class: 'search-filter__inset search-filter__constrained' } %>
               </div>
             <% end %>
           </fieldset>

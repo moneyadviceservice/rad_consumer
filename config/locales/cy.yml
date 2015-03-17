@@ -176,7 +176,7 @@
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
       pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
-      any_size_option: Dwi ddim yn gwybod / Nid wyf am ddweud
+      any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
       pension_transfer:
         heading: Trosglwyddo pensiwn cyfredol neu flaenorol
         tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
