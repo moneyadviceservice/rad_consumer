@@ -6,7 +6,7 @@
     </div>
 
     <div class="l-results__side">
-      <section class="search-filter">
+      <section class="search-filter t-criteria">
         <%= form_for @form, url: search_path, method: 'GET', html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
@@ -16,7 +16,7 @@
               <%= f.errors_for :checkbox %>
               <div class="form__group-item">
                 <label>
-                  <%= f.radio_button :postcode, 0, class: 'form__group-input' %>
+                  <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input' %>
                   <%= t('search.filter.receive_advice.face_to_face') %>
                 </label>
               </div>
@@ -28,24 +28,19 @@
 
               <div class="form__group-item">
                 <label>
-                  <%= f.radio_button :postcode, 0, class: 'form__group-input' %>
+                  <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input' %>
                   <%= t('search.filter.receive_advice.phone_online') %>
                 </label>
 
                 <div class="search-filter__item-inset">
-                  <div class="form__group-item">
-                    <%= f.check_box :checkbox, class: 'form__group-input' %>
-                    <%= f.label :checkbox, class: 'search-filter__option' do %>
-                      <%= t('online') %>
-                    <% end %>
-                  </div>
-
-                  <div class="form__group-item">
-                    <%= f.check_box :checkbox, class: 'form__group-input' %>
-                    <%= f.label :checkbox, class: 'search-filter__option' do %>
-                      <%= t('telephone') %>
-                    <% end %>
-                  </div>
+                  <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
+                    <div class="form__group-item">
+                      <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
+                      <%= advice_method.label class: 'search-filter__option' do %>
+                        <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
+                      <% end %>
+                    </div>
+                  <% end %>
                 </div>
               </div>
             <% end %>
