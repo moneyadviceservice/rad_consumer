@@ -25,24 +25,29 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def query
     {
-      'filtered': {
-        'filter': {
-          'script': {
-            'script': types_of_advice_filter_expression
-          }
-        },
-        'query': {
-          'bool': {
-            'must': (build_postcode_filters + build_investment_sizes_filter)
-          }
-        }
-      }
-    }.tap do |expression|
-      expression[:filtered].delete(:filter) unless types_of_advice?
-    end
+      'filtered': build_filters
+    }
   end
 
   private
+
+  def build_filters
+    {}.tap do |expression|
+      if types_of_advice?
+        expression['filter'] = {
+          'script': {
+            'script': types_of_advice_filter_expression
+          }
+        }
+      end
+
+      expression['query'] = {
+        'bool': {
+          'must': (build_postcode_filters + build_investment_sizes_filter)
+        }
+      }
+    end
+  end
 
   def build_postcode_filters
     [
