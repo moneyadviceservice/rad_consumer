@@ -89,20 +89,35 @@
               <div class="vcard">
                 <p class="address adr">
                   <span class="visually-hidden fn org"><%= firm.name %></span>
-                  <span class="address__line street-address">Bircham road</span>
-                  <span class="address__line locality">Stanhoe</span>
-                  <span class="address__line region">Norfolk</span>
-                  <span class="address__line post-code">PE31 8PT</span>
+                  <span class="address__line street-address"><%= firm.address_line_one %></span>
+                  <span class="address__line locality"><%= firm.address_town %></span>
+                  <span class="address__line region"><%= firm.address_county %></span>
+                  <span class="address__line post-code"><%= firm.address_postcode %></span>
                 </p>
 
-                <% t('search.result.contact_details').each do |item| %>
-                  <a href="<%= item[:href] %>" class="address__link">
-                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
-                      <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
+                <a href="tel:<%= firm.telephone_number.strip %>" class="address__link phone">
+                  <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg>
+                  <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
+                </a>
+
+                <% if firm.website_address %>
+                  <a href="<%= firm.website_address %>" class="address__link url">
+                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
+                      <use xlink:href="#icon-url"></use>
                     </svg>
-                    <span class="value"><%= item[:text] %></span>
+                    <span class="value">Firm's website</span>
                   </a>
                 <% end %>
+
+                <a href="mailto:<%= firm.email_address %>" class="address__link email">
+                  <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
+                    <use xlink:href="#icon-email"></use>
+                  </svg>
+                  <span class="value">Email firm</span>
+                </a>
+
               </div>
             </div>
 
