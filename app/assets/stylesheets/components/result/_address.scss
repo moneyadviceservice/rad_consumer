@@ -9,4 +9,12 @@
 .address__link {
   display: block;
   line-height: 2;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  span:hover {
+    text-decoration: underline;
+  }
 }
