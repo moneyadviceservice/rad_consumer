@@ -150,9 +150,9 @@
         <a class="brand-logo" href="<%= t('mas_home_url') %>">
           <span class="visually-hidden"><%= t('mas') %></span>
           <svg title="<%= t('mas') %>" xmlns="http://www.w3.org/2000/svg" class="brand-logo__svg">
-            <use xlink:href="#brand-logo"></use>
+            <use xlink:href="#brand-logo-<%= I18n.locale %>"></use>
           </svg>
-          <div class="brand-logo__img"></div>
+          <div class="brand-logo__img brand-logo__img--<%= I18n.locale %>"></div>
         </a>
       </div>
 
