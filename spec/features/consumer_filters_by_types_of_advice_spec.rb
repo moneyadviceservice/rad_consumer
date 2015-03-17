@@ -18,15 +18,15 @@ RSpec.feature 'Consumer searches by postcode with types of advice filters' do
 
   def and_firms_that_provide_various_types_of_advice_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, pension_transfer_percent: 30, wills_and_probate_percent: 20, other_percent: 50) do |f|
+      @first = create(:firm_with_no_business_split, retirement_income_products_percent: 30, wills_and_probate_percent: 20, other_percent: 50) do |f|
         @glasgow = create(:adviser, firm: f, latitude: 55.856191, longitude: -4.247082)
       end
 
-      @second = create(:firm_with_no_business_split, pension_transfer_percent: 29, wills_and_probate_percent: 20, other_percent: 51) do |f|
+      @second = create(:firm_with_no_business_split, retirement_income_products_percent: 29, wills_and_probate_percent: 20, other_percent: 51) do |f|
         @leicester = create(:adviser, firm: f, latitude: 52.633013, longitude: -1.131257)
       end
 
-      create(:firm_with_no_business_split, pension_transfer_percent: 49, other_percent: 51) do |f|
+      create(:firm_with_no_business_split, retirement_income_products_percent: 49, other_percent: 51) do |f|
         create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
       end
 

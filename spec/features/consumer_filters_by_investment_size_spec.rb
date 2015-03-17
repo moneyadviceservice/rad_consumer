@@ -17,7 +17,7 @@ RSpec.feature 'Consumer filters by pension pot size' do
     end
   end
 
-  scenario 'Consumer I don\'t know / Don\'t wish to say' do
+  scenario "Consumer selects I don't know / Don't wish to say" do
     with_elastic_search! do
       given_i_am_on_the_rad_landing_page
       and_firms_with_advisers_were_previously_indexed
@@ -49,14 +49,17 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @small_pot_size_firm = create(:firm_with_no_business_split, pension_transfer_percent: 90, other_percent: 10, investment_sizes: @investment_sizes.values_at(0, 1))
-      create_list(:adviser, 1, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
+      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 90, other_percent: 10, investment_sizes: @investment_sizes.values_at(0, 1))
+      create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @pot_transfers_firm = create(:firm_with_no_business_split, pension_transfer_percent: 100, investment_sizes: @investment_sizes.values_at(4))
-      create_list(:adviser, 2, firm: @pot_transfers_firm, latitude: latitude, longitude: longitude)
+      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 10, other_percent: 90, investment_sizes: @investment_sizes.values_at(2, 3))
+      create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @large_pot_size_firm = create(:firm_with_no_business_split, pension_transfer_percent: 50, other_percent: 50, investment_sizes: @investment_sizes.values_at(2, 3))
-      create_list(:adviser, 3, firm: @large_pot_size_firm, latitude: latitude, longitude: longitude)
+      @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 50, pension_transfer_percent: 50, investment_sizes: @investment_sizes)
+      create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
+
+      @excluded = create(:firm_with_no_business_split, other_percent: 100)
+      create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
     end
   end
 
@@ -89,7 +92,7 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
   def then_i_am_shown_firms_that_can_advise_on_my_chosen_investment_pot_size
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms(count: 1)
+    expect(results_page).to have_firms(count: 2)
     expect(results_page.firm_names).to include(@small_pot_size_firm.registered_name)
   end
 
@@ -98,16 +101,14 @@ RSpec.feature 'Consumer filters by pension pot size' do
     expect(results_page).to have_firms(count: 3)
     expect(results_page.firm_names).to include(
       @small_pot_size_firm.registered_name,
-      @pot_transfers_firm.registered_name,
-      @large_pot_size_firm.registered_name
+      @medium_pot_size_firm.registered_name,
+      @pension_transfer_firm.registered_name
     )
   end
 
   def then_i_am_shown_firms_that_can_assist_with_pension_transfers
-    skip 'TODO: clarify the expected logic'
-
     expect(results_page).to be_displayed
     expect(results_page).to have_firms(count: 1)
-    expect(results_page.firm_names).to include(@pot_transfers_firm.registered_name)
+    expect(results_page.firm_names).to include(@pension_transfer_firm.registered_name)
   end
 end
