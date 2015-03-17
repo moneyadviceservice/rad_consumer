@@ -101,7 +101,7 @@ RSpec.describe SearchForm do
     context 'when the option is selected' do
       subject { described_class.new(retirement_income_products: '1') }
 
-      it 'is truthy' do
+      it '#retirement_income_products? is truthy' do
         expect(subject).to be_retirement_income_products
       end
     end
@@ -109,7 +109,7 @@ RSpec.describe SearchForm do
     context 'when the option is not selected' do
       subject { described_class.new(retirement_income_products: nil) }
 
-      it 'is falsey' do
+      it '#retirement_income_products? is falsey' do
         expect(subject).to_not be_retirement_income_products
       end
     end
