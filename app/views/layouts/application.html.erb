@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--[if IE 8 ]> <html lang="<%= I18n.locale %>" class="ie ie8 no-js"> <![endif]-->
 <html>
 <head>
   <title><%= page_tag('title_tag') %></title>
@@ -144,13 +145,18 @@
 
   <header class="l-header" role="banner">
     <div class="l-constrained">
-      <div class="mas-logo">
-        <a class="mas-logo__link" href="<%= t('mas_home_url') %>">
-          <img alt="Money Advice Service" class="mas-logo__img" src="https://6716c801720b2d014ddd-90dd74bb468e514261468bbc28ae4817.ssl.cf3.rackcdn.com/a/logo-sprite-en-a45d4fbae33a4837c88896e8f84a8020.png" />
+
+      <div class="l-header__logo">
+        <a class="brand-logo" href="<%= t('mas_home_url') %>">
+          <span class="visually-hidden"><%= t('mas') %></span>
+          <svg title="<%= t('mas') %>" xmlns="http://www.w3.org/2000/svg" class="brand-logo__svg">
+            <use xlink:href="#brand-logo-<%= I18n.locale %>"></use>
+          </svg>
+          <div class="brand-logo__img brand-logo__img--<%= I18n.locale %>"></div>
         </a>
       </div>
 
-      <div class="locale">
+      <div class="l-header__locale locale">
         <% if I18n.locale == :en %>
           <%= link_to(t('locales.cy'), root_path(locale: 'cy'), class: 'locale__link') %>
         <% else %>

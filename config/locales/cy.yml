@@ -4,6 +4,9 @@
       search_form:
         postcode: Cod post
 
+  mas: Y Gwasanaeth Cynghori Ariannol
+  mas_home_url: https://www.moneyadviceservice.org.uk/cy
+
   pagination:
     previous: 'Flaenorol'
     next: 'Nesaf'
@@ -24,8 +27,6 @@
   locales:
     cy: Cymraeg
     en: English
-
-  mas_home_url: https://www.moneyadviceservice.org.uk/cy
 
   breadcrumbs:
     home: Hafan

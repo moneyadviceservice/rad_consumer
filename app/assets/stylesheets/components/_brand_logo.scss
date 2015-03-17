@@ -1,0 +1,56 @@
+.brand-logo {
+  display: block;
+  overflow: hidden;
+  width: 200px;
+
+  @include respond-to($mq-m) {
+    width: 285px;
+  }
+
+  &:focus {
+    border-bottom: 1px solid $color-primary-nav;
+  }
+}
+
+.brand-logo__img {
+  display: none;
+
+  .ie8 & {
+    display: block;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: auto 34px;
+    background-position-x: 100%;
+
+    @include respond-to($mq-m) {
+      background-size: auto 43px;
+    }
+  }
+}
+
+.brand-logo__img--en {
+  background-image: url("logo-sprite-en.png");
+}
+
+.brand-logo__img--cy {
+  background-image: url("logo-sprite-cy.png");
+}
+
+.brand-logo__svg {
+  display: block;
+  height: 30px;
+  width: 100%;
+
+  @include respond-to($mq-m) {
+    height: 43px;
+  }
+
+  .ie8 & {
+    display: none;
+  }
+}
+
+.brand-logo__text,
+.brand-logo__arch {
+  fill: $color-white;
+}

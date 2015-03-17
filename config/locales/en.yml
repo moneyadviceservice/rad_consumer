@@ -4,6 +4,9 @@
       search_form:
         postcode: Postcode
 
+  mas: The Money Advice Service
+  mas_home_url: https://www.moneyadviceservice.org.uk/en
+
   pagination:
     previous: 'Prev'
     next: 'Next'
@@ -24,8 +27,6 @@
   locales:
     cy: Cymraeg
     en: English
-
-  mas_home_url: https://www.moneyadviceservice.org.uk/en
 
   breadcrumbs:
     home: Home
@@ -251,7 +252,7 @@
           href: 'mailto:'
           link_class: email
           icon_class: result__icon--phone
-      
+
       recieve_advice:
         heading: Receive advice
         items:
