@@ -13,6 +13,17 @@ RSpec.feature 'Consumer views advice filters on search results page' do
     end
   end
 
+  scenario 'Consumer changes postcode' do
+    with_elastic_search! do
+      given_some_firms_were_indexed
+      and_i_have_performed_a_search_from_the_landing_page
+      when_i_change_postcode
+      and_i_rerun_my_search
+      then_i_am_on_search_results_page
+      and_my_search_results_match_the_new_postcode
+    end
+  end
+
   scenario 'Consumer views updated search results' do
     with_elastic_search! do
       given_some_firms_were_indexed
@@ -85,5 +96,17 @@ RSpec.feature 'Consumer views advice filters on search results page' do
   def and_my_search_results_match_the_new_criteria
     expect(results_page.firm_names).to include(@wills_firm.registered_name)
     expect(results_page.firm_names).not_to include(@equity_firm.registered_name)
+  end
+
+  def when_i_change_postcode
+    results_page.criteria.tap do |section|
+      section.postcode.set('RG2 8EE')
+      section.equity_release.set(false)
+      section.search.click
+    end
+  end
+
+  def and_my_search_results_match_the_new_postcode
+    expect(results_page.firm_names.first).to eql(@reading.firm.registered_name)
   end
 end
