@@ -95,6 +95,26 @@ RSpec.describe SearchForm do
         end
       end
     end
+
+    context 'when advice method is phone or online' do
+      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+
+      context 'and either phone or online is present' do
+        before {  form.advice_methods = ['1'] }
+
+        it 'is valid' do
+          expect(form).to be_valid
+        end
+      end
+
+      context 'and neither phone or online is present' do
+        before {  form.advice_methods = [] }
+
+        it 'is not valid' do
+          expect(form).not_to be_valid
+        end
+      end
+    end
   end
 
   describe '#retirement_income_products?' do
