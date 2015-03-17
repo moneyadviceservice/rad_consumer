@@ -47,3 +47,7 @@
   @include body(16, 24);
   margin-top: $baseline-unit*3;
 }
+
+.l-landing-page__validation {
+  @include column(12);
+}
