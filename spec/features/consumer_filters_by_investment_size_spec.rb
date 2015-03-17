@@ -30,8 +30,6 @@ RSpec.feature 'Consumer filters by pension pot size' do
   end
 
   scenario 'Consumer selects the pension transfer option' do
-    pending 'WIP'
-
     with_elastic_search! do
       given_i_am_on_the_rad_landing_page
       and_firms_with_advisers_were_previously_indexed
@@ -56,6 +54,9 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
       @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 10, other_percent: 90, investment_sizes: @investment_sizes.values_at(2, 3))
       create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
+
+      @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 50, pension_transfer_percent: 50, investment_sizes: @investment_sizes)
+      create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
 
       @excluded = create(:firm_with_no_business_split, other_percent: 100)
       create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
@@ -91,22 +92,23 @@ RSpec.feature 'Consumer filters by pension pot size' do
 
   def then_i_am_shown_firms_that_can_advise_on_my_chosen_investment_pot_size
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms(count: 1)
+    expect(results_page).to have_firms(count: 2)
     expect(results_page.firm_names).to include(@small_pot_size_firm.registered_name)
   end
 
   def then_i_am_shown_firms_that_can_advise_on_pension_pots
     expect(results_page).to be_displayed
-    expect(results_page).to have_firms(count: 2)
+    expect(results_page).to have_firms(count: 3)
     expect(results_page.firm_names).to include(
       @small_pot_size_firm.registered_name,
-      @medium_pot_size_firm.registered_name
+      @medium_pot_size_firm.registered_name,
+      @pension_transfer_firm.registered_name
     )
   end
 
   def then_i_am_shown_firms_that_can_assist_with_pension_transfers
     expect(results_page).to be_displayed
     expect(results_page).to have_firms(count: 1)
-    expect(results_page.firm_names).to include(@pot_transfers_firm.registered_name)
+    expect(results_page.firm_names).to include(@pension_transfer_firm.registered_name)
   end
 end
