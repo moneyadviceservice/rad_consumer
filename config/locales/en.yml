@@ -175,7 +175,7 @@
     pension_pot:
       heading: My pension pot(s)/other savings or investments
       pension_pot_size: Your pension pot(s)/savings
-      any_size_option: I don't know / Don't wish to say
+      any_size_option: I don't know / don't wish to say
       pension_transfer:
         heading: Transferring a current or previous pension
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
