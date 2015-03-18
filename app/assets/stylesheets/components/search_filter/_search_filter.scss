@@ -17,10 +17,6 @@
   margin: 0 $baseline-unit*4;
 }
 
-.search-filter__section--first {
-  padding-top: $baseline-unit*4;
-}
-
 .search-filter__section--button {
   margin-top: 0;
   margin-bottom: $baseline-unit*4;
@@ -74,6 +70,11 @@
   @include body(18, 24);
   font-weight: 700;
   color: $search-filter-label-color;
+}
+
+.search-filter__label--padded,
+.search-filter__section--padded {
+  padding-top: $baseline-unit*4;
 }
 
 .search-filter__label-instructions {
