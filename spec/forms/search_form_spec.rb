@@ -171,32 +171,17 @@ RSpec.describe SearchForm do
 
   describe '#to_query' do
     let(:serializer) { double }
+    let(:form) { described_class.new }
 
-    context 'when advice method is face to face' do
-      let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'ABC 123') }
-
-      before do
-        allow(Geocode).to receive(:call).and_return(true)
-        allow(SearchFormSerializer).to receive(:new).and_return(serializer)
-      end
-
-      it 'builds the query JSON via the `SearchFormSerializer`' do
-        expect(serializer).to receive(:as_json)
-
-        form.to_query
-      end
+    before do
+      allow(Geocode).to receive(:call).and_return(true)
+      allow(SearchFormSerializer).to receive(:new).and_return(serializer)
     end
 
-    context 'when advice method is phone or online' do
-      let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE) }
+    it 'builds the query JSON via the `SearchFormSerializer`' do
+      expect(serializer).to receive(:as_json)
 
-      before { allow(RemoteSearchFormSerializer).to receive(:new).and_return(serializer) }
-
-      it 'builds the query JSON via the `RemoteSearchFormSerializer`' do
-        expect(serializer).to receive(:as_json)
-
-        form.to_query
-      end
+      form.to_query
     end
   end
 end

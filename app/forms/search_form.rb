@@ -73,12 +73,7 @@ class SearchForm
   end
 
   def to_query
-    case advice_method
-    when ADVICE_METHOD_FACE_TO_FACE
-      SearchFormSerializer.new(self).to_json
-    when ADVICE_METHOD_PHONE_OR_ONLINE
-      RemoteSearchFormSerializer.new(self).to_json
-    end
+    SearchFormSerializer.new(self).to_json
   end
 
   private
