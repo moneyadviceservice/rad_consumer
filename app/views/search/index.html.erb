@@ -133,10 +133,15 @@
               </div>
             </div>
 
-            <div class="result__qualifications">
-              <div class="result__qualifications-inner">
-                <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
-                <%= image_tag("adviser_qualifications.png", alt: "t('search.accreditations.logo_alt_text')", class: 'result__logos') %>
+            <div>
+              <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+
+              <div class="result__qualifications-logos">
+                <% t('search.accreditations.items').each do |item| %>
+                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
+                    <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
+                  </a>
+                <% end %>
               </div>
             </div>
           </li>

@@ -104,37 +104,21 @@
   margin-bottom: $baseline-unit;
 }
 
-.result__qualifications {
-  @include column(12);
-
-  @include respond-to($mq-m) {
-    border-top: 1px solid $result-border-color;
-  }
-}
-
-.result__qualifications-inner {
-  @include row(12);
-}
-
 .result__qualifications-heading {
   @include column(12);
-  margin-bottom: $baseline-unit*3;
-  font-weight: 700;
-  color: $color-black;
+  @include body(14, 24);
 
   @include respond-to($mq-m) {
     @include column(6);
-    min-height: 51px;
-    margin-top: $baseline-unit*3;
   }
 }
 
-.result__logos {
+.result__qualifications-logos {
   @include column(12);
-  margin-bottom: $baseline-unit*3;
+  margin-top: $baseline-unit*2;
+  margin-bottom: $baseline-unit*2;
 
   @include respond-to($mq-m) {
     @include column(6);
-    margin-top: $baseline-unit*3;
   }
 }

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get '/' => redirect('/en')
 
   scope '/:locale', locale: /en|cy/ do
