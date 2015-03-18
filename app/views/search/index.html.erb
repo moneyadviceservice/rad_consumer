@@ -128,9 +128,8 @@
 
               <div class="result__keyword">
                 <% t('search.keywords').each do |item| %>
-                  <p class="keyword"><%= item[:title] %></p>
+                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
                 <% end %>
-                <a class="keyword__link" href="#glossary"><%= t('search.glossary.link') %></a>
               </div>
             </div>
 
@@ -145,13 +144,6 @@
       </ol>
 
       <%= paginate @result %>
-
-      <div class="glossary" id="glossary">
-        <% t('search.keywords').each do |item| %>
-          <%= heading_tag(item[:title], level: 3, class: 'glossary__heading') %>
-          <p class="glossary__explanation"><%= item[:tooltip] %></p>
-        <% end %>
-      </div>
 
       <div class="l-results__back-to-top back-to-top">
         <%= link_to '#top', class: 'back-to-top__link' do  %>

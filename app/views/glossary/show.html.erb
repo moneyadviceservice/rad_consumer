@@ -2,6 +2,23 @@
   <section class="l-glossary">
     <%= heading_tag(t('glossary.page_title'), level: 1) %>
 
-    <p>Find me in app/views/glossary/show.html.erb</p>
+    <section class="l-glossary__section">
+      <%= heading_tag(t('Keywords'), level: 2) %>
+
+      <% t('search.keywords').each do |item| %>
+        <%= heading_tag(item[:title], level: 3, id: item[:id]) %>
+        <p><%= item[:tooltip] %></p>
+      <% end %>
+    </section>
+
+    <section class="l-glossary__section">
+      <%= heading_tag(t('search.accreditations.glossary_heading'), level: 2) %>
+
+      <% t('search.accreditations.items').each do |item| %>
+        <%= heading_tag(item[:title], level: 3, id: item[:id]) %>
+        <p><%= raw item[:description] %></p>
+        <p><%= raw item[:link] %></p>
+      <% end %>
+    </section>
   </section>
 </div>
