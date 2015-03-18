@@ -86,6 +86,10 @@
     <div class="l-results__main">
       <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
+      <% unless @result.firms.any? %>
+        <p><%= t('search.no_results_message') %></p>
+      <% end %>
+
       <ol class="l-results__list">
         <% @result.firms.each do |firm| %>
 
