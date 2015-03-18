@@ -10,7 +10,7 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_types
+      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_see_the_default_option_is_i_dont_know_or_wish_to_say
       when_i_submit_the_phone_or_online_advice_search
@@ -23,7 +23,7 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_types
+      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       when_i_submit_the_phone_or_online_advice_search
@@ -36,7 +36,7 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_types
+      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       and_i_indicate_that_i_would_like_to_transfer_my_pension
@@ -63,31 +63,34 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
         other_percent: 10,
         investment_sizes: @investment_sizes.values_at(0, 1),
         other_advice_methods: other_advice_methods
-      )
-
-      create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
       @medium_pot_size_firm = create(:firm_with_no_business_split,
         retirement_income_products_percent: 10,
         other_percent: 90,
         investment_sizes: @investment_sizes.values_at(2, 3),
         other_advice_methods: other_advice_methods
-      )
-
-      create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
       @pension_transfer_firm = create(:firm_with_no_business_split,
         retirement_income_products_percent: 50,
         pension_transfer_percent: 50,
         investment_sizes: @investment_sizes,
         other_advice_methods: other_advice_methods
-      )
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
-      create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
-
-      @excluded = create(:firm_with_no_business_split, other_percent: 100)
-
-      create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
+      create(:firm_with_no_business_split,
+        other_percent: 100,
+        other_advice_methods: other_advice_methods
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
     end
   end
 
@@ -97,7 +100,7 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
     # one form and requires the advice method to be selected.
   end
 
-  def and_i_select_the_phone_and_or_online_advice_types
+  def and_i_select_the_phone_and_or_online_advice_methods
     landing_page.remote.by_phone.set true
     landing_page.remote.online.set true
   end

@@ -53,17 +53,35 @@ RSpec.feature 'Consumer requires help with their pension in person' do
     @investment_sizes = create_list(:investment_size, 5)
 
     with_fresh_index! do
-      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 90, other_percent: 10, investment_sizes: @investment_sizes.values_at(0, 1))
-      create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
+      @small_pot_size_firm = create(:firm_with_no_business_split,
+        retirement_income_products_percent: 90,
+        other_percent: 10,
+        investment_sizes: @investment_sizes.values_at(0, 1)
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
-      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 10, other_percent: 90, investment_sizes: @investment_sizes.values_at(2, 3))
-      create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
+      @medium_pot_size_firm = create(:firm_with_no_business_split,
+        retirement_income_products_percent: 10,
+        other_percent: 90,
+        investment_sizes: @investment_sizes.values_at(2, 3)
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
-      @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 50, pension_transfer_percent: 50, investment_sizes: @investment_sizes)
-      create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
+      @pension_transfer_firm = create(:firm_with_no_business_split,
+        retirement_income_products_percent: 50,
+        pension_transfer_percent: 50,
+        investment_sizes: @investment_sizes
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
 
-      @excluded = create(:firm_with_no_business_split, other_percent: 100)
-      create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
+      create(:firm_with_no_business_split,
+        other_percent: 100
+      ) do |f|
+        create(:adviser, firm: f, latitude: latitude, longitude: longitude)
+      end
     end
   end
 
