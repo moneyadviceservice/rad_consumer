@@ -22,36 +22,16 @@ RSpec.feature 'Consumer requires various types of advice' do
     ]
 
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split,
-        retirement_income_products_percent: 30,
-        wills_and_probate_percent: 20,
-        other_percent: 50,
-        other_advice_methods: other_advice_methods
-      ) do |f|
-        @glasgow = create(:adviser, firm: f, latitude: 55.856191, longitude: -4.247082)
-      end
+      @first = create(:firm_with_no_business_split, retirement_income_products_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: other_advice_methods)
+      @glasgow = create(:adviser, firm: @first, latitude: 55.856191, longitude: -4.247082)
 
-      @second = create(:firm_with_no_business_split,
-        retirement_income_products_percent: 29,
-        wills_and_probate_percent: 20,
-        other_percent: 51,
-        other_advice_methods: other_advice_methods
-      ) do |f|
-        @leicester = create(:adviser, firm: f, latitude: 52.633013, longitude: -1.131257)
-      end
+      @second = create(:firm_with_no_business_split, retirement_income_products_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: other_advice_methods)
+      @leicester = create(:adviser, firm: @second, latitude: 52.633013, longitude: -1.131257)
 
-      create(:firm_with_no_business_split,
-        retirement_income_products_percent: 49,
-        other_percent: 51,
-        other_advice_methods: other_advice_methods
-      ) do |f|
-        create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
-      end
+      @excluded = create(:firm_with_no_business_split, retirement_income_products_percent: 49, other_percent: 51, other_advice_methods: other_advice_methods)
+      create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
 
-      create(:firm_with_no_business_split,
-        other_percent: 100,
-        other_advice_methods: other_advice_methods
-      ) do |f|
+      create(:firm_with_no_business_split, other_percent: 100, other_advice_methods: other_advice_methods) do |f|
         create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
       end
     end
