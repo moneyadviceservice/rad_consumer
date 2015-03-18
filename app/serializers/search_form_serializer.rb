@@ -4,27 +4,30 @@ class SearchFormSerializer < ActiveModel::Serializer
   attributes :sort, :query
 
   def sort
-    case
-    when object.face_to_face?
-      {}.tap do |expression|
-        if types_of_advice?
-          expression[:_script] = {
-              script: types_of_advice_sorting_expression,
-              type: 'number',
-              order: 'desc'
-          }
-        end
+    [].tap do |options|
+      if object.phone_or_online?
+        options << 'registered_name'
+      end
 
-        if object.face_to_face?
-          expression[:_geo_distance] = {
+      if types_of_advice?
+        options << {
+          _script: {
+            script: types_of_advice_sorting_expression,
+            type: 'number',
+            order: 'desc'
+          }
+        }
+      end
+
+      if object.face_to_face?
+        options << {
+          _geo_distance: {
             'advisers.location': object.coordinates.reverse,
             'order': 'asc',
             'unit': 'miles'
           }
-        end
+        }
       end
-    when object.phone_or_online?
-      'registered_name'
     end
   end
 
