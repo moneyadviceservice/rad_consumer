@@ -10,74 +10,79 @@
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
-          <fieldset class="form__group search-filter__section">
-            <legend class="search-filter__label"><%= t('search.filter.receive_advice.heading') %></legend>
-            <%= f.form_row(:checkbox) do %>
-              <%= f.errors_for :checkbox %>
-              <div class="form__group-item">
-                <label>
-                  <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input' %>
-                  <%= t('search.filter.receive_advice.face_to_face') %>
-                </label>
-              </div>
+          <div class="search-filter__border">
+            <fieldset class="form__group search-filter__section">
+              <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
 
-              <div class="form__group-item search-filter__item-inset">
-                <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
-                <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
-              </div>
-
-              <div class="form__group-item">
-                <label>
-                  <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input' %>
-                  <%= t('search.filter.receive_advice.phone_online') %>
-                </label>
-
-                <div class="search-filter__item-inset">
-                  <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
-                    <div class="form__group-item">
-                      <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
-                      <%= advice_method.label class: 'search-filter__option' do %>
-                        <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
-                      <% end %>
-                    </div>
-                  <% end %>
+              <%= f.form_row(:checkbox) do %>
+                <%= f.errors_for :checkbox %>
+                <div class="form__group-item">
+                  <label>
+                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input' %>
+                    <%= t('search.filter.receive_advice.face_to_face') %>
+                  </label>
                 </div>
-              </div>
-            <% end %>
-          </fieldset>
 
-          <fieldset class="search-filter__section">
-            <legend class="search-filter__label"><%= t('search.filter.type_of_advice') %></legend>
-            <%= f.form_row(:checkbox) do %>
-              <%= f.errors_for :checkbox %>
-              <div class="form__group-item search-filter__option-container">
-                <%= f.label :checkbox, class: 'search-filter__option' do %>
-                  <%= f.check_box :checkbox, class: 'form__group-input' %>
-                  <%= t('search_filter.pension_pot.heading') %>
-                <% end %>
-              </div>
+                <div class="is-hidden form__group-item search-filter__item-inset">
+                  <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
+                  <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
+                </div>
 
-              <% t('search_filter.options').each do |key, item| %>
-                <div class="form__group-item search-filter__option-container">
-                  <%= f.label key, class: 'search-filter__option' do %>
-                    <%= f.check_box key, class: 'form__group-input' %>
-                    <%= raw item[:title] %>
-                  <% end %>
+                <div class="form__group-item">
+                  <label>
+                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input' %>
+                    <%= t('search.filter.receive_advice.phone_online') %>
+                  </label>
+
+                  <div class="is-hidden search-filter__item-inset">
+                    <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
+                      <div class="form__group-item">
+                        <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
+                        <%= advice_method.label class: 'search-filter__option' do %>
+                          <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
               <% end %>
-            <% end %>
+            </fieldset>
+          </div>
 
-            <%= f.form_row(:checkbox) do %>
-              <%= f.errors_for :checkbox %>
-              <div class="form__group-item">
-                <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading search-filter__label' %>
-                <%= f.select :pension_pot_size, @form.pension_pot_sizes, { include_blank: false }, { class: 'search-filter__inset search-filter__constrained' } %>
-              </div>
-            <% end %>
-          </fieldset>
+          <div class="search-filter__border search-filter__border--bottom">
+            <fieldset class="search-filter__section">
+              <legend class="search-filter__label"><%= t('search.filter.type_of_advice') %></legend>
+              <%= f.form_row(:checkbox) do %>
+                <%= f.errors_for :checkbox %>
+                <div class="form__group-item search-filter__option-container">
+                  <%= f.label :checkbox, class: 'search-filter__option' do %>
+                    <%= f.check_box :checkbox, class: 'form__group-input' %>
+                    <%= t('search_filter.pension_pot.heading') %>
+                  <% end %>
+                </div>
 
-          <div class="search-filter__section search-filter__section--button">
-            <%= button_primary t('search.filter.button_text') %>
+                <% t('search_filter.options').each do |key, item| %>
+                  <div class="form__group-item search-filter__option-container">
+                    <%= f.label key, class: 'search-filter__option' do %>
+                      <%= f.check_box key, class: 'form__group-input' %>
+                      <%= raw item[:title] %>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% end %>
+
+              <%= f.form_row(:checkbox) do %>
+                <%= f.errors_for :checkbox %>
+                <div class="form__group-item">
+                  <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading search-filter__label' %>
+                  <%= f.select :pension_pot_size, @form.pension_pot_sizes, { include_blank: false }, { class: 'search-filter__inset search-filter__constrained' } %>
+                </div>
+              <% end %>
+            </fieldset>
+
+            <div class="search-filter__section search-filter__section--button">
+              <%= button_primary t('search.filter.button_text') %>
+            </div>
           </div>
         <% end %>
       </section>

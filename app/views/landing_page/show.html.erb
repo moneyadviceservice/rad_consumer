@@ -45,10 +45,10 @@
 
       <div class="search-filter__border">
         <div data-search-filter-target>
-          <div class="search-filter__section search-filter__section--first">
+          <div class="search-filter__section">
             <%= f.form_row(:postcode) do %>
               <%= f.errors_for :postcode %>
-              <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
+              <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label search-filter__label--padded' %>
               <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
               <button class="button button--primary search-filter__button search-filter__button--inline"><%= t('search_filter.in_person.button_text') %></button>
             <% end %>
@@ -70,7 +70,7 @@
       <% end %>
 
       <div class="is-hidden search-filter__border search-filter__border--bottom" data-search-filter-target>
-        <div class="search-filter__section form__group form__group--inline">
+        <div class="search-filter__section search-filter__section--padded form__group form__group--inline">
           <%= f.form_row(:advice_methods) do %>
             <%= f.errors_for :advice_methods %>
             <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
