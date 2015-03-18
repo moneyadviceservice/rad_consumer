@@ -278,7 +278,7 @@
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
 
     accreditations:
-      heading: This firm has advisers with the following qualification / accreditations
+      heading: This firm has advisers with the following qualification / accreditations. Click each logo to learn about them.
       glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
@@ -293,7 +293,7 @@
         - title: SOLLA
           id: solla
           description: The Society of Later Life Advisers (SOLLA) accreditation scheme is audited and endorsed by the standard setting body the Financial Skills and Legal Partnership (FSLP). Individual financial advisers who gain the SOLLA accreditation have demonstrated a high level of knowledge and expertise in the area of later life financial planning.  The consumer organisation Which? and many local authorities recommend that individuals looking for advice in more complex areas of financial planning such as paying for care or equity release seek advice from an accredited SOLLA adviser.
-          link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>
+          link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>.
         - title: Later Life Academy
           id: later_life_academy
           description: The Later Life Academy is a voluntary training programme, accredited by the National Skills Council, for qualified advisers. This means advisers who are members of the Later Life Academy have been through additional training in subjects relating to retirement planning. All members of the Later Life Academy offer the initial meeting at their own expense.

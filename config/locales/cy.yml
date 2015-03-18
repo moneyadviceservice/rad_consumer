@@ -275,9 +275,8 @@
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
 
     accreditations:
-      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol
+      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol. Cliciwch phob logo i ddysgu am iddynt.
       glossary_heading: Cymwysterau / Achrediadau
-      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
         - title: Cynllunydd Ariannol Siartredig
           description: Mae Cynllunwyr Ariannol Siartredig yn meddu ar Uwch Ddiploma mewn Cynllunio Ariannol a rhaid iddynt feddu hefyd ar bum mlynedd o leiaf o brofiad mewn diwydiant perthnasol. Y Sefydliad Yswiriant Siartredig (CII) yn unig all roi’r statws siartredig. Rhaid i gynghorwyr sy’n cyrraedd y statws Siartredig feddu ar lefel uwch o gymhwyster na’r statws gofynnol sydd ei angen i fedru gweithio a rhaid iddynt barchu’r cod ymarfer a’r safonau llym a osodir gan eu Corff Proffesiynol, y Gymdeithas Cyllid Personol (sef cangen gwasanaethau ariannol y CII).
