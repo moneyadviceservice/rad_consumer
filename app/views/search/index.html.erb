@@ -13,12 +13,11 @@
           <div class="search-filter__border">
             <fieldset class="form__group search-filter__section">
               <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
-
               <%= f.form_row(:checkbox) do %>
                 <%= f.errors_for :checkbox %>
                 <div class="form__group-item">
                   <label>
-                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input' %>
+                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice' %>
                     <%= t('search.filter.receive_advice.face_to_face') %>
                   </label>
                 </div>
@@ -30,7 +29,7 @@
 
                 <div class="form__group-item">
                   <label>
-                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input' %>
+                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online' %>
                     <%= t('search.filter.receive_advice.phone_online') %>
                   </label>
 

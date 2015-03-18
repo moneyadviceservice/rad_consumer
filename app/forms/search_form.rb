@@ -66,6 +66,10 @@ class SearchForm
     advice_methods.select(&:present?)
   end
 
+  def advice_methods
+    Array(@advice_methods).select(&:present?).map(&:to_i)
+  end
+
   def advice_methods_present
     if remote_advice_method_ids.empty?
       errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))

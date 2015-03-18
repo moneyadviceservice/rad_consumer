@@ -13,4 +13,6 @@ class SearchCriteriaSection < SitePrism::Section
   element :online, '.t-advice-method-2'
 
   element :search, '.button--primary'
+  element :in_person_advice, '.t-face_to_face_advice'
+  element :remote_advice, '.t-phone_or_online'
 end

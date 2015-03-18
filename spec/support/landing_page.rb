@@ -7,4 +7,8 @@ class LandingPage < SitePrism::Page
 
   section :in_person, InPersonSection, '.t-in-person'
   section :remote, RemoteSection, '.t-remote'
+
+  def invalid_parameters?
+    has_css?('.field_with_errors')
+  end
 end

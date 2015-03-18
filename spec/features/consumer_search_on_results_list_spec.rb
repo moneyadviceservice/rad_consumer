@@ -59,7 +59,7 @@ RSpec.feature 'Consumer views advice filters on search results page' do
   def and_i_have_performed_a_search_from_the_landing_page
     landing_page.load
     landing_page.in_person.tap do |section|
-      section.postcode.set('G1 5QT')
+      section.postcode.set 'G1 5QT'
       section.equity_release.set(true)
       section.search.click
     end
@@ -67,7 +67,7 @@ RSpec.feature 'Consumer views advice filters on search results page' do
 
   def when_i_search_with_a_reading_postcode
     landing_page.in_person.tap do |section|
-      section.postcode.set('G1 5QT')
+      section.postcode.set 'G1 5QT'
       section.search.click
     end
   end
@@ -81,7 +81,7 @@ RSpec.feature 'Consumer views advice filters on search results page' do
   end
 
   def and_previously_selected_filters_are_selected_by_default
-    expect(results_page.criteria.postcode.value).to eql('G1 5QT')
+    expect(results_page.criteria.postcode.value).to eql 'G1 5QT'
   end
 
   def when_i_amend_some_of_the_filters
@@ -100,7 +100,7 @@ RSpec.feature 'Consumer views advice filters on search results page' do
 
   def when_i_change_postcode
     results_page.criteria.tap do |section|
-      section.postcode.set('RG2 8EE')
+      section.postcode.set 'RG2 8EE'
       section.equity_release.set(false)
       section.search.click
     end
