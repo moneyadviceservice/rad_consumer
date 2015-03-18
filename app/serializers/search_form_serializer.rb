@@ -4,57 +4,79 @@ class SearchFormSerializer < ActiveModel::Serializer
   attributes :sort, :query
 
   def sort
-    {
-      '_script': {
-        'script': types_of_advice_sorting_expression,
-        'type': 'number',
-        'order': 'desc'
-      },
-      '_geo_distance': {
-        'advisers.location': object.coordinates.reverse,
-        'order': 'asc',
-        'unit': 'miles'
-      }
-    }.tap do |expression|
-      expression.delete(:_script) unless types_of_advice?
+    [].tap do |options|
+      if object.phone_or_online?
+        options << 'registered_name'
+      end
+
+      if types_of_advice?
+        options << {
+          _script: {
+            script: types_of_advice_sorting_expression,
+            type: 'number',
+            order: 'desc'
+          }
+        }
+      end
+
+      if object.face_to_face?
+        options << {
+          _geo_distance: {
+            'advisers.location': object.coordinates.reverse,
+            order: 'asc',
+            unit: 'miles'
+          }
+        }
+      end
     end
   end
 
   def query
     {
-      'filtered': {
-        'filter': {
-          'script': {
-            'script': types_of_advice_filter_expression
+      filtered: {
+        filter: {
+          bool: {
+            must: build_filters
           }
         },
-        'query': {
-          'bool': {
-            'must': (build_postcode_filters + build_investment_sizes_filter)
+        query: {
+          bool: {
+            must: build_queries
           }
         }
       }
-    }.tap do |expression|
-      expression[:filtered].delete(:filter) unless types_of_advice?
-    end
+    }
   end
 
   private
 
-  def build_postcode_filters
+  def build_filters
+    [].tap do |filters|
+      filters << { script: { script: types_of_advice_filter_expression } } if types_of_advice?
+      filters << { in: { other_advice_methods: object.remote_advice_method_ids } } if object.phone_or_online?
+    end
+  end
+
+  def build_queries
+    investment_size_queries.tap do |expression|
+      expression.push(*postcode_queries) if object.face_to_face?
+    end
+  end
+
+  def postcode_queries
     [
       {
-        'match': {
-          'postcode_searchable': true
+        match: {
+          postcode_searchable: true
         }
       },
       {
-        'nested': {
-          'path': 'advisers',
-          'filter': {
-            'geo_distance': {
-              'distance': '650miles',
-              'location': object.coordinates.reverse
+        nested: {
+          path: 'advisers',
+          filter: {
+            geo_distance: {
+              distance: '650miles',
+              location: object.coordinates.reverse
             }
           }
         }
@@ -62,29 +84,29 @@ class SearchFormSerializer < ActiveModel::Serializer
     ]
   end
 
-  def types_of_advice?
-    object.types_of_advice.present?
+  def investment_size_queries
+    [].tap do |filters|
+      if object.retirement_income_products?
+        unless object.any_pension_pot_size?
+          filters << { match: { investment_sizes: object.pension_pot_size } }
+        end
+      end
+    end
   end
 
-  def types_of_advice_filter_expression
-    chosen_types_of_advice_fields.map { |field| "#{field} > 0" }.join(' && ')
+  def types_of_advice?
+    object.types_of_advice.present?
   end
 
   def types_of_advice_sorting_expression
     chosen_types_of_advice_fields.join(' + ')
   end
 
-  def chosen_types_of_advice_fields
-    object.types_of_advice.map { |type| "doc['#{type}'].value" }
+  def types_of_advice_filter_expression
+    chosen_types_of_advice_fields.map { |field| "#{field} > 0" }.join(' && ')
   end
 
-  def build_investment_sizes_filter
-    [].tap do |filters|
-      if object.retirement_income_products?
-        unless object.any_pension_pot_size?
-          filters << { 'match': { 'investment_sizes' => object.pension_pot_size } }
-        end
-      end
-    end
+  def chosen_types_of_advice_fields
+    object.types_of_advice.map { |type| "doc['#{type}'].value" }
   end
 end
