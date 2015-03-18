@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]> <html lang="<%= I18n.locale %>" class="ie ie8 no-js"> <![endif]-->
-<html>
+<html lang="<%= I18n.locale %>">
 <head>
   <title><%= page_tag('title_tag') %></title>
   <meta name="description" content="<%= page_tag('meta_tag_description') %>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
+
+  <link href="https://directory.moneyadviceservice.org.uk/en" hreflang="en-GB" rel="alternate" />
+  <link href="https://directory.moneyadviceservice.org.uk/cy" hreflang="cy-GB" rel="alternate" />
+  <link href="https://directory.moneyadviceservice.org.uk/<%= I18n.locale %>" rel="canonical" />
 
   <%= stylesheet_link_tag 'dough/assets/stylesheets/basic' %>
   <%= stylesheet_link_tag 'dough/assets/stylesheets/font_files' %>
