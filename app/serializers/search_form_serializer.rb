@@ -23,8 +23,8 @@ class SearchFormSerializer < ActiveModel::Serializer
         options << {
           _geo_distance: {
             'advisers.location': object.coordinates.reverse,
-            'order': 'asc',
-            'unit': 'miles'
+            order: 'asc',
+            unit: 'miles'
           }
         }
       end
