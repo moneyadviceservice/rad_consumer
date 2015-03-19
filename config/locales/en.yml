@@ -221,9 +221,6 @@
       of: of
       firms: firms
 
-    glossary:
-      link: What do these mean?
-
     filter:
       heading: Refine your search
       receive_advice:
@@ -271,16 +268,38 @@
 
     keywords:
       - title: Free initial meeting
+        id: free_initial_meeting
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
       - title: 'Minimum fee: £1,000'
+        id: minimum_fee
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
       - title: 'Minimum pot size/savings: £50,000'
+        id: minimum_pot_size
         tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
 
     accreditations:
-      heading: This firm has advisers with the following qualification / accreditations
-      tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+      heading: This firm has advisers with the following qualification / accreditations. Click each logo to learn about them.
+      glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
+      items:
+        - title: Chartered Financial Planner
+          id: chartered_fp
+          description: Chartered Financial Planners hold the Advanced Diploma in Financial Planning and must have a minimum of five years’ relevant industry experience. Chartered status can only be conferred by the Chartered Insurance Institute (CII). Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their Professional Body, the Personal Finance Society (the financial services arm of the CII).
+          link: You can find out more <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf">here</a>.
+        - title: Certified Financial Planner
+          id: certified_fp
+          description: A Certified Financial Planner (CM) or CFP(CM) professional is a professional Financial Planner who has completed a high-level and globally recognised qualification set by independent professional body, the Institute of Financial Planning (IFP). All CFP professionals must abide by the IFP’s strict code of ethics and professional practice standards.
+          link: You can find out more <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">here</a>.
+        - title: SOLLA
+          id: solla
+          description: The Society of Later Life Advisers (SOLLA) accreditation scheme is audited and endorsed by the standard setting body the Financial Skills and Legal Partnership (FSLP). Individual financial advisers who gain the SOLLA accreditation have demonstrated a high level of knowledge and expertise in the area of later life financial planning.  The consumer organisation Which? and many local authorities recommend that individuals looking for advice in more complex areas of financial planning such as paying for care or equity release seek advice from an accredited SOLLA adviser.
+          link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>.
+        - title: Later Life Academy
+          id: later_life_academy
+          description: The Later Life Academy is a voluntary training programme, accredited by the National Skills Council, for qualified advisers. This means advisers who are members of the Later Life Academy have been through additional training in subjects relating to retirement planning. All members of the Later Life Academy offer the initial meeting at their own expense.
+        - title: ISO 22222
+          id: iso_22222
+          description: This is an international standard for financial planning, developed by the International Organisation for Standardisation (ISO) in collaboration with the British Standards Institute (BSI).  Advisers who are awarded this standard must demonstrate high levels of ethical behavior, competency and experience. ISO is the world’s largest developer of voluntary international standards.
 
     education_module_one:
       heading: How were these results decided?
@@ -302,3 +321,11 @@
     ordinal:
       "1": "Phone"
       "2": "Online"
+
+
+  glossary:
+    show:
+      title_tag: 'Glossary | Retirement Adviser Directory'
+      meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
+
+    page_title: Glossary

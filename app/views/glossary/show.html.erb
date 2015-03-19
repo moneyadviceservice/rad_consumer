@@ -1,0 +1,21 @@
+<div class="l-constrained">
+  <section class="l-glossary">
+    <%= heading_tag(t('glossary.page_title'), level: 1) %>
+
+    <% t('search.keywords').each do |item| %>
+      <%= heading_tag(item[:title], level: 2, id: item[:id], class: 'l-glossary__definition') %>
+      <p><%= item[:tooltip] %></p>
+    <% end %>
+
+    <%= heading_tag(t('search.accreditations.glossary_heading'), level: 2, class: 'l-glossary__heading') %>
+
+    <% t('search.accreditations.items').each do |item| %>
+      <section class="l-glossary__section">
+        <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img accreditation__img--alt') %>
+        <%= heading_tag(item[:title], level: 3, id: item[:id], class: 'l-glossary__definition') %>
+        <p><%= raw item[:description] %></p>
+        <p><%= raw item[:link] %></p>
+      </section>
+    <% end %>
+  </section>
+</div>

@@ -221,9 +221,6 @@
       of: o
       firms: cwmnïau
 
-    glossary:
-      link: Beth mae hyn yn ei olygu?
-
     filter:
       heading: Chwiliwch yn fwy penodol
       receive_advice:
@@ -278,9 +275,23 @@
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
 
     accreditations:
-      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol
-      tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
-      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
+      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol. Cliciwch phob logo i ddysgu am iddynt.
+      glossary_heading: Cymwysterau / Achrediadau
+      items:
+        - title: Cynllunydd Ariannol Siartredig
+          description: Mae Cynllunwyr Ariannol Siartredig yn meddu ar Uwch Ddiploma mewn Cynllunio Ariannol a rhaid iddynt feddu hefyd ar bum mlynedd o leiaf o brofiad mewn diwydiant perthnasol. Y Sefydliad Yswiriant Siartredig (CII) yn unig all roi’r statws siartredig. Rhaid i gynghorwyr sy’n cyrraedd y statws Siartredig feddu ar lefel uwch o gymhwyster na’r statws gofynnol sydd ei angen i fedru gweithio a rhaid iddynt barchu’r cod ymarfer a’r safonau llym a osodir gan eu Corff Proffesiynol, y Gymdeithas Cyllid Personol (sef cangen gwasanaethau ariannol y CII).
+          link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf">yma</a>.
+        - title: Cynllunydd Ariannol Ardystiedig
+          description: Mae Cynllunydd Ariannol Ardystiedig CM neu CFPCM yn Gynllunydd Ariannol proffesiynol sydd wedi cwblhau lefel uchel o gymhwyster a gydnabyddir yn fyd-eang, a bennir gan gorff proffesiynol annibynnol, y Sefydliad Cynllunio Ariannol (IFP). Rhaid i aelodau proffesiynol o’r CFP barchu cod moeseg llym yr IFP ynghyd â safonau ymarfer proffesiynol.
+          link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">yma</a>.
+        - title: SOLLA
+          description: Mae cynllun achredu Society of Later Life Advisers (SOLLA) yn cael ei archwilio a’i gefnogi gan Bartneriaeth Sgiliau Ariannol a Chyfreithiol (FSLP), sef y corff sy’n gosod y safonau. Mae cynghorwyr ariannol sy’n ennill achrediad SOLLA wedi dangos lefel uchel o wybodaeth ac arbenigedd ym maes cynllunio ariannol bywyd hŷn. Mae’r sefydliad i ddefnyddwyr, Which?, ynghyd ag amryw o awdurdodau lleol yn argymell y dylai unigolion sy’n chwilio am gyngor mewn meysydd mwy cymhleth fel cynllunio ariannol ar gyfer pethau fel talu am ofal neu ryddhau ecwiti, geisio cyngor gan gynghorydd SOLLA achrededig.
+          link: Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>
+        - title: Academi Bywyd Hŷn
+          description: Rhaglen hyfforddiant wirfoddol yw’r Academi Bywyd Hŷn, wedi ei hachredu gan y Cyngor Sgiliau Cenedlaethol, ar gyfer cynghorwyr cymwys. Golyga hyn bod cynghorwyr sy’n aelodau o’r Academi Bywyd Hŷn wedi cael hyfforddiant ychwanegol mewn pynciau sy’n ymwneud â chynllunio ymddeoliad. Mae pob aelod o’r Academi Bywyd Hŷn yn cynnig eu hamser ar gyfer y cyfarfod cyntaf o’u gwirfodd.
+        - title: ISO 22222
+          description: Dyma safon ryngwladol ar gyfer cynllunio ariannol, a ddatblygwyd gan y Sefydliad Safoni Rhyngwladol (ISO) mewn cydweithrediad â’r Sefydliad Safonau Prydeinig (BSI). Rhaid i gynghorwyr sy’n cyrraedd y safon hon ddangos lefelau uchel o ymddygiad moesol, gallu a phrofiad. ISO yw’r datblygwr mwyaf yn y byd o safonau rhyngwladol gwirfoddol.
+
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?

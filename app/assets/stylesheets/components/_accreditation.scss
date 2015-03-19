@@ -1,0 +1,19 @@
+.accreditation {
+  display: block;
+  float: left;
+  margin-right: $baseline-unit;
+}
+
+.accreditation__help-text {
+  @include body(14, 18);
+  clear: both;
+}
+
+.accreditation__img {
+  height: 44px;
+}
+
+.accreditation__img--alt {
+  margin-bottom: $baseline-unit;
+  float: right;
+}

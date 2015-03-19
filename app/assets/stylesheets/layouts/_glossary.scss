@@ -1,0 +1,24 @@
+.l-glossary {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(9);
+  }
+
+  @include respond-to($mq-xl) {
+    @include column(7);
+  }
+}
+
+.l-glossary__section {
+  margin-bottom: $baseline-unit*10;
+}
+
+.l-glossary__heading {
+  @include body(22, 30);
+}
+
+.l-glossary__definition {
+  @include body(16, 24);
+  color: $color-grey-primary;
+}
