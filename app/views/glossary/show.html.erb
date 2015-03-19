@@ -2,8 +2,6 @@
   <section class="l-glossary">
     <%= heading_tag(t('glossary.page_title'), level: 1) %>
 
-    <%#= heading_tag(t('Keywords'), level: 2) %>
-
     <% t('search.keywords').each do |item| %>
       <%= heading_tag(item[:title], level: 2, id: item[:id], class: 'l-glossary__definition') %>
       <p><%= item[:tooltip] %></p>
