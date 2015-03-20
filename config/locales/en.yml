@@ -113,7 +113,7 @@
   learn_more_hidden_text: (click this link and further information will appear directly below)
 
   trust_banner:
-    heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or already retired.
+    heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or have already retired.
     items:
       - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
         tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
@@ -126,12 +126,12 @@
     description: Financial advisers can provide advice in person, online or by phone. How would you like to receive your advice?
     subheading: Why use a financial adviser?
     video:
-      description: Watch this short video to find out how people have benefited from advisers.
+      description: Watch this short video to find out how people have benefited from talking to a financial adviser.
       download_transcript_text: (Download the video transcript)
       download_transcript_link: 'https://moneyadviceservice.org.uk'
 
   more_reasons:
-    heading: More reasons to take financial advice
+    heading: Reasons to take financial advice
     key_points:
     - text: Financial advisers are regulated so you are protected if things go wrong.
     - text: They can choose products from a wide range of providers.
@@ -143,7 +143,7 @@
 
   pension_wise:
     heading: Have you had your free guidance appointment yet?
-    description_html: Find out more from <a href="https://www.pensionwise.gov.uk" target="_blank">Pension wise</a>
+    description_html: Find out more from <a href="https://www.pensionwise.gov.uk" target="_blank">Pension Wise</a>
 
   workplace_scheme:
     question: Are you a member of a union or other affinity group?
@@ -173,11 +173,11 @@
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
-      pension_pot_size: Your pension pot(s)/savings
+      pension_pot_size: Select pension pot(s) / savings amount
       any_size_option: I don't know / don't wish to say
       pension_transfer:
         heading: Transferring a current or previous pension
-        tooltip: It’s always a good idea to take advice before you transfer a pension, as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
+        tooltip: It’s always a good idea to take advice before you transfer a pension as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
 
     options:
       options_when_paying_for_care:
@@ -194,7 +194,7 @@
         tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
 
     in_person:
-      heading: Find financial advisers who offer face to face advice
+      heading: Find financial advisers who offer face-to-face advice
       postcode_label: Enter your postcode
       button_text: Search
 
@@ -224,7 +224,7 @@
       heading: Refine your search
       receive_advice:
         heading: Receive advice
-        face_to_face: Face to face
+        face_to_face: Face-to-face
         phone_online: Online/Telephone
         postcode_label: Postcode
       button_text: Search
@@ -268,16 +268,16 @@
     keywords:
       - title: Free initial meeting
         id: free_initial_meeting
-        tooltip: This firm will offer an initial meeting by phone or face to face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
-      - title: 'Minimum fee: £1,000'
+        tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
+      - title: 'Minimum fee'
         id: minimum_fee
         tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
-      - title: 'Minimum pot size/savings: £50,000'
+      - title: 'Minimum pot size/savings'
         id: minimum_pot_size
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
-      heading: This firm has advisers with the following qualification / accreditations. Click each logo to learn about them.
+      heading: This firm has advisers with the following qualifications / accreditations. Click each logo to learn about them.
       glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
@@ -311,7 +311,7 @@
       heading: Remote financial advice
       content:
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
-        - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face to face adviser.
+        - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face-to-face adviser.
         - text: Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.
 
   remote_search: *search
