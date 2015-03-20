@@ -157,9 +157,7 @@
 
   <section class="l-landing-page__3col">
     <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <% t('retirement_income_options.content').each do |item| %>
-      <p><%= raw item[:text] %></p>
-    <% end %>
-    <a class="button button--secondary l-landing-page__button is-disabled" href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
+    <p><%= t('retirement_income_options.content') %></p>
+    <a class="button button--secondary l-landing-page__button " href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
   </section>
 </div>
