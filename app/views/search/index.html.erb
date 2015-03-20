@@ -13,8 +13,10 @@
           <div class="search-filter__border">
             <fieldset class="form__group search-filter__section">
               <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
-              <%= f.form_row(:checkbox) do %>
-                <%= f.errors_for :checkbox %>
+
+              <%= f.form_row(:advice_method) do %>
+                <%= f.errors_for :postcode %>
+                <%= f.errors_for :advice_methods %>
                 <div class="form__group-item">
                   <label>
                     <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice' %>
@@ -22,7 +24,7 @@
                   </label>
                 </div>
 
-                <div class="is-hidden form__group-item search-filter__item-inset">
+                <div class="form__group-item search-filter__item-inset">
                   <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
                   <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
                 </div>
@@ -33,7 +35,7 @@
                     <%= t('search.filter.receive_advice.phone_online') %>
                   </label>
 
-                  <div class="is-hidden search-filter__item-inset">
+                  <div class="search-filter__item-inset">
                     <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
                       <div class="form__group-item">
                         <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
@@ -155,7 +157,7 @@
       <%= paginate @result %>
 
       <div class="l-results__back-to-top back-to-top">
-        <%= link_to '#top', class: 'back-to-top__link' do  %>
+        <%= link_to '#top', class: 'back-to-top__link' do %>
           <%= t('search.back_to_top') %>
           <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
             <use xlink:href="#icon-back-to-top"></use>
