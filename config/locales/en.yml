@@ -2,6 +2,7 @@
   activemodel:
     attributes:
       search_form:
+        advice_methods: ''
         postcode: Postcode
 
   mas: The Money Advice Service
