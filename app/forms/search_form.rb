@@ -72,7 +72,7 @@ class SearchForm
 
   def advice_methods_present
     if remote_advice_method_ids.empty?
-      errors.add(:base, I18n.t('search.errors.missing_advice_method'))
+      errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
     end
   end
 
