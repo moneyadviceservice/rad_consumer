@@ -23,72 +23,11 @@
 </div>
 
 <div class="l-constrained">
-  <section class="l-landing-page__2col search-filter">
+  <section class="l-landing-page__2col">
     <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
     <p><%= t('find_retirement_adviser.description') %></p>
 
-    <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'form search-filter__form t-in-person' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
-      <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
-
-      <%= content_for :validation_summary do %>
-        <div class="l-constrained">
-          <div class="l-landing-page__validation">
-            <%= f.validation_summary %>
-          </div>
-        </div>
-      <% end %>
-
-      <%= heading_tag( level: 3, class: 'search-filter__heading search-filter__heading--first', data: { search_filter_heading: ''}) do %>
-        <span class="search-filter__triangle-icon search-filter__triangle-icon--down" data-search-filter-icon></span>
-        <span class="search-filter__heading-text"><%= t('search_filter.in_person.heading') %></span>
-      <% end %>
-
-      <div class="search-filter__border">
-        <div data-search-filter-target>
-          <div class="search-filter__section search-filter__section--padded">
-            <%= f.form_row(:postcode) do %>
-              <%= f.errors_for :postcode %>
-              <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
-              <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
-              <button class="button button--primary search-filter__button search-filter__button--inline"><%= t('search_filter.in_person.button_text') %></button>
-            <% end %>
-          </div>
-
-          <%= render partial: 'landing_page/search_filter_options', locals: { f: f } %>
-        </div>
-
-        <div class="search-filter__divider"></div>
-      </div>
-    <% end %>
-
-    <%= form_for @form, url: search_path, method: :get, namespace: 'remote', html: { class: 'form search-filter__form t-remote' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
-      <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
-
-      <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
-        <span class="search-filter__triangle-icon" data-search-filter-icon></span>
-        <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>
-      <% end %>
-
-      <div class="search-filter__border search-filter__border--bottom" data-search-filter-target="closed">
-        <div class="search-filter__section search-filter__section--padded form__group form__group--inline">
-          <%= f.form_row(:advice_methods) do %>
-            <%= f.errors_for :advice_methods %>
-            <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
-              <div class="form__group-item">
-                <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
-                <%= advice_method.label do %>
-                  <%= t("advice_methods.ordinal.#{advice_method.object.order}") %>
-                <% end %>
-              </div>
-            <% end %>
-
-            <button class="button button--primary search-filter__button"><%= t('search_filter.in_person.button_text') %></button>
-          <% end %>
-        </div>
-
-        <%= render partial: 'landing_page/search_filter_options', locals: { f: f } %>
-      </div>
-    <% end %>
+    <%= render 'landing_page/search_filter' %>
   </section>
 
   <section class="l-landing-page__2col">

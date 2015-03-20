@@ -40,3 +40,12 @@
 .l-results__back-to-top {
   @include column(12);
 }
+
+
+.l-results__filter {
+  @include column(12);
+
+  @include respond-to(37.5em, $mq-l) {
+    @include column(6);
+  }
+}
