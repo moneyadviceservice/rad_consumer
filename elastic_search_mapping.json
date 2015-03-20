@@ -30,6 +30,7 @@
         "equity_release": { "type": "integer" },
         "inheritance_tax_planning": { "type": "integer" },
         "wills_and_probate": { "type": "integer" },
+        "in_person_advice_methods": { "type": "integer" },
 
         "advisers": {
           "type": "nested",

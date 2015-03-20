@@ -32,7 +32,9 @@ RSpec.feature 'Consumer views a search result' do
         equity_release_percent: 10,
         inheritance_tax_and_estate_planning_percent: 10,
         wills_and_probate_percent: 10,
-        other_percent: 40
+        other_percent: 40,
+        in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
+        other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) }
       )
 
       create(:adviser, firm: @firm, latitude: 51.428473, longitude: -0.943616)
@@ -64,6 +66,8 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_the_where_the_firm_offers_advice
+    expect(@displayed_firm).to have_in_person_advice_methods(count: 2)
+    expect(@displayed_firm).to have_other_advice_methods(count: 2)
   end
 
   def and_i_see_the_types_of_advice_the_firm_offers

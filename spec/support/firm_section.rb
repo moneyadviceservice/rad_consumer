@@ -1,4 +1,7 @@
 class FirmSection < SitePrism::Section
+  elements :in_person_advice_methods, '.t-in-person-advice-method'
+  elements :other_advice_methods, '.t-other-advice-method'
+
   def name
     root_element.find('.t-name').text
   end

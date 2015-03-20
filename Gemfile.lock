@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/mas-rad_core.git
-  revision: 0f17320a838a218109fd3c8feffa65349c56e7f0
+  revision: 12d0f256ace90d1b6de503f6f3099ff19adf7dac
   branch: 6026-binding-search-result
   specs:
     mas-rad_core (0.0.23)
@@ -144,7 +144,7 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.5)
+    rails-dom-testing (1.0.6)
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)

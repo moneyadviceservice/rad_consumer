@@ -250,12 +250,6 @@
 
       recieve_advice:
         heading: Receive advice
-        items:
-          - text: At your home
-          - text: At the firm's office
-          - text: At agreed location
-          - text: Online
-          - text: Telephone
       type_of_advice:
         heading: Type of advice
         items:
@@ -317,10 +311,20 @@
 
   remote_search: *search
 
-  advice_methods:
+  other_advice_method:
     ordinal:
+<<<<<<< HEAD
       "1": "Phone"
       "2": "Online"
+=======
+      '1': 'Phone'
+      '2': 'Online'
+  in_person_advice_method:
+    ordinal:
+      '1': 'At your home'
+      '2': "At the firm's office"
+      '3': 'At agreed location'
+>>>>>>> Displays advice methods
 
   glossary:
     show:
