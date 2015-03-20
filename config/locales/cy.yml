@@ -151,11 +151,9 @@
 
   retirement_income_options:
     heading: Dewisiadau incwm ymddeol
-    content:
-      - text: Yn dod yn fuan&hellip;
-      - text: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi.
+    content: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi.
     link_text: Ystyried eich dewisiadau
-    link_url: 'https://moneyadviceservice.org.uk/cy'
+    link_url: 'https://www.moneyadviceservice.org.uk/cy/retirement-income-options'
 
   useful_links:
     heading: Dolen ddefnyddiol

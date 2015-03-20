@@ -150,11 +150,9 @@
 
   retirement_income_options:
     heading: Retirement income options
-    content:
-      - text: Coming soon&hellip;
-      - text: The retirement landscape is changing fast and it’s tricky to understand all the options available to you.
+    content: The retirement landscape is changing fast and it’s tricky to understand all the options available to you.
     link_text: Explore your options
-    link_url: 'https://moneyadviceservice.org.uk'
+    link_url: 'https://www.moneyadviceservice.org.uk/en/retirement-income-options'
 
   useful_links:
     heading: Useful links
