@@ -1,3 +1,9 @@
+.search-filter {
+  border-bottom-left-radius: $search-filter-radius;
+  border-bottom-right-radius: $search-filter-radius;
+  overflow: hidden;
+}
+
 .search-filter__border {
   border-left: 1px solid $search-filter-border-color;
   border-right: 1px solid $search-filter-border-color;
@@ -39,11 +45,6 @@
 .search-filter__heading--first {
   border-top-left-radius: $search-filter-radius;
   border-top-right-radius: $search-filter-radius;
-}
-
-.js .search-filter__heading--second {
-  border-bottom-left-radius: $search-filter-radius;
-  border-bottom-right-radius: $search-filter-radius;
 }
 
 .js .search-filter__heading-text {

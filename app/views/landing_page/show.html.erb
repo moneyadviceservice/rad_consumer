@@ -23,7 +23,7 @@
 </div>
 
 <div class="l-constrained">
-  <section class="l-landing-page__2col">
+  <section class="l-landing-page__2col search-filter">
     <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
     <p><%= t('find_retirement_adviser.description') %></p>
 
@@ -69,7 +69,7 @@
         <span class="search-filter__heading-text"><%= t('search_filter.remote.heading') %></span>
       <% end %>
 
-      <div class="is-hidden search-filter__border search-filter__border--bottom" data-search-filter-target>
+      <div class="search-filter__border search-filter__border--bottom" data-search-filter-target="closed">
         <div class="search-filter__section search-filter__section--padded form__group form__group--inline">
           <%= f.form_row(:advice_methods) do %>
             <%= f.errors_for :advice_methods %>
