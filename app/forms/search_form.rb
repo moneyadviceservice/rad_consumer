@@ -22,6 +22,9 @@ class SearchForm
     :coordinates,
     :pension_pot_size,
     :advice_methods,
+    :old_advice_method,
+    :old_advice_methods,
+    :old_postcode,
     *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
@@ -78,6 +81,26 @@ class SearchForm
 
   def to_query
     SearchFormSerializer.new(self).to_json
+  end
+
+  def old_values_present?
+    if advice_method == ADVICE_METHOD_FACE_TO_FACE
+      old_postcode.present?
+    elsif advice_method == ADVICE_METHOD_PHONE_OR_ONLINE
+      old_advice_methods.present?
+    end
+  end
+
+  def use_old_values
+    @postcode = old_postcode unless old_postcode.blank?
+    @advice_methods = old_advice_methods unless old_advice_methods.blank?
+    @advice_method = old_advice_method unless old_advice_method.blank?
+  end
+
+  def fill_old_values
+    @old_postcode = postcode
+    @old_advice_method = advice_method
+    @old_advice_methods = advice_methods
   end
 
   private

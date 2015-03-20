@@ -15,4 +15,12 @@ class SearchCriteriaSection < SitePrism::Section
   element :search, '.button--primary'
   element :in_person_advice, '.t-face_to_face_advice'
   element :remote_advice, '.t-phone_or_online'
+
+  def postcode_validation_error?
+    has_css?('.validation-summary__error')
+  end
+
+  def advice_method_validation_error?
+    has_css?('.validation-summary__error')
+  end
 end
