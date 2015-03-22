@@ -168,8 +168,9 @@
       - text: Rydym yn parchu’ch preifatrwydd ac ni fyddwn yn rhannu’ch manylion.
 
   search_filter:
-    subheading: Sut fath o help sydd ei angen arnoch?
-    instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+    lading_page:
+      subheading: Sut fath o help sydd ei angen arnoch?
+      instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill

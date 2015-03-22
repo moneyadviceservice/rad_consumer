@@ -50,7 +50,7 @@
             </div>
 
             <div class="l-results__filter search-filter__section search-filter__section--last">
-              <%= render partial: 'landing_page/search_filter_options', locals: { f: f } %>
+              <%= render partial: 'landing_page/search_filter_options', locals: { f: f, key: 'search_filter.results_page' } %>
               <%= button_primary t('search.filter.button_text') %>
             </div>
         <% end %>

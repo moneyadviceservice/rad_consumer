@@ -8,4 +8,10 @@ class SearchController < ApplicationController
       render 'landing_page/show'
     end
   end
+
+  def search_filter_options_description?
+    false
+  end
+
+  helper_method :search_filter_options_description?
 end
