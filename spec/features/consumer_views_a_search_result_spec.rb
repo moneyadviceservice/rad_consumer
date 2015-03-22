@@ -71,6 +71,7 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_the_types_of_advice_the_firm_offers
+    expect(@displayed_firm).to have_types_of_advice(count: 6)
   end
 
   def and_i_see_the_firms_minimum_pot_size

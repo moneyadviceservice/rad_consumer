@@ -252,13 +252,13 @@
         heading: Receive advice
       type_of_advice:
         heading: Type of advice
-        items:
-          - text: Pension pot(s)/savings
-          - text: Transferring a pension
-          - text: Paying for care
-          - text: Equity release
-          - text: Inheritance tax planning
-          - text: Wills and probate
+        types:
+          retirement_income_products: Pension pot(s)/savings
+          pension_transfer: Transferring a pension
+          options_when_paying_for_care: Paying for care
+          equity_release: Equity release
+          inheritance_tax_planning: Inheritance tax planning
+          wills_and_probate: Wills and probate
 
     keywords:
       - title: Free initial meeting
