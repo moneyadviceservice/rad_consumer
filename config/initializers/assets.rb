@@ -18,6 +18,7 @@ Rails.application.configure do
     modules/FurtherInfo.js
     modules/SearchFilter.js
     modules/NestedOptions.js
+    modules/ResultsFilter.js
   )
 
   # Vendor JavaScript
