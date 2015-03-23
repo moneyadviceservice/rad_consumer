@@ -5,10 +5,6 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def sort
     [].tap do |options|
-      if object.phone_or_online?
-        options << 'registered_name'
-      end
-
       if types_of_advice?
         options << {
           _script: {
@@ -17,6 +13,10 @@ class SearchFormSerializer < ActiveModel::Serializer
             order: 'desc'
           }
         }
+      end
+
+      if object.phone_or_online?
+        options << 'registered_name'
       end
 
       if object.face_to_face?
