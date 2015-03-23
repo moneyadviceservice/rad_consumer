@@ -168,9 +168,20 @@
       - text: Rydym yn parchu’ch preifatrwydd ac ni fyddwn yn rhannu’ch manylion.
 
   search_filter:
-    lading_page:
-      subheading: Sut fath o help sydd ei angen arnoch?
+    landing_page:
+      heading: Sut fath o help sydd ei angen arnoch?
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+    results_page:
+      heading: Math o gyngor
+
+    filter:
+      heading: Chwiliwch yn fwy penodol
+      receive_advice:
+        heading: Cael cyngor
+        face_to_face: Wyneb yn wyneb
+        phone_online: Ffôn / Ar-lein
+        postcode_label: Cod post
+      button_text: Chwilio
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
@@ -219,17 +230,6 @@
       to: i
       of: o
       firms: cwmnïau
-
-    filter:
-      heading: Chwiliwch yn fwy penodol
-      receive_advice:
-        heading: Cael cyngor
-        face_to_face: Wyneb yn wyneb
-        phone_online: Ffôn / Ar-lein
-        postcode_label: Cod post
-      button_text: Chwilio
-      type_of_advice: Math o gyngor
-      pension_pot_savings: Cronfa(feydd)/cynilion pensiwn
 
     result:
       adviser: Cynghorydd
