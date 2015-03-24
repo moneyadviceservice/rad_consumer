@@ -1,10 +1,9 @@
-<section class="education">
-  <%= heading_tag(level: 3, class: 'education__heading') do %>
-    <span class="education__icon"></span>
+<section class="education" data-education-module>
+  <%= heading_tag(level: 3, class: 'education__heading', data: { education_module_heading: '' }) do %>
     <span class="education__heading-text"><%= t("#{key}.heading") %>
   <% end %>
 
-  <div class="education__content">
+  <div class="education__content" data-education-module-target>
     <% t("#{key}.content").each do |item| %>
       <p><%= item[:text] %></p>
     <% end %>
