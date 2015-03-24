@@ -12,11 +12,11 @@ define(['jquery'], function($) {
       $resultsFilterTargetTwo = $('[data-results-filter-target="2"]'),
       statusHidden = 'is-hidden';
 
-      if ( $resultsFilterTriggerOne.is(':checked') ) {
-        $resultsFilterTargetOne.addClass(statusHidden);
-      } else if ( $resultsFilterTriggerTwo.is(':checked')  ) {
-        $resultsFilterTargetTwo.addClass(statusHidden);
-      }
+  if ( $resultsFilterTriggerOne.is(':checked') ) {
+    $resultsFilterTargetOne.addClass(statusHidden);
+  } else if ( $resultsFilterTriggerTwo.is(':checked')  ) {
+    $resultsFilterTargetTwo.addClass(statusHidden);
+  }
 
   $resultsFilter.each(function(indexInArray, objectInArray) {
     var $elementTriggerOne = $(objectInArray).find($resultsFilterTriggerOne),

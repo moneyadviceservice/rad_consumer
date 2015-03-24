@@ -27,7 +27,6 @@
         <%= search_filter_options(f, 'landing_page') %>
       </div>
     </div>
-
   <% end %>
 
   <%= form_for @form, url: search_path, method: :get, namepsace: 'remote', html: { class: 'form search-filter__form t-remote' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
@@ -52,14 +51,12 @@
                 <% end %>
               </div>
             <% end %>
-
             <button class="button button--primary search-filter__button"><%= t('search_filter.in_person.button_text') %></button>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
 
         <%= search_filter_options(f, 'landing_page') %>
       </div>
-
     </div>
   <% end %>
 </div>

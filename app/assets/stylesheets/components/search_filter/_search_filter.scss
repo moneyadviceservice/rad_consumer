@@ -9,12 +9,6 @@
   margin-top: 0;
 }
 
-
-
-
-
-
-// HEADING
 .search-filter__heading {
   @include body(16, 18);
   color: $search-filter-heading-color;
@@ -53,19 +47,6 @@
   }
 }
 
-
-
-
-// BORDER
-// .search-filter__border {
-//   overflow: hidden;
-//   border-left: 1px solid $search-filter-border-color;
-//   border-right: 1px solid $search-filter-border-color;
-// }
-
-
-
-// SECTION
 .search-filter__section {
   margin: 0 $baseline-unit*4;
 }
@@ -74,35 +55,13 @@
   margin-top: $baseline-unit*6;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .search-filter--border {
   border: 1px solid $search-filter-border-color;
 }
 
-
-
-
 .search-filter__section--last {
   margin-bottom: $baseline-unit*4;
 }
-
-
 
 .search-filter__label {
   @include body(18, 24);
