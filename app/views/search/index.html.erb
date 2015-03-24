@@ -180,8 +180,10 @@
               </div>
 
               <div class="result__keyword">
-                <% t('search.keywords').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
+                <% if firm.minimum_fixed_fee? %>
+                  <a href="glossary/#minimum_fee" target="_blank" class="keyword">
+                    <%= t('search.keywords.minimum_fee.title') %><span class="t-minimum-fixed-fee"><%= number_to_currency(firm.minimum_fixed_fee, unit: '£', precision: 0) %></span>
+                  </a>
                 <% end %>
               </div>
             </div>

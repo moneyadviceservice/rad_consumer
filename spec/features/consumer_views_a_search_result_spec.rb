@@ -78,6 +78,7 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_the_firms_minimum_fee
+    expect(@displayed_firm.minimum_fixed_fee).to eq('£1,000')
   end
 
   def and_i_see_whether_the_firm_offers_free_initial_meetings

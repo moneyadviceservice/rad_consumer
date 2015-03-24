@@ -34,4 +34,8 @@ class FirmSection < SitePrism::Section
   def email_address
     root_element.find('.email')
   end
+
+  def minimum_fixed_fee
+    root_element.find('.t-minimum-fixed-fee').text
+  end
 end

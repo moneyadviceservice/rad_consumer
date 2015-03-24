@@ -261,14 +261,14 @@
           wills_and_probate: Wills and probate
 
     keywords:
-      - title: Free initial meeting
-        id: free_initial_meeting
+      free_initial_meeting:
+        title: Free initial meeting
         tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
-      - title: 'Minimum fee'
-        id: minimum_fee
+      minimum_fee:
+        title: 'Minimum fee: '
         tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
-      - title: 'Minimum pot size/savings'
-        id: minimum_pot_size
+      minimum_pot_size:
+        title: 'Minimum pot size/savings: '
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
