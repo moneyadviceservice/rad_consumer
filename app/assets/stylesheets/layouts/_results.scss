@@ -5,7 +5,7 @@
 .l-results__main {
   @include column(12);
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-l) {
     @include column(8);
   }
 }
@@ -21,7 +21,7 @@
 .l-results__side {
   @include column(12);
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-l) {
     @include column(4);
     float: right;
     clear: right;

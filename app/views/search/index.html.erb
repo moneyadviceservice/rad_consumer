@@ -9,8 +9,9 @@
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
+          <div class="search-filter--container">
             <div class="l-results__filter">
-              <fieldset class="form__group search-filter__section search-filter__section--padded">
+              <fieldset class="form__group search-filter__section">
                 <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
 
                 <%= f.form_row(:advice_method) do %>
@@ -57,6 +58,7 @@
               <%= search_filter_options(f, 'results_page') %>
               <%= button_primary t('search.filter.button_text') %>
             </div>
+          </div>
         <% end %>
       </section>
     </div>

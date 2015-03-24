@@ -4,6 +4,11 @@
   overflow: hidden;
 }
 
+.search-filter--container {
+  @include row(12);
+  padding-top: $baseline-unit*6;
+}
+
 .search-filter__form {
   // override Dough class 'form'
   margin-top: 0;
@@ -48,7 +53,8 @@
 }
 
 .search-filter__section {
-  margin: 0 $baseline-unit*4;
+  padding-left: $baseline-unit*3;
+  padding-right: $baseline-unit*3;
 }
 
 .search-filter__section--padded {
