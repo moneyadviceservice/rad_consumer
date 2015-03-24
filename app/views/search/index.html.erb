@@ -9,6 +9,14 @@
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= hidden_field_tag(:origin, 'results') %>
 
+          <%= content_for :validation_summary do %>
+            <div class="l-constrained">
+              <div class="l-landing-page__validation">
+                <%= f.validation_summary %>
+              </div>
+            </div>
+          <% end %>
+
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
           <div class="search-filter--container">
@@ -16,23 +24,24 @@
               <fieldset class="form__group search-filter__section">
                 <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
 
-                <%= f.form_row(:advice_method) do %>
+              <div class="l-results__form-row" data-results-filter>
+                <%= f.form_row(:postcode) do %>
                   <%= f.errors_for :postcode %>
+                  <div class="form__group-item">
+                    <label>
+                      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' } %>
+                      <%= t('search.filter.receive_advice.face_to_face') %>
+                    </label>
+                  </div>
+
+                  <div class="form__group-item search-filter__item-inset" data-results-filter-target="2">
+                    <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
+                    <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8 %>
+                  </div>
+                <% end %>
+
+                <%= f.form_row(:advice_methods) do %>
                   <%= f.errors_for :advice_methods %>
-
-                  <div data-results-filter>
-                    <div class="form__group-item">
-                      <label>
-                        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' } %>
-                        <%= t('search.filter.receive_advice.face_to_face') %>
-                      </label>
-                    </div>
-
-                    <div class="form__group-item search-filter__item-inset" data-results-filter-target="2">
-                      <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
-                      <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8 %>
-                    </div>
-
                     <div class="form__group-item">
                       <label>
                         <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
@@ -50,9 +59,8 @@
                         <% end %>
                       </div>
                     </div>
-                  </div>
-
-                <% end %>
+                  <% end %>
+                </div>
               </fieldset>
             </div>
 
@@ -131,7 +139,7 @@
                   <% end %>
                 </div>
               </div>
-            </li>
+            </li>incorrect_search_criteria
           <% end %>
         </ol>
 
@@ -146,7 +154,7 @@
           <% end %>
         </div>
       <% else %>
-        <p>Please correct the problem with your search criteria and try again.</p>
+        <p><%= t('search.incorrect_search_criteria') %></p>
       <% end %>
     </div>
 

@@ -213,6 +213,7 @@
     index:
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
+    incorrect_search_criteria: Please correct the problem with your search criteria and try again.
 
     filter:
       heading: Refine your search
