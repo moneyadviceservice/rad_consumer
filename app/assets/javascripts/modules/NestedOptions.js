@@ -7,6 +7,10 @@ define(['jquery'], function($) {
       $nestedOptions = $('[data-nested-options]'),
       statusHidden = 'is-hidden';
 
+  if ($nestedOptionTrigger.is(':checked')) {
+    $nestedOptions.toggleClass(statusHidden);
+  }
+
   $nestedOptionsComponent.each(function(indexInArray, objectInArray) {
     var $elementTrigger = $(objectInArray).find($nestedOptionTrigger),
         $elementOptions = $(objectInArray).find($nestedOptions);
