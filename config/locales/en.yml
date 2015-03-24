@@ -250,31 +250,25 @@
 
       recieve_advice:
         heading: Receive advice
-        items:
-          - text: At your home
-          - text: At the firm's office
-          - text: At agreed location
-          - text: Online
-          - text: Telephone
       type_of_advice:
         heading: Type of advice
-        items:
-          - text: Pension pot(s)/savings
-          - text: Transferring a pension
-          - text: Paying for care
-          - text: Equity release
-          - text: Inheritance tax planning
-          - text: Wills and probate
+        types:
+          retirement_income_products: Pension pot(s)/savings
+          pension_transfer: Transferring a pension
+          options_when_paying_for_care: Paying for care
+          equity_release: Equity release
+          inheritance_tax_planning: Inheritance tax planning
+          wills_and_probate: Wills and probate
 
     keywords:
-      - title: Free initial meeting
-        id: free_initial_meeting
+      free_initial_meeting:
+        title: Free initial meeting
         tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
-      - title: 'Minimum fee'
-        id: minimum_fee
+      minimum_fee:
+        title: 'Minimum fee: '
         tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
-      - title: 'Minimum pot size/savings'
-        id: minimum_pot_size
+      minimum_pot_size:
+        title: 'Minimum pot size/savings: '
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
@@ -282,23 +276,24 @@
       glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
-        - title: Chartered Financial Planner
+        chartered_fp:
+          title: Chartered Financial Planner
           id: chartered_fp
           description: Chartered Financial Planners hold the Advanced Diploma in Financial Planning and must have a minimum of five years’ relevant industry experience. Chartered status can only be conferred by the Chartered Insurance Institute (CII). Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their Professional Body, the Personal Finance Society (the financial services arm of the CII).
           link: You can find out more <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf.pdf">here</a>.
-        - title: Certified Financial Planner
-          id: certified_fp
+        certified_fp:
+          title: Certified Financial Planner
           description: A Certified Financial Planner (CM) or CFP(CM) professional is a professional Financial Planner who has completed a high-level and globally recognised qualification set by independent professional body, the Institute of Financial Planning (IFP). All CFP professionals must abide by the IFP’s strict code of ethics and professional practice standards.
           link: You can find out more <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">here</a>.
-        - title: SOLLA
-          id: solla
+        solla:
+          title: SOLLA
           description: The Society of Later Life Advisers (SOLLA) accreditation scheme is audited and endorsed by the standard setting body the Financial Skills and Legal Partnership (FSLP). Individual financial advisers who gain the SOLLA accreditation have demonstrated a high level of knowledge and expertise in the area of later life financial planning.  The consumer organisation Which? and many local authorities recommend that individuals looking for advice in more complex areas of financial planning such as paying for care or equity release seek advice from an accredited SOLLA adviser.
           link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>.
-        - title: Later Life Academy
-          id: later_life_academy
+        later_life_academy:
+          title: Later Life Academy
           description: The Later Life Academy is a voluntary training programme, accredited by the National Skills Council, for qualified advisers. This means advisers who are members of the Later Life Academy have been through additional training in subjects relating to retirement planning. All members of the Later Life Academy offer the initial meeting at their own expense.
-        - title: ISO 22222
-          id: iso_22222
+        iso_22222:
+          title: ISO 22222
           description: This is an international standard for financial planning, developed by the International Organisation for Standardisation (ISO) in collaboration with the British Standards Institute (BSI).  Advisers who are awarded this standard must demonstrate high levels of ethical behavior, competency and experience. ISO is the world’s largest developer of voluntary international standards.
 
     education_module_one:
@@ -317,10 +312,30 @@
 
   remote_search: *search
 
-  advice_methods:
+  investment_size:
     ordinal:
-      "1": "Phone"
-      "2": "Online"
+      '1': 'Under £50,000'
+      '2': '£50,000'
+      '3': '£100,000'
+      '4': 'Over £150,000'
+  other_advice_method:
+    ordinal:
+      '1': 'Phone'
+      '2': 'Online'
+  in_person_advice_method:
+    ordinal:
+      '1': 'At your home'
+      '2': "At the firm's office"
+      '3': 'At agreed location'
+  qualification:
+    ordinal:
+      '3': chartered_fp
+      '4': certified_fp
+  accreditation:
+    ordinal:
+      '1': solla
+      '2': later_life_academy
+      '3': iso_22222
 
   glossary:
     show:

@@ -89,31 +89,75 @@
               <div class="vcard">
                 <p class="address adr">
                   <span class="visually-hidden fn org"><%= firm.name %></span>
-                  <span class="address__line street-address">Bircham road</span>
-                  <span class="address__line locality">Stanhoe</span>
-                  <span class="address__line region">Norfolk</span>
-                  <span class="address__line post-code">PE31 8PT</span>
+                  <span class="address__line street-address"><%= firm.address_line_one %></span>
+                  <span class="address__line locality"><%= firm.address_town %></span>
+                  <span class="address__line region"><%= firm.address_county %></span>
+                  <span class="address__line post-code"><%= firm.address_postcode %></span>
                 </p>
 
-                <% t('search.result.contact_details').each do |item| %>
-                  <a href="<%= item[:href] %>" class="address__link">
-                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
-                      <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
+                <a href="tel:<%= firm.telephone_number.strip %>" class="address__link phone">
+                  <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
+                    <use xlink:href="#icon-phone"></use>
+                  </svg>
+                  <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
+                </a>
+
+                <% if firm.website_address %>
+                  <a href="<%= firm.website_address %>" class="address__link url">
+                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
+                      <use xlink:href="#icon-url"></use>
                     </svg>
-                    <span class="value"><%= item[:text] %></span>
+                    <span class="value">Firm's website</span>
                   </a>
                 <% end %>
+
+                <a href="mailto:<%= firm.email_address %>" class="address__link email">
+                  <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
+                    <use xlink:href="#icon-email"></use>
+                  </svg>
+                  <span class="value">Email firm</span>
+                </a>
+
               </div>
             </div>
 
             <div class="result__advice">
-              <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
-              <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
+              <div class="result__2col">
+                <%= heading_tag(t("search.result.recieve_advice.heading"), level: 3, class: 'result__sub-heading') %>
+
+                <ul class="result__list">
+                  <% firm.in_person_advice_methods.each do |id| %>
+                    <li class="result__list-item t-in-person-advice-method"><%= InPersonAdviceMethod.friendly_name(id) %></li>
+                  <% end %>
+                  <% firm.other_advice_methods.each do |id| %>
+                    <li class="result__list-item t-other-advice-method"><%= OtherAdviceMethod.friendly_name(id) %></li>
+                  <% end %>
+                </ul>
+              </div>
+
+              <div class="result__2col">
+                <%= heading_tag(t("search.result.type_of_advice.heading"), level: 3, class: 'result__sub-heading') %>
+
+                <ul class="result__list">
+                  <% firm.types_of_advice.each do |type| %>
+                    <li class="result__list-item t-type-of-advice"><%= t("search.result.type_of_advice.#{type}") %></li>
+                  <% end %>
+                </ul>
+              </div>
 
               <div class="result__keyword">
-                <% t('search.keywords').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
+                <% if firm.minimum_fixed_fee? %>
+                  <a href="glossary/#minimum_fee" target="_blank" class="keyword">
+                    <%= t('search.keywords.minimum_fee.title') %><span class="t-minimum-fixed-fee"><%= number_to_currency(firm.minimum_fixed_fee, unit: '£', precision: 0) %></span>
+                  </a>
                 <% end %>
+                <% if firm.free_initial_meeting? %>
+                  <a href="glossary/#free_initial_meeting" target="_blank" class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></a>
+                <% end %>
+                <a href="glossary/#minimum_pot_size" target="_blank" class="keyword">
+                  <%= t('search.keywords.minimum_pot_size.title') %>
+                  <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
+                </a>
               </div>
             </div>
 
@@ -121,10 +165,22 @@
               <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
 
               <div class="result__qualifications-logos">
-                <% t('search.accreditations.items').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
-                    <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
-                  </a>
+                <% firm.adviser_qualification_ids.each do |id| %>
+                  <% if key = Qualification.friendly_name(id) %>
+                    <% info = t("search.accreditations.items.#{key}") %>
+                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-qualification">
+                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
+                    </a>
+                  <% end %>
+                <% end %>
+
+                <% firm.adviser_accreditation_ids.each do |id| %>
+                  <% if key = Accreditation.friendly_name(id) %>
+                    <% info = t("search.accreditations.items.#{key}") %>
+                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-accreditation">
+                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
+                    </a>
+                  <% end %>
                 <% end %>
               </div>
             </div>
