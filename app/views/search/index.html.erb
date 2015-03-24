@@ -166,21 +166,11 @@
 
               <div class="result__qualifications-logos">
                 <% firm.adviser_qualification_ids.each do |id| %>
-                  <% if key = Qualification.friendly_name(id) %>
-                    <% info = t("search.accreditations.items.#{key}") %>
-                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-qualification">
-                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
-                    </a>
-                  <% end %>
+                  <%= render_logo(id, :qualification) %>
                 <% end %>
 
                 <% firm.adviser_accreditation_ids.each do |id| %>
-                  <% if key = Accreditation.friendly_name(id) %>
-                    <% info = t("search.accreditations.items.#{key}") %>
-                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-accreditation">
-                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
-                    </a>
-                  <% end %>
+                  <%= render_logo(id, :accreditation) %>
                 <% end %>
               </div>
             </div>
