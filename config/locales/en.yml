@@ -186,19 +186,15 @@
       options_when_paying_for_care:
         title: Options when paying for care
         tooltip: If you, or someone you know, wants to find out more about paying for residential care or care at home, then choose this option. Not all advisers work in this field, so if you choose this option we will match you to firms that have advisers with the necessary qualifications.
-        test_class: t-options-when-paying-for-care
       equity_release:
         title: Equity release
         tooltip: In order to be able to give you advice on equity release schemes, financial advisers must have a specific qualification. If you choose this option we will match you to firms with an adviser who has the necessary qualification. You can read more about <a href="https://www.moneyadviceservice.org.uk/en/articles/equity-release">equity release here</a>.
-        test_class: t-equity-release
       inheritance_tax_planning:
         title: Inheritance tax planning
         tooltip: If you want to speak to a financial adviser who can help you with inheritance tax, choose this option. We will match you to firms with advisers who deal with this area of financial planning.
-        test_class: t-inheritance-tax-planning
       wills_and_probate:
         title: 'Wills &amp; probate'
         tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
-        test_class: t-wills-and-probate
 
     in_person:
       heading: Find financial advisers who offer face-to-face advice
