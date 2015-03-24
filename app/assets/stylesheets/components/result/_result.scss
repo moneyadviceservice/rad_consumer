@@ -113,6 +113,10 @@
   margin-bottom: $baseline-unit;
 }
 
+.result__qualifications {
+  clear: both;
+}
+
 .result__qualifications-heading {
   @include column(12);
   @include body(14, 24);
