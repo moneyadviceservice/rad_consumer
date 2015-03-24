@@ -65,10 +65,6 @@
   border: 1px solid $search-filter-border-color;
 }
 
-.search-filter__section--last {
-  margin-bottom: $baseline-unit*4;
-}
-
 .search-filter__label {
   @include body(18, 24);
   font-weight: 700;

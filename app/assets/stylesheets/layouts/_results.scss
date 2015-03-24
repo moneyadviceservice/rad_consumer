@@ -48,3 +48,15 @@
     @include column(6);
   }
 }
+
+.l-results__filter-button-container {
+  @extend .l-results-filter;
+  margin-bottom: $baseline-unit*2;
+}
+
+.l-results__filter-button {
+  @include respond-to($mq-xs, $mq-l) {
+    @include column(12);
+    margin-bottom: $baseline-unit*2;
+  }
+}

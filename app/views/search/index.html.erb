@@ -54,11 +54,15 @@
               </fieldset>
             </div>
 
-            <div class="l-results__filter search-filter__section search-filter__section--last">
+            <div class="l-results__filter search-filter__section">
               <%= search_filter_options(f, 'results_page') %>
-              <%= button_primary t('search.filter.button_text') %>
+            </div>
+
+            <div class="l-results__filter-button-container search-filter__section">
+              <button class="l-results__filter-button button button--primary"><%= t('search.filter.button_text') %></button>
             </div>
           </div>
+
         <% end %>
       </section>
     </div>
