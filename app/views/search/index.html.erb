@@ -85,61 +85,63 @@
           <p><%= t('search.no_results_message') %></p>
         <% end %>
 
-        <ol class="l-results__list">
+        <ol class="l-results__list" data-education-module>
           <% @result.firms.each do |firm| %>
 
             <li class="result t-firm">
               <div class="result__heading">
-                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
+                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { education_module_heading: '' }) %>
                 <p class="result__adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
               </div>
 
-              <div class="result__address">
-                <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
+              <div data-education-module-target>
+                <div class="result__address">
+                  <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
 
-                <div class="vcard">
-                  <p class="address adr">
-                    <span class="visually-hidden fn org"><%= firm.name %></span>
-                    <span class="address__line street-address">Bircham road</span>
-                    <span class="address__line locality">Stanhoe</span>
-                    <span class="address__line region">Norfolk</span>
-                    <span class="address__line post-code">PE31 8PT</span>
-                  </p>
+                  <div class="vcard">
+                    <p class="address adr">
+                      <span class="visually-hidden fn org"><%= firm.name %></span>
+                      <span class="address__line street-address">Bircham road</span>
+                      <span class="address__line locality">Stanhoe</span>
+                      <span class="address__line region">Norfolk</span>
+                      <span class="address__line post-code">PE31 8PT</span>
+                    </p>
 
-                  <% t('search.result.contact_details').each do |item| %>
-                    <a href="<%= item[:href] %>" class="address__link">
-                      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
-                        <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
-                      </svg>
-                      <span class="value"><%= item[:text] %></span>
-                    </a>
-                  <% end %>
+                    <% t('search.result.contact_details').each do |item| %>
+                      <a href="<%= item[:href] %>" class="address__link">
+                        <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
+                          <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
+                        </svg>
+                        <span class="value"><%= item[:text] %></span>
+                      </a>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="result__advice">
+                  <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
+                  <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
+
+                  <div class="result__keyword">
+                    <% t('search.keywords').each do |item| %>
+                      <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="result__qualifications">
+                  <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+
+                  <div class="result__qualifications-logos">
+                    <% t('search.accreditations.items').each do |item| %>
+                      <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
+                        <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
+                      </a>
+                    <% end %>
+                  </div>
                 </div>
               </div>
-
-              <div class="result__advice">
-                <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
-                <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
-
-                <div class="result__keyword">
-                  <% t('search.keywords').each do |item| %>
-                    <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
-                  <% end %>
-                </div>
-              </div>
-
-              <div class="result__qualifications">
-                <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
-
-                <div class="result__qualifications-logos">
-                  <% t('search.accreditations.items').each do |item| %>
-                    <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
-                      <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
-                    </a>
-                  <% end %>
-                </div>
-              </div>
-            </li>incorrect_search_criteria
+            </li>
           <% end %>
         </ol>
 
