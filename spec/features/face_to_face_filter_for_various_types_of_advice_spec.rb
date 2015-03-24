@@ -47,7 +47,7 @@ RSpec.feature 'Consumer requires advice on various topics' do
   end
 
   def and_i_indicate_i_need_advice_on_various_topics
-    landing_page.in_person.pension_pot.set true
+    landing_page.in_person.retirement_income_products.set true
     landing_page.in_person.wills_and_probate.set true
   end
 
