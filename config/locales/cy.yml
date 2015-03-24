@@ -174,15 +174,6 @@
     results_page:
       heading: Math o gyngor
 
-    filter:
-      heading: Chwiliwch yn fwy penodol
-      receive_advice:
-        heading: Cael cyngor
-        face_to_face: Wyneb yn wyneb
-        phone_online: Ffôn / Ar-lein
-        postcode_label: Cod post
-      button_text: Chwilio
-
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
       pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
@@ -222,6 +213,16 @@
     index:
       title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+
+    filter:
+      heading: Chwiliwch yn fwy penodol
+      receive_advice:
+        heading: Cael cyngor
+        face_to_face: Wyneb yn wyneb
+        phone_online: Ffôn / Ar-lein
+        postcode_label: Cod post
+      button_text: Chwilio
+
     page_title: Canlyniadau chwilio
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
@@ -278,19 +279,23 @@
       glossary_heading: Cymwysterau / Achrediadau
       items:
         - title: Cynllunydd Ariannol Siartredig
+          id: chartered_fp
           description: Mae Cynllunwyr Ariannol Siartredig yn meddu ar Uwch Ddiploma mewn Cynllunio Ariannol a rhaid iddynt feddu hefyd ar bum mlynedd o leiaf o brofiad mewn diwydiant perthnasol. Y Sefydliad Yswiriant Siartredig (CII) yn unig all roi’r statws siartredig. Rhaid i gynghorwyr sy’n cyrraedd y statws Siartredig feddu ar lefel uwch o gymhwyster na’r statws gofynnol sydd ei angen i fedru gweithio a rhaid iddynt barchu’r cod ymarfer a’r safonau llym a osodir gan eu Corff Proffesiynol, y Gymdeithas Cyllid Personol (sef cangen gwasanaethau ariannol y CII).
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf.pdf">yma</a>.
         - title: Cynllunydd Ariannol Ardystiedig
+          id: certified_fp
           description: Mae Cynllunydd Ariannol Ardystiedig CM neu CFPCM yn Gynllunydd Ariannol proffesiynol sydd wedi cwblhau lefel uchel o gymhwyster a gydnabyddir yn fyd-eang, a bennir gan gorff proffesiynol annibynnol, y Sefydliad Cynllunio Ariannol (IFP). Rhaid i aelodau proffesiynol o’r CFP barchu cod moeseg llym yr IFP ynghyd â safonau ymarfer proffesiynol.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">yma</a>.
         - title: SOLLA
+          id: solla
           description: Mae cynllun achredu Society of Later Life Advisers (SOLLA) yn cael ei archwilio a’i gefnogi gan Bartneriaeth Sgiliau Ariannol a Chyfreithiol (FSLP), sef y corff sy’n gosod y safonau. Mae cynghorwyr ariannol sy’n ennill achrediad SOLLA wedi dangos lefel uchel o wybodaeth ac arbenigedd ym maes cynllunio ariannol bywyd hŷn. Mae’r sefydliad i ddefnyddwyr, Which?, ynghyd ag amryw o awdurdodau lleol yn argymell y dylai unigolion sy’n chwilio am gyngor mewn meysydd mwy cymhleth fel cynllunio ariannol ar gyfer pethau fel talu am ofal neu ryddhau ecwiti, geisio cyngor gan gynghorydd SOLLA achrededig.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>
         - title: Academi Bywyd Hŷn
+          id: later_life_academy
           description: Rhaglen hyfforddiant wirfoddol yw’r Academi Bywyd Hŷn, wedi ei hachredu gan y Cyngor Sgiliau Cenedlaethol, ar gyfer cynghorwyr cymwys. Golyga hyn bod cynghorwyr sy’n aelodau o’r Academi Bywyd Hŷn wedi cael hyfforddiant ychwanegol mewn pynciau sy’n ymwneud â chynllunio ymddeoliad. Mae pob aelod o’r Academi Bywyd Hŷn yn cynnig eu hamser ar gyfer y cyfarfod cyntaf o’u gwirfodd.
         - title: ISO 22222
+          id: iso_22222
           description: Dyma safon ryngwladol ar gyfer cynllunio ariannol, a ddatblygwyd gan y Sefydliad Safoni Rhyngwladol (ISO) mewn cydweithrediad â’r Sefydliad Safonau Prydeinig (BSI). Rhaid i gynghorwyr sy’n cyrraedd y safon hon ddangos lefelau uchel o ymddygiad moesol, gallu a phrofiad. ISO yw’r datblygwr mwyaf yn y byd o safonau rhyngwladol gwirfoddol.
-
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
@@ -312,3 +317,10 @@
     ordinal:
       "1": Ffôn
       "2": Ar-lein
+
+  glossary:
+    show:
+      title_tag: 'Geirfa | Cyfeirlyfr Cynghorydd Ymddeoliad'
+      meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+
+  page_title: Geirfa
