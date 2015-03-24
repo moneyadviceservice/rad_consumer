@@ -82,6 +82,7 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_whether_the_firm_offers_free_initial_meetings
+    expect(@displayed_firm).to have_free_initial_meeting
   end
 
   def and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess

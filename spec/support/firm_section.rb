@@ -3,6 +3,8 @@ class FirmSection < SitePrism::Section
   elements :other_advice_methods, '.t-other-advice-method'
   elements :types_of_advice, '.t-type-of-advice'
 
+  element :free_initial_meeting, '.t-free-initial-meeting'
+
   def name
     root_element.find('.t-name').text
   end
