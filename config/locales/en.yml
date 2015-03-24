@@ -329,13 +329,20 @@
       '3': 'At agreed location'
   qualification:
     ordinal:
+      '1': ignored
+      '2': ignored
       '3': chartered_fp
       '4': certified_fp
+      '5': ignored
+      '6': ignored
+      '7': ignored
   accreditation:
     ordinal:
       '1': solla
       '2': later_life_academy
       '3': iso_22222
+      '4': ignored
+      '5': ignored
 
   glossary:
     show:
