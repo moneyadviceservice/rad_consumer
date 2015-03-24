@@ -169,6 +169,51 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#types_of_advice' do
+    subject(:types_of_advice) { form.types_of_advice }
+
+    let(:form) do
+      described_class.new(
+        options_when_paying_for_care: '1',
+        equity_release: '1',
+        inheritance_tax_planning: '1',
+        wills_and_probate: '1'
+      )
+    end
+
+    context 'when retirement products is selected' do
+      before { form.retirement_income_products = '1' }
+
+      context 'and pension transfer is selected' do
+        before { form.pension_transfer = '1' }
+
+        it 'returns all advice types including pension transfer' do
+          expect(types_of_advice).to eql(SearchForm::TYPES_OF_ADVICE)
+        end
+      end
+
+      context 'and pension transfer is not selected' do
+        before { form.pension_transfer = nil }
+
+        it 'returns all advice types except for pension transfer' do
+          expect(types_of_advice).to eql(SearchForm::TYPES_OF_ADVICE - [:pension_transfer])
+        end
+      end
+    end
+
+    context 'when retirement products is not selected' do
+      before { form.retirement_income_products = nil }
+
+      context 'but pension transfer is selected' do
+        before { form.pension_transfer = '1' }
+
+        it 'returns all advice types except for retirement products and pension transfer' do
+          expect(types_of_advice).to eql(SearchForm::TYPES_OF_ADVICE - [:retirement_income_products, :pension_transfer])
+        end
+      end
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
     let(:form) { described_class.new }

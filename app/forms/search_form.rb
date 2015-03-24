@@ -59,7 +59,13 @@ class SearchForm
   end
 
   def types_of_advice
-    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
+    TYPES_OF_ADVICE.select do |type|
+      if type == :pension_transfer
+        retirement_income_products? && pension_transfer == '1'
+      else
+        public_send(type) == '1'
+      end
+    end
   end
 
   def remote_advice_method_ids
