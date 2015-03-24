@@ -40,4 +40,8 @@ class FirmSection < SitePrism::Section
   def minimum_fixed_fee
     root_element.find('.t-minimum-fixed-fee').text
   end
+
+  def minimum_pot_size
+    root_element.find('.t-minimum-pot-size').text
+  end
 end

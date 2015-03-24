@@ -188,6 +188,10 @@
                 <% if firm.free_initial_meeting? %>
                   <a href="glossary/#free_initial_meeting" target="_blank" class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></a>
                 <% end %>
+                <a href="glossary/#minimum_pot_size" target="_blank" class="keyword">
+                  <%= t('search.keywords.minimum_pot_size.title') %>
+                  <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
+                </a>
               </div>
             </div>
 

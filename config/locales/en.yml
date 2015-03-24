@@ -311,6 +311,12 @@
 
   remote_search: *search
 
+  investment_size:
+    ordinal:
+      '1': 'Under £50,000'
+      '2': '£50,000'
+      '3': '£100,000'
+      '4': 'Over £150,000'
   other_advice_method:
     ordinal:
 <<<<<<< HEAD

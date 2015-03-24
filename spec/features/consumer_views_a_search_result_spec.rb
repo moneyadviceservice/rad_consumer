@@ -34,7 +34,8 @@ RSpec.feature 'Consumer views a search result' do
         wills_and_probate_percent: 10,
         other_percent: 40,
         in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
-        other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) }
+        other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
+        investment_sizes: [1, 2].map { |i| create(:investment_size, order: i) }
       )
 
       create(:adviser, firm: @firm, latitude: 51.428473, longitude: -0.943616)
@@ -75,6 +76,7 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_the_firms_minimum_pot_size
+    expect(@displayed_firm.minimum_pot_size).to eq('Under £50,000')
   end
 
   def and_i_see_the_firms_minimum_fee

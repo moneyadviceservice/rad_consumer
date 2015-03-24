@@ -17,7 +17,7 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/mas-rad_core.git
-  revision: 2f7e911a3f0cfaf18b690fc23603e238342b57d8
+  revision: 033cfaa277f1a6a963bd72c978dda8910a0c7154
   branch: 6026-binding-search-result
   specs:
     mas-rad_core (0.0.23)
