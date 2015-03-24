@@ -276,23 +276,24 @@
       glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
-        - title: Chartered Financial Planner
+        chartered_fp:
+          title: Chartered Financial Planner
           id: chartered_fp
           description: Chartered Financial Planners hold the Advanced Diploma in Financial Planning and must have a minimum of five years’ relevant industry experience. Chartered status can only be conferred by the Chartered Insurance Institute (CII). Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their Professional Body, the Personal Finance Society (the financial services arm of the CII).
           link: You can find out more <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf.pdf">here</a>.
-        - title: Certified Financial Planner
-          id: certified_fp
+        certified_fp:
+          title: Certified Financial Planner
           description: A Certified Financial Planner (CM) or CFP(CM) professional is a professional Financial Planner who has completed a high-level and globally recognised qualification set by independent professional body, the Institute of Financial Planning (IFP). All CFP professionals must abide by the IFP’s strict code of ethics and professional practice standards.
           link: You can find out more <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">here</a>.
-        - title: SOLLA
-          id: solla
+        solla:
+          title: SOLLA
           description: The Society of Later Life Advisers (SOLLA) accreditation scheme is audited and endorsed by the standard setting body the Financial Skills and Legal Partnership (FSLP). Individual financial advisers who gain the SOLLA accreditation have demonstrated a high level of knowledge and expertise in the area of later life financial planning.  The consumer organisation Which? and many local authorities recommend that individuals looking for advice in more complex areas of financial planning such as paying for care or equity release seek advice from an accredited SOLLA adviser.
           link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>.
-        - title: Later Life Academy
-          id: later_life_academy
+        later_life_academy:
+          title: Later Life Academy
           description: The Later Life Academy is a voluntary training programme, accredited by the National Skills Council, for qualified advisers. This means advisers who are members of the Later Life Academy have been through additional training in subjects relating to retirement planning. All members of the Later Life Academy offer the initial meeting at their own expense.
-        - title: ISO 22222
-          id: iso_22222
+        iso_22222:
+          title: ISO 22222
           description: This is an international standard for financial planning, developed by the International Organisation for Standardisation (ISO) in collaboration with the British Standards Institute (BSI).  Advisers who are awarded this standard must demonstrate high levels of ethical behavior, competency and experience. ISO is the world’s largest developer of voluntary international standards.
 
     education_module_one:

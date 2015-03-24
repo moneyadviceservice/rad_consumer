@@ -9,12 +9,12 @@
 
     <%= heading_tag(t('search.accreditations.glossary_heading'), level: 2, class: 'l-glossary__heading') %>
 
-    <% t('search.accreditations.items').each do |item| %>
+    <% t('search.accreditations.items').each do |key, value| %>
       <section class="l-glossary__section">
-        <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img accreditation__img--alt') %>
-        <%= heading_tag(item[:title], level: 3, id: item[:id], class: 'l-glossary__definition') %>
-        <p><%= raw item[:description] %></p>
-        <p><%= raw item[:link] %></p>
+        <%= image_tag("#{key}.png", alt: value[:title], class: 'accreditation__img accreditation__img--alt') %>
+        <%= heading_tag(value[:title], level: 3, id: key, class: 'l-glossary__definition') %>
+        <p><%= raw value[:description] %></p>
+        <p><%= raw value[:link] %></p>
       </section>
     <% end %>
   </section>
