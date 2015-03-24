@@ -199,10 +199,22 @@
               <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
 
               <div class="result__qualifications-logos">
-                <% t('search.accreditations.items').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
-                    <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
-                  </a>
+                <% firm.adviser_qualification_ids.each do |id| %>
+                  <% if key = Qualification.friendly_name(id) %>
+                    <% info = t("search.accreditations.items.#{key}") %>
+                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-qualification">
+                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
+                    </a>
+                  <% end %>
+                <% end %>
+
+                <% firm.adviser_accreditation_ids.each do |id| %>
+                  <% if key = Accreditation.friendly_name(id) %>
+                    <% info = t("search.accreditations.items.#{key}") %>
+                    <a href="glossary/#<%= id %>" target="_blank" class="accreditation t-accreditation">
+                      <%= image_tag("#{id}.png", alt: info[:title], class: 'accreditation__img') %>
+                    </a>
+                  <% end %>
                 <% end %>
               </div>
             </div>

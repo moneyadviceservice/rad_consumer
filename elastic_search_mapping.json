@@ -31,6 +31,8 @@
         "inheritance_tax_planning": { "type": "integer" },
         "wills_and_probate": { "type": "integer" },
         "in_person_advice_methods": { "type": "integer" },
+        "adviser_qualification_ids": { "type": "integer" },
+        "adviser_accreditation_ids": { "type": "integer" },
 
         "advisers": {
           "type": "nested",

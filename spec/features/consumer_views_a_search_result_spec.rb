@@ -38,7 +38,13 @@ RSpec.feature 'Consumer views a search result' do
         investment_sizes: [1, 2].map { |i| create(:investment_size, order: i) }
       )
 
-      create(:adviser, firm: @firm, latitude: 51.428473, longitude: -0.943616)
+      create(:adviser,
+        firm: @firm,
+        latitude: 51.428473,
+        longitude: -0.943616,
+        accreditations: [1, 2, 3].map { |i| create(:accreditation, order: i) },
+        qualifications: [3, 4].map { |i| create(:qualification, order: i) }
+      )
     end
   end
 
@@ -88,5 +94,7 @@ RSpec.feature 'Consumer views a search result' do
   end
 
   def and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess
+    expect(@displayed_firm).to have_qualifications(count: 2)
+    expect(@displayed_firm).to have_accreditations(count: 3)
   end
 end

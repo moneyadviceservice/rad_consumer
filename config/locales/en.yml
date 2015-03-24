@@ -320,10 +320,6 @@
       '4': 'Over £150,000'
   other_advice_method:
     ordinal:
-<<<<<<< HEAD
-      "1": "Phone"
-      "2": "Online"
-=======
       '1': 'Phone'
       '2': 'Online'
   in_person_advice_method:
@@ -331,7 +327,15 @@
       '1': 'At your home'
       '2': "At the firm's office"
       '3': 'At agreed location'
->>>>>>> Displays advice methods
+  qualification:
+    ordinal:
+      '3': chartered_fp
+      '4': certified_fp
+  accreditation:
+    ordinal:
+      '1': solla
+      '2': later_life_academy
+      '3': iso_22222
 
   glossary:
     show:
