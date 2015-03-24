@@ -60,6 +60,10 @@
   @include column(12);
   margin-top: $baseline-unit*4;
 
+  @include respond-to (37.5em) {
+    @include column(4);
+  }
+
   @include respond-to ($mq-m) {
     @include column(3);
   }
@@ -67,6 +71,11 @@
 
 .result__advice {
   @include column(12);
+
+  @include respond-to (37.5em) {
+    margin-top: $baseline-unit*4;
+    @include column(8);
+  }
 
   @include respond-to ($mq-m) {
     @include column(9);
@@ -80,7 +89,7 @@
 .result__2col {
   margin-top: $baseline-unit*4;
 
-  @include respond-to ($mq-m) {
+  @include respond-to (37.5em) {
     @include column(6);
     margin-top: 0;
     margin-bottom: $baseline-unit;

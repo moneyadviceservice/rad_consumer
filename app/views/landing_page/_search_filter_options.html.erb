@@ -1,12 +1,15 @@
-<fieldset class="search-filter__section">
-  <legend class="search-filter__label"><%= t('search_filter.subheading') %></legend>
-  <p class="search-filter__label-instructions"><%= t('search_filter.instructions') %></p>
+<fieldset>
+  <legend class="search-filter__label"><%= t("search_filter.#{page_name}.heading") %></legend>
+
+  <% if search_filter_options_description? %>
+    <p class="search-filter__label-instructions"><%= t("search_filter.#{page_name}.instructions") %></p>
+  <% end %>
+
   <%= f.form_row(:checkbox) do %>
     <%= f.errors_for :checkbox %>
-
     <div data-nested-options-component>
       <div class="form__group-item" data-further-info>
-        <%= f.check_box :retirement_income_products, class: 'form__group-input', data: { nested_options_trigger: '' } %>
+        <%= f.check_box :retirement_income_products, class: 't-retirement-income-products form__group-input', data: { nested_options_trigger: '' } %>
         <%= f.label :retirement_income_products, class: 'search-filter__option' do %>
           <%= t('search_filter.pension_pot.heading') %>
         <% end %>
@@ -15,11 +18,11 @@
       <div class="search-filter__nested-options is-hidden" data-nested-options>
         <div class="form__group-item" data-further-info>
           <%= f.label :checkbox, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading' %>
-          <%= f.select :pension_pot_size, @form.pension_pot_sizes, { selected: SearchForm::ANY_SIZE_VALUE, include_blank: false }, { class: 'search-filter__inset search-filter__constrained' } %>
+          <%= f.select :pension_pot_size, @form.pension_pot_sizes, { selected: (page_name == 'landing_page' ? SearchForm::ANY_SIZE_VALUE : @form.pension_pot_size), include_blank: false }, { class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
         </div>
 
         <div class="form__group-item" data-further-info>
-          <%= f.check_box :pension_transfer, class: 'form__group-input' %>
+          <%= f.check_box :pension_transfer, class: 't-pension-transfer form__group-input' %>
           <%= f.label :pension_transfer, class: 'search-filter__option' do %>
             <%= t('search_filter.pension_pot.pension_transfer.heading') %>
             <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
@@ -31,7 +34,7 @@
 
     <% t('search_filter.options').each do |key, item| %>
       <div class="form__group-item" data-further-info>
-        <%= f.check_box key, class: 'form__group-input' %>
+        <%= f.check_box key, class: "form__group-input t-#{key}" %>
         <%= f.label key, class: 'search-filter__option' do %>
           <%= raw item[:title] %>
           <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
@@ -39,6 +42,5 @@
         <% end %>
       </div>
     <% end %>
-
   <% end %>
 </fieldset>

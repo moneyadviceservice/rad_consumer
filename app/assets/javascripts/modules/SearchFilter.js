@@ -9,7 +9,6 @@ define(['jquery'], function($) {
       $triggerHeading = $('[data-search-filter-heading]'),
       $triggerHeadingSecond = $('[data-search-heading-second]'),
 
-      borderRadius = 'search-filter__heading--second',
       iconOpen = 'search-filter__triangle-icon--down',
       statusHidden = 'is-hidden',
 

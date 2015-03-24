@@ -168,8 +168,11 @@
       - text: We respect your privacy and won’t share your details.
 
   search_filter:
-    subheading: What do you need help with?
-    instructions: Tick all that apply. If none apply leave blank.
+    landing_page:
+      heading: What do you need help with?
+      instructions: Tick all that apply. If none apply leave blank.
+    results_page:
+      heading: Type of advice
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
@@ -211,15 +214,6 @@
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
-    page_title: Search results
-    back_to_top: Back to top
-    no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
-    summary_of_results:
-      showing: Showing
-      to: to
-      of: of
-      firms: firms
-
     filter:
       heading: Refine your search
       receive_advice:
@@ -228,8 +222,15 @@
         phone_online: Online/Telephone
         postcode_label: Postcode
       button_text: Search
-      type_of_advice: Type of advice
-      pension_pot_savings: Pension pot(s)/savings
+
+    page_title: Search results
+    back_to_top: Back to top
+    no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
+    summary_of_results:
+      showing: Showing
+      to: to
+      of: of
+      firms: firms
 
     result:
       adviser: Adviser
@@ -320,7 +321,6 @@
     ordinal:
       "1": "Phone"
       "2": "Online"
-
 
   glossary:
     show:

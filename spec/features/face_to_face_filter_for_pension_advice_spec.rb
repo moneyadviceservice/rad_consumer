@@ -78,7 +78,7 @@ RSpec.feature 'Consumer requires help with their pension in person' do
   end
 
   def and_i_indicate_that_i_need_help_with_my_pension_pot
-    landing_page.in_person.pension_pot.set true
+    landing_page.in_person.retirement_income_products.set true
   end
 
   def and_i_see_the_default_option_is_i_dont_know_or_wish_to_say
@@ -94,7 +94,7 @@ RSpec.feature 'Consumer requires help with their pension in person' do
   end
 
   def and_i_indicate_that_i_would_like_to_transfer_my_pension
-    landing_page.in_person.pension_pot_transfer.set true
+    landing_page.in_person.pension_transfer.set true
   end
 
   def when_i_submit_the_face_to_face_advice_search

@@ -1,35 +1,16 @@
 .search-filter {
-  border-bottom-left-radius: $search-filter-radius;
-  border-bottom-right-radius: $search-filter-radius;
+  border-radius: $search-filter-radius;
+  border: 1px solid  $search-filter-border-color;
   overflow: hidden;
 }
 
-.search-filter__border {
-  border-left: 1px solid $search-filter-border-color;
-  border-right: 1px solid $search-filter-border-color;
-}
-
-.search-filter__border--bottom {
-  border-bottom: 1px solid $search-filter-border-color;
-  border-bottom-left-radius: $search-filter-radius;
-  border-bottom-right-radius: $search-filter-radius;
-}
-
-.search-filter__divider {
-  border-bottom: 2px solid $color-white;
-}
-
-.search-filter__section {
-  margin: 0 $baseline-unit*4;
-}
-
-.search-filter__section--button {
-  margin-top: 0;
-  margin-bottom: $baseline-unit*4;
+.search-filter--container {
+  @include row(12);
+  padding-top: $baseline-unit*6;
 }
 
 .search-filter__form {
-  // this is needed to override the required Dough class 'form' that applies a margin to forms
+  // override Dough class 'form'
   margin-top: 0;
 }
 
@@ -45,6 +26,10 @@
 .search-filter__heading--first {
   border-top-left-radius: $search-filter-radius;
   border-top-right-radius: $search-filter-radius;
+}
+
+.search-filter__heading--second {
+  border-top: 1px solid $color-white;
 }
 
 .js .search-filter__heading-text {
@@ -67,15 +52,23 @@
   }
 }
 
+.search-filter__section {
+  padding-left: $baseline-unit*3;
+  padding-right: $baseline-unit*3;
+}
+
+.search-filter__section--padded {
+  margin-top: $baseline-unit*6;
+}
+
+.search-filter--border {
+  border: 1px solid $search-filter-border-color;
+}
+
 .search-filter__label {
   @include body(18, 24);
   font-weight: 700;
   color: $search-filter-label-color;
-}
-
-.search-filter__label--padded,
-.search-filter__section--padded {
-  padding-top: $baseline-unit*4;
 }
 
 .search-filter__label-instructions {
@@ -90,7 +83,7 @@
 
 .search-filter__nested-options {
   margin-bottom: $baseline-unit*6;
-  margin-left: $baseline-unit*7;
+  margin-left: $baseline-unit*4;
 }
 
 .search-filter__button {

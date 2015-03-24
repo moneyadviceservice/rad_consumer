@@ -5,7 +5,7 @@
 .l-results__main {
   @include column(12);
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-l) {
     @include column(8);
   }
 }
@@ -21,7 +21,7 @@
 .l-results__side {
   @include column(12);
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-l) {
     @include column(4);
     float: right;
     clear: right;
@@ -39,4 +39,24 @@
 
 .l-results__back-to-top {
   @include column(12);
+}
+
+.l-results__filter {
+  @include column(12);
+
+  @include respond-to(37.5em, $mq-l) {
+    @include column(6);
+  }
+}
+
+.l-results__filter-button-container {
+  @extend .l-results-filter;
+  margin-bottom: $baseline-unit*2;
+}
+
+.l-results__filter-button {
+  @include respond-to($mq-xs, $mq-l) {
+    @include column(12);
+    margin-bottom: $baseline-unit*2;
+  }
 }
