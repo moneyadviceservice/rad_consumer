@@ -7,6 +7,8 @@
     <div class="l-results__side">
       <section class="search-filter search-filter--border t-criteria">
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
+          <%= hidden_field_tag(:origin, 'results') %>
+
           <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
 
           <div class="search-filter--container">
@@ -68,80 +70,84 @@
     </div>
 
     <div class="l-results__main">
-      <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
+      <% if @form.valid? %>
+        <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
-      <% unless @result.firms.any? %>
-        <p><%= t('search.no_results_message') %></p>
+        <% unless @result.firms.any? %>
+          <p><%= t('search.no_results_message') %></p>
+        <% end %>
+
+        <ol class="l-results__list">
+          <% @result.firms.each do |firm| %>
+
+            <li class="result t-firm">
+              <div class="result__heading">
+                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
+                <p class="result__adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+              </div>
+
+              <div class="result__address">
+                <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
+
+                <div class="vcard">
+                  <p class="address adr">
+                    <span class="visually-hidden fn org"><%= firm.name %></span>
+                    <span class="address__line street-address">Bircham road</span>
+                    <span class="address__line locality">Stanhoe</span>
+                    <span class="address__line region">Norfolk</span>
+                    <span class="address__line post-code">PE31 8PT</span>
+                  </p>
+
+                  <% t('search.result.contact_details').each do |item| %>
+                    <a href="<%= item[:href] %>" class="address__link">
+                      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
+                        <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
+                      </svg>
+                      <span class="value"><%= item[:text] %></span>
+                    </a>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="result__advice">
+                <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
+                <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
+
+                <div class="result__keyword">
+                  <% t('search.keywords').each do |item| %>
+                    <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
+                  <% end %>
+                </div>
+              </div>
+
+              <div class="result__qualifications">
+                <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+
+                <div class="result__qualifications-logos">
+                  <% t('search.accreditations.items').each do |item| %>
+                    <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
+                      <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
+                    </a>
+                  <% end %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ol>
+
+        <%= paginate @result %>
+
+        <div class="l-results__back-to-top back-to-top">
+          <%= link_to '#top', class: 'back-to-top__link' do %>
+            <%= t('search.back_to_top') %>
+            <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
+              <use xlink:href="#icon-back-to-top"></use>
+            </svg>
+          <% end %>
+        </div>
+      <% else %>
+        <p>Please correct the problem with your search criteria and try again.</p>
       <% end %>
-
-      <ol class="l-results__list">
-        <% @result.firms.each do |firm| %>
-
-          <li class="result t-firm">
-            <div class="result__heading">
-              <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
-              <p class="result__adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
-            </div>
-
-            <div class="result__address">
-              <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
-
-              <div class="vcard">
-                <p class="address adr">
-                  <span class="visually-hidden fn org"><%= firm.name %></span>
-                  <span class="address__line street-address">Bircham road</span>
-                  <span class="address__line locality">Stanhoe</span>
-                  <span class="address__line region">Norfolk</span>
-                  <span class="address__line post-code">PE31 8PT</span>
-                </p>
-
-                <% t('search.result.contact_details').each do |item| %>
-                  <a href="<%= item[:href] %>" class="address__link">
-                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-<%= item[:icon_class] %>">
-                      <use xlink:href="#icon-<%= item[:icon_class] %>"></use>
-                    </svg>
-                    <span class="value"><%= item[:text] %></span>
-                  </a>
-                <% end %>
-              </div>
-            </div>
-
-            <div class="result__advice">
-              <%= render partial: 'search/result_list', locals: { key: 'search.result.recieve_advice' } %>
-              <%= render partial: 'search/result_list', locals: { key: 'search.result.type_of_advice' } %>
-
-              <div class="result__keyword">
-                <% t('search.keywords').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="keyword"><%= item[:title] %></a>
-                <% end %>
-              </div>
-            </div>
-
-            <div class="result__qualifications">
-              <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
-
-              <div class="result__qualifications-logos">
-                <% t('search.accreditations.items').each do |item| %>
-                  <a href="glossary/#<%= item[:id] %>" target="_blank" class="accreditation">
-                    <%= image_tag("#{item[:id]}.png", alt: item[:title], class: 'accreditation__img') %>
-                  </a>
-                <% end %>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ol>
-
-      <%= paginate @result %>
-
-      <div class="l-results__back-to-top back-to-top">
-        <%= link_to '#top', class: 'back-to-top__link' do %>
-          <%= t('search.back_to_top') %>
-          <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
-            <use xlink:href="#icon-back-to-top"></use>
-          </svg>
-        <% end %>
-      </div>
     </div>
 
     <div class="l-results__side">
