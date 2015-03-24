@@ -23,3 +23,11 @@
   width: 20px;
   height: 20px;
 }
+
+.education__icon--minus:before {
+  content: '–';
+}
+
+.education__icon--plus:before {
+  content: '+';
+}
