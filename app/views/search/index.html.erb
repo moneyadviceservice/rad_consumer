@@ -175,7 +175,7 @@
                 </div>
               </div>
 
-              <% content_for(:qualifications) do %>
+              <% content_for(:qualifications, flush: true) do %>
                 <div class="result__qualifications-logos">
                   <% firm.adviser_qualification_ids.each do |id| %>
                     <%= render_logo(id, :qualification) %>
