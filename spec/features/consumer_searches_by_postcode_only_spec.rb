@@ -68,9 +68,9 @@ RSpec.feature 'Consumer searches by postcode only' do
 
   def and_firms_with_advisers_covering_my_postcode_were_previously_indexed
     with_fresh_index! do
-      @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616)
-      @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257)
-      @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082)
+      @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616, travel_distance: 100)
+      @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257, travel_distance: 650)
+      @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082, travel_distance: 10)
 
       @missing = create(:firm, in_person_advice_methods: []) do |firm|
         create(:adviser, firm: firm, latitude: 51.428473, longitude: -0.943616)
@@ -99,7 +99,6 @@ RSpec.feature 'Consumer searches by postcode only' do
     expect(results_page.firm_names).to eql([
       @reading.firm.registered_name,
       @leicester.firm.registered_name,
-      @glasgow.firm.registered_name
     ])
   end
 
