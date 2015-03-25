@@ -8,9 +8,9 @@
   margin-bottom: 0;
 }
 
-.education__heading-text {
-  display: block;
-  padding-left: 20px;
+.education__button {
+  width: 100%;
+  text-align: left;
 }
 
 .education__content {
@@ -18,10 +18,10 @@
 }
 
 .education__icon {
-  display: block;
-  float: left;
   width: 20px;
   height: 20px;
+  font-size: 18px;
+  margin-right: $baseline-unit;
 }
 
 .education__icon--minus:before {

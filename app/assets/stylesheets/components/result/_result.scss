@@ -35,6 +35,7 @@
   @include respond-to ($mq-m) {
     @include column(7);
     margin-bottom: $baseline-unit*2;
+
   }
 }
 
@@ -43,11 +44,17 @@
   margin-bottom: $baseline-unit*2;
   margin-top: 0;
 
+  .js & {
+    padding-left: 20px;
+  }
+
   @include respond-to ($mq-m) {
     @include column(5);
     margin-top: $baseline-unit*2;
     text-align: right;
+    padding-left: 0;
   }
+
 }
 
 .result__sub-heading {
