@@ -38,6 +38,7 @@
           "type": "nested",
           "properties": {
             "location": { "type": "geo_point" },
+            "range_location": { "type": "geo_shape" },
             "range": { "type": "integer" },
             "name": { "type": "string", "index": "not_analyzed" }
           }

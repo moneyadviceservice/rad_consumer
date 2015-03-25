@@ -74,9 +74,24 @@ class SearchFormSerializer < ActiveModel::Serializer
         nested: {
           path: 'advisers',
           filter: {
-            geo_distance: {
-              distance: '650miles',
-              location: object.coordinates.reverse
+            bool: {
+              must: {
+                geo_shape: {
+                  range_location: {
+                    relation: 'intersects',
+                    shape: {
+                      type: 'point',
+                      coordinates: object.coordinates.reverse
+                    }
+                  }
+                }
+              },
+              should: {
+                geo_distance: {
+                  distance: '750miles',
+                  location: object.coordinates.reverse
+                }
+              }
             }
           }
         }
