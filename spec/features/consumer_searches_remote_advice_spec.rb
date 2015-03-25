@@ -1,9 +1,9 @@
 RSpec.feature 'Consumer searches for phone or online advice' do
-  let(:landing_page)        { LandingPage.new }
+  let(:landing_page) { LandingPage.new }
   let(:remote_results_page) { RemoteResultsPage.new }
 
-  let!(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
-  let!(:online_advice) { create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
+  let!(:phone_advice)  { create(:other_advice_method, name: 'Telephone', order: 1) }
+  let!(:online_advice) { create(:other_advice_method, name: 'Online', order: 2) }
 
   scenario 'Selecting telephone advice' do
     with_elastic_search! do
@@ -47,7 +47,7 @@ RSpec.feature 'Consumer searches for phone or online advice' do
     end
   end
 
-  scenario 'Consumer tries to run remote advice search WITHOUT selecting phone or online' do
+  scenario 'Consumer runs a remote advice search without selecting phone or online' do
     with_elastic_search! do
       given_i_am_on_the_rad_landing_page
       and_firms_providing_remote_services_were_previously_indexed
@@ -60,19 +60,19 @@ RSpec.feature 'Consumer searches for phone or online advice' do
 
   def and_firms_providing_remote_services_were_previously_indexed
     with_fresh_index! do
-      @online_only      = create(:firm, registered_name: 'The End Advisory',       other_advice_methods: [ online_advice ])
-      @online_and_phone = create(:firm, registered_name: 'Remoteley Advisory',     other_advice_methods: [ online_advice, phone_advice ])
-      @phone_only       = create(:firm, registered_name: 'Cold Callers Limited',   other_advice_methods: [ phone_advice ])
-      @only_in_person   = create(:firm, registered_name: 'ACME Retirement Advice', other_advice_methods: [])
+      @online_only = create(:firm, registered_name: 'The End Advisory', other_advice_methods: [online_advice])
+      @online_and_phone = create(:firm, registered_name: 'Remoteley Advisory', other_advice_methods: [online_advice, phone_advice])
+      @phone_only = create(:firm, registered_name: 'Cold Callers Limited', other_advice_methods: [phone_advice])
+      @only_in_person = create(:firm, registered_name: 'ACME Retirement Advice', other_advice_methods: [])
     end
   end
 
   def and_firms_providing_various_types_of_remote_services_were_indexed
     with_fresh_index! do
-      @equity            = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
-      @wills             = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @probate           = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @wills_and_equity  = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
+      @equity = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
+      @wills = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @probate = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
+      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
       @offline_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Offliney Advisory Ltd', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [])
     end
   end
@@ -83,40 +83,49 @@ RSpec.feature 'Consumer searches for phone or online advice' do
 
   def when_i_submit_a_search_selecting_online_advice
     landing_page.remote.tap do |section|
-      section.online.set(true)
+      section.online.set true
       section.search.click
     end
   end
 
   def then_i_am_shown_firms_that_provide_advice_online
-    expect(remote_results_page.firm_names).
-      to include(@online_only.registered_name, @online_and_phone.registered_name)
+    expect(remote_results_page.firm_names).to include(
+      @online_only.registered_name,
+      @online_and_phone.registered_name
+    )
   end
 
   def and_they_are_ordered_alphabetically
     names = remote_results_page.firm_names
 
-    expect(names).to eql(names.sort)
+    expect(remote_results_page.firm_names).to eql(names.sort)
   end
 
   def when_i_submit_a_search_selecting_telephone_advice
     landing_page.remote.tap do |section|
-      section.by_phone.set(true)
+      section.by_phone.set true
       section.search.click
     end
   end
 
   def then_i_am_shown_firms_that_provide_advice_by_telephone
-    expect(remote_results_page.firm_names).
-      to include(@phone_only.registered_name, @online_and_phone.registered_name)
-    expect(remote_results_page.firm_names).
-      not_to include(@only_in_person.registered_name, @online_only.registered_name)
+    names = remote_results_page.firm_names
+
+    expect(names).to include(
+      @phone_only.registered_name,
+      @online_and_phone.registered_name
+    )
+
+    expect(names).not_to include(
+      @only_in_person.registered_name,
+      @online_only.registered_name
+    )
   end
 
   def when_i_submit_a_search_selecting_online_and_telephone_advice
     landing_page.remote.tap do |section|
-      section.online.set(true)
-      section.by_phone.set(true)
+      section.online.set true
+      section.by_phone.set true
       section.search.click
     end
   end
@@ -128,9 +137,7 @@ RSpec.feature 'Consumer searches for phone or online advice' do
   end
 
   def when_i_submit_a_search_without_selecting_advice_methods
-    landing_page.remote.tap do |section|
-      section.search.click
-    end
+    landing_page.remote.search.click
   end
 
   def then_i_am_shown_an_error_message
@@ -143,24 +150,25 @@ RSpec.feature 'Consumer searches for phone or online advice' do
 
   def when_i_submit_a_search_selecting_remote_advice_and_types_of_advice
     landing_page.remote.tap do |section|
-      section.equity_release.set(true)
-      section.wills_and_probate.set(true)
-      section.online.set(true)
-      section.by_phone.set(true)
+      section.equity_release.set true
+      section.wills_and_probate.set true
+      section.online.set true
+      section.by_phone.set true
       section.search.click
     end
   end
 
   def then_i_am_shown_filtered_firms_list
-    expect(remote_results_page.firm_names).
-      to include(@probate.registered_name, @wills_and_equity.registered_name)
-
     expect(remote_results_page).to have_firms(count: 2)
+
+    expect(remote_results_page.firm_names).to include(
+      @probate.registered_name,
+      @wills_and_equity.registered_name
+    )
   end
 
   def and_the_list_does_not_include_offline_only_advisories
-    expect(remote_results_page.firm_names).
-      not_to include(@offline_and_wills.registered_name)
+    expect(remote_results_page.firm_names).not_to include(@offline_and_wills.registered_name)
   end
 
   def and_i_am_not_shown_the_advisers_distance
