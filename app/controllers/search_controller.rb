@@ -5,11 +5,7 @@ class SearchController < ApplicationController
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
     else
-      if params[:origin] == 'results'
-        render 'search/index'
-      else
-        render 'landing_page/show'
-      end
+      render searchable_view
     end
   end
 
@@ -18,4 +14,14 @@ class SearchController < ApplicationController
   end
 
   helper_method :search_filter_options_description?
+
+  private
+
+  def searchable_view
+    from_results? ? 'search/index' : 'landing_page/show'
+  end
+
+  def from_results?
+    params[:origin] == 'results'
+  end
 end
