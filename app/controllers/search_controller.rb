@@ -22,6 +22,6 @@ class SearchController < ApplicationController
   end
 
   def from_results?
-    params[:origin] == 'results'
+    params.key?(:origin)
   end
 end
