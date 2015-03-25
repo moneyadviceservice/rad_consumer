@@ -5,24 +5,26 @@ define(['jquery'], function($) {
   var $element = $('[data-education-module]'),
       $heading = $('[data-education-module-heading]'),
       $target = $('[data-education-module-target]'),
-      $button = $('<button type="button" class="unstyled-button" data-education-module-trigger></button>'),
+      $buttonElement = $('<button type="button" class="education__button unstyled-button" data-education-module-trigger></button>'),
       $iconElement = $('<span class="education__icon education__icon--plus" data-education-module-icon></span>'),
-
       statusHidden = 'is-hidden';
 
-  $target.addClass(statusHidden);
-  $heading.wrap($button);
-  $heading.prepend($iconElement);
+  if ($(window).width() <= 720) {
+    $target.addClass(statusHidden);
+    $heading.wrap($buttonElement);
+    $heading.prepend($iconElement);
+  }
 
-  var $icon = $('[data-education-module-icon]');
+  var $icon = $('[data-education-module-icon]'),
+      $button = $('[data-education-module-trigger]');
 
   $element.each(function(indexInArray, objectInArray) {
-    var $elementTrigger = $(objectInArray).find($heading),
+    var $elementTrigger = $(objectInArray).find($button),
         $elementTriggerIcon = $(objectInArray).find($icon),
         $elementTarget = $(objectInArray).find($target);
 
     $elementTrigger.on('click', function(event) {
-      event.preventDefault();
+      console.log('Hello');
 
       $icon.removeClass('education__icon--minus');
       $icon.addClass('education__icon--plus');
