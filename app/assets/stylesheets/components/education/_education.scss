@@ -13,20 +13,15 @@
   text-align: left;
 }
 
-.education__heading-text {
-  display: block;
-  padding-left: 20px;
-}
-
 .education__content {
   padding-left: 20px;
 }
 
 .education__icon {
-  display: block;
-  float: left;
   width: 20px;
   height: 20px;
+  font-size: 18px;
+  margin-right: $baseline-unit;
 }
 
 .education__icon--minus:before {
