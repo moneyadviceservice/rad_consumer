@@ -176,20 +176,20 @@
               </div>
 
               <% content_for(:qualifications, flush: true) do %>
-                <div class="result__qualifications-logos">
-                  <% firm.adviser_qualification_ids.each do |id| %>
-                    <%= render_logo(id, :qualification) %>
-                  <% end %>
-                  <% firm.adviser_accreditation_ids.each do |id| %>
-                    <%= render_logo(id, :accreditation) %>
-                  <% end %>
-                </div>
+                <% firm.adviser_qualification_ids.each do |id| %>
+                  <%= render_logo(id, :qualification) %>
+                <% end %>
+                <% firm.adviser_accreditation_ids.each do |id| %>
+                  <%= render_logo(id, :accreditation) %>
+                <% end %>
               <% end %>
 
               <% if content_for?(:qualifications) %>
                 <div class="result__qualifications">
                   <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
-                  <%= yield :qualifications %>
+                  <div class="result__qualifications-logos">
+                    <%= yield :qualifications %>
+                  </div>
                 </div>
               <% end %>
             </li>
