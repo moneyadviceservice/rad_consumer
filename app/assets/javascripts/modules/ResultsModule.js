@@ -2,19 +2,21 @@ define(['jquery'], function($) {
 
   'use strict';
 
-  var $element = $('[data-education-module]'),
-      $heading = $('[data-education-module-heading]'),
-      $target = $('[data-education-module-target]'),
-      $buttonElement = $('<button type="button" class="education__button unstyled-button" data-education-module-trigger></button>'),
-      $iconElement = $('<span class="education__icon education__icon--plus" data-education-module-icon></span>'),
+  var $element = $('[data-results-module]'),
+      $heading = $('[data-results-module-heading]'),
+      $target = $('[data-results-module-target]'),
+      $buttonElement = $('<button type="button" class="education__button unstyled-button" data-results-module-trigger></button>'),
+      $iconElement = $('<span class="education__icon education__icon--plus" data-results-module-icon></span>'),
       statusHidden = 'is-hidden';
 
-  $target.addClass(statusHidden);
-  $heading.wrap($buttonElement);
-  $heading.prepend($iconElement);
+  if ($(window).width() <= 720) {
+    $target.addClass(statusHidden);
+    $heading.wrap($buttonElement);
+    $heading.prepend($iconElement);
+  }
 
-  var $icon = $('[data-education-module-icon]'),
-      $button = $('[data-education-module-trigger]');
+  var $icon = $('[data-results-module-icon]'),
+      $button = $('[data-results-module-trigger]');
 
   $element.each(function(indexInArray, objectInArray) {
     var $elementTrigger = $(objectInArray).find($button),

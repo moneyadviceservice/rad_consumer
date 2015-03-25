@@ -5,7 +5,7 @@
     </div>
 
     <div class="l-results__side">
-      <section class="search-filter search-filter--border t-criteria" data-education-module>
+      <section class="search-filter search-filter--border t-criteria" data-results-module>
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
           <%= hidden_field_tag(:origin, 'results') %>
 
@@ -17,9 +17,9 @@
             </div>
           <% end %>
 
-          <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first', data: { education_module_heading: '' } )  %>
+          <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first', data: { results_module_heading: '' } )  %>
 
-          <div class="search-filter--container" data-education-module-target>
+          <div class="search-filter--container" data-results-module-target>
             <div class="l-results__filter">
               <fieldset class="form__group search-filter__section">
                 <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
@@ -87,17 +87,17 @@
           <p><%= t('search.no_results_message') %></p>
         <% end %>
 
-        <ol class="l-results__list" data-education-module>
+        <ol class="l-results__list" data-results-module>
           <% @result.firms.each do |firm| %>
             <li class="result t-firm">
               <div class="result__heading">
-                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { education_module_heading: '' }) %>
+                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) %>
                 <% if @form.face_to_face? %>
                   <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
                 <% end %>
               </div>
 
-              <div data-education-module-target>
+              <div data-results-module-target>
                 <div class="result__address">
                   <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
 

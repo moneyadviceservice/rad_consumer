@@ -2,6 +2,8 @@
 //= depend_on_asset modules/FurtherInfo
 //= depend_on_asset modules/SearchFilter
 //= depend_on_asset modules/NestedOptions
+//= depend_on_asset modules/EducationModule
+//= depend_on_asset modules/ResultsModule
 
 <%
   def requirejs_path(asset)
@@ -15,7 +17,8 @@
       SearchFilter: requirejs_path('modules/SearchFilter'),
       NestedOptions: requirejs_path('modules/NestedOptions'),
       ResultsFilter: requirejs_path('modules/ResultsFilter'),
-      EducationModule: requirejs_path('modules/EducationModule')
+      EducationModule: requirejs_path('modules/EducationModule'),
+      ResultsModule: requirejs_path('modules/ResultsModule'),
     }
   }
 %>

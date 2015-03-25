@@ -20,6 +20,7 @@ Rails.application.configure do
     modules/NestedOptions.js
     modules/ResultsFilter.js
     modules/EducationModule.js
+    modules/ResultsModule.js
   )
 
   # Vendor JavaScript
