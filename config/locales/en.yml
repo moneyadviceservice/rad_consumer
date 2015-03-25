@@ -128,7 +128,7 @@
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://moneyadviceservice.org.uk'
+      download_transcript_link: 'https://fedb5feb4c074be48b1a-7d2b925ab3869b76f1d9fad9b2ecd2bb.ssl.cf3.rackcdn.com/rad_expert_transcript.en.pdf'
 
   more_reasons:
     heading: Reasons to take financial advice
@@ -139,7 +139,7 @@
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://moneyadviceservice.org.uk'
+      download_transcript_link: 'https://fedb5feb4c074be48b1a-7d2b925ab3869b76f1d9fad9b2ecd2bb.ssl.cf3.rackcdn.com/rad_customer_transcript.en.pdf'
 
   pension_wise:
     heading: Have you had your free guidance appointment yet?
