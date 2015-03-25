@@ -106,6 +106,10 @@
   border: 1px solid $search-filter-border-color;
 }
 
+.search-filter__field--padded {
+  margin-bottom: $baseline-unit*4;
+}
+
 .search-filter__triangle-icon {
   display: none;
 
