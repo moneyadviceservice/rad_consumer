@@ -169,6 +169,40 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#pension_transfer' do
+    let(:form) do
+      described_class.new(
+        pension_transfer: pension_transfer,
+        options_when_paying_for_care: '1',
+        equity_release: '1',
+        inheritance_tax_planning: '1',
+        wills_and_probate: '1'
+      )
+    end
+
+    context 'when retirement products is selected' do
+      before { form.retirement_income_products = '1' }
+
+      let(:pension_transfer) { '1' }
+
+      it 'returns the value for pension transfer' do
+        expect(form.pension_transfer).to eql(pension_transfer)
+      end
+    end
+
+    context 'when retirement products is not selected' do
+      before { form.retirement_income_products = nil }
+
+      context 'but pension transfer is selected' do
+        let(:pension_transfer) { '1' }
+
+        it 'returns a string zero' do
+          expect(form.pension_transfer).to eql('0')
+        end
+      end
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
     let(:form) { described_class.new }
