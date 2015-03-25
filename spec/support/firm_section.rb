@@ -6,6 +6,7 @@ class FirmSection < SitePrism::Section
   elements :accreditations, '.t-accreditation'
 
   element :free_initial_meeting, '.t-free-initial-meeting'
+  element :adviser_distance, '.t-adviser-distance'
 
   def name
     root_element.find('.t-name').text

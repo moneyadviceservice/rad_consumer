@@ -12,6 +12,7 @@ RSpec.feature 'Consumer searches for phone or online advice' do
       when_i_submit_a_search_selecting_telephone_advice
       then_i_am_shown_firms_that_provide_advice_by_telephone
       and_they_are_ordered_alphabetically
+      and_i_am_not_shown_the_advisers_distance
     end
   end
 
@@ -160,5 +161,9 @@ RSpec.feature 'Consumer searches for phone or online advice' do
   def and_the_list_does_not_include_offline_only_advisories
     expect(remote_results_page.firm_names).
       not_to include(@offline_and_wills.registered_name)
+  end
+
+  def and_i_am_not_shown_the_advisers_distance
+    expect(remote_results_page.firms.first).not_to have_adviser_distance
   end
 end

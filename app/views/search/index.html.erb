@@ -80,7 +80,9 @@
           <li class="result t-firm">
             <div class="result__heading">
               <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
-              <p class="result__adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+              <% if @form.face_to_face? %>
+                <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+              <% end %>
             </div>
 
             <div class="result__address">
