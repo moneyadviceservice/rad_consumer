@@ -29,62 +29,12 @@ RSpec.feature 'Consumer views a search result' do
 
 
   def given_an_indexed_firm_and_associated_adviser_without_qualifications_and_accreditations
-    with_fresh_index! do
-      @principal = create(:principal, website_address: 'http://www.example.com')
-
-      @firm = create(:firm_with_no_business_split,
-        principal: @principal,
-        free_initial_meeting: true,
-        minimum_fixed_fee: 1000,
-        retirement_income_products_percent: 10,
-        pension_transfer_percent: 10,
-        long_term_care_percent: 10,
-        equity_release_percent: 10,
-        inheritance_tax_and_estate_planning_percent: 10,
-        wills_and_probate_percent: 10,
-        other_percent: 40,
-        in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
-        other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
-        investment_sizes: [1, 2].map { |i| create(:investment_size, order: i) }
-      )
-
-      create(:adviser,
-        firm: @firm,
-        latitude: 51.428473,
-        longitude: -0.943616,
-        accreditations: [],
-        qualifications: []
-      )
-    end
+    with_fresh_index! { create_firm_and_adviser }
   end
 
   def given_an_indexed_firm_and_associated_adviser
     with_fresh_index! do
-      @principal = create(:principal, website_address: 'http://www.example.com')
-
-      @firm = create(:firm_with_no_business_split,
-        principal: @principal,
-        free_initial_meeting: true,
-        minimum_fixed_fee: 1000,
-        retirement_income_products_percent: 10,
-        pension_transfer_percent: 10,
-        long_term_care_percent: 10,
-        equity_release_percent: 10,
-        inheritance_tax_and_estate_planning_percent: 10,
-        wills_and_probate_percent: 10,
-        other_percent: 40,
-        in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
-        other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
-        investment_sizes: [1, 2].map { |i| create(:investment_size, order: i) }
-      )
-
-      create(:adviser,
-        firm: @firm,
-        latitude: 51.428473,
-        longitude: -0.943616,
-        accreditations: [1, 2, 3].map { |i| create(:accreditation, order: i) },
-        qualifications: [3, 4].map { |i| create(:qualification, order: i) }
-      )
+      create_firm_and_adviser(accreditations: [1, 2, 3], qualifications: [3, 4])
     end
   end
 
@@ -145,5 +95,33 @@ RSpec.feature 'Consumer views a search result' do
 
   def and_i_do_not_see_the_label
     expect(@displayed_firm).to_not have_qualifications_heading
+  end
+
+  def create_firm_and_adviser(qualifications: [], accreditations: [])
+    @principal = create(:principal, website_address: 'http://www.example.com')
+
+    @firm = create(:firm_with_no_business_split,
+      principal: @principal,
+      free_initial_meeting: true,
+      minimum_fixed_fee: 1000,
+      retirement_income_products_percent: 10,
+      pension_transfer_percent: 10,
+      long_term_care_percent: 10,
+      equity_release_percent: 10,
+      inheritance_tax_and_estate_planning_percent: 10,
+      wills_and_probate_percent: 10,
+      other_percent: 40,
+      in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
+      other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
+      investment_sizes: [1, 2].map { |i| create(:investment_size, order: i) }
+    )
+
+    create(:adviser,
+      firm: @firm,
+      latitude: 51.428473,
+      longitude: -0.943616,
+      accreditations: accreditations.map { |i| create(:accreditation, order: i) },
+      qualifications: qualifications.map { |i| create(:qualification, order: i) }
+    )
   end
 end
