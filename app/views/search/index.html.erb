@@ -116,7 +116,7 @@
                     <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
                   </a>
 
-                  <% if firm.website_address %>
+                  <% if firm.website_address.present? %>
                     <a href="<%= firm.website_address %>" class="address__link url">
                       <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
                         <use xlink:href="#icon-url"></use>
