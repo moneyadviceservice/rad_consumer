@@ -1,10 +1,12 @@
 require_relative 'firm_section'
 require_relative 'search_criteria_section'
+require_relative 'search_form_section'
 
 class ResultsPage < SitePrism::Page
   set_url '/en/search{?params*}'
   set_url_matcher %r{/(en|cy)/search}
 
+  section :search_form, SearchFormSection, '.form'
   section :criteria, SearchCriteriaSection, '.t-criteria'
   sections :firms, FirmSection, 'li.t-firm'
 
