@@ -26,35 +26,38 @@
 }
 
 .result__heading-text {
-  @include column(12);
   @include body(18, 27);
+  width: 100%;
+  padding: 0 $baseline-unit*2;
   color: $result-heading-color;
   margin-top: $baseline-unit*2;
   margin-bottom: 0;
 
   @include respond-to ($mq-m) {
-    @include column(7);
+    width: 50%;
+    float: left;
     margin-bottom: $baseline-unit*2;
-
   }
 }
 
 .result__adviser-distance {
-  @include column(12);
+  width: 100%;
+  padding: 0 $baseline-unit*2;
   margin-bottom: $baseline-unit*2;
   margin-top: 0;
 
   @include respond-to ($mq-m) {
-    @include column(5);
+    width: 50%;
     margin-top: $baseline-unit*2;
     text-align: right;
+    float: left;
     padding-left: 0;
   }
 }
 
 .js-result__adviser-distance {
   // insets the adviser distance when the + is present
-  padding-left: 18px;
+  padding-left: $baseline-unit*5;
 }
 
 .result__sub-heading {
