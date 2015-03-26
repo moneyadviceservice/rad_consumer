@@ -137,6 +137,7 @@
     - text: Financial advisers are regulated so you are protected if things go wrong.
     - text: They can choose products from a wide range of providers.
     - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
+    guides_html: 'Our guides, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more'
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
@@ -263,6 +264,7 @@
       minimum_fee:
         title: 'Minimum fee: '
         tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
+        link: See our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> for more information
       minimum_pot_size:
         title: 'Minimum pot size/savings: '
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
