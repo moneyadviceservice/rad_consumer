@@ -12,6 +12,8 @@ class ResultsPage < SitePrism::Page
   element :last_record, '.t-last-record'
   element :total_records, '.t-total-records'
 
+  element :incorrect_criteria_message , '.t-incorrect-criteria'
+
   def next_page
     first("a[rel='next']").click
   end
