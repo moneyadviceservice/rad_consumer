@@ -33,7 +33,7 @@
     home: Home
     parent: Work, pensions and retirement
     parent_url: https://www.moneyadviceservice.org.uk/en/categories/work-pensions-and-retirement
-    child: Retirement Adviser Directory
+    child: Retirement income basics
 
   contact_panels:
     webchat:
@@ -213,6 +213,7 @@
     index:
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
+    go_back: Go back
     incorrect_search_criteria: Please correct the problem with your search criteria and try again.
 
     filter:
