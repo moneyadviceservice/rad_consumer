@@ -87,9 +87,9 @@
           <p><%= t('search.no_results_message') %></p>
         <% end %>
 
-        <ol class="l-results__list" data-results-module>
+        <ol class="l-results__list">
           <% @result.firms.each do |firm| %>
-            <li class="result t-firm">
+            <li class="result t-firm" data-results-module>
               <div class="result__heading">
                 <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) %>
                 <% if @form.face_to_face? %>
