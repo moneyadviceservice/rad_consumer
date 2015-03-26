@@ -12,6 +12,7 @@ class ResultsPage < SitePrism::Page
   element :last_record, '.t-last-record'
   element :total_records, '.t-total-records'
 
+  element :errors, '.l-landing-page__validation'
   element :incorrect_criteria_message , '.t-incorrect-criteria'
 
   def next_page
