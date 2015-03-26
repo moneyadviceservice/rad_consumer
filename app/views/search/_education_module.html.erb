@@ -3,7 +3,7 @@
     <span class="education__heading-text"><%= t("#{key}.heading") %>
   <% end %>
 
-  <div class="education__content" data-education-module-target>
+  <div class="education__content is-hidden" data-education-module-target>
     <% t("#{key}.content").each do |item| %>
       <p><%= item[:text] %></p>
     <% end %>

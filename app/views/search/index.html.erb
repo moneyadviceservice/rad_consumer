@@ -19,7 +19,7 @@
 
           <%= heading_tag(t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first', data: { results_module_heading: '' }) %>
 
-          <div class="search-filter--container" data-results-module-target="closed">
+          <div class="search-filter--container is-hidden-on-mobile" data-results-module-target="closed">
             <div class="l-results__filter">
               <fieldset class="form__group search-filter__section">
                 <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
@@ -35,7 +35,7 @@
                       </label>
                     </div>
 
-                    <div class="form__group-item search-filter__item-inset" data-results-filter-target="2">
+                    <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
                       <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
                       <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8 %>
                     </div>
@@ -50,7 +50,7 @@
                         <%= t('search.filter.receive_advice.phone_online') %>
                       </label>
 
-                      <div class="search-filter__item-inset" data-results-filter-target="1">
+                      <div class="search-filter__item-inset is-hidden" data-results-filter-target="1">
                         <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
                           <div class="form__group-item">
                             <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
@@ -97,7 +97,7 @@
                 <% end %>
               </div>
 
-              <div data-results-module-target>
+              <div class="is-hidden-on-mobile" data-results-module-target>
                 <div class="result__address">
                   <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
 

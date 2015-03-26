@@ -9,7 +9,6 @@ define(['jquery'], function($) {
       $iconElement = $('<span class="education__icon education__icon--plus" data-education-module-icon></span>'),
       statusHidden = 'is-hidden';
 
-  $target.addClass(statusHidden);
   $heading.wrap($buttonElement);
   $heading.prepend($iconElement);
 
