@@ -35,10 +35,19 @@
 .l-results__pagination {
   @include column(12);
   margin-bottom: $baseline-unit*4;
+
+  @include respond-to($mq-m) {
+    @include column(6);
+  }
 }
 
 .l-results__back-to-top {
   @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(6);
+    float: right;
+  }
 }
 
 .l-results__filter {
