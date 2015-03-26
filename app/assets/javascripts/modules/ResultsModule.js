@@ -8,13 +8,21 @@ define(['jquery'], function($) {
       $adviserElement = $('.result__adviser-distance'),
       $buttonElement = $('<button type="button" class="education__button unstyled-button" data-results-module-trigger></button>'),
       $iconElement = $('<span class="education__icon education__icon--plus" data-results-module-icon></span>'),
-      statusHidden = 'is-hidden';
+      statusHidden = 'is-hidden',
+      $targetClosed = $('[data-results-module-target="closed"]');
 
   if ($(window).width() <= 720) {
     $target.addClass(statusHidden);
     $heading.wrap($buttonElement);
     $heading.prepend($iconElement);
     $adviserElement.addClass('js-result__adviser-distance');
+
+    if ($targetClosed.find('.form__row').hasClass('is-errored') === true) {
+      $target.addClass(statusHidden);
+      $targetClosed.removeClass(statusHidden);
+    } else {
+      $targetClosed.addClass(statusHidden);
+    }
   }
 
   var $icon = $('[data-results-module-icon]'),
