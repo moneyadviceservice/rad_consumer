@@ -2,7 +2,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  scenario 'Using a valid postcode returns firms ordered by distance' do
+  scenario 'Using a valid postcode' do
     with_elastic_search! do
       given_i_am_on_the_landing_page
       and_firms_with_advisers_covering_my_postcode_were_previously_indexed
@@ -13,13 +13,13 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
     end
   end
 
-  scenario 'Using an invalid postcode shows an error message' do
+  scenario 'Using an invalid postcode' do
     given_i_am_on_the_landing_page
     when_i_submit_a_invalid_postcode_search
     then_i_am_told_the_postcode_is_incorrect
   end
 
-  scenario 'Using a postcode that cannot be geocoded shows an error message' do
+  scenario 'Using a postcode that cannot be geocoded' do
     VCR.use_cassette(:postcode_cannot_be_geocoded) do
       given_i_am_on_the_landing_page
       when_i_submit_a_postcode_that_cannot_be_geocoded

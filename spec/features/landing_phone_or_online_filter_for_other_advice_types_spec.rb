@@ -2,7 +2,7 @@ RSpec.feature 'Landing page, consumer requires various types of advice over the 
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  scenario 'Filter for various types of advice returns matching firms' do
+  scenario 'Filter for various types of advice' do
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page

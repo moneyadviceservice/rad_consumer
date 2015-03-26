@@ -5,7 +5,7 @@ RSpec.feature 'Landing page, consumer requires help with their pension over the 
   let(:latitude) { rand(51.428473..55.856191) }
   let(:longitude) { rand(-4.247082..-0.943616) }
 
-  scenario 'Filter for general pension pot advice returns matching firms' do
+  scenario 'Filter for general pension pot advice' do
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
@@ -18,7 +18,7 @@ RSpec.feature 'Landing page, consumer requires help with their pension over the 
     end
   end
 
-  scenario 'Filter for advice on a pension pot size returns matching firms' do
+  scenario 'Filter for advice on a pension pot size' do
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
@@ -31,7 +31,7 @@ RSpec.feature 'Landing page, consumer requires help with their pension over the 
     end
   end
 
-  scenario 'Filter for advice on pension pot transfers returns matching firms' do
+  scenario 'Filter for advice on pension pot transfers' do
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
