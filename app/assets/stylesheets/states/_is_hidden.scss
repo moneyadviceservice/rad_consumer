@@ -5,3 +5,15 @@
     display: none;
   }
 }
+
+
+.is-hidden-on-mobile {
+  display: block;
+
+  .js & {
+    display: none;
+    @include respond-to($mq-m) {
+      display: block;
+    }
+  }
+}

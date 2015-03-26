@@ -3,19 +3,18 @@ define(['jquery'], function($) {
   'use strict';
 
   var $resultsFilter = $('[data-results-filter]'),
-
+      $resultsFilterTrigger = $('[data-results-filter-trigger]'),
       $resultsFilterTriggerOne = $('[data-results-filter-trigger="1"]'),
       $resultsFilterTriggerTwo = $('[data-results-filter-trigger="2"]'),
-
       $resultsFilterTarget = $('[data-results-filter-target]'),
       $resultsFilterTargetOne = $('[data-results-filter-target="1"]'),
       $resultsFilterTargetTwo = $('[data-results-filter-target="2"]'),
       statusHidden = 'is-hidden';
 
-  if ( $resultsFilterTriggerOne.is(':checked') ) {
-    $resultsFilterTargetOne.addClass(statusHidden);
+  if ($resultsFilterTriggerOne.is(':checked')) {
+    $resultsFilterTargetTwo.removeClass(statusHidden);
   } else if ( $resultsFilterTriggerTwo.is(':checked')  ) {
-    $resultsFilterTargetTwo.addClass(statusHidden);
+    $resultsFilterTargetOne.removeClass(statusHidden);
   }
 
   $resultsFilter.each(function(indexInArray, objectInArray) {
