@@ -5,9 +5,8 @@
     </div>
 
     <div class="l-results__side">
-      <section class="search-filter search-filter--border t-criteria">
+      <section class="search-filter search-filter--border t-criteria" data-results-module>
         <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form' }, builder: Dough::Forms::Builders::Validation do |f| %>
-          <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first' ) %>
           <%= hidden_field_tag(:origin, 'results') %>
 
           <%= content_for :validation_summary do %>
@@ -18,7 +17,9 @@
             </div>
           <% end %>
 
-          <div class="search-filter--container">
+          <%= heading_tag( t('search.filter.heading'), level: 2, class: 'search-filter__heading search-filter__heading--first', data: { results_module_heading: '' } ) %>
+
+          <div class="search-filter--container" data-results-module-target>
             <div class="l-results__filter">
               <fieldset class="form__group search-filter__section">
                 <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
@@ -86,112 +87,113 @@
           <p><%= t('search.no_results_message') %></p>
         <% end %>
 
-        <ol class="l-results__list">
+        <ol class="l-results__list" data-results-module>
           <% @result.firms.each do |firm| %>
+            <li class="result t-firm">
+              <div class="result__heading">
+                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) %>
+                <% if @form.face_to_face? %>
+                  <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+                <% end %>
+              </div>
 
-          <li class="result t-firm">
-            <div class="result__heading">
-              <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name') %>
-              <% if @form.face_to_face? %>
-                <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
-              <% end %>
-            </div>
+              <div data-results-module-target>
+                <div class="result__address">
+                  <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
 
-              <div class="result__address">
-                <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
+                  <div class="vcard">
+                    <p class="address adr">
+                      <span class="visually-hidden fn org"><%= firm.name %></span>
+                      <span class="address__line street-address"><%= firm.address_line_one %></span>
+                      <span class="address__line locality"><%= firm.address_town %></span>
+                      <span class="address__line region"><%= firm.address_county %></span>
+                      <span class="address__line post-code"><%= firm.address_postcode %></span>
+                    </p>
 
-                <div class="vcard">
-                  <p class="address adr">
-                    <span class="visually-hidden fn org"><%= firm.name %></span>
-                    <span class="address__line street-address"><%= firm.address_line_one %></span>
-                    <span class="address__line locality"><%= firm.address_town %></span>
-                    <span class="address__line region"><%= firm.address_county %></span>
-                    <span class="address__line post-code"><%= firm.address_postcode %></span>
-                  </p>
-
-                  <a href="tel:<%= firm.telephone_number.strip %>" class="address__link phone">
-                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
-                      <use xlink:href="#icon-phone"></use>
-                    </svg>
-                    <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
-                  </a>
-
-                  <% if firm.website_address.present? %>
-                    <a href="<%= firm.website_address %>" class="address__link url" target="_blank">
-                      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
-                        <use xlink:href="#icon-url"></use>
+                    <a href="tel:<%= firm.telephone_number.strip %>" class="address__link phone">
+                      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
+                        <use xlink:href="#icon-phone"></use>
                       </svg>
-                      <span class="value">Firm's website</span>
+                      <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
                     </a>
-                  <% end %>
 
-                  <a href="mailto:<%= firm.email_address %>" class="address__link email">
-                    <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
-                      <use xlink:href="#icon-email"></use>
-                    </svg>
-                    <span class="value">Email firm</span>
-                  </a>
-
-                </div>
-              </div>
-
-              <div class="result__advice">
-                <div class="result__2col">
-                  <%= heading_tag(t("search.result.recieve_advice.heading"), level: 3, class: 'result__sub-heading') %>
-
-                  <ul class="result__list">
-                    <% firm.in_person_advice_methods.each do |id| %>
-                      <li class="result__list-item t-in-person-advice-method"><%= InPersonAdviceMethod.friendly_name(id) %></li>
+                    <% if firm.website_address.present? %>
+                      <a href="<%= firm.website_address %>" class="address__link url" target="_blank">
+                        <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
+                          <use xlink:href="#icon-url"></use>
+                        </svg>
+                        <span class="value">Firm's website</span>
+                      </a>
                     <% end %>
-                    <% firm.other_advice_methods.each do |id| %>
-                      <li class="result__list-item t-other-advice-method"><%= OtherAdviceMethod.friendly_name(id) %></li>
-                    <% end %>
-                  </ul>
-                </div>
 
-                <div class="result__2col">
-                  <%= heading_tag(t("search.result.type_of_advice.heading"), level: 3, class: 'result__sub-heading') %>
-
-                  <ul class="result__list">
-                    <% firm.types_of_advice.each do |type| %>
-                      <li class="result__list-item t-type-of-advice"><%= t("search.result.type_of_advice.types.#{type}") %></li>
-                    <% end %>
-                  </ul>
-                </div>
-
-                <div class="result__keyword">
-                  <% if firm.minimum_fixed_fee? %>
-                    <a href="glossary/#minimum_fee" target="_blank" class="keyword">
-                      <%= t('search.keywords.minimum_fee.title') %><span class="t-minimum-fixed-fee"><%= number_to_currency(firm.minimum_fixed_fee, unit: '£', precision: 0) %></span>
+                    <a href="mailto:<%= firm.email_address %>" class="address__link email">
+                      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
+                        <use xlink:href="#icon-email"></use>
+                      </svg>
+                      <span class="value">Email firm</span>
                     </a>
-                  <% end %>
-                  <% if firm.free_initial_meeting? %>
-                    <a href="glossary/#free_initial_meeting" target="_blank" class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></a>
-                  <% end %>
-                  <a href="glossary/#minimum_pot_size" target="_blank" class="keyword">
-                    <%= t('search.keywords.minimum_pot_size.title') %>
-                    <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
-                  </a>
-                </div>
-              </div>
 
-              <% content_for(:qualifications, flush: true) do %>
-                <% firm.adviser_qualification_ids.each do |id| %>
-                  <%= render_logo(id, :qualification) %>
-                <% end %>
-                <% firm.adviser_accreditation_ids.each do |id| %>
-                  <%= render_logo(id, :accreditation) %>
-                <% end %>
-              <% end %>
-
-              <% if content_for?(:qualifications) %>
-                <div class="result__qualifications">
-                  <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
-                  <div class="result__qualifications-logos">
-                    <%= yield :qualifications %>
                   </div>
                 </div>
-              <% end %>
+
+                <div class="result__advice">
+                  <div class="result__2col">
+                    <%= heading_tag(t("search.result.recieve_advice.heading"), level: 3, class: 'result__sub-heading') %>
+
+                    <ul class="result__list">
+                      <% firm.in_person_advice_methods.each do |id| %>
+                        <li class="result__list-item t-in-person-advice-method"><%= InPersonAdviceMethod.friendly_name(id) %></li>
+                      <% end %>
+                      <% firm.other_advice_methods.each do |id| %>
+                        <li class="result__list-item t-other-advice-method"><%= OtherAdviceMethod.friendly_name(id) %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+
+                  <div class="result__2col">
+                    <%= heading_tag(t("search.result.type_of_advice.heading"), level: 3, class: 'result__sub-heading') %>
+
+                    <ul class="result__list">
+                      <% firm.types_of_advice.each do |type| %>
+                        <li class="result__list-item t-type-of-advice"><%= t("search.result.type_of_advice.types.#{type}") %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+
+                  <div class="result__keyword">
+                    <% if firm.minimum_fixed_fee? %>
+                      <a href="glossary/#minimum_fee" target="_blank" class="keyword">
+                        <%= t('search.keywords.minimum_fee.title') %><span class="t-minimum-fixed-fee"><%= number_to_currency(firm.minimum_fixed_fee, unit: '£', precision: 0) %></span>
+                      </a>
+                    <% end %>
+                    <% if firm.free_initial_meeting? %>
+                      <a href="glossary/#free_initial_meeting" target="_blank" class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></a>
+                    <% end %>
+                    <a href="glossary/#minimum_pot_size" target="_blank" class="keyword">
+                      <%= t('search.keywords.minimum_pot_size.title') %>
+                      <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
+                    </a>
+                  </div>
+                </div>
+
+                <% content_for(:qualifications, flush: true) do %>
+                  <% firm.adviser_qualification_ids.each do |id| %>
+                    <%= render_logo(id, :qualification) %>
+                  <% end %>
+                  <% firm.adviser_accreditation_ids.each do |id| %>
+                    <%= render_logo(id, :accreditation) %>
+                  <% end %>
+                <% end %>
+
+                <% if content_for?(:qualifications) %>
+                  <div class="result__qualifications">
+                    <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+                    <div class="result__qualifications-logos">
+                      <%= yield :qualifications %>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
             </li>
           <% end %>
         </ol>
