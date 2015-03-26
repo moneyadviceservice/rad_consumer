@@ -270,33 +270,42 @@
           - text: Ewyllysiau a phrofiant
 
     keywords:
-      - title: Cyfarfod cychwynnol am ddim
+      free_initial_meeting:
+        title: Cyfarfod cychwynnol am ddim
         tooltip: Bydd y cwmni hwn yn cynnig cyfarfod cychwynnol dros y ffôn neu wyneb yn wyneb ar ei gost ei hun. Bydd y cwmni’n defnyddio’r cyfarfod hwn i ddeall eich anghenion ac i weld a all fod o gymorth i chi.
-      - title: Ffioedd gofynnol
+      minimum_fee:
+        title: 'Ffioedd gofynnol: '
         tooltip: Mae cynghorwyr ariannol yn codi ffioedd am gyngor ac mae gan rai ohonynt ffi ofynnol. Gall hyn amrywio yn ddibynnol ar y math o gyngor sydd ei angen arnoch, felly efallai mai canllaw yn unig fydd y ffigwr a roddir. Rhaid i bob cynghorydd roi amcangyfrif i chi o gyfanswm cost ei wasanaeth cyn i chi ymrwymo. Gweler ein canllaw ‘Talu am gyngor ariannol’ am ragor o wybodaeth.
-      - title: 'Isafswm maint y gronfa / cynilion'
+      minimum_pot_size:
+        title: 'Isafswm maint y gronfa / cynilion: '
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
 
     accreditations:
       heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol. Cliciwch phob logo i ddysgu am iddynt.
       glossary_heading: Cymwysterau / Achrediadau
+      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:
-        - title: Cynllunydd Ariannol Siartredig
+        chartered_fp:
+          title: Cynllunydd Ariannol Siartredig
           id: chartered_fp
           description: Mae Cynllunwyr Ariannol Siartredig yn meddu ar Uwch Ddiploma mewn Cynllunio Ariannol a rhaid iddynt feddu hefyd ar bum mlynedd o leiaf o brofiad mewn diwydiant perthnasol. Y Sefydliad Yswiriant Siartredig (CII) yn unig all roi’r statws siartredig. Rhaid i gynghorwyr sy’n cyrraedd y statws Siartredig feddu ar lefel uwch o gymhwyster na’r statws gofynnol sydd ei angen i fedru gweithio a rhaid iddynt barchu’r cod ymarfer a’r safonau llym a osodir gan eu Corff Proffesiynol, y Gymdeithas Cyllid Personol (sef cangen gwasanaethau ariannol y CII).
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.thepfs.org/media/4158527/charteredfp.pdf.pdf">yma</a>.
-        - title: Cynllunydd Ariannol Ardystiedig
+        certified_fp:
+          title: Cynllunydd Ariannol Ardystiedig
           id: certified_fp
           description: Mae Cynllunydd Ariannol Ardystiedig CM neu CFPCM yn Gynllunydd Ariannol proffesiynol sydd wedi cwblhau lefel uchel o gymhwyster a gydnabyddir yn fyd-eang, a bennir gan gorff proffesiynol annibynnol, y Sefydliad Cynllunio Ariannol (IFP). Rhaid i aelodau proffesiynol o’r CFP barchu cod moeseg llym yr IFP ynghyd â safonau ymarfer proffesiynol.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://www.financialplanning.org.uk/wayfinder/about-ifp">yma</a>.
-        - title: SOLLA
+        solla:
+          title: SOLLA
           id: solla
           description: Mae cynllun achredu Society of Later Life Advisers (SOLLA) yn cael ei archwilio a’i gefnogi gan Bartneriaeth Sgiliau Ariannol a Chyfreithiol (FSLP), sef y corff sy’n gosod y safonau. Mae cynghorwyr ariannol sy’n ennill achrediad SOLLA wedi dangos lefel uchel o wybodaeth ac arbenigedd ym maes cynllunio ariannol bywyd hŷn. Mae’r sefydliad i ddefnyddwyr, Which?, ynghyd ag amryw o awdurdodau lleol yn argymell y dylai unigolion sy’n chwilio am gyngor mewn meysydd mwy cymhleth fel cynllunio ariannol ar gyfer pethau fel talu am ofal neu ryddhau ecwiti, geisio cyngor gan gynghorydd SOLLA achrededig.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>
-        - title: Academi Bywyd Hŷn
+        later_life_academy:
+          title: Academi Bywyd Hŷn
           id: later_life_academy
           description: Rhaglen hyfforddiant wirfoddol yw’r Academi Bywyd Hŷn, wedi ei hachredu gan y Cyngor Sgiliau Cenedlaethol, ar gyfer cynghorwyr cymwys. Golyga hyn bod cynghorwyr sy’n aelodau o’r Academi Bywyd Hŷn wedi cael hyfforddiant ychwanegol mewn pynciau sy’n ymwneud â chynllunio ymddeoliad. Mae pob aelod o’r Academi Bywyd Hŷn yn cynnig eu hamser ar gyfer y cyfarfod cyntaf o’u gwirfodd.
-        - title: ISO 22222
+        iso_22222:
+          title: ISO 22222
           id: iso_22222
           description: Dyma safon ryngwladol ar gyfer cynllunio ariannol, a ddatblygwyd gan y Sefydliad Safoni Rhyngwladol (ISO) mewn cydweithrediad â’r Sefydliad Safonau Prydeinig (BSI). Rhaid i gynghorwyr sy’n cyrraedd y safon hon ddangos lefelau uchel o ymddygiad moesol, gallu a phrofiad. ISO yw’r datblygwr mwyaf yn y byd o safonau rhyngwladol gwirfoddol.
 
@@ -320,6 +329,38 @@
     ordinal:
       "1": Ffôn
       "2": Ar-lein
+
+  investment_size:
+    ordinal:
+      '1': 'Under £50,000'
+      '2': '£50,000'
+      '3': '£100,000'
+      '4': 'Over £150,000'
+  other_advice_method:
+    ordinal:
+      '1': 'Phone'
+      '2': 'Online'
+  in_person_advice_method:
+    ordinal:
+      '1': 'At your home'
+      '2': "At the firm's office"
+      '3': 'At agreed location'
+  qualification:
+    ordinal:
+      '1': ignored
+      '2': ignored
+      '3': chartered_fp
+      '4': certified_fp
+      '5': ignored
+      '6': ignored
+      '7': ignored
+  accreditation:
+    ordinal:
+      '1': solla
+      '2': later_life_academy
+      '3': iso_22222
+      '4': ignored
+      '5': ignored
 
   glossary:
     show:

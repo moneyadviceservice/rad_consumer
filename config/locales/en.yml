@@ -315,6 +315,11 @@
 
   remote_search: *search
 
+  advice_methods:
+    ordinal:
+      "1": Phone
+      "2": Online
+
   investment_size:
     ordinal:
       '1': 'Under £50,000'
