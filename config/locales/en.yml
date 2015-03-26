@@ -241,15 +241,8 @@
       office: Main office
 
       contact_details:
-        - text: 0800 0880 887
-          href: 'tel:'
-          icon_class: phone
-        - text: Firm's website
-          href: https://
-          icon_class: url
-        - text: Email firm
-          href: 'mailto:'
-          icon_class: email
+        email: Email firm
+        url: Firm's website
 
       recieve_advice:
         heading: Receive advice

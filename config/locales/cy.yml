@@ -241,15 +241,8 @@
       office: Prif swyddfa
 
       contact_details:
-        - text: 0800 0880 887
-          href: 'tel:'
-          icon_class: phone
-        - text: Gwefan cwmni
-          href: https://
-          icon_class: url
-        - text: Cwmni e-bost
-          href: 'mailto:'
-          icon_class: email
+        email: Cwmni e-bost
+        url: Gwefan cwmni
 
       recieve_advice:
         heading: Cael cyngor
@@ -261,13 +254,13 @@
           - text: Ffôn
       type_of_advice:
         heading: Math o gyngor
-        items:
-          - text: Cronfa(feydd)/cynilion pensiwn
-          - text: Trosglwyddo pensiwn
-          - text: Talu am ofal
-          - text: Rhyddhau ecwiti
-          - text: Cynllunio ar gyfer treth etifeddiant
-          - text: Ewyllysiau a phrofiant
+        types:
+          retirement_income_products: 'Cronfa(feydd) / cynilion pensiwn'
+          pension_transfer: Trosglwyddo pensiwn
+          options_when_paying_for_care: Talu am ofal
+          equity_release: Rhyddhau ecwiti
+          inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
+          wills_and_probate: Ewyllysiau a phrofiant
 
     keywords:
       free_initial_meeting:
@@ -332,19 +325,19 @@
 
   investment_size:
     ordinal:
-      '1': 'Under £50,000'
+      '1': 'O dan £50,000'
       '2': '£50,000'
       '3': '£100,000'
-      '4': 'Over £150,000'
+      '4': 'Mae dros £150,000'
   other_advice_method:
     ordinal:
-      '1': 'Phone'
-      '2': 'Online'
+      '1': 'Ffôn'
+      '2': 'Ar-lein'
   in_person_advice_method:
     ordinal:
-      '1': 'At your home'
-      '2': "At the firm's office"
-      '3': 'At agreed location'
+      '1': 'Yn eich cartref'
+      '2': "Yn swyddfa'r cwmni"
+      '3': 'Mewn lleoliad y cytunwyd arno'
   qualification:
     ordinal:
       '1': ignored
