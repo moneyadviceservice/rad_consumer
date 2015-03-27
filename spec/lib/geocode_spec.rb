@@ -1,6 +1,6 @@
 RSpec.describe Geocode, '#call' do
-  it 'normalises the postcode' do
-    expect(Geocoder).to receive(:coordinates).with('RG11GG, United Kingdom')
+  it 'ensures the postcode is scoped to the United Kingdom' do
+    expect(Geocoder).to receive(:coordinates).with('RG1 1GG, United Kingdom')
 
     Geocode.call('RG1 1GG')
   end
