@@ -33,6 +33,7 @@
     parent: Gwaith, pensiynau ac ymddeol
     parent_url: https://www.moneyadviceservice.org.uk/cy/categories/work-pensions-and-retirement
     child: Ffeithiau sylfaenol ynghylch incwm ymddeol
+    child_url: https://www.moneyadviceservice.org.uk/cy/categories/retirement-income-basics
 
   contact_panels:
     webchat:
