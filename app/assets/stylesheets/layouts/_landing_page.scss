@@ -38,6 +38,10 @@
   background-color: $background-color;
 }
 
+.l-landing-page__background--gradient {
+  background-image: linear-gradient(to bottom, #ffffff 0%,#ffffff 30%,#f2f4f4 100%);
+}
+
 .l-landing-page__heading {
   @include body(22, 30);
   color: $color-black;
