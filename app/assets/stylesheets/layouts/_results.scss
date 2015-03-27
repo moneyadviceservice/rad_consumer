@@ -41,7 +41,7 @@
   @include column(12);
   margin-bottom: $baseline-unit*4;
 
-  @include respond-to($mq-s) {
+  @include respond-to(40em) {
     @include column(6);
   }
 }
@@ -49,7 +49,7 @@
 .l-results__back-to-top {
   @include column(12);
 
-  @include respond-to($mq-s) {
+  @include respond-to(40em) {
     @include column(6);
     float: right;
   }
