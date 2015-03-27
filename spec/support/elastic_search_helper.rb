@@ -1,7 +1,7 @@
 module ElasticSearchHelper
   def with_fresh_index!
     rebuild_index!
-    yield
+    yield if block_given?
     index_all!
     refresh_index!
   end

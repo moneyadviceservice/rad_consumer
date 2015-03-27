@@ -1,16 +1,21 @@
 require_relative 'firm_section'
 require_relative 'search_criteria_section'
+require_relative 'search_form_section'
 
 class ResultsPage < SitePrism::Page
   set_url '/en/search{?params*}'
   set_url_matcher %r{/(en|cy)/search}
 
+  section :search_form, SearchFormSection, '.form'
   section :criteria, SearchCriteriaSection, '.t-criteria'
   sections :firms, FirmSection, 'li.t-firm'
 
   element :first_record, '.t-first-record'
   element :last_record, '.t-last-record'
   element :total_records, '.t-total-records'
+
+  element :errors, '.l-landing-page__validation'
+  element :incorrect_criteria_message , '.t-incorrect-criteria'
 
   def next_page
     first("a[rel='next']").click

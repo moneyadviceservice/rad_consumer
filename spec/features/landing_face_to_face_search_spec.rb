@@ -1,24 +1,10 @@
-RSpec.feature 'Consumer searches by postcode only' do
+RSpec.feature 'Landing page, consumer requires general advice in person' do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  scenario 'Consumer enters a invalid postcode' do
-    given_i_am_on_the_rad_landing_page
-    when_i_submit_a_invalid_postcode_search
-    then_i_am_told_the_postcode_is_incorrect
-  end
-
-  scenario 'Postcode cannot be geocoded' do
-    VCR.use_cassette(:postcode_cannot_be_geocoded) do
-      given_i_am_on_the_rad_landing_page
-      when_i_submit_a_postcode_that_cannot_be_geocoded
-      then_i_am_told_the_postcode_is_incorrect
-    end
-  end
-
-  scenario 'Consumer enters a valid postcode' do
+  scenario 'Using a valid postcode' do
     with_elastic_search! do
-      given_i_am_on_the_rad_landing_page
+      given_i_am_on_the_landing_page
       and_firms_with_advisers_covering_my_postcode_were_previously_indexed
       when_i_search_with_a_reading_postcode
       then_i_am_shown_firms_with_advisers_covering_my_postcode
@@ -27,9 +13,23 @@ RSpec.feature 'Consumer searches by postcode only' do
     end
   end
 
+  scenario 'Using an invalid postcode' do
+    given_i_am_on_the_landing_page
+    when_i_submit_a_invalid_postcode_search
+    then_i_am_told_the_postcode_is_incorrect
+  end
+
+  scenario 'Using a postcode that cannot be geocoded' do
+    VCR.use_cassette(:postcode_cannot_be_geocoded) do
+      given_i_am_on_the_landing_page
+      when_i_submit_a_postcode_that_cannot_be_geocoded
+      then_i_am_told_the_postcode_is_incorrect
+    end
+  end
+
   scenario 'Paginating through 21 results' do
     with_elastic_search! do
-      given_i_am_on_the_rad_landing_page
+      given_i_am_on_the_landing_page
       and_multiple_firms_were_created_and_indexed
       when_i_search_with_a_reading_postcode
       then_i_see_ten_results
@@ -40,7 +40,7 @@ RSpec.feature 'Consumer searches by postcode only' do
   end
 
 
-  def given_i_am_on_the_rad_landing_page
+  def given_i_am_on_the_landing_page
     landing_page.load
   end
 

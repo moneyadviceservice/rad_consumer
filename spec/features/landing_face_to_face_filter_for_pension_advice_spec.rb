@@ -1,4 +1,4 @@
-RSpec.feature 'Consumer requires help with their pension over the phone or online' do
+RSpec.feature 'Landing page, consumer requires help with their pension in person' do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
@@ -9,11 +9,11 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
-      and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
+      and_i_select_face_to_face_advice
+      and_i_enter_a_valid_postcode
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_see_the_default_option_is_i_dont_know_or_wish_to_say
-      when_i_submit_the_phone_or_online_advice_search
+      when_i_submit_the_face_to_face_advice_search
       then_i_am_shown_firms_that_can_advise_on_pension_pots
     end
   end
@@ -22,11 +22,11 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
-      and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
+      and_i_select_face_to_face_advice
+      and_i_enter_a_valid_postcode
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
-      when_i_submit_the_phone_or_online_advice_search
+      when_i_submit_the_face_to_face_advice_search
       then_i_am_shown_firms_that_can_advise_on_my_pension_pot_size
     end
   end
@@ -35,12 +35,12 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
     with_elastic_search! do
       given_firms_with_advisers_were_previously_indexed
       and_i_am_on_the_landing_page
-      and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
+      and_i_select_face_to_face_advice
+      and_i_enter_a_valid_postcode
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       and_i_indicate_that_i_would_like_to_transfer_my_pension
-      when_i_submit_the_phone_or_online_advice_search
+      when_i_submit_the_face_to_face_advice_search
       then_i_am_shown_firms_that_can_assist_with_pension_transfers
     end
   end
@@ -52,63 +52,53 @@ RSpec.feature 'Consumer requires help with their pension over the phone or onlin
   def given_firms_with_advisers_were_previously_indexed
     @investment_sizes = create_list(:investment_size, 5)
 
-    other_advice_methods = [
-      create(:other_advice_method, name: 'Advice by telephone', order: 1),
-      create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2)
-    ]
-
     with_fresh_index! do
-      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 90, other_percent: 10, investment_sizes: @investment_sizes.values_at(0, 1), other_advice_methods: other_advice_methods)
+      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 90, other_percent: 10, investment_sizes: @investment_sizes.values_at(0, 1))
       create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 10, other_percent: 90, investment_sizes: @investment_sizes.values_at(2, 3), other_advice_methods: other_advice_methods)
+      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 10, other_percent: 90, investment_sizes: @investment_sizes.values_at(2, 3))
       create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 50, pension_transfer_percent: 50, investment_sizes: @investment_sizes, other_advice_methods: other_advice_methods)
+      @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_percent: 50, pension_transfer_percent: 50, investment_sizes: @investment_sizes)
       create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
 
-      @excluded = create(:firm_with_no_business_split, other_percent: 100, other_advice_methods: other_advice_methods)
+      @excluded = create(:firm_with_no_business_split, other_percent: 100)
       create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
     end
   end
 
-  def and_i_select_phone_or_online_advice
+  def and_i_select_face_to_face_advice
     # This is here to help make the feature steps read easier, but also
     # serves as a place-holder for when the search form markup becomes
     # one form and requires the advice method to be selected.
   end
 
-  def and_i_select_the_phone_and_or_online_advice_methods
-    landing_page.remote.by_phone.set true
-    landing_page.remote.online.set true
+  def and_i_enter_a_valid_postcode
+    landing_page.in_person.postcode.set 'RG2 9FL'
   end
 
   def and_i_indicate_that_i_need_help_with_my_pension_pot
-    landing_page.remote.retirement_income_products.set true
+    landing_page.in_person.retirement_income_products.set true
   end
 
   def and_i_see_the_default_option_is_i_dont_know_or_wish_to_say
-    expect(landing_page.remote.pension_pot_size.value).to eql(SearchForm::ANY_SIZE_VALUE)
+    expect(landing_page.in_person.pension_pot_size.value).to eql(SearchForm::ANY_SIZE_VALUE)
   end
 
   def and_i_select_a_pot_size_band_from_the_available_options
-    landing_page.remote.pension_pot_size.select @small_pot_size_firm.investment_sizes.sample.name
+    landing_page.in_person.pension_pot_size.select @small_pot_size_firm.investment_sizes.sample.name
   end
 
   def and_i_indicate_that_i_dont_know_the_size_of_my_pension_pot
-    landing_page.remote.pension_pot_size.select I18n.t('search_filter.pension_pot.any_size_option')
+    landing_page.in_person.pension_pot_size.select I18n.t('search_filter.pension_pot.any_size_option')
   end
 
   def and_i_indicate_that_i_would_like_to_transfer_my_pension
-    landing_page.remote.pension_transfer.set true
+    landing_page.in_person.pension_transfer.set true
   end
 
   def when_i_submit_the_face_to_face_advice_search
-    landing_page.remote.search.click
-  end
-
-  def when_i_submit_the_phone_or_online_advice_search
-    landing_page.remote.search.click
+    landing_page.in_person.search.click
   end
 
   def then_i_am_shown_firms_that_can_advise_on_pension_pots

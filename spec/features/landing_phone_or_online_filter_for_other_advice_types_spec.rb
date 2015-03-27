@@ -1,4 +1,4 @@
-RSpec.feature 'Consumer requires various types of advice' do
+RSpec.feature 'Landing page, consumer requires various types of advice over the phone or online' do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
