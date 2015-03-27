@@ -209,7 +209,9 @@
           <li class="breadcrumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
             <span class="visually-hidden">&gt;</span>
             <span class="breadcrumbs__divider" aria-hidden="true"></span>
-            <span itemprop="title"><%= t('breadcrumbs.child') %></span>
+            <a class="breadcrumbs__link" href="<%= t('breadcrumbs.child_url') %>" itemprop="url">
+              <span itemprop="title"><%= t('breadcrumbs.child') %></span>
+            </a>
           </li>
         </ul>
       </nav>

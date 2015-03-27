@@ -34,6 +34,7 @@
     parent: Work, pensions and retirement
     parent_url: https://www.moneyadviceservice.org.uk/en/categories/work-pensions-and-retirement
     child: Retirement income basics
+    child_url: https://www.moneyadviceservice.org.uk/en/categories/retirement-income-basics
 
   contact_panels:
     webchat:
