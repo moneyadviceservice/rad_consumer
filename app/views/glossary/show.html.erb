@@ -4,7 +4,8 @@
 
     <% t('search.keywords').each do |key, value| %>
       <%= heading_tag(value[:title], level: 2, id: key, class: 'l-glossary__definition') %>
-      <p><%= value[:tooltip] %></p>
+      <p><%= raw value[:tooltip] %></p>
+      <p><%= raw value[:link] %></p>
     <% end %>
 
     <%= heading_tag(t('search.accreditations.glossary_heading'), level: 2, class: 'l-glossary__heading') %>
