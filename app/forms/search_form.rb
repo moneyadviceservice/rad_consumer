@@ -66,6 +66,10 @@ class SearchForm
     TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
 
+  def types_of_advice?
+    types_of_advice.any?
+  end
+
   def remote_advice_method_ids
     advice_methods.select(&:present?)
   end
