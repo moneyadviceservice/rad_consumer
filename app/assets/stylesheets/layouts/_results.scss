@@ -3,6 +3,18 @@
   margin-bottom: $baseline-unit*6;
 }
 
+.l-results__message-container {
+  overflow: hidden;
+  background: $background-color-alt;
+  margin-bottom: $baseline-unit*4;
+}
+
+.l-results__message {
+  @include column(12);
+  margin-top: $baseline-unit;
+  margin-bottom: $baseline-unit;
+}
+
 .l-results__main {
   @include column(12);
 
@@ -35,6 +47,7 @@
 
 .l-results__list {
   @extend .unstyled-list;
+  clear: both;
 }
 
 .l-results__pagination {

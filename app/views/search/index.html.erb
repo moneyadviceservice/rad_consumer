@@ -82,6 +82,16 @@
 
     <div class="l-results__main">
       <% if @form.valid? %>
+        <% if @form.face_to_face? && @form.types_of_advice? %>
+          <div class="l-results__message-container">
+            <p class="l-results__message"><%= t('search.explanatory_message.best_match') %></p>
+          </div>
+        <% else %>
+          <div class="l-results__message-container">
+            <p class="l-results__message"><%= t('search.explanatory_message.distance') %></p>
+          </div>
+        <% end %>
+
         <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
         <% unless @result.firms.any? %>
