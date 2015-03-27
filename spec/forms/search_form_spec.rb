@@ -88,7 +88,7 @@ RSpec.describe SearchForm do
       end
 
       context 'and a badly formatted postcode is present' do
-        before { form.postcode = 'ABC' }
+        before { form.postcode = 'Z' }
 
         it 'is not valid' do
           expect(form).to_not be_valid
