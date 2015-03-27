@@ -5,13 +5,10 @@ define(['jquery'], function($) {
   var $elements = $('[data-search-filter]'),
       trigger = '[data-search-filter-trigger]',
       $triggerIcon = $('[data-search-filter-icon]'),
-
       $triggerHeading = $('[data-search-filter-heading]'),
       $triggerHeadingSecond = $('[data-search-heading-second]'),
-
       iconOpen = 'search-filter__triangle-icon--down',
       statusHidden = 'is-hidden',
-
       $button = $('<button type="button" class="search-filter__heading-trigger" data-search-filter-trigger></button>'),
       $target = $('[data-search-filter-target]'),
       $targetClosed = $('[data-search-filter-target="closed"]');
