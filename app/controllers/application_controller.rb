@@ -3,9 +3,18 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_action :authenticate
   before_action :set_locale
 
   private
+
+  def authenticate
+    if Authentication.required?
+      authenticate_or_request_with_http_basic do |username, password|
+        Authentication.authenticate(username, password)
+      end
+    end
+  end
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge(options)
