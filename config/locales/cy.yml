@@ -133,7 +133,7 @@
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
-    guides_html: 'Our guides, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more'
+    guides_html: 'Ein canllawiau, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
     - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
     - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
@@ -270,7 +270,7 @@
       minimum_fee:
         title: 'Ffioedd gofynnol: '
         tooltip: Mae cynghorwyr ariannol yn codi ffioedd am gyngor ac mae gan rai ohonynt ffi ofynnol. Gall hyn amrywio yn ddibynnol ar y math o gyngor sydd ei angen arnoch, felly efallai mai canllaw yn unig fydd y ffigwr a roddir. Rhaid i bob cynghorydd roi amcangyfrif i chi o gyfanswm cost ei wasanaeth cyn i chi ymrwymo. Gweler ein canllaw ‘Talu am gyngor ariannol’ am ragor o wybodaeth.
-        link: See our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> for more information
+        link: Gweler ein canllaw <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Talu am gyngor ariannol</a> am ragor o wybodaeth.
       minimum_pot_size:
         title: 'Isafswm maint y gronfa / cynilion: '
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
