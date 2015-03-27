@@ -104,7 +104,7 @@ RSpec.feature 'Consumer searches by postcode only' do
 
   def when_i_submit_a_invalid_postcode_search
     landing_page.in_person.tap do |section|
-      section.postcode.set 'B4D'
+      section.postcode.set 'Z'
       section.search.click
     end
   end

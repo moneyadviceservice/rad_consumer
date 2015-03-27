@@ -87,7 +87,7 @@ class SearchForm
   private
 
   def geocode_postcode
-    unless postcode =~ /\A[A-Z\d]{1,4} [A-Z\d]{1,3}\z/ && coordinates
+    unless postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
       errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
     end
   end
