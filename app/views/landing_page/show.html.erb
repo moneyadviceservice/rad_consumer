@@ -41,7 +41,9 @@
     <div class="advert">
       <%= image_tag('pensionwise_logo.png', class: 'advert__img') %>
       <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
-      <p class="advert__intro"><%= t('pension_wise.description_html') %></p>
+      <% t('pension_wise.description').each do |item| %>
+        <p class="advert__intro"><%= raw item[:text] %></p>
+      <% end %>
     </div>
 
     <section data-further-info>
