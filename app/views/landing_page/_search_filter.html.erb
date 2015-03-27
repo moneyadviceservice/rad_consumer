@@ -1,5 +1,5 @@
 <div class="search-filter">
-  <%= form_for @form, url: search_path, method: :get, namepsace: 'in_person', html: { class: 'search-filter__form form t-in-person' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'search-filter__form form t-in-person' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
     <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
 
     <%= content_for :validation_summary do %>
@@ -29,7 +29,7 @@
     </div>
   <% end %>
 
-  <%= form_for @form, url: search_path, method: :get, namepsace: 'remote', html: { class: 'form search-filter__form t-remote' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= form_for @form, url: search_path, method: :get, namespace: 'remote', html: { class: 'form search-filter__form t-remote' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
     <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
 
     <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
