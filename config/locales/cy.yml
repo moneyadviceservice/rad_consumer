@@ -145,7 +145,8 @@
 
   pension_wise:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
-    description_html: Dysgwch ragor gan <a href="https://www.pensionwise.gov.uk" target="_blank">Pension wise</a>
+    description:
+      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Dysgwch ragor gan Pension wise</a>
 
   workplace_scheme:
     question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
@@ -173,8 +174,6 @@
     landing_page:
       heading: Sut fath o help sydd ei angen arnoch?
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
-    results_page:
-      heading: Math o gyngor
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill

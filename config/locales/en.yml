@@ -145,7 +145,9 @@
 
   pension_wise:
     heading: Have you had your free guidance appointment yet?
-    description_html: Find out more from <a href="https://www.pensionwise.gov.uk" target="_blank">Pension Wise</a>
+    description:
+      - text: Pension Wise is a free and impartial government service that helps you understand your new pension options.
+      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Find out more from Pension Wise</a>
 
   workplace_scheme:
     question: Are you a member of a union or other affinity group?
@@ -153,7 +155,7 @@
 
   retirement_income_options:
     heading: Retirement income options
-    content: The retirement landscape is changing fast and it’s tricky to understand all the options available to you.
+    content: The retirement landscape is changing fast and it’s tricky to understand all the options available to you. Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
     link_text: Explore your options
     link_url: 'https://www.moneyadviceservice.org.uk/en/retirement-income-options'
 
@@ -173,8 +175,6 @@
     landing_page:
       heading: What do you need help with?
       instructions: Tick all that apply. If none apply leave blank.
-    results_page:
-      heading: Type of advice
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
@@ -309,7 +309,7 @@
       content:
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
         - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face-to-face adviser.
-        - text: Select ‘online’ or ‘telephone’ in the receive advice section above if you would like to receive advice remotely.
+        - text: Select 'Online/Telephone' in the 'receive advice' section above if you would like to receive advice remotely.
 
   remote_search: *search
 
