@@ -47,6 +47,26 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#types_of_advice?' do
+    let(:form) { described_class.new(types_of_advice) }
+
+    context 'when no types of advice are selected' do
+      let(:types_of_advice) { {} }
+
+      it 'returns false' do
+        expect(form.types_of_advice?).to be(false)
+      end
+    end
+
+    context 'when one or more types of advice are selected' do
+      let(:types_of_advice) { { equity_release: '1' } }
+
+      it 'returns true' do
+        expect(form.types_of_advice?).to be(true)
+      end
+    end
+  end
+
   describe 'validation' do
     let(:form) { described_class.new(advice_method: advice_method) }
 
