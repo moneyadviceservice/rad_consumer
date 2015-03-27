@@ -41,7 +41,7 @@
   @include column(12);
   margin-bottom: $baseline-unit*4;
 
-  @include respond-to(37.5em) {
+  @include respond-to($mq-s) {
     @include column(6);
   }
 }
@@ -49,7 +49,7 @@
 .l-results__back-to-top {
   @include column(12);
 
-  @include respond-to(37.5em) {
+  @include respond-to($mq-s) {
     @include column(6);
     float: right;
   }
@@ -57,6 +57,12 @@
 
 .l-results__filter {
   @include column(12);
+
+  .ie8 & {
+    @include respond-to($mq-xs, $mq-l) {
+      @include column(12);
+    }
+  }
 
   @include respond-to(37.5em, $mq-l) {
     @include column(6);
