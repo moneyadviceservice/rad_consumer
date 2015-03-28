@@ -92,7 +92,7 @@
           </div>
         <% end %>
 
-        <p><%= t('search.summary_of_results.showing') %> <span class="l-results__emphasised t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="l-results__emphasised t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class=" l-results__emphasised t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
+        <p><%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
 
         <% unless @result.firms.any? %>
           <p><%= t('search.no_results_message') %></p>
@@ -102,7 +102,9 @@
           <% @result.firms.each do |firm| %>
             <li class="result t-firm" data-results-module>
               <div class="result__heading">
-                <%= heading_tag(firm.name, level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) %>
+                <%= heading_tag(level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) do %>
+                  <span class="result__heading-span"><%= firm.name %></span>
+                <% end %>
                 <% if @form.face_to_face? %>
                   <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
                 <% end %>
