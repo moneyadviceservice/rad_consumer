@@ -220,6 +220,8 @@
     explanatory_message:
       distance: Results ordered by distance
       best_match: Results ordered by best match first, then by distance
+      a_to_z: Results ordered alphabetically
+      best_match_a_to_z: Results ordered by best match first, then alphabetically
 
     filter:
       heading: Refine your search
