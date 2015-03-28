@@ -78,8 +78,6 @@
 
 .search-filter__option {
   @include body(16, 22);
-  // display: block;
-  // padding-left: $baseline-unit*4;
   display: inline-block;
   vertical-align: top;
   max-width: 90%;
@@ -94,11 +92,6 @@
   vertical-align: top;
   margin-top: 4px;
 }
-
-//
-// .search-filter__checkbox--first {
-//   top: 4px;
-// }
 
 .search-filter__button {
   @include body(16, 18);
