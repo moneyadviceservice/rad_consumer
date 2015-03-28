@@ -4,7 +4,6 @@
 @import 'yeast/assets/lib/all';
 
 @import 'settings';
-
 @import 'temp_overrides';
 
 @import 'base/type';
@@ -16,16 +15,18 @@
 
 @import 'states/is_hidden';
 
-@import 'components/advert/all';
+@import 'components/accreditation';
+@import 'components/address';
+@import 'components/advert';
+@import 'components/back_to_top';
 @import 'components/banner_list';
 @import 'components/beta_tag';
-@import 'components/back_to_top/all';
-@import 'components/education/all';
-@import 'components/further_info/all';
-@import 'components/locale';
-@import 'components/pagination/all';
-@import 'components/result/all';
-@import 'components/search_filter/all';
-@import 'components/video';
 @import 'components/brand_logo';
-@import 'components/accreditation';
+@import 'components/education';
+@import 'components/further_info';
+@import 'components/keyword';
+@import 'components/locale';
+@import 'components/pagination';
+@import 'components/result';
+@import 'components/search_filter';
+@import 'components/video';
