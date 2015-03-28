@@ -6,7 +6,7 @@
 .l-results__message-container {
   overflow: hidden;
   background: $background-color-alt;
-  margin-bottom: $baseline-unit*4;
+  margin: $baseline-unit*4 0;
 }
 
 .l-results__message {
@@ -26,10 +26,6 @@
 
 .l-results__heading {
   margin-top: 0;
-}
-
-.l-results__emphasised {
-  font-weight: 700;
 }
 
 .l-results__side {
