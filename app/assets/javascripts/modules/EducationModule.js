@@ -5,7 +5,7 @@ define(['jquery'], function($) {
   var $element = $('[data-education-module]'),
       $heading = $('[data-education-module-heading]'),
       $target = $('[data-education-module-target]'),
-      $buttonElement = $('<button type="button" class="education__button unstyled-button" data-education-module-trigger></button>'),
+      $buttonElement = $('<button type="button" class="education__button" data-education-module-trigger></button>'),
       $iconElement = $('<span class="education__icon education__icon--plus" data-education-module-icon></span>'),
       statusHidden = 'is-hidden';
 
@@ -20,7 +20,7 @@ define(['jquery'], function($) {
         $elementTriggerIcon = $(objectInArray).find($icon),
         $elementTarget = $(objectInArray).find($target);
 
-    $elementTrigger.on('click', function(event) {
+    $elementTrigger.click(function() {
       $icon.removeClass('education__icon--minus');
       $icon.addClass('education__icon--plus');
 

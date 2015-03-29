@@ -1,4 +1,5 @@
 define(['jquery'], function($) {
+
   'use strict';
 
   var $element = $('[data-further-info]'),
@@ -10,10 +11,11 @@ define(['jquery'], function($) {
     var $elementTrigger = $(objectInArray).find($trigger),
         $elementTarget = $(objectInArray).find($target);
 
-    $elementTrigger.on('click', function(event) {
-      event.preventDefault(event);
+    $elementTrigger.click(function() {
+      event.preventDefault();
+      event.stopPropagation();
 
-      if ($elementTarget.hasClass(statusHidden)) {
+      if ( $elementTarget.hasClass(statusHidden) ) {
         $target.addClass(statusHidden);
         $elementTarget.removeClass(statusHidden);
       } else {

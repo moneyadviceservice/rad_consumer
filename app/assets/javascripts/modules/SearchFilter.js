@@ -28,7 +28,7 @@ define(['jquery'], function($) {
         $elementTriggerIcon = $(objectInArray).find($triggerIcon),
         $elementTriggerHeading = $(objectInArray).find($triggerHeadingSecond);
 
-    $elementTrigger.on('click', function(event) {
+    $elementTrigger.on(function() {
       $target.addClass(statusHidden);
       $triggerIcon.removeClass(iconOpen);
 
