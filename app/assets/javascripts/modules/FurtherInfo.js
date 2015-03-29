@@ -1,12 +1,5 @@
 define(['jquery'], function($) {
-
   'use strict';
-
-  var $triggerAlt = $('[data-further-info-trigger-alt]');
-
-  if ($triggerAlt.length) {
-    $triggerAlt.wrap('<button type="button" class="further-info__button" data-further-info-trigger></button>');
-  }
 
   var $element = $('[data-further-info]'),
       $trigger = $('[data-further-info-trigger]'),
