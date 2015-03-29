@@ -22,15 +22,6 @@
   }
 }
 
-.further-info__heading {
-  @include body(20, 30);
-
-  .js &:before {
-    content: '+';
-    margin-right: $baseline-unit;
-  }
-}
-
 .further-info__button {
   background: transparent;
   border: 0;
