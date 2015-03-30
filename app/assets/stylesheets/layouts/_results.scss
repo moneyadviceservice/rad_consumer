@@ -106,6 +106,7 @@
 
   @include respond-to($mq-m) {
     float: right;
+    padding-left: $baseline-unit*2;
   }
 }
 
