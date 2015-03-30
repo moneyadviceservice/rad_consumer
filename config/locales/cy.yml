@@ -146,8 +146,8 @@
   pension_wise:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
     description:
-      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Dysgwch ragor gan Pension wise</a>
       - text: Gwasanaeth diduedd ac am ddim gan y llywodraeth yw Pension Wise sy’n rhoi cymorth i chi ddeall eich opsiynau pensiwn newydd.
+      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Dysgwch ragor gan Pension wise</a>
 
   workplace_scheme:
     question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
