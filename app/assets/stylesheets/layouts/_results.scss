@@ -100,3 +100,16 @@
     }
   }
 }
+
+.l-results__summary {
+  display: block;
+
+  @include respond-to($mq-m) {
+    float: right;
+  }
+}
+
+.l-results__order-description {
+  overflow: hidden;
+  line-height: 2;
+}

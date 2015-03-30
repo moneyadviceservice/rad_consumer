@@ -219,6 +219,8 @@
     explanatory_message:
       distance: Canlyniadau orchmynnwyd gan bellter
       best_match: Canlyniadau orchmynnwyd gan gêm orau yn gyntaf, ac yna yn ôl pellter
+      a_to_z: Results ordered alphabetically
+      best_match_a_to_z: Results ordered by best match first, then alphabetically
 
     filter:
       heading: Chwiliwch yn fwy penodol
