@@ -83,37 +83,37 @@
     <div class="l-results__main">
       <% if @form.valid? %>
 
-      <p class="l-results__order-description">
-        <% if @form.face_to_face? %>
-          <% if @form.types_of_advice? %>
-            <span class="test">
-              <%= t('search.explanatory_message.best_match') %>
-            </span>
+      <% if @result.firms.any? %>
+        <p class="l-results__order-description">
+          <% if @form.face_to_face? %>
+            <% if @form.types_of_advice? %>
+              <span class="test">
+                <%= t('search.explanatory_message.best_match') %>
+              </span>
+            <% else %>
+              <span>
+                <%= t('search.explanatory_message.distance') %>
+              </span>
+            <% end %>
           <% else %>
-            <span>
-              <%= t('search.explanatory_message.distance') %>
-            </span>
+            <% if @form.types_of_advice? %>
+              <span class="test">
+                <%= t('search.explanatory_message.best_match_a_to_z') %>
+              </span>
+            <% else %>
+              <span class="test">
+                <%= t('search.explanatory_message.a_to_z') %>
+              </span>
+            <% end %>
           <% end %>
-        <% else %>
-          <% if @form.types_of_advice? %>
-            <span class="test">
-              <%= t('search.explanatory_message.best_match_a_to_z') %>
-            </span>
-          <% else %>
-            <span class="test">
-              <%= t('search.explanatory_message.a_to_z') %>
-            </span>
-          <% end %>
-        <% end %>
 
-        <span class="l-results__summary">
-          <%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %>
-        </span>
-      </p>
-
-        <% unless @result.firms.any? %>
-          <p><%= t('search.no_results_message') %></p>
-        <% end %>
+          <span class="l-results__summary">
+            <%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %>
+          </span>
+        </p>
+      <% else %>
+        <p><%= t('search.no_results_message') %></p>
+      <% end %>
 
         <ol class="l-results__list">
           <% @result.firms.each do |firm| %>
@@ -230,14 +230,16 @@
 
         <%= paginate @result %>
 
-        <div class="l-results__back-to-top back-to-top">
-          <%= link_to '#top', class: 'back-to-top__link' do %>
-            <%= t('search.back_to_top') %>
-            <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
-              <use xlink:href="#icon-back-to-top"></use>
-            </svg>
-          <% end %>
-        </div>
+        <% if @result.firms.any? %>
+          <div class="l-results__back-to-top back-to-top">
+            <%= link_to '#top', class: 'back-to-top__link' do %>
+              <%= t('search.back_to_top') %>
+              <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
+                <use xlink:href="#icon-back-to-top"></use>
+              </svg>
+            <% end %>
+          </div>
+        <% end %>
 
         <% else %>
           <p class="t-incorrect-criteria"><%= t('search.incorrect_search_criteria') %></p>
