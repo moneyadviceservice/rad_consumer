@@ -147,6 +147,7 @@
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
     description:
       - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Dysgwch ragor gan Pension wise</a>
+      - text: Gwasanaeth diduedd ac am ddim gan y llywodraeth yw Pension Wise sy’n rhoi cymorth i chi ddeall eich opsiynau pensiwn newydd.
 
   workplace_scheme:
     question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
@@ -154,7 +155,7 @@
 
   retirement_income_options:
     heading: Dewisiadau incwm ymddeol
-    content: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi.
+    content: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi. Archwilio’r ystyriaethau allweddol wrth i chi nesáu at ymddeol, cymharwch yr opsiynau, a chael arweiniad ar y camau nesaf.
     link_text: Ystyried eich dewisiadau
     link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
 
@@ -215,12 +216,12 @@
       title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
     go_back: Mynd yn ôl
-    incorrect_search_criteria: Cywirwch y broblem gyda'ch meini prawf chwilio a cheisiwch eto.
+    incorrect_search_criteria: "Cywirwch y broblem gyda'ch meini prawf chwilio a cheisiwch eto."
     explanatory_message:
       distance: Canlyniadau orchmynnwyd gan bellter
       best_match: Canlyniadau orchmynnwyd gan gêm orau yn gyntaf, ac yna yn ôl pellter
-      a_to_z: Results ordered alphabetically
-      best_match_a_to_z: Results ordered by best match first, then alphabetically
+      a_to_z: Trefnu canlyniadau yn nhrefn yr wyddor
+      best_match_a_to_z: Canlyniadau wedi eu trefnu yn ôl pariad gorau gyntaf, yna yn nhrefn yr wyddor
 
     filter:
       heading: Chwiliwch yn fwy penodol
@@ -320,7 +321,7 @@
       content:
         - text: Efallai y byddwch yn gallu arbed arian drwy ddod o hyd i gynghorydd a fydd yn delio â chi ar-lein neu dros y ffôn.
         - text: Rheoleiddir y cynghorwyr hyn yn yr union yr un ffordd a chewch eich diogelu yn yr un modd â phetaech wedi defnyddio cynghorydd wyneb yn wyneb.
-        - text: Dewiswch ‘ar-lein’ neu ‘ffôn’ yn yr adran Derbyn cyngor uchod os hoffech gael cyngor o bell.
+        - text: Dewiswch ‘Ar-lein/Ffôn’ yn yr adran ‘derbyn cyngor’ uchod os hoffech gael cyngor o bell.
 
   remote_search: *search
 
