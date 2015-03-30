@@ -32,7 +32,7 @@ define(['jquery'], function($) {
         $elementTriggerIcon = $(objectInArray).find($icon),
         $elementTarget = $(objectInArray).find($target);
 
-    $elementTrigger.on('click', function(event) {
+    $elementTrigger.click(function() {
       $icon.removeClass('education__icon--minus');
       $icon.addClass('education__icon--plus');
 

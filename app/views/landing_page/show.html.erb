@@ -46,11 +46,11 @@
       <% end %>
     </div>
 
-    <section data-further-info>
-      <%= heading_tag(level: 3, class: 'further-info__heading', data: { further_info_trigger_alt: '' }) do %>
+    <section data-education-module>
+      <%= heading_tag(level: 3, class: 'education__heading', data: { education_module_heading: '' }) do %>
         <%= t('workplace_scheme.question') %>
       <% end %>
-      <p class="further-info is-hidden" data-further-info-target><%= t('workplace_scheme.tooltip') %></p>
+      <p class="is-hidden education__content" data-education-module-target><%= t('workplace_scheme.tooltip') %></p>
     </section>
   </section>
 </div>
