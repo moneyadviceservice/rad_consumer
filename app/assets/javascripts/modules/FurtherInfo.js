@@ -11,7 +11,7 @@ define(['jquery'], function($) {
     var $elementTrigger = $(objectInArray).find($trigger),
         $elementTarget = $(objectInArray).find($target);
 
-    $elementTrigger.click(function() {
+    $elementTrigger.click(function(event) {
       event.preventDefault();
       event.stopPropagation();
 
