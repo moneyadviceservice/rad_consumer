@@ -48,7 +48,7 @@
 
     <section data-education-module>
       <%= heading_tag(level: 3, class: 'education__heading', data: { education_module_heading: '' }) do %>
-        <%= t('workplace_scheme.question') %>
+        <span class="education__heading-text"><%= t('workplace_scheme.question') %></span>
       <% end %>
       <p class="is-hidden education__content" data-education-module-target><%= t('workplace_scheme.tooltip') %></p>
     </section>
