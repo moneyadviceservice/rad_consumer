@@ -242,7 +242,7 @@
       firms: firms
 
     result:
-      adviser: Adviser
+      adviser: has an adviser
       miles_away: miles away
       office: Main office
 
