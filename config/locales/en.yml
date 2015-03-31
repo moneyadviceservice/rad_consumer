@@ -304,10 +304,10 @@
       content:
         - text: Our Retirement Adviser Directory matches you with firms based on the information you give us.
         - text: If your search is based on postcode only, the search results are ordered by distance.
-        - text: If you told us that you need a certain type of advice, only firms that offer that type of advice will appear in the search results.  Firms are then ordered by distance.  Some firms might seem to be a long distance from the postcode you entered but don’t worry, these firms have told us that they offer the advice you are looking for and have advisers who cover your area and will travel to you.
-        - text: If you’ve searched for a firm that provides phone or online advice only, the search results are alphabetical.
-        - text: If you told us that you need a certain type of advice, only firms that offer that type of advice will appear in the search results.  If two firms offer the same type of service, they will be ordered alphabetically.
-        - text: All the firms shown will be able to help you but some will suit you better than others.  We recommend that you contact several firms and talk through your requirements and the services they offer you before deciding on the best match for you.
+        - text: If you told us that you need a certain type of advice, only firms that offer that type of advice will appear in the search results. Firms are then ordered by distance. Some firms might seem to be a long distance from the postcode you entered but don’t worry, these firms have told us that they offer the advice you are looking for and have advisers who cover your area and will travel to you.
+        - text: If you’ve searched for a firm that provides phone or online advice only, the search results will be ordered alphabetically.
+        - text: If two firms offer the same type of service, they will be ordered alphabetically.
+        - text: All the firms shown will be able to help you but some will suit you better than others. We recommend that you contact several firms and talk through your requirements and the services they offer you before deciding on the best match for you.
 
     education_module_two:
       heading:  Online / telephone based advice
