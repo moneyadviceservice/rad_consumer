@@ -313,8 +313,11 @@
       heading: Sur benderfynwyd ar y canlyniadau?
       content:
         - text: Mae ein Cyfeirlyfr Cynghorydd Ymddeoliad yn eich paru â chwmnïau, yn seiliedig ar y wybodaeth a rowch i ni.
-        - text: Os dywedwch wrthym bod angen math penodol o gyngor arnoch, dangosir y cwmnïau sy’n cynnig y math hwnnw o gyngor yn unig.
-        - text: Os rhoesoch god post, dangosir cwmnïau sy’n fodlon cwrdd â chi’n bersonol yn unig.
+        - text: Os yw’ch chwiliad yn seiliedig ar god post yn unig, mae’r canlyniadau chwilio wedi eu trefnu yn ôl pellter.
+        - text: Os dywedwch wrthym fod angen math penodol o gyngor arnoch, dim ond cwmnïau sy’n cynnig y math hwnnw o gyngor fydd yn ymddangos yn y canlyniadau chwilio. Yna mae cwmnïau yn cael eu trefnu yn ôl pellter. Mae rhai cwmnïau yn ymddangos i fod yn bell o’r cod post a roddoch, ond peidiwch â phoeni, mae’r cwmnïau hyn wedi rhoi gwybod i ni eu bod yn cynnig y cyngor rydych ei eisiau ac mae ganddynt gynghorwyr sy’n gweithio yn eich ardal ac a fydd yn fodlon teithio i’ch gweld.
+        - text: Os ydych chi wedi chwilio am gwmni sy’n darparu cyngor dros y ffôn neu ar-lein yn unig, mae canlyniadau’r chwiliad yn nhrefn yr wyddor.
+        - text: Os dywedwch wrthym fod angen math penodol o gyngor arnoch, dim ond cwmnïau sy’n cynnig y math hwnnw o gyngor fydd yn ymddangos yn y canlyniadau chwilio. Os yw dau gwmni yn cynnig yr un math o wasanaeth, byddant yn cael eu rhoi yn nhrefn yr wyddor.
+        - text: Bydd yr holl gwmnïau a ddangosir yn gallu’ch helpu, ond bydd rhai yn gweddu’n well i chi nag eraill. Rydym yn argymell eich bod yn cysylltu â sawl cwmni a thrafod eich gofynion a’r gwasanaethai maent yn eu cynnig i chi cyn penderfynu pa un sy’n gweddu orau i chi.
 
     education_module_two:
       heading: Cyngor ariannol o bell
