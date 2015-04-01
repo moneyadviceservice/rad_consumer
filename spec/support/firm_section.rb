@@ -14,7 +14,11 @@ class FirmSection < SitePrism::Section
   end
 
   def address_line_one
-    root_element.find('.street-address').text
+    root_element.find('.line-one').text
+  end
+
+  def address_line_two
+    root_element.find('.line-two').text
   end
 
   def address_town
