@@ -13,6 +13,7 @@
       "properties": {
         "registered_name": { "type": "string", "analyzer": "firm_name_analyzer" },
         "address_line_one": { "type": "string", "index": "not_analyzed" },
+        "address_line_two": { "type": "string", "index": "not_analyzed" },
         "address_town": { "type": "string", "index": "not_analyzed" },
         "address_county": { "type": "string", "index": "not_analyzed" },
         "address_postcode": { "type": "string", "index": "not_analyzed" },
