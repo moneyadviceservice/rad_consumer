@@ -1,4 +1,4 @@
- cy:
+cy:
   activemodel:
     attributes:
       search_form:
@@ -217,11 +217,6 @@
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
     go_back: Mynd yn ôl
     incorrect_search_criteria: "Cywirwch y broblem gyda'ch meini prawf chwilio a cheisiwch eto."
-    explanatory_message:
-      distance: Canlyniadau orchmynnwyd gan bellter
-      best_match: Canlyniadau orchmynnwyd gan gêm orau yn gyntaf, ac yna yn ôl pellter
-      a_to_z: Trefnu canlyniadau yn nhrefn yr wyddor
-      best_match_a_to_z: Canlyniadau wedi eu trefnu yn ôl pariad gorau gyntaf, yna yn nhrefn yr wyddor
 
     filter:
       heading: Chwiliwch yn fwy penodol

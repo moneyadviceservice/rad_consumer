@@ -100,17 +100,3 @@
     }
   }
 }
-
-.l-results__summary {
-  display: block;
-
-  @include respond-to($mq-m) {
-    float: right;
-    padding-left: $baseline-unit*2;
-  }
-}
-
-.l-results__order-description {
-  overflow: hidden;
-  line-height: 2;
-}
