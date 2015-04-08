@@ -82,13 +82,11 @@
 
     <div class="l-results__main">
       <% if @form.valid? %>
-      <p>
         <% if @result.firms.any? %>
-          <%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %>
+          <p class="l-results__summary"><%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
         <% else %>
-          <%= t('search.no_results_message') %>
+          <p><%= t('search.no_results_message') %></p>
         <% end %>
-      </p>
 
         <ol class="l-results__list">
           <% @result.firms.each do |firm| %>

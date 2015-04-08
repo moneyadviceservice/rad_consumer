@@ -100,3 +100,8 @@
     }
   }
 }
+
+.l-results__summary {
+  @include body(14, 18);
+  font-weight: 500;
+}
