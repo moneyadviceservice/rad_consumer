@@ -95,8 +95,11 @@
                 <%= heading_tag(level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) do %>
                   <span class="result__heading-span"><%= firm.name %></span>
                 <% end %>
-                <% if @form.face_to_face? %>
+
+                <% if @form.face_to_face? && firm.closest_adviser > 1 %>
                   <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+                <% elsif @form.face_to_face? && firm.closest_adviser < 1 %>
+                  <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= t('search.result.miles_away_alt') %></p>
                 <% end %>
               </div>
 
