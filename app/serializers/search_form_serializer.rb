@@ -5,16 +5,6 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def sort
     [].tap do |options|
-      if types_of_advice?
-        options << {
-          _script: {
-            script: types_of_advice_sorting_expression,
-            type: 'number',
-            order: 'desc'
-          }
-        }
-      end
-
       if object.phone_or_online?
         options << 'registered_name'
       end
@@ -52,14 +42,14 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def build_filters
     [].tap do |filters|
-      filters << { script: { script: types_of_advice_filter_expression } } if types_of_advice?
       filters << { in: { other_advice_methods: object.remote_advice_method_ids } } if object.phone_or_online?
     end
   end
 
   def build_queries
     investment_size_queries.tap do |expression|
-      expression.push(*postcode_queries) if object.face_to_face?
+      expression.push(*postcode_queries)        if object.face_to_face?
+      expression.push(*types_of_advice_queries) if object.types_of_advice?
     end
   end
 
@@ -113,15 +103,7 @@ class SearchFormSerializer < ActiveModel::Serializer
     object.types_of_advice.present?
   end
 
-  def types_of_advice_sorting_expression
-    chosen_types_of_advice_fields.join(' + ')
-  end
-
-  def types_of_advice_filter_expression
-    chosen_types_of_advice_fields.map { |field| "#{field} > 0" }.join(' && ')
-  end
-
-  def chosen_types_of_advice_fields
-    object.types_of_advice.map { |type| "doc['#{type}'].value" }
+  def types_of_advice_queries
+    object.types_of_advice.map { |type| { range: { type => { gt: 0 } } } }
   end
 end

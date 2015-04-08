@@ -11,7 +11,7 @@ RSpec.feature 'Landing page, consumer requires various types of advice over the 
       and_i_indicate_i_need_advice_on_various_topics
       when_i_submit_the_phone_or_online_advice_search
       then_i_am_shown_firms_that_provide_the_selected_types_of_advice
-      and_they_are_ordered_by_business_split_and_name
+      and_they_are_ordered_by_name
     end
   end
 
@@ -66,7 +66,7 @@ RSpec.feature 'Landing page, consumer requires various types of advice over the 
     expect(results_page).to have_firms(count: 2)
   end
 
-  def and_they_are_ordered_by_business_split_and_name
+  def and_they_are_ordered_by_name
     ordered_results = [@first, @second].map(&:registered_name)
 
     expect(results_page.firm_names).to eql(ordered_results)
