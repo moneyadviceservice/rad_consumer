@@ -11,17 +11,17 @@ RSpec.feature 'Landing page, consumer requires advice on various topics in perso
       and_i_indicate_i_need_advice_on_various_topics
       when_i_submit_the_face_to_face_advice_search
       then_i_am_shown_firms_that_provide_the_selected_types_of_advice
-      and_they_are_ordered_by_business_split_and_location
+      and_they_are_ordered_by_location
     end
   end
 
   def given_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, retirement_income_products_percent: 30, wills_and_probate_percent: 20, other_percent: 50)
-      @glasgow = create(:adviser, firm: @first, latitude: 55.856191, longitude: -4.247082)
+      @first= create(:firm_with_no_business_split, retirement_income_products_percent: 29, wills_and_probate_percent: 20, other_percent: 51)
+      @leicester = create(:adviser, firm: @first, latitude: 52.633013, longitude: -1.131257)
 
-      @second = create(:firm_with_no_business_split, retirement_income_products_percent: 29, wills_and_probate_percent: 20, other_percent: 51)
-      @leicester = create(:adviser, firm: @second, latitude: 52.633013, longitude: -1.131257)
+      @second = create(:firm_with_no_business_split, retirement_income_products_percent: 30, wills_and_probate_percent: 20, other_percent: 50)
+      @glasgow = create(:adviser, firm: @second, latitude: 55.856191, longitude: -4.247082)
 
       @excluded = create(:firm_with_no_business_split, retirement_income_products_percent: 49, other_percent: 51)
       create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
@@ -60,7 +60,7 @@ RSpec.feature 'Landing page, consumer requires advice on various topics in perso
     expect(results_page).to have_firms(count: 2)
   end
 
-  def and_they_are_ordered_by_business_split_and_location
+  def and_they_are_ordered_by_location
     ordered_results = [@first, @second].map(&:registered_name)
 
     expect(results_page.firm_names).to eql(ordered_results)
