@@ -239,7 +239,7 @@ cy:
     result:
       adviser: mae gan gynghorydd
       miles_away: o filltiroedd i ffwrdd
-      miles_away_alt: less than a mile away
+      miles_away_alt: lai na milltir i ffwrdd
       office: Prif swyddfa
 
       contact_details:
