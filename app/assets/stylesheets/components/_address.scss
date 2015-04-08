@@ -6,9 +6,11 @@
   display: block;
 }
 
-.address__link {
+.address__link,
+.address__link[href^=tel] {
   display: block;
   line-height: 2;
+  color: $color-link-blue;
 
   &:hover {
     text-decoration: none;
