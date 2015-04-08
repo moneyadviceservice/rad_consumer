@@ -46,6 +46,7 @@
 }
 
 .result__adviser-distance {
+  @include body(14, 27);
   width: 100%;
   padding: 0 $baseline-unit*2;
   margin-bottom: $baseline-unit*2;
