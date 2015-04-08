@@ -96,7 +96,7 @@
                   <span class="result__heading-span"><%= firm.name %></span>
                 <% end %>
                 <% if @form.face_to_face? %>
-                  <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= number_to_human(firm.closest_adviser, significant: true) %> <%= t('search.result.miles_away') %></p>
+                  <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= firm.closest_adviser %></p>
                 <% end %>
               </div>
 
