@@ -308,12 +308,10 @@ cy:
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
       content:
-        - text: Mae ein Cyfeirlyfr Cynghorydd Ymddeoliad yn eich paru â chwmnïau, yn seiliedig ar y wybodaeth a rowch i ni.
-        - text: Os yw’ch chwiliad yn seiliedig ar god post yn unig, mae’r canlyniadau chwilio wedi eu trefnu yn ôl pellter.
-        - text: Os dywedwch wrthym fod angen math penodol o gyngor arnoch, dim ond cwmnïau sy’n cynnig y math hwnnw o gyngor fydd yn ymddangos yn y canlyniadau chwilio. Yna mae cwmnïau yn cael eu trefnu yn ôl pellter. Mae rhai cwmnïau yn ymddangos i fod yn bell o’r cod post a roddoch, ond peidiwch â phoeni, mae’r cwmnïau hyn wedi rhoi gwybod i ni eu bod yn cynnig y cyngor rydych ei eisiau ac mae ganddynt gynghorwyr sy’n gweithio yn eich ardal ac a fydd yn fodlon teithio i’ch gweld.
-        - text: Os ydych chi wedi chwilio am gwmni sy’n darparu cyngor dros y ffôn neu ar-lein yn unig, mae canlyniadau’r chwiliad yn nhrefn yr wyddor.
-        - text: Os dywedwch wrthym fod angen math penodol o gyngor arnoch, dim ond cwmnïau sy’n cynnig y math hwnnw o gyngor fydd yn ymddangos yn y canlyniadau chwilio. Os yw dau gwmni yn cynnig yr un math o wasanaeth, byddant yn cael eu rhoi yn nhrefn yr wyddor.
-        - text: Bydd yr holl gwmnïau a ddangosir yn gallu’ch helpu, ond bydd rhai yn gweddu’n well i chi nag eraill. Rydym yn argymell eich bod yn cysylltu â sawl cwmni a thrafod eich gofynion a’r gwasanaethai maent yn eu cynnig i chi cyn penderfynu pa un sy’n gweddu orau i chi.
+        - text: Mae ein Cyfeirlyfr Cynghorwyr Ymddeoliad yn eich paru â chwmnïau sy’n darparu’r math o gyngor sydd ei angen arnoch a’i gyflwyno i chi yn ôl eich gofynion.
+        - text: Os hoffech weld cynghorydd wyneb yn wyneb, rhowch eich cod post a dewiswch y math o gyngor sydd ei angen arnoch. Fe welwch restr o gwmnïau sy’n cynnig y math hwnnw o gyngor gyda chynghorwyr yn lleol i chi.
+        - text: Os ydych wedi chwilio am gwmni sy’n darparu cyngor dros y ffôn neu ar-lein gan ddewis y math o gyngor sydd ei angen arnoch, fe welwch restr o gwmnïau sy’n cynnig y math hwnnw o gyngor o bell, ond yn nhrefn yr wyddor.
+        - text: Mae hi bob amser yn syniad da i gysylltu â sawl cwmni a thrafod eich gofynion a’r gwasanaethau a gynigiant i chi cyn penderfynu pa un sy’n gweddu orau i chi.
 
     education_module_two:
       heading: Cyngor ariannol o bell
