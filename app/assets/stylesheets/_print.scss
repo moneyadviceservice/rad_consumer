@@ -1,0 +1,42 @@
+@media print {
+  * {
+    background: none !important;
+    color: #000 !important;
+    text-decoration: none !important; // links are invalid once printed
+  }
+
+  body {
+    margin: 0 !important;
+  }
+
+  .svg-icon,
+  .l-header,
+  .l-header__logo,
+  .l-header__locale,
+  .l-results__go-back,
+  .l-results__side,
+  .l-contact-panels,
+  .l-results__back-to-top {
+    display: none !important;
+  }
+
+  .js .is-hidden-on-mobile {
+    display: block !important; // prevent native JS behaviour on mobile
+  }
+
+  .education__icon {
+    display: none !important; // Iconography not needed once printed
+  }
+
+  .result__adviser-distance {
+    padding: 0 0.75rem !important;
+  }
+
+  .keyword {
+    padding: 0 !important;
+  }
+
+  a[href^='mailto:']:link:after {
+    content: " (" attr(data-email) ") " !important;
+  }
+}
