@@ -37,6 +37,6 @@
   }
 
   a[href^='mailto:']:link:after {
-    content: " (" attr(href) ") " !important; // make the mailto link useable
+    content: " (" attr(data-email) ") " !important;
   }
 }
