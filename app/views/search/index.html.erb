@@ -116,11 +116,11 @@
                       <span class="address__line post-code"><%= firm.address_postcode %></span>
                     </p>
 
-                    <a href="tel:<%= firm.telephone_number.strip %>" class="address__link phone">
+                    <a href="tel:<%= firm.telephone_number %>" class="address__link phone">
                       <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
                         <use xlink:href="#icon-phone"></use>
                       </svg>
-                      <span class="value"><%= number_to_phone(firm.telephone_number.strip, delimiter: ' ') %></span>
+                      <span class="value"><%= firm.telephone_number %></span>
                     </a>
 
                     <% if firm.website_address.present? %>

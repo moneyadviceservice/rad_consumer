@@ -57,7 +57,7 @@ RSpec.feature 'Consumer views a search result' do
     expect(@displayed_firm.address_county).to eq(@firm.address_county)
     expect(@displayed_firm.address_postcode).to eq(@firm.address_postcode)
 
-    expect(@displayed_firm.telephone_number).to eq(@firm.telephone_number)
+    expect(@displayed_firm.telephone_number).to eq('020 8252 4727')
     expect(@displayed_firm.website_address).to be
     expect(@displayed_firm.email_address).to be
   end
@@ -101,6 +101,7 @@ RSpec.feature 'Consumer views a search result' do
     @principal = create(:principal, website_address: 'http://www.example.com')
 
     @firm = create(:firm_with_no_business_split,
+      telephone_number: '02082524727',
       principal: @principal,
       free_initial_meeting: true,
       minimum_fixed_fee: 1000,
