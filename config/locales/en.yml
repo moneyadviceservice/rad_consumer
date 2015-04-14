@@ -155,7 +155,7 @@
 
   retirement_income_options:
     heading: Retirement income options
-    content: The retirement landscape is changing fast and it’s tricky to understand all the options available to you. Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
+    content: Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
     link_text: Explore your options
     link_url: 'https://www.moneyadviceservice.org.uk/en/retirement-income-options'
 
@@ -168,8 +168,9 @@
   our_promise:
     heading: Our promise to you
     key_points:
-      - text: We are set up by government to give independent and impartial advice.
-      - text: We respect your privacy and won’t share your details.
+      - text: Free and impartial money advice, set up by government.
+      - text: We don't receive any incentive or commission.
+      - text: We will not contact you or share your details.
 
   search_filter:
     landing_page:
