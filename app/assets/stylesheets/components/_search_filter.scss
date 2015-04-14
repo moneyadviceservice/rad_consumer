@@ -95,6 +95,7 @@
 
 .search-filter__button {
   @include body(16, 18);
+  margin-bottom: $baseline-unit*3;
 }
 
 .search-filter__button--inline {
@@ -107,7 +108,7 @@
 
 .search-filter__field[type="text"] {
   width: 100%;
-  max-width: 150px;
+  max-width: 200px;
   height: 42px;
   border-radius: $search-filter-radius;
   border: 1px solid $search-filter-border-color;
