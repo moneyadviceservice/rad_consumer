@@ -155,7 +155,7 @@ cy:
 
   retirement_income_options:
     heading: Dewisiadau incwm ymddeol
-    content: Mae’r maes ymddeol yn newid yn gyflym ac mae’n anodd deall yr holl ddewisiadau sydd ar gael i chi. Archwilio’r ystyriaethau allweddol wrth i chi nesáu at ymddeol, cymharwch yr opsiynau, a chael arweiniad ar y camau nesaf.
+    content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
     link_text: Ystyried eich dewisiadau
     link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
 
@@ -168,8 +168,9 @@ cy:
   our_promise:
     heading: Ein haddewid i chi
     key_points:
-      - text: Cawsom ein sefydlu gan y llywodraeth i ddarparu cyngor ariannol am ddim ac yn ddiduedd.
-      - text: Rydym yn parchu’ch preifatrwydd ac ni fyddwn yn rhannu’ch manylion.
+      - text: Cyngor ar ddyledion am ddim a diduedd, a sefydlwyd gan y llywodraeth
+      - text: Ni dderbyniwn unrhyw dâl anogaeth na chomisiwn
+      - text: Ni fyddwn yn cysylltu â chi na rhannu’ch manylion
 
   search_filter:
     landing_page:
