@@ -5,10 +5,6 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def sort
     [].tap do |options|
-      if object.phone_or_online?
-        options << 'registered_name'
-      end
-
       if object.face_to_face?
         options << {
           _geo_distance: {
@@ -18,6 +14,8 @@ class SearchFormSerializer < ActiveModel::Serializer
           }
         }
       end
+
+      options << 'registered_name'
     end
   end
 

@@ -9,7 +9,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
       when_i_search_with_a_reading_postcode
       then_i_am_shown_firms_with_advisers_covering_my_postcode
       and_i_am_not_shown_non_postcode_searchable_firms
-      and_the_firms_are_ordered_by_distance_in_miles_to_me
+      and_the_firms_are_ordered_by_distance_and_name
     end
   end
 
@@ -68,7 +68,22 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
 
   def and_firms_with_advisers_covering_my_postcode_were_previously_indexed
     with_fresh_index! do
-      @reading   = create(:adviser, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616, travel_distance: 100)
+      @second = create(:adviser,
+        firm: create(:firm, registered_name: 'ZZZ'),
+        postcode: 'RG2 8EE',
+        latitude: 51.428473,
+        longitude: -0.943616,
+        travel_distance: 100
+      )
+
+      @first = create(:adviser,
+        firm: create(:firm, registered_name: 'AAA'),
+        postcode: 'RG2 8EE',
+        latitude: 51.428473,
+        longitude: -0.943616,
+        travel_distance: 100
+      )
+
       @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257, travel_distance: 650)
       @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082, travel_distance: 10)
 
@@ -95,10 +110,11 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
     ).to_not include(@missing.registered_name)
   end
 
-  def and_the_firms_are_ordered_by_distance_in_miles_to_me
+  def and_the_firms_are_ordered_by_distance_and_name
     expect(results_page.firm_names).to eql([
-      @reading.firm.registered_name,
-      @leicester.firm.registered_name,
+      @first.firm.registered_name,
+      @second.firm.registered_name,
+      @leicester.firm.registered_name
     ])
   end
 
