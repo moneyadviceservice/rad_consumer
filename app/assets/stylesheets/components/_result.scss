@@ -126,6 +126,10 @@
   @extend .unstyled-list;
 }
 
+.result__list--second {
+  margin-top: $baseline-unit*4;
+}
+
 .result__list-item {
   margin-bottom: $baseline-unit;
 }
