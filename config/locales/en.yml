@@ -246,6 +246,7 @@
       contact_details:
         email: Email
         url: Website
+        address: Address
 
       recieve_advice:
         heading: Receive advice
