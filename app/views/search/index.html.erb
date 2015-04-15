@@ -154,6 +154,9 @@
                       <% firm.in_person_advice_methods.each do |id| %>
                         <li class="result__list-item t-in-person-advice-method"><%= InPersonAdviceMethod.friendly_name(id) %></li>
                       <% end %>
+                    </ul>
+
+                    <ul class="result__list result__list--second">
                       <% firm.other_advice_methods.each do |id| %>
                         <li class="result__list-item t-other-advice-method"><%= OtherAdviceMethod.friendly_name(id) %></li>
                       <% end %>
