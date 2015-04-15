@@ -246,6 +246,7 @@ cy:
       contact_details:
         email: E-bost
         url: Gwefan
+        address: Cyfeiriad
 
       recieve_advice:
         heading: Cael cyngor
