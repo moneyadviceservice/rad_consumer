@@ -244,8 +244,8 @@
       office: Main office
 
       contact_details:
-        email: Email firm
-        url: Firm's website
+        email: Email
+        url: Website
 
       recieve_advice:
         heading: Receive advice
