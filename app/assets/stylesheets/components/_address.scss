@@ -1,5 +1,11 @@
 .address {
-  margin: $baseline-unit*2 0;
+  margin: 0;
+}
+
+.address__heading {
+  margin-top: $baseline-unit*3;
+  color: $color-green-secondary;
+  font-weight: 300;
 }
 
 .address__line {

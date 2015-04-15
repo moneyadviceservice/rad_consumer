@@ -244,8 +244,8 @@ cy:
       office: Prif swyddfa
 
       contact_details:
-        email: Cwmni e-bost
-        url: Gwefan cwmni
+        email: E-bost
+        url: Gwefan
 
       recieve_advice:
         heading: Cael cyngor
