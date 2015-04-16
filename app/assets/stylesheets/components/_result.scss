@@ -69,6 +69,7 @@
 .result__sub-heading {
   @include body(16, 24);
   color: $result-heading-color;
+  font-weight: 500;
   margin-top: 0;
 }
 
