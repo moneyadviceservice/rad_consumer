@@ -105,3 +105,9 @@
   @include body(14, 18);
   font-weight: 500;
 }
+
+.l-results__feedback {
+  @include column(12);
+  margin-top: $baseline-unit*10;
+  clear: both;
+}
