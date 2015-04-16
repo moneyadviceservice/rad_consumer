@@ -107,7 +107,6 @@
 }
 
 .l-results__feedback {
-  @include column(12);
-  margin-top: $baseline-unit*10;
+  @include body(14, 18);
   clear: both;
 }
