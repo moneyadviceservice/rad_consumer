@@ -8,6 +8,8 @@
   mas: The Money Advice Service
   mas_home_url: https://www.moneyadviceservice.org.uk/en
 
+  feedback_button: Tell us how we can improve this tool
+
   pagination:
     previous: 'Prev'
     next: 'Next'
