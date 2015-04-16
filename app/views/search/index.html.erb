@@ -228,15 +228,15 @@
         <% else %>
           <p class="t-incorrect-criteria"><%= t('search.incorrect_search_criteria') %></p>
         <% end %>
+
+      <div class="l-results__feedback">
+        <a href="/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
+      </div>
     </div>
 
     <div class="l-results__side">
       <%= render partial: 'search/education_module', locals: { key: 'search.education_module_one' } %>
       <%= render partial: 'search/education_module', locals: { key: 'search.education_module_two' } %>
-    </div>
-
-    <div class="l-results__feedback">
-      <a href="/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
     </div>
   </div>
 </div>
