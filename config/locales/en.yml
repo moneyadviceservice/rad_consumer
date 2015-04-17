@@ -231,7 +231,7 @@
       button_text: Search
 
     page_title: Search results
-    back_to_top: Back to top
+    back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
     summary_of_results:
       showing: Showing
