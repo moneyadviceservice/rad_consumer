@@ -268,6 +268,7 @@
         tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
       minimum_fee:
         title: 'Minimum fee: '
+        none: No minimum fee
         tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
         link: See our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> for more information
       minimum_pot_size:
