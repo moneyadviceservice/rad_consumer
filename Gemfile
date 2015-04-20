@@ -24,11 +24,11 @@ gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
+gem 'autoprefixer-rails'
 
 group :assets do
   gem 'jquery-rails'
   gem 'sass-rails'
-  gem 'autoprefixer-rails'
 end
 
 group :development, :test do
