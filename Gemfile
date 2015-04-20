@@ -28,6 +28,7 @@ gem 'unicorn'
 group :assets do
   gem 'jquery-rails'
   gem 'sass-rails'
+  gem 'autoprefixer-rails'
 end
 
 group :development, :test do
