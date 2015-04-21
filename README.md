@@ -26,19 +26,23 @@ Make sure all dependencies are available to the application:
 
 ```sh
 $ bundle install
-$ bowndler update
+$ bundle exec bowndler update
 $ npm install
 ```
 
-**NOTE** this application shares access to a PostgreSQL database with the rad
-project. **DO NOT** install the database from here. Instead install
+---
+
+**NOTE this application shares access to a PostgreSQL database with the rad
+project. DO NOT install the database from here. Instead install
 [rad](https://github.com/moneyadviceservice/rad) first as this contains all the
-extra seed data required.
+extra seed data required.**
+
+---
 
 Setup the database connection:
 
 ```sh
-cp config/example.database.yml config/database.yml
+$ cp config/example.database.yml config/database.yml
 ```
 
 Be sure to remove or modify the `username` attribute.
@@ -49,7 +53,7 @@ Push the index. For the production environment replace `rad_development` with
 `rad_production`:
 
 ```sh
-curl -XPOST http://127.0.0.1:9200/rad_development -d @elastic_search_mapping.json
+$ curl -XPOST http://127.0.0.1:9200/rad_development -d @elastic_search_mapping.json
 ```
 
 ## Usage
@@ -68,7 +72,7 @@ application locally.
 To run the Ruby tests:
 
 ```sh
-bundle exec rspec
+$ bundle exec rspec
 ```
 
 To run the javascript tests:
