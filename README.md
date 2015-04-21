@@ -30,10 +30,14 @@ $ bundle exec bowndler update
 $ npm install
 ```
 
-**NOTE** this application shares access to a PostgreSQL database with the rad
-project. **DO NOT** install the database from here. Instead install
+---
+
+**NOTE this application shares access to a PostgreSQL database with the rad
+project. DO NOT install the database from here. Instead install
 [rad](https://github.com/moneyadviceservice/rad) first as this contains all the
-extra seed data required.
+extra seed data required.**
+
+---
 
 Setup the database connection:
 
