@@ -185,8 +185,12 @@
                       <a href="glossary/#free_initial_meeting" target="_blank" class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></a>
                     <% end %>
                     <a href="glossary/#minimum_pot_size" target="_blank" class="keyword">
-                      <%= t('search.keywords.minimum_pot_size.title') %>
-                      <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
+                      <% if firm.minimum_pot_size? %>
+                        <%= t('search.keywords.minimum_pot_size.title') %>
+                        <span class="t-minimum-pot-size"><%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %></span>
+                      <% else %>
+                        <%= t('search.keywords.minimum_pot_size.none') %>
+                      <% end %>
                     </a>
                   </div>
                 </div>
