@@ -273,6 +273,7 @@
         link: See our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> for more information
       minimum_pot_size:
         title: 'Minimum pot size/savings: '
+        none: 'No minimum pot size / savings'
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
