@@ -15,8 +15,12 @@
       <span class="search-filter__heading-text"><%= t('search_filter.in_person.heading') %></span>
     <% end %>
 
+
     <div data-search-filter-target>
       <div class="search-filter__section search-filter__section--padded">
+
+        <p>Looks like you're in <strong>London</strong></p>
+
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
           <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
