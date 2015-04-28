@@ -34,12 +34,9 @@
   margin-top: $baseline-unit*8;
 }
 
-.l-landing-page__background {
-  background-color: $background-color;
-}
-
-.l-landing-page__background--gradient {
-  background-image: linear-gradient(to bottom, #ffffff 0%,#ffffff 30%,#f2f4f4 100%);
+.l-landing-page__with-border {
+  overflow: hidden;
+  border-bottom: 1px solid $background-color;
 }
 
 .l-landing-page__heading {
