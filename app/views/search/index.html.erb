@@ -91,14 +91,12 @@
         <ol class="l-results__list">
           <% @result.firms.each do |firm| %>
             <li class="result t-firm" data-results-module>
-              <div class="result__heading">
-                <%= heading_tag(level: 2, class: 'result__heading-text t-name', data: { results_module_heading: '' }) do %>
-                  <span class="result__heading-span"><%= firm.name %></span>
-                <% end %>
+              <%= heading_tag(level: 2, class: 'result__heading', data: { results_module_heading: '' }) do %>
+                <span class="t-name"><%= firm.name %></span>
                 <% if @form.face_to_face? %>
-                  <p class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= firm.closest_adviser %></p>
+                  <span class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= firm.closest_adviser %></span>
                 <% end %>
-              </div>
+              <% end %>
 
               <div class="is-hidden-on-mobile" data-results-module-target>
                 <div class="result__address">
