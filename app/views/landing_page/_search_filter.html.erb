@@ -19,12 +19,12 @@
     <div data-search-filter-target>
       <div class="search-filter__section search-filter__section--padded">
 
-        <p>Looks like you're in <strong>London</strong></p>
 
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
           <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
-          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD', maxlength: 8 %>
+          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: '', maxlength: 8, data: { geo_location_placeholder: '' } %>
+          <small class="is-displayed">For example, it looks like you're near <span data-geo-location></span></small>
         <% end %>
 
         <%= search_filter_options(f, 'landing_page') %>
