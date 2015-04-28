@@ -112,7 +112,11 @@
   height: 42px;
   border-radius: $search-filter-radius;
   border: 1px solid $search-filter-border-color;
-  padding-left: 12px;
+  padding-left: $baseline-unit*2;
+}
+
+.search-filter__description {
+  margin-top: $baseline-unit;
 }
 
 .search-filter__field--padded {
