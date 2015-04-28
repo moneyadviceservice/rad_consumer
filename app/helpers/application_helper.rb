@@ -12,7 +12,7 @@ module ApplicationHelper
 
     unless key == 'ignored'
       info = t("search.accreditations.items.#{key}")
-      link_to "glossary/##{key}", target: '_blank', class: "accreditation t-#{kind}" do
+      link_to "glossary/##{key}", class: "accreditation t-#{kind}" do
         image_tag "#{key}.png", alt: info[:title], class: 'accreditation__img'
       end
     end
