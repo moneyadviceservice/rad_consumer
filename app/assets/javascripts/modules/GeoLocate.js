@@ -3,8 +3,13 @@ define(['jquery'], function($) {
   'use strict';
 
   var location = $('[data-geo-location]'),
-      placeholder = $('[data-geo-location-placeholder]'),
-      geocoder;
+      description = $('.search-filter__description'),
+      input = $('[data-geo-location-input]'),
+      label = $('[data-geo-location-label]'),
+      container = $('[data-geo-location-container]'),
+      button = $('[data-geo-location-button]'),
+      geocoder,
+      postcode;
 
   function initialise() {
     geocoder = new google.maps.Geocoder();
@@ -35,10 +40,22 @@ define(['jquery'], function($) {
 
           $.each(arrAddress, function(i, address_component) {
             if (address_component.types[0] == "postal_code") {
-              var postcode = address_component.address_components[0].long_name;
+              postcode = address_component.address_components[0].long_name;
 
               location.text(postcode);
-              placeholder.attr('placeholder', postcode);
+              input.attr('placeholder', postcode);
+
+              button.click(function(){
+                event.preventDefault();
+
+                container.text(postcode);
+                description.remove();
+                button.remove();
+
+                input.val(lat + " " + lng).addClass('visually-hidden');
+
+                label.text('Search with postcode');
+              });
             }
           });
         } else {
