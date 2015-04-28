@@ -4,7 +4,11 @@ define(['jquery'], function($) {
 
   var location = $('[data-geo-location]'),
       placeholder = $('[data-geo-location-placeholder]'),
-      geocoder = new google.maps.Geocoder();
+      geocoder;
+
+  function initialise() {
+    geocoder = new google.maps.Geocoder();
+  }
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
@@ -13,16 +17,13 @@ define(['jquery'], function($) {
   function successFunction(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
+
     codeLatLng(lat, lng);
   }
 
   function errorFunction() {
     alert("Geocoder failed");
   }
-
-  // function initialize() {
-  //   geocoder = new google.maps.Geocoder();
-  // }
 
   function codeLatLng(lat, lng) {
     var latlng = new google.maps.LatLng(lat, lng);
@@ -49,5 +50,5 @@ define(['jquery'], function($) {
     });
   }
 
-  // window.onload(initialize);
+  initialise();
 });

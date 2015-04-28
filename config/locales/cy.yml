@@ -205,6 +205,7 @@ cy:
       heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
       postcode_label: Eich cod post
       button_text: Chwilio
+      geo_location_label: Er enghraifft, mae'n edrych yn debyg eich bod ger
 
     remote:
       heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
