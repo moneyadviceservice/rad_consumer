@@ -33,25 +33,27 @@
   }
 }
 
+.result__heading-text {
+  @include respond-to($mq-xs, $mq-m) {
+    display: block;
+    padding-left: 20px;
+  }
+}
+
 .result__adviser-distance {
   display: block;
   line-height: 27px;
   color: $color-black;
   padding: 0 $baseline-unit*2;
-  margin-bottom: $baseline-unit*2;
   margin-top: 0;
   font-weight: 300;
+  padding-left: 20px;
 
   @include respond-to ($mq-m) {
     display: inline;
     margin-top: $baseline-unit*2;
     padding-left: 0;
   }
-}
-
-.js-result__adviser-distance {
-  // insets the adviser distance when the + is present
-  padding-left: 20px;
 }
 
 .result__sub-heading {

@@ -14,7 +14,6 @@ define(['jquery'], function($) {
   if ($(window).width() <= 720) {
     $heading.wrap($buttonElement);
     $heading.prepend($iconElement);
-    $adviserElement.addClass('js-result__adviser-distance');
 
     if ($targetClosed.find('.form__row').hasClass('is-errored') === true) {
       $target.addClass(statusHidden);
