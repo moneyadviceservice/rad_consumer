@@ -56,7 +56,7 @@ define(['jquery'], function($) {
 
   initialise();
 
-  button.removeClass('is-hidden');
+  button.removeClass('search-filter__button-link--hidden');
 
   button.click(function(){
     event.preventDefault();

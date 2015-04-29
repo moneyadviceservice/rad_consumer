@@ -104,6 +104,10 @@
   text-decoration: underline;
 }
 
+.search-filter__button-link--hidden {
+  display: none;
+}
+
 .search-filter__postcode {
   font-weight: 700;
   @include body(42, 42);
