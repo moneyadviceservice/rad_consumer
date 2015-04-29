@@ -206,6 +206,7 @@
       postcode_label: Enter your postcode
       button_text: Search
       geo_location_label: For example, EC1N 2TD
+      location_button: Lookup where I am now
 
     remote:
       heading: Find advisers who offer advice by phone or online

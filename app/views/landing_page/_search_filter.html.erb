@@ -24,7 +24,7 @@
           <div class="search-filter__postcode" data-geo-location-container></div>
           <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8, data: { geo_location_input: '' } %>
           <small class="search-filter__description"><%= t('search_filter.in_person.geo_location_label') %></small>
-          <small><button class="search-filter__button-link is-hidden" data-geo-location-button>Look up where I am now</button></small>
+          <small><button class="search-filter__button-link is-hidden" data-geo-location-button><%= t('search_filter.in_person.location_button') %></button></small>
         <% end %>
 
         <%= search_filter_options(f, 'landing_page') %>
