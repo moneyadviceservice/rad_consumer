@@ -7,6 +7,7 @@ require(['jquery'], function ($) {
     'NestedOptions',
     'ResultsFilter',
     'EducationModule',
-    'ResultsModule'
+    'ResultsModule',
+    'GeoLocate'
     ]);
 });

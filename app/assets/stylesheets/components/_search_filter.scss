@@ -98,6 +98,21 @@
   margin-bottom: $baseline-unit*3;
 }
 
+.search-filter__button-link {
+  @extend .unstyled-button;
+  color: $color-blue-medium;
+  text-decoration: underline;
+}
+
+.search-filter__button-link--hidden {
+  display: none;
+}
+
+.search-filter__postcode {
+  font-weight: 700;
+  @include body(42, 42);
+}
+
 .search-filter__button--inline {
   vertical-align: top;
 }
@@ -112,6 +127,12 @@
   height: 42px;
   border-radius: $search-filter-radius;
   border: 1px solid $search-filter-border-color;
+  padding-left: $baseline-unit*2;
+}
+
+.search-filter__description {
+  display: block;
+  margin-top: $baseline-unit;
 }
 
 .search-filter__field--padded {

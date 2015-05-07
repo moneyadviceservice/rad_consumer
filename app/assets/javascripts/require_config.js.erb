@@ -4,6 +4,7 @@
 //= depend_on_asset modules/NestedOptions
 //= depend_on_asset modules/EducationModule
 //= depend_on_asset modules/ResultsModule
+//= depend_on_asset modules/GeoLocate
 
 <%
   def requirejs_path(asset)
@@ -19,6 +20,7 @@
       ResultsFilter: requirejs_path('modules/ResultsFilter'),
       EducationModule: requirejs_path('modules/EducationModule'),
       ResultsModule: requirejs_path('modules/ResultsModule'),
+      GeoLocate: requirejs_path('modules/GeoLocate')
     }
   }
 %>

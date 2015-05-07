@@ -14,14 +14,7 @@ Rails.application.configure do
   )
 
   # Application JavaScript
-  config.assets.precompile += %w(
-    modules/FurtherInfo.js
-    modules/SearchFilter.js
-    modules/NestedOptions.js
-    modules/ResultsFilter.js
-    modules/EducationModule.js
-    modules/ResultsModule.js
-  )
+  config.assets.precompile << 'modules/*.js'
 
   # Vendor JavaScript
   config.assets.precompile += %w(

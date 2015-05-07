@@ -17,10 +17,14 @@
 
     <div data-search-filter-target>
       <div class="search-filter__section search-filter__section--padded">
+
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
-          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
-          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD', maxlength: 8 %>
+          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label', data: { geo_location_label: '' } %>
+          <div class="search-filter__postcode" data-geo-location-container></div>
+          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', maxlength: 8, data: { geo_location_input: '' } %>
+          <small class="search-filter__description"><%= t('search_filter.in_person.geo_location_label') %></small>
+          <small><button class="search-filter__button-link search-filter__button-link--hidden" data-geo-location-button><%= t('search_filter.in_person.location_button') %></button></small>
         <% end %>
 
         <%= search_filter_options(f, 'landing_page') %>
