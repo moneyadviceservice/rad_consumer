@@ -25,8 +25,8 @@
           <%= f.label :pension_transfer, class: 'search-filter__option' do %>
             <%= t('search_filter.pension_pot.pension_transfer.heading') %>
             <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
-            <p class="is-hidden further-info__content" data-further-info-target><%= t('search_filter.pension_pot.pension_transfer.tooltip') %></p>
           <% end %>
+          <p class="is-hidden further-info__content" data-further-info-target><%= t('search_filter.pension_pot.pension_transfer.tooltip') %></p>
         </div>
       </div>
     </div>
@@ -37,8 +37,8 @@
         <%= f.label key, class: 'search-filter__option' do %>
           <%= raw item[:title] %>
           <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
-          <p class="is-hidden further-info__content" data-further-info-target><%= raw item[:tooltip] %></p>
         <% end %>
+        <p class="is-hidden further-info__content" data-further-info-target><%= raw item[:tooltip] %></p>
       </div>
     <% end %>
   <% end %>
