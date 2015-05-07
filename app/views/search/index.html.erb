@@ -30,10 +30,8 @@
                     <%= f.errors_for :postcode %>
 
                     <div class="form__group-item">
-                      <label>
-                        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' } %>
-                        <%= t('search.filter.receive_advice.face_to_face') %>
-                      </label>
+                      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' } %>
+                      <%= f.label :advice_method_face_to_face, t('search.filter.receive_advice.face_to_face') %>
                     </div>
 
                     <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
@@ -46,10 +44,8 @@
                     <%= f.errors_for :advice_methods %>
 
                     <div class="form__group-item">
-                      <label>
-                        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
-                        <%= t('search.filter.receive_advice.phone_online') %>
-                      </label>
+                      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
+                      <%= f.label :advice_method_phone_or_online, t('search.filter.receive_advice.phone_online') %>
 
                       <div class="search-filter__item-inset is-hidden" data-results-filter-target="1">
                         <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
