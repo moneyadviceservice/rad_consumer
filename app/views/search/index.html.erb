@@ -38,7 +38,7 @@
 
                     <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
                       <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading' %>
-                      <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8 %>
+                      <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8, required: true %>
                     </div>
                   <% end %>
 
