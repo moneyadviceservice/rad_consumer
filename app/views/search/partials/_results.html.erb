@@ -1,0 +1,33 @@
+<div class="l-results__main">
+  <% if @form.valid? %>
+    <% if @result.firms.any? %>
+      <p class="l-results__summary"><%= t('search.summary_of_results.showing') %> <span class="t-first-record"><%= @result.first_record %></span> <%= t('search.summary_of_results.to') %> <span class="t-last-record"><%= @result.last_record %></span> <%= t('search.summary_of_results.of') %> <span class="t-total-records"><%= @result.total_records %></span> <%= t('search.summary_of_results.firms') %></p>
+    <% else %>
+      <p><%= t('search.no_results_message') %></p>
+    <% end %>
+
+    <ol class="l-results__list">
+      <%= render partial: 'search/partials/firm', collection: @result.firms, as: :firm %>
+    </ol>
+
+    <%= paginate @result %>
+
+    <% if @result.firms.any? %>
+      <div class="l-results__back-to-top back-to-top">
+        <%= link_to '#top', class: 'back-to-top__link' do %>
+          <%= t('search.back_to_top') %>
+          <svg title="<%= t('search.back_to_top') %>" xmlns="http://www.w3.org/2000/svg" class="back-to-top__icon">
+            <use xlink:href="#icon-back-to-top"></use>
+          </svg>
+        <% end %>
+      </div>
+    <% end %>
+
+    <% else %>
+      <p class="t-incorrect-criteria"><%= t('search.incorrect_search_criteria') %></p>
+    <% end %>
+
+  <div class="l-results__feedback">
+    <a href="https://www.moneyadviceservice.org.uk/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
+  </div>
+</div>

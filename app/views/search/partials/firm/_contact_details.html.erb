@@ -1,0 +1,44 @@
+<div class="result__address">
+  <%= heading_tag(t('search.result.office'), level: 3, class: 'result__sub-heading') %>
+
+  <div class="vcard">
+    <a href="tel:<%= firm.telephone_number %>" class="address__link phone">
+      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
+        <use xlink:href="#icon-phone"></use>
+      </svg>
+      <span class="value"><%= firm.telephone_number %></span>
+    </a>
+
+    <% if firm.website_address.present? %>
+      <a href="<%= firm.website_address %>" class="address__link url" target="_blank">
+        <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
+          <use xlink:href="#icon-url"></use>
+        </svg>
+        <span class="value"><%= t('search.result.contact_details.url') %></span>
+      </a>
+    <% end %>
+
+    <a href="mailto:<%= firm.email_address %>" data-email="<%= firm.email_address %>" class="address__link email">
+      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
+        <use xlink:href="#icon-email"></use>
+      </svg>
+      <span class="value"><%= t('search.result.contact_details.email') %></span>
+    </a>
+
+    <div data-education-module>
+      <%= heading_tag(t('search.result.contact_details.address'), class: 'address__heading', level: 4, data: { education_module_heading: '' } ) %>
+
+      <p class="address adr is-hidden" data-education-module-target>
+        <span class="visually-hidden fn org"><%= firm.name %></span>
+        <span class="address__line line-one"><%= firm.address_line_one %></span>
+        <% if firm.address_line_two.present? %>
+          <span class="address__line line-two"><%= firm.address_line_two %></span>
+        <% end %>
+        <span class="address__line locality"><%= firm.address_town %></span>
+        <span class="address__line region"><%= firm.address_county %></span>
+        <span class="address__line post-code"><%= firm.address_postcode %></span>
+      </p>
+    </div>
+
+  </div>
+</div>
