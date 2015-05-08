@@ -9,4 +9,9 @@ require(['jquery'], function ($) {
     'EducationModule',
     'ResultsModule'
     ]);
+
+    // Components
+    require(['componentLoader'], function (componentLoader) {
+      componentLoader.init($('body'));
+    });
 });
