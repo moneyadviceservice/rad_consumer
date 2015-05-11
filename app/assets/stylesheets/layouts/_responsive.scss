@@ -1,0 +1,13 @@
+.l-mobile-only {
+  @include respond-to($mq-m) {
+    display: none;
+  }
+}
+
+.l-desktop-only {
+  display: none;
+  
+  @include respond-to($mq-m) {
+    display: initial;
+  }
+}

@@ -5,8 +5,16 @@
       <%= heading_tag( t('search.page_title'), level: 1, class: 'l-results__heading') %>
     </div>
 
-    <%= render partial: 'search/partials/search_filter' %>
+    <div class="l-mobile-only">
+      <%= render partial: 'search/partials/search_filter' %>
+    </div>
+
     <%= render partial: 'search/partials/results' %>
+
+    <div class="l-desktop-only t-visible-search-form">
+      <%= render partial: 'search/partials/search_filter' %>
+    </div>
+
 
     <div class="l-results__side">
       <%= render partial: 'search/education_module', locals: { key: 'search.education_module_one' } %>
