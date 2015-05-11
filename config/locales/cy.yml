@@ -3,6 +3,8 @@ cy:
     attributes:
       search_form:
         postcode: Cod post
+  global:
+    required: Gofynnol
 
   mas: Y Gwasanaeth Cynghori Ariannol
   mas_home_url: https://www.moneyadviceservice.org.uk/cy
