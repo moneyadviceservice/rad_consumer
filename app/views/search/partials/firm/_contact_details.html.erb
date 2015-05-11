@@ -3,7 +3,7 @@
 
   <div class="vcard">
     <a href="tel:<%= firm.telephone_number %>" class="address__link phone">
-      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone">
+      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone" focusable="false">
         <use xlink:href="#icon-phone"></use>
       </svg>
       <span class="value"><%= firm.telephone_number %></span>
@@ -11,7 +11,7 @@
 
     <% if firm.website_address.present? %>
       <a href="<%= firm.website_address %>" class="address__link url" target="_blank">
-        <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url">
+        <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url" focusable="false">
           <use xlink:href="#icon-url"></use>
         </svg>
         <span class="value"><%= t('search.result.contact_details.url') %></span>
@@ -19,7 +19,7 @@
     <% end %>
 
     <a href="mailto:<%= firm.email_address %>" data-email="<%= firm.email_address %>" class="address__link email">
-      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email">
+      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email" focusable="false">
         <use xlink:href="#icon-email"></use>
       </svg>
       <span class="value"><%= t('search.result.contact_details.email') %></span>
