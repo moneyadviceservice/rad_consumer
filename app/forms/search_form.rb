@@ -28,12 +28,11 @@ class SearchForm
   before_validation :upcase_postcode, if: :face_to_face?
 
   validates :advice_method, presence: true
-
   validate :geocode_postcode, if: :face_to_face?
-
   validate :advice_methods_present, if: :phone_or_online?
 
   validation_attributes :postcode, maxlength: 8, required: true
+  validation_attributes :advice_methods, required: true
 
   def face_to_face?
     advice_method == ADVICE_METHOD_FACE_TO_FACE
