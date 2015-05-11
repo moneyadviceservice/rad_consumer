@@ -4,6 +4,12 @@
       search_form:
         advice_methods: ''
         postcode: Postcode
+    errors:
+      models:
+        search_form:
+          attributes:
+            postcode:
+              blank: Postcode is required.
   global:
     required: Required
 

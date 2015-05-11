@@ -21,4 +21,8 @@ module ApplicationHelper
   def required_label(text)
     "#{text} <span class='visually-hidden'>#{t('global.required')}</span>*".html_safe
   end
+
+  def validation_attributes_for(klass, field)
+    klass.validation_attributes_for field
+  end
 end
