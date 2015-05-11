@@ -1,4 +1,8 @@
 <div class="l-results__main">
+  <div class="l-results__feedback">
+    <a href="https://www.moneyadviceservice.org.uk/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
+  </div>
+
   <% if @result.try { firms.any? } %>
     <div class="l-results__back-to-top back-to-top">
       <%= link_to '#top', class: 'back-to-top__link' do %>
@@ -9,8 +13,4 @@
       <% end %>
     </div>
   <% end %>
-
-  <div class="l-results__feedback">
-    <a href="https://www.moneyadviceservice.org.uk/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
-  </div>
 </div>
