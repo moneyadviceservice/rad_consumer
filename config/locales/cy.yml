@@ -253,6 +253,7 @@ cy:
         email: E-bost
         url: Gwefan
         address: Cyfeiriad
+        telephone_number: Ffôn
 
       recieve_advice:
         heading: Cael cyngor

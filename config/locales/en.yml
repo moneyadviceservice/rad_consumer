@@ -253,6 +253,7 @@
         email: Email
         url: Website
         address: Address
+        telephone_number: Telephone
 
       recieve_advice:
         heading: Receive advice
