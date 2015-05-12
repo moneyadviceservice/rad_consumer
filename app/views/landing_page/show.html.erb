@@ -40,7 +40,7 @@
       <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
 
       <div class="advert">
-        <%= image_tag('pensionwise_logo.png', class: 'advert__img') %>
+        <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
         <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
         <% t('pension_wise.description').each do |item| %>
           <p class="advert__intro"><%= raw item[:text] %></p>
