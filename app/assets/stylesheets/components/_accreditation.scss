@@ -2,6 +2,10 @@
   display: block;
   float: left;
   margin-right: $baseline-unit;
+
+  &:focus img {
+    outline: 2px solid #77bf24;
+  }
 }
 
 .accreditation__help-text {
