@@ -4,6 +4,8 @@
       search_form:
         advice_methods: ''
         postcode: Postcode
+  global:
+    required: Required
 
   mas: The Money Advice Service
   mas_home_url: https://www.moneyadviceservice.org.uk/en

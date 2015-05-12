@@ -1,5 +1,5 @@
 <div class="search-filter">
-  <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'search-filter__form form t-in-person' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'search-filter__form form t-in-person', novalidate: true }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
     <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
 
     <%= content_for :validation_summary do %>
@@ -19,8 +19,8 @@
       <div class="search-filter__section search-filter__section--padded">
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
-          <%= f.label :postcode, t('search_filter.in_person.postcode_label'), class: 'form__label-heading search-filter__label' %>
-          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD', maxlength: 8 %>
+          <%= f.label :postcode, required_label(t('search_filter.in_person.postcode_label')), class: 'form__label-heading search-filter__label' %>
+          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD', maxlength: 8, required: true %>
         <% end %>
 
         <%= search_filter_options(f, 'landing_page') %>

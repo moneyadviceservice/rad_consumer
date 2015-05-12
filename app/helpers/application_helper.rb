@@ -17,4 +17,8 @@ module ApplicationHelper
       end
     end
   end
+
+  def required_label(text)
+    "#{text} <span class='visually-hidden'>#{t('global.required')}</span>*".html_safe
+  end
 end
