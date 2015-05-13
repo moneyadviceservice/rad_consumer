@@ -235,6 +235,8 @@ cy:
     page_title: Canlyniadau chwilio
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
+    alphabetical_order_notice: Rhestrwyd yn nhrefn yr wyddor.
+    distance_order_notice: Rhestrwyd yn ôl pellter, sef pa mor agos yw cynghorydd cwmni atoch chi.
     summary_of_results:
       showing: Yn dangos
       to: i
