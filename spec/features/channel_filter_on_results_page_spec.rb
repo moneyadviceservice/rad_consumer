@@ -26,6 +26,7 @@ RSpec.feature 'Consumer views channel filters on search results page' do
       then_i_am_on_results_page
       and_i_see_remote_advice_method_selected
       and_only_remote_firms_are_displayed
+      and_i_see_a_notice_that_the_order_is_alphabetical
     end
   end
 
@@ -38,6 +39,7 @@ RSpec.feature 'Consumer views channel filters on search results page' do
       then_i_am_on_results_page
       and_i_see_face_to_face_advice_method_selected
       and_only_in_person_firms_are_displayed
+      and_i_see_a_notice_that_the_order_is_distance_based
     end
   end
 
@@ -171,5 +173,13 @@ RSpec.feature 'Consumer views channel filters on search results page' do
 
   def and_only_in_person_firms_are_displayed
     expect(results_page.firm_names).to contain_exactly(@in_person_firm.registered_name)
+  end
+
+  def and_i_see_a_notice_that_the_order_is_alphabetical
+    expect(results_page.order_notice).to have_text I18n.t('search.alphabetical_order_notice')
+  end
+
+  def and_i_see_a_notice_that_the_order_is_distance_based
+    expect(results_page.order_notice).to have_text I18n.t('search.distance_order_notice')
   end
 end

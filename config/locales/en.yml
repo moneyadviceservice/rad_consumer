@@ -235,6 +235,8 @@
     page_title: Search results
     back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
+    alphabetical_order_notice: Ordered alphabetically.
+    distance_order_notice: Ordered by distance a firm’s nearest adviser is to you.
     summary_of_results:
       showing: Showing
       to: to

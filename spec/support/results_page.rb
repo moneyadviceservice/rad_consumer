@@ -15,7 +15,8 @@ class ResultsPage < SitePrism::Page
   element :total_records, '.t-total-records'
 
   element :errors, '.l-landing-page__validation'
-  element :incorrect_criteria_message , '.t-incorrect-criteria'
+  element :incorrect_criteria_message, '.t-incorrect-criteria'
+  element :order_notice, '.t-order-notice'
 
   def next_page
     first("a[rel='next']").click
