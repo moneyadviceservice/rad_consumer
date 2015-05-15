@@ -21,7 +21,10 @@
   &:hover,
   &:focus {
     outline: none;
-    text-decoration: underline;
+
+    .education__heading-text {
+      text-decoration: underline;
+    }
   }
 }
 

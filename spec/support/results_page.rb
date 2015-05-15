@@ -6,8 +6,8 @@ class ResultsPage < SitePrism::Page
   set_url '/en/search{?params*}'
   set_url_matcher %r{/(en|cy)/search}
 
-  section :search_form, SearchFormSection, '.form'
-  section :criteria, SearchCriteriaSection, '.t-criteria'
+  section :search_form, SearchFormSection, '.t-visible-search-form .form'
+  section :criteria, SearchCriteriaSection, '.t-visible-search-form .t-criteria'
   sections :firms, FirmSection, 'li.t-firm'
 
   element :first_record, '.t-first-record'
