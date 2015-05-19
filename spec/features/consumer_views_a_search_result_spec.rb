@@ -14,6 +14,7 @@ RSpec.feature 'Consumer views a search result' do
       and_i_see_the_firms_minimum_fee
       and_i_see_whether_the_firm_offers_free_initial_meetings
       and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess
+      and_i_see_the_qualifications_label
     end
   end
 
@@ -23,7 +24,7 @@ RSpec.feature 'Consumer views a search result' do
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
       and_i_do_not_see_any_qualifications_and_accreditations
-      and_i_do_not_see_the_label
+      and_i_do_not_see_the_qualifications_label
     end
   end
 
@@ -88,12 +89,16 @@ RSpec.feature 'Consumer views a search result' do
     expect(@displayed_firm).to have_accreditations(count: 3)
   end
 
+  def and_i_see_the_qualifications_label
+    expect(@displayed_firm).to have_qualifications_heading
+  end
+
   def and_i_do_not_see_any_qualifications_and_accreditations
     expect(@displayed_firm).to_not have_qualifications
     expect(@displayed_firm).to_not have_accreditations
   end
 
-  def and_i_do_not_see_the_label
+  def and_i_do_not_see_the_qualifications_label
     expect(@displayed_firm).to_not have_qualifications_heading
   end
 
