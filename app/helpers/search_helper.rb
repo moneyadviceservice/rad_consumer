@@ -15,6 +15,8 @@ module SearchHelper
     return true if firm.adviser_accreditation_ids.any? do |id|
       qualification_or_accreditation_key(id, :accreditation) != 'ignored'
     end
+
+    false
   end
 
   def search_filter_options(form, page_name)
