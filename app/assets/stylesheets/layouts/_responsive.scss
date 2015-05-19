@@ -6,7 +6,7 @@
 
 .l-desktop-only {
   display: none;
-  
+
   @include respond-to($mq-m) {
     display: initial;
   }

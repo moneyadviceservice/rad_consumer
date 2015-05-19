@@ -1,6 +1,6 @@
 <div class="l-results__side">
   <section class="search-filter search-filter--border t-criteria" data-results-module>
-    <%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form', novalidate: true }, builder: Dough::Forms::Builders::Validation do |f| %>
+    <%= form_for @form, url: search_path, method: :get, namespace: namespace, html: { class: 'form search-filter__form', novalidate: true }, builder: Dough::Forms::Builders::Validation do |f| %>
       <%= hidden_field_tag(:origin, 'results') %>
 
       <%= content_for :validation_summary do %>

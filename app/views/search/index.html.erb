@@ -9,13 +9,13 @@
     </div>
 
     <div class="l-mobile-only">
-      <%= render partial: 'search/partials/search_filter' %>
+      <%= render partial: 'search/partials/search_filter', locals: {namespace: 'mobile'} %>
     </div>
 
     <%= render partial: 'search/partials/results' %>
 
     <div class="l-desktop-only t-visible-search-form">
-      <%= render partial: 'search/partials/search_filter' %>
+      <%= render partial: 'search/partials/search_filter', locals: {namespace: 'desktop'} %>
     </div>
 
 
