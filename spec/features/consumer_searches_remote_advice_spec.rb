@@ -1,4 +1,5 @@
-RSpec.feature 'Consumer searches for phone or online advice' do
+RSpec.feature 'Consumer searches for phone or online advice',
+              vcr: vcr_options_for_feature(:consumer_searches_remote_advice) do
   let(:landing_page) { LandingPage.new }
   let(:remote_results_page) { RemoteResultsPage.new }
 

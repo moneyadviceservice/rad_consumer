@@ -1,4 +1,5 @@
-RSpec.feature 'Results page, consumer requires help with their pension over the phone or online' do
+RSpec.feature 'Results page, consumer requires help with their pension over the phone or online',
+              vcr: vcr_options_for_feature(:results_phone_or_online_filter_for_pension_advice) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 

@@ -1,4 +1,5 @@
-RSpec.feature 'Consumer views a search result' do
+RSpec.feature 'Consumer views a search result',
+              vcr: vcr_options_for_feature(:consumer_views_a_search_result) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 

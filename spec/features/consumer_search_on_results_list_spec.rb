@@ -1,4 +1,5 @@
-RSpec.feature 'Consumer views advice filters on search results page' do
+RSpec.feature 'Consumer views advice filters on search results page',
+              vcr: vcr_options_for_feature(:consumer_search_on_results_list) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 

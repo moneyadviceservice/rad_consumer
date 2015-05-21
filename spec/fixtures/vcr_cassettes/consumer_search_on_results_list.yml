@@ -1,0 +1,447 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=G1%205QT,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 21 May 2015 10:12:44 GMT
+      Expires:
+      - Fri, 22 May 2015 10:12:44 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "G1 5QT",
+                       "short_name" : "G1 5QT",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Glasgow, Glasgow, Glasgow City G1 5QT, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8562428,
+                          "lng" : -4.2467325
+                       },
+                       "southwest" : {
+                          "lat" : 55.8557036,
+                          "lng" : -4.247226599999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8561912,
+                       "lng" : -4.247082199999999
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.8573221802915,
+                          "lng" : -4.245630569708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.8546242197085,
+                          "lng" : -4.248328530291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJKf4uM6JGiEgRdIgdirxKBwM",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 21 May 2015 10:12:44 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=G1%205QT,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 21 May 2015 10:12:45 GMT
+      Expires:
+      - Fri, 22 May 2015 10:12:45 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "G1 5QT",
+                       "short_name" : "G1 5QT",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Glasgow",
+                       "short_name" : "Glasgow",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Glasgow City",
+                       "short_name" : "Glasgow City",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Glasgow, Glasgow, Glasgow City G1 5QT, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 55.8562428,
+                          "lng" : -4.2467325
+                       },
+                       "southwest" : {
+                          "lat" : 55.8557036,
+                          "lng" : -4.247226599999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.8561912,
+                       "lng" : -4.247082199999999
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 55.8573221802915,
+                          "lng" : -4.245630569708498
+                       },
+                       "southwest" : {
+                          "lat" : 55.8546242197085,
+                          "lng" : -4.248328530291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJKf4uM6JGiEgRdIgdirxKBwM",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 21 May 2015 10:12:45 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG2%208EE,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 21 May 2015 10:12:47 GMT
+      Expires:
+      - Fri, 22 May 2015 10:12:47 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG2 8EE",
+                       "short_name" : "RG2 8EE",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Wokingham",
+                       "short_name" : "Wokingham",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Reading, Reading, Wokingham RG2 8EE, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.4281872,
+                          "lng" : -0.9428450999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.42724,
+                          "lng" : -0.9444961999999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.4279696,
+                       "lng" : -0.943571
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.42906258029149,
+                          "lng" : -0.9423216697084977
+                       },
+                       "southwest" : {
+                          "lat" : 51.4263646197085,
+                          "lng" : -0.9450196302915018
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJnTpnu6qEdkgRCHFaHFX20Y0",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 21 May 2015 10:12:47 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG2%208EE,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 21 May 2015 10:12:47 GMT
+      Expires:
+      - Fri, 22 May 2015 10:12:47 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 80:quic,p=0
+      Accept-Ranges:
+      - none
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG2 8EE",
+                       "short_name" : "RG2 8EE",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Wokingham",
+                       "short_name" : "Wokingham",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Reading, Reading, Wokingham RG2 8EE, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.4281872,
+                          "lng" : -0.9428450999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.42724,
+                          "lng" : -0.9444961999999999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.4279696,
+                       "lng" : -0.943571
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.42906258029149,
+                          "lng" : -0.9423216697084977
+                       },
+                       "southwest" : {
+                          "lat" : 51.4263646197085,
+                          "lng" : -0.9450196302915018
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJnTpnu6qEdkgRCHFaHFX20Y0",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 21 May 2015 10:12:47 GMT
+recorded_with: VCR 2.9.3

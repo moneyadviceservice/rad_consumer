@@ -1,4 +1,5 @@
-RSpec.feature 'Consumer views channel filters on search results page' do
+RSpec.feature 'Consumer views channel filters on search results page',
+              vcr: vcr_options_for_feature(:channel_filter_on_results_page) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
