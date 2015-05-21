@@ -8,6 +8,13 @@
   font-weight: 300;
 }
 
+.address__expandable button, {
+  &:hover .address__heading,
+  &:focus .address__heading {
+    text-decoration: underline;
+  }
+}
+
 .address__line {
   display: block;
 }

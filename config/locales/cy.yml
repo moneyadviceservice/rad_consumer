@@ -253,6 +253,8 @@ cy:
         email: E-bost
         url: Gwefan
         address: Cyfeiriad
+        telephone_number: Ffôn
+        telephone_number_sr_text: Ffoniwch %{firm_name} ar
 
       recieve_advice:
         heading: Cael cyngor

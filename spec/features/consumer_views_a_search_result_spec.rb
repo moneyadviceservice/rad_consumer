@@ -59,7 +59,8 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm.address_county).to eq(@firm.address_county)
     expect(@displayed_firm.address_postcode).to eq(@firm.address_postcode)
 
-    expect(@displayed_firm.telephone_number).to eq('020 8252 4727')
+    expect(@displayed_firm.telephone_number).to include @firm.registered_name
+    expect(@displayed_firm.telephone_number).to include '020 8252 4727'
     expect(@displayed_firm.website_address).to be
     expect(@displayed_firm.email_address).to be
   end

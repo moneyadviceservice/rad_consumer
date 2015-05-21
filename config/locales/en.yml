@@ -253,6 +253,8 @@
         email: Email
         url: Website
         address: Address
+        telephone_number: Telephone
+        telephone_number_sr_text: Telephone %{firm_name} on
 
       recieve_advice:
         heading: Receive advice

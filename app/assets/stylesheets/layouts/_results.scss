@@ -79,6 +79,8 @@
 .l-results__filter-button-container {
   @extend .l-results-filter;
   overflow: hidden;
+  padding-top: 2px;
+  padding-bottom: 2px;
   margin-bottom: $baseline-unit*3;
 }
 

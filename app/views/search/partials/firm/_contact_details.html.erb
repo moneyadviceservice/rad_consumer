@@ -3,10 +3,15 @@
 
   <div class="vcard">
     <a href="tel:<%= firm.telephone_number %>" class="address__link phone">
-      <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone" focusable="false">
+      <svg title="<%= t('search.result.contact_details.telephone_number') %>" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-phone" focusable="false">
         <use xlink:href="#icon-phone"></use>
       </svg>
-      <span class="value"><%= firm.telephone_number %></span>
+      <span class="value">
+        <span class="visually-hidden">
+          <%= t('search.result.contact_details.telephone_number_sr_text', firm_name: firm.name) %>
+        </span>
+        <%= firm.telephone_number %>
+      </span>
     </a>
 
     <% if firm.website_address.present? %>
@@ -14,7 +19,12 @@
         <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-url" focusable="false">
           <use xlink:href="#icon-url"></use>
         </svg>
-        <span class="value"><%= t('search.result.contact_details.url') %></span>
+        <span class="value">
+          <span class="visually-hidden">
+            <%= firm.name %>
+          </span>
+          <%= t('search.result.contact_details.url') %>
+        </span>
       </a>
     <% end %>
 
@@ -22,10 +32,15 @@
       <svg title="" xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon-email" focusable="false">
         <use xlink:href="#icon-email"></use>
       </svg>
-      <span class="value"><%= t('search.result.contact_details.email') %></span>
+      <span class="value">
+        <%= t('search.result.contact_details.email') %>
+        <span class="visually-hidden">
+          <%= firm.name %>
+        </span>
+      </span>
     </a>
 
-    <div data-education-module>
+    <div data-education-module class="address__expandable">
       <%= heading_tag(t('search.result.contact_details.address'), class: 'address__heading', level: 4, data: { education_module_heading: '' } ) %>
 
       <p class="address adr is-hidden" data-education-module-target>
