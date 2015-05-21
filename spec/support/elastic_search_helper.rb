@@ -17,13 +17,11 @@ module ElasticSearchHelper
   end
 
   def with_elastic_search!
-    VCR.turned_off do
-      begin
-        WebMock.allow_net_connect!
-        yield
-      ensure
-        WebMock.disable_net_connect!
-      end
+    begin
+      WebMock.allow_net_connect!
+      yield
+    ensure
+      WebMock.disable_net_connect!
     end
   end
 
