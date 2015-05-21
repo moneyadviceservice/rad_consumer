@@ -1,4 +1,5 @@
-RSpec.feature 'Landing page, consumer requires general advice in person' do
+RSpec.feature 'Landing page, consumer requires general advice in person',
+              vcr: vcr_options_for_feature(:landing_face_to_face_search) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
@@ -20,11 +21,9 @@ RSpec.feature 'Landing page, consumer requires general advice in person' do
   end
 
   scenario 'Using a postcode that cannot be geocoded' do
-    VCR.use_cassette(:postcode_cannot_be_geocoded) do
-      given_i_am_on_the_landing_page
-      when_i_submit_a_postcode_that_cannot_be_geocoded
-      then_i_am_told_the_postcode_is_incorrect
-    end
+    given_i_am_on_the_landing_page
+    when_i_submit_a_postcode_that_cannot_be_geocoded
+    then_i_am_told_the_postcode_is_incorrect
   end
 
   scenario 'Paginating through 21 results' do

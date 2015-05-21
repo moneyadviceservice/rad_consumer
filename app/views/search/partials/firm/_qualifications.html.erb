@@ -1,6 +1,6 @@
-<% if firm.adviser_qualification_ids.present? || firm.adviser_accreditation_ids.present? %>
+<% if firm_has_qualifications_or_accreditations?(firm) %>
   <div class="result__qualifications">
-    <p class="result__qualifications-heading"><%= t('search.accreditations.heading') %></p>
+    <p class="result__qualifications-heading t-qualifications-heading"><%= t('search.accreditations.heading') %></p>
     <div class="result__qualifications-logos">
       <% firm.adviser_qualification_ids.each do |id| %>
         <%= render_logo(id, :qualification) %>

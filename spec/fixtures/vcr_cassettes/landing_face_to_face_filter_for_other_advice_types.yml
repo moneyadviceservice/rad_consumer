@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG29FL,%20United%20Kingdom&language=en&sensor=false
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG2%209FL,%20United%20Kingdom&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 25 Feb 2015 18:02:04 GMT
+      - Thu, 21 May 2015 10:12:59 GMT
       Expires:
-      - Thu, 26 Feb 2015 18:02:04 GMT
+      - Fri, 22 May 2015 10:12:59 GMT
       Cache-Control:
       - public, max-age=86400
       Access-Control-Allow-Origin:
@@ -35,7 +35,7 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       Alternate-Protocol:
-      - 80:quic,p=0.08
+      - 80:quic,p=0
       Accept-Ranges:
       - none
       Vary:
@@ -46,6 +46,7 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
+           "exclude_from_slo" : true,
            "results" : [
               {
                  "address_components" : [
@@ -110,56 +111,5 @@ http_interactions:
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Wed, 25 Feb 2015 18:02:04 GMT
-- request:
-    method: post
-    uri: http://127.0.0.1:9200/rad_test/firms/_search
-    body:
-      encoding: UTF-8
-      string: '{"errors":{},"postcode":"RG2 9FL","checkbox":"0","validation_context":null}'
-    headers:
-      Content-Type:
-      - application/json
-      Host:
-      - 127.0.0.1:9200
-      User-Agent:
-      - RubyHTTPGem/0.7.1
-  response:
-    status:
-      code: !ruby/marshalable:HTTP::Response::Status
-        :__v2__:
-        - :@code
-        ? - 400
-        : 400
-      message: Bad Request
-    headers:
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '1817'
-    body:
-      encoding: UTF-8
-      string: '{"error":"SearchPhaseExecutionException[Failed to execute phase [query],
-        all shards failed; shardFailures {[g9G_vhGzTyKeseITyf1ZKg][rad_test][0]: SearchParseException[[rad_test][0]:
-        from[-1],size[-1]: Parse Failure [Failed to parse source [{\"errors\":{},\"postcode\":\"RG2
-        9FL\",\"checkbox\":\"0\",\"validation_context\":null}]]]; nested: SearchParseException[[rad_test][0]:
-        from[-1],size[-1]: Parse Failure [No parser for element [errors]]]; }{[g9G_vhGzTyKeseITyf1ZKg][rad_test][1]:
-        SearchParseException[[rad_test][1]: from[-1],size[-1]: Parse Failure [Failed
-        to parse source [{\"errors\":{},\"postcode\":\"RG2 9FL\",\"checkbox\":\"0\",\"validation_context\":null}]]];
-        nested: SearchParseException[[rad_test][1]: from[-1],size[-1]: Parse Failure
-        [No parser for element [errors]]]; }{[g9G_vhGzTyKeseITyf1ZKg][rad_test][2]:
-        SearchParseException[[rad_test][2]: from[-1],size[-1]: Parse Failure [Failed
-        to parse source [{\"errors\":{},\"postcode\":\"RG2 9FL\",\"checkbox\":\"0\",\"validation_context\":null}]]];
-        nested: SearchParseException[[rad_test][2]: from[-1],size[-1]: Parse Failure
-        [No parser for element [errors]]]; }{[g9G_vhGzTyKeseITyf1ZKg][rad_test][3]:
-        SearchParseException[[rad_test][3]: from[-1],size[-1]: Parse Failure [Failed
-        to parse source [{\"errors\":{},\"postcode\":\"RG2 9FL\",\"checkbox\":\"0\",\"validation_context\":null}]]];
-        nested: SearchParseException[[rad_test][3]: from[-1],size[-1]: Parse Failure
-        [No parser for element [errors]]]; }{[g9G_vhGzTyKeseITyf1ZKg][rad_test][4]:
-        SearchParseException[[rad_test][4]: from[-1],size[-1]: Parse Failure [Failed
-        to parse source [{\"errors\":{},\"postcode\":\"RG2 9FL\",\"checkbox\":\"0\",\"validation_context\":null}]]];
-        nested: SearchParseException[[rad_test][4]: from[-1],size[-1]: Parse Failure
-        [No parser for element [errors]]]; }]","status":400}'
-    http_version: 
-  recorded_at: Wed, 25 Feb 2015 18:02:04 GMT
+  recorded_at: Thu, 21 May 2015 10:12:59 GMT
 recorded_with: VCR 2.9.3

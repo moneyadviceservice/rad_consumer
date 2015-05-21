@@ -1,4 +1,5 @@
-RSpec.feature 'Landing page, consumer requires advice on various topics in person' do
+RSpec.feature 'Landing page, consumer requires advice on various topics in person',
+              vcr: vcr_options_for_feature(:landing_face_to_face_filter_for_other_advice_types) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 

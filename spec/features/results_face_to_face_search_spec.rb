@@ -1,4 +1,5 @@
-RSpec.feature 'Results page, consumer requires help with their pension in person' do
+RSpec.feature 'Results page, consumer requires help with their pension in person',
+              vcr: vcr_options_for_feature(:results_face_to_face_search) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
@@ -38,13 +39,7 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_face_to_face_advice
       and_i_enter_a_postcode_that_cannot_be_geocoded
-    end
-
-    VCR.use_cassette(:postcode_cannot_be_geocoded) do
       when_i_submit_the_search
-    end
-
-    with_elastic_search! do
       then_i_see_an_error_message_for_the_postcode_field
       and_i_see_a_message_in_place_of_the_results
     end

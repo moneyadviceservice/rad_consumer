@@ -1,4 +1,5 @@
-RSpec.feature 'Landing page, consumer requires general advice over the phone or online' do
+RSpec.feature 'Landing page, consumer requires general advice over the phone or online',
+              vcr: vcr_options_for_feature(:landing_phone_or_online_search) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
