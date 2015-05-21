@@ -24,7 +24,7 @@
 
                 <div class="form__group-item">
                   <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' } %>
-                  <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'), label: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
+                  <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'), value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
                 </div>
 
                 <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
