@@ -1,6 +1,7 @@
 class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
+  include ClientValidations
 
   ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
   ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
@@ -27,10 +28,11 @@ class SearchForm
   before_validation :upcase_postcode, if: :face_to_face?
 
   validates :advice_method, presence: true
-
   validate :geocode_postcode, if: :face_to_face?
-
   validate :advice_methods_present, if: :phone_or_online?
+
+  validation_attributes :postcode, maxlength: 8, required: true
+  validation_attributes :advice_methods, required: true
 
   def face_to_face?
     advice_method == ADVICE_METHOD_FACE_TO_FACE

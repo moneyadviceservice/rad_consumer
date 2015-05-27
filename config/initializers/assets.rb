@@ -28,5 +28,9 @@ Rails.application.configure do
     jquery/dist/jquery.js
     jquery-ujs/src/rails.js
     requirejs/require.js
+    dough/assets/js/lib/componentLoader.js
+    dough/assets/js/components/DoughBaseComponent.js
+    dough/assets/js/lib/utilities.js
+    dough/assets/js/components/Validation.js
   )
 end

@@ -4,6 +4,14 @@
       search_form:
         advice_methods: ''
         postcode: Postcode
+    errors:
+      models:
+        search_form:
+          attributes:
+            postcode:
+              blank: Postcode is required.
+            advice_methods:
+              blank: Select either Phone or Online advice method.
   global:
     required: Required
 

@@ -1,5 +1,5 @@
 <div class="search-filter">
-  <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'search-filter__form form t-in-person', novalidate: true }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= form_for @form, url: search_path, method: :get, namespace: 'in_person', html: { class: 'search-filter__form form t-in-person', novalidate: true, 'data-dough-component' => "Validation" }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
     <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
 
     <%= content_for :validation_summary do %>
@@ -17,10 +17,12 @@
 
     <div data-search-filter-target>
       <div class="search-filter__section search-filter__section--padded">
+        <%= empty_dough_validation_summary %>
+
         <%= f.form_row(:postcode) do %>
           <%= f.errors_for :postcode %>
           <%= f.label :postcode, required_label(t('search_filter.in_person.postcode_label')), class: 'form__label-heading search-filter__label' %>
-          <%= f.text_field :postcode, class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD', maxlength: 8, required: true %>
+          <%= f.text_field :postcode, {class: 'search-filter__field t-postcode', placeholder: 'e.g. EC1N 2TD'}.merge(validation_attributes_for(SearchForm, :postcode)) %>
         <% end %>
 
         <%= search_filter_options(f, 'landing_page') %>
@@ -30,7 +32,7 @@
     </div>
   <% end %>
 
-  <%= form_for @form, url: search_path, method: :get, namespace: 'remote', html: { class: 'form search-filter__form t-remote' }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+  <%= form_for @form, url: search_path, method: :get, namespace: 'remote', html: { class: 'form search-filter__form t-remote', novalidate: true, 'data-dough-component' => "Validation" }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
     <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
 
     <%= heading_tag(level: 3, class: 'search-filter__heading search-filter__heading--second', data: { search_heading_second: '', search_filter_heading: ''}) do %>
@@ -40,13 +42,14 @@
 
     <div class="is-hidden" data-search-filter-target="closed">
       <div class="search-filter__section search-filter__section--padded">
+        <%= empty_dough_validation_summary %>
 
         <div class="form__group form__group--inline">
           <%= f.form_row(:advice_methods) do %>
             <%= f.errors_for :advice_methods %>
             <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
               <div class="form__group-item">
-                <%= advice_method.check_box class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}" %>
+                <%= advice_method.check_box({class: "form__group-input t-advice_methods t-advice-method-#{advice_method.object.order}"}.merge(validation_attributes_for(SearchForm, :advice_methods))) %>
                 <%= advice_method.label do %>
                   <%= t("other_advice_method.ordinal.#{advice_method.object.order}") %>
                 <% end %>

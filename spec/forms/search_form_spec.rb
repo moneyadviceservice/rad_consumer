@@ -238,4 +238,18 @@ RSpec.describe SearchForm do
       form.to_query
     end
   end
+
+  describe '.validation_attributes_for' do
+    context 'postcode field' do
+      subject { described_class.validation_attributes_for(:postcode) }
+
+      it 'has attribute required' do
+        expect(subject[:required]).to be_truthy
+      end
+
+      it 'has dough validation message attribute' do
+        expect(subject['data-dough-validation-empty']).to eq I18n.t('activemodel.errors.models.search_form.attributes.postcode.blank')
+      end
+    end
+  end
 end
