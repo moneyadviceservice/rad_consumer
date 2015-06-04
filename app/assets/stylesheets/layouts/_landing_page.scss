@@ -52,3 +52,12 @@
 .l-landing-page__validation {
   @include column(12);
 }
+
+.l-landing-page__title {
+  display: inline-block;
+  margin-right: $baseline-unit*2;
+}
+
+.l-landing-page__register-link {
+  display: inline-block;
+}
