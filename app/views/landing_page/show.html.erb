@@ -1,10 +1,13 @@
 <div class="l-constrained">
   <div class="l-landing-page__with-border">
     <section class="l-landing-page__1col">
-      <%= heading_tag(level: 1) do %>
+      <%= heading_tag(level: 1, class: 'l-landing-page__title') do %>
         <%= t('page_title') %>
         <sup class="beta-tag"><%= t('beta_tag') %></sup>
       <% end %>
+      <div class="l-landing-page__register-link">
+        <%= link_to t('rad_signup_link'), rad_signup_url %>
+      </div>
       <p><%= t('trust_banner.heading') %></p>
 
       <ul class="list-benefits banner-list">
