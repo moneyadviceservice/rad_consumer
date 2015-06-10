@@ -8,6 +8,6 @@
   display: none;
 
   @include respond-to($mq-m) {
-    display: initial;
+    display: block;
   }
 }
