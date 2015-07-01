@@ -43,9 +43,9 @@ RSpec.feature 'Consumer views advice filters on search results page',
 
   def given_some_firms_were_indexed
     with_fresh_index! do
-      @wills_firm       = create(:firm_with_no_business_split, registered_name: 'The Willers Ltd',    wills_and_probate_percent: 100)
-      @equity_firm      = create(:firm_with_no_business_split, registered_name: 'The Equiters Ltd',   equity_release_percent: 100)
-      @inheritance_firm = create(:firm_with_no_business_split, registered_name: 'Estate Traders Ltd', inheritance_tax_and_estate_planning_percent: 100)
+      @wills_firm       = create(:firm_with_no_business_split, registered_name: 'The Willers Ltd',    wills_and_probate_flag: true)
+      @equity_firm      = create(:firm_with_no_business_split, registered_name: 'The Equiters Ltd',   equity_release_flag: true)
+      @inheritance_firm = create(:firm_with_no_business_split, registered_name: 'Estate Traders Ltd', inheritance_tax_and_estate_planning_flag: true)
 
       @reading   = create(:adviser, postcode: 'RG2 8EE', firm: @wills_firm,       latitude: 51.428473, longitude: -0.943616)
       @leicester = create(:adviser, postcode: 'LE1 6SL', firm: @equity_firm,      latitude: 52.633013, longitude: -1.131257)
