@@ -70,11 +70,11 @@ RSpec.feature 'Consumer searches for phone or online advice',
 
   def and_firms_providing_various_types_of_remote_services_were_indexed
     with_fresh_index! do
-      @equity = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_percent: 100, other_advice_methods: [online_advice, phone_advice])
-      @wills = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_percent: 49, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @probate = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_percent: 29, wills_and_probate_percent: 20, other_percent: 51, other_advice_methods: [online_advice, phone_advice])
-      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [online_advice, phone_advice])
-      @offline_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Offliney Advisory Ltd', equity_release_percent: 30, wills_and_probate_percent: 20, other_percent: 50, other_advice_methods: [])
+      @equity = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_flag: true, other_advice_methods: [online_advice, phone_advice])
+      @wills = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_flag: true, other_flag: true, other_advice_methods: [online_advice, phone_advice])
+      @probate = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, other_advice_methods: [online_advice, phone_advice])
+      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, other_advice_methods: [online_advice, phone_advice])
+      @offline_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Offliney Advisory Ltd', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, other_advice_methods: [])
     end
   end
 

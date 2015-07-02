@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423154732) do
+ActiveRecord::Schema.define(version: 20150630143001) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
 
   create_table "accreditations", force: :cascade do |t|
     t.string   "name",                   null: false
@@ -79,12 +80,12 @@ ActiveRecord::Schema.define(version: 20150423154732) do
   add_index "allowed_payment_methods_firms", ["firm_id", "allowed_payment_method_id"], name: "firms_allowed_payment_methods_index", unique: true, using: :btree
 
   create_table "firms", force: :cascade do |t|
-    t.integer  "fca_number",                                  null: false
-    t.string   "registered_name",                             null: false
+    t.integer  "fca_number",                                               null: false
+    t.string   "registered_name",                                          null: false
     t.string   "email_address"
     t.string   "telephone_number"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                               null: false
+    t.datetime "updated_at",                                               null: false
     t.string   "address_line_one"
     t.string   "address_line_two"
     t.string   "address_town"
@@ -93,16 +94,16 @@ ActiveRecord::Schema.define(version: 20150423154732) do
     t.boolean  "free_initial_meeting"
     t.integer  "initial_meeting_duration_id"
     t.integer  "minimum_fixed_fee"
-    t.integer  "retirement_income_products_percent"
-    t.integer  "pension_transfer_percent"
-    t.integer  "long_term_care_percent"
-    t.integer  "equity_release_percent"
-    t.integer  "inheritance_tax_and_estate_planning_percent"
-    t.integer  "wills_and_probate_percent"
-    t.integer  "other_percent"
     t.integer  "parent_id"
     t.float    "latitude"
     t.float    "longitude"
+    t.boolean  "retirement_income_products_flag",          default: false, null: false
+    t.boolean  "pension_transfer_flag",                    default: false, null: false
+    t.boolean  "long_term_care_flag",                      default: false, null: false
+    t.boolean  "equity_release_flag",                      default: false, null: false
+    t.boolean  "inheritance_tax_and_estate_planning_flag", default: false, null: false
+    t.boolean  "wills_and_probate_flag",                   default: false, null: false
+    t.boolean  "other_flag",                               default: false, null: false
   end
 
   add_index "firms", ["initial_meeting_duration_id"], name: "index_firms_on_initial_meeting_duration_id", using: :btree
@@ -198,6 +199,16 @@ ActiveRecord::Schema.define(version: 20150423154732) do
 
   add_index "lookup_subsidiaries", ["fca_number"], name: "index_lookup_subsidiaries_on_fca_number", using: :btree
 
+  create_table "old_passwords", force: :cascade do |t|
+    t.string   "encrypted_password",       null: false
+    t.string   "password_salt"
+    t.string   "password_archivable_type", null: false
+    t.integer  "password_archivable_id",   null: false
+    t.datetime "created_at"
+  end
+
+  add_index "old_passwords", ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable", using: :btree
+
   create_table "ongoing_advice_fee_structures", force: :cascade do |t|
     t.string   "name",                   null: false
     t.datetime "created_at",             null: false
@@ -250,5 +261,37 @@ ActiveRecord::Schema.define(version: 20150423154732) do
     t.datetime "updated_at",             null: false
     t.integer  "order",      default: 0, null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: ""
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "principal_token"
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
+    t.datetime "password_changed_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
+  add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
+  add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+  add_index "users", ["password_changed_at"], name: "index_users_on_password_changed_at", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

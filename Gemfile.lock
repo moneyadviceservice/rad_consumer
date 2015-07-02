@@ -99,7 +99,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.49)
+    mas-rad_core (0.0.61)
       active_model_serializers
       geocoder
       httpclient
@@ -227,7 +227,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   kaminari
-  mas-rad_core
+  mas-rad_core (= 0.0.61)
   pg
   pry-rails
   rails (~> 4.2)
@@ -240,3 +240,6 @@ DEPENDENCIES
   unicorn
   vcr
   webmock
+
+BUNDLED WITH
+   1.10.5
