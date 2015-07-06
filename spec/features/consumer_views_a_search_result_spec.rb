@@ -105,10 +105,11 @@ RSpec.feature 'Consumer views a search result',
   end
 
   def create_firm_and_adviser(qualifications: [], accreditations: [])
-    @principal = create(:principal, website_address: 'http://www.example.com')
+    @principal = create(:principal)
 
     @firm = create(:firm_with_no_business_split,
       telephone_number: '02082524727',
+      website_address: 'http://www.example.com',
       principal: @principal,
       free_initial_meeting: true,
       minimum_fixed_fee: 1000,
