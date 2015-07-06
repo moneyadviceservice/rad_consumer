@@ -70,7 +70,7 @@ RSpec.feature 'Consumer views channel filters on search results page',
   def given_some_firms_were_indexed
     with_fresh_index! do
       @phone_firm = create(:firm, registered_name: 'The Willers Ltd', in_person_advice_methods: [], other_advice_methods: [ phone_advice ])
-      create(:adviser, postcode: 'RG2 8EE', firm: @phone_firm,       latitude: 51.428473, longitude: -0.943616)
+      create(:adviser, postcode: 'RG2 8EE', firm: @phone_firm, latitude: 51.428473, longitude: -0.943616)
 
       @online_firm = create(:firm, registered_name: 'The Equiters Ltd', in_person_advice_methods: [], other_advice_methods: [ online_advice ])
       create(:adviser, postcode: 'LE1 6SL', firm: @online_firm, latitude: 52.633013, longitude: -1.131257)
