@@ -107,6 +107,10 @@ RSpec.feature 'Consumer searches for phone or online advice',
       @online_only.registered_name,
       @online_and_phone.registered_name
     )
+
+    expect(remote_results_page.firm_names).not_to include(
+      @in_person_and_also_remote.registered_name
+    )
   end
 
   def and_they_are_ordered_alphabetically
@@ -132,7 +136,8 @@ RSpec.feature 'Consumer searches for phone or online advice',
 
     expect(names).not_to include(
       @only_in_person.registered_name,
-      @online_only.registered_name
+      @online_only.registered_name,
+      @in_person_and_also_remote.registered_name
     )
   end
 
@@ -147,7 +152,10 @@ RSpec.feature 'Consumer searches for phone or online advice',
   def then_i_am_shown_firms_that_provide_advice_online_and_by_telephone
     expect(remote_results_page).to have_firms(count: 3)
 
-    expect(remote_results_page.firm_names).not_to include(@only_in_person.registered_name)
+    expect(remote_results_page.firm_names).not_to include(
+      @only_in_person.registered_name,
+      @in_person_and_also_remote.registered_name
+    )
   end
 
   def when_i_submit_a_search_without_selecting_advice_methods
