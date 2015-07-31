@@ -23,20 +23,22 @@ RSpec.feature 'Results page, consumer requires various types of advice over the 
       create(:other_advice_method, name: 'Phone', order: 1),
       create(:other_advice_method, name: 'Online', order: 2)
     ]
+
+    @in_person_advice_methods = create_list(:in_person_advice_method, 3)
   end
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, other_flag: true, other_advice_methods: @other_advice_methods)
+      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       @glasgow = create(:adviser, firm: @first, latitude: 55.856191, longitude: -4.247082)
 
-      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, other_flag: true, other_advice_methods: @other_advice_methods)
+      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       @leicester = create(:adviser, firm: @second, latitude: 52.633013, longitude: -1.131257)
 
-      @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, other_advice_methods: @other_advice_methods)
+      @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
 
-      create(:firm_with_no_business_split, other_flag: true, other_advice_methods: @other_advice_methods) do |f|
+      create(:firm_with_no_business_split, other_flag: true, in_person_advice_methods: @in_person_advice_methods, other_advice_methods: @other_advice_methods) do |f|
         create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
       end
     end
