@@ -18,7 +18,6 @@ RSpec.feature 'Landing page, consumer requires advice on various topics in perso
   end
 
   def given_firms_with_advisers_were_previously_indexed
-
     with_fresh_index! do
       @first= create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, other_flag: true)
       @leicester = create(:adviser, firm: @first, latitude: 52.633013, longitude: -1.131257)
