@@ -59,17 +59,19 @@ RSpec.feature 'Results page, consumer requires general advice over the phone or 
       create(:other_advice_method, name: 'Phone', order: 1),
       create(:other_advice_method, name: 'Online', order: 2)
     ]
+
+    @in_person_advice_methods = create_list(:in_person_advice_method, 3)
   end
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @phone_firm = create(:firm, other_advice_methods: [@other_advice_methods.first])
+      @phone_firm = create(:firm, in_person_advice_methods: [], other_advice_methods: [@other_advice_methods.first])
       create(:adviser, firm: @phone_firm)
 
-      @online_firm = create(:firm, other_advice_methods: [@other_advice_methods.second])
+      @online_firm = create(:firm, in_person_advice_methods: [], other_advice_methods: [@other_advice_methods.second])
       create(:adviser, firm: @online_firm)
 
-      @excluded = create(:firm, other_advice_methods: [])
+      @excluded = create(:firm, in_person_advice_methods: @in_person_advice_methods, other_advice_methods: [])
       create(:adviser, firm: @excluded)
     end
   end

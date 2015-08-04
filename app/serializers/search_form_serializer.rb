@@ -40,7 +40,10 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def build_filters
     [].tap do |filters|
-      filters << { in: { other_advice_methods: object.remote_advice_method_ids } } if object.phone_or_online?
+      if object.phone_or_online?
+        filters << { in: { other_advice_methods: object.remote_advice_method_ids } }
+        filters << { missing: { field: :in_person_advice_methods } }
+      end
     end
   end
 
