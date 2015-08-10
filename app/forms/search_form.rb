@@ -17,12 +17,12 @@ class SearchForm
   ]
 
   attr_accessor :checkbox,
-    :advice_method,
-    :postcode,
-    :coordinates,
-    :pension_pot_size,
-    :advice_methods,
-    *TYPES_OF_ADVICE
+                :advice_method,
+                :postcode,
+                :coordinates,
+                :pension_pot_size,
+                :advice_methods,
+                *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
 
@@ -97,6 +97,6 @@ class SearchForm
   end
 
   def upcase_postcode
-    self.postcode.try(:upcase!)
+    postcode.try(:upcase!)
   end
 end

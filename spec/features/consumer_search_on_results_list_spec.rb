@@ -36,7 +36,6 @@ RSpec.feature 'Consumer views advice filters on search results page',
     end
   end
 
-
   def and_i_am_on_the_rad_landing_page
     landing_page.load
   end
