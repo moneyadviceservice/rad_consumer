@@ -79,9 +79,8 @@ class SearchForm
   end
 
   def advice_methods_present
-    if remote_advice_method_ids.empty?
-      errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
-    end
+    return if remote_advice_method_ids.present?
+    errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
   end
 
   def to_query
@@ -91,9 +90,8 @@ class SearchForm
   private
 
   def geocode_postcode
-    unless postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
-      errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
-    end
+    return if postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
+    errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
   end
 
   def upcase_postcode
