@@ -3,6 +3,26 @@ RSpec.feature 'Consumer views a search result',
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
+  let(:principal) { create(:principal) }
+  let(:firm) do
+    create(:firm_with_no_business_split,
+           telephone_number: '02082524727',
+           website_address: 'http://www.example.com',
+           principal: principal,
+           free_initial_meeting: true,
+           minimum_fixed_fee: 1000,
+           retirement_income_products_flag: true,
+           pension_transfer_flag: true,
+           long_term_care_flag: true,
+           equity_release_flag: true,
+           inheritance_tax_and_estate_planning_flag: true,
+           wills_and_probate_flag: true,
+           other_flag: true,
+           in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
+           other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
+           investment_sizes: [1, 2].map { |i| create(:investment_size, id: i, order: i) })
+  end
+
   scenario 'Viewing a single Firm result in English' do
     with_elastic_search! do
       given_an_indexed_firm_and_associated_adviser
@@ -53,12 +73,12 @@ RSpec.feature 'Consumer views a search result',
   end
 
   def and_i_see_the_firms_contact_details
-    expect(@displayed_firm.address_line_one).to eq(@firm.address_line_one)
-    expect(@displayed_firm.address_town).to eq(@firm.address_town)
-    expect(@displayed_firm.address_county).to eq(@firm.address_county)
-    expect(@displayed_firm.address_postcode).to eq(@firm.address_postcode)
+    expect(@displayed_firm.address_line_one).to eq(firm.address_line_one)
+    expect(@displayed_firm.address_town).to eq(firm.address_town)
+    expect(@displayed_firm.address_county).to eq(firm.address_county)
+    expect(@displayed_firm.address_postcode).to eq(firm.address_postcode)
 
-    expect(@displayed_firm.telephone_number).to include @firm.registered_name
+    expect(@displayed_firm.telephone_number).to include firm.registered_name
     expect(@displayed_firm.telephone_number).to include '020 8252 4727'
     expect(@displayed_firm.website_address).to be
     expect(@displayed_firm.email_address).to be
@@ -104,28 +124,8 @@ RSpec.feature 'Consumer views a search result',
   end
 
   def create_firm_and_adviser(qualifications: [], accreditations: [])
-    @principal = create(:principal)
-
-    @firm = create(:firm_with_no_business_split,
-                   telephone_number: '02082524727',
-                   website_address: 'http://www.example.com',
-                   principal: @principal,
-                   free_initial_meeting: true,
-                   minimum_fixed_fee: 1000,
-                   retirement_income_products_flag: true,
-                   pension_transfer_flag: true,
-                   long_term_care_flag: true,
-                   equity_release_flag: true,
-                   inheritance_tax_and_estate_planning_flag: true,
-                   wills_and_probate_flag: true,
-                   other_flag: true,
-                   in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
-                   other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
-                   investment_sizes: [1, 2].map { |i| create(:investment_size, id: i, order: i) }
-                  )
-
     create(:adviser,
-           firm: @firm,
+           firm: firm,
            latitude: 51.428473,
            longitude: -0.943616,
            accreditations: accreditations.map { |i| create(:accreditation, order: i) },
