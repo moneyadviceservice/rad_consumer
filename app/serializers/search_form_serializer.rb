@@ -22,16 +22,8 @@ class SearchFormSerializer < ActiveModel::Serializer
   def query
     {
       filtered: {
-        filter: {
-          bool: {
-            must: build_filters
-          }
-        },
-        query: {
-          bool: {
-            must: build_queries
-          }
-        }
+        filter: { bool: { must: build_filters } },
+        query:  { bool: { must: build_queries } }
       }
     }
   end
@@ -56,11 +48,7 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def postcode_queries
     [
-      {
-        match: {
-          postcode_searchable: true
-        }
-      },
+      { match: { postcode_searchable: true } },
       advisers_geo_query
     ]
   end
