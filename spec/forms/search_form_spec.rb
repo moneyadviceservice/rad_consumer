@@ -169,7 +169,9 @@ RSpec.describe SearchForm do
     end
 
     it 'returns the any size option as the last element' do
-      expect(form.pension_pot_sizes.last).to eql([I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE])
+      expect(form.pension_pot_sizes.last).to eql([
+        I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
+      ])
     end
   end
 
