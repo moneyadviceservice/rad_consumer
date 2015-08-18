@@ -95,7 +95,7 @@ RSpec.describe SearchHelper, type: :helper do
     it 'calls friendly_name on classified `kind`' do
       Fred = double
       expect(Fred).to receive(:friendly_name)
-                       .with(1).and_return(:something)
+        .with(1).and_return(:something)
       return_value = helper.qualification_or_accreditation_key(1, :fred)
       expect(return_value).to eq(:something)
     end

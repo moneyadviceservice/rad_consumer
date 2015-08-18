@@ -36,6 +36,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'rspec-rails'
+  gem 'rubocop'
   gem 'site_prism'
   gem 'spring'
 end

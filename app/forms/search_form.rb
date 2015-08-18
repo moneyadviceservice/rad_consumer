@@ -17,12 +17,12 @@ class SearchForm
   ]
 
   attr_accessor :checkbox,
-    :advice_method,
-    :postcode,
-    :coordinates,
-    :pension_pot_size,
-    :advice_methods,
-    *TYPES_OF_ADVICE
+                :advice_method,
+                :postcode,
+                :coordinates,
+                :pension_pot_size,
+                :advice_methods,
+                *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
 
@@ -79,9 +79,8 @@ class SearchForm
   end
 
   def advice_methods_present
-    if remote_advice_method_ids.empty?
-      errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
-    end
+    return if remote_advice_method_ids.present?
+    errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
   end
 
   def to_query
@@ -91,12 +90,11 @@ class SearchForm
   private
 
   def geocode_postcode
-    unless postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
-      errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
-    end
+    return if postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
+    errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
   end
 
   def upcase_postcode
-    self.postcode.try(:upcase!)
+    postcode.try(:upcase!)
   end
 end

@@ -38,7 +38,6 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
     end
   end
 
-
   def given_i_am_on_the_landing_page
     landing_page.load
   end
@@ -68,20 +67,20 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
   def and_firms_with_advisers_covering_my_postcode_were_previously_indexed
     with_fresh_index! do
       @second = create(:adviser,
-        firm: create(:firm, registered_name: 'ZZZ'),
-        postcode: 'RG2 8EE',
-        latitude: 51.428473,
-        longitude: -0.943616,
-        travel_distance: 100
-      )
+                       firm: create(:firm, registered_name: 'ZZZ'),
+                       postcode: 'RG2 8EE',
+                       latitude: 51.428473,
+                       longitude: -0.943616,
+                       travel_distance: 100
+                      )
 
       @first = create(:adviser,
-        firm: create(:firm, registered_name: 'AAA'),
-        postcode: 'RG2 8EE',
-        latitude: 51.428473,
-        longitude: -0.943616,
-        travel_distance: 100
-      )
+                      firm: create(:firm, registered_name: 'AAA'),
+                      postcode: 'RG2 8EE',
+                      latitude: 51.428473,
+                      longitude: -0.943616,
+                      travel_distance: 100
+                     )
 
       @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257, travel_distance: 650)
       @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082, travel_distance: 10)

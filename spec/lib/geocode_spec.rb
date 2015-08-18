@@ -9,7 +9,7 @@ RSpec.describe Geocode, '#call' do
     VCR.use_cassette(:rg11gg) do
       latitude, longitude = Geocode.call('RG11GG')
 
-      expect(latitude).to  eql(51.45326439999999)
+      expect(latitude).to eql(51.45326439999999)
       expect(longitude).to eql(-0.9634222000000001)
     end
   end

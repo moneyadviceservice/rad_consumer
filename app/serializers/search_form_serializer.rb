@@ -22,16 +22,8 @@ class SearchFormSerializer < ActiveModel::Serializer
   def query
     {
       filtered: {
-        filter: {
-          bool: {
-            must: build_filters
-          }
-        },
-        query: {
-          bool: {
-            must: build_queries
-          }
-        }
+        filter: { bool: { must: build_filters } },
+        query:  { bool: { must: build_queries } }
       }
     }
   end
@@ -56,38 +48,46 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def postcode_queries
     [
-      {
-        match: {
-          postcode_searchable: true
-        }
-      },
-      {
-        nested: {
-          path: 'advisers',
-          filter: {
-            bool: {
-              must: {
-                geo_shape: {
-                  range_location: {
-                    relation: 'intersects',
-                    shape: {
-                      type: 'point',
-                      coordinates: object.coordinates.reverse
-                    }
-                  }
-                }
-              },
-              should: {
-                geo_distance: {
-                  distance: '750miles',
-                  location: object.coordinates.reverse
-                }
-              }
-            }
+      { match: { postcode_searchable: true } },
+      advisers_geo_query
+    ]
+  end
+
+  def advisers_geo_query
+    {
+      nested: {
+        path: 'advisers',
+        filter: {
+          bool: {
+            must: range_intersects_consumer_location,
+            should: reasonable_distance_from_consumer_location
           }
         }
       }
-    ]
+    }
+  end
+
+  def range_intersects_consumer_location
+    {
+      geo_shape: {
+        range_location: {
+          relation: 'intersects',
+          shape: {
+            type: 'point',
+            coordinates: object.coordinates.reverse
+          }
+        }
+      }
+    }
+  end
+
+  def reasonable_distance_from_consumer_location
+    {
+      geo_distance: {
+        distance: '750miles',
+        location: object.coordinates.reverse
+      }
+    }
   end
 
   def investment_size_queries

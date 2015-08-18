@@ -17,12 +17,10 @@ module ElasticSearchHelper
   end
 
   def with_elastic_search!
-    begin
-      WebMock.allow_net_connect!
-      yield
-    ensure
-      WebMock.disable_net_connect!
-    end
+    WebMock.allow_net_connect!
+    yield
+  ensure
+    WebMock.disable_net_connect!
   end
 
   def index_all!
