@@ -2,8 +2,12 @@ Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 120
+  Exclude:
+  - 'spec/features/**/*'
 Metrics/MethodLength:
   Max: 15
+  Exclude:
+  - 'spec/features/**/*'
 Style/ClassAndModuleChildren:
   Enabled: false
 Style/CollectionMethods:
