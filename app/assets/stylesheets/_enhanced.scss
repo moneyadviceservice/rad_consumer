@@ -33,3 +33,7 @@
 @import 'components/video';
 
 @import 'print';
+
+html.dev .translation_missing {
+  color: #f00 !important;
+}

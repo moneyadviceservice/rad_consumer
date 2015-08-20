@@ -18,4 +18,5 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include ElasticSearchHelper, type: :feature
+  config.include ElasticSearchHelper, type: :controller
 end

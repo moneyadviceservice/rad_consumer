@@ -19,7 +19,7 @@ gem 'dough-ruby',
     ref: 'cf08913'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.0.70'
+gem 'mas-rad_core', path: '../mas-rad_core'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
@@ -39,6 +39,8 @@ group :development, :test do
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do

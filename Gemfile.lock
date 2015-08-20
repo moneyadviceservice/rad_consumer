@@ -15,6 +15,20 @@ GIT
       rails (>= 3.2)
       sass-rails (~> 4.0.0)
 
+PATH
+  remote: ../mas-rad_core
+  specs:
+    mas-rad_core (0.0.70)
+      active_model_serializers
+      geocoder
+      httpclient
+      language_list
+      pg
+      rails (~> 4.2)
+      redis
+      statsd-ruby
+      uk_phone_numbers
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -63,6 +77,12 @@ GEM
     autoprefixer-rails (5.1.10)
       execjs
       json
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     capybara (2.4.4)
       mime-types (>= 1.16)
@@ -73,6 +93,7 @@ GEM
     coderay (1.1.0)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.5.2)
@@ -103,16 +124,6 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.70)
-      active_model_serializers
-      geocoder
-      httpclient
-      language_list
-      pg
-      rails (~> 4.2)
-      redis
-      statsd-ruby
-      uk_phone_numbers
     method_source (0.8.2)
     mime-types (2.5)
     mini_portile (0.6.2)
@@ -235,6 +246,8 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   autoprefixer-rails
+  better_errors
+  binding_of_caller
   bowndler!
   capybara
   dough-ruby!
@@ -243,7 +256,7 @@ DEPENDENCIES
   geocoder
   jquery-rails
   kaminari
-  mas-rad_core (= 0.0.70)
+  mas-rad_core!
   pg
   pry-rails
   rails (~> 4.2)
