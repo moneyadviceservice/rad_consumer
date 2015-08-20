@@ -17,7 +17,6 @@ RSpec.feature 'Consumer views a search result',
            equity_release_flag: true,
            inheritance_tax_and_estate_planning_flag: true,
            wills_and_probate_flag: true,
-           other_flag: true,
            in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
            other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
            investment_sizes: [1, 2].map { |i| create(:investment_size, id: i, order: i) })

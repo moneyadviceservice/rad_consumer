@@ -64,16 +64,16 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, investment_sizes: @investment_sizes.values_at(0, 1), in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
+      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, investment_sizes: @investment_sizes.values_at(0, 1), in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, investment_sizes: @investment_sizes.values_at(2, 3), in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
+      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, investment_sizes: @investment_sizes.values_at(2, 3), in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
 
       @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, pension_transfer_flag: true, investment_sizes: @investment_sizes, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
 
-      @excluded = create(:firm_with_no_business_split, other_flag: true, in_person_advice_methods: @in_person_advice_methods, other_advice_methods: @other_advice_methods)
+      @excluded = create(:firm_with_no_business_split, wills_and_probate_flag: true, in_person_advice_methods: @in_person_advice_methods, other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
     end
   end

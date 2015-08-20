@@ -60,16 +60,16 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, investment_sizes: @investment_sizes.values_at(0, 1))
+      @small_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, investment_sizes: @investment_sizes.values_at(0, 1))
       create(:adviser, firm: @small_pot_size_firm, latitude: latitude, longitude: longitude)
 
-      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, other_flag: true, investment_sizes: @investment_sizes.values_at(2, 3))
+      @medium_pot_size_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, investment_sizes: @investment_sizes.values_at(2, 3))
       create(:adviser, firm: @medium_pot_size_firm, latitude: latitude, longitude: longitude)
 
       @pension_transfer_firm = create(:firm_with_no_business_split, retirement_income_products_flag: true, pension_transfer_flag: true, investment_sizes: @investment_sizes)
       create(:adviser, firm: @pension_transfer_firm, latitude: latitude, longitude: longitude)
 
-      @excluded = create(:firm_with_no_business_split, other_flag: true)
+      @excluded = create(:firm_with_no_business_split, wills_and_probate_flag: true)
       create(:adviser, firm: @excluded, latitude: latitude, longitude: longitude)
     end
   end

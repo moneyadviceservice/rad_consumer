@@ -79,15 +79,15 @@ RSpec.feature 'Consumer searches for phone or online advice',
     with_fresh_index! do
       # Remote options only
       @equity = create(:firm_with_no_business_split, registered_name: 'Equity release advisory', pension_transfer_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
-      @wills = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
-      @probate = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
-      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
+      @wills = create(:firm_with_no_business_split, registered_name: 'Wills advisory', equity_release_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
+      @probate = create(:firm_with_no_business_split, registered_name: 'Probate advisory', equity_release_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
+      @wills_and_equity = create(:firm_with_no_business_split, registered_name: 'Paying for care and equity advisory', equity_release_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: [online_advice, phone_advice])
 
       # Face to face options only
-      @in_person_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Face to Face Advice Ltd', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: in_person_advice_methods, other_advice_methods: [])
+      @in_person_and_wills = create(:firm_with_no_business_split, registered_name: 'Wills Face to Face Advice Ltd', equity_release_flag: true, wills_and_probate_flag: true, in_person_advice_methods: in_person_advice_methods, other_advice_methods: [])
 
       # Face to face but some of the optional remote options checked too
-      @in_person_and_also_remote = create(:firm_with_no_business_split, registered_name: 'Wills Face to Face or Phone Advice Ltd', equity_release_flag: true, wills_and_probate_flag: true, other_flag: true, in_person_advice_methods: in_person_advice_methods, other_advice_methods: [online_advice, phone_advice])
+      @in_person_and_also_remote = create(:firm_with_no_business_split, registered_name: 'Wills Face to Face or Phone Advice Ltd', equity_release_flag: true, wills_and_probate_flag: true, in_person_advice_methods: in_person_advice_methods, other_advice_methods: [online_advice, phone_advice])
     end
   end
 
