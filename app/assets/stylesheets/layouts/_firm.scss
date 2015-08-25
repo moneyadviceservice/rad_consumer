@@ -1,0 +1,17 @@
+.l-firm__main {
+  @include column(12);
+
+  @include respond-to($mq-l) {
+    @include column(8);
+  }
+}
+
+.l-firm__side {
+  @include column(12);
+
+  @include respond-to($mq-l) {
+    @include column(4);
+    float: right;
+    clear: right;
+  }
+}

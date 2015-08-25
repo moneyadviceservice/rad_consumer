@@ -1,0 +1,24 @@
+<div class="firm__header">
+  <%= heading_tag("Acme Firm Ltd", level: 2, class: 'firm__name') %>
+  <span>
+    has an adviser x miles away
+  </span>
+
+  <div class="firm__links">
+    <a href="tel:555 555 5555">
+      <svg title="<%= t('firms.show.telephone_number') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
+        <use xlink:href="#icon-phone"></use>
+      </svg>555 555 5555
+    </a>
+    <a href="mailto:#">
+      <svg title="<%= t('firms.show.email_address') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
+        <use xlink:href="#icon-email"></use>
+      </svg><%= t('firms.show.email_firm') %>
+    </a>
+    <a href="http://example.com">
+      <svg title="<%= t('firms.show.email_address') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
+        <use xlink:href="#icon-url"></use>
+      </svg><%= t('firms.show.website') %>
+    </a>
+  </div>
+</div>

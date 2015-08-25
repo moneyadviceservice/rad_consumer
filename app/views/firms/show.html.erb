@@ -1,0 +1,16 @@
+<div class="l-constrained">
+  <div class="l-firm">
+    <div class="l-firm__main">
+      <%= heading_tag(t('firms.show.heading'), level: 1, class: 'l-firm__heading') %>
+      <p class="l-firm__go-back"><%= link_to(t('firms.show.go_back'), :back) %></p>
+
+      <div class="firm">
+        <%= render partial: 'firms/partials/header' %>
+        <%= render partial: 'firms/partials/content' %>
+      </div>
+    </div>
+
+    <div class="l-firm__side">
+    </div>
+  </div>
+</div>

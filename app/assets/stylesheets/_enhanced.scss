@@ -13,6 +13,7 @@
 @import 'layouts/responsive';
 @import 'layouts/results';
 @import 'layouts/glossary';
+@import 'layouts/firm';
 
 @import 'states/is_hidden';
 
@@ -31,5 +32,6 @@
 @import 'components/result';
 @import 'components/search_filter';
 @import 'components/video';
+@import 'components/firm';
 
 @import 'print';
