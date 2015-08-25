@@ -56,6 +56,11 @@ Push the index. For the production environment replace `rad_development` with
 $ curl -XPOST http://127.0.0.1:9200/rad_development -d @elastic_search_mapping.json
 ```
 
+Once you've pushed the index, run the following rake task to populate it:
+```sh
+rake firms:index
+```
+
 ## Usage
 
 Start the application:
