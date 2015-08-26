@@ -3,6 +3,8 @@ RSpec.feature 'Consumer views advice filters on search results page',
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
+  let(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
+
   scenario 'Consumer views current filters applied to their search' do
     with_elastic_search! do
       given_some_firms_were_indexed
@@ -50,7 +52,7 @@ RSpec.feature 'Consumer views advice filters on search results page',
       @leicester = create(:adviser, postcode: 'LE1 6SL', firm: @equity_firm,      latitude: 52.633013, longitude: -1.131257)
       @glasgow   = create(:adviser, postcode: 'G1 5QT',  firm: @inheritance_firm, latitude: 55.856191, longitude: -4.247082)
 
-      @missing = create(:firm, in_person_advice_methods: []) do |firm|
+      @missing = create(:firm, in_person_advice_methods: [], other_advice_methods: [phone_advice]) do |firm|
         create(:adviser, firm: firm, latitude: 51.428473, longitude: -0.943616)
       end
     end

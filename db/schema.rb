@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706102943) do
+ActiveRecord::Schema.define(version: 20150817141257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_stat_statements"
 
   create_table "accreditations", force: :cascade do |t|
     t.string   "name",                   null: false
@@ -32,14 +31,13 @@ ActiveRecord::Schema.define(version: 20150706102943) do
   add_index "accreditations_advisers", ["adviser_id", "accreditation_id"], name: "advisers_accreditations_index", unique: true, using: :btree
 
   create_table "advisers", force: :cascade do |t|
-    t.string   "reference_number",                  null: false
-    t.string   "name",                              null: false
-    t.integer  "firm_id",                           null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.boolean  "confirmed_disclaimer",              null: false
-    t.string   "postcode",             default: "", null: false
-    t.integer  "travel_distance",      default: 0,  null: false
+    t.string   "reference_number",              null: false
+    t.string   "name",                          null: false
+    t.integer  "firm_id",                       null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "postcode",         default: "", null: false
+    t.integer  "travel_distance",  default: 0,  null: false
     t.float    "latitude"
     t.float    "longitude"
   end
@@ -103,8 +101,11 @@ ActiveRecord::Schema.define(version: 20150706102943) do
     t.boolean  "equity_release_flag",                      default: false, null: false
     t.boolean  "inheritance_tax_and_estate_planning_flag", default: false, null: false
     t.boolean  "wills_and_probate_flag",                   default: false, null: false
-    t.boolean  "other_flag",                               default: false, null: false
     t.string   "website_address"
+    t.boolean  "ethical_investing_flag",                   default: false, null: false
+    t.boolean  "sharia_investing_flag",                    default: false, null: false
+    t.integer  "status"
+    t.text     "languages",                                default: [],    null: false, array: true
   end
 
   add_index "firms", ["initial_meeting_duration_id"], name: "index_firms_on_initial_meeting_duration_id", using: :btree
@@ -199,6 +200,20 @@ ActiveRecord::Schema.define(version: 20150706102943) do
   end
 
   add_index "lookup_subsidiaries", ["fca_number"], name: "index_lookup_subsidiaries_on_fca_number", using: :btree
+
+  create_table "offices", force: :cascade do |t|
+    t.string   "address_line_one",                 null: false
+    t.string   "address_line_two"
+    t.string   "address_town",                     null: false
+    t.string   "address_county"
+    t.string   "address_postcode",                 null: false
+    t.string   "email_address"
+    t.string   "telephone_number"
+    t.boolean  "disabled_access",  default: false, null: false
+    t.integer  "firm_id",                          null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
 
   create_table "old_passwords", force: :cascade do |t|
     t.string   "encrypted_password",       null: false
