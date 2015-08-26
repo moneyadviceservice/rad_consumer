@@ -10,4 +10,10 @@ module ApplicationHelper
   def rad_signup_url
     'https://radsignup.moneyadviceservice.org.uk/'
   end
+
+  def svg_icon(name, options = {})
+    content_tag :svg, { xmlns: 'http://www.w3.org/2000/svg', focusable: false }.merge(options) do
+      tag :use, 'xlink:href' => "#icon-#{name}"
+    end
+  end
 end

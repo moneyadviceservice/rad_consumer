@@ -33,7 +33,7 @@
       telephone_number: 'Telephone'
       email_address: 'Email'
       email_firm: 'Email firm'
-      website: 'Website'
+      website_address: 'Website'
 
   skip_links:
     to_main: Skip to main content

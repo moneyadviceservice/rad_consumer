@@ -6,20 +6,19 @@
   </div>
 
   <div class="firm__links">
-    <a href="tel:<%= @firm.telephone_number %>">
-      <svg title="<%= t('firms.show.telephone_number') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
-        <use xlink:href="#icon-phone"></use>
-      </svg><%= @firm.telephone_number %>
-    </a>
-    <a href="mailto:<%= @firm.email_address %>">
-      <svg title="<%= t('firms.show.email_address') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
-        <use xlink:href="#icon-email"></use>
-      </svg><%= t('firms.show.email_firm') %>
-    </a>
-    <a href="<%= @firm.website_address %>">
-      <svg title="<%= t('firms.show.email_address') %>" xmlns="http://www.w3.org/2000/svg" class="firm__svg" focusable="false">
-        <use xlink:href="#icon-url"></use>
-      </svg><%= t('firms.show.website') %>
-    </a>
+    <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
+      <%= svg_icon :phone, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+      %><%= @firm.telephone_number %>
+    <% end %>
+
+    <%= mail_to @firm.email_address, class: 'outline-button' do %>
+      <%= svg_icon :email, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+      %><%= t('firms.show.email_firm') %>
+    <% end %>
+
+    <%= link_to @firm.website_address, class: 'outline-button' do %>
+      <%= svg_icon :url, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+      %><%= t('firms.show.website_address') %>
+    <% end %>
   </div>
 </div>

@@ -1,16 +1,15 @@
 .firm {
   @include clearfix();
-  border: 1px solid $color-grey-normal;
-  border-bottom: 3px solid $color-grey-seven;
-  border-radius: 5px;
   margin-bottom: $baseline-unit*6;
 }
 
 .firm__header {
   background-color: $background-color;
-  border-bottom: 1px solid $color-grey-normal;
+  border: 1px solid $color-grey-normal;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   padding: $baseline-unit*2;
-  color: $color-black-two;
+  color: $color-black;
 }
 
 .firm__adviser-distance {
@@ -19,30 +18,19 @@
 
 .firm__content {
   padding: $baseline-unit*2;
+  border-right: 1px solid $color-grey-normal;
+  border-left: 1px solid $color-grey-normal;
+  border-bottom: 3px solid $color-grey-seven;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .firm__name {
+  @extend %heading-small;
   margin: 0;
   color: $color-black;
 }
 
-.firm__links a {
-  display: inline-block;
-  background-color: $color-white;
-  border: 1px solid $color-blue-medium;
-  padding: 0 $baseline-unit*2;
-  border-radius: 5px;
-  color: $color-blue-medium;
-  margin-right: $baseline-unit;
-  line-height: $baseline-unit*6;
-}
-
-.firm__svg {
-  @include inline-block();
-  position: relative;
-  top: 5px;
-  margin-right: $baseline-unit;
-  width: 20px;
-  height: 20px;
-  fill: $color-blue-medium;
+.firm__links {
+  margin: $baseline-unit 0;
 }

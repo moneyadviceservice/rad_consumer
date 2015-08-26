@@ -1,0 +1,30 @@
+.outline-button {
+  display: inline-block;
+  background-color: $color-white;
+  border: 1px solid $color-blue-medium;
+  padding: 0 $baseline-unit*2;
+  border-radius: 5px;
+  color: $color-blue-medium;
+  margin-right: $baseline-unit;
+  line-height: $baseline-unit*6;
+
+  // These are usually set either by us or by default, but
+  // tel links are strange and we need to tell them again.
+  &[href^="tel:"] {
+    color: $color-blue-medium;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.outline-button__svg-icon {
+  @include inline-block();
+  position: relative;
+  top: 5px;
+  margin-right: $baseline-unit;
+  width: 20px;
+  height: 20px;
+  fill: $color-blue-medium;
+}
