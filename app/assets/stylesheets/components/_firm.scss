@@ -34,3 +34,11 @@
 .firm__links {
   margin: $baseline-unit 0;
 }
+
+.firm__back-icon {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+  fill: $color-blue-medium;
+  margin-right: 0.25em;
+}
