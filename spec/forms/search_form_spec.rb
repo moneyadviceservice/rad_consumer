@@ -2,6 +2,13 @@ RSpec.describe SearchForm do
   describe 'advice method predicates' do
     let(:form) { described_class.new(advice_method: advice_method) }
 
+    describe 'attributes' do
+      it 'allows firm_id to be set and accessed' do
+        subject.firm_id = 123
+        expect(subject.firm_id).to eq(123)
+      end
+    end
+
     context 'when advice method is face to face' do
       let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
 

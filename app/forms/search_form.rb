@@ -22,6 +22,7 @@ class SearchForm
                 :coordinates,
                 :pension_pot_size,
                 :advice_methods,
+                :firm_id,
                 *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
