@@ -21,12 +21,16 @@ Rails.application.configure do
     modules/ResultsFilter.js
     modules/EducationModule.js
     modules/ResultsModule.js
+    dough/assets/js/lib/*.js
+    dough/assets/js/**/*.js
   )
 
   # Vendor JavaScript
   config.assets.precompile += %w(
     jquery/dist/jquery.js
     jquery-ujs/src/rails.js
+    jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
+    eventsWithPromises/src/eventsWithPromises.js
     requirejs/require.js
   )
 end
