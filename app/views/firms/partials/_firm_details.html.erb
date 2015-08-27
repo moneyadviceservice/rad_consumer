@@ -1,1 +1,14 @@
-<p>Firm details will go here.</p>
+<%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading') %>
+
+<div id="map" class="firm__map"></div>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"></script>
+<script>
+  var map;
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: <%= latitude %>, lng: <%= longitude %>},
+      zoom: 11
+    });
+  }
+</script>
