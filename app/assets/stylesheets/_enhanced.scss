@@ -13,6 +13,7 @@
 @import 'layouts/responsive';
 @import 'layouts/results';
 @import 'layouts/glossary';
+@import 'layouts/firm';
 
 @import 'states/is_hidden';
 
@@ -24,9 +25,11 @@
 @import 'components/beta_tag';
 @import 'components/brand_logo';
 @import 'components/education';
+@import 'components/firm';
 @import 'components/further_info';
 @import 'components/keyword';
 @import 'components/locale';
+@import 'components/outline_button';
 @import 'components/pagination';
 @import 'components/result';
 @import 'components/search_filter';

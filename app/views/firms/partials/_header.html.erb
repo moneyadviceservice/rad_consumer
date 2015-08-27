@@ -1,0 +1,24 @@
+<div class="firm__header">
+  <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
+  <div class="firm__adviser-distance">
+    <%= t('search.result.adviser') %>
+    <%= @firm.closest_adviser %>
+  </div>
+
+  <div class="firm__links">
+    <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
+      <%= svg_icon :phone, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+      %><%= @firm.telephone_number %>
+    <% end %>
+
+    <%= mail_to @firm.email_address, class: 'outline-button' do %>
+      <%= svg_icon :email, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+      %><%= t('firms.show.email_firm') %>
+    <% end %>
+
+    <%= link_to @firm.website_address, class: 'outline-button' do %>
+      <%= svg_icon :url, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+      %><%= t('firms.show.website_address') %>
+    <% end %>
+  </div>
+</div>

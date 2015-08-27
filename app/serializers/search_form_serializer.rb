@@ -41,6 +41,7 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def build_queries
     investment_size_queries.tap do |expression|
+      expression << { term: { _id: object.firm_id } } if object.firm_id.present?
       expression.push(*postcode_queries)        if object.face_to_face?
       expression.push(*types_of_advice_queries) if object.types_of_advice?
     end

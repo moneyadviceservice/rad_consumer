@@ -1,0 +1,44 @@
+.firm {
+  @include clearfix();
+  margin-bottom: $baseline-unit*6;
+}
+
+.firm__header {
+  background-color: $background-color;
+  border: 1px solid $color-grey-normal;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: $baseline-unit*2;
+  color: $color-black;
+}
+
+.firm__adviser-distance {
+  margin-bottom: $baseline-unit*2;
+}
+
+.firm__content {
+  padding: $baseline-unit*2;
+  border-right: 1px solid $color-grey-normal;
+  border-left: 1px solid $color-grey-normal;
+  border-bottom: 3px solid $color-grey-seven;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.firm__name {
+  @extend %heading-small;
+  margin: 0;
+  color: $color-black;
+}
+
+.firm__links {
+  margin: $baseline-unit 0;
+}
+
+.firm__back-icon {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+  fill: $color-blue-medium;
+  margin-right: 0.25em;
+}

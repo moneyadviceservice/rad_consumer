@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
     get '/search', to: 'search#index'
     get '/glossary', to: 'glossary#show'
+
+    resources :firms, only: [:show]
   end
 end
