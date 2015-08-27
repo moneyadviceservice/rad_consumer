@@ -12,21 +12,35 @@ RSpec.describe FirmsController, type: :controller do
     end
 
     it 'successfully renders the show page' do
-      get :show, id: firm.id, locale: :en, search_form: search_form_params
-      expect(response).to render_template(:show)
+      VCR.use_cassette(:geocode_search_form_postcode) do
+        get :show, id: firm.id, locale: :en, search_form: search_form_params
+        expect(response).to render_template(:show)
+      end
     end
 
     it "creates a search form with search_form params and the firm's id" do
-      allow(SearchForm).to receive(:new).and_return(double(to_query: {}))
-      get :show, id: firm.id, locale: :en, search_form: search_form_params
+      VCR.use_cassette(:geocode_search_form_postcode) do
+        allow(SearchForm).to receive(:new).and_return(double(to_query: {}, coordinates: [51.5, -0.1]))
+        get :show, id: firm.id, locale: :en, search_form: search_form_params
 
-      expected_params = search_form_params.merge('firm_id' => firm.id.to_s)
-      expect(SearchForm).to have_received(:new).with(expected_params)
+        expected_params = search_form_params.merge('firm_id' => firm.id.to_s)
+        expect(SearchForm).to have_received(:new).with(expected_params)
+      end
     end
 
     it 'assigns the first firm result to the view' do
-      get :show, id: firm.id, locale: :en, search_form: search_form_params
-      expect(assigns(:firm)).to eq(firm_result_1)
+      VCR.use_cassette(:geocode_search_form_postcode) do
+        get :show, id: firm.id, locale: :en, search_form: search_form_params
+        expect(assigns(:firm)).to eq(firm_result_1)
+      end
+    end
+
+    it 'assigns the lat/lon from the postcode supplied in the search form' do
+      VCR.use_cassette(:geocode_search_form_postcode) do
+        get :show, id: firm.id, locale: :en, search_form: search_form_params
+        expect(assigns(:latitude)).to eq(51.5180697)
+        expect(assigns(:longitude)).to eq(-0.1085203)
+      end
     end
   end
 end
