@@ -34,6 +34,13 @@
       email_address: 'Email'
       email_firm: 'Email firm'
       website_address: 'Website'
+      panels:
+        firm:
+          heading: 'Firm details'
+        offices:
+          heading: 'Offices'
+        advisers:
+          heading: 'Advisers'
 
   skip_links:
     to_main: Skip to main content
