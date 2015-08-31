@@ -10,5 +10,17 @@
       center: {lat: <%= latitude %>, lng: <%= longitude %>},
       zoom: 11
     });
+
+    <% firm.advisers.each do |adviser| %>
+      var marker = new google.maps.Marker({
+        position: {
+          lat: <%= adviser.location.latitude %>,
+          lng: <%= adviser.location.longitude %>
+        },
+        map: map,
+        title: '<%= adviser.name %>'
+      });
+    <% end %>
+
   }
 </script>
