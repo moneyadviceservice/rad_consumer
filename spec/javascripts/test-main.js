@@ -25,7 +25,9 @@ require.config({
     componentLoader: 'vendor/assets/bower_components/dough/assets/js/lib/componentLoader',
     DoughBaseComponent: 'vendor/assets/bower_components/dough/assets/js/components/DoughBaseComponent',
     jquery: 'vendor/assets/bower_components/jquery/dist/jquery',
-    NestedOptions: 'app/assets/javascripts/modules/NestedOptions'
+    utilities: 'vendor/assets/bower_components/dough/assets/js/lib/utilities',
+    NestedOptions: 'app/assets/javascripts/modules/NestedOptions',
+    FirmMap: 'app/assets/javascripts/modules/FirmMap'
   },
 
   shim: {

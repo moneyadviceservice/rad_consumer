@@ -21,6 +21,7 @@ Rails.application.configure do
     modules/ResultsFilter.js
     modules/EducationModule.js
     modules/ResultsModule.js
+    modules/FirmMap.js
     dough/assets/js/lib/*.js
     dough/assets/js/**/*.js
   )
