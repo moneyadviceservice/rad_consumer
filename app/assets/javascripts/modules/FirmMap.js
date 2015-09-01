@@ -12,7 +12,10 @@ define(['jquery', 'DoughBaseComponent'],
   'use strict';
 
   var FirmMapProto,
-      defaultConfig = {};
+      defaultConfig = {
+        zoomLevel: 11,
+        center: {lat: 0, lng: 0}
+      };
 
   /**
    * @constructor
@@ -53,10 +56,9 @@ define(['jquery', 'DoughBaseComponent'],
    */
   FirmMapProto.initializeGoogleMaps = function() {
     window.doughMap__initMap = $.proxy(this.setupMap, this);
-    var $map = this._getMapElement(),
-        apiKey = $map.data('dough-map-key');
+    var $map = this._getMapElement();
     $map.parent().append('<script defer src="https://maps.googleapis.com/maps/api/js?key=' +
-                          apiKey + '&callback=doughMap__initMap"></script>');
+                          this.config.apiKey + '&callback=doughMap__initMap"></script>');
   };
 
   /**
@@ -83,10 +85,10 @@ define(['jquery', 'DoughBaseComponent'],
   FirmMapProto._createMap = function($map) {
     return new google.maps.Map($map[0], {
       center: {
-        lat: $map.data('dough-map-center-lat'),
-        lng: $map.data('dough-map-center-lng')
+        lat: this.config.center.lat,
+        lng: this.config.center.lng
       },
-      zoom: 11
+      zoom: this.config.zoomLevel
     });
   };
 

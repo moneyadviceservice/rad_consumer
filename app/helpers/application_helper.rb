@@ -16,4 +16,17 @@ module ApplicationHelper
       tag :use, 'xlink:href' => "#icon-#{name}"
     end
   end
+
+  def firm_map_component(center:)
+    options = {
+      'data-dough-component': 'FirmMap',
+      'data-dough-firm-map-config': {
+        apiKey: ENV['GOOGLE_MAPS_API_KEY'],
+        center: center
+      }.to_json
+    }
+    content_tag :div, options do
+      yield
+    end
+  end
 end

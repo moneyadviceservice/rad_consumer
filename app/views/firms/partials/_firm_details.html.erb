@@ -1,13 +1,14 @@
 <%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading') %>
 
-<div data-dough-component="FirmMap">
-  <div class="firm__map" data-dough-map data-dough-map-center-lat="<%= latitude %>" data-dough-map-center-lng="<%= longitude %>" data-dough-map-key="<%= ENV['GOOGLE_MAPS_API_KEY'] %>"></div>
+<%= firm_map_component(center: {lat: latitude, lng: longitude}) do %>
+  <div class="firm__map" data-dough-map></div>
 
-  <ul class="is-hidden">
-    <% firm.advisers.each do |adviser| %>
-      <li data-dough-map-point data-dough-map-point-lat="<%= adviser.location.latitude %>" data-dough-map-point-lng="<%= adviser.location.longitude %>">
-        <%= adviser.name %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+    <ul class="is-hidden">
+      <% firm.advisers.each do |adviser| %>
+        <li data-dough-map-point data-dough-map-point-lat="<%= adviser.location.latitude %>" data-dough-map-point-lng="<%= adviser.location.longitude %>">
+          <%= adviser.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
