@@ -74,6 +74,10 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     diff-lcs (1.2.5)
+    dotenv (2.0.2)
+    dotenv-rails (2.0.2)
+      dotenv (= 2.0.2)
+      railties (~> 4.0)
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -237,6 +241,7 @@ DEPENDENCIES
   autoprefixer-rails
   bowndler!
   capybara
+  dotenv-rails
   dough-ruby!
   factory_girl_rails
   faker

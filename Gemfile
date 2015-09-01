@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 group :test do
