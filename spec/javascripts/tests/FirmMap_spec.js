@@ -21,9 +21,5 @@ describe('google map', function () {
     it('appends a google maps script tag after the wrapper', function(){
       expect(this.$html.find('script')).to.exist;
     });
-
-    it('adds a fn to the window object', function () {
-      expect(window.doughMap__initMap).to.be.a('function');
-    });
   });
 });

@@ -33,5 +33,6 @@ Rails.application.configure do
     jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
     eventsWithPromises/src/eventsWithPromises.js
     requirejs/require.js
+    requirejs-plugins/src/async.js
   )
 end

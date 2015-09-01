@@ -51,14 +51,12 @@ define(['jquery', 'DoughBaseComponent'],
   /**
    * initializeGoogleMaps
    *
-   * Adds the google maps script tag, and adds setupMap to the window object
-   * so the library can find it.
+   * Loads the google maps library and calls setupMap when it's done.
    */
   FirmMapProto.initializeGoogleMaps = function() {
-    window.doughMap__initMap = $.proxy(this.setupMap, this);
     var $map = this._getMapElement();
-    $map.parent().append('<script defer src="https://maps.googleapis.com/maps/api/js?key=' +
-                          this.config.apiKey + '&callback=doughMap__initMap"></script>');
+    require(['async!http://maps.google.com/maps/api/js?key=' + this.config.apiKey],
+            $.proxy(this.setupMap, this));
   };
 
   /**

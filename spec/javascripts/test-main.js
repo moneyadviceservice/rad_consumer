@@ -26,6 +26,7 @@ require.config({
     DoughBaseComponent: 'vendor/assets/bower_components/dough/assets/js/components/DoughBaseComponent',
     jquery: 'vendor/assets/bower_components/jquery/dist/jquery',
     utilities: 'vendor/assets/bower_components/dough/assets/js/lib/utilities',
+    async: 'vendor/assets/bower_components/requirejs-plugins/src/async',
     NestedOptions: 'app/assets/javascripts/modules/NestedOptions',
     FirmMap: 'app/assets/javascripts/modules/FirmMap'
   },
