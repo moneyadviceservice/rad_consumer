@@ -37,6 +37,7 @@
       panels:
         firm:
           heading: 'Firm details'
+          locations: 'Adviser & office locations'
         offices:
           heading: 'Offices'
         advisers:

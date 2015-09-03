@@ -61,6 +61,9 @@ Once you've pushed the index, run the following rake task to populate it:
 rake firms:index
 ```
 
+For the firm profile maps to work, you will need to provide a Google Maps API
+key in `.env`. You can find an example at `.env.example`.
+
 ## Usage
 
 Start the application:

@@ -21,6 +21,7 @@ Rails.application.configure do
     modules/ResultsFilter.js
     modules/EducationModule.js
     modules/ResultsModule.js
+    modules/FirmMap.js
     dough/assets/js/lib/*.js
     dough/assets/js/**/*.js
   )
@@ -32,5 +33,6 @@ Rails.application.configure do
     jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
     eventsWithPromises/src/eventsWithPromises.js
     requirejs/require.js
+    requirejs-plugins/src/async.js
   )
 end

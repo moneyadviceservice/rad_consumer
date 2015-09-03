@@ -19,7 +19,7 @@ gem 'dough-ruby',
     ref: 'cf08913'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.0.73'
+gem 'mas-rad_core', '0.0.74'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
@@ -39,6 +39,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring'
+  gem 'dotenv-rails'
 end
 
 group :test do
