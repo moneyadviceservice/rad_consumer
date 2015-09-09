@@ -74,8 +74,6 @@ RSpec.feature 'Landing page, consumer requires various types of advice over the 
   end
 
   def and_they_are_ordered_by_name
-    # Note string sort order may not be the same as record creation order.
-    # E.g. 'Firm 100' will appear before 'Firm 99' in a character based sort
     ordered_results = [@first, @second].map(&:registered_name).sort
 
     expect(results_page.firm_names).to eql(ordered_results)
