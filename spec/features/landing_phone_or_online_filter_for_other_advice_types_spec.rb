@@ -74,7 +74,7 @@ RSpec.feature 'Landing page, consumer requires various types of advice over the 
   end
 
   def and_they_are_ordered_by_name
-    ordered_results = [@first, @second].map(&:registered_name)
+    ordered_results = [@first, @second].map(&:registered_name).sort
 
     expect(results_page.firm_names).to eql(ordered_results)
   end

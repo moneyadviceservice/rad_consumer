@@ -94,7 +94,7 @@ RSpec.feature 'Results page, consumer requires advice on various topics in perso
   end
 
   def and_they_are_ordered_by_location
-    ordered_results = [@first, @second].map(&:registered_name)
+    ordered_results = [@first, @second].map(&:registered_name).sort
 
     expect(results_page.firm_names).to eql(ordered_results)
   end
