@@ -96,8 +96,18 @@
 }
 
 .l-results__summary {
-  @include body(14, 18);
-  font-weight: 500;
+  color: $result-summary-color;
+  background-color: $result-summary-background-color;
+  margin: 0;
+  margin-bottom: $baseline-unit*3;
+  padding: $baseline-unit*3;
+  border-radius: $result-summary-radius;
+}
+
+.l-results__summary-text {
+  @include body(16, 18);
+  font-weight: 300;
+  margin: 0;
 }
 
 .l-results__feedback {
