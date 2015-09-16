@@ -1,9 +1,3 @@
-.l-results__go-back {
-  @include column(12);
-  @include body(14, 18);
-  margin-bottom: $baseline-unit*6;
-}
-
 .l-results__message-container {
   overflow: hidden;
   background: $background-color-alt;
@@ -19,6 +13,8 @@
 
 .l-results__main {
   @include column(12);
+
+  margin-top: $baseline-unit*4;
 
   @include respond-to($mq-l) {
     @include column(8);

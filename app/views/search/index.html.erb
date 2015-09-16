@@ -1,28 +1,12 @@
 <div class="l-constrained">
   <div class="l-results">
-    <p class="l-results__go-back"><%= link_to(t('search.go_back'), root_path) %></p>
     <div class="l-results__main">
       <%= heading_tag( t('search.page_title'), level: 1, class: 'l-results__heading') %>
-      <p class="t-order-notice">
-        <%= results_order_notice_for_form(@form) %>
-      </p>
     </div>
 
-    <div class="l-mobile-only">
-      <%= render partial: 'search/partials/search_filter', locals: {namespace: 'mobile'} %>
-    </div>
+    <%= render partial: 'search/partials/search_filter' %>
 
     <%= render partial: 'search/partials/results' %>
-
-    <div class="l-desktop-only t-visible-search-form">
-      <%= render partial: 'search/partials/search_filter', locals: {namespace: 'desktop'} %>
-    </div>
-
-
-    <div class="l-results__side">
-      <%= render partial: 'search/education_module', locals: { key: 'search.education_module_one' } %>
-      <%= render partial: 'search/education_module', locals: { key: 'search.education_module_two' } %>
-    </div>
 
     <%= render partial: 'search/partials/footer_links' %>
   </div>

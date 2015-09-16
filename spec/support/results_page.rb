@@ -6,8 +6,8 @@ class ResultsPage < SitePrism::Page
   set_url '/en/search{?params*}'
   set_url_matcher %r{/(en|cy)/search}
 
-  section :search_form, SearchFormSection, '.t-visible-search-form .form'
-  section :criteria, SearchCriteriaSection, '.t-visible-search-form .t-criteria'
+  section :search_form, SearchFormSection, '.t-search-result-form .form'
+  section :criteria, SearchCriteriaSection, '.t-search-result-form .t-criteria'
   sections :firms, FirmSection, 'li.t-firm'
 
   element :first_record, '.t-first-record'
@@ -16,7 +16,6 @@ class ResultsPage < SitePrism::Page
 
   element :errors, '.l-landing-page__validation'
   element :incorrect_criteria_message, '.t-incorrect-criteria'
-  element :order_notice, '.t-order-notice'
 
   def next_page
     first("a[rel='next']").click
