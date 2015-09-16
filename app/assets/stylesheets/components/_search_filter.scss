@@ -6,7 +6,7 @@
 
 .search-filter--container {
   @include row(12);
-  padding-top: $baseline-unit*6;
+  padding-top: $baseline-unit*3;
 }
 
 .search-filter__form {
@@ -15,7 +15,7 @@
 }
 
 .search-filter__heading {
-  @include body(16, 18);
+  @include body(22.4, 18);
   color: $search-filter-heading-color;
   background-color: $search-filter-heading-background-color;
   margin: 0;
@@ -110,8 +110,7 @@
   width: 100%;
   max-width: 200px;
   height: 42px;
-  border-radius: $search-filter-radius;
-  border: 1px solid $search-filter-border-color;
+  border: 1px solid $search-filter-input-border-color;
 }
 
 .search-filter__field--padded {

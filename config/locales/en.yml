@@ -246,7 +246,7 @@
     filter:
       heading: Refine your search
       receive_advice:
-        heading: Receive advice
+        heading: Find advisers who offer advice
         face_to_face: Face-to-face
         phone_online: Online/Telephone
         postcode_label: Postcode

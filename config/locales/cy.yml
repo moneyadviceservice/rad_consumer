@@ -225,7 +225,7 @@ cy:
     incorrect_search_criteria: "Cywirwch y broblem gyda'ch meini prawf chwilio a cheisiwch eto."
 
     filter:
-      heading: Chwiliwch yn fwy penodol
+      heading: -X-
       receive_advice:
         heading: Cael cyngor
         face_to_face: Wyneb yn wyneb

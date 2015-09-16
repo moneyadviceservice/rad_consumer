@@ -14,15 +14,16 @@
 .l-results__main {
   @include column(12);
 
-  margin-top: $baseline-unit*4;
-
   @include respond-to($mq-l) {
     @include column(8);
   }
 }
 
 .l-results__heading {
-  margin-top: 0;
+  @include column(12);
+
+  margin-top: $baseline-unit*4;
+  margin-bottom: $baseline-unit*4;
 }
 
 .l-results__side {
@@ -30,8 +31,6 @@
 
   @include respond-to($mq-l) {
     @include column(4);
-    float: right;
-    clear: right;
   }
 
   .education__button {
