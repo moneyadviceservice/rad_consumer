@@ -227,7 +227,6 @@
     in_person:
       heading: Find financial advisers who offer face-to-face advice
       postcode_label: Enter your postcode
-      button_text: Search
 
     remote:
       heading: Find advisers who offer advice by phone or online

@@ -208,7 +208,6 @@ cy:
     in_person:
       heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
       postcode_label: Eich cod post
-      button_text: Chwilio
 
     remote:
       heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
