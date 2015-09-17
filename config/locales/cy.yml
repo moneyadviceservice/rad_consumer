@@ -182,6 +182,7 @@ cy:
     landing_page:
       heading: Sut fath o help sydd ei angen arnoch?
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+      tooltip: -X-
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
@@ -189,21 +190,16 @@ cy:
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
       pension_transfer:
         heading: Trosglwyddo pensiwn cyfredol neu flaenorol
-        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
 
     options:
       options_when_paying_for_care:
         title: Dewisiadau wrth dalu am ofal
-        tooltip: Os hoffech chi, neu rywun yr ydych yn ei adnabod, ddysgu rhagor am dalu am ofal preswyl neu ofal yn y cartref, yna dewiswch yr opsiwn hwn. Nid yw pob cynghorydd yn gweithio yn y maes hwn, felly os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
       equity_release:
         title: Rhyddhau ecwiti
-        tooltip: Er mwyn medru rhoi cyngor i chi ar gynlluniau rhyddhau ecwiti, rhaid i gynghorwyr ariannol gael cymhwyster penodol. Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmnïau addas sydd â chynghorydd â’r cymwysterau gofynnol. Gallwch ddarllen rhagor am <a href="https://www.moneyadviceservice.org.uk/cy/articles/rhyddhau-ecwiti">ryddhau ecwiti yma</a>.
       inheritance_tax_planning:
         title: Cynllunio ar gyfer treth etifeddiant
-        tooltip: Os hoffech chi siarad â chynghorydd ariannol a all roi cymorth i chi gyda threth etifeddiaeth, dewiswch yr opsiwn hwn.  Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
       wills_and_probate:
         title: 'Ewyllysiau a phrofiant'
-        tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
 
     in_person:
       heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
