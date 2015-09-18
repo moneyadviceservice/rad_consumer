@@ -16,11 +16,16 @@
 
 .search-filter__heading {
   @include body(22.4, 18);
-  color: $search-filter-heading-color;
-  background-color: $search-filter-heading-background-color;
+  color: $search-filter-heading-color-mobile;
+  background-color: $search-filter-heading-background-color-mobile;
   margin: 0;
   padding: $baseline-unit*3;
   border-radius: 0;
+
+  @include respond-to($mq-m) {
+    color: $search-filter-heading-color;
+    background-color: $search-filter-heading-background-color;
+  }
 }
 
 .search-filter__heading--first {

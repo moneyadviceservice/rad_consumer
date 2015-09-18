@@ -98,10 +98,13 @@
 .l-results__summary {
   color: $result-summary-color;
   background-color: $result-summary-background-color;
-  margin: 0;
-  margin-bottom: $baseline-unit*3;
+  margin: $baseline-unit*3 0;
   padding: $baseline-unit*3;
   border-radius: $result-summary-radius;
+
+  @include respond-to($mq-m) {
+    margin-top: 0;
+  }
 }
 
 .l-results__summary-text {
