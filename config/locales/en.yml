@@ -201,7 +201,7 @@
     landing_page:
       heading: What do you need help with?
       instructions: Tick all that apply. If none apply leave blank.
-      tooltip: -X-
+      tooltip: -Tooltip text TBC-
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
