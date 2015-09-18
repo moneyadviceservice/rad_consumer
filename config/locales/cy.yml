@@ -227,6 +227,8 @@ cy:
         phone_online: Ffôn / Ar-lein
         postcode_label: Cod post
       button_text: Chwilio
+      remote:
+        tooltip: -Tooltip text TBC-
 
     page_title: -X-
     back_to_top: "Ewch i'r brig"

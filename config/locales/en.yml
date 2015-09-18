@@ -246,6 +246,8 @@
         phone_online: Online/Telephone
         postcode_label: Postcode
       button_text: Search
+      remote:
+        tooltip: -Tooltip text TBC-
 
     page_title: Find a retirement adviser
     back_to_top: Go to top
