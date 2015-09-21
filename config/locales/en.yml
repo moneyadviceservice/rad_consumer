@@ -259,10 +259,7 @@
     alphabetical_order_notice: Ordered alphabetically.
     distance_order_notice: Ordered by distance a firm’s nearest adviser is to you.
     summary_of_results:
-      showing: Showing
-      to: to
-      of: of
-      firms: firms
+      showing: "Showing %{first_record}-%{last_record} of %{total_records} firms"
 
     result:
       adviser: has an adviser

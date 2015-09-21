@@ -10,9 +10,7 @@ class ResultsPage < SitePrism::Page
   section :criteria, SearchCriteriaSection, '.t-visible-search-form .t-criteria'
   sections :firms, FirmSection, 'li.t-firm'
 
-  element :first_record, '.t-first-record'
-  element :last_record, '.t-last-record'
-  element :total_records, '.t-total-records'
+  element :summary, '.t-results-summary-text'
 
   element :errors, '.l-landing-page__validation'
   element :incorrect_criteria_message, '.t-incorrect-criteria'
@@ -23,19 +21,7 @@ class ResultsPage < SitePrism::Page
   end
 
   def showing_firms?(first, to:, of:)
-    first?(first) && last?(to) && total?(of)
-  end
-
-  def first?(n)
-    first_record.text == n.to_s
-  end
-
-  def last?(n)
-    last_record.text == n.to_s
-  end
-
-  def total?(n)
-    total_records.text == n.to_s
+    summary.text == "Showing #{first}-#{to} of #{of} firms"
   end
 
   def firm_names
