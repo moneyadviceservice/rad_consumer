@@ -102,7 +102,7 @@
   padding: $baseline-unit*3;
   border-radius: $result-summary-radius;
 
-  @include respond-to($mq-m) {
+  @include respond-to($mq-l) {
     margin-top: 0;
   }
 }
