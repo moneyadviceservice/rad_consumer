@@ -36,3 +36,35 @@
 @import 'components/video';
 
 @import 'print';
+
+// TEMPORARY XXX REMOVE THIS
+.new-icon {
+  .svg-icon {
+    background: pink;
+  }
+
+  .svg-icon-tick-mark,
+  .svg-icon-map-pin,
+  .svg-icon-computer-screen,
+  .svg-icon-house,
+  .svg-icon-telephone-ringing,
+  .svg-icon-map-pin-office {
+    fill: #61A612;
+  }
+
+  .svg-icon-telephone,
+  .svg-icon-envelope,
+  .svg-icon-offsite-link,
+  .svg-icon-tooltip,
+  .svg-icon-map-pin-adviser {
+    fill: #1F6FAA;
+  }
+}
+
+// Oh no. Need to be defined outside!!!
+.svg-icon-map-pin-office__circle {
+  stroke: #61A612;
+}
+.svg-icon-map-pin-adviser__circle {
+  stroke: #1F6FAA;
+}
