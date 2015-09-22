@@ -40,7 +40,7 @@
                   <div class="control-with-tooltip">
                     <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
                     <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
-                    <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
+                      <%= render 'shared/further_info_trigger' %>
                   </div>
                   <p class="is-hidden further-info__content" data-further-info-target><%= t('search.filter.remote.tooltip') %></p>
 
