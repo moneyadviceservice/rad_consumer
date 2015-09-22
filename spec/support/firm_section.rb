@@ -1,7 +1,4 @@
 class FirmSection < SitePrism::Section
-  elements :in_person_advice_methods, '.t-in-person-advice-method'
-  elements :other_advice_methods, '.t-other-advice-method'
-  elements :types_of_advice, '.t-type-of-advice'
   elements :qualifications, '.t-qualification'
   elements :accreditations, '.t-accreditation'
 

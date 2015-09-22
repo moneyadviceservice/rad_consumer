@@ -30,9 +30,6 @@ RSpec.feature 'Consumer views a search result',
       given_an_indexed_firm_and_associated_adviser
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
-      and_i_see_the_firms_contact_details
-      and_i_see_the_where_the_firm_offers_advice
-      and_i_see_the_types_of_advice_the_firm_offers
       and_i_see_the_firms_minimum_pot_size
       and_i_see_the_firms_minimum_fee
       and_i_see_whether_the_firm_offers_free_initial_meetings
@@ -72,29 +69,6 @@ RSpec.feature 'Consumer views a search result',
 
   def then_i_see_the_indexed_firm
     expect(@displayed_firm = results_page.firms.first).to be
-  end
-
-  def and_i_see_the_firms_contact_details
-    expect(@displayed_firm.address_line_one).to eq(firm.address_line_one)
-    expect(@displayed_firm.address_town).to eq(firm.address_town)
-    expect(@displayed_firm.address_county).to eq(firm.address_county)
-    expect(@displayed_firm.address_postcode).to eq(firm.address_postcode)
-    expect(@displayed_firm.website_address).to be
-    expect(@displayed_firm.email_address).to be
-
-    # telephone_number is a sentence containing the name and phone number
-    expect(@displayed_firm.telephone_number)
-      .to include(firm.registered_name)
-      .and include('020 8252 4727')
-  end
-
-  def and_i_see_the_where_the_firm_offers_advice
-    expect(@displayed_firm).to have_in_person_advice_methods(count: 2)
-    expect(@displayed_firm).to have_other_advice_methods(count: 2)
-  end
-
-  def and_i_see_the_types_of_advice_the_firm_offers
-    expect(@displayed_firm).to have_types_of_advice(count: 6)
   end
 
   def and_i_see_the_firms_minimum_pot_size
