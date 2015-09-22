@@ -300,18 +300,6 @@
         telephone_number: Telephone
         telephone_number_sr_text: Telephone %{firm_name} on
 
-      recieve_advice:
-        heading: Receive advice
-      type_of_advice:
-        heading: Type of advice
-        types:
-          retirement_income_products: Pension pot(s)/savings
-          pension_transfer: Transferring a pension
-          options_when_paying_for_care: Paying for care
-          equity_release: Equity release
-          inheritance_tax_planning: Inheritance tax planning
-          wills_and_probate: 'Wills & probate'
-
     keywords:
       free_initial_meeting:
         title: Free initial meeting

@@ -300,24 +300,6 @@ cy:
         telephone_number: Ffôn
         telephone_number_sr_text: Ffoniwch %{firm_name} ar
 
-      recieve_advice:
-        heading: Cael cyngor
-        items:
-          - text: Yn eich cartref
-          - text: Yn swyddfa’r cwmni
-          - text: Yn rhywle a gytunwyd
-          - text: Ar-lein
-          - text: Ffôn
-      type_of_advice:
-        heading: Math o gyngor
-        types:
-          retirement_income_products: 'Cronfa(feydd) / cynilion pensiwn'
-          pension_transfer: Trosglwyddo pensiwn
-          options_when_paying_for_care: Talu am ofal
-          equity_release: Rhyddhau ecwiti
-          inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
-          wills_and_probate: Ewyllysiau a phrofiant
-
     keywords:
       free_initial_meeting:
         title: Cyfarfod cychwynnol am ddim
