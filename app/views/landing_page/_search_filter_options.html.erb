@@ -1,7 +1,7 @@
 <fieldset data-further-info>
   <legend class="search-filter__label">
     <%= t("search_filter.landing_page.heading") %>
-    <a href="" class="further-info__trigger" data-further-info-trigger><%= t('learn_more') %></a>
+    <%= render 'shared/further_info_trigger' %>
   </legend>
   <p class="is-hidden further-info__content" data-further-info-target><%= t('search_filter.landing_page.tooltip') %></p>
   <% if search_filter_options_description? %>

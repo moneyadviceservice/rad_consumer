@@ -133,9 +133,6 @@
   page_title: Retirement adviser directory
   beta_tag: Beta
 
-  learn_more: '?'
-  learn_more_hidden_text: (click this link and further information will appear directly below)
-
   trust_banner:
     heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or have already retired.
     items:

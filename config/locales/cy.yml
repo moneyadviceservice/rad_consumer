@@ -114,9 +114,6 @@ cy:
   page_title: Cyfeirlyfr cynghorydd ymddeoliad
   beta_tag: Beta
 
-  learn_more: '?'
-  learn_more_hidden_text: (click this link and further information will appear directly below)
-
   trust_banner:
     heading: Dewch o hyd i gynghorydd ariannol i roi cymorth i chi wrth gynllunio’ch ymddeoliad, pa un ai’ch bod yn ystyried ymddeol yn unig neu wedi gwneud hynny’n barod.
     items:
