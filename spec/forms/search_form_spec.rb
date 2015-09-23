@@ -232,6 +232,62 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#search_results_sort_options' do
+    let(:form) { described_class.new }
+
+    context 'remote search performed' do
+      subject do
+        form.search_type = 'remote'
+        form.search_results_sort_options
+      end
+
+      it 'has only two sort options' do
+        expect(subject.length).to eq(2)
+      end
+
+      it 'includes alphabetic sorting option' do
+        alphabetic_option = subject[0]
+        expect(alphabetic_option.first).to eq('Sorted by A-Z')
+        expect(alphabetic_option.last).to eq('alphabetic_ascending')
+      end
+
+      it 'includes reverse alphabetic sorting option' do
+        reverse_alphabetic_option = subject[1]
+        expect(reverse_alphabetic_option.first).to eq('Sorted by Z-A')
+        expect(reverse_alphabetic_option.last).to eq('alphabetic_decending')
+      end
+    end
+
+    context 'postcode search performed' do
+      subject do
+        form.search_type = 'postcode'
+        form.search_results_sort_options
+      end
+
+      it 'has only two sort options' do
+        expect(subject.length).to eq(3)
+      end
+
+      it 'includes distance sorting option' do
+        distance_option = subject[0]
+        expect(distance_option.first).to eq('Sorted by distance')
+        expect(distance_option.last).to eq('distance')
+      end
+
+      it 'includes alphabetic sorting option' do
+        alphabetic_option = subject[1]
+        expect(alphabetic_option.first).to eq('Sorted by A-Z')
+        expect(alphabetic_option.last).to eq('alphabetic_ascending')
+      end
+
+      it 'includes reverse alphabetic sorting option' do
+        reverse_alphabetic_option = subject[2]
+        expect(reverse_alphabetic_option.first).to eq('Sorted by Z-A')
+        expect(reverse_alphabetic_option.last).to eq('alphabetic_decending')
+      end
+    end
+  end
+
   describe '#to_query' do
     let(:serializer) { double }
     let(:form) { described_class.new }

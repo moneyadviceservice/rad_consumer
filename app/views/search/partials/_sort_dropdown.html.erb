@@ -1,0 +1,5 @@
+<%= form_for @form, url: search_path, method: :get, html: { class: 'form search-filter__form', novalidate: true }, builder: Dough::Forms::Builders::Validation do |f| %>
+
+  <% previous_sort_type ='remote' %>
+  <%= f.select :sort_order, @form.search_results_sort_options %>
+<% end %>

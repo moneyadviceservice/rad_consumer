@@ -22,6 +22,8 @@ class SearchForm
                 :coordinates,
                 :pension_pot_size,
                 :advice_methods,
+                :sort_order,
+                :search_type,
                 :firm_id,
                 *TYPES_OF_ADVICE
 
@@ -61,6 +63,16 @@ class SearchForm
 
   def pension_transfer
     retirement_income_products? ? @pension_transfer : '0'
+  end
+
+  def search_results_sort_options
+    results = []
+
+    results << ['Sorted by distance', 'distance'] if search_type == 'postcode'
+    results << ['Sorted by A-Z', 'alphabetic_ascending']
+    results << ['Sorted by Z-A', 'alphabetic_decending']
+
+    results
   end
 
   def types_of_advice
