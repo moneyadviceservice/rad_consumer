@@ -125,7 +125,7 @@ cy:
         tooltip: Golyga hyn y bydd raid i gynghorwyr gasglu digon o wybodaeth gennych er mwyn medru cynnig argymhelliad personol. Os gwelwch yn y pen draw bod yr argymhelliad yn anaddas, gallwch gwyno yn gyntaf wrth gwmni’r cynghorydd ac yna wrth yr Ombwdsmon Ariannol os caiff eich cwyn ei gwrthod. Diogelir cynghorwyr sydd ar y gofrestr gan Gynllun Iawndal y Gwasanaethau Ariannol hefyd sy’n golygu y gallwch hawlio iawndal os collwch eich arian o ganlyniad uniongyrchol i’r cynghorydd fynd i’r wal.
       - text: Gall pob un o’r cynghorwyr sydd ar y cyfeirlyfr gynnig gwasanaeth gan ystod eang o ddarparwyr.
 
-  rad_signup_link: Cofrestru neu fewngofnodi fel cwmni ar y cyfeiriadur
+  rad_signup_link: -X-
 
   find_retirement_adviser:
     heading: Dod o hyd i gynghorydd ariannol

@@ -144,7 +144,7 @@
         tooltip: This means advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the adviser’s firm and then to the Financial Ombudsman if your complaint is rejected. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
       - text: All the advisers on the directory can choose from a wide range of providers.
 
-  rad_signup_link: Register or sign in as a firm on the directory
+  rad_signup_link: Sign up or login as an adviser firm
 
   find_retirement_adviser:
     heading: Find a financial adviser
