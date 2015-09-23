@@ -136,7 +136,7 @@
   learn_more_hidden_text: (click this link and further information will appear directly below)
 
   trust_banner:
-    heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or have already retired.
+    heading: Search our directory of regulated advisers
     items:
       - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
         tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
