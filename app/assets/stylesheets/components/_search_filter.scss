@@ -15,11 +15,11 @@
 }
 
 .search-filter__heading {
-  @include body(22.4, 18);
+  @include body(22.4, 29);
   color: $search-filter-heading-color-mobile;
   background-color: $search-filter-heading-background-color-mobile;
   margin: 0;
-  padding: $baseline-unit*3;
+  padding: $baseline-unit*2 $baseline-unit*3;
   border-radius: 0;
 
   @include respond-to($mq-m) {
