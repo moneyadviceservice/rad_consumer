@@ -112,7 +112,6 @@ cy:
         url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
 
   page_title: -X-
-  beta_tag: Beta
 
   learn_more: '?'
   learn_more_hidden_text: (click this link and further information will appear directly below)
