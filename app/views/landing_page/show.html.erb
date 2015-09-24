@@ -66,9 +66,9 @@
   </div>
 </div>
 
-<section class="l-constrained">
+<div class="l-constrained">
   <div class="l-landing-page__with-border">
-    <div class="l-landing-page__2col l-landing-page__2col--right">
+    <div class="l-landing-page__2col">
       <%= heading_tag(t('more_reasons.heading'), level: 2) %>
 
       <ul class="list-benefits">
@@ -84,11 +84,12 @@
       <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5LbktkByOeo?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p class="video__description"><%= t('more_reasons.video.description') %></p>
-      <a class="video__transcript-link" target="_blank" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
+      <p class="video__description"><%= t('more_reasons.video.description') %>
+        <a class="video__transcript-link" target="_blank" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
+      </p>
     </div>
   </div>
-</section>
+</div>
 
 <div class="l-constrained">
   <section class="l-landing-page__3col">
