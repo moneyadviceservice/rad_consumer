@@ -1,7 +1,8 @@
 .advert {
   @include clearfix();
   padding: 0 $advert-padding;
-  margin: $baseline-unit*6 0;
+  /*margin: $baseline-unit*6 0;*/
+  margin: $baseline-unit*15.2 0 $baseline-unit*6 0;
   background-color: $advert-background-color;
 }
 

@@ -129,7 +129,7 @@ cy:
   find_retirement_adviser:
     heading: Dod o hyd i gynghorydd ariannol
     description: Gall cynghorwyr ariannol gynnig cyngor yn bersonol, ar-lein neu dros y ffôn. Sut hoffech chi gael eich cyngor?
-    subheading: Pam defnyddio cynghorydd ariannol?
+    subheading: -X-
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)

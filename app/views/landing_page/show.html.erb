@@ -39,16 +39,15 @@
 <div class="l-constrained">
   <div class="l-landing-page__with-border">
     <section class="l-landing-page__2col">
-      <!-- TEMPORARY FILLER -->
-    </section>
-    <section class="l-landing-page__2col">
       <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
       <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMnVaQeFqk?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
-      <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
-
+      <p class="video__description"><%= t('find_retirement_adviser.video.description') %>
+        <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+      </p>
+    </section>
+    <section class="l-landing-page__2col">
       <div class="advert">
         <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
         <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
