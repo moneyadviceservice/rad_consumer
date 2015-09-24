@@ -15,15 +15,22 @@ $pagination-icon-color: #010202;
 $pagination-text-color: $color-black;
 
 $result-radius: 5px;
-$result-border-color: $color-grey-normal;
+$result-border-color: $background-color;
 $result-heading-color: $color-black;
 $result-padding: $baseline-unit*2;
 
+$result-summary-background-color: $background-color;
+$result-summary-color: $color-black;
+$result-summary-radius: 5px;
+
 $search-filter-background-color: $color-white;
 $search-filter-radius: 5px;
-$search-filter-border-color: $color-grey-normal;
-$search-filter-heading-background-color: $color-black-two;
-$search-filter-heading-color: $color-white;
+$search-filter-border-color: $background-color;
+$search-filter-input-border-color: $color-grey-normal;
+$search-filter-heading-background-color-mobile: $color-blue-medium;
+$search-filter-heading-color-mobile: $color-white;
+$search-filter-heading-background-color: $background-color;
+$search-filter-heading-color: $color-black;
 $search-filter-icon-color: $color-white;
 $search-filter-padding: $baseline-unit*4;
 $search-filter-label-color: $color-black;

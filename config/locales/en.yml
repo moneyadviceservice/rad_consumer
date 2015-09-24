@@ -227,7 +227,6 @@
     in_person:
       heading: Find financial advisers who offer face-to-face advice
       postcode_label: Enter your postcode
-      button_text: Search
 
     remote:
       heading: Find advisers who offer advice by phone or online
@@ -241,28 +240,22 @@
     index:
       title_tag: 'Search results | Retirement Adviser Directory'
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
-    go_back: Go back
     incorrect_search_criteria: Please correct the problem with your search criteria and try again.
 
     filter:
       heading: Refine your search
       receive_advice:
-        heading: Receive advice
+        heading: Find advisers who offer advice
         face_to_face: Face-to-face
         phone_online: Online/Telephone
         postcode_label: Postcode
       button_text: Search
 
-    page_title: Search results
+    page_title: Find a retirement adviser
     back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
-    alphabetical_order_notice: Ordered alphabetically.
-    distance_order_notice: Ordered by distance a firm’s nearest adviser is to you.
     summary_of_results:
-      showing: Showing
-      to: to
-      of: of
-      firms: firms
+      showing: "Showing %{first_record}-%{last_record} of %{total_records} nearest advisers"
 
     result:
       adviser: has an adviser

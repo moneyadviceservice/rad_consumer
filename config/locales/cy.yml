@@ -208,7 +208,6 @@ cy:
     in_person:
       heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
       postcode_label: Eich cod post
-      button_text: Chwilio
 
     remote:
       heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
@@ -222,11 +221,10 @@ cy:
     index:
       title_tag: Canlyniadau chwilio | Cyfeirlyfr Cynghorydd Ymddeoliad
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
-    go_back: Mynd yn ôl
     incorrect_search_criteria: "Cywirwch y broblem gyda'ch meini prawf chwilio a cheisiwch eto."
 
     filter:
-      heading: Chwiliwch yn fwy penodol
+      heading: -X-
       receive_advice:
         heading: Cael cyngor
         face_to_face: Wyneb yn wyneb
@@ -234,16 +232,11 @@ cy:
         postcode_label: Cod post
       button_text: Chwilio
 
-    page_title: Canlyniadau chwilio
+    page_title: -X-
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
-    alphabetical_order_notice: Rhestrwyd yn nhrefn yr wyddor.
-    distance_order_notice: Rhestrwyd yn ôl pellter, sef pa mor agos yw cynghorydd cwmni atoch chi.
     summary_of_results:
-      showing: Yn dangos
-      to: i
-      of: o
-      firms: cwmnïau
+      showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} -X-"
 
     result:
       adviser: mae gan gynghorydd
