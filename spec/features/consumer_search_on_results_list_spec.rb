@@ -62,7 +62,6 @@ RSpec.feature 'Consumer views advice filters on search results page',
     landing_page.load
     landing_page.in_person.tap do |section|
       section.postcode.set 'G1 5QT'
-      section.equity_release.set(true)
       section.search.click
     end
   end
@@ -87,6 +86,7 @@ RSpec.feature 'Consumer views advice filters on search results page',
   end
 
   def when_i_amend_some_of_the_filters
+    results_page.criteria.equity_release.set(true)
     results_page.criteria.wills_and_probate.set(true)
     results_page.criteria.equity_release.set(false)
   end

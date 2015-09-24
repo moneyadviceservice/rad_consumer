@@ -11,6 +11,8 @@ ruby '2.2.2'
 
 gem 'rails', '~> 4.2'
 
+gem 'launchy'
+
 gem 'active_model_serializers'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',

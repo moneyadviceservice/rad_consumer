@@ -13,7 +13,6 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       when_i_submit_the_search
       then_i_am_shown_firms_that_can_advise_on_pension_pots
@@ -27,7 +26,6 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       when_i_submit_the_search
@@ -42,7 +40,6 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       and_i_indicate_that_i_would_like_to_transfer_my_pension
@@ -94,8 +91,6 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
       f.phone_or_online.set false
 
       f.postcode.set nil
-      f.phone.set false
-      f.online.set false
 
       f.retirement_income_products.set false
       f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
@@ -109,11 +104,6 @@ RSpec.feature 'Results page, consumer requires help with their pension over the 
 
   def and_i_select_phone_or_online_advice
     results_page.search_form.phone_or_online.set true
-  end
-
-  def and_i_select_the_phone_and_or_online_advice_methods
-    results_page.search_form.phone.set true
-    results_page.search_form.online.set true
   end
 
   def and_i_indicate_that_i_need_help_with_my_pension_pot

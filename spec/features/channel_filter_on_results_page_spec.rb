@@ -53,17 +53,6 @@ RSpec.feature 'Consumer views channel filters on search results page',
     end
   end
 
-  scenario 'Consumer changes advice method to remote without selecting remote advice type' do
-    with_elastic_search! do
-      given_some_firms_were_indexed
-      and_i_have_performed_an_in_person_search_from_the_landing_page
-      when_i_select_remote_advice_without_providing_type
-      and_i_submit_the_sidebar_search_form
-      then_i_am_on_the_landing_page
-      and_a_validation_error_message_is_displayed
-    end
-  end
-
   def given_some_firms_were_indexed
     with_fresh_index! do
       @phone_firm = create(:firm, registered_name: 'The Willers Ltd', in_person_advice_methods: [], other_advice_methods: [phone_advice])
@@ -85,17 +74,14 @@ RSpec.feature 'Consumer views channel filters on search results page',
     landing_page.load
     landing_page.in_person.tap do |section|
       section.postcode.set 'G1 5QT'
-      section.equity_release.set(true)
       section.search.click
     end
   end
 
   def and_i_have_performed_a_remote_search_from_the_landing_page
     landing_page.load
-    landing_page.remote.tap do |section|
-      section.online.set(true)
-      section.search.click
-    end
+    landing_page.search_filter.phone_or_online.set true
+    landing_page.search_filter.search.click
   end
 
   def when_i_select_a_remote_advice_method
@@ -108,7 +94,6 @@ RSpec.feature 'Consumer views channel filters on search results page',
 
   def when_i_select_remote_advice
     results_page.criteria.remote_advice.set(true)
-    results_page.criteria.online.set(true)
   end
 
   def when_i_select_face_to_face_advice_without_providing_postcode
@@ -128,7 +113,7 @@ RSpec.feature 'Consumer views channel filters on search results page',
   end
 
   def when_i_select_a_remote_advice_method
-    landing_page.remote.online.set(true)
+    landing_page.search_filter.phone_or_online.set(true)
   end
 
   def when_i_select_face_to_face_advice
@@ -141,7 +126,7 @@ RSpec.feature 'Consumer views channel filters on search results page',
   end
 
   def and_i_submit_the_remote_search_form
-    landing_page.remote.search.click
+    landing_page.search_filter.search.click
   end
 
   def then_i_am_on_results_page
@@ -150,7 +135,6 @@ RSpec.feature 'Consumer views channel filters on search results page',
 
   def and_i_see_remote_advice_method_selected
     expect(results_page.criteria.remote_advice).to be_checked
-    expect(results_page.criteria.online).to be_checked
   end
 
   def and_i_see_face_to_face_advice_method_selected
@@ -166,7 +150,9 @@ RSpec.feature 'Consumer views channel filters on search results page',
   end
 
   def and_only_remote_firms_are_displayed
-    expect(results_page.firm_names).to contain_exactly(@online_firm.registered_name)
+    expect(results_page.firm_names.length).to eq(2)
+    expect(results_page.firm_names).to include(@phone_firm.registered_name)
+    expect(results_page.firm_names).to include(@online_firm.registered_name)
   end
 
   def and_only_in_person_firms_are_displayed

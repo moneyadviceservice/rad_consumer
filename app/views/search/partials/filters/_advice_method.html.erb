@@ -17,13 +17,8 @@
     <%= f.errors_for :advice_methods %>
 
     <div class="form__group-item">
-      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
+      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online t-remote' %>
       <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
-
-      <div class="search-filter__item-inset is-hidden">
-        <%= f.hidden_field :advice_methods_1, value: "1", name: 'search_form[advice_methods][]' %>
-        <%= f.hidden_field :advice_methods_2, value: "2", name: 'search_form[advice_methods][]' %>
-      </div>
     </div>
   <% end %>
 </div>

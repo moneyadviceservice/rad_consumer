@@ -25,18 +25,18 @@ RSpec.feature 'Results page, consumer requires advice on various topics in perso
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true)
+      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'first')
       @leicester = create(:adviser, firm: @first, latitude: 52.633013, longitude: -1.131257)
 
-      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true)
+      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'second')
       @glasgow = create(:adviser, firm: @second, latitude: 55.856191, longitude: -4.247082)
 
-      @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true)
+      @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true, registered_name: 'exluded')
       create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
 
       #  This firm isn't strictly needed here. If something was wrong an extra result (this one)
       #  would appear and so it would break a results count test somewhere.
-      create(:firm_with_no_business_split, retirement_income_products_flag: true) do |f|
+      create(:firm_with_no_business_split, retirement_income_products_flag: true, registered_name: 'extra') do |f|
         create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
       end
     end
@@ -54,15 +54,11 @@ RSpec.feature 'Results page, consumer requires advice on various topics in perso
 
   def and_i_clear_any_filters_from_the_previous_search
     results_page.search_form.tap do |f|
+      f.postcode.set nil
       f.face_to_face.set false
       f.phone_or_online.set false
-
-      f.postcode.set nil
-      f.phone.set false
-      f.online.set false
-
-      f.retirement_income_products.set false
       f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
+      f.retirement_income_products.set false
       f.pension_transfer.set false
       f.options_when_paying_for_care.set false
       f.equity_release.set false
