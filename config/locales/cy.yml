@@ -160,7 +160,7 @@ cy:
   retirement_income_options:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
-    link_text: Ystyried eich dewisiadau
+    link_text: -X-
     link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
 
   useful_links:
