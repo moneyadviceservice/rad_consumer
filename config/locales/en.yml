@@ -146,8 +146,7 @@
   rad_signup_link: Sign up or login as an adviser firm
 
   find_retirement_adviser:
-    heading: Find a financial adviser
-    description: Financial advisers can provide advice in person, online or by phone. How would you like to receive your advice?
+    heading: How do you want to receive advice?
     subheading: Why use a retirement adviser?
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
@@ -221,15 +220,6 @@
       wills_and_probate:
         title: 'Wills &amp; probate'
         tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
-
-    in_person:
-      heading: Find financial advisers who offer face-to-face advice
-      postcode_label: Enter your postcode
-
-    remote:
-      heading: Find advisers who offer advice by phone or online
-      online: Online
-      phone: Phone
 
   search: &search
     errors:

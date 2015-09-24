@@ -127,8 +127,7 @@ cy:
   rad_signup_link: -X-
 
   find_retirement_adviser:
-    heading: Dod o hyd i gynghorydd ariannol
-    description: Gall cynghorwyr ariannol gynnig cyngor yn bersonol, ar-lein neu dros y ffôn. Sut hoffech chi gael eich cyngor?
+    heading: -X-
     subheading: -X-
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
@@ -202,15 +201,6 @@ cy:
       wills_and_probate:
         title: 'Ewyllysiau a phrofiant'
         tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
-
-    in_person:
-      heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
-      postcode_label: Eich cod post
-
-    remote:
-      heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
-      online: Ar-lein
-      phone: Ffôn
 
   search: &search
     errors:

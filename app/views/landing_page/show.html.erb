@@ -13,9 +13,8 @@
 
 <div class="l-landing-page__find-adviser">
   <div class="l-constrained">
-    <section class="l-landing-page__2col">
-      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
-      <p><%= t('find_retirement_adviser.description') %></p>
+    <section class="l-landing-page__2col search-filter l-landing-page__search-filter">
+      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2, class: 'l-landing-page__search-filter__header') %>
 
       <%= render 'landing_page/search_filter' %>
     </section>

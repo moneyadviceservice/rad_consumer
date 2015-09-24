@@ -67,9 +67,16 @@
 
 .l-landing-page__find-adviser {
   background: linear-gradient(to bottom, white, $background-color);
-  /*background-color: $background-color;*/
+}
+
+.l-landing-page__search-filter {
+  background-color: $background-color;
 }
 
 .l-landing-page__advice-reasons {
   background-color: $background-color;
+}
+
+.l-landing-page__search-filter__header {
+  margin-left: $baseline-unit*3;
 }
