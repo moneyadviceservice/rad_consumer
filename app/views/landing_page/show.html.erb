@@ -13,7 +13,10 @@
   </div>
   <div class="l-landing-page__with-border">
     <section class="l-landing-page__2col">
-      <!-- TEMPORARY FILLER -->
+      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
+      <p><%= t('find_retirement_adviser.description') %></p>
+
+      <%= render 'landing_page/search_filter' %>
     </section>
     <section class="l-landing-page__2col">
       <h2><%= t('trust_banner.heading') %></h2>
@@ -36,12 +39,8 @@
 <div class="l-constrained">
   <div class="l-landing-page__with-border">
     <section class="l-landing-page__2col">
-      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
-      <p><%= t('find_retirement_adviser.description') %></p>
-
-      <%= render 'landing_page/search_filter' %>
+      <!-- TEMPORARY FILLER -->
     </section>
-
     <section class="l-landing-page__2col">
       <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
       <div class="video-wrapper">
