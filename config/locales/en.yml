@@ -137,9 +137,8 @@
     heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or have already retired.
     items:
       - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
-        tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
+        tooltip: All the advisers and firms on the Money Advice Service Directory are regulated and authorised by the Financial Conduct Authority (FCA), which is the UK’s financial regulator.  The FCA sets rules that firms employing financial advisers must follow when providing advice and selling financial products.  This means you are covered if things go wrong and firms and can be fined or shut down if they break the rules.  Regulated financial advisers must have a certain level of qualifications before they can practice which are also set by the FCA.
       - text: All the advisers on the directory offer personalised financial advice.
-        tooltip: This means advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the adviser’s firm and then to the Financial Ombudsman if your complaint is rejected. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
       - text: All the advisers on the directory can choose from a wide range of providers.
 
   rad_signup_link: Register or sign in as a firm on the directory
