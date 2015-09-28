@@ -198,7 +198,7 @@
     landing_page:
       heading: What do you need help with?
       instructions: Tick all that apply. If none apply leave blank.
-      tooltip: -Tooltip text TBC-
+      tooltip: Some areas of financial advice require the adviser to hold additional qualifications (for example, certain pension transfers) and  some advisers choose to specialise in particular areas.  If you can indicate the type of advice you are looking for, this will help us match you to a firm which has an adviser who can meet your needs.  Feel free to tick any box that applies.  If the advice you are looking for isn’t covered here, then just leave this section blank.
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
@@ -239,12 +239,11 @@
       heading: Refine your search
       receive_advice:
         heading: Find advisers who offer advice
+        tooltip: Many advisers meet with customers in-person. Others only provide advice remotely (e.g. by telephone or Skype). Remote advice offers convenience for customers and all advisers listed here offering remote advice are fully regulated.
         face_to_face: Face-to-face
         phone_online: Online/Telephone
         postcode_label: Postcode
       button_text: Search
-      remote:
-        tooltip: -Tooltip text TBC-
 
     page_title: Find a retirement adviser
     back_to_top: Go to top
