@@ -240,8 +240,8 @@
       receive_advice:
         heading: Find advisers who offer advice
         tooltip: Many advisers meet with customers in-person. Others only provide advice remotely (e.g. by telephone or Skype). Remote advice offers convenience for customers and all advisers listed here offering remote advice are fully regulated.
-        face_to_face: Face-to-face
-        phone_online: Online/Telephone
+        face_to_face: In-person
+        phone_online: Remotely
         postcode_label: Postcode
       button_text: Search
 
