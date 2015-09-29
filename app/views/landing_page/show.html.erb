@@ -19,7 +19,7 @@
       <%= render 'landing_page/search_filter' %>
     </section>
     <section class="l-landing-page__2col">
-      <h2><%= t('trust_banner.heading') %></h2>
+      <%= heading_tag(t('trust_banner.heading'), level: 2, class: 'l-landing-page__trust-banner__header') %>
 
       <ul class="list-benefits banner-list">
         <% t('trust_banner.items').each do |item| %>

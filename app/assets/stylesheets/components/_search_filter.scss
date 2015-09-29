@@ -1,5 +1,6 @@
 .search-filter {
-  border-radius: $search-filter-radius;
+  border-top-left-radius: $search-filter-radius;
+  border-top-right-radius: $search-filter-radius;
   border: 1px solid  $search-filter-border-color;
   overflow: hidden;
 }
