@@ -29,7 +29,9 @@
 }
 
 .l-landing-page__2col--padded {
-  margin-top: $baseline-unit*8;
+  @include respond-to($mq-m) {
+    margin-top: $baseline-unit*8;
+  }
 }
 
 .l-landing-page__with-border {
@@ -69,7 +71,9 @@
 }
 
 .l-landing-page__why-adviser {
-  margin-bottom: $baseline-unit*6;
+  @include respond-to($mq-m) {
+    margin-bottom: $baseline-unit*6;
+  }
 }
 
 .l-landing-page__search-filter {
@@ -84,7 +88,9 @@
 .l-landing-page__advice-reasons {
   background-color: $background-color;
   color: $color-black;
-  padding-bottom: $baseline-unit*6;
+  @include respond-to($mq-m) {
+    padding-bottom: $baseline-unit*6;
+  }
 }
 
 .l-landing-page__search-filter__header {
@@ -98,9 +104,31 @@
 }
 
 .l-landing-page__section-header {
-  @include body(32, 36);
+  @include respond-to($mq-m) {
+    @include body(32, 36);
+  }
 }
 
 .l-landing-page__other-information {
   color: $color-black;
+}
+
+.l-landing-page__registration{
+  display: none;
+  visibility: hidden;
+
+  @include respond-to($mq-m) {
+    display: block;
+    visibility: visible;
+  }
+}
+
+.advice-reasons__explaination {
+  display: none;
+  visibility: hidden;
+
+  @include respond-to($mq-m) {
+    display: inline;
+    visibility: visible;
+  }
 }
