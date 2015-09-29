@@ -19,7 +19,7 @@
       <%= render 'landing_page/search_filter' %>
     </section>
     <section class="l-landing-page__2col">
-      <%= heading_tag(t('trust_banner.heading'), level: 2, class: 'l-landing-page__trust-banner__header') %>
+      <%= heading_tag(t('trust_banner.heading'), level: 2, class: 'l-landing-page__trust-banner__header l-landing-page__section-header') %>
 
       <ul class="list-benefits banner-list">
         <% t('trust_banner.items').each do |item| %>
@@ -36,38 +36,40 @@
   </div>
 </div>
 
-<div class="l-constrained">
-  <section class="l-landing-page__2col">
-    <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
-    <div class="video-wrapper">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMnVaQeFqk?rel=0" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <p class="video__description"><%= t('find_retirement_adviser.video.description') %>
-      <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
-    </p>
-  </section>
-  <section class="l-landing-page__2col">
-    <div class="advert">
-      <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
-      <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
-      <% t('pension_wise.description').each do |item| %>
-        <p class="advert__intro"><%= raw item[:text] %></p>
-      <% end %>
-    </div>
-
-    <section data-education-module>
-      <%= heading_tag(level: 3, class: 'education__heading', data: { education_module_heading: '' }) do %>
-        <span class="education__heading-text"><%= t('workplace_scheme.question') %></span>
-      <% end %>
-      <p class="is-hidden education__content" data-education-module-target><%= t('workplace_scheme.tooltip') %></p>
+<div class="l-landing-page__why-adviser">
+  <div class="l-constrained">
+    <section class="l-landing-page__2col">
+      <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2, class: 'l-landing-page__section-header') %>
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMnVaQeFqk?rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="video__description"><%= t('find_retirement_adviser.video.description') %>
+        <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+      </p>
     </section>
-  </section>
+    <section class="l-landing-page__2col">
+      <div class="advert">
+        <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'advert__header') %>
+        <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
+        <% t('pension_wise.description').each do |item| %>
+          <p class="advert__intro"><%= raw item[:text] %></p>
+        <% end %>
+      </div>
+
+      <section data-education-module>
+        <%= heading_tag(level: 3, class: 'education__heading', data: { education_module_heading: '' }) do %>
+          <span class="education__heading-text"><%= t('workplace_scheme.question') %></span>
+        <% end %>
+        <p class="is-hidden education__content" data-education-module-target><%= t('workplace_scheme.tooltip') %></p>
+      </section>
+    </section>
+  </div>
 </div>
 
 <div class="l-landing-page__advice-reasons">
   <div class="l-constrained">
     <div class="l-landing-page__2col">
-      <%= heading_tag(t('more_reasons.heading'), level: 2) %>
+      <%= heading_tag(t('more_reasons.heading'), level: 2, class: 'l-landing-page__section-header') %>
 
       <ul class="list-benefits">
         <% t('more_reasons.key_points').each do |item| %>
@@ -89,28 +91,30 @@
   </div>
 </div>
 
-<div class="l-constrained">
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <ul class="unstyled-list">
-      <% t('useful_links.links').each do |item| %>
-        <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
-      <% end %>
-    </ul>
-  </section>
+<div class="l-landing-page__other-information">
+  <div class="l-constrained">
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <ul class="unstyled-list">
+        <% t('useful_links.links').each do |item| %>
+          <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
+        <% end %>
+      </ul>
+    </section>
 
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <ul class="list-benefits">
-      <% t('our_promise.key_points').each do |item| %>
-        <li><%= item[:text] %></li>
-      <% end %>
-    </ul>
-  </section>
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <ul class="list-benefits">
+        <% t('our_promise.key_points').each do |item| %>
+          <li><%= item[:text] %></li>
+        <% end %>
+      </ul>
+    </section>
 
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <p><%= t('retirement_income_options.content') %></p>
-    <a  href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
-  </section>
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <p><%= t('retirement_income_options.content') %></p>
+      <a  href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
+    </section>
+  </div>
 </div>
