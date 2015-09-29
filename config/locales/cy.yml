@@ -179,6 +179,8 @@ cy:
     landing_page:
       heading: Sut fath o help sydd ei angen arnoch?
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+      remote:
+        description: -X-
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill

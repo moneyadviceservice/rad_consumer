@@ -13,6 +13,7 @@
       <fieldset class="form__group search-filter__section">
 
         <%= render partial: 'search/partials/filters/advice_method', locals: {f: f} %>
+        <div class="search-filter__remote-description"><%= t('search_filter.landing_page.remote.description') %></div>
         <%= render 'shared/search_button', button_class: "search-filter__button" %>
       </fieldset>
     </div>
