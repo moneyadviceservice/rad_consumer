@@ -79,11 +79,13 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm.address_town).to eq(firm.address_town)
     expect(@displayed_firm.address_county).to eq(firm.address_county)
     expect(@displayed_firm.address_postcode).to eq(firm.address_postcode)
-
-    expect(@displayed_firm.telephone_number).to include firm.registered_name
-    expect(@displayed_firm.telephone_number).to include '020 8252 4727'
     expect(@displayed_firm.website_address).to be
     expect(@displayed_firm.email_address).to be
+
+    # telephone_number is a sentence containing the name and phone number
+    expect(@displayed_firm.telephone_number)
+      .to include(firm.registered_name)
+      .and include('020 8252 4727')
   end
 
   def and_i_see_the_where_the_firm_offers_advice
