@@ -10,6 +10,10 @@
   padding-top: $baseline-unit*3;
 }
 
+.search-filter--container .l-results__filter {
+  width: 100%;
+}
+
 .search-filter__form {
   // override Dough class 'form'
   margin-top: 0;
@@ -120,4 +124,5 @@
 
 .search-filter__remote-description {
   margin-left: $baseline-unit*4.2;
+  margin-bottom: $baseline-unit*4;
 }

@@ -1,14 +1,16 @@
 <div class="l-constrained">
-  <section class="l-landing-page__2col">
-    <%= heading_tag(level: 1, class: 'l-landing-page__title') do %>
-      <%= t('page_title') %>
-    <% end %>
-  </section>
-  <section class="l-landing-page__2col l-landing-page__registration">
-    <div class="l-landing-page__register-link">
-      <%= link_to t('rad_signup_link'), rad_signup_url %>
+  <div class="l-2col">
+    <div class="l-2col-main">
+      <%= heading_tag(level: 1, class: 'l-landing-page__title') do %>
+        <%= t('page_title') %>
+      <% end %>
     </div>
-  </section>
+    <div class="l-2col-side">
+      <div class="l-landing-page__register-link">
+        <%= link_to t('rad_signup_link'), rad_signup_url %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="l-landing-page__find-adviser">
