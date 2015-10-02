@@ -138,10 +138,10 @@
   trust_banner:
     heading: Search our directory of regulated advisers
     items:
-      - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
+      - text: All advisers are authorised and regulated by the Financial Conduct Authority (FCA)
         tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
-      - text: All the advisers on the directory offer personalised financial advice.
-      - text: All the advisers on the directory can choose from a wide range of providers.
+      - text: All advisers offer personalised financial advice
+      - text: All advisers can choose from a wide range of providers
 
   rad_signup_link: Sign up or login as an adviser firm
 
@@ -236,8 +236,8 @@
       heading: Refine your search
       receive_advice:
         heading: Find advisers who offer advice
-        face_to_face: Face-to-face
-        phone_online: Online/Telephone
+        face_to_face: In-person
+        phone_online: Remotely
         postcode_label: Postcode
       button_text: Search
 
