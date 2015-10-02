@@ -4,9 +4,9 @@ RSpec.feature 'Consumer views a search result',
   let(:results_page) { ResultsPage.new }
 
   let(:principal) { create(:principal) }
-  let(:firm) do
+  let(:firm_without_offices) do
     create(:firm_with_no_business_split,
-           telephone_number: '02082524727',
+           :without_offices,
            website_address: 'http://www.example.com',
            principal: principal,
            free_initial_meeting: true,
@@ -20,6 +20,9 @@ RSpec.feature 'Consumer views a search result',
            in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
            other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
            investment_sizes: [1, 2].map { |i| create(:investment_size, id: i, order: i) })
+  end
+  let(:firm) do
+    firm_without_offices.tap { |f| create(:office, telephone_number: '02082524727', firm: f) }
   end
 
   scenario 'Viewing a single Firm result in English' do
@@ -76,11 +79,13 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm.address_town).to eq(firm.address_town)
     expect(@displayed_firm.address_county).to eq(firm.address_county)
     expect(@displayed_firm.address_postcode).to eq(firm.address_postcode)
-
-    expect(@displayed_firm.telephone_number).to include firm.registered_name
-    expect(@displayed_firm.telephone_number).to include '020 8252 4727'
     expect(@displayed_firm.website_address).to be
     expect(@displayed_firm.email_address).to be
+
+    # telephone_number is a sentence containing the name and phone number
+    expect(@displayed_firm.telephone_number)
+      .to include(firm.registered_name)
+      .and include('020 8252 4727')
   end
 
   def and_i_see_the_where_the_firm_offers_advice
