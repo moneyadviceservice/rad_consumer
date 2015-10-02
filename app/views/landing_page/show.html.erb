@@ -70,7 +70,7 @@
 
 <div class="l-landing-page__advice-reasons">
   <div class="l-constrained">
-    <div class="l-landing-page__2col">
+    <div class="l-landing-page__2col is-hidden-on-mobile">
       <%= heading_tag(t('more_reasons.heading'), level: 2, class: 'l-landing-page__section-header') %>
 
       <ul class="list-benefits">
@@ -82,7 +82,10 @@
       <p class="advice-reasons__explaination"><%= t('more_reasons.guides_html') %></p>
     </div>
 
-    <div class="l-landing-page__2col l-landing-page__2col--padded">
+    <div class="l-landing-page__2col">
+    <%= heading_tag(t('more_reasons.heading'),
+          level: 2, class: 'l-landing-page__section-header') %>
+
       <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5LbktkByOeo?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
@@ -90,6 +93,17 @@
         <a class="video__transcript-link" target="_blank" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
       </p>
     </div>
+
+    <div class="l-landing-page__2col is-hidden-on-non-mobile">
+      <ol class="list-numbers">
+        <% t('more_reasons.key_points').each do |item| %>
+          <li><%= item[:text] %></li>
+        <% end %>
+      </ol>
+
+      <p class="advice-reasons__explaination"><%= t('more_reasons.guides_html') %></p>
+    </div>
+
   </div>
 </div>
 

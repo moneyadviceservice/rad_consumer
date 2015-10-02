@@ -17,3 +17,14 @@
     }
   }
 }
+
+.is-hidden-on-non-mobile {
+  display: none;
+
+  .js & {
+    display: block;
+    @include respond-to($mq-m) {
+      display: none;
+    }
+  }
+}
