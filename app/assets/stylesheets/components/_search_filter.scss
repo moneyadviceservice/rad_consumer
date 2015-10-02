@@ -105,8 +105,9 @@
 .search-filter__field[type="text"] {
   width: 100%;
   max-width: 200px;
-  height: 42px;
+  height: 34px;
   border: 1px solid $search-filter-input-border-color;
+  padding-left: $baseline-unit*2;
 }
 
 .search-filter__field--padded {

@@ -220,6 +220,7 @@ cy:
         face_to_face: -X-
         phone_online: -X-
         postcode_label: Cod post
+        postcode_placeholder: -X-
       button_text: Chwilio
 
     page_title: -X-

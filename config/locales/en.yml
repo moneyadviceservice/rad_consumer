@@ -239,6 +239,7 @@
         face_to_face: In-person
         phone_online: Remotely
         postcode_label: Postcode
+        postcode_placeholder: Enter a postcode
       button_text: Search
 
     page_title: Find a retirement adviser
