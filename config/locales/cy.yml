@@ -223,7 +223,11 @@ cy:
         face_to_face: Wyneb yn wyneb
         phone_online: Ffôn / Ar-lein
         postcode_label: Cod post
-        tooltip: -Tooltip text TBC-
+        tooltip:
+        - text: -X-
+        - text: -X-
+        - text: -X-
+        - text: -X-
       button_text: Chwilio
 
     page_title: -X-

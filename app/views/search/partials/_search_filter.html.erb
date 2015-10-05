@@ -17,7 +17,13 @@
         <div class="l-results__filter">
           <fieldset class="form__group search-filter__section" data-further-info>
             <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %><%= render 'shared/further_info_trigger' %></legend>
-            <p class="is-hidden further-info__content" data-further-info-target><%= t('search.filter.receive_advice.tooltip') %></p>
+            <p class="is-hidden further-info__content" data-further-info-target>
+              <% t('search.filter.receive_advice.tooltip').each do |item| %>
+                <%= item[:text] %>
+                <br/>
+                <br/>
+              <% end %>
+            </p>
 
             <div class="l-results__form-row" data-results-filter>
               <%= f.form_row(:postcode) do %>
