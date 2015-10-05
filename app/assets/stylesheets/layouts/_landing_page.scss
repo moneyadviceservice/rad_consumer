@@ -150,22 +150,22 @@
 }
 
 .list-numbers > li {
-    position:relative;
-    margin:0 0 $baseline-unit $baseline-unit*3;
-    padding:4px 8px;
-    list-style:none;
-}
-.list-numbers > li:before {
-    content:counter(li);
-    counter-increment:li;
-    @include body(22,28);
-    color: $color-green-secondary;
-    position:absolute;
-    top:-2px;
-    left: -$baseline-unit*3;
-    margin-right:$baseline-unit;
-    padding:4px;
-    font-weight:bold;
-    text-align:center;
+  position:relative;
+  margin:0 0 $baseline-unit $baseline-unit*3;
+  padding:4px 8px;
+  list-style:none;
 }
 
+.list-numbers > li:before {
+  content:counter(li);
+  counter-increment:li;
+  @include body(22,28);
+  color: $color-green-secondary;
+  position:absolute;
+  top:-2px;
+  left: -$baseline-unit*3;
+  margin-right:$baseline-unit;
+  padding:4px;
+  font-weight:bold;
+  text-align:center;
+}
