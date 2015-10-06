@@ -214,7 +214,6 @@ cy:
     filter:
       heading: -X-
       receive_advice:
-        heading: Cael cyngor
         face_to_face: -X-
         phone_online: -X-
         postcode_label: Cod post

@@ -233,7 +233,6 @@
     filter:
       heading: Refine your search
       receive_advice:
-        heading: Find advisers who offer advice
         face_to_face: In-person
         phone_online: By phone / online
         postcode_label: Postcode
