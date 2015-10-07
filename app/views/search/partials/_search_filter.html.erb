@@ -15,8 +15,15 @@
 
       <div class="search-filter--container is-hidden-on-mobile" data-results-module-target="closed">
         <div class="l-results__filter">
-          <fieldset class="form__group search-filter__section">
-            <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %></legend>
+          <fieldset class="form__group search-filter__section" data-further-info>
+            <legend class="search-filter__label search-filter__label--padded"><%= t('search.filter.receive_advice.heading') %><%= render 'shared/further_info_trigger' %></legend>
+            <p class="is-hidden further-info__content" data-further-info-target>
+              <% t('search.filter.receive_advice.tooltip').each do |item| %>
+                <%= item[:text] %>
+                <br/>
+                <br/>
+              <% end %>
+            </p>
 
             <div class="l-results__form-row" data-results-filter>
               <%= f.form_row(:postcode) do %>
@@ -37,8 +44,10 @@
                 <%= f.errors_for :advice_methods %>
 
                 <div class="form__group-item">
-                  <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online', data: { results_filter_trigger: '2' } %>
-                  <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
+                  <div class="control-with-tooltip">
+                    <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online' %>
+                    <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE %>
+                  </div>
 
                   <div class="search-filter__item-inset is-hidden" data-results-filter-target="1">
                     <%= f.collection_check_boxes(:advice_methods, remote_advice_methods, :id, :name) do |advice_method| %>
