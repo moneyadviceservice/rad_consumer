@@ -2,6 +2,13 @@
   // Unused parent class
 }
 
+.further-info__svg-icon {
+  width: $further-info-icon-width;
+  height: $further-info-icon-height;
+  padding: 2px 1px 0 1px;
+  fill: $further-info-background-color;
+}
+
 .further-info__content {
   @include body(14, 24);
   border-left: 5px solid $further-info-border-color;
@@ -10,7 +17,7 @@
   margin-bottom: $baseline-unit*6;
 }
 
-.further-info__content p {
+.further-info__paragraph {
   @include body(14, 24);
 }
 

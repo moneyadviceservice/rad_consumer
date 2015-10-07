@@ -5,13 +5,6 @@
   overflow: hidden;
 }
 
-.svg-icon-tooltip {
-  width: $further-info-icon-width;
-  height: $further-info-icon-height;
-  padding: 2px 1px 0 1px;
-  fill: $further-info-background-color;
-}
-
 .search-filter--container {
   @include row(12);
   padding-top: $baseline-unit*3;
