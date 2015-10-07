@@ -234,7 +234,7 @@
       heading: Refine your search
       receive_advice:
         face_to_face: In-person
-        phone_online: By phone / online
+        phone_online: Phone or online only
         postcode_label: Postcode
         postcode_placeholder: Enter a postcode
       button_text: Search
