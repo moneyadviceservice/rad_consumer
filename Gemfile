@@ -11,8 +11,6 @@ ruby '2.2.2'
 
 gem 'rails', '~> 4.2'
 
-gem 'launchy'
-
 gem 'active_model_serializers'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
@@ -36,6 +34,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'launchy'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop'
