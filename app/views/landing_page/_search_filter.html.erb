@@ -1,4 +1,4 @@
-<%= form_for @form, url: search_path, method: :get, html: { class: 'search-filter__form form t-in-person', novalidate: true }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
+<%= form_for @form, url: search_path, method: :get, html: { class: 'form form--collapse t-in-person', novalidate: true }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
   <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
 
   <%= content_for :validation_summary do %>

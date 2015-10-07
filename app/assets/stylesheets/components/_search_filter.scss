@@ -21,9 +21,9 @@
   width: 100%;
 }
 
-.search-filter__form {
-  // override Dough class 'form'
-  margin-top: 0;
+.search-filter__form_row--shrink-margin-bottom {
+  // override Dough class 'form_row'
+  margin-bottom: $baseline-unit*4;
 }
 
 .search-filter__heading {
@@ -138,6 +138,7 @@
 }
 
 .search-filter__divider {
-  width: 90%;
-  margin: $baseline-unit*4 auto;
+  width: 96%;
+  display: block;
+  margin: $baseline-unit*4 0;
 }
