@@ -5,7 +5,7 @@
   background-color: $advert-background-color;
 
   @include respond-to($mq-m) {
-    margin-top: $baseline-unit*15.2;
+    margin-top: $baseline-unit*15.5;
   }
 }
 

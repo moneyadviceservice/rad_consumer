@@ -75,6 +75,12 @@
   color: $search-filter-label-color;
 }
 
+.search-filter__label--padded {
+  @include respond-to($mq-m) {
+    padding-right: $baseline-unit*4;
+  }
+}
+
 .search-filter__label-instructions {
   @include body(14, 24);
   margin-top: -$baseline-unit;

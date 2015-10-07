@@ -141,10 +141,10 @@
         tooltip: This means advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the adviser’s firm and then to the Financial Ombudsman if your complaint is rejected. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
       - text: All advisers can choose from a wide range of providers
 
-  rad_signup_link: Sign up or login as an adviser firm
+  rad_signup_link: Register or login as a firm on the directory
 
   find_retirement_adviser:
-    heading: How would you like to recieve advice?
+    heading: How would you like to receive advice?
     subheading: Why use a retirement adviser?
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
@@ -184,6 +184,10 @@
     links:
       - text: Choosing a financial adviser
         url: 'https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser'
+      - text: Checklist - preparing for retirement
+        url: 'https://www.moneyadviceservice.org.uk/en/articles/checklist-things-to-do-as-retirement-approaches'
+      - text: Options for using your pension pot
+        url: 'https://www.moneyadviceservice.org.uk/en/articles/options-for-using-your-pension-pot'
 
   our_promise:
     heading: Our promise to you
@@ -235,7 +239,7 @@
           - text: Many financial advisers will meet in you in person either at their office, your home, or a place convenient to you.   If you prefer to meet your adviser face-to-face then you should choose the ‘in-person’ option and give your postcode.
           - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
           - text: Or you can contact advisers offering both options to compare service and costs.
-          - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.   For more see Is all advice the same [link to guide]
+          - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       button_text: Search
 
     page_title: Find a retirement adviser

@@ -165,6 +165,10 @@ cy:
     links:
       - text: Dewis cynghorydd ariannol
         url: 'https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol'
+      - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
+        url: 'https://www.moneyadviceservice.org.uk/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
+      - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
+        url: 'https://www.moneyadviceservice.org.uk/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
 
   our_promise:
     heading: Ein haddewid i chi

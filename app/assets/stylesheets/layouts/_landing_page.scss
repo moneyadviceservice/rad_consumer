@@ -84,7 +84,7 @@
   background-color: $background-color;
 }
 
-.l-landing-page__search-filter label{
+.l-landing-page__search-filter .search-filter__advice-label{
   font-weight: bold;
   color: $color-black;
 }
@@ -115,7 +115,7 @@
 
 .l-landing-page__section-header {
   @include respond-to($mq-m) {
-    @include body(30, 34);
+    @include body(30, 38);
   }
 }
 
@@ -123,7 +123,7 @@
   color: $color-black;
 }
 
-.l-landing-page__registration{
+.l-landing-page__registration {
   display: none;
   visibility: hidden;
 
