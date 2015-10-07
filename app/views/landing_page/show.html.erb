@@ -26,7 +26,7 @@
           <li data-further-info>
             <%= raw item[:text] %>
             <% if item[:tooltip] %>
-              <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              <%= render 'shared/further_info_trigger' %>
               <p class="is-hidden further-info__content" data-further-info-target><%= item[:tooltip] %></p>
             <% end %>
           </li>
