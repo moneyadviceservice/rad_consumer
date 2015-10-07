@@ -12,6 +12,6 @@ class RemoteSection < SitePrism::Section
   element :wills_and_probate, '.t-wills_and_probate'
 
   def invalid_advice_methods?
-    has_css?('.field_with_errors .t-advice_methods')
+    has_css?('.field_with_errors')
   end
 end

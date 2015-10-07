@@ -2,7 +2,7 @@ $background-color: $color-grey-pale;
 $background-color-alt: $color-blue-light;
 
 $advert-background-color: $color-grey-pale;
-$advert-padding: $baseline-unit*4;
+$advert-padding: $baseline-unit*3;
 $advert-image-width: 200px;
 
 $back-to-top-icon-color: $color-blue-medium;
@@ -26,7 +26,7 @@ $result-summary-radius: 5px;
 $search-filter-background-color: $color-white;
 $search-filter-radius: 5px;
 $search-filter-border-color: $background-color;
-$search-filter-input-border-color: $color-grey-normal;
+$search-filter-input-border-color: $color-black;
 $search-filter-heading-background-color-mobile: $color-blue-medium;
 $search-filter-heading-color-mobile: $color-white;
 $search-filter-heading-background-color: $background-color;
@@ -36,3 +36,5 @@ $search-filter-padding: $baseline-unit*4;
 $search-filter-label-color: $color-black;
 
 $color-link-blue: $color-blue-medium;
+$background-gradient-color: #f9fafa;
+

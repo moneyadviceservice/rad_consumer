@@ -1,6 +1,6 @@
 RSpec.describe FirmsController, type: :controller do
   let!(:firm) { FactoryGirl.create(:firm) }
-  let(:search_form_params) { { 'postcode' => 'EC1N 2TD' } }
+  let(:search_form_params) { { 'advice_method' => SearchForm::ADVICE_METHOD_FACE_TO_FACE, 'postcode' => 'EC1N 2TD' } }
   let(:firm_result_1) { double }
   let(:firm_result_2) { double }
   let(:firm_repository) { double }

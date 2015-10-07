@@ -3,9 +3,13 @@
 }
 
 .education__heading {
-  @include body(18, 24);
+  @include body(22, 28);
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: $baseline-unit*4;
+
+  @include respond-to($mq-m) {
+    margin-bottom: 0;
+  }
 }
 
 .education__heading-text {

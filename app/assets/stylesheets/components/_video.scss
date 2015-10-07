@@ -6,3 +6,7 @@
 .video__transcript-link {
   @include body(16, 24);
 }
+
+.video__description {
+  color: $color-black;
+}

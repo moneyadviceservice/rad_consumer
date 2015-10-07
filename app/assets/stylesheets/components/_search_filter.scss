@@ -1,5 +1,6 @@
 .search-filter {
-  border-radius: $search-filter-radius;
+  border-top-left-radius: $search-filter-radius;
+  border-top-right-radius: $search-filter-radius;
   border: 1px solid  $search-filter-border-color;
   overflow: hidden;
 }
@@ -7,6 +8,10 @@
 .search-filter--container {
   @include row(12);
   padding-top: $baseline-unit*3;
+}
+
+.search-filter--container .l-results__filter {
+  width: 100%;
 }
 
 .search-filter__form {
@@ -33,15 +38,6 @@
   border-top-right-radius: $search-filter-radius;
 }
 
-.search-filter__heading--second {
-  border-top: 1px solid $color-white;
-}
-
-.js .search-filter__heading-text {
-  display: block;
-  padding-left: 28px;
-}
-
 .search-filter__heading-trigger {
   background: transparent;
   text-align: left;
@@ -60,10 +56,6 @@
 .search-filter__section {
   padding-left: $baseline-unit*3;
   padding-right: $baseline-unit*3;
-}
-
-.search-filter__section--padded {
-  margin-top: $baseline-unit*6;
 }
 
 .search-filter--border {
@@ -99,6 +91,7 @@
 }
 
 .search-filter__button {
+  margin-top: $baseline-unit*4;
   margin-bottom: $baseline-unit*3;
 }
 
@@ -113,41 +106,13 @@
 .search-filter__field[type="text"] {
   width: 100%;
   max-width: 200px;
-  height: 42px;
+  height: 34px;
   border: 1px solid $search-filter-input-border-color;
+  padding-left: $baseline-unit*2;
 }
 
 .search-filter__field--padded {
   margin-bottom: $baseline-unit*4;
-}
-
-.search-filter__triangle-icon {
-  display: none;
-
-  .js & {
-    display: block;
-    float: left;
-
-    &:before {
-      @include inline-block();
-      position: relative;
-      top: 0px;
-      left: 4px;
-      content: '';
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 8px 0 8px 10px;
-      border-color: transparent transparent transparent $search-filter-icon-color;
-    }
-  }
-}
-
-.js .search-filter__triangle-icon--down:before {
-  top: -2px;
-  left: 0;
-  border-width: 10px 8px 0 8px;
-  border-color: $search-filter-icon-color transparent transparent transparent;
 }
 
 .search-filter__item-inset {
@@ -157,4 +122,9 @@
 
 .search-filter__constrained {
   max-width: 250px;
+}
+
+.search-filter__divider {
+  width: 90%;
+  margin: $baseline-unit*4 auto;
 }
