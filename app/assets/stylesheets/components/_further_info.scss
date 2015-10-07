@@ -10,6 +10,10 @@
   margin-bottom: $baseline-unit*6;
 }
 
+.further-info__content p {
+  @include body(14, 24);
+}
+
 .further-info__trigger {
   display: none;
 
