@@ -1,0 +1,26 @@
+.list-numbers {
+  counter-reset: li;
+  padding-left: 0;
+  margin: 0 0 $baseline-unit*2 0;
+}
+
+.list-numbers > li {
+  position: relative;
+  margin: 0 0 $baseline-unit $baseline-unit*3;
+  padding: 4px 8px;
+  list-style: none;
+}
+
+.list-numbers > li:before {
+  @include body(22,28);
+  content: counter(li);
+  counter-increment: li;
+  color: $list-numbers-list-style-color;
+  position: absolute;
+  top: -2px;
+  left: -$baseline-unit*3;
+  margin-right: $baseline-unit;
+  padding: 4px;
+  font-weight: bold;
+  text-align: center;
+}
