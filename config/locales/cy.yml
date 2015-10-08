@@ -206,6 +206,8 @@ cy:
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
 
     options:
+      retirement_income_products:
+        title: -X-
       pension_transfer:
         title: Trosglwyddo pensiwn cyfredol neu flaenorol
       options_when_paying_for_care:

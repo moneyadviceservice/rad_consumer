@@ -7,7 +7,7 @@ class SearchFormSection < SitePrism::Section
   element :phone, '.t-advice-method-1'
   element :online, '.t-advice-method-2'
 
-  element :retirement_income_products, '.t-retirement-income-products'
+  element :retirement_income_products, '.t-retirement_income_products'
   element :pension_pot_size, '.t-pension-pot-size'
   element :pension_transfer, '.t-pension_transfer'
   element :options_when_paying_for_care, '.t-options_when_paying_for_care'
