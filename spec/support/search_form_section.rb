@@ -14,4 +14,5 @@ class SearchFormSection < SitePrism::Section
   element :equity_release, '.t-equity_release'
   element :inheritance_tax_planning, '.t-inheritance_tax_planning'
   element :wills_and_probate, '.t-wills_and_probate'
+  element :qualifications_and_accreditations, '.t-qualifications-and-accreditations'
 end
