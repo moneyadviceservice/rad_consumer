@@ -203,7 +203,8 @@
       tooltip: Some areas of financial advice require the adviser to hold additional qualifications (for example, certain pension transfers) and  some advisers choose to specialise in particular areas.  If you can indicate the type of advice you are looking for, this will help us match you to a firm which has an adviser who can meet your needs.  Feel free to tick any box that applies.  If the advice you are looking for isn’t covered here, then just leave this section blank.
 
     pension_pot:
-      heading: My pension pot(s)/other savings or investments
+      heading: What is your pension pot / investment size?
+      tooltip: Not all financial advisers provide advice for all levels of pension pots, savings or investments. If you can provide an estimate of how much you have in your pension pot and other savings/investments, we can match you with a firm who can help you.
       pension_pot_size: Select pension pot(s) / savings amount
       any_size_option: I don't know / don't wish to say
 
