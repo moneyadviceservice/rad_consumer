@@ -3,6 +3,11 @@
   padding-bottom: $baseline-unit*8;
 }
 
+.l-landing-page__1col--alt-spacing {
+  @include column(12);
+  margin-top: $baseline-unit*2;
+}
+
 .l-landing-page__2col {
   @include column(12);
   margin-top: $baseline-unit*2;
@@ -131,4 +136,8 @@
     display: block;
     visibility: visible;
   }
+}
+
+.l-landing-page--margin-collapse-bottom {
+  margin-bottom: 0;
 }
