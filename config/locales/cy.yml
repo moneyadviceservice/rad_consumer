@@ -187,10 +187,10 @@ cy:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
       pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
-      pension_transfer:
-        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
 
     options:
+      pension_transfer:
+        title: Trosglwyddo pensiwn cyfredol neu flaenorol
       options_when_paying_for_care:
         title: Dewisiadau wrth dalu am ofal
       equity_release:
