@@ -209,6 +209,8 @@
       any_size_option: I don't know / don't wish to say
 
     options:
+      retirement_income_products:
+        title: Pension pot / other savings or investments
       pension_transfer:
         title: Transferring a current or previous pension
       options_when_paying_for_care:
