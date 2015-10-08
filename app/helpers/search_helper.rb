@@ -12,7 +12,7 @@ module SearchHelper
   end
 
   def search_filter_options(form, page_name)
-    render partial: 'landing_page/search_filter_options', locals: { f: form, page_name: page_name }
+    render 'search/partials/filters/specialism_options', f: form, page_name: page_name
   end
 
   def render_logo(id, kind)
