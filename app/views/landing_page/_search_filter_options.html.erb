@@ -23,13 +23,6 @@
           <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading' %>
           <%= f.select :pension_pot_size, @form.pension_pot_sizes, { selected: (page_name == 'landing_page' ? SearchForm::ANY_SIZE_VALUE : @form.pension_pot_size), include_blank: false }, { class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
         </div>
-
-        <div class="form__group-item">
-          <%= f.check_box :pension_transfer, class: 't-pension-transfer form__group-input search-filter__checkbox' %>
-          <%= f.label :pension_transfer, class: 'search-filter__option' do %>
-            <%= t('search_filter.pension_pot.pension_transfer.heading') %>
-          <% end %>
-        </div>
       </div>
     </div>
 
