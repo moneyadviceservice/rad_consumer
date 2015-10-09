@@ -1,21 +1,35 @@
 <div class="l-constrained">
-  <div class="l-landing-page__with-border">
-    <section class="l-landing-page__1col">
+  <div class="l-2col">
+    <div class="l-2col-main">
       <%= heading_tag(level: 1, class: 'l-landing-page__title') do %>
         <%= t('page_title') %>
-        <sup class="beta-tag"><%= t('beta_tag') %></sup>
       <% end %>
-      <div class="l-landing-page__register-link">
-        <%= link_to t('rad_signup_link'), rad_signup_url %>
-      </div>
-      <p><%= t('trust_banner.heading') %></p>
+    </div>
+    <div class="l-2col-side l-landing-page__register-link">
+      <%= link_to t('rad_signup_link'), rad_signup_url %>
+    </div>
+  </div>
+</div>
+
+<div class="l-landing-page__find-adviser">
+  <div class="l-constrained">
+    <section class="l-landing-page__2col search-filter l-landing-page__search-filter t-search-filter" data-further-info>
+      <h2 class="l-landing-page__search-filter__header">
+        <%= t('find_retirement_adviser.heading') %>
+        <%= render 'shared/further_info_trigger' %>
+      </h2>
+      <%= render 'shared/further_info_content' %>
+      <%= render 'landing_page/search_filter' %>
+    </section>
+    <section class="l-landing-page__2col">
+      <%= heading_tag(t('trust_banner.heading'), level: 2, class: 'l-landing-page__trust-banner__header l-landing-page__section-header') %>
 
       <ul class="list-benefits banner-list">
         <% t('trust_banner.items').each do |item| %>
           <li data-further-info>
             <%= raw item[:text] %>
             <% if item[:tooltip] %>
-              <a class="further-info__trigger" href="" data-further-info-trigger><%= t('learn_more') %><span class="visually-hidden"><%= t('learn_more_hidden_text') %></span></a>
+              <%= render 'shared/further_info_trigger' %>
               <p class="is-hidden further-info__content" data-further-info-target><%= item[:tooltip] %></p>
             <% end %>
           </li>
@@ -25,26 +39,22 @@
   </div>
 </div>
 
-<div class="l-constrained">
-  <div class="l-landing-page__with-border">
+<div class="l-landing-page__why-adviser">
+  <div class="l-constrained">
     <section class="l-landing-page__2col">
-      <%= heading_tag(t('find_retirement_adviser.heading'), level: 2) %>
-      <p><%= t('find_retirement_adviser.description') %></p>
-
-      <%= render 'landing_page/search_filter' %>
-    </section>
-
-    <section class="l-landing-page__2col">
-      <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2) %>
+      <%= heading_tag(t('find_retirement_adviser.subheading'), level: 2, class: 'l-landing-page__section-header') %>
       <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMnVaQeFqk?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p class="video__description"><%= t('find_retirement_adviser.video.description') %></p>
-      <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
-
+      <p class="video__description">
+        <%= t('find_retirement_adviser.video.description') %>
+        <a class="video__transcript-link" target="_blank" href="<%= t('find_retirement_adviser.video.download_transcript_link') %>"><%= t('find_retirement_adviser.video.download_transcript_text') %></a>
+      </p>
+    </section>
+    <section class="l-landing-page__2col">
       <div class="advert">
+        <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'advert__header') %>
         <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
-        <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'heading-extra-small') %>
         <% t('pension_wise.description').each do |item| %>
           <p class="advert__intro"><%= raw item[:text] %></p>
         <% end %>
@@ -60,10 +70,10 @@
   </div>
 </div>
 
-<section class="l-constrained">
-  <div class="l-landing-page__with-border">
-    <div class="l-landing-page__2col l-landing-page__2col--right">
-      <%= heading_tag(t('more_reasons.heading'), level: 2) %>
+<div class="l-landing-page__advice-reasons">
+  <div class="l-constrained">
+    <div class="l-landing-page__2col is-hidden-on-mobile">
+      <%= heading_tag(t('more_reasons.heading'), level: 2, class: 'l-landing-page__section-header') %>
 
       <ul class="list-benefits">
         <% t('more_reasons.key_points').each do |item| %>
@@ -71,41 +81,58 @@
         <% end %>
       </ul>
 
-      <p><%= t('more_reasons.guides_html') %></p>
+      <p class="advice-reasons__explaination"><%= t('more_reasons.guides_html') %></p>
     </div>
 
-    <div class="l-landing-page__2col l-landing-page__2col--padded">
+    <div class="l-landing-page__2col">
+      <%= heading_tag(t('more_reasons.heading'), level: 2, class: 'l-landing-page__section-header') %>
+
       <div class="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/5LbktkByOeo?rel=0" frameborder="0" allowfullscreen></iframe>
       </div>
-      <p class="video__description"><%= t('more_reasons.video.description') %></p>
-      <a class="video__transcript-link" target="_blank" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
+      <p class="video__description">
+        <%= t('more_reasons.video.description') %>
+        <a class="video__transcript-link" target="_blank" href="<%= t('more_reasons.video.download_transcript_link') %>"><%= t('more_reasons.video.download_transcript_text') %></a>
+      </p>
     </div>
+
+    <div class="l-landing-page__2col is-hidden-on-non-mobile">
+      <ol class="list-numbers">
+        <% t('more_reasons.key_points').each do |item| %>
+          <li><%= item[:text] %></li>
+        <% end %>
+      </ol>
+
+      <p class="advice-reasons__explaination"><%= t('more_reasons.guides_html') %></p>
+    </div>
+
   </div>
-</section>
+</div>
 
-<div class="l-constrained">
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <ul class="unstyled-list">
-      <% t('useful_links.links').each do |item| %>
-        <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
-      <% end %>
-    </ul>
-  </section>
+<div class="l-landing-page__other-information">
+  <div class="l-constrained">
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <ul class="unstyled-list">
+        <% t('useful_links.links').each do |item| %>
+          <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
+        <% end %>
+      </ul>
+    </section>
 
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <ul class="list-benefits">
-      <% t('our_promise.key_points').each do |item| %>
-        <li><%= item[:text] %></li>
-      <% end %>
-    </ul>
-  </section>
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('our_promise.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <ul class="list-benefits">
+        <% t('our_promise.key_points').each do |item| %>
+          <li><%= item[:text] %></li>
+        <% end %>
+      </ul>
+    </section>
 
-  <section class="l-landing-page__3col">
-    <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
-    <p><%= t('retirement_income_options.content') %></p>
-    <a class="button button--primary l-landing-page__button " href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
-  </section>
+    <section class="l-landing-page__3col">
+      <%= heading_tag(t('retirement_income_options.heading'), level: 2, class: 'l-landing-page__heading') %>
+      <p><%= t('retirement_income_options.content') %></p>
+      <a href="<%= t('retirement_income_options.link_url') %>" target="_blank"><%= t('retirement_income_options.link_text') %></a>
+    </section>
+  </div>
 </div>

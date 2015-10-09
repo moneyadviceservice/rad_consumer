@@ -1,0 +1,9 @@
+.advice-reasons__explaination {
+  display: none;
+  visibility: hidden;
+
+  @include respond-to($mq-m) {
+    display: inline;
+    visibility: visible;
+  }
+}

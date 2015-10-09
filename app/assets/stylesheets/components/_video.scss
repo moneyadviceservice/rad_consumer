@@ -1,8 +1,12 @@
 .video-wrapper {
-  margin-top: $baseline-unit*2;
+  margin: $baseline-unit*2 0 $baseline-unit*4;
 }
 
 .video__description,
 .video__transcript-link {
   @include body(16, 24);
+}
+
+.video__description {
+  color: $color-black;
 }

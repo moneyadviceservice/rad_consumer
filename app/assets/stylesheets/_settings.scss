@@ -2,14 +2,23 @@ $background-color: $color-grey-pale;
 $background-color-alt: $color-blue-light;
 
 $advert-background-color: $color-grey-pale;
-$advert-padding: $baseline-unit*4;
+$advert-padding: $baseline-unit*3;
 $advert-image-width: 200px;
+$advert-intro-color: $color-black;
 
 $back-to-top-icon-color: $color-blue-medium;
 
 $further-info-border-color: #3c97bf;
 $further-info-background-color: $color-blue-medium;
 $further-info-text-color: $color-white;
+
+$further-info-icon-width: 20px;
+$further-info-icon-height: 20px;
+$further-info-background-color: $color-blue-medium;
+
+$landing-page-find-adviser-gradient-color: #f9fafa;
+
+$list-numbers-list-style-color: $color-green-secondary;
 
 $pagination-icon-color: #010202;
 $pagination-text-color: $color-black;
@@ -26,7 +35,7 @@ $result-summary-radius: 5px;
 $search-filter-background-color: $color-white;
 $search-filter-radius: 5px;
 $search-filter-border-color: $background-color;
-$search-filter-input-border-color: $color-grey-normal;
+$search-filter-input-border-color: $color-black;
 $search-filter-heading-background-color-mobile: $color-blue-medium;
 $search-filter-heading-color-mobile: $color-white;
 $search-filter-heading-background-color: $background-color;

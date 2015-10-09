@@ -111,27 +111,22 @@ cy:
       - title: Map safle
         url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
 
-  page_title: Cyfeirlyfr cynghorydd ymddeoliad
-  beta_tag: Beta
-
-  learn_more: '?'
-  learn_more_hidden_text: (click this link and further information will appear directly below)
+  page_title: -X-
 
   trust_banner:
-    heading: Dewch o hyd i gynghorydd ariannol i roi cymorth i chi wrth gynllunio’ch ymddeoliad, pa un ai’ch bod yn ystyried ymddeol yn unig neu wedi gwneud hynny’n barod.
+    heading: -X-
     items:
-      - text: Mae pob un o’r cynghorwyr sydd ar y cyfeirlyfr wedi’u hawdurdodi a’u rheoleiddio gan yr Awdurdod Ymddygiad Ariannol (FCA).
+      - text: -X-
         tooltip: Yr FCA yw rheoleiddiwr ariannol y Deyrnas Unedig gan osod rheolau sydd yn ofynnol i gwmnïau sy’n cyflogi cynghorwyr ariannol eu dilyn wrth gynnig cyngor a gwerthu cynnyrch ariannol. Golyga hyn eich bod wedi’ch diogelu os aiff pethau o chwith a gallant wynebu dirwy neu gael eu cau i lawr os byddant yn tramgwyddo’r rheolau. Rhaid i gynghorwyr ariannol a reoleiddir ennill rhai cymwysterau neilltuol cyn iddynt fedru gweithio, a phennir y cymwysterau hyn gan yr FCA.
-      - text: Mae pob un o’r cynghorwyr sydd ar y cyfeirlyfr yn cynnig cyngor ariannol personol.
-        tooltip: Golyga hyn y bydd raid i gynghorwyr gasglu digon o wybodaeth gennych er mwyn medru cynnig argymhelliad personol. Os gwelwch yn y pen draw bod yr argymhelliad yn anaddas, gallwch gwyno yn gyntaf wrth gwmni’r cynghorydd ac yna wrth yr Ombwdsmon Ariannol os caiff eich cwyn ei gwrthod. Diogelir cynghorwyr sydd ar y gofrestr gan Gynllun Iawndal y Gwasanaethau Ariannol hefyd sy’n golygu y gallwch hawlio iawndal os collwch eich arian o ganlyniad uniongyrchol i’r cynghorydd fynd i’r wal.
-      - text: Gall pob un o’r cynghorwyr sydd ar y cyfeirlyfr gynnig gwasanaeth gan ystod eang o ddarparwyr.
+      - text: -X-
+        tooltip: -X-
+      - text: -X-
 
-  rad_signup_link: Cofrestru neu fewngofnodi fel cwmni ar y cyfeiriadur
+  rad_signup_link: -X-
 
   find_retirement_adviser:
-    heading: Dod o hyd i gynghorydd ariannol
-    description: Gall cynghorwyr ariannol gynnig cyngor yn bersonol, ar-lein neu dros y ffôn. Sut hoffech chi gael eich cyngor?
-    subheading: Pam defnyddio cynghorydd ariannol?
+    heading: -X-
+    subheading: -X-
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
@@ -162,7 +157,7 @@ cy:
   retirement_income_options:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
-    link_text: Ystyried eich dewisiadau
+    link_text: -X-
     link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
 
   useful_links:
@@ -170,6 +165,10 @@ cy:
     links:
       - text: Dewis cynghorydd ariannol
         url: 'https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol'
+      - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
+        url: 'https://www.moneyadviceservice.org.uk/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
+      - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
+        url: 'https://www.moneyadviceservice.org.uk/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
 
   our_promise:
     heading: Ein haddewid i chi
@@ -182,6 +181,7 @@ cy:
     landing_page:
       heading: Sut fath o help sydd ei angen arnoch?
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
+      tooltip: -Tooltip text TBC-
 
     pension_pot:
       heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
@@ -189,30 +189,16 @@ cy:
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
       pension_transfer:
         heading: Trosglwyddo pensiwn cyfredol neu flaenorol
-        tooltip: Mae bob amser yn syniad da i geisio cyngor cyn i chi drosglwyddo pensiwn, oherwydd gallech golli buddion gwerthfawr wrth drosglwyddo.  Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
 
     options:
       options_when_paying_for_care:
         title: Dewisiadau wrth dalu am ofal
-        tooltip: Os hoffech chi, neu rywun yr ydych yn ei adnabod, ddysgu rhagor am dalu am ofal preswyl neu ofal yn y cartref, yna dewiswch yr opsiwn hwn. Nid yw pob cynghorydd yn gweithio yn y maes hwn, felly os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmni addas sydd â chynghorydd â’r cymwysterau gofynnol.
       equity_release:
         title: Rhyddhau ecwiti
-        tooltip: Er mwyn medru rhoi cyngor i chi ar gynlluniau rhyddhau ecwiti, rhaid i gynghorwyr ariannol gael cymhwyster penodol. Os dewiswch yr opsiwn hwn byddwn yn eich cysylltu â chwmnïau addas sydd â chynghorydd â’r cymwysterau gofynnol. Gallwch ddarllen rhagor am <a href="https://www.moneyadviceservice.org.uk/cy/articles/rhyddhau-ecwiti">ryddhau ecwiti yma</a>.
       inheritance_tax_planning:
         title: Cynllunio ar gyfer treth etifeddiant
-        tooltip: Os hoffech chi siarad â chynghorydd ariannol a all roi cymorth i chi gyda threth etifeddiaeth, dewiswch yr opsiwn hwn.  Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
       wills_and_probate:
         title: 'Ewyllysiau a phrofiant'
-        tooltip: Os ydych yn bwriadu gwneud ewyllys, angen help gyda materion profiant neu’n dymuno rhoi rhywbeth mewn ymddiriedolaeth, dewiswch yr opsiwn hwn. Byddwn yn eich cysylltu â chwmnïau sydd yn delio â’r math hwn o gynllunio ariannol.
-
-    in_person:
-      heading: Dewch o hyd i gynghorwyr ariannol sy’n cynnig cyngor wyneb yn wyneb
-      postcode_label: Eich cod post
-
-    remote:
-      heading: Dod o hyd i gynghorwyr ariannol sy’n cynnig cyngor dros y ffôn neu ar-lein
-      online: Ar-lein
-      phone: Ffôn
 
   search: &search
     errors:
@@ -226,10 +212,15 @@ cy:
     filter:
       heading: -X-
       receive_advice:
-        heading: Cael cyngor
-        face_to_face: Wyneb yn wyneb
-        phone_online: Ffôn / Ar-lein
+        face_to_face: -X-
+        phone_online: -X-
         postcode_label: Cod post
+        postcode_placeholder: -X-
+        tooltip:
+        - text: -X-
+        - text: -X-
+        - text: -X-
+        - text: -X-
       button_text: Chwilio
 
     page_title: -X-

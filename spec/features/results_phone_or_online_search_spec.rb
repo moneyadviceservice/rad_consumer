@@ -3,32 +3,6 @@ RSpec.feature 'Results page, consumer requires general advice over the phone or 
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  scenario 'Using only the phone advice method' do
-    with_elastic_search! do
-      given_reference_data_has_been_populated
-      and_firms_with_advisers_were_previously_indexed
-      and_i_am_on_the_results_page_after_a_previous_search
-      and_i_clear_any_filters_from_the_previous_search
-      and_i_select_phone_or_online_advice
-      and_i_select_the_phone_advice_method
-      when_i_submit_the_search
-      then_i_see_firms_that_provide_advice_over_the_phone
-    end
-  end
-
-  scenario 'Using only the online advice method' do
-    with_elastic_search! do
-      given_reference_data_has_been_populated
-      and_firms_with_advisers_were_previously_indexed
-      and_i_am_on_the_results_page_after_a_previous_search
-      and_i_clear_any_filters_from_the_previous_search
-      and_i_select_phone_or_online_advice
-      and_i_select_the_online_advice_method
-      when_i_submit_the_search
-      then_i_see_firms_that_provide_advice_online
-    end
-  end
-
   scenario 'Using both the phone and online advice methods' do
     with_elastic_search! do
       given_reference_data_has_been_populated
@@ -36,21 +10,8 @@ RSpec.feature 'Results page, consumer requires general advice over the phone or 
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_phone_or_online_advice
-      and_i_select_both_the_phone_and_online_advice_methods
       when_i_submit_the_search
       then_i_see_firms_that_provide_advice_over_the_phone_or_online
-    end
-  end
-
-  scenario 'Using no advice method' do
-    with_elastic_search! do
-      given_reference_data_has_been_populated
-      and_firms_with_advisers_were_previously_indexed
-      and_i_am_on_the_results_page_after_a_previous_search
-      and_i_clear_any_filters_from_the_previous_search
-      and_i_select_phone_or_online_advice
-      when_i_submit_the_search
-      then_i_see_an_error_message
     end
   end
 
@@ -92,8 +53,6 @@ RSpec.feature 'Results page, consumer requires general advice over the phone or 
       f.phone_or_online.set false
 
       f.postcode.set nil
-      f.phone.set false
-      f.online.set false
 
       f.retirement_income_products.set false
       f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
@@ -107,19 +66,6 @@ RSpec.feature 'Results page, consumer requires general advice over the phone or 
 
   def and_i_select_phone_or_online_advice
     results_page.search_form.phone_or_online.set true
-  end
-
-  def and_i_select_the_phone_advice_method
-    results_page.search_form.phone.set true
-  end
-
-  def and_i_select_the_online_advice_method
-    results_page.search_form.online.set true
-  end
-
-  def and_i_select_both_the_phone_and_online_advice_methods
-    results_page.search_form.phone.set true
-    results_page.search_form.online.set true
   end
 
   def when_i_submit_the_search

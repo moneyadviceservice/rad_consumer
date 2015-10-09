@@ -10,7 +10,6 @@ RSpec.feature 'Results page, consumer requires various types of advice over the 
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_phone_or_online_advice
-      and_i_select_the_phone_and_or_online_advice_methods
       and_i_indicate_i_need_advice_on_various_topics
       when_i_submit_the_search
       then_i_am_shown_firms_that_provide_the_selected_types_of_advice
@@ -29,11 +28,10 @@ RSpec.feature 'Results page, consumer requires various types of advice over the 
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
-      @glasgow = create(:adviser, firm: @first, latitude: 55.856191, longitude: -4.247082)
-
-      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
+      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods, registered_name: 'second')
       @leicester = create(:adviser, firm: @second, latitude: 52.633013, longitude: -1.131257)
+      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods, registered_name: 'first')
+      @glasgow = create(:adviser, firm: @first, latitude: 55.856191, longitude: -4.247082)
 
       @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true, in_person_advice_methods: [], other_advice_methods: @other_advice_methods)
       create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
@@ -62,8 +60,6 @@ RSpec.feature 'Results page, consumer requires various types of advice over the 
       f.phone_or_online.set false
 
       f.postcode.set nil
-      f.phone.set false
-      f.online.set false
 
       f.retirement_income_products.set false
       f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
@@ -77,11 +73,6 @@ RSpec.feature 'Results page, consumer requires various types of advice over the 
 
   def and_i_select_phone_or_online_advice
     results_page.search_form.phone_or_online.set true
-  end
-
-  def and_i_select_the_phone_and_or_online_advice_methods
-    results_page.search_form.phone.set true
-    results_page.search_form.online.set true
   end
 
   def and_i_indicate_i_need_advice_on_various_topics

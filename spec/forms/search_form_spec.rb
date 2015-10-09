@@ -121,25 +121,25 @@ RSpec.describe SearchForm do
           expect(form).to_not be_valid
         end
       end
+
+      it 'does not pass on any advice methods' do
+        OtherAdviceMethod.create name: 'phone'
+        expect(form.remote_advice_method_ids).to be_empty
+      end
     end
 
     context 'when advice method is phone or online' do
       let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
 
-      context 'and either phone or online is present' do
-        before {  form.advice_methods = ['1'] }
-
-        it 'is valid' do
-          expect(form).to be_valid
-        end
+      it 'passes on phone and online' do
+        phone = OtherAdviceMethod.create name: 'phone'
+        online = OtherAdviceMethod.create name: 'online'
+        expect(form.remote_advice_method_ids).to eq([phone.id, online.id])
       end
 
-      context 'and neither phone or online is present' do
-        before {  form.advice_methods = [] }
-
-        it 'is not valid' do
-          expect(form).not_to be_valid
-        end
+      it 'does not pass on the postcode' do
+        form.postcode = 'RG2 1AA'
+        expect(form.postcode).to be_nil
       end
     end
   end

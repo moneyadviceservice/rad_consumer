@@ -21,7 +21,6 @@ class SearchForm
                 :postcode,
                 :coordinates,
                 :pension_pot_size,
-                :advice_methods,
                 :firm_id,
                 *TYPES_OF_ADVICE
 
@@ -30,8 +29,6 @@ class SearchForm
   validates :advice_method, presence: true
 
   validate :geocode_postcode, if: :face_to_face?
-
-  validate :advice_methods_present, if: :phone_or_online?
 
   def face_to_face?
     advice_method == ADVICE_METHOD_FACE_TO_FACE
@@ -72,16 +69,15 @@ class SearchForm
   end
 
   def remote_advice_method_ids
-    advice_methods.select(&:present?)
+    if phone_or_online?
+      OtherAdviceMethod.all.map(&:id)
+    else
+      []
+    end
   end
 
-  def advice_methods
-    Array(@advice_methods).select(&:present?).map(&:to_i)
-  end
-
-  def advice_methods_present
-    return if remote_advice_method_ids.present?
-    errors.add(:advice_methods, I18n.t('search.errors.missing_advice_method'))
+  def postcode
+    @postcode if face_to_face?
   end
 
   def to_query

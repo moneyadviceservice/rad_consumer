@@ -79,8 +79,6 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
       f.phone_or_online.set false
 
       f.postcode.set nil
-      f.phone.set false
-      f.online.set false
 
       f.retirement_income_products.set false
       f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE

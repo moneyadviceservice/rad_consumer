@@ -1,0 +1,24 @@
+<div class="l-results__form-row" data-results-filter>
+  <%= f.form_row(:postcode) do %>
+    <%= f.errors_for :postcode %>
+
+    <div class="form__group-item">
+      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' }, checked: true %>
+      <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'), value: SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'search-filter__advice-label' %>
+    </div>
+
+    <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
+      <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading visually-hidden' %>
+      <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8, required: true, placeholder: t('search.filter.receive_advice.postcode_placeholder') %>
+    </div>
+  <% end %>
+
+  <%= f.form_row(:advice_methods) do %>
+    <%= f.errors_for :advice_methods %>
+
+    <div class="form__group-item">
+      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online t-remote', data: { results_filter_trigger: '2' } %>
+      <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'search-filter__advice-label' %>
+    </div>
+  <% end %>
+</div>

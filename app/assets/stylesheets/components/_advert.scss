@@ -1,12 +1,17 @@
 .advert {
   @include clearfix();
   padding: 0 $advert-padding;
-  margin: $baseline-unit*6 0;
+  margin: 0 0 $baseline-unit*6 0;
   background-color: $advert-background-color;
+
+  @include respond-to($mq-m) {
+    margin-top: $baseline-unit*15.5;
+  }
 }
 
 .advert__intro {
   margin: $advert-padding 0;
+  color: $advert-intro-color;
 }
 
 .advert__img {
@@ -17,4 +22,13 @@
   @include respond-to($mq-s) {
     max-width: $advert-image-width;
   }
+
+  @include respond-to($mq-m) {
+    margin-top: -$baseline-unit*2;
+  }
+}
+
+.advert__header {
+  color: $color-black;
+  margin-top: $baseline-unit*2;
 }

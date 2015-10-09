@@ -130,27 +130,22 @@
       - title: Sitemap
         url: https://www.moneyadviceservice.org.uk/en/sitemap
 
-  page_title: Retirement adviser directory
-  beta_tag: Beta
-
-  learn_more: '?'
-  learn_more_hidden_text: (click this link and further information will appear directly below)
+  page_title: Find a retirement adviser
 
   trust_banner:
-    heading: Find a financial adviser to help with your retirement planning, whether you’re just thinking about retirement or have already retired.
+    heading: Search our directory of regulated advisers
     items:
-      - text: All the advisers on the directory are authorised and regulated by the Financial Conduct Authority (FCA).
+      - text: All advisers are authorised and regulated by the Financial Conduct Authority (FCA)
         tooltip: The FCA is the UK’s financial regulator and sets rules that firms employing financial advisers must follow when providing advice and selling financial products. This means you are covered if things go wrong and they can be fined or shut down if they break the rules. Regulated financial advisers must also have a certain level of qualifications before they can practice, which are set by the FCA.
-      - text: All the advisers on the directory offer personalised financial advice.
+      - text: All advisers offer personalised financial advice
         tooltip: This means advisers must collect enough information from you to be able to make a personal recommendation. If the recommendation turns out to be unsuitable you can complain firstly to the adviser’s firm and then to the Financial Ombudsman if your complaint is rejected. Advisers on the directory are also covered by the Financial Services Compensation Scheme meaning you’ll be able to claim compensation if you lose money as a direct result of them going bust.
-      - text: All the advisers on the directory can choose from a wide range of providers.
+      - text: All advisers can choose from a wide range of providers
 
-  rad_signup_link: Register or sign in as a firm on the directory
+  rad_signup_link: Register or login as a firm on the directory
 
   find_retirement_adviser:
-    heading: Find a financial adviser
-    description: Financial advisers can provide advice in person, online or by phone. How would you like to receive your advice?
-    subheading: Why use a financial adviser?
+    heading: How would you like to receive advice?
+    subheading: Why use a retirement adviser?
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
       download_transcript_text: (Download the video transcript)
@@ -181,7 +176,7 @@
   retirement_income_options:
     heading: Retirement income options
     content: Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
-    link_text: Explore your options
+    link_text: Understand and compare retirement income options
     link_url: 'https://www.moneyadviceservice.org.uk/en/retirement-income-options'
 
   useful_links:
@@ -189,6 +184,10 @@
     links:
       - text: Choosing a financial adviser
         url: 'https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser'
+      - text: Checklist - preparing for retirement
+        url: 'https://www.moneyadviceservice.org.uk/en/articles/checklist-things-to-do-as-retirement-approaches'
+      - text: Options for using your pension pot
+        url: 'https://www.moneyadviceservice.org.uk/en/articles/options-for-using-your-pension-pot'
 
   our_promise:
     heading: Our promise to you
@@ -201,6 +200,7 @@
     landing_page:
       heading: What do you need help with?
       instructions: Tick all that apply. If none apply leave blank.
+      tooltip: Some areas of financial advice require the adviser to hold additional qualifications (for example, certain pension transfers) and  some advisers choose to specialise in particular areas.  If you can indicate the type of advice you are looking for, this will help us match you to a firm which has an adviser who can meet your needs.  Feel free to tick any box that applies.  If the advice you are looking for isn’t covered here, then just leave this section blank.
 
     pension_pot:
       heading: My pension pot(s)/other savings or investments
@@ -208,30 +208,16 @@
       any_size_option: I don't know / don't wish to say
       pension_transfer:
         heading: Transferring a current or previous pension
-        tooltip: It’s always a good idea to take advice before you transfer a pension as you may lose valuable benefits by transferring. If you choose this option we will match you to a firm which has an adviser with the necessary qualifications.
 
     options:
       options_when_paying_for_care:
         title: Options when paying for care
-        tooltip: If you, or someone you know, wants to find out more about paying for residential care or care at home, then choose this option. Not all advisers work in this field, so if you choose this option we will match you to firms that have advisers with the necessary qualifications.
       equity_release:
         title: Equity release
-        tooltip: In order to be able to give you advice on equity release schemes, financial advisers must have a specific qualification. If you choose this option we will match you to firms with an adviser who has the necessary qualification. You can read more about <a href="https://www.moneyadviceservice.org.uk/en/articles/equity-release">equity release here</a>.
       inheritance_tax_planning:
         title: Inheritance tax planning
-        tooltip: If you want to speak to a financial adviser who can help you with inheritance tax, choose this option. We will match you to firms with advisers who deal with this area of financial planning.
       wills_and_probate:
         title: 'Wills &amp; probate'
-        tooltip: If you are looking to make a will, need help with probate issues or want to put something into trust, choose this option. We will match you to a firm who have advisers who deal with this area of financial planning.
-
-    in_person:
-      heading: Find financial advisers who offer face-to-face advice
-      postcode_label: Enter your postcode
-
-    remote:
-      heading: Find advisers who offer advice by phone or online
-      online: Online
-      phone: Phone
 
   search: &search
     errors:
@@ -245,10 +231,15 @@
     filter:
       heading: Refine your search
       receive_advice:
-        heading: Find advisers who offer advice
-        face_to_face: Face-to-face
-        phone_online: Online/Telephone
+        face_to_face: In-person
+        phone_online: Phone or online only
         postcode_label: Postcode
+        postcode_placeholder: Enter a postcode
+        tooltip:
+          - text: Many financial advisers will meet in you in person either at their office, your home, or a place convenient to you.   If you prefer to meet your adviser face-to-face then you should choose the ‘in-person’ option and give your postcode.
+          - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
+          - text: Or you can contact advisers offering both options to compare service and costs.
+          - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       button_text: Search
 
     page_title: Find a retirement adviser
