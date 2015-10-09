@@ -66,6 +66,7 @@
   @include body(18, 24);
   font-weight: 700;
   color: $search-filter-label-color;
+  width: 100%;
 }
 
 .search-filter__label--padded {
