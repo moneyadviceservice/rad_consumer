@@ -1,6 +1,6 @@
 <% unless current_page.first? %>
   <span class="prev">
-    <%= link_to(url, rel: 'prev', class: 'pagination__button button button--compact') do %>
+    <%= link_to(url, rel: 'prev', class: 'pagination__button pagination__button--prev button button--compact') do %>
       <svg title="<%= t('pagination.previous') %>" xmlns="http://www.w3.org/2000/svg" class="pagination__icon">
         <use xlink:href="#icon-pagination-prev"></use>
       </svg>

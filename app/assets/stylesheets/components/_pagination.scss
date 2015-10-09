@@ -2,6 +2,14 @@
   color: $pagination-text-color;
 }
 
+.pagination__button--prev {
+  margin-right: $baseline-unit;
+}
+
+.pagination__button--next {
+  margin-left: $baseline-unit;
+}
+
 .pagination__icon {
   position: relative;
   top: 1px;
@@ -9,4 +17,8 @@
   width: 8px;
   height: 14px;
   fill: $pagination-icon-color;
+}
+
+.pagination__counter {
+  margin: 0;
 }
