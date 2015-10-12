@@ -182,6 +182,36 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#qualifications_accreditations' do
+    let(:form) { described_class.new }
+
+    before :each do
+      Qualification.create(id: 1, order: 1, name: 'Should not be returned in the resulting options')
+      Qualification.create(id: 2, order: 3, name: 'Chartered Financial Planner')
+      Qualification.create(id: 3, order: 4, name: 'Certified Financial Planner')
+      Qualification.create(
+        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent')
+
+      Accreditation.create(id: 4, order: 1, name: 'SOLLA')
+      Accreditation.create(id: 5, order: 2, name: 'Later Life Academy')
+      Accreditation.create(id: 6, order: 3, name: 'ISO 22222')
+    end
+
+    context 'for all qualifications and accreditations that have translation keys' do
+      it 'provides a list of alphabetically ordered options ' do
+        expected_list = [
+          ['Certified Financial Planner', 'q3'],
+          ['Chartered Financial Planner', 'q2'],
+          ['ISO 22222', 'a6'],
+          ['Later Life Academy', 'a5'],
+          ['Pension transfers', 'q4'],
+          %w(SOLLA a4) # Rubocop expects %w for this row
+        ]
+        expect(form.qualifications_accreditations).to eql(expected_list)
+      end
+    end
+  end
+
   describe '#any_pension_pot_size?' do
     subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
 

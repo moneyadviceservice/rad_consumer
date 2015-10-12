@@ -49,7 +49,7 @@ class SearchForm
   end
 
   def qualifications_accreditations
-    [['Hello', '1']]
+    (options_for(Qualification) + options_for(Accreditation)).sort
   end
 
   def any_pension_pot_size?
@@ -93,5 +93,15 @@ class SearchForm
 
   def upcase_postcode
     postcode.try(:upcase!)
+  end
+
+  def options_for(model)
+    trans_root = model.model_name.i18n_key
+    trans = I18n.t("search.filter.#{trans_root}.ordinal")
+    trans_keys = trans.keys.map(&:to_s).map(&:to_i)
+    model
+      .where(order: trans_keys)
+      .pluck(:order, :id)
+      .map { |order, id| [trans[order.to_s.to_sym], "#{trans_root[0]}#{id}"] }
   end
 end
