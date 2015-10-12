@@ -28,6 +28,16 @@ RSpec.describe FirmsController, type: :controller do
       end
     end
 
+    it 'assigns the search form' do
+      VCR.use_cassette(:geocode_search_form_postcode) do
+        search_form = double(SearchForm, to_query: {}, coordinates: [51.5, -0.1])
+        allow(SearchForm).to receive(:new).and_return(search_form)
+
+        get :show, id: firm.id, locale: :en, search_form: search_form_params
+        expect(assigns(:search_form)).to eq(search_form)
+      end
+    end
+
     it 'assigns the first firm result to the view' do
       VCR.use_cassette(:geocode_search_form_postcode) do
         get :show, id: firm.id, locale: :en, search_form: search_form_params

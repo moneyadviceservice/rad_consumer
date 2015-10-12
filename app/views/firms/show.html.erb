@@ -10,8 +10,8 @@
       </p>
 
       <div class="firm">
-        <%= render partial: 'firms/partials/header' %>
-        <%= render partial: 'firms/partials/content' %>
+        <%= render partial: 'firms/partials/header', locals: { search_form: @search_form } %>
+        <%= render partial: 'firms/partials/content', locals: { search_form: @search_form } %>
       </div>
     </div>
 

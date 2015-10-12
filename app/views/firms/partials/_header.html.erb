@@ -1,9 +1,11 @@
 <div class="firm__header">
   <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
-  <div class="firm__adviser-distance">
-    <%= t('search.result.adviser') %>
-    <%= @firm.closest_adviser %>
-  </div>
+  <% if search_form.face_to_face? %>
+    <div class="firm__adviser-distance">
+      <%= t('search.result.adviser') %>
+      <%= @firm.closest_adviser %>
+    </div>
+  <% end %>
 
   <div class="firm__links">
     <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
