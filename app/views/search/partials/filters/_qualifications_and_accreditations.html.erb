@@ -4,12 +4,12 @@
   </legend>
 
   <div class="form__group-item">
-    <%= f.label :qualifications_accreditations,
+    <%= f.label :qualifications_and_accreditations,
                 t('search.filter.qualifications_and_accreditations.label'),
                 class: 'form__label-heading is-hidden' %>
-    <%= f.select :qualifications_accreditations,
-                 form.qualifications_accreditations,
+    <%= f.select :qualifications_and_accreditations,
+                 form.options_for_qualifications_and_accreditations,
                  { include_blank: false },
-                 { class: 't-qualifications_and_accreditations search-filter__inset search-filter__constrained' } %>
+                 { class: 't-qualifications-and-accreditations search-filter__inset search-filter__constrained' } %>
   </div>
 </fieldset>
