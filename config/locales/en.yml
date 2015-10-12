@@ -246,6 +246,21 @@
       qualifications_and_accreditations:
         heading: Accreditations & qualifications
         label: Filter by adviser qualification or accreditation
+      qualification:
+        ordinal:
+          '3': Chartered Financial Planner
+          '4': Certified Financial Planner
+          '5': Pension transfers
+          '6': Equity release
+          '7': Long term care planning
+          '8': Holder of Trust and Estate Practitioner
+          '9': Fellow of the Chartered Insurance Institute
+      accreditation:
+        ordinal:
+          '1': SOLLA
+          '2': Later Life Academy
+          '3': ISO 22222
+          '4': British Standard in Financial Planning BS8577
       button_text: Search
 
     page_title: Find a retirement adviser
