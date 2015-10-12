@@ -243,6 +243,9 @@
           - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
           - text: Or you can contact advisers offering both options to compare service and costs.
           - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
+      qualifications_and_accreditations:
+        heading: Accreditations & qualifications
+        label: Filter by adviser qualification or accreditation
       button_text: Search
 
     page_title: Find a retirement adviser

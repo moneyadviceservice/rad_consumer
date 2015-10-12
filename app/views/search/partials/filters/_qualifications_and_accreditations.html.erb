@@ -1,0 +1,15 @@
+<fieldset class="search-filter__qualifications_accreditations search-filter__last-filter">
+  <legend class="search-filter__label">
+    <%= t('search.filter.qualifications_and_accreditations.heading') %>
+  </legend>
+
+  <div class="form__group-item">
+    <%= f.label :qualifications_accreditations,
+                t('search.filter.qualifications_and_accreditations.label'),
+                class: 'form__label-heading is-hidden' %>
+    <%= f.select :qualifications_accreditations,
+                 form.qualifications_accreditations,
+                 { include_blank: false },
+                 { class: 't-qualifications_and_accreditations search-filter__inset search-filter__constrained' } %>
+  </div>
+</fieldset>
