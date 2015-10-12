@@ -22,6 +22,7 @@ class SearchForm
                 :coordinates,
                 :pension_pot_size,
                 :firm_id,
+                :qualifications_and_accreditations,
                 *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
@@ -48,7 +49,7 @@ class SearchForm
     end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
   end
 
-  def qualifications_accreditations
+  def options_for_qualifications_and_accreditations
     (options_for(Qualification) + options_for(Accreditation)).sort
   end
 

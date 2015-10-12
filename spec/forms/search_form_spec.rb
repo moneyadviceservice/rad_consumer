@@ -182,7 +182,7 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#qualifications_accreditations' do
+  describe '#options_for_qualifications_and_accreditations' do
     let(:form) { described_class.new }
 
     before :each do
@@ -207,7 +207,7 @@ RSpec.describe SearchForm do
           ['Pension transfers', 'q4'],
           %w(SOLLA a4) # Rubocop expects %w for this row
         ]
-        expect(form.qualifications_accreditations).to eql(expected_list)
+        expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
       end
     end
   end
