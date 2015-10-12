@@ -15,4 +15,8 @@ class SearchFormSection < SitePrism::Section
   element :inheritance_tax_planning, '.t-inheritance_tax_planning'
   element :wills_and_probate, '.t-wills_and_probate'
   element :qualifications_and_accreditations, '.t-qualifications-and-accreditations'
+
+  def qualifications_and_accreditations_option_names
+    qualifications_and_accreditations.all('option').map(&:text)
+  end
 end
