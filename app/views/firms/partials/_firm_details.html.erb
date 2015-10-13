@@ -3,12 +3,11 @@
 <%= firm_map_component(center: {lat: latitude, lng: longitude}) do %>
   <div class="firm__map" data-dough-map></div>
 
-    <ul class="is-hidden">
-      <% firm.advisers.each do |adviser| %>
-        <li data-dough-map-point data-dough-map-point-lat="<%= adviser.location.latitude %>" data-dough-map-point-lng="<%= adviser.location.longitude %>">
-          <%= adviser.name %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <ul class="is-hidden">
+    <% firm.advisers.each do |adviser| %>
+      <li data-dough-map-point data-dough-map-point-lat="<%= adviser.location.latitude %>" data-dough-map-point-lng="<%= adviser.location.longitude %>">
+        <%= adviser.name %>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
