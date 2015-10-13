@@ -96,13 +96,17 @@ class SearchForm
     postcode.try(:upcase!)
   end
 
+  def filters_for(model)
+    key_to_i = -> (k, v) { [k.to_s.to_i, v] }
+    I18n.t("search.filter.#{model.model_name.i18n_key}.ordinal").map(&key_to_i).to_h
+  end
+
   def options_for(model)
-    trans_root = model.model_name.i18n_key
-    trans = I18n.t("search.filter.#{trans_root}.ordinal")
-    trans_keys = trans.keys.map(&:to_s).map(&:to_i)
+    filters = filters_for(model)
+    prefix = model.model_name.singular[0]
     model
-      .where(order: trans_keys)
+      .where(order: filters.keys)
       .pluck(:order, :id)
-      .map { |order, id| [trans[order.to_s.to_sym], "#{trans_root[0]}#{id}"] }
+      .map { |order, id| [filters[order], "#{prefix}#{id}"] }
   end
 end
