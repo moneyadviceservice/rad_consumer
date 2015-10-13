@@ -212,6 +212,64 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#selected_qualification_id' do
+    let(:form) { described_class.new }
+    subject { form.selected_qualification_id }
+
+    context 'when a qualification filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return('q4')
+      end
+
+      it { is_expected.to eql(4) }
+    end
+
+    context 'when an accreditation filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return('a4')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when no filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return(nil)
+      end
+
+      it { is_expected.to be_nil }
+    end
+  end
+
+  describe '#selected_accreditation_id' do
+    let(:form) { described_class.new }
+    subject { form.selected_accreditation_id }
+
+    context 'when an accreditation filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return('a4')
+      end
+
+      it { is_expected.to eql(4) }
+    end
+
+    context 'when a qualification filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return('q4')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when no filter has been selected' do
+      before do
+        allow(form).to receive(:qualifications_and_accreditations).and_return(nil)
+      end
+
+      it { is_expected.to be_nil }
+    end
+  end
+
   describe '#any_pension_pot_size?' do
     subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
 
