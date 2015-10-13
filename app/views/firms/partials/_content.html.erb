@@ -12,11 +12,6 @@
             <%= t('firms.show.panels.offices.heading') %>
           </a>
         </div>
-        <div class="tab-selector__trigger-container is-inactive" data-dough-tab-selector-trigger-container>
-          <a class="tab-selector__trigger" href="#panel-3" data-dough-tab-selector-trigger="3">
-            <%= t('firms.show.panels.advisers.heading') %>
-          </a>
-        </div>
       </div>
     </div>
 
@@ -27,10 +22,6 @@
     <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
       <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.office.heading') %></h2>
       <%= render partial: 'firms/partials/offices' %>
-    </div>
-    <div class="tab-selector__target is-inactive" id="panel-3" data-dough-tab-selector-target="3">
-      <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.advisers.heading') %></h2>
-      <%= render partial: 'firms/partials/advisers' %>
     </div>
   </div>
 </div>

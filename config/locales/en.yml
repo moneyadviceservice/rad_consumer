@@ -40,8 +40,6 @@
           locations: 'Adviser & office locations'
         offices:
           heading: 'Offices'
-        advisers:
-          heading: 'Advisers'
 
   skip_links:
     to_main: Skip to main content
