@@ -37,6 +37,13 @@
         firm:
           heading: 'Firm details'
           locations: 'Adviser & office locations'
+          services:
+            heading: Firm's services
+            advice_methods:
+              heading: Ways of offering advice
+              in_person: In person
+              phone: By telephone
+              online: By video conferencing
         offices:
           heading: 'Offices'
 
@@ -359,9 +366,9 @@
       '2': 'Online'
   in_person_advice_method:
     ordinal:
-      '1': 'At your home'
-      '2': "At the firm's office"
-      '3': 'At agreed location'
+      '1': At your home
+      '2': At their office(s)
+      '3': At an agreed location
   qualification:
     ordinal:
       '1': ignored

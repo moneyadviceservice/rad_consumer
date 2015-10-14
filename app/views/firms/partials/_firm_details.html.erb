@@ -13,3 +13,35 @@
     </ul>
   <% end %>
 <% end %>
+
+<%= heading_tag(t('firms.show.panels.firm.services.heading'), level: 3, class: 'l-firm__heading') %>
+
+<%= heading_tag(t('firms.show.panels.firm.services.advice_methods.heading'), level: 4) %>
+
+<% if firm.in_person_advice_methods.present? %>
+  <div class="advice-method">
+    <h5 class="advice-method__heading">
+    <%= svg_icon :house, title: t('firms.show.panels.firm.services.advice_methods.in_person'), class: 'advice-method__svg' %>
+    <%= t('firms.show.panels.firm.services.advice_methods.in_person') %>
+    </h5>
+    <ul class="advice-method__list">
+      <% firm.in_person_advice_methods.each do |id| %>
+        <li class="advice-method__list-item">
+          <%= InPersonAdviceMethod.friendly_name(id) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% firm.other_advice_methods.each do |id| %>
+  <% system_name = OtherAdviceMethod.system_name(id) %>
+  <% text = t("firms.show.panels.firm.services.advice_methods.#{system_name}") %>
+
+  <div class="advice-method">
+    <h5 class="advice-method__heading">
+      <%= svg_icon system_name, title: text, class: 'advice-method__svg' %>
+      <%= text %>
+    </h5>
+  </div>
+<% end %>
