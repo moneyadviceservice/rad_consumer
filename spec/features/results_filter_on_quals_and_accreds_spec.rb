@@ -3,6 +3,7 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
   let(:postcode) { 'EH3 9DR' }
+  let(:select_prompt) { I18n.t('search.filter.select_prompt') }
 
   #
   # Create fixture records
@@ -37,9 +38,11 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   let(:qual_a) { enabled_qualification_opts[0] }
   let(:qual_b) { enabled_qualification_opts[1] }
   let(:qual_c) { enabled_qualification_opts[2] }
+  let(:qual_d) { enabled_qualification_opts[3] }
   let(:accr_a) { enabled_accreditation_opts[0] }
   let(:accr_b) { enabled_accreditation_opts[1] }
   let(:accr_c) { enabled_accreditation_opts[2] }
+  let(:no_selection) { FilterOption.new(nil, select_prompt) }
 
   #
   # Construct the firm and adviser fixtures
@@ -66,12 +69,17 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
 
       when_i_filter_the_results_by(qual_b)
       then_the_results_are([firm_1])
-      # then_previously_selected_filters_are_preserved_for(qualifications, accreditations)
+
+      when_i_filter_the_results_by(accr_a)
+      then_the_results_are([firm_1, firm_2])
 
       when_i_filter_the_results_by(accr_c)
       then_the_results_are([firm_2])
 
-      when_i_filter_the_results_by(accr_a)
+      when_i_filter_the_results_by(qual_d)
+      then_the_results_are([])
+
+      when_i_filter_the_results_by(no_selection)
       then_the_results_are([firm_1, firm_2])
     end
   end
@@ -99,7 +107,7 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
 
   def then_i_see_all_expected_filter_options
     results_page.search_form.qualifications_and_accreditations_option_names.tap do |opts|
-      expect(opts.first).to eq(I18n.t('search.filter.select_prompt'))
+      expect(opts.first).to eq(select_prompt)
       expect(opts[1..-1]).to match_array(enabled_option_names)
     end
   end
@@ -119,9 +127,6 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
     expected_names = expected_results.map(&:registered_name)
     expect(results_page.firm_names).to match_array(expected_names)
   end
-
-  # def then_previously_selected_filters_are_preserved_for(qualifications, accreditations)
-  # end
 
   private
 
