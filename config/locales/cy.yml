@@ -242,6 +242,7 @@ cy:
           '2': -X-
           '3': -X-
           '4': -X-
+      select_prompt: -X-
       button_text: Chwilio
 
     page_title: Dod o hyd i gynghorydd ymddeoliad
