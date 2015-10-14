@@ -98,8 +98,10 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   end
 
   def then_i_see_all_expected_filter_options
-    expect(results_page.search_form.qualifications_and_accreditations_option_names)
-      .to match_array(enabled_option_names)
+    results_page.search_form.qualifications_and_accreditations_option_names.tap do |opts|
+      expect(opts.first).to eq(I18n.t('search.filter.select_prompt'))
+      expect(opts[1..-1]).to match_array(enabled_option_names)
+    end
   end
 
   def when_i_filter_the_results_by(option)

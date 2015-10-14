@@ -258,6 +258,7 @@
           '2': Later Life Academy
           '3': ISO 22222
           '4': British Standard in Financial Planning BS8577
+      select_prompt: Please select
       button_text: Search
 
     page_title: Find a retirement adviser

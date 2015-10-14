@@ -9,7 +9,7 @@
                 class: 'form__label-heading is-hidden' %>
     <%= f.select :qualifications_and_accreditations,
                  form.options_for_qualifications_and_accreditations,
-                 { include_blank: false },
+                 { include_blank: t('search.filter.select_prompt') },
                  { class: 't-qualifications-and-accreditations search-filter__inset search-filter__constrained' } %>
   </div>
 </fieldset>
