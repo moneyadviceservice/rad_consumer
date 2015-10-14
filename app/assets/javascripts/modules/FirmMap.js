@@ -14,7 +14,9 @@ define(['jquery', 'DoughBaseComponent'],
   var FirmMapProto,
       defaultConfig = {
         zoomLevel: 11,
-        center: {lat: 0, lng: 0}
+        center: {lat: 0, lng: 0},
+        adviserPinUrl: '/assets/pins/adviser.svg',
+        officePinUrl: '/assets/pins/office.svg'
       };
 
   /**
@@ -133,6 +135,7 @@ define(['jquery', 'DoughBaseComponent'],
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
+      icon: { url: this.config.adviserPinUrl },
       title: $element.text()
     };
   };
