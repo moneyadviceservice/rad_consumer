@@ -36,6 +36,14 @@ class SearchFormSerializer < ActiveModel::Serializer
         filters << { in: { other_advice_methods: object.remote_advice_method_ids } }
         filters << { missing: { field: :in_person_advice_methods } }
       end
+
+      if object.selected_qualification_id.present?
+        filters << { in: { adviser_qualification_ids: [object.selected_qualification_id] } }
+      end
+
+      if object.selected_accreditation_id.present?
+        filters << { in: { adviser_accreditation_ids: [object.selected_accreditation_id] } }
+      end
     end
   end
 
