@@ -37,8 +37,6 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   #
   let(:qual_a) { enabled_qualification_opts[0] }
   let(:qual_b) { enabled_qualification_opts[1] }
-  let(:qual_c) { enabled_qualification_opts[2] }
-  let(:qual_d) { enabled_qualification_opts[3] }
   let(:accr_a) { enabled_accreditation_opts[0] }
   let(:accr_b) { enabled_accreditation_opts[1] }
   let(:accr_c) { enabled_accreditation_opts[2] }
@@ -49,12 +47,12 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   #
   let(:firm_1) do
     FactoryGirl.create(:firm_without_advisers) do |f|
-      create_adviser(f, postcode, qualifications: [qual_a, qual_b], accreditations: [accr_a, accr_b])
+      create_adviser(f, postcode, qualifications: [qual_a, qual_b], accreditations: [accr_a])
     end
   end
   let(:firm_2) do
     FactoryGirl.create(:firm_without_advisers) do |f|
-      create_adviser(f, postcode, qualifications: [qual_a, qual_c], accreditations: [accr_a, accr_c])
+      create_adviser(f, postcode, qualifications: [qual_a], accreditations: [accr_b])
     end
   end
   let(:firms) { [firm_1, firm_2] }
@@ -70,13 +68,13 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
       when_i_filter_the_results_by(qual_b)
       then_the_results_are([firm_1])
 
-      when_i_filter_the_results_by(accr_a)
+      when_i_filter_the_results_by(qual_a)
       then_the_results_are([firm_1, firm_2])
 
-      when_i_filter_the_results_by(accr_c)
+      when_i_filter_the_results_by(accr_b)
       then_the_results_are([firm_2])
 
-      when_i_filter_the_results_by(qual_d)
+      when_i_filter_the_results_by(accr_c)
       then_the_results_are([])
 
       when_i_filter_the_results_by(no_selection)
