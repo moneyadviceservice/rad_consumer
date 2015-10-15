@@ -1,0 +1,23 @@
+<fieldset data-further-info>
+  <legend class="search-filter__label">
+    <%= t("search_filter.landing_page.heading") %>
+    <%= render 'shared/further_info_trigger' %>
+  </legend>
+  <p class="is-hidden further-info__content" data-further-info-target><%= t('search_filter.landing_page.tooltip') %></p>
+  <% if search_filter_options_description? %>
+    <p class="search-filter__label-instructions"><%= t("search_filter.#{page_name}.instructions") %></p>
+  <% end %>
+
+  <%= f.form_row(:checkbox, html_options: { classes: 'search-filter__form_row--shrink-margin-bottom' }) do %>
+    <%= f.errors_for :checkbox %>
+
+    <% t('search_filter.options').each do |key, item| %>
+      <div class="form__group-item">
+        <%= f.check_box key, class: "form__group-input t-#{key} search-filter__checkbox" %>
+        <%= f.label key, class: 'search-filter__option' do %>
+          <%= raw item[:title] %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</fieldset>

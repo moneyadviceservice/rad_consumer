@@ -225,8 +225,8 @@ RSpec.describe SearchForm do
       context 'but pension transfer is selected' do
         let(:pension_transfer) { '1' }
 
-        it 'returns a string zero' do
-          expect(form.pension_transfer).to eql('0')
+        it 'still returns "1"' do
+          expect(form.pension_transfer).to eql('1')
         end
       end
     end

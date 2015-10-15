@@ -1,0 +1,15 @@
+<fieldset class="search-filter__pension_pot" data-further-info>
+  <legend class="search-filter__label">
+    <%= t('search_filter.pension_pot.heading') %>
+    <%= render 'shared/further_info_trigger' %>
+  </legend>
+
+  <p class="is-hidden further-info__content" data-further-info-target>
+    <%= t('search_filter.pension_pot.tooltip') %>
+  </p>
+
+  <div class="form__group-item">
+    <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading is-hidden' %>
+    <%= f.select :pension_pot_size, form.pension_pot_sizes, { include_blank: false }, { class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
+  </div>
+</fieldset>

@@ -200,13 +200,16 @@ cy:
       tooltip: Gyda rhai elfennau o gyngor ariannol mae’n ofynnol i’r cynghorydd feddu ar gymwysterau ychwanegol (er enghraifft gyda rhai trosglwyddiadau pensiwn) ac mae rhai cynghorwyr yn dewis arbenigo mewn rhai meysydd penodol. Os allech chi nodi’r math o gyngor a ddymunwch, bydd hyn o gymorth i ni fedru’ch paru â chwmni sydd a chynghorydd a all fodloni’ch gofynion. Mae croeso i chi dicio unrhyw flwch sy’n berthnasol. Os nad yw’r cyngor a ddymunwch wedi ei nodi yma, yna gadewch y rhan hon yn wag.
 
     pension_pot:
-      heading: Fy nghronfa(feydd) pensiwn/cynilion neu fuddsoddiadau eraill
+      heading: -X-
+      tooltip: -X-
       pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
-      pension_transfer:
-        heading: Trosglwyddo pensiwn cyfredol neu flaenorol
 
     options:
+      retirement_income_products:
+        title: -X-
+      pension_transfer:
+        title: Trosglwyddo pensiwn cyfredol neu flaenorol
       options_when_paying_for_care:
         title: Dewisiadau wrth dalu am ofal
       equity_release:

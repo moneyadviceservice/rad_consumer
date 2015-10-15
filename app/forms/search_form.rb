@@ -56,10 +56,6 @@ class SearchForm
     retirement_income_products == '1'
   end
 
-  def pension_transfer
-    retirement_income_products? ? @pension_transfer : '0'
-  end
-
   def types_of_advice
     TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
   end
