@@ -204,7 +204,6 @@ RSpec.describe SearchForm do
           ['Chartered Financial Planner', 'q2'],
           ['ISO 22222', 'a6'],
           ['Later Life Academy', 'a5'],
-          ['Pension transfers', 'q4'],
           %w(SOLLA a4) # Rubocop expects %w for this row
         ]
         expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
