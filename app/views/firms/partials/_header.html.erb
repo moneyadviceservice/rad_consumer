@@ -8,19 +8,25 @@
   <% end %>
 
   <div class="firm__links">
-    <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
-      <%= svg_icon :phone, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
-      %><%= @firm.telephone_number %>
+    <% if @firm.telephone_number.present? %>
+      <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
+        <%= svg_icon :phone, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+        %><%= @firm.telephone_number %>
+      <% end %>
     <% end %>
 
-    <%= mail_to @firm.email_address, class: 'outline-button' do %>
-      <%= svg_icon :email, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
-      %><%= t('firms.show.email_firm') %>
+    <% if @firm.email_address.present? %>
+      <%= mail_to @firm.email_address, class: 'outline-button' do %>
+        <%= svg_icon :email, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+        %><%= t('firms.show.email_firm') %>
+      <% end %>
     <% end %>
 
-    <%= link_to @firm.website_address, class: 'outline-button' do %>
-      <%= svg_icon :url, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
-      %><%= t('firms.show.website_address') %>
+    <% if @firm.website_address.present? %>
+      <%= link_to @firm.website_address, class: 'outline-button' do %>
+        <%= svg_icon :url, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+        %><%= t('firms.show.website_address') %>
+      <% end %>
     <% end %>
   </div>
 </div>
