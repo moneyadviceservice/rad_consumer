@@ -22,7 +22,7 @@ class SearchForm
                 :coordinates,
                 :pension_pot_size,
                 :firm_id,
-                :qualifications_and_accreditations,
+                :qualification_or_accreditation,
                 *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
@@ -126,7 +126,7 @@ class SearchForm
     extract_id = ->(item) { item[1..-1] }
     type_prefix = prefix_for(model)
 
-    [qualifications_and_accreditations]
+    [qualification_or_accreditation]
       .compact
       .select(&is_desired_type.curry[type_prefix])
       .map(&extract_id)
