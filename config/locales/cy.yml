@@ -245,19 +245,19 @@ cy:
         label: -X-
       qualification:
         ordinal:
-          '3': -X-
-          '4': -X-
-          '5': -X-
-          '6': -X-
-          '7': -X-
-          '8': -X-
-          '9': -X-
+          '3': Chartered Financial Planner
+          '4': Certified Financial Planner
+          '5': Pension transfers
+          '6': Equity release
+          '7': Long term care planning
+          '8': Holder of Trust and Estate Practitioner
+          '9': Fellow of the Chartered Insurance Institute
       accreditation:
         ordinal:
-          '1': -X-
-          '2': -X-
-          '3': -X-
-          '4': -X-
+          '1': SOLLA
+          '2': Later Life Academy
+          '3': ISO 22222
+          '4': British Standard in Financial Planning BS8577
       select_prompt: -X-
       button_text: Chwilio
 
