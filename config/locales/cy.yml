@@ -23,6 +23,22 @@ cy:
       title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
 
+  firms:
+    show:
+      title_tag: -X-
+      meta_tag_description: -X-
+      go_back: -X-
+      telephone_number: -X-
+      email_address: -X-
+      email_firm: -X-
+      website_address: -X-
+      panels:
+        firm:
+          heading: -X-
+          locations: -X-
+        offices:
+          heading: -X-
+
   skip_links:
     to_main: Skip to main content
     to_accessibility: Accessibility Statement
