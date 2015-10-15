@@ -14,6 +14,13 @@
 
 .firm__adviser-distance {
   margin-bottom: $baseline-unit*2;
+  font-weight: bold;
+}
+
+.firm__adviser-distance-pin {
+  width: 16px;
+  height: 16px;
+  fill: $firm-pin-color;
 }
 
 .firm__content {
@@ -26,9 +33,8 @@
 }
 
 .firm__name {
-  @extend %heading-small;
   margin: 0;
-  color: $color-black;
+  color: $firm-header-color;
 }
 
 .firm__links {

@@ -2,6 +2,7 @@
   <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
   <% if search_form.face_to_face? %>
     <div class="firm__adviser-distance">
+      <%= svg_icon :map_pin, class: 'firm__adviser-distance-pin' %>
       <%= t('search.result.adviser') %>
       <%= @firm.closest_adviser %>
     </div>
@@ -10,21 +11,21 @@
   <div class="firm__links">
     <% if @firm.telephone_number.present? %>
       <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
-        <%= svg_icon :phone, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+        <%= svg_icon :phone_ringing, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
         %><%= @firm.telephone_number %>
       <% end %>
     <% end %>
 
     <% if @firm.email_address.present? %>
       <%= mail_to @firm.email_address, class: 'outline-button' do %>
-        <%= svg_icon :email, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+        <%= svg_icon :envelope, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
         %><%= t('firms.show.email_firm') %>
       <% end %>
     <% end %>
 
     <% if @firm.website_address.present? %>
       <%= link_to @firm.website_address, class: 'outline-button' do %>
-        <%= svg_icon :url, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+        <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
         %><%= t('firms.show.website_address') %>
       <% end %>
     <% end %>
