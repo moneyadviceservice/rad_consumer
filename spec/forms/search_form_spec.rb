@@ -218,7 +218,7 @@ RSpec.describe SearchForm do
 
     context 'when a qualification filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('q4')
+        allow(form).to receive(:qualification_or_accreditation).and_return('q4')
       end
 
       it { is_expected.to eql(4) }
@@ -226,7 +226,7 @@ RSpec.describe SearchForm do
 
     context 'when an accreditation filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('a4')
+        allow(form).to receive(:qualification_or_accreditation).and_return('a4')
       end
 
       it { is_expected.to be_nil }
@@ -234,7 +234,7 @@ RSpec.describe SearchForm do
 
     context 'when the blank filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('')
+        allow(form).to receive(:qualification_or_accreditation).and_return('')
       end
 
       it { is_expected.to be_nil }
@@ -242,7 +242,7 @@ RSpec.describe SearchForm do
 
     context 'when the filter is not set' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return(nil)
+        allow(form).to receive(:qualification_or_accreditation).and_return(nil)
       end
 
       it { is_expected.to be_nil }
@@ -255,7 +255,7 @@ RSpec.describe SearchForm do
 
     context 'when an accreditation filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('a4')
+        allow(form).to receive(:qualification_or_accreditation).and_return('a4')
       end
 
       it { is_expected.to eql(4) }
@@ -263,7 +263,7 @@ RSpec.describe SearchForm do
 
     context 'when a qualification filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('q4')
+        allow(form).to receive(:qualification_or_accreditation).and_return('q4')
       end
 
       it { is_expected.to be_nil }
@@ -271,7 +271,7 @@ RSpec.describe SearchForm do
 
     context 'when the blank filter has been selected' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return('')
+        allow(form).to receive(:qualification_or_accreditation).and_return('')
       end
 
       it { is_expected.to be_nil }
@@ -279,7 +279,7 @@ RSpec.describe SearchForm do
 
     context 'when the filter is not set' do
       before do
-        allow(form).to receive(:qualifications_and_accreditations).and_return(nil)
+        allow(form).to receive(:qualification_or_accreditation).and_return(nil)
       end
 
       it { is_expected.to be_nil }
