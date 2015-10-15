@@ -22,6 +22,7 @@ class SearchForm
                 :coordinates,
                 :pension_pot_size,
                 :firm_id,
+                :qualification_or_accreditation,
                 *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?
@@ -42,10 +43,14 @@ class SearchForm
     @coordinates ||= Geocode.call(postcode)
   end
 
-  def pension_pot_sizes
+  def options_for_pension_pot_sizes
     InvestmentSize.all.map do |investment_size|
       [investment_size.localized_name, investment_size.id]
     end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
+  end
+
+  def options_for_qualifications_and_accreditations
+    (options_for(Qualification) + options_for(Accreditation)).sort
   end
 
   def any_pension_pot_size?
@@ -72,6 +77,14 @@ class SearchForm
     end
   end
 
+  def selected_qualification_id
+    selected_filter_id_for(Qualification)
+  end
+
+  def selected_accreditation_id
+    selected_filter_id_for(Accreditation)
+  end
+
   def postcode
     @postcode if face_to_face?
   end
@@ -89,5 +102,35 @@ class SearchForm
 
   def upcase_postcode
     postcode.try(:upcase!)
+  end
+
+  def prefix_for(model)
+    model.model_name.singular[0]
+  end
+
+  def filters_for(model)
+    key_to_i = -> (k, v) { [k.to_s.to_i, v] }
+    I18n.t("search.filter.#{model.model_name.i18n_key}.ordinal").map(&key_to_i).to_h
+  end
+
+  def options_for(model)
+    filters = filters_for(model)
+    model
+      .where(order: filters.keys)
+      .pluck(:order, :id)
+      .map { |order, id| [filters[order], "#{prefix_for(model)}#{id}"] }
+  end
+
+  def selected_filter_id_for(model)
+    is_desired_type = ->(prefix, item) { !!item[/^#{prefix}/] }
+    extract_id = ->(item) { item[1..-1] }
+    type_prefix = prefix_for(model)
+
+    [qualification_or_accreditation]
+      .compact
+      .select(&is_desired_type.curry[type_prefix])
+      .map(&extract_id)
+      .map(&:to_i)
+      .first
   end
 end

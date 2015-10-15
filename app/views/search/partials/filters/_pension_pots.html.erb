@@ -10,6 +10,6 @@
 
   <div class="form__group-item">
     <%= f.label :pension_pot_size, t('search_filter.pension_pot.pension_pot_size'), class: 'form__label-heading is-hidden' %>
-    <%= f.select :pension_pot_size, form.pension_pot_sizes, { include_blank: false }, { class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
+    <%= f.select :pension_pot_size, form.options_for_pension_pot_sizes, { include_blank: false }, { class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
   </div>
 </fieldset>

@@ -162,7 +162,7 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#pension_pot_sizes' do
+  describe '#options_for_pension_pot_sizes' do
     let(:form) { described_class.new }
 
     let(:investment_sizes) { create_list(:investment_size, 3) }
@@ -172,13 +172,117 @@ RSpec.describe SearchForm do
     it 'returns the localized name and ID for each investment size' do
       tuples = investment_sizes.map { |i| [i.localized_name, i.id] }
 
-      expect(form.pension_pot_sizes).to include(*tuples)
+      expect(form.options_for_pension_pot_sizes).to include(*tuples)
     end
 
     it 'returns the any size option as the last element' do
-      expect(form.pension_pot_sizes.last).to eql([
+      expect(form.options_for_pension_pot_sizes.last).to eql([
         I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
       ])
+    end
+  end
+
+  describe '#options_for_qualifications_and_accreditations' do
+    let(:form) { described_class.new }
+
+    before :each do
+      Qualification.create(id: 1, order: 1, name: 'Should not be returned in the resulting options')
+      Qualification.create(id: 2, order: 3, name: 'Chartered Financial Planner')
+      Qualification.create(id: 3, order: 4, name: 'Certified Financial Planner')
+      Qualification.create(
+        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent')
+
+      Accreditation.create(id: 4, order: 1, name: 'SOLLA')
+      Accreditation.create(id: 5, order: 2, name: 'Later Life Academy')
+      Accreditation.create(id: 6, order: 3, name: 'ISO 22222')
+    end
+
+    context 'for all qualifications and accreditations that have translation keys' do
+      it 'provides a list of alphabetically ordered options ' do
+        expected_list = [
+          ['Certified Financial Planner', 'q3'],
+          ['Chartered Financial Planner', 'q2'],
+          ['ISO 22222', 'a6'],
+          ['Later Life Academy', 'a5'],
+          ['Pension transfers', 'q4'],
+          %w(SOLLA a4) # Rubocop expects %w for this row
+        ]
+        expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
+      end
+    end
+  end
+
+  describe '#selected_qualification_id' do
+    let(:form) { described_class.new }
+    subject { form.selected_qualification_id }
+
+    context 'when a qualification filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('q4')
+      end
+
+      it { is_expected.to eql(4) }
+    end
+
+    context 'when an accreditation filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('a4')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when the blank filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when the filter is not set' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return(nil)
+      end
+
+      it { is_expected.to be_nil }
+    end
+  end
+
+  describe '#selected_accreditation_id' do
+    let(:form) { described_class.new }
+    subject { form.selected_accreditation_id }
+
+    context 'when an accreditation filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('a4')
+      end
+
+      it { is_expected.to eql(4) }
+    end
+
+    context 'when a qualification filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('q4')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when the blank filter has been selected' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return('')
+      end
+
+      it { is_expected.to be_nil }
+    end
+
+    context 'when the filter is not set' do
+      before do
+        allow(form).to receive(:qualification_or_accreditation).and_return(nil)
+      end
+
+      it { is_expected.to be_nil }
     end
   end
 

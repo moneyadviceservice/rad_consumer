@@ -240,6 +240,25 @@
           - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
           - text: Or you can contact advisers offering both options to compare service and costs.
           - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
+      qualifications_and_accreditations:
+        heading: Accreditations & qualifications
+        label: Filter by adviser qualification or accreditation
+      qualification:
+        ordinal:
+          '3': Chartered Financial Planner
+          '4': Certified Financial Planner
+          '5': Pension transfers
+          '6': Equity release
+          '7': Long term care planning
+          '8': Holder of Trust and Estate Practitioner
+          '9': Fellow of the Chartered Insurance Institute
+      accreditation:
+        ordinal:
+          '1': SOLLA
+          '2': Later Life Academy
+          '3': ISO 22222
+          '4': British Standard in Financial Planning BS8577
+      select_prompt: Please select
       button_text: Search
 
     page_title: Find a retirement adviser
