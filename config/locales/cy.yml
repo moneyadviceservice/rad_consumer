@@ -241,24 +241,18 @@ cy:
         - text: Neu gallwch gysylltu â chynghorwyr sy’n cynnig y ddau opsiwn i gymharu gwasanaeth a chostau.
         - text: Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr ar Gyfeirlyfr y Gwasanaeth Cynghori Ariannol – waeth sut y cynigiant gyngor – wedi eu rheoleiddio.  Mae gennych union yr un diogelwch pa un ai’ch bod yn cwrdd â rhywun wyneb yn wyneb neu’n delio ag ef neu hi’n unigol dros y ffôn neu ar-lein.
       qualifications_and_accreditations:
-        heading: -X-
-        label: -X-
+        heading: Achrediadau a chymwysterau
+        label: Hidlo yn Ùl cymhwyster neu achrediad
       qualification:
         ordinal:
           '3': Chartered Financial Planner
           '4': Certified Financial Planner
-          '5': Pension transfers
-          '6': Equity release
-          '7': Long term care planning
-          '8': Holder of Trust and Estate Practitioner
-          '9': Fellow of the Chartered Insurance Institute
       accreditation:
         ordinal:
           '1': SOLLA
           '2': Later Life Academy
           '3': ISO 22222
-          '4': British Standard in Financial Planning BS8577
-      select_prompt: -X-
+      select_prompt: Dewiswch
       button_text: Chwilio
 
     page_title: Dod o hyd i gynghorydd ymddeoliad
