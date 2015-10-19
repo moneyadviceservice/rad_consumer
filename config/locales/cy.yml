@@ -25,19 +25,26 @@ cy:
 
   firms:
     show:
-      title_tag: -X-
-      meta_tag_description: -X-
-      go_back: -X-
-      telephone_number: -X-
-      email_address: -X-
-      email_firm: -X-
-      website_address: -X-
+      title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
+      meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+      go_back: Yn ôl i’r canlyniadau
+      telephone_number: Ffôn
+      email_address: E-bost
+      email_firm: E-bostio’r cwmni
+      website_address: Gwefan
       panels:
         firm:
-          heading: -X-
-          locations: -X-
+          heading: Manylion y cwmni
+          locations: Lleoliadau cynghorwyr a swyddfeydd
+          services:
+            heading: Gwasanaethau'r cwmni
+            advice_methods:
+              heading: Dulliau o gynnig cyngor
+              in_person: Yn bersonol
+              phone: Dros y ffôn
+              online: Trwy gynhadledd fideo
         offices:
-          heading: -X-
+          heading: Swyddfeydd
 
   skip_links:
     to_main: Skip to main content
@@ -370,8 +377,8 @@ cy:
   in_person_advice_method:
     ordinal:
       '1': 'Yn eich cartref'
-      '2': "Yn swyddfa'r cwmni"
-      '3': 'Mewn lleoliad y cytunwyd arno'
+      '2': Yn eu swyddfa neu swyddfeydd
+      '3': Yn rhywle a gytunwyd
   qualification:
     ordinal:
       '1': ignored
