@@ -37,6 +37,16 @@
         firm:
           heading: 'Firm details'
           locations: 'Adviser & office locations'
+          callout:
+            minimum_fee:
+              heading: Minimum fee
+              tooltip: Financial advisers charge fees for advice and some have a minimum fee.  This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit. See our guide ‘Paying for financial advice’ for more information.
+            minimum_pot_size:
+              heading: Minimum pot size
+              tooltip: Not all financial advisers provide advice for all levels of pension pots, savings or investments.  This tells you the minimum level of pension pot/savings/investments  you must have in order to deal with this firm.
+            free_initial_meeting:
+              heading: Free initial meeting
+              tooltip: This firm will offer an initial meeting at their own expense and will use this meeting to establish your needs and see if they can help you.
           services:
             heading: Firm's services
             advice_methods:
