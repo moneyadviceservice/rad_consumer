@@ -40,7 +40,7 @@
   }
 }
 
-.result__adviser-distance, .result__advice {
+.result__advice {
   @include column(12);
 
   @include respond-to (37.5em) {

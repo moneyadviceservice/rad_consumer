@@ -1,3 +1,7 @@
-<div class="result__adviser-distance t-adviser-distance">
-  <%= t('search.result.adviser') %> <%= firm.closest_adviser %>
-</div>
+  <% if search_form.face_to_face? %>
+    <div class="firm__adviser-distance">
+      <%= svg_icon :map_pin, class: 'firm__adviser-distance-pin' %>
+      <%= t('search.result.adviser') %>
+      <%= firm.closest_adviser %>
+    </div>
+  <% end %>
