@@ -61,6 +61,8 @@
               equity_release: Equity release
               inheritance_tax_planning: Inheritance tax planning
               wills_and_probate: Wills & probate
+            qualifications:
+              heading: Qualifications held by firm advisers
         offices:
           heading: 'Offices'
 

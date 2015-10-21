@@ -56,6 +56,16 @@
         </h5>
       </div>
     <% end %>
+
+    <% if firm_has_qualifications_or_accreditations?(firm) %>
+      <%= heading_tag(t('firms.show.panels.firm.services.qualifications.heading'), level: 4) %>
+      <% firm.adviser_qualification_ids.each do |id| %>
+        <%= render_logo(id, :qualification) %>
+      <% end %>
+      <% firm.adviser_accreditation_ids.each do |id| %>
+        <%= render_logo(id, :accreditation) %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="l-2col-even l-firm__callout">
