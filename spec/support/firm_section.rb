@@ -10,26 +10,6 @@ class FirmSection < SitePrism::Section
     root_element.find('.t-name').text
   end
 
-  def address_line_one
-    root_element.find('.line-one').text
-  end
-
-  def address_line_two
-    root_element.find('.line-two').text
-  end
-
-  def address_town
-    root_element.find('.locality').text
-  end
-
-  def address_county
-    root_element.find('.region').text
-  end
-
-  def address_postcode
-    root_element.find('.post-code').text
-  end
-
   def telephone_number
     root_element.find('.phone span.value').text
   end

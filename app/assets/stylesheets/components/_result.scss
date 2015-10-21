@@ -56,27 +56,6 @@
   }
 }
 
-.result__sub-heading {
-  @include body(16, 24);
-  color: $result-heading-color;
-  font-weight: 500;
-  margin-top: 0;
-}
-
-.result__address {
-  @include column(12);
-  margin-top: $baseline-unit*4;
-  margin-bottom: $baseline-unit*4;
-
-  @include respond-to (37.5em) {
-    @include column(4);
-  }
-
-  @include respond-to ($mq-m) {
-    @include column(3);
-  }
-}
-
 .result__advice {
   @include column(12);
 

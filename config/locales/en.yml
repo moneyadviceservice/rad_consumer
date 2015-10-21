@@ -291,14 +291,6 @@
       adviser: has an adviser
       miles_away: miles away
       miles_away_alt: less than a mile away
-      office: Main office
-
-      contact_details:
-        email: Email
-        url: Website
-        address: Address
-        telephone_number: Telephone
-        telephone_number_sr_text: Telephone %{firm_name} on
 
     keywords:
       free_initial_meeting:
