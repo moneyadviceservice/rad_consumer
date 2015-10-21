@@ -1,0 +1,21 @@
+.callout .further-info__content {
+  @include body(14, 18);
+}
+
+.callout__item {
+  border-top: 2px solid #E4EED8;
+  color: $callout-text-color;
+  margin: $baseline-unit*2;
+  padding-top: $baseline-unit*2;
+}
+
+.callout__item:first-of-type {
+  border: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.callout__heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}

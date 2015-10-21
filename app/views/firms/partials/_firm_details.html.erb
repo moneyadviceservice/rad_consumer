@@ -15,43 +15,84 @@
 <% end %>
 
 <%= heading_tag(t('firms.show.panels.firm.services.heading'), level: 3, class: 'l-firm__heading') %>
+<div class="l-2col">
+  <div class="l-2col-even l-firm__details">
+    <%= heading_tag(t('firms.show.panels.firm.services.types_of_advice.heading'), level: 4) %>
 
-<%= heading_tag(t('firms.show.panels.firm.services.types_of_advice.heading'), level: 4) %>
-
-<ul class="types-of-advice__list">
-  <%= type_of_advice_list_item firm, :retirement_income_products %>
-  <%= type_of_advice_list_item firm, :options_when_paying_for_care %>
-  <%= type_of_advice_list_item firm, :equity_release %>
-  <%= type_of_advice_list_item firm, :inheritance_tax_planning %>
-  <%= type_of_advice_list_item firm, :wills_and_probate %>
-</ul>
-
-<%= heading_tag(t('firms.show.panels.firm.services.advice_methods.heading'), level: 4) %>
-
-<% if firm.in_person_advice_methods.present? %>
-  <div class="advice-method">
-    <h5 class="advice-method__heading">
-    <%= svg_icon :house, title: t('firms.show.panels.firm.services.advice_methods.in_person'), class: 'advice-method__svg' %>
-    <%= t('firms.show.panels.firm.services.advice_methods.in_person') %>
-    </h5>
-    <ul class="advice-method__list">
-      <% firm.in_person_advice_methods.each do |id| %>
-        <li class="advice-method__list-item">
-          <%= InPersonAdviceMethod.friendly_name(id) %>
-        </li>
-      <% end %>
+    <ul class="types-of-advice__list" >
+      <%= type_of_advice_list_item firm, :retirement_income_products %>
+      <%= type_of_advice_list_item firm, :options_when_paying_for_care %>
+      <%= type_of_advice_list_item firm, :equity_release %>
+      <%= type_of_advice_list_item firm, :inheritance_tax_planning %>
+      <%= type_of_advice_list_item firm, :wills_and_probate %>
     </ul>
-  </div>
-<% end %>
 
-<% firm.other_advice_methods.each do |id| %>
-  <% system_name = OtherAdviceMethod.system_name(id) %>
-  <% text = t("firms.show.panels.firm.services.advice_methods.#{system_name}") %>
+    <%= heading_tag(t('firms.show.panels.firm.services.advice_methods.heading'), level: 4) %>
 
-  <div class="advice-method">
-    <h5 class="advice-method__heading">
-      <%= svg_icon system_name, title: text, class: 'advice-method__svg' %>
-      <%= text %>
-    </h5>
+    <% if firm.in_person_advice_methods.present? %>
+      <div class="advice-method">
+        <h5 class="advice-method__heading">
+          <%= svg_icon :house, title: t('firms.show.panels.firm.services.advice_methods.in_person'), class: 'advice-method__svg' %>
+          <%= t('firms.show.panels.firm.services.advice_methods.in_person') %>
+        </h5>
+        <ul class="advice-method__list">
+          <% firm.in_person_advice_methods.each do |id| %>
+            <li class="advice-method__list-item">
+              <%= InPersonAdviceMethod.friendly_name(id) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% firm.other_advice_methods.each do |id| %>
+      <% system_name = OtherAdviceMethod.system_name(id) %>
+      <% text = t("firms.show.panels.firm.services.advice_methods.#{system_name}") %>
+
+      <div class="advice-method">
+        <h5 class="advice-method__heading">
+          <%= svg_icon system_name, title: text, class: 'advice-method__svg' %>
+          <%= text %>
+        </h5>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="l-2col-even l-firm__callout">
+    <div class="callout">
+      <% if firm.minimum_fixed_fee.present? %>
+        <div class="callout__item" data-further-info>
+          <h4 class="callout__heading">
+            <%= t('firms.show.panels.firm.callout.minimum_fee.heading') %>
+            <%= render 'shared/further_info_trigger' %>
+          </h4>
+          <p class="is-hidden further-info__content" data-further-info-target>
+            <%= t('firms.show.panels.firm.callout.minimum_fee.tooltip') %>
+          </p>
+          <%= number_to_currency firm.minimum_fixed_fee, unit: '£', precision: 0 %>
+        </div>
+      <% end %>
+      <% if firm.investment_sizes.present? %>
+        <div class="callout__item" data-further-info>
+          <h4 class="callout__heading">
+            <%= t('firms.show.panels.firm.callout.minimum_pot_size.heading') %>
+            <%= render 'shared/further_info_trigger' %>
+          </h4>
+          <p class="is-hidden further-info__content" data-further-info-target>
+            <%= t('firms.show.panels.firm.callout.minimum_pot_size.tooltip') %>
+          </p>
+          <%= InvestmentSize.find(firm.investment_sizes.first).friendly_name %>
+        </div>
+      <% end %>
+      <% if firm.free_initial_meeting? %>
+        <div class="callout__item" data-further-info>
+          <%= t('firms.show.panels.firm.callout.free_initial_meeting.heading') %>
+          <%= render 'shared/further_info_trigger' %>
+          <p class="is-hidden further-info__content" data-further-info-target>
+            <%= t('firms.show.panels.firm.callout.free_initial_meeting.tooltip') %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
