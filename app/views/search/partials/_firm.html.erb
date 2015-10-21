@@ -3,12 +3,12 @@
     <span class="result__heading-text t-name">
       <%= firm.name %>
     </span>
-    <% if @form.face_to_face? %>
-      <span class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= firm.closest_adviser %></span>
-    <% end %>
   <% end %>
 
   <div class="is-hidden-on-mobile" data-results-module-target>
+    <% if @form.face_to_face? %>
+      <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm %>
+    <% end %>
     <%= render partial: 'search/partials/firm/advice_types', object: firm, as: :firm %>
     <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
   </div>
