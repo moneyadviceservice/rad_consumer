@@ -44,6 +44,13 @@
               in_person: In person
               phone: By telephone
               online: By video conferencing
+            types_of_advice:
+              heading: Types of advice offered
+              retirement_income_products: Pension pot savings & investments
+              options_when_paying_for_care: Options when paying for care
+              equity_release: Equity release
+              inheritance_tax_planning: Inheritance tax planning
+              wills_and_probate: Wills & probate
         offices:
           heading: 'Offices'
 

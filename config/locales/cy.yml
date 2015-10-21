@@ -43,6 +43,13 @@ cy:
               in_person: Yn bersonol
               phone: Dros y ffôn
               online: Trwy gynhadledd fideo
+            types_of_advice:
+              heading: Mathau o gyngor a gynigir
+              retirement_income_products: Cynilion a buddsoddiadau cronfeydd pensiwn
+              options_when_paying_for_care: Dewisiadau wrth dalu am ofal
+              equity_release: Rhyddhau Ecwiti
+              inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
+              wills_and_probate: Ewyllysiau a phrofiant
         offices:
           heading: Swyddfeydd
 
