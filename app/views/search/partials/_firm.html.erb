@@ -1,7 +1,7 @@
 <li class="result t-firm" data-results-module>
   <%= heading_tag(level: 2, class: 'result__heading', data: { results_module_heading: '' }) do %>
     <span class="result__heading-text t-name">
-      <%= firm.name %>
+      <%= link_to firm.name, firm_path(id: firm.id, search_form: params[:search_form]) %>
     </span>
   <% end %>
 

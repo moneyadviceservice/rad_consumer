@@ -33,6 +33,7 @@
 }
 
 .result__heading-text {
+  font-size: 1.4rem;
   @include respond-to($mq-xs, $mq-m) {
     display: block;
     padding-left: 20px;
