@@ -18,6 +18,7 @@
 
 .l-firm__row {
   @include row(12);
+  margin-bottom: $baseline-unit*2;
 }
 
 .l-firm__callout {
