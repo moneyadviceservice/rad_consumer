@@ -97,16 +97,16 @@
   </div>
 </div>
 
-<div class="l-firm__row">
-  <div class="l-1col firm__divider">
-    <% if firm_has_qualifications_or_accreditations?(firm) %>
-      <%= heading_tag(t('firms.show.panels.firm.services.qualifications.heading'), level: 4) %>
-      <% firm.adviser_qualification_ids.each do |id| %>
-        <%= render_logo(id, :qualification) %>
-      <% end %>
-      <% firm.adviser_accreditation_ids.each do |id| %>
-        <%= render_logo(id, :accreditation) %>
-      <% end %>
-    <% end %>
+<% if firm_has_qualifications_or_accreditations?(firm) %>
+  <div class="l-firm__row">
+    <div class="l-1col firm__divider">
+        <%= heading_tag(t('firms.show.panels.firm.services.qualifications.heading'), level: 4) %>
+        <% firm.adviser_qualification_ids.each do |id| %>
+          <%= render_logo(id, :qualification) %>
+        <% end %>
+        <% firm.adviser_accreditation_ids.each do |id| %>
+          <%= render_logo(id, :accreditation) %>
+        <% end %>
+    </div>
   </div>
-</div>
+<% end %>
