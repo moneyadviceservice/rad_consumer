@@ -1,12 +1,26 @@
 .keyword {
   @include body(14, 14);
-  display: inline;
-  margin-right: $baseline-unit*2;
-  padding-right: $baseline-unit*2;
-  border-right: 2px solid $result-border-color;
+
+  padding-bottom: $baseline-unit*2;
+  border-bottom: 1px solid $result-border-color;
 
   &:last-of-type {
-    margin-right: 0;
-    border-right: none;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include respond-to($mq-m) {
+    display: inline;
+
+    margin-right: $baseline-unit*2;
+    padding-right: $baseline-unit*2;
+    padding-bottom: 0;
+    border-right: 2px solid $result-border-color;
+    border-bottom: none;
+
+    &:last-of-type {
+      margin-right: 0;
+      border-right: none;
+    }
   }
 }
