@@ -1,39 +1,28 @@
 .result {
   @include clearfix();
+
+  margin-bottom: $baseline-unit*6;
+  padding-bottom: $baseline-unit;
+
   border: 1px solid $result-border-color;
   border-radius: $result-radius;
-  margin-bottom: $baseline-unit*6;
-
-  .svg-icon {
-    @include inline-block();
-    position: relative;
-    top: 5px;
-    margin-right: $baseline-unit;
-  }
-
-  .svg-icon-email,
-  .svg-icon-url,
-  .svg-icon-phone {
-    width: 20px;
-    height: 20px;
-    fill: $color-green-secondary;
-  }
+  -webkit-box-shadow: 0 1px 0 0 $result-shadow-color;
+  -moz-box-shadow: 0 1px 0 0 $result-shadow-color;
+  box-shadow: 0 1px 0 0 $result-shadow-color;
 }
 
 .result__heading {
   @include body(18, 27);
+
   padding: $baseline-unit*2;
-  color: $result-heading-color;
   margin-top: 0;
   margin-bottom: 0;
+
+  color: $result-heading-color;
 }
 
 .result__heading-text {
   font-size: 1.4rem;
-  @include respond-to($mq-xs, $mq-m) {
-    display: block;
-    padding-left: 20px;
-  }
 }
 
 .result__information {
@@ -44,7 +33,6 @@
   margin-top: $baseline-unit;
   margin-bottom: $baseline-unit;
   padding-top: $baseline-unit;
-  padding-bottom: $baseline-unit;
 
   border-top: 1px solid $result-border-color;
 }
