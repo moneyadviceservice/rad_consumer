@@ -16,6 +16,10 @@
   }
 }
 
+.l-firm__heading--collapse {
+  margin-top: -($baseline-unit);
+}
+
 .l-firm__row {
   @include row(12);
   margin-bottom: $baseline-unit*2;

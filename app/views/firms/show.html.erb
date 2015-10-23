@@ -1,6 +1,6 @@
 <div class="l-constrained">
   <div class="l-firm">
-    <div class="l-firm__main">
+    <div class="l-1col">
       <%= heading_tag(t('page_title'), level: 1, class: 'l-firm__heading') %>
       <p>
         <%= link_to search_path(search_form: params[:search_form]) do %>
@@ -8,7 +8,9 @@
           %><%= t('firms.show.go_back') %>
         <% end %>
       </p>
+    </div>
 
+    <div class="l-firm__main">
       <div class="firm">
         <%= render partial: 'firms/partials/header', locals: { search_form: @search_form } %>
         <%= render partial: 'firms/partials/content', locals: { search_form: @search_form } %>
@@ -16,6 +18,18 @@
     </div>
 
     <div class="l-firm__side">
+      <%= heading_tag('Placeholder title - placeholder title placeholder title',
+                      level: 3,
+                      class: 'l-firm__heading--collapse') %>
+      <p>
+        Placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+        placeholder copy placeholder copy placeholder copy placeholder copy placeholder copy
+      </p>
     </div>
   </div>
 </div>
