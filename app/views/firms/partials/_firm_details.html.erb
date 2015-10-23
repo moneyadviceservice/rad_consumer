@@ -15,8 +15,8 @@
 <% end %>
 
 <%= heading_tag(t('firms.show.panels.firm.services.heading'), level: 3, class: 'l-firm__heading') %>
-<div class="l-2col">
-  <div class="l-2col-even l-firm__details">
+<div class="l-2col l-firm__row">
+  <div class="l-2col-even">
     <%= heading_tag(t('firms.show.panels.firm.services.types_of_advice.heading'), level: 4) %>
 
     <ul class="types-of-advice__list" >
@@ -94,5 +94,19 @@
         </div>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="l-firm__row">
+  <div class="l-1col firm__divider">
+    <% if firm_has_qualifications_or_accreditations?(firm) %>
+      <%= heading_tag(t('firms.show.panels.firm.services.qualifications.heading'), level: 4) %>
+      <% firm.adviser_qualification_ids.each do |id| %>
+        <%= render_logo(id, :qualification) %>
+      <% end %>
+      <% firm.adviser_accreditation_ids.each do |id| %>
+        <%= render_logo(id, :accreditation) %>
+      <% end %>
+    <% end %>
   </div>
 </div>

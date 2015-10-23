@@ -31,6 +31,10 @@
   border-bottom: 3px solid $color-grey-seven;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  @include respond-to($mq-m) {
+    padding-bottom: $baseline-unit*6;
+  }
 }
 
 .firm__name {
@@ -53,4 +57,8 @@
 .firm__map {
   height: 400px;
   width: 100%;
+}
+
+.firm__divider {
+  border-top: 1px solid $color-grey-normal;
 }

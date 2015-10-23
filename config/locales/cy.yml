@@ -60,6 +60,8 @@ cy:
               equity_release: Rhyddhau Ecwiti
               inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
               wills_and_probate: Ewyllysiau a phrofiant
+            qualifications:
+              heading: Cymwysterau a feddir gan gynghorwyr y cwmni
         offices:
           heading: Swyddfeydd
 
