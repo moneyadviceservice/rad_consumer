@@ -1,21 +1,15 @@
 <div class="result__advice">
   <div class="result__keyword">
-    <p class="keyword">
-      <% if firm.minimum_fixed_fee? %>
-        <%= t('search.keywords.minimum_fee.title') %><span class="t-minimum-fixed-fee"><%= number_to_currency(firm.minimum_fixed_fee, unit: '£', precision: 0) %></span>
-      <% else %>
-        <%= t('search.keywords.minimum_fee.none') %>
-      <% end %>
-    </p>
-    <% if firm.free_initial_meeting? %>
-      <p class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></p>
-    <% end %>
     <p class="keyword t-minimum-pot-size">
       <% if firm.minimum_pot_size? %>
         <%= t('search.keywords.minimum_pot_size.title') %> <%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %>
       <% else %>
         <%= t('search.keywords.minimum_pot_size.none') %>
       <% end %>
+    </p>
+    <% if firm.free_initial_meeting? %>
+      <p class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></p>
+    <% end %>
     </p>
   </div>
 </div>

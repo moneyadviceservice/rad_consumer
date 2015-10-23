@@ -296,11 +296,6 @@ cy:
       free_initial_meeting:
         title: Cyfarfod cychwynnol am ddim
         tooltip: Bydd y cwmni hwn yn cynnig cyfarfod cychwynnol dros y ffôn neu wyneb yn wyneb ar ei gost ei hun. Bydd y cwmni’n defnyddio’r cyfarfod hwn i ddeall eich anghenion ac i weld a all fod o gymorth i chi.
-      minimum_fee:
-        title: 'Ffioedd gofynnol: '
-        none: Dim isafswm ffi
-        tooltip: Mae cynghorwyr ariannol yn codi ffioedd am gyngor ac mae gan rai ohonynt ffi ofynnol. Gall hyn amrywio yn ddibynnol ar y math o gyngor sydd ei angen arnoch, felly efallai mai canllaw yn unig fydd y ffigwr a roddir. Rhaid i bob cynghorydd roi amcangyfrif i chi o gyfanswm cost ei wasanaeth cyn i chi ymrwymo. Gweler ein canllaw ‘Talu am gyngor ariannol’ am ragor o wybodaeth.
-        link: Gweler ein canllaw <a href="https://www.moneyadviceservice.org.uk/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Talu am gyngor ariannol</a> am ragor o wybodaeth.
       minimum_pot_size:
         none: 'Dim isafswm ym maint y gronfa / cynilion'
         title: 'Isafswm maint y gronfa / cynilion: '

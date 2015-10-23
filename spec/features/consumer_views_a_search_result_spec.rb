@@ -31,7 +31,6 @@ RSpec.feature 'Consumer views a search result',
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
       and_i_see_the_firms_minimum_pot_size
-      and_i_see_the_firms_minimum_fee
       and_i_see_whether_the_firm_offers_free_initial_meetings
       and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess
       and_i_see_the_qualifications_label
@@ -73,10 +72,6 @@ RSpec.feature 'Consumer views a search result',
 
   def and_i_see_the_firms_minimum_pot_size
     expect(@displayed_firm.minimum_pot_size).to match(/No minimum/)
-  end
-
-  def and_i_see_the_firms_minimum_fee
-    expect(@displayed_firm.minimum_fixed_fee).to eq('£1,000')
   end
 
   def and_i_see_whether_the_firm_offers_free_initial_meetings
