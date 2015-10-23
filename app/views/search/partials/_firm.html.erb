@@ -5,12 +5,12 @@
     </span>
   <% end %>
 
-  <div class="is-hidden-on-mobile" data-results-module-target>
-    <div class="result__information">
-      <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm, locals: { search_form: search_form }%>
+  <div class="result__information">
+    <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm, locals: { search_form: search_form }%>
+    <div class="is-hidden-on-mobile" data-results-module-target>
       <%= I18n.t('search.result.number_of_offices_and_advisers', office_count: 0, adviser_count: firm.advisers.size) %>
     </div>
+    <%= render partial: 'search/partials/firm/advice_types', object: firm, as: :firm %>
+    <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
   </div>
-  <%= render partial: 'search/partials/firm/advice_types', object: firm, as: :firm %>
-  <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
 </li>

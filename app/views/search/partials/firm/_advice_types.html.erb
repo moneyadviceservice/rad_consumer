@@ -1,15 +1,12 @@
-<div class="result__advice">
-  <div class="result__keyword">
-    <p class="keyword t-minimum-pot-size">
-      <% if firm.minimum_pot_size? %>
-        <%= t('search.keywords.minimum_pot_size.title') %> <%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %>
-      <% else %>
-        <%= t('search.keywords.minimum_pot_size.none') %>
-      <% end %>
-    </p>
-    <% if firm.free_initial_meeting? %>
-      <p class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></p>
+<div class="result__keyword">
+  <p class="keyword t-minimum-pot-size">
+    <% if firm.minimum_pot_size? %>
+      <%= t('search.keywords.minimum_pot_size.title') %> <%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %>
+    <% else %>
+      <%= t('search.keywords.minimum_pot_size.none') %>
     <% end %>
-    </p>
-  </div>
+  </p>
+  <% if firm.free_initial_meeting? %>
+    <p class="keyword t-free-initial-meeting"><%= t('search.keywords.free_initial_meeting.title') %></p>
+  <% end %>
 </div>
