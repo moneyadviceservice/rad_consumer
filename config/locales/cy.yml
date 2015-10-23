@@ -297,12 +297,11 @@ cy:
         title: Cyfarfod cychwynnol am ddim
         tooltip: Bydd y cwmni hwn yn cynnig cyfarfod cychwynnol dros y ffôn neu wyneb yn wyneb ar ei gost ei hun. Bydd y cwmni’n defnyddio’r cyfarfod hwn i ddeall eich anghenion ac i weld a all fod o gymorth i chi.
       minimum_pot_size:
-        none: 'Dim isafswm ym maint y gronfa / cynilion'
-        title: 'Isafswm maint y gronfa / cynilion: '
+        none: 'Dim isafswm ym maint y gronfa'
+        title: 'Isafswm maint y gronfa: '
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
 
     accreditations:
-      heading: Mae gan y cwmni gynghorwyr sydd â’r cymwysterau / achrediadau canlynol. Cliciwch phob logo i ddysgu am iddynt.
       glossary_heading: Cymwysterau / Achrediadau
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:

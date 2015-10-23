@@ -40,35 +40,11 @@
   @include column(12);
 }
 
-.result__keyword {
+.result__information__item {
   margin-top: $baseline-unit;
   margin-bottom: $baseline-unit;
   padding-top: $baseline-unit;
   padding-bottom: $baseline-unit;
 
   border-top: 1px solid $result-border-color;
-  border-bottom: 1px solid $result-border-color;
-}
-
-.result__qualifications {
-  clear: both;
-}
-
-.result__qualifications-heading {
-  @include column(12);
-  @include body(14, 24);
-
-  @include respond-to($mq-m) {
-    @include column(6);
-  }
-}
-
-.result__qualifications-logos {
-  @include column(12);
-  margin-top: $baseline-unit*2;
-  margin-bottom: $baseline-unit*2;
-
-  @include respond-to($mq-m) {
-    @include column(6);
-  }
 }

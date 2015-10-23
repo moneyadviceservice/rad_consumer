@@ -1,7 +1,7 @@
 .accreditation {
-  display: block;
-  float: left;
-  margin-right: $baseline-unit;
+  display: inline-block;
+  margin-top: $baseline-unit;
+  margin-right: $baseline-unit*3;
 
   &:focus img {
     outline: 2px solid #77bf24;
