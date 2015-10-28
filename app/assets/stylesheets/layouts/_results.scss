@@ -22,17 +22,27 @@
 .l-results__firm-name {
   @include column(12);
 
+  margin-left: 0;
+  margin-right: 4%;
+
   @include respond-to($mq-m) {
     @include column(8);
+
+    margin-left: 0;
+    margin-right: 4.66667%;
   }
 }
 
 .l-results__profile-link {
   @include column(12);
+
   text-align: right;
+  margin-right: 0;
 
   @include respond-to($mq-m) {
     @include column(4);
+
+    margin-right: 0;
   }
 }
 

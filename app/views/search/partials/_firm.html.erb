@@ -1,12 +1,14 @@
 <li class="result t-firm">
   <%= heading_tag(level: 2, class: 'result__heading') do %>
-    <div class="l-results__firm-name">
-      <span class="result__heading-text t-name">
-        <%= link_to firm.name, firm_path(id: firm.id, search_form: params[:search_form]) %>
-      </span>
-    </div>
-    <div class="l-results__profile-link hidden-on-mobile">
-      <%= link_to t('search.result.view_profile'), firm_path(id: firm.id, search_form: params[:search_form]), class: 'outline-button' %>
+    <div class="l-2col">
+      <div class="l-results__firm-name">
+        <span class="result__heading-text t-name">
+          <%= link_to firm.name, firm_path(id: firm.id, search_form: params[:search_form]) %>
+        </span>
+      </div>
+      <div class="l-results__profile-link is-hidden-on-mobile">
+        <%= link_to t('search.result.view_profile'), firm_path(id: firm.id, search_form: params[:search_form]), class: 'outline-button outline-button--light' %>
+      </div>
     </div>
   <% end %>
 

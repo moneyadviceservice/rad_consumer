@@ -19,6 +19,11 @@
   }
 }
 
+.outline-button--light {
+  font-weight: 100;
+  font-size: 0.8em;
+}
+
 .outline-button__svg-icon {
   @include inline-block();
   position: relative;
