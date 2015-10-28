@@ -24,6 +24,10 @@
   font-size: 0.8em;
 }
 
+.outline-button--margin-collapse {
+  margin-right: 0;
+}
+
 .outline-button__svg-icon {
   @include inline-block();
   position: relative;

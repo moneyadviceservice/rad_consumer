@@ -23,13 +23,13 @@
   @include column(12);
 
   margin-left: 0;
-  margin-right: 4%;
+  margin-right: 5%;
 
   @include respond-to($mq-m) {
     @include column(8);
 
     margin-left: 0;
-    margin-right: 4.66667%;
+    margin-right: 5%;
   }
 }
 

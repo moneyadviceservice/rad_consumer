@@ -78,7 +78,6 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm.number_of_advisers_message).to match(/Firm has 2 advisers/)
   end
 
-
   def and_i_see_the_firms_minimum_pot_size
     expect(@displayed_firm.minimum_pot_size).to match(/No minimum/)
   end
