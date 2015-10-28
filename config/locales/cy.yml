@@ -290,7 +290,11 @@ cy:
     result:
       adviser: mae gan gynghorydd
       miles_away: "%{distance} o filltiroedd i ffwrdd"
-      number_of_offices_and_advisers: "Mae gan y cwmni %{office_count} swyddfa a %{adviser_count} cynghorydd"
+      firm_has: ""
+      and: ", "
+      number_of_advisers: "Cynghorydd: %{count}"
+      number_of_offices: "Swyddfa: %{count}"
+      view_profile: Gweld y proffil
 
     keywords:
       free_initial_meeting:

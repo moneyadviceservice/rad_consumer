@@ -1,0 +1,7 @@
+<div class="is-hidden-on-mobile">
+  <%= I18n.t('search.result.firm_has') %>
+  <% if firm.respond_to?(:offices) %>
+    <%= I18n.t('search.result.number_of_offices', count: 2) %><%= I18n.t('search.result.and', count: firm.advisers.size) %>
+  <% end %>
+  <%= I18n.t('search.result.number_of_advisers', count: firm.advisers.size) %>
+</div>
