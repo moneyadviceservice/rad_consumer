@@ -298,6 +298,7 @@
       number_of_offices:
         one: "%{count} office"
         other: "%{count} offices"
+      view_profile: View profile
 
     keywords:
       free_initial_meeting:
