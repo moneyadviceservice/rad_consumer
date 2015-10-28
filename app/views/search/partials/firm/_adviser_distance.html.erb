@@ -1,7 +1,5 @@
-<% if search_form.face_to_face? %>
-  <div class="firm__adviser-distance">
-    <%= svg_icon :map_pin, class: 'firm__adviser-distance-pin' %>
-    <%= t('search.result.adviser') %>
-    <%= t('search.result.miles_away', distance: firm.closest_adviser.to_f.round(2)) %>
-  </div>
-<% end %>
+<div class="firm__adviser-distance">
+  <%= svg_icon :map_pin, class: 'firm__adviser-distance-pin' %>
+  <%= t('search.result.adviser') %>
+  <%= t('search.result.miles_away', distance: firm.closest_adviser.to_f.round(2)) %>
+</div>
