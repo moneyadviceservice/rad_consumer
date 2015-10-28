@@ -15,6 +15,7 @@ Rails.application.configure do
 
   # Application JavaScript
   config.assets.precompile += %w(
+    rsvp/rsvp.js
     modules/FurtherInfo.js
     modules/SearchFilter.js
     modules/NestedOptions.js
@@ -32,6 +33,7 @@ Rails.application.configure do
     jquery-ujs/src/rails.js
     jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
     eventsWithPromises/src/eventsWithPromises.js
+    rsvp/rsvp.amd.js
     requirejs/require.js
     requirejs-plugins/src/async.js
   )
