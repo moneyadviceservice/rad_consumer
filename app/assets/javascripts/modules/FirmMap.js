@@ -135,8 +135,7 @@ define(['jquery', 'DoughBaseComponent'],
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
-      icon: { url: this.config.adviserPinUrl },
-      title: $element.text()
+      icon: { url: this.config.adviserPinUrl }
     };
   };
 
