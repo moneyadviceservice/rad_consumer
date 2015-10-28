@@ -4,7 +4,6 @@ class FirmSection < SitePrism::Section
 
   element :free_initial_meeting, '.t-free-initial-meeting'
   element :adviser_distance, '.t-adviser-distance'
-  element :qualifications_heading, '.t-qualifications-heading'
 
   def name
     root_element.find('.t-name').text
