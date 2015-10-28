@@ -30,6 +30,8 @@ RSpec.feature 'Consumer views a search result',
       given_an_indexed_firm_and_associated_adviser
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
+      and_i_see_the_distance_to_the_nearest_adviser
+      and_i_see_the_number_of_advisers
       and_i_see_the_firms_minimum_pot_size
       and_i_see_whether_the_firm_offers_free_initial_meetings
       and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess
@@ -67,6 +69,15 @@ RSpec.feature 'Consumer views a search result',
   def then_i_see_the_indexed_firm
     expect(@displayed_firm = results_page.firms.first).to be
   end
+
+  def and_i_see_the_distance_to_the_nearest_adviser
+    expect(@displayed_firm.distance_to_the_nearest_adviser).to match(/has an adviser 0.78 miles away/)
+  end
+
+  def and_i_see_the_number_of_advisers
+    expect(@displayed_firm.number_of_advisers_message).to match(/Firm has 2 advisers/)
+  end
+
 
   def and_i_see_the_firms_minimum_pot_size
     expect(@displayed_firm.minimum_pot_size).to match(/No minimum/)
