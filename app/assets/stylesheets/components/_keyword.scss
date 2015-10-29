@@ -10,12 +10,15 @@
   }
 
   @include respond-to($mq-m) {
-    display: inline;
+    display: inline-block;
 
+    margin-top: $baseline-unit;
     margin-right: $baseline-unit*2;
+    margin-bottom: $baseline-unit;
     padding-right: $baseline-unit*2;
-    padding-bottom: 0;
-    border-right: 2px solid $result-border-color;
+    padding-bottom: $baseline-unit*2;
+    padding-top: $baseline-unit*2;
+    border-right: 2px solid $keyword-dividing-color;
     border-bottom: none;
 
     &:last-of-type {

@@ -9,6 +9,8 @@
   -webkit-box-shadow: 0 1px 0 0 $result-shadow-color;
   -moz-box-shadow: 0 1px 0 0 $result-shadow-color;
   box-shadow: 0 1px 0 0 $result-shadow-color;
+
+  color: $result-text-color;
 }
 
 .result__heading {
@@ -34,11 +36,19 @@
 }
 
 .result__information__item {
-  margin-top: $baseline-unit;
-  margin-bottom: $baseline-unit;
-  padding-top: $baseline-unit;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
 
   border-top: 1px solid $result-border-color;
 
-  font-size: 0.5em;
+  @include body(16,30);
+}
+
+.result__office-adviser-count {
+  margin-bottom: $baseline-unit*2;
+}
+
+.result__qualifications {
+  padding-top: $baseline-unit;
 }

@@ -1,5 +1,5 @@
 <% if firm_has_qualifications_or_accreditations?(firm) %>
-  <div class="result__information__item">
+  <div class="result__information__item result__qualifications">
     <% firm.adviser_qualification_ids.each do |id| %>
       <%= render_logo(id, :qualification) %>
     <% end %>
