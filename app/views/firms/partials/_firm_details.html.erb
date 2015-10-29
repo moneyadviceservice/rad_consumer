@@ -1,7 +1,9 @@
 <% if search_form.face_to_face? %>
   <%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading') %>
 
-  <%= firm_map_component(center: {lat: latitude, lng: longitude}) do %>
+  <%= firm_map_component(center: {lat: latitude, lng: longitude},
+        adviserPinUrl: image_path('pins/adviser.png'),
+        officePinUrl: image_path('pins/office.png')) do %>
     <div class="firm__map" data-dough-map></div>
 
     <ul class="is-hidden">

@@ -15,8 +15,8 @@ define(['jquery', 'DoughBaseComponent'],
       defaultConfig = {
         zoomLevel: 11,
         center: {lat: 0, lng: 0},
-        adviserPinUrl: '/assets/pins/adviser.png',
-        officePinUrl: '/assets/pins/office.png'
+        adviserPinUrl: null,
+        officePinUrl: null
       };
 
   /**
