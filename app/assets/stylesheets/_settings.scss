@@ -10,9 +10,14 @@ $advert-padding: $baseline-unit*3;
 $advert-image-width: 200px;
 $advert-intro-color: $color-black;
 
+$adviser-distance-text-color: $color-black;
+
 $back-to-top-icon-color: $color-blue-medium;
 
 $callout-text-color: $color-black;
+
+$color-link-blue: $color-blue-medium;
+$color-porcelain: #F0F4F4;
 
 $firm-header-color: $color-green-primary;
 $firm-pin-color: $color-green-secondary;
@@ -25,7 +30,7 @@ $further-info-icon-width: 20px;
 $further-info-icon-height: 20px;
 $further-info-background-color: $color-blue-medium;
 
-$keyword-dividing-color: #F0F4F4;
+$keyword-dividing-color: $color-porcelain;
 
 $landing-page-find-adviser-gradient-color: #f9fafa;
 
@@ -59,6 +64,3 @@ $search-filter-padding: $baseline-unit*4;
 $search-filter-label-color: $color-black;
 
 $types-of-advice-text-color: $color-black;
-$adviser-distance-text-color: $color-black;
-
-$color-link-blue: $color-blue-medium;
