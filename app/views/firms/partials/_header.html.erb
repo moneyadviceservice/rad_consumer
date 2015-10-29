@@ -18,7 +18,7 @@
     <% end %>
 
     <% if @firm.website_address.present? %>
-      <%= link_to @firm.website_address, class: 'outline-button' do %>
+      <%= link_to @firm.website_address, class: 'outline-button', target: '_blank' do %>
         <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
         %><%= t('firms.show.website_address') %>
       <% end %>
