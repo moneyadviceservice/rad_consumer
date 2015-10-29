@@ -30,14 +30,11 @@ RSpec.feature 'Consumer views a search result',
       given_an_indexed_firm_and_associated_adviser
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
-      and_i_see_the_firms_contact_details
-      and_i_see_the_where_the_firm_offers_advice
-      and_i_see_the_types_of_advice_the_firm_offers
+      and_i_see_the_distance_to_the_nearest_adviser
+      and_i_see_the_number_of_advisers
       and_i_see_the_firms_minimum_pot_size
-      and_i_see_the_firms_minimum_fee
       and_i_see_whether_the_firm_offers_free_initial_meetings
       and_i_see_the_qualifications_and_accreditations_the_firms_advisers_possess
-      and_i_see_the_qualifications_label
     end
   end
 
@@ -47,7 +44,6 @@ RSpec.feature 'Consumer views a search result',
       when_i_perform_a_basic_search
       then_i_see_the_indexed_firm
       and_i_do_not_see_any_qualifications_and_accreditations
-      and_i_do_not_see_the_qualifications_label
     end
   end
 
@@ -74,35 +70,16 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm = results_page.firms.first).to be
   end
 
-  def and_i_see_the_firms_contact_details
-    expect(@displayed_firm.address_line_one).to eq(firm.address_line_one)
-    expect(@displayed_firm.address_town).to eq(firm.address_town)
-    expect(@displayed_firm.address_county).to eq(firm.address_county)
-    expect(@displayed_firm.address_postcode).to eq(firm.address_postcode)
-    expect(@displayed_firm.website_address).to be
-    expect(@displayed_firm.email_address).to be
-
-    # telephone_number is a sentence containing the name and phone number
-    expect(@displayed_firm.telephone_number)
-      .to include(firm.registered_name)
-      .and include('020 8252 4727')
+  def and_i_see_the_distance_to_the_nearest_adviser
+    expect(@displayed_firm.distance_to_the_nearest_adviser).to match(/has an adviser 0.8 miles away/)
   end
 
-  def and_i_see_the_where_the_firm_offers_advice
-    expect(@displayed_firm).to have_in_person_advice_methods(count: 2)
-    expect(@displayed_firm).to have_other_advice_methods(count: 2)
-  end
-
-  def and_i_see_the_types_of_advice_the_firm_offers
-    expect(@displayed_firm).to have_types_of_advice(count: 6)
+  def and_i_see_the_number_of_advisers
+    expect(@displayed_firm.number_of_advisers_message).to match(/Firm has 2 advisers/)
   end
 
   def and_i_see_the_firms_minimum_pot_size
     expect(@displayed_firm.minimum_pot_size).to match(/No minimum/)
-  end
-
-  def and_i_see_the_firms_minimum_fee
-    expect(@displayed_firm.minimum_fixed_fee).to eq('£1,000')
   end
 
   def and_i_see_whether_the_firm_offers_free_initial_meetings
@@ -114,17 +91,9 @@ RSpec.feature 'Consumer views a search result',
     expect(@displayed_firm).to have_accreditations(count: 3)
   end
 
-  def and_i_see_the_qualifications_label
-    expect(@displayed_firm).to have_qualifications_heading
-  end
-
   def and_i_do_not_see_any_qualifications_and_accreditations
     expect(@displayed_firm).to_not have_qualifications
     expect(@displayed_firm).to_not have_accreditations
-  end
-
-  def and_i_do_not_see_the_qualifications_label
-    expect(@displayed_firm).to_not have_qualifications_heading
   end
 
   def create_firm_and_adviser(qualifications: [], accreditations: [])

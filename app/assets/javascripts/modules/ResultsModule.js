@@ -5,7 +5,7 @@ define(['jquery'], function($) {
   var $element = $('[data-results-module]'),
       $heading = $('[data-results-module-heading]'),
       $target = $('[data-results-module-target]'),
-      $adviserElement = $('.result__adviser-distance'),
+      $adviserElement = $('.firm__adviser-distance'),
       $buttonElement = $('<button type="button" class="education__button unstyled-button" data-results-module-trigger></button>'),
       $iconElement = $('<span class="education__icon education__icon--plus" data-results-module-icon></span>'),
       statusHidden = 'is-hidden-on-mobile',

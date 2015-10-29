@@ -5,7 +5,7 @@
     <%= render partial: 'search/partials/search_filter' %>
 
     <div class="l-results__main">
-      <%= render partial: 'search/partials/results' %>
+      <%= render partial: 'search/partials/results', locals: { search_form: @form } %>
 
       <%= render partial: 'search/partials/footer_links' %>
     </div>

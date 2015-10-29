@@ -19,6 +19,15 @@
   }
 }
 
+.outline-button--light {
+  @include body(14,36);
+  font-weight: 100;
+}
+
+.outline-button--margin-collapse {
+  margin-right: 0;
+}
+
 .outline-button__svg-icon {
   @include inline-block();
   position: relative;

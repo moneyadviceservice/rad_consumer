@@ -1,4 +1,4 @@
-<% if @form.valid? %>
+<% if search_form.valid? %>
   <% if @result.firms.any? %>
     <div class="l-results__summary">
       <p class="l-results__summary-text t-results-summary-text">
@@ -13,7 +13,7 @@
   <% end %>
 
   <ol class="l-results__list">
-    <%= render partial: 'search/partials/firm', collection: @result.firms, as: :firm %>
+    <%= render partial: 'search/partials/firm', collection: @result.firms, as: :firm, locals: { search_form: search_form } %>
   </ol>
 
   <%= paginate @result %>

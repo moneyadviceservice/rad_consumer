@@ -289,45 +289,27 @@
 
     result:
       adviser: has an adviser
-      miles_away: miles away
-      miles_away_alt: less than a mile away
-      office: Main office
-
-      contact_details:
-        email: Email
-        url: Website
-        address: Address
-        telephone_number: Telephone
-        telephone_number_sr_text: Telephone %{firm_name} on
-
-      recieve_advice:
-        heading: Receive advice
-      type_of_advice:
-        heading: Type of advice
-        types:
-          retirement_income_products: Pension pot(s)/savings
-          pension_transfer: Transferring a pension
-          options_when_paying_for_care: Paying for care
-          equity_release: Equity release
-          inheritance_tax_planning: Inheritance tax planning
-          wills_and_probate: 'Wills & probate'
+      miles_away: "%{distance} miles away"
+      firm_has: "Firm has"
+      and: " and"
+      number_of_advisers:
+        one: "%{count} adviser"
+        other: "%{count} advisers"
+      number_of_offices:
+        one: "%{count} office"
+        other: "%{count} offices"
+      view_profile: View profile
 
     keywords:
       free_initial_meeting:
-        title: Free initial meeting
+        title: Free first meeting
         tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
-      minimum_fee:
-        title: 'Minimum fee: '
-        none: No minimum fee
-        tooltip: Financial advisers charge fees for advice and some have a minimum fee. This might differ depending on the type of advice you need, so the figure shown may just be a guide. All advisers must give you an estimate of the total cost of their services before you commit.
-        link: See our guide <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> for more information
       minimum_pot_size:
-        title: 'Minimum pot size/savings: '
-        none: 'No minimum pot size / savings'
+        title: 'Minimum pot size: '
+        none: 'No minimum pot size'
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
-      heading: This firm has advisers with the following qualifications / accreditations. Click each logo to learn about them.
       glossary_heading: Qualifications / Accreditations
       logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
       items:

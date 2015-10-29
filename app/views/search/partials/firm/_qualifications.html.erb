@@ -1,13 +1,10 @@
 <% if firm_has_qualifications_or_accreditations?(firm) %>
-  <div class="result__qualifications">
-    <p class="result__qualifications-heading t-qualifications-heading"><%= t('search.accreditations.heading') %></p>
-    <div class="result__qualifications-logos">
-      <% firm.adviser_qualification_ids.each do |id| %>
-        <%= render_logo(id, :qualification) %>
-      <% end %>
-      <% firm.adviser_accreditation_ids.each do |id| %>
-        <%= render_logo(id, :accreditation) %>
-      <% end %>
-    </div>
+  <div class="result__information__item result__qualifications">
+    <% firm.adviser_qualification_ids.each do |id| %>
+      <%= render_logo(id, :qualification) %>
+    <% end %>
+    <% firm.adviser_accreditation_ids.each do |id| %>
+      <%= render_logo(id, :accreditation) %>
+    <% end %>
   </div>
 <% end %>

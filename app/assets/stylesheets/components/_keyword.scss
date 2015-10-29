@@ -1,11 +1,29 @@
 .keyword {
-  @include body(14, 18);
-  float: left;
-  margin-top: $baseline-unit;
-  margin-bottom: $baseline-unit;
-  margin-right: $baseline-unit*4;
+  @include body(14, 14);
+
+  padding-bottom: $baseline-unit*2;
+  border-bottom: 1px solid $result-border-color;
 
   &:last-of-type {
-    margin-right: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include respond-to($mq-m) {
+    display: inline-block;
+
+    margin-top: $baseline-unit;
+    margin-right: $baseline-unit*2;
+    margin-bottom: $baseline-unit;
+    padding-right: $baseline-unit*2;
+    padding-bottom: $baseline-unit*2;
+    padding-top: $baseline-unit*2;
+    border-right: 2px solid $keyword-dividing-color;
+    border-bottom: none;
+
+    &:last-of-type {
+      margin-right: 0;
+      border-right: none;
+    }
   }
 }

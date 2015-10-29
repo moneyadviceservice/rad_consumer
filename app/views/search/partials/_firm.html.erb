@@ -1,16 +1,25 @@
-<li class="result t-firm" data-results-module>
-  <%= heading_tag(level: 2, class: 'result__heading', data: { results_module_heading: '' }) do %>
-    <span class="result__heading-text t-name">
-      <%= firm.name %>
-    </span>
-    <% if @form.face_to_face? %>
-      <span class="result__adviser-distance t-adviser-distance"><%= t('search.result.adviser') %> <%= firm.closest_adviser %></span>
-    <% end %>
+<li class="result t-firm">
+  <%= heading_tag(level: 2, class: 'result__heading') do %>
+    <div class="l-2col">
+      <div class="result__firm-name">
+        <span class="result__heading-text t-name">
+          <%= link_to firm.name, firm_path(id: firm.id, search_form: params[:search_form]) %>
+        </span>
+      </div>
+      <div class="result__profile-link is-hidden-on-mobile">
+        <%= link_to t('search.result.view_profile'), firm_path(id: firm.id, search_form: params[:search_form]), class: 'outline-button outline-button--light outline-button--margin-collapse' %>
+      </div>
+    </div>
   <% end %>
 
-  <div class="is-hidden-on-mobile" data-results-module-target>
-    <%= render partial: 'search/partials/firm/contact_details', object: firm, as: :firm %>
-    <%= render partial: 'search/partials/firm/advice_types', object: firm, as: :firm %>
-    <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
+  <div class="result__information">
+    <% if search_form.face_to_face? %>
+      <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm %>
+      <%= render partial: 'search/partials/firm/num_offices_advisers', object: firm, as: :firm %>
+    <% end %>
+    <div class="result__offerings-qualifications">
+      <%= render partial: 'search/partials/firm/offerings', object: firm, as: :firm %>
+      <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
+    </div>
   </div>
 </li>

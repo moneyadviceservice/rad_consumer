@@ -1,149 +1,73 @@
 .result {
   @include clearfix();
+
+  margin-bottom: $baseline-unit*6;
+  padding: $baseline-unit;
+
   border: 1px solid $result-border-color;
   border-radius: $result-radius;
-  margin-bottom: $baseline-unit*6;
+  box-shadow: 0 1px 0 0 $result-shadow-color;
 
-  .svg-icon {
-    @include inline-block();
-    position: relative;
-    top: 5px;
-    margin-right: $baseline-unit;
-  }
-
-  .svg-icon-email,
-  .svg-icon-url,
-  .svg-icon-phone {
-    width: 20px;
-    height: 20px;
-    fill: $color-green-secondary;
-  }
+  color: $result-text-color;
 }
 
 .result__heading {
-  background-color: $background-color;
   @include body(18, 27);
-  padding: $baseline-unit*2;
-  color: $result-heading-color;
+
   margin-top: 0;
   margin-bottom: 0;
 
-  @include respond-to ($mq-m) {
-    margin-bottom: $baseline-unit*2;
-  }
-}
-
-.result__heading-text {
-  @include respond-to($mq-xs, $mq-m) {
-    display: block;
-    padding-left: 20px;
-  }
-}
-
-.result__adviser-distance {
-  display: block;
-  line-height: 27px;
-  color: $color-black;
-  padding: 0 $baseline-unit*2;
-  margin-top: 0;
-  font-weight: 300;
-  padding-left: 20px;
-
-  @include respond-to ($mq-m) {
-    display: inline;
-    margin-top: $baseline-unit*2;
-    padding-left: 0;
-  }
-}
-
-.result__sub-heading {
-  @include body(16, 24);
   color: $result-heading-color;
-  font-weight: 500;
-  margin-top: 0;
+
+  @include respond-to($mq-m) {
+    padding-top: $baseline-unit*2;
+  }
 }
 
-.result__address {
+.result__firm-name {
   @include column(12);
-  margin-top: $baseline-unit*4;
-  margin-bottom: $baseline-unit*4;
 
-  @include respond-to (37.5em) {
-    @include column(4);
+  @include respond-to($mq-m) {
+    @include column(9);
   }
+}
 
-  @include respond-to ($mq-m) {
+.result__profile-link {
+  @include column(12);
+
+  text-align: right;
+
+  @include respond-to($mq-m) {
     @include column(3);
   }
 }
 
-.result__advice {
+.result__heading-text {
+  @include body(23,30);
+}
+
+.result__information {
   @include column(12);
-
-  @include respond-to (37.5em) {
-    margin-top: $baseline-unit*4;
-    @include column(8);
-  }
-
-  @include respond-to ($mq-m) {
-    @include column(9);
-    margin-top: $baseline-unit*4;
-    margin-bottom: $baseline-unit*4;
-    padding-left: $baseline-unit*2;
-    border-left: 1px solid $result-border-color;
-  }
 }
 
-.result__2col {
-  margin-top: $baseline-unit*4;
-
-  @include respond-to (37.5em) {
-    @include column(6);
-    margin-top: 0;
-    margin-bottom: $baseline-unit;
-  }
-}
-
-.result__keyword {
+.result__offerings-qualifications {
   margin-top: $baseline-unit*2;
-  float: left;
-
-  @include respond-to ($mq-m) {
-    @include column(12);
-  }
 }
 
-.result__list {
-  @extend .unstyled-list;
+.result__information__item {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+
+  border-top: 1px solid $result-border-color;
+
+  @include body(16,30);
 }
 
-.result__list--second {
-  margin-top: $baseline-unit*4;
-}
-
-.result__list-item {
-  margin-bottom: $baseline-unit;
+.result__office-adviser-count {
+  @include body(16, 16);
 }
 
 .result__qualifications {
-  clear: both;
-}
-
-.result__qualifications-heading {
-  @include column(12);
-  @include body(14, 24);
-
-  @include respond-to($mq-m) {
-    @include column(6);
-  }
-}
-
-.result__qualifications-logos {
-  @include column(12);
-  margin-top: $baseline-unit*2;
-  margin-bottom: $baseline-unit*2;
-
-  @include respond-to($mq-m) {
-    @include column(6);
-  }
+  padding-top: $baseline-unit;
 }
