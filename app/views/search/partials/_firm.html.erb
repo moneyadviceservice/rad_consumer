@@ -17,7 +17,9 @@
       <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm %>
       <%= render partial: 'search/partials/firm/num_offices_advisers', object: firm, as: :firm %>
     <% end %>
-    <%= render partial: 'search/partials/firm/offerings', object: firm, as: :firm %>
-    <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
+    <div class="result__offerings-qualifications">
+      <%= render partial: 'search/partials/firm/offerings', object: firm, as: :firm %>
+      <%= render partial: 'search/partials/firm/qualifications', object: firm, as: :firm %>
+    </div>
   </div>
 </li>
