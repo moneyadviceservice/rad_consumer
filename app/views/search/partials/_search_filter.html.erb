@@ -45,4 +45,16 @@
       </div>
     <% end %>
   </section>
+
+  <section class="is-hidden-on-mobile">
+    <%= heading_tag(t('more_help.heading'), level: 3) %>
+
+    <p><%= t('more_help.content') %></p>
+
+    <ul class="unstyled-list">
+      <% t('more_help.links').each do |link| %>
+        <li><%= link_to(link[:title], link[:url]) %></li>
+      <% end %>
+    </ul>
+  </section>
 </div>
