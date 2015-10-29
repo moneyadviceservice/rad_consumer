@@ -19,33 +19,6 @@
   }
 }
 
-.l-results__firm-name {
-  @include column(12);
-
-  margin-left: 0;
-  margin-right: 5%;
-
-  @include respond-to($mq-m) {
-    @include column(8);
-
-    margin-left: 0;
-    margin-right: 5%;
-  }
-}
-
-.l-results__profile-link {
-  @include column(12);
-
-  text-align: right;
-  margin-right: 0;
-
-  @include respond-to($mq-m) {
-    @include column(4);
-
-    margin-right: 0;
-  }
-}
-
 .l-results__heading {
   @include column(12);
 

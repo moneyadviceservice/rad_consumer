@@ -6,15 +6,12 @@
 
   border: 1px solid $result-border-color;
   border-radius: $result-radius;
-  -webkit-box-shadow: 0 1px 0 0 $result-shadow-color;
-  -moz-box-shadow: 0 1px 0 0 $result-shadow-color;
   box-shadow: 0 1px 0 0 $result-shadow-color;
 
   color: $result-text-color;
 }
 
 .result__heading {
-  @include column(12);
   @include body(18, 27);
 
   margin-top: 0;
@@ -24,6 +21,24 @@
 
   @include respond-to($mq-m) {
     padding-top: $baseline-unit*2;
+  }
+}
+
+.result__firm-name {
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(9);
+  }
+}
+
+.result__profile-link {
+  @include column(12);
+
+  text-align: right;
+
+  @include respond-to($mq-m) {
+    @include column(3);
   }
 }
 
