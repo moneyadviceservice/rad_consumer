@@ -3,7 +3,6 @@ require 'spec_helper'
 RSpec.describe FirmHelper, type: :helper do
   let(:firm) { double }
 
-
   describe 'type_of_advice_list_item' do
     subject { helper.type_of_advice_list_item(firm, :equity_release) }
 
@@ -37,22 +36,22 @@ RSpec.describe FirmHelper, type: :helper do
 
     context 'when the adviser is less than 1 mile away' do
       let(:closest_adviser) { '0.1358' }
-      it { is_expected.to eq('0.14 miles away') }
+      it { is_expected.to eq('0.1 miles away') }
     end
 
     context 'when the adviser is exactly 1 mile away' do
       let(:closest_adviser) { '1.0' }
-      it { is_expected.to eq('1 mile away') }
+      it { is_expected.to eq('1.0 miles away') }
     end
 
     context 'when the adviser is greater than 1 mile away' do
       let(:closest_adviser) { '1.12345678' }
-      it { is_expected.to eq('1.12 miles away') }
+      it { is_expected.to eq('1.1 miles away') }
     end
 
     context 'when the adviser is exactly 2 miles away' do
       let(:closest_adviser) { '2.00000' }
-      it { is_expected.to eq('2 miles away') }
+      it { is_expected.to eq('2.0 miles away') }
     end
   end
 end

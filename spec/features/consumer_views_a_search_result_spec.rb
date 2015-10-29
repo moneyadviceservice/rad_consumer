@@ -71,7 +71,7 @@ RSpec.feature 'Consumer views a search result',
   end
 
   def and_i_see_the_distance_to_the_nearest_adviser
-    expect(@displayed_firm.distance_to_the_nearest_adviser).to match(/has an adviser 0.78 miles away/)
+    expect(@displayed_firm.distance_to_the_nearest_adviser).to match(/has an adviser 0.8 miles away/)
   end
 
   def and_i_see_the_number_of_advisers

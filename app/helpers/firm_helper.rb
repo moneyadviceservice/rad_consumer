@@ -7,6 +7,6 @@ module FirmHelper
   end
 
   def closest_adviser_text(firm_result)
-    I18n.t('search.result.miles_away', distance: format('%.2f', firm_result.closest_adviser.to_f))
+    I18n.t('search.result.miles_away', distance: format('%.1f', firm_result.closest_adviser.to_f))
   end
 end
