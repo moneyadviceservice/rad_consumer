@@ -15,8 +15,8 @@ define(['jquery', 'DoughBaseComponent'],
       defaultConfig = {
         zoomLevel: 11,
         center: {lat: 0, lng: 0},
-        adviserPinUrl: '/assets/pins/adviser.svg',
-        officePinUrl: '/assets/pins/office.svg'
+        adviserPinUrl: null,
+        officePinUrl: null
       };
 
   /**
@@ -57,7 +57,7 @@ define(['jquery', 'DoughBaseComponent'],
    */
   FirmMapProto.initializeGoogleMaps = function() {
     var $map = this._getMapElement();
-    require(['async!http://maps.google.com/maps/api/js?key=' + this.config.apiKey],
+    require(['async!//maps.google.com/maps/api/js?key=' + this.config.apiKey],
             $.proxy(this.setupMap, this));
   };
 
@@ -135,8 +135,7 @@ define(['jquery', 'DoughBaseComponent'],
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
-      icon: { url: this.config.adviserPinUrl },
-      title: $element.text()
+      icon: { url: this.config.adviserPinUrl }
     };
   };
 
