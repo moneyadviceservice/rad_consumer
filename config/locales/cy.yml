@@ -219,6 +219,17 @@ cy:
       - text: Ni dderbyniwn unrhyw dâl anogaeth na chomisiwn
       - text: Ni fyddwn yn cysylltu â chi na rhannu’ch manylion
 
+  more_help:
+    heading: -X-
+    content: -X-
+    links:
+      - title: Ymddeoliad – pam ddylwn i gael cyngor?
+        url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+      - title: Dewis cynghorydd ariannol
+        url: https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol
+      - title: Cwestiynau allweddol i’w gofyn i’ch cynghorydd ariannol
+        url: https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
+
   search_filter:
     landing_page:
       heading: Sut fath o help sydd ei angen arnoch?

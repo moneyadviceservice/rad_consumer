@@ -219,6 +219,17 @@ en:
       - text: We don't receive any incentive or commission.
       - text: We will not contact you or share your details.
 
+  more_help:
+    heading: More help choosing a financial adviser?
+    content: "If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:"
+    links:
+      - title: When and where to get pensions help and advice
+        url: https://www.moneyadviceservice.org.uk/en/articles/when-and-where-to-get-pensions-help-and-advice
+      - title: Choosing a financial adviser
+        url: https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser
+      - title: Key questions to ask your financial adviser
+        url: https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser
+
   search_filter:
     landing_page:
       heading: What do you need help with?
