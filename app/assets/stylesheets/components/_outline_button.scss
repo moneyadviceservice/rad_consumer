@@ -20,8 +20,8 @@
 }
 
 .outline-button--light {
+  @include body(14,36);
   font-weight: 100;
-  font-size: 0.8em;
 }
 
 .outline-button--margin-collapse {

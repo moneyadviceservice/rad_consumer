@@ -43,7 +43,7 @@
 }
 
 .result__heading-text {
-  font-size: 1.4rem;
+  @include body(23,30);
 }
 
 .result__information {
@@ -61,6 +61,8 @@
 }
 
 .result__office-adviser-count {
+  @include body(16, 16);
+
   margin-bottom: $baseline-unit*2;
 }
 
