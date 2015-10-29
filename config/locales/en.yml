@@ -289,8 +289,8 @@
 
     result:
       adviser: has an adviser
-      miles_away: miles away
-      miles_away_alt: less than a mile away
+      miles_away: "%{distance} miles away"
+      number_of_offices_and_advisers: "Firm has %{office_count} offices and %{adviser_count} advisers"
 
     keywords:
       free_initial_meeting:
