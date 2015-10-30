@@ -1,0 +1,24 @@
+<% if search_form.face_to_face? %>
+
+  <%= heading_tag(t('firms.show.face_to_face.header'),
+                  level: 3,
+                  class: 'l-firm__heading--collapse') %>
+  <p>
+    <%= t('firms.show.face_to_face.text') %>
+
+    <%= render 'firms/partials/guide_link' %>
+  </p>
+
+<% else %>
+
+  <%= heading_tag(t('firms.show.remote.header'),
+                  level: 3,
+                  class: 'l-firm__heading--collapse') %>
+  <p>
+    <%= t('firms.show.remote.text.part_one') %>
+    <strong><%= t('firms.show.remote.text.part_two') %></strong>.
+    <%= t('firms.show.remote.text.part_three') %>
+
+    <%= render 'firms/partials/guide_link' %>
+  </p>
+<% end %>

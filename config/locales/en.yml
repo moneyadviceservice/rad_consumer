@@ -32,6 +32,19 @@ en:
       telephone_number: 'Telephone'
       email_address: 'Email'
       email_firm: 'Email firm'
+      face_to_face:
+        header: How near is your adviser?
+        text: Many firms have advisers who don’t work from the office all the time and are based in different parts of the UK. So don’t worry if the address of the firm seems far away, there should be an adviser located near to the post code you’ve entered. Advisers will also usually give you a choice of where to meet.
+      guide_link:
+        text: For more help choosing an adviser
+        article_url: when-and-where-to-get-pensions-help-and-advice
+        link_text: see our guide
+      remote:
+        header: Phone or online only advisers
+        text:
+          part_one: You have chosen a firm that offers advice
+          part_two: by telephone or online only
+          part_three: This often means less overheads for them, and therefore lower costs for you. The important thing to remember is that all the advisers on the directory - no matter how they offer advice – are fully regulated and offer the same protection however you receive advice.
       website_address: 'Website'
       panels:
         firm:

@@ -31,6 +31,19 @@ cy:
       telephone_number: Ffôn
       email_address: E-bost
       email_firm: E-bostio’r cwmni
+      face_to_face:
+        header: -- X --
+        text: -- X --
+      guide_link:
+        text: -- X --
+        article_url: pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        link_text: -- X --
+      remote:
+        header: -- X --
+        text:
+          part_one: -- X --
+          part_two: -- X --
+          part_three: -- X --
       website_address: Gwefan
       panels:
         firm:
