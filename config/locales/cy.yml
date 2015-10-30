@@ -356,6 +356,7 @@ cy:
       "2": Ar-lein
 
   investment_size:
+    no_minimum: Dim isafswm ym maint y gronfa
     ordinal:
       '1': 'O dan £50,000'
       '2': '£50,000'
