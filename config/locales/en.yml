@@ -49,7 +49,7 @@ en:
       panels:
         firm:
           heading: 'Firm details'
-          locations: 'Adviser & office locations'
+          locations: 'Adviser locations'
           callout:
             minimum_fee:
               heading: Minimum fee
