@@ -233,8 +233,8 @@ cy:
       - text: Ni fyddwn yn cysylltu â chi na rhannu’ch manylion
 
   more_help:
-    heading: -X-
-    content: -X-
+    heading: Rhagor o help i ddewis cynghorydd ariannol?
+    content: "Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:"
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
         url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
