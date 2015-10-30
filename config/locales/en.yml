@@ -309,7 +309,7 @@ en:
     back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
     summary_of_results:
-      showing: "Showing %{first_record}-%{last_record} of %{total_records} advisers"
+      showing: "Showing %{first_record}-%{last_record} of %{total_records} firms"
 
     result:
       adviser: has an adviser
