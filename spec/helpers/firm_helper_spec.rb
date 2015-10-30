@@ -58,7 +58,7 @@ RSpec.describe FirmHelper, type: :helper do
   describe 'minimum_pot_size_text' do
     let(:available_ordinals) { I18n.t('investment_size.ordinal').keys.map(&:to_s).map(&:to_i) }
     let(:lowest_size) { InvestmentSize.lowest }
-    let(:other_size) { InvestmentSize.last }
+    let(:other_size) { InvestmentSize.where.not(order: lowest_size.order).first }
     let(:expected_friendly_name) { I18n.t("investment_size.ordinal.#{other_size.order}") }
     subject { helper.minimum_pot_size_text(firm) }
 
