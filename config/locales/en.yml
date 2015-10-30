@@ -356,6 +356,7 @@
       "2": Online
 
   investment_size:
+    no_minimum: No minimum pot size
     ordinal:
       '1': 'Under £50,000'
       '2': '£50,000'
