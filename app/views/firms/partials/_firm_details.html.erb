@@ -83,7 +83,7 @@
           <p class="is-hidden further-info__content" data-further-info-target>
             <%= t('firms.show.panels.firm.callout.minimum_pot_size.tooltip') %>
           </p>
-          <%= InvestmentSize.find(firm.investment_sizes.first).friendly_name %>
+          <%= minimum_pot_size_text(firm) %>
         </div>
       <% end %>
       <% if firm.free_initial_meeting? %>
