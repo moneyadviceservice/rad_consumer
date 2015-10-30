@@ -20,7 +20,7 @@ class ResultsPage < SitePrism::Page
   end
 
   def showing_firms?(first, to:, of:)
-    summary.text == "Showing #{first}-#{to} of #{of} nearest advisers"
+    summary.text == "Showing #{first}-#{to} of #{of} advisers"
   end
 
   def firm_names
