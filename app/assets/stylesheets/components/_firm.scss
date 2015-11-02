@@ -5,7 +5,7 @@
 
 .firm__header {
   background-color: $background-color;
-  border: 1px solid $color-grey-normal;
+  border: 1px solid $firm-border-color;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   padding: $baseline-unit*2;
@@ -28,11 +28,13 @@
 .firm__content {
   @include clearfix();
   padding: $baseline-unit*2;
-  border-right: 1px solid $color-grey-normal;
-  border-left: 1px solid $color-grey-normal;
-  border-bottom: 3px solid $color-grey-seven;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-right: 1px solid $firm-border-color;
+  border-left: 1px solid $firm-border-color;
+  border-bottom: 1px solid $firm-border-color;
+  border-bottom-left-radius: $firm-border-radius;
+  border-bottom-right-radius: $firm-border-radius;
+
+  box-shadow: 0 1px 0 0 $result-shadow-color;
 
   @include respond-to($mq-m) {
     padding-bottom: $baseline-unit*6;
