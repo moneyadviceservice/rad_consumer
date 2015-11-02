@@ -31,6 +31,19 @@ cy:
       telephone_number: Ffôn
       email_address: E-bost
       email_firm: E-bostio’r cwmni
+      face_to_face:
+        header: Pa mor agos yw eich cynghorydd?
+        text: "Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod."
+      guide_link:
+        text: Am ragor o gymorth i ddewis cynghorydd
+        article_url: pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        link_text: gweler ein canllaw
+      remote:
+        header: Cynghorwyr dros y ffôn neu ar-lein yn unig
+        text:
+          part_one: "Rydych wedi dewis cwmni sy’n cynnig cyngor"
+          part_two: dros y ffôn neu ar-lein yn unig
+          part_three: "Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor - wedi eu rheoleiddio ac yn cynnig yr un diogelwch waeth sut y cewch eich cynghori."
       website_address: Gwefan
       panels:
         firm:
@@ -218,6 +231,17 @@ cy:
       - text: Cyngor ar ddyledion am ddim a diduedd, a sefydlwyd gan y llywodraeth
       - text: Ni dderbyniwn unrhyw dâl anogaeth na chomisiwn
       - text: Ni fyddwn yn cysylltu â chi na rhannu’ch manylion
+
+  more_help:
+    heading: Rhagor o help i ddewis cynghorydd ariannol?
+    content: "Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:"
+    links:
+      - title: Ymddeoliad – pam ddylwn i gael cyngor?
+        url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+      - title: Dewis cynghorydd ariannol
+        url: https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol
+      - title: Cwestiynau allweddol i’w gofyn i’ch cynghorydd ariannol
+        url: https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
 
   search_filter:
     landing_page:
