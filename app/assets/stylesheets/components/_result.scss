@@ -4,8 +4,8 @@
   margin-bottom: $baseline-unit*6;
   padding: $baseline-unit;
 
-  border: 1px solid $result-border-color;
-  border-radius: $result-radius;
+  border: 1px solid $firm-border-color;
+  border-radius: $firm-border-radius;
   box-shadow: 0 1px 0 0 $result-shadow-color;
 
   color: $result-text-color;
@@ -59,7 +59,7 @@
   margin-bottom: 0;
   padding-top: 0;
 
-  border-top: 1px solid $result-border-color;
+  border-top: 1px solid $firm-border-color;
 
   @include body(16,30);
 }

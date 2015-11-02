@@ -2,7 +2,7 @@
   @include body(14, 14);
 
   padding-bottom: $baseline-unit*2;
-  border-bottom: 1px solid $result-border-color;
+  border-bottom: 1px solid $firm-border-color;
 
   &:last-of-type {
     padding-bottom: 0;

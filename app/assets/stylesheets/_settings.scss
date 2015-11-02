@@ -19,6 +19,8 @@ $callout-text-color: $color-black;
 $color-link-blue: $color-blue-medium;
 $color-porcelain: #F0F4F4;
 
+$firm-border-radius: 5px;
+$firm-border-color: $background-color;
 $firm-header-color: $color-green-primary;
 $firm-pin-color: $color-green-secondary;
 
@@ -39,8 +41,6 @@ $list-numbers-list-style-color: $color-green-secondary;
 $pagination-icon-color: #010202;
 $pagination-text-color: $color-black;
 
-$result-radius: 5px;
-$result-border-color: $background-color;
 $result-shadow-color: $color-grey-light;
 $result-heading-color: $color-black;
 $result-text-color: $color-black;
