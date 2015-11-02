@@ -1,13 +1,13 @@
 <div class="l-constrained">
   <div class="l-firm">
     <div class="l-1col">
-      <%= heading_tag(t('page_title'), level: 1, class: 'l-firm__heading') %>
-      <p>
+      <%= heading_tag(t('page_title'), level: 1, class: 'l-firm__profile-heading') %>
+      <span class="firm__back-link">
         <%= link_to search_path(search_form: params[:search_form]) do %>
           <%= svg_icon 'pagination-prev', class: 'firm__back-icon'
           %><%= t('firms.show.go_back') %>
         <% end %>
-      </p>
+      </span>
     </div>
 
     <div class="l-firm__main">
