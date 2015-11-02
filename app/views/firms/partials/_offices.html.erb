@@ -1,1 +1,10 @@
-<p>Office details will go here.</p>
+<p class="address adr" >
+  <span class="visually-hidden fn org"><%= firm.name %></span>
+  <span class="address__line line-one"><%= firm.address_line_one %></span>
+  <% if firm.address_line_two.present? %>
+    <span class="address__line line-two"><%= firm.address_line_two %></span>
+  <% end %>
+  <span class="address__line locality"><%= firm.address_town %></span>
+  <span class="address__line region"><%= firm.address_county %></span>
+  <span class="address__line post-code"><%= firm.address_postcode %></span>
+</p>
