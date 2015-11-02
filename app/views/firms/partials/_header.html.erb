@@ -1,27 +1,35 @@
 <div class="firm__header">
   <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
-  <%= render partial: 'search/partials/firm/adviser_distance', object: @firm, as: :firm, locals: { search_form: search_form }%>
+  <% if search_form.face_to_face? %>
+    <%= render partial: 'search/partials/firm/adviser_distance', object: @firm, as: :firm, locals: { search_form: search_form }%>
+  <% end %>
 
-  <div class="firm__links">
+  <ul class="firm__links">
     <% if @firm.telephone_number.present? %>
-      <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
-        <%= svg_icon :phone_ringing, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
-        %><%= @firm.telephone_number %>
-      <% end %>
+      <li>
+        <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
+          <%= svg_icon :phone_ringing, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+          %><%= @firm.telephone_number %>
+        <% end %>
+      </li>
     <% end %>
 
     <% if @firm.email_address.present? %>
-      <%= mail_to @firm.email_address, class: 'outline-button' do %>
-        <%= svg_icon :envelope, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
-        %><%= t('firms.show.email_firm') %>
-      <% end %>
+      <li>
+        <%= mail_to @firm.email_address, class: 'outline-button' do %>
+          <%= svg_icon :envelope, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+          %><%= t('firms.show.email_firm') %>
+        <% end %>
+      </li>
     <% end %>
 
     <% if @firm.website_address.present? %>
-      <%= link_to @firm.website_address, class: 'outline-button', target: '_blank' do %>
-        <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
-        %><%= t('firms.show.website_address') %>
-      <% end %>
+      <li>
+        <%= link_to @firm.website_address, class: 'outline-button', target: '_blank' do %>
+          <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+          %><%= t('firms.show.website_address') %>
+        <% end %>
+      </li>
     <% end %>
-  </div>
+  </ul>
 </div>

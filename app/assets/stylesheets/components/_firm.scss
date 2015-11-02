@@ -45,7 +45,18 @@
 }
 
 .firm__links {
+  @extend .unstyled-list;
   margin: $baseline-unit 0;
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond-to($mq-s) {
+    li {
+      display: inline;
+    }
+  }
 }
 
 .firm__back-icon {

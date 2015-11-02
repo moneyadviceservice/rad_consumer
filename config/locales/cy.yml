@@ -309,7 +309,7 @@ cy:
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
     summary_of_results:
-      showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} gynghorwyr mwyaf lleol"
+      showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau"
 
     result:
       adviser: mae gan gynghorydd
