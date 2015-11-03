@@ -81,4 +81,18 @@ RSpec.describe FirmHelper, type: :helper do
       it { is_expected.to eq(I18n.t('investment_size.no_minimum')) }
     end
   end
+
+  describe 'minimum_fixed_fee' do
+    context 'displays values in GBP' do
+      before { allow(firm).to receive(:minimum_fixed_fee).and_return(10) }
+
+      it { expect(helper.minimum_fixed_fee(firm)).to eq('£10') }
+    end
+
+    context 'displays values in whole GBP' do
+      before { allow(firm).to receive(:minimum_fixed_fee).and_return(20.9) }
+
+      it { expect(helper.minimum_fixed_fee(firm)).to eq('£21') }
+    end
+  end
 end
