@@ -5,7 +5,7 @@
   <% end %>
 
   <ul class="firm__links">
-    <% if @firm.telephone_number.present? %>
+    <% if @firm.telephone_number.present? && search_form.face_to_face? %>
       <li>
         <%= link_to "tel:#{@firm.telephone_number}", class: 'outline-button' do %>
           <%= svg_icon :phone_ringing, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
@@ -14,7 +14,7 @@
       </li>
     <% end %>
 
-    <% if @firm.email_address.present? %>
+    <% if @firm.email_address.present? && search_form.face_to_face? %>
       <li>
         <%= mail_to @firm.email_address, class: 'outline-button' do %>
           <%= svg_icon :envelope, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
