@@ -63,18 +63,16 @@
 
   <div class="l-2col-even l-firm__callout">
     <div class="callout callout--top-collapse">
-      <% if firm.minimum_fixed_fee.present? %>
-        <div class="callout__item" data-further-info>
-          <h4 class="callout__heading">
-            <%= t('firms.show.panels.firm.callout.minimum_fee.heading') %>
-            <%= render 'shared/further_info_trigger' %>
-          </h4>
-          <p class="is-hidden further-info__content" data-further-info-target>
-            <%= t('firms.show.panels.firm.callout.minimum_fee.tooltip') %>
-          </p>
-          <%= number_to_currency firm.minimum_fixed_fee, unit: '£', precision: 0 %>
-        </div>
-      <% end %>
+      <div class="callout__item" data-further-info>
+        <h4 class="callout__heading">
+          <%= t('firms.show.panels.firm.callout.minimum_fee.heading') %>
+          <%= render 'shared/further_info_trigger' %>
+        </h4>
+        <p class="is-hidden further-info__content" data-further-info-target>
+          <%= t('firms.show.panels.firm.callout.minimum_fee.tooltip') %>
+        </p>
+        <%= number_to_currency firm.minimum_fixed_fee, unit: '£', precision: 0 %>
+      </div>
       <% if firm.investment_sizes.present? %>
         <div class="callout__item" data-further-info>
           <h4 class="callout__heading">
