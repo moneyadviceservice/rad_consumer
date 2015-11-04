@@ -1,0 +1,4 @@
+.office {
+  @include clearfix();
+  border-top: 1px solid $office-border-color;
+}

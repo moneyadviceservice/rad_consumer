@@ -1,1 +1,28 @@
-<p>Office details will go here.</p>
+<% firm.offices.each do |office| %>
+  <div class="office">
+    <div class="l-2col">
+      <div class="l-2col-even">
+        <div class="address">
+          <div class="address__line"><%= office.address_line_one %></div>
+          <div class="address__line"><%= office.address_line_two %></div>
+          <div class="address__line"><%= office.address_line_town %></div>
+          <div class="address__line"><%= office.address_line_county %></div>
+          <div class="address__line"><%= office.address_line_postcode %></div>
+        </div>
+      </div>
+      <div class="l-2col-even">
+        <div class="office__telephone">
+          <%= link_to office.telephone_number, "tel:#{office.telephone_number}" %>
+        </div>
+        <div class="office__email">
+          <%= link_to 'Email office', "mailto:#{office.email_address}" %>
+        </div>
+      </div>
+    </div>
+    <div class="l-1col">
+      <div class="office__disabled-access">
+        <%= office.disabled_access %>
+      </div>
+    </div>
+  </div>
+<% end %>
