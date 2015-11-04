@@ -21,6 +21,10 @@
   margin-bottom: 0;
 }
 
+.l-firm__heading {
+  margin-top: $baseline-unit;
+}
+
 .l-firm__heading--collapse {
   margin-top: -($baseline-unit);
 }
