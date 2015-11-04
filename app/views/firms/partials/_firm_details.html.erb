@@ -63,29 +63,10 @@
 
   <div class="l-2col-even l-firm__callout">
     <div class="callout callout--top-collapse">
-      <% if firm.minimum_fixed_fee.present? %>
-        <div class="callout__item" data-further-info>
-          <h4 class="callout__heading">
-            <%= t('firms.show.panels.firm.callout.minimum_fee.heading') %>
-            <%= render 'shared/further_info_trigger' %>
-          </h4>
-          <p class="is-hidden further-info__content" data-further-info-target>
-            <%= t('firms.show.panels.firm.callout.minimum_fee.tooltip') %>
-          </p>
-          <%= number_to_currency firm.minimum_fixed_fee, unit: '£', precision: 0 %>
-        </div>
-      <% end %>
+      <%= render partial: 'firms/partials/callout_item', locals: { firm: firm, key_element: :minimum_fee, value_text: minimum_fixed_fee(firm) } %>
+
       <% if firm.investment_sizes.present? %>
-        <div class="callout__item" data-further-info>
-          <h4 class="callout__heading">
-            <%= t('firms.show.panels.firm.callout.minimum_pot_size.heading') %>
-            <%= render 'shared/further_info_trigger' %>
-          </h4>
-          <p class="is-hidden further-info__content" data-further-info-target>
-            <%= t('firms.show.panels.firm.callout.minimum_pot_size.tooltip') %>
-          </p>
-          <%= minimum_pot_size_text(firm) %>
-        </div>
+        <%= render partial: 'firms/partials/callout_item', locals: { firm: firm, key_element: :minimum_pot_size, value_text: minimum_pot_size_text(firm) } %>
       <% end %>
       <% if firm.free_initial_meeting? %>
         <div class="callout__item" data-further-info>

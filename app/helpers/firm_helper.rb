@@ -16,4 +16,8 @@ module FirmHelper
     return I18n.t('investment_size.no_minimum') if record.lowest?
     record.friendly_name
   end
+
+  def minimum_fixed_fee(firm_result)
+    number_to_currency firm_result.minimum_fixed_fee, unit: '£', precision: 0
+  end
 end
