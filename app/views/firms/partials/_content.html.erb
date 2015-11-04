@@ -22,7 +22,7 @@
       </div>
       <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
         <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.office.heading') %></h2>
-        <%= render partial: 'firms/partials/offices' %>
+        <%= render partial: 'firms/partials/offices', locals: { firm: @firm } %>
       </div>
     </div>
   <% else %>

@@ -78,6 +78,10 @@ cy:
               heading: Cymwysterau a feddir gan gynghorwyr y cwmni
         offices:
           heading: Swyddfeydd
+          email_office: -X-
+          telephone: Ffôn
+          disabled_access: -X-
+          show_more: -X-
 
   skip_links:
     to_main: Skip to main content
