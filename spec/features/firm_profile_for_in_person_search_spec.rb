@@ -1,6 +1,5 @@
 RSpec.feature 'Firm profile page from an "in-person" search',
               vcr: vcr_options_for_feature(:firm_profile_for_in_person_search) do
-
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
   let(:profile_page) { ProfilePage.new }
