@@ -1,8 +1,8 @@
 <% firm.offices.each do |office| %>
-  <div class="office">
+  <div class="office t-office">
     <div class="l-2col">
       <div class="l-2col-even l-office-col">
-        <div class="address">
+        <div class="address t-address">
           <div class="address__line"><%= office.address_line_one %>,</div>
           <% if office.address_line_two.present? %>
             <div class="address__line"><%= office.address_line_two %>,</div>
