@@ -1,39 +1,45 @@
-<% firm.offices.each do |office| %>
-  <div class="office t-office">
-    <div class="l-2col">
-      <div class="l-2col-even l-office-col">
-        <div class="address t-address">
-          <div class="address__line"><%= office.address_line_one %>,</div>
-          <% if office.address_line_two.present? %>
-            <div class="address__line"><%= office.address_line_two %>,</div>
-          <% end %>
-          <div class="address__line"><%= office.address_town %>,</div>
-          <div class="address__line"><%= office.address_county %>,</div>
-          <div class="address__line"><%= office.address_postcode %></div>
+<div data-dough-component="ShowMore">
+  <% firm.offices.each do |office| %>
+    <div class="office t-office" data-dough-show-more-item>
+      <div class="l-2col">
+        <div class="l-2col-even l-office-col">
+          <div class="address t-address">
+            <div class="address__line"><%= office.address_line_one %>,</div>
+            <% if office.address_line_two.present? %>
+              <div class="address__line"><%= office.address_line_two %>,</div>
+            <% end %>
+            <div class="address__line"><%= office.address_town %>,</div>
+            <div class="address__line"><%= office.address_county %>,</div>
+            <div class="address__line"><%= office.address_postcode %></div>
+          </div>
+        </div>
+        <div class="l-2col-even l-office-col">
+          <div class="office__telephone">
+            <%= link_to "tel:#{office.telephone_number}", class: 'contact-link' do %>
+              <%= svg_icon :phone_ringing, title: t('firms.show.panels.offices.telephone'), class: 'contact-link__svg-icon'
+              %><%= office.telephone_number %>
+            <% end %>
+          </div>
+          <div class="office__email">
+            <%= link_to "mailto:#{office.email_address}", class: 'contact-link' do %>
+              <%= svg_icon :envelope, title: t('firms.show.panels.offices.email_office'), class: 'contact-link__svg-icon'
+              %><%= t('firms.show.panels.offices.email_office') %>
+            <% end %>
+          </div>
         </div>
       </div>
-      <div class="l-2col-even l-office-col">
-        <div class="office__telephone">
-          <%= link_to "tel:#{office.telephone_number}", class: 'contact-link' do %>
-            <%= svg_icon :phone_ringing, title: t('firms.show.panels.offices.telephone'), class: 'contact-link__svg-icon'
-            %><%= office.telephone_number %>
-          <% end %>
+      <% if office.disabled_access %>
+        <div class="l-1col l-office-col">
+          <div class="office__disabled-access">
+            <%= svg_icon :tick_mark, class: 'office__tick-icon' %>
+            <%= t('firms.show.panels.offices.disabled_access') %>
+          </div>
         </div>
-        <div class="office__email">
-          <%= link_to "mailto:#{office.email_address}", class: 'contact-link' do %>
-            <%= svg_icon :envelope, title: t('firms.show.panels.offices.email_office'), class: 'contact-link__svg-icon'
-            %><%= t('firms.show.panels.offices.email_office') %>
-          <% end %>
-        </div>
-      </div>
+      <% end %>
     </div>
-    <% if office.disabled_access %>
-      <div class="l-1col l-office-col">
-        <div class="office__disabled-access">
-          <%= svg_icon :tick_mark, class: 'office__tick-icon' %>
-          <%= t('firms.show.panels.offices.disabled_access') %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+  <% end %>
+
+  <a data-dough-show-more-trigger class="office__show-more-trigger is-hidden" href="#">
+    <%= t('firms.show.panels.offices.show_more') %>
+  </a>
+</div>

@@ -27,3 +27,10 @@
   height: 20px;
   fill: $office-tick-fill-color;
 }
+
+.office__show-more-trigger {
+  display: block;
+  border-top: 1px solid $office-border-color;
+  text-align: center;
+  padding-top: $baseline-unit*2;
+}
