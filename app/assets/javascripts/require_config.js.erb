@@ -15,6 +15,7 @@
 //= depend_on_asset dough/assets/js/components/DoughBaseComponent
 //= depend_on_asset dough/assets/js/components/TabSelector
 //= depend_on_asset modules/FirmMap
+//= depend_on_asset modules/ShowMore
 
 <%
   def requirejs_path(asset)
@@ -40,7 +41,8 @@
       TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
       FirmMap: requirejs_path('modules/FirmMap'),
       async: requirejs_path('requirejs-plugins/src/async'),
-      rsvp: requirejs_path('rsvp/rsvp')
+      rsvp: requirejs_path('rsvp/rsvp'),
+      ShowMore: requirejs_path('modules/ShowMore')
     }
   }
 %>

@@ -78,7 +78,11 @@ en:
             qualifications:
               heading: Qualifications held by firm advisers
         offices:
-          heading: 'Offices'
+          heading: Offices
+          email_office: Email office
+          telephone: Telephone
+          disabled_access: Disabled access
+          show_more: Show more offices
 
   skip_links:
     to_main: Skip to main content

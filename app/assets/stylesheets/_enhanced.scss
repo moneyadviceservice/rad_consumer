@@ -13,6 +13,7 @@
 @import 'layouts/results';
 @import 'layouts/glossary';
 @import 'layouts/firm';
+@import 'layouts/office';
 
 @import 'states/is_hidden';
 
@@ -24,12 +25,14 @@
 @import 'components/banner_list';
 @import 'components/brand_logo';
 @import 'components/callout';
+@import 'components/contact_link';
 @import 'components/education';
 @import 'components/firm';
 @import 'components/further_info';
 @import 'components/keyword';
 @import 'components/list_numbers';
 @import 'components/locale';
+@import 'components/office';
 @import 'components/outline_button';
 @import 'components/pagination';
 @import 'components/result';

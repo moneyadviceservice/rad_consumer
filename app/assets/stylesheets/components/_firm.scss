@@ -42,7 +42,7 @@
   box-shadow: 0 1px 0 0 $result-shadow-color;
 
   @include respond-to($mq-m) {
-    padding-bottom: $baseline-unit*6;
+    padding-bottom: 0;
   }
 }
 

@@ -11,6 +11,7 @@
           <div class="tab-selector__trigger-container is-inactive" data-dough-tab-selector-trigger-container>
             <a class="tab-selector__trigger" href="#panel-2" data-dough-tab-selector-trigger="2">
               <%= t('firms.show.panels.offices.heading') %>
+              (<%= @firm.total_offices %>)
             </a>
           </div>
         </div>
@@ -22,7 +23,7 @@
       </div>
       <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
         <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.office.heading') %></h2>
-        <%= render partial: 'firms/partials/offices' %>
+        <%= render partial: 'firms/partials/offices', locals: { firm: @firm } %>
       </div>
     </div>
   <% else %>

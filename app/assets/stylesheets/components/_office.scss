@@ -1,0 +1,36 @@
+.office {
+  @include clearfix();
+  border-top: 1px solid $office-border-color;
+  color: $office-text-color;
+  padding: $baseline-unit*4 0;
+}
+
+.office:first-of-type {
+  border: none;
+  padding-top: $baseline-unit*2;
+}
+
+.office__disabled-access {
+  margin-top: 0;
+
+  @include respond-to($mq-m) {
+    margin-top: $baseline-unit;
+  }
+}
+
+.office__tick-icon {
+  @include inline-block();
+  position: relative;
+  top: 5px;
+  margin-right: $baseline-unit;
+  width: 20px;
+  height: 20px;
+  fill: $office-tick-fill-color;
+}
+
+.office__show-more-trigger {
+  display: block;
+  border-top: 1px solid $office-border-color;
+  text-align: center;
+  padding-top: $baseline-unit*2;
+}
