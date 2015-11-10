@@ -3,6 +3,54 @@ require 'spec_helper'
 RSpec.describe FirmHelper, type: :helper do
   let(:firm) { double }
 
+  describe 'firm_has_investing_types?' do
+    subject { helper.firm_has_investing_types?(firm) }
+
+    context 'it has neither sharia or ethical investing' do
+      before do
+        allow(firm).to receive(:ethical_investing_flag).and_return(false)
+        allow(firm).to receive(:sharia_investing_flag).and_return(false)
+      end
+
+      it 'returns false' do
+        expect(subject).to eq(false)
+      end
+    end
+
+    context 'it has sharia but not ethical investing' do
+      before do
+        allow(firm).to receive(:ethical_investing_flag).and_return(false)
+        allow(firm).to receive(:sharia_investing_flag).and_return(true)
+      end
+
+      it 'returns true' do
+        expect(subject).to eq(true)
+      end
+    end
+
+    context 'it has ethical but not sharia investing' do
+      before do
+        allow(firm).to receive(:ethical_investing_flag).and_return(true)
+        allow(firm).to receive(:sharia_investing_flag).and_return(false)
+      end
+
+      it 'returns true' do
+        expect(subject).to eq(true)
+      end
+    end
+
+    context 'it has ethical and sharia investing' do
+      before do
+        allow(firm).to receive(:ethical_investing_flag).and_return(true)
+        allow(firm).to receive(:sharia_investing_flag).and_return(true)
+      end
+
+      it 'returns true' do
+        expect(subject).to eq(true)
+      end
+    end
+  end
+
   describe 'type_of_advice_list_item' do
     subject { helper.type_of_advice_list_item(firm, :equity_release) }
 

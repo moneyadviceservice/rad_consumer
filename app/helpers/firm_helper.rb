@@ -1,4 +1,8 @@
 module FirmHelper
+  def firm_has_investing_types?(firm)
+    firm.ethical_investing_flag || firm.sharia_investing_flag
+  end
+
   def type_of_advice_list_item(firm, type)
     return unless firm.includes_advice_type? type
     content_tag :li,

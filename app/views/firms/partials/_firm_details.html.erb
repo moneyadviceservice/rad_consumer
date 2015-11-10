@@ -81,6 +81,26 @@
   </div>
 </div>
 
+<% if firm_has_investing_types?(firm) %>
+  <div class="l-firm__row">
+    <div class="l-1col firm__divider">
+      <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'investing__heading') %>
+      <ul class="investing__list">
+        <% if firm.ethical_investing_flag %>
+          <li class="investing__list-item">
+            <%= t('firms.show.panels.firm.services.investing.ethical') %>
+          </li>
+        <% end %>
+        <% if firm.sharia_investing_flag %>
+          <li class="investing__list-item">
+            <%= t('firms.show.panels.firm.services.investing.sharia') %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
 <% if firm_has_qualifications_or_accreditations?(firm) %>
   <div class="l-firm__row">
     <div class="l-1col firm__divider">
