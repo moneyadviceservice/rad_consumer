@@ -1,20 +1,17 @@
 <% if search_form.face_to_face? %>
-  <%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading') %>
+  <%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading is-hidden-no-js') %>
 
   <%= firm_map_component(center: {lat: latitude, lng: longitude},
         adviserPinUrl: image_path('pins/adviser.png'),
         officePinUrl: image_path('pins/office.png')) do %>
     <div class="firm__map" data-dough-map></div>
 
-    <ul class="is-hidden">
+    <ul class="firm__map-pin-items is-hidden">
       <% firm.advisers.each do |adviser| %>
         <li data-dough-map-point data-dough-map-point-type="adviser" data-dough-map-point-lat="<%= adviser.location.latitude %>" data-dough-map-point-lng="<%= adviser.location.longitude %>">
           <%= adviser.name %>
         </li>
       <% end %>
-    </ul>
-
-    <ul class="is-hidden">
       <% firm.offices.each do |office| %>
         <li data-dough-map-point data-dough-map-point-type="office" data-dough-map-point-lat="<%= office.location.latitude %>" data-dough-map-point-lng="<%= office.location.longitude %>"></li>
       <% end %>

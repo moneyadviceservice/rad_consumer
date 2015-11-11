@@ -1,7 +1,7 @@
 <div class="firm__content">
   <% if @search_form.face_to_face? %>
     <div class="tab-selector" data-dough-component="TabSelector">
-      <div data-dough-tab-selector-triggers-outer class="tab-selector__triggers-outer">
+      <div data-dough-tab-selector-triggers-outer class="tab-selector__triggers-outer is-hidden-no-js">
         <div data-dough-tab-selector-triggers-inner class="tab-selector__triggers-inner">
           <div class="tab-selector__trigger-container is-active" data-dough-tab-selector-trigger-container>
             <a class="tab-selector__trigger" href="#panel-1" data-dough-tab-selector-trigger="1">
@@ -18,11 +18,11 @@
       </div>
 
       <div class="tab-selector__target is-active" id="panel-1" data-dough-tab-selector-target="1">
-        <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.firm.heading') %></h2>
+        <h2 class="tab-selector__target-heading firm__details-heading"><%= t('firms.show.panels.firm.heading') %></h2>
         <%= render partial: 'firms/partials/firm_details', locals: { firm: @firm, latitude: @latitude, longitude: @longitude, search_form: @search_form } %>
       </div>
       <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
-        <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.office.heading') %></h2>
+        <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.offices.heading') %></h2>
         <%= render partial: 'firms/partials/offices', locals: { firm: @firm } %>
       </div>
     </div>
