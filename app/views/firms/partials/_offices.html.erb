@@ -9,7 +9,9 @@
               <div class="address__line"><%= office.address_line_two %>,</div>
             <% end %>
             <div class="address__line"><%= office.address_town %>,</div>
-            <div class="address__line"><%= office.address_county %>,</div>
+            <% if office.address_county.present? %>
+              <div class="address__line"><%= office.address_county %>,</div>
+            <% end %>
             <div class="address__line"><%= office.address_postcode %></div>
           </div>
         </div>
