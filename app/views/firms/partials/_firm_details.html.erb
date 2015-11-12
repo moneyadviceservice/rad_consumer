@@ -13,7 +13,9 @@
         </li>
       <% end %>
       <% firm.offices.each do |office| %>
-        <li data-dough-map-point data-dough-map-point-type="office" data-dough-map-point-lat="<%= office.location.latitude %>" data-dough-map-point-lng="<%= office.location.longitude %>"></li>
+        <li data-dough-map-point data-dough-map-point-type="office" data-dough-map-point-lat="<%= office.location.latitude %>" data-dough-map-point-lng="<%= office.location.longitude %>">
+          <%= office_address(office) %>
+        </li>
       <% end %>
     </ul>
   <% end %>

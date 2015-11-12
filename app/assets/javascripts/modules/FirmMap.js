@@ -101,15 +101,33 @@ define(['jquery', 'DoughBaseComponent'],
    * @param {GoogleMap} gMap Instance of the map to position markers onto
    */
   FirmMapProto._positionMarkers = function(gMap) {
-    var $elements = this.$find('[data-dough-map-point]');
+    var $elements = this.$find('[data-dough-map-point]'),
+        infoWindow = new google.maps.InfoWindow();
 
     $elements.each($.proxy(function(_, element) {
       var $element = $(element),
-          markerConfig = this._generateMarkerConfig($element);
+          markerConfig = this._generateMarkerConfig($element),
+          marker;
 
       markerConfig.map = gMap;
-      new google.maps.Marker(markerConfig);
+      marker = new google.maps.Marker(markerConfig);
+      FirmMapProto._addMarkerClickEvent(gMap, marker, infoWindow, $element.text());
     }, this));
+  };
+
+  /**
+   * _addMarkerClickEvent
+   *
+   * Sets up the click event to display the content for a given marker
+   *
+   * @private
+   *
+   */
+  FirmMapProto._addMarkerClickEvent = function(map, marker, infoWindow, content){
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.setContent(content);
+      infoWindow.open(map, this);
+    });
   };
 
   /**
@@ -139,7 +157,7 @@ define(['jquery', 'DoughBaseComponent'],
         lng: $element.data('dough-map-point-lng')
       },
       icon: { url: iconUrl },
-      clickable: false
+      clickable: ($element.data('dough-map-point-type') === 'office')
     };
   };
 
