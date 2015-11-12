@@ -138,7 +138,8 @@ define(['jquery', 'DoughBaseComponent'],
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
-      icon: { url: iconUrl }
+      icon: { url: iconUrl },
+      clickable: false
     };
   };
 
