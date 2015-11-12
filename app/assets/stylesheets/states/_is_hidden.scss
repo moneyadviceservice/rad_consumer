@@ -28,3 +28,10 @@
     }
   }
 }
+
+.is-hidden-no-js {
+  display: none;
+  .js & {
+    display: block;
+  }
+}

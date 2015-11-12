@@ -101,11 +101,11 @@ define(['jquery', 'DoughBaseComponent'],
    * @param {GoogleMap} gMap Instance of the map to position markers onto
    */
   FirmMapProto._positionMarkers = function(gMap) {
-    var $advisers = this.$find('[data-dough-map-point]');
+    var $elements = this.$find('[data-dough-map-point]');
 
-    $advisers.each($.proxy(function(_, adviser) {
-      var $adviser = $(adviser),
-          markerConfig = this._generateMarkerConfig($adviser);
+    $elements.each($.proxy(function(_, element) {
+      var $element = $(element),
+          markerConfig = this._generateMarkerConfig($element);
 
       markerConfig.map = gMap;
       new google.maps.Marker(markerConfig);
@@ -130,12 +130,15 @@ define(['jquery', 'DoughBaseComponent'],
    * @returns {Object} Config for creating a google maps marker with
    */
   FirmMapProto._generateMarkerConfig = function($element) {
+    var pinUrlString = $element.data('dough-map-point-type') + 'PinUrl';
+    var iconUrl = this.config[pinUrlString];
+
     return {
       position: {
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
-      icon: { url: this.config.adviserPinUrl }
+      icon: { url: iconUrl }
     };
   };
 

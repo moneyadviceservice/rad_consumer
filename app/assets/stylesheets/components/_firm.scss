@@ -3,6 +3,10 @@
   margin-bottom: $baseline-unit*6;
 }
 
+.firm__details-heading {
+  margin-top: 0;
+}
+
 .firm__header {
   background-color: $background-color;
   border: 1px solid $firm-border-color;
@@ -75,9 +79,18 @@
 }
 
 .firm__map {
-  height: 400px;
-  width: 100%;
-  margin-bottom: $baseline-unit*4;
+  display: none;
+
+  .js & {
+    display: block;
+    height: 400px;
+    width: 100%;
+    margin-bottom: $baseline-unit*4;
+  }
+}
+
+.firm__map-pin-items {
+  display: none;
 }
 
 .firm__divider {
