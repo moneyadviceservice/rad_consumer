@@ -136,7 +136,6 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   end
 
   def expect_no_errors_on(the_page)
-    expect(the_page).not_to have_text %r{Error|[Ww]arn|[Ee]xception}
     expect(the_page.status_code).not_to eq(500)
   end
 
