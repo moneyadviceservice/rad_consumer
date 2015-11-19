@@ -9,7 +9,6 @@ module Geosort
 
     obj_distance_pairs
       .sort_by { |_key, value| value }
-      .flatten
-      .reject { |x| x.is_a? Float }
+      .map { |pair| pair[0] }
   end
 end
