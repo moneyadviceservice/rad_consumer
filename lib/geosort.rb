@@ -8,8 +8,8 @@ module Geosort
     end
 
     obj_distance_pairs
-      .sort_by {|_key, value| value}
+      .sort_by { |_key, value| value }
       .flatten
-      .reject {|x| x.is_a? Float }
+      .reject { |x| x.is_a? Float }
   end
 end

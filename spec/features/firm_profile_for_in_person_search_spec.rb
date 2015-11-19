@@ -29,9 +29,9 @@ RSpec.feature 'Firm profile page from an "in-person" search',
     with_fresh_index! do
       @firm = create(:firm)
       create(:adviser, firm: @firm, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616, travel_distance: 100)
-      @firm.main_office.update_attributes!(email_address: 'main.office@example.com', address_line_one: '120 Holborn', address_line_two: 'London', address_town: 'London', address_county: nil, address_postcode: 'EC1N 2TD', latitude: 51.518148, longitude:-0.108013)
-      create(:office, firm: @firm, email_address: 'local.1@example.com', address_line_one: 'Phoenix House', address_line_two: '18 King William St', address_town: 'London', address_county: nil, address_postcode: 'EC4N 7BP', latitude: 51.511224, longitude:-0.087422)
-      create(:office, firm: @firm, email_address: 'local.2@example.com',address_line_one: '12 Leather Ln', address_line_two: 'London', address_town: 'London', address_county: nil, address_postcode: 'EC1N 7SS', latitude: 51.519144, longitude:-0.108927)
+      @firm.main_office.update_attributes!(email_address: 'main.office@example.com', address_line_one: '120 Holborn', address_line_two: 'London', address_town: 'London', address_county: nil, address_postcode: 'EC1N 2TD', latitude: 51.518148, longitude: -0.108013)
+      create(:office, firm: @firm, email_address: 'local.1@example.com', address_line_one: 'Phoenix House', address_line_two: '18 King William St', address_town: 'London', address_county: nil, address_postcode: 'EC4N 7BP', latitude: 51.511224, longitude: -0.087422)
+      create(:office, firm: @firm, email_address: 'local.2@example.com', address_line_one: '12 Leather Ln', address_line_two: 'London', address_town: 'London', address_county: nil, address_postcode: 'EC1N 7SS', latitude: 51.519144, longitude: -0.108927)
 
       @remote_firm = create(:firm, :with_remote_advice)
       @remote_firm.main_office.update_attributes!(email_address: 'remote@example.com')

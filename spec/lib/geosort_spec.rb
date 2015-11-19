@@ -23,7 +23,7 @@ RSpec.describe Geocode do
 
     it 'returns the objects ordered by location' do
       sorted_names = Geosort.by_distance(initial_location, results).map(&:name)
-      expect(sorted_names).to eq(['A', 'C', 'D', 'B'])
+      expect(sorted_names).to eq(%w(A C D B))
     end
   end
 end
