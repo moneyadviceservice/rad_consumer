@@ -24,6 +24,6 @@ module ElasticSearchHelper
   end
 
   def index_all!
-    Firm.all.map { |f| IndexFirmJob.perform_later(f) }
+    Firm.all.map(&:notify_indexer)
   end
 end
