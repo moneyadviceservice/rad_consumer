@@ -4,6 +4,8 @@ class FirmsController < ApplicationController
     result = FirmRepository.new.search(@search_form.to_query)
 
     @firm  = result.firms.first
+    @offices = Geosort.by_distance(@search_form.coordinates, @firm.offices)
+
     @latitude, @longitude = @search_form.coordinates
   end
 end

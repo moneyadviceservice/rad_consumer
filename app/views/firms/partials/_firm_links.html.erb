@@ -1,0 +1,28 @@
+<ul class="firm__links">
+  <% if telephone_number.present? %>
+    <li>
+      <%= link_to "tel:#{telephone_number}", class: 'outline-button t-telephone' do %>
+        <%= svg_icon :phone_ringing, title: t('firms.show.telephone_number'), class: 'outline-button__svg-icon'
+        %><%= telephone_number %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if email_address.present? %>
+    <li>
+      <%= mail_to email_address, class: 'outline-button t-email' do %>
+        <%= svg_icon :envelope, title: t('firms.show.email_address'), class: 'outline-button__svg-icon'
+        %><%= t('firms.show.email_firm') %>
+      <% end %>
+    </li>
+  <% end %>
+
+  <% if website_address.present? %>
+    <li>
+      <%= link_to website_address, class: 'outline-button', target: '_blank' do %>
+        <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
+        %><%= t('firms.show.website_address') %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

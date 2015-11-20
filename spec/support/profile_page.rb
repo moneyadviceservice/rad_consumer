@@ -5,4 +5,6 @@ class ProfilePage < SitePrism::Page
 
   # the dough component re-writes the DOM so we can't attach a test class
   element :office_tab, '[data-dough-tab-selector-trigger="2"]'
+  element :telephone, '.t-telephone'
+  element :email, '.t-email'
 end

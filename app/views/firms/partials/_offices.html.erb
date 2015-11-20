@@ -1,5 +1,5 @@
 <div data-dough-component="ShowMore">
-  <% firm.offices.each do |office| %>
+  <% offices.each do |office| %>
     <div class="office t-office" data-dough-show-more-item>
       <div class="l-2col">
         <div class="l-2col-even l-office-col">
@@ -12,7 +12,7 @@
             <% if office.address_county.present? %>
               <div class="address__line"><%= office.address_county %>,</div>
             <% end %>
-            <div class="address__line"><%= office.address_postcode %></div>
+            <div class="address__line t-postcode"><%= office.address_postcode %></div>
           </div>
         </div>
         <div class="l-2col-even l-office-col">
