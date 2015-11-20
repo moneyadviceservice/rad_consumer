@@ -25,6 +25,15 @@ RSpec.feature 'Firm profile page from an "in-person" search',
     end
   end
 
+  scenario 'firm has a main office but is not geocoded_offices' do
+    with_elastic_search! do
+      given_a_firm_with_no_geocoded_offices
+      and_i_perform_an_in_person_search
+      when_i_view_the_firm_profile
+      then_the_email_address_for_the_non_geocoded_main_office_is_prominent
+    end
+  end
+
   def given_firm_with_multiple_offices_has_been_indexed
     with_fresh_index! do
       @firm = create(:firm)
@@ -35,6 +44,15 @@ RSpec.feature 'Firm profile page from an "in-person" search',
 
       @remote_firm = create(:firm, :with_remote_advice)
       @remote_firm.main_office.update_attributes!(email_address: 'remote@example.com')
+    end
+  end
+
+  def given_a_firm_with_no_geocoded_offices
+    with_fresh_index! do
+      @firm = create(:firm)
+      create(:adviser, firm: @firm, postcode: 'RG2 8EE', latitude: 51.428473, longitude: -0.943616, travel_distance: 100)
+      @firm.main_office.update_attributes!(email_address: 'not.geocoded@example.com', address_line_one: '120 Holborn', address_line_two: 'London', address_town: 'London', address_county: nil, address_postcode: 'EC1N 2TD', latitude: nil, longitude: nil)
+      create(:office, firm: @firm, email_address: 'local.1@example.com', address_line_one: 'Phoenix House', address_line_two: '18 King William St', address_town: 'London', address_county: nil, address_postcode: 'EC4N 7BP', latitude: nil, longitude: nil)
     end
   end
 
@@ -80,5 +98,9 @@ RSpec.feature 'Firm profile page from an "in-person" search',
 
   def then_the_email_address_for_the_main_office_is_prominent
     expect(profile_page.email[:href]).to eq('mailto:remote@example.com')
+  end
+
+  def then_the_email_address_for_the_non_geocoded_main_office_is_prominent
+    expect(profile_page.email[:href]).to eq('mailto:not.geocoded@example.com')
   end
 end
