@@ -13,6 +13,7 @@ Consumer search for the Retirement Adviser Directory
 * [Bundler](http://bundler.io)
 * [PostgreSQL](http://www.postgresql.org/)
 * [Elasticsearch >= 1.2](https://www.elastic.co/products/elasticsearch)
+* [RAD](https://github.com/moneyadviceservice/rad) (for PostgreSQL set up)
 
 ## Installation
 
