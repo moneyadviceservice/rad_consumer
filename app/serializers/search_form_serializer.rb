@@ -15,15 +15,33 @@ class SearchFormSerializer < ActiveModel::Serializer
         }
       end
 
+      options << '_score' if object.phone_or_online?
       options << 'registered_name'
     end
   end
 
   def query
+    if object.face_to_face?
+      face_to_face_query
+    else
+      phone_or_online_query
+    end
+  end
+
+  def face_to_face_query
     {
       filtered: {
         filter: { bool: { must: build_filters } },
         query:  { bool: { must: build_queries } }
+      }
+    }
+  end
+
+  def phone_or_online_query
+    {
+      function_score: {
+        query: face_to_face_query,
+        random_score: { "seed" => 545454545454 }
       }
     }
   end
