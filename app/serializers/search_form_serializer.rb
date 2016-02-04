@@ -8,7 +8,7 @@ class SearchFormSerializer < ActiveModel::Serializer
       if object.face_to_face?
         options << {
           _geo_distance: {
-            'advisers.location': object.coordinates.reverse,
+            'advisers.location' => object.coordinates.reverse,
             order: 'asc',
             unit: 'miles'
           }
