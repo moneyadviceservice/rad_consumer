@@ -101,13 +101,11 @@ RSpec.describe SearchFormSerializer do
 
       it 'sorts by geo distance first' do
         VCR.use_cassette(:geocode_search_form_postcode) do
-          expect(subject.sort.first).to eq({
-            _geo_distance: {
-              'advisers.location' => [-0.1085203, 51.5180697],
-              order: 'asc',
-              unit: 'miles'
-            }
-          })
+          expect(subject.sort.first).to eq(_geo_distance: {
+                                             'advisers.location' => [-0.1085203, 51.5180697],
+                                             order: 'asc',
+                                             unit: 'miles'
+                                           })
         end
       end
 
