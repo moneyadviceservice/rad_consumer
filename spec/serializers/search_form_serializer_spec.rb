@@ -84,6 +84,19 @@ RSpec.describe SearchFormSerializer do
         expect(query_hash).to eq(bool: { must: [{ match: { investment_sizes: '3' } }] })
       end
     end
+
+    context 'when phone or online' do
+      before do
+        params.merge!(
+          advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
+          random_search_seed: 1234
+        )
+      end
+
+      it 'performs a randomly seeded search' do
+        expect(subject.query[:function_score]).to include(random_score: { seed: 1234 })
+      end
+    end
   end
 
   describe '#sort' do
@@ -113,6 +126,18 @@ RSpec.describe SearchFormSerializer do
         VCR.use_cassette(:geocode_search_form_postcode) do
           expect(subject.sort.last).to eq('registered_name')
         end
+      end
+    end
+
+    context 'when phone or online' do
+      before do
+        params.merge!(
+          advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE
+        )
+      end
+
+      it 'sorts by `_score` first' do
+        expect(subject.sort.first).to eq('_score')
       end
     end
   end

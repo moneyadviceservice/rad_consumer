@@ -15,17 +15,17 @@ class SearchFormSerializer < ActiveModel::Serializer
         }
       end
 
+      options << '_score' if object.phone_or_online?
       options << 'registered_name'
     end
   end
 
   def query
-    {
-      filtered: {
-        filter: { bool: { must: build_filters } },
-        query:  { bool: { must: build_queries } }
-      }
-    }
+    if object.phone_or_online?
+      phone_or_online_query
+    else
+      face_to_face_query
+    end
   end
 
   private
@@ -53,6 +53,24 @@ class SearchFormSerializer < ActiveModel::Serializer
       expression.push(*postcode_queries)        if object.face_to_face?
       expression.push(*types_of_advice_queries) if object.types_of_advice?
     end
+  end
+
+  def face_to_face_query
+    {
+      filtered: {
+        filter: { bool: { must: build_filters } },
+        query:  { bool: { must: build_queries } }
+      }
+    }
+  end
+
+  def phone_or_online_query
+    {
+      function_score: {
+        query: face_to_face_query,
+        random_score: { seed: object.random_search_seed }
+      }
+    }
   end
 
   def postcode_queries
