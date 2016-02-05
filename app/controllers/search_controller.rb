@@ -1,6 +1,8 @@
 class SearchController < ApplicationController
+  MAX_RANDOM_SEED_VALUE = 1024
+
   def index
-    @form = SearchForm.new(params[:search_form])
+    @form = SearchForm.new(search_form_params)
 
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
@@ -23,5 +25,13 @@ class SearchController < ApplicationController
 
   def from_results?
     params.key?(:origin)
+  end
+
+  def random_search_seed
+    session[:random_search_seed] ||= rand(MAX_RANDOM_SEED_VALUE)
+  end
+
+  def search_form_params
+    params.require(:search_form).merge(random_search_seed: random_search_seed)
   end
 end
