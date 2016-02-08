@@ -23,6 +23,7 @@ class SearchForm
                 :pension_pot_size,
                 :firm_id,
                 :qualification_or_accreditation,
+                :random_search_seed,
                 *TYPES_OF_ADVICE
 
   before_validation :upcase_postcode, if: :face_to_face?

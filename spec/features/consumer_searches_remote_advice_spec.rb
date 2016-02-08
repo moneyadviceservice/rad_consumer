@@ -14,7 +14,22 @@ RSpec.feature 'Consumer searches for phone or online advice',
       and_firms_providing_remote_services_were_previously_indexed
       when_i_submit_a_search_selecting_online_and_telephone_advice
       then_i_am_shown_firms_that_provide_advice_online_and_by_telephone
-      and_they_are_ordered_alphabetically
+    end
+  end
+
+  scenario 'Searching twice should produce the same order of results' do
+    with_elastic_search! do
+      given_i_am_on_the_rad_landing_page
+      and_firms_providing_remote_services_were_previously_indexed
+
+      when_i_submit_a_search_selecting_online_and_telephone_advice
+      then_i_am_shown_firms_that_provide_advice_online_and_by_telephone
+      and_they_are_ordered_randomly
+
+      given_i_am_on_the_rad_landing_page
+      when_i_submit_a_search_selecting_online_and_telephone_advice
+      then_i_am_shown_firms_that_provide_advice_online_and_by_telephone
+      and_they_are_ordered_the_same_as_last_time
     end
   end
 
@@ -37,10 +52,12 @@ RSpec.feature 'Consumer searches for phone or online advice',
     landing_page.load
   end
 
-  def and_they_are_ordered_alphabetically
-    names = remote_results_page.firm_names
+  def and_they_are_ordered_randomly
+    @random_order = remote_results_page.firm_names
+  end
 
-    expect(remote_results_page.firm_names).to eql(names.sort)
+  def and_they_are_ordered_the_same_as_last_time
+    expect(remote_results_page.firm_names).to eq(@random_order)
   end
 
   def when_i_submit_a_search_selecting_online_and_telephone_advice
