@@ -25,7 +25,7 @@ module FirmHelper
     number_to_currency firm_result.minimum_fixed_fee, unit: '£', precision: 0
   end
 
-  def link_with_protocol(link)
+  def ensure_external_link_has_protocol(link)
     if link =~ /^https?/
       link
     else

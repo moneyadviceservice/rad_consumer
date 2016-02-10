@@ -144,14 +144,14 @@ RSpec.describe FirmHelper, type: :helper do
     end
   end
 
-  describe 'link_with_protocol' do
+  describe 'ensure_external_link_has_protocol' do
     context 'when the link protocol is http or https' do
       let(:http_link) { 'http://example.org' }
       let(:https_link) { 'https://example.org' }
 
       it 'remains unchanged' do
-        expect(helper.link_with_protocol(http_link)).to eq(http_link)
-        expect(helper.link_with_protocol(https_link)).to eq(https_link)
+        expect(helper.ensure_external_link_has_protocol(http_link)).to eq(http_link)
+        expect(helper.ensure_external_link_has_protocol(https_link)).to eq(https_link)
       end
     end
 
@@ -159,7 +159,7 @@ RSpec.describe FirmHelper, type: :helper do
       let(:link) { 'example.org' }
 
       it 'adds the http protocol' do
-        expect(helper.link_with_protocol(link)).to eq('http://example.org')
+        expect(helper.ensure_external_link_has_protocol(link)).to eq('http://example.org')
       end
     end
   end
