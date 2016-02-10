@@ -19,7 +19,7 @@
 
   <% if website_address.present? %>
     <li>
-      <%= link_to website_address, class: 'outline-button', target: '_blank' do %>
+      <%= link_to link_with_protocol(website_address), class: 'outline-button', target: '_blank' do %>
         <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
         %><%= t('firms.show.website_address') %>
       <% end %>
