@@ -26,7 +26,7 @@ module FirmHelper
   end
 
   def link_with_protocol(link)
-    if link.starts_with?('http') || link.starts_with?('https')
+    if link =~ /^https?/
       link
     else
       "http://#{link}"
