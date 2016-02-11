@@ -21,6 +21,11 @@
   margin-bottom: 0;
 }
 
+.firm__types-of-advice-heading {
+  @include body(16, 16);
+  margin-top: 0;
+}
+
 .firm__back-link {
   display: block;
   margin-bottom: $baseline-unit*2;
