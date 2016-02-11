@@ -52,7 +52,7 @@ RSpec.describe FirmHelper, type: :helper do
   end
 
   describe 'type_of_advice_list_item' do
-    subject { helper.type_of_advice_list_item(firm, :equity_release) }
+    subject { helper.type_of_advice_list_item(firm, :equity_release, 'list-item-style') }
 
     context 'it does not have the advice type' do
       before do
@@ -70,7 +70,7 @@ RSpec.describe FirmHelper, type: :helper do
       end
 
       it 'returns a list item element containing the corresponding translation' do
-        expect(subject).to eq('<li class="types-of-advice__list-item">Equity release</li>')
+        expect(subject).to eq('<li class="list-item-style">Equity release</li>')
       end
     end
   end

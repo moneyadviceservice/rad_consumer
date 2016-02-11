@@ -10,11 +10,11 @@ module FirmHelper
       .sort
   end
 
-  def type_of_advice_list_item(firm, type)
+  def type_of_advice_list_item(firm, type, style_classes)
     return unless firm.includes_advice_type? type
     content_tag :li,
                 I18n.t("firms.show.panels.firm.services.types_of_advice.#{type}"),
-                class: 'types-of-advice__list-item'
+                class: style_classes
   end
 
   def closest_adviser_text(firm_result)

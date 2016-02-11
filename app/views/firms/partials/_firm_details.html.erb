@@ -26,13 +26,13 @@
   <div class="l-2col-even">
     <%= heading_tag(t('firms.show.panels.firm.services.types_of_advice.heading'), level: 4, class: 'types-of-advice__heading') %>
 
-    <ul class="types-of-advice__list" >
-      <%= type_of_advice_list_item firm, :retirement_income_products %>
-      <%= type_of_advice_list_item firm, :pension_transfer %>
-      <%= type_of_advice_list_item firm, :options_when_paying_for_care %>
-      <%= type_of_advice_list_item firm, :equity_release %>
-      <%= type_of_advice_list_item firm, :inheritance_tax_planning %>
-      <%= type_of_advice_list_item firm, :wills_and_probate %>
+    <ul class="plain_list">
+      <%= type_of_advice_list_item firm, :retirement_income_products, 'plain_list__item' %>
+      <%= type_of_advice_list_item firm, :pension_transfer, 'plain_list__item' %>
+      <%= type_of_advice_list_item firm, :options_when_paying_for_care, 'plain_list__item' %>
+      <%= type_of_advice_list_item firm, :equity_release, 'plain_list__item' %>
+      <%= type_of_advice_list_item firm, :inheritance_tax_planning, 'plain_list__item' %>
+      <%= type_of_advice_list_item firm, :wills_and_probate, 'plain_list__item' %>
     </ul>
 
     <%= heading_tag(t('firms.show.panels.firm.services.advice_methods.heading'), level: 4) %>
