@@ -107,12 +107,9 @@
 
     <%= heading_tag(t('XXX Languages spoken by adivsers'), level: 4, class: 'investing__heading') %>
     <ul class="investing__list">
-      <li class="investing__list-item">
-        English
-      </li>
-      <% firm.languages.each do |language_code| %>
+      <% firm_language_list(firm.languages).sort.each do |language| %>
         <li class="investing__list-item">
-          <%= LanguageList::LanguageInfo.find(language_code).common_name %>
+          <%= language %>
         </li>
       <% end %>
     </ul>
