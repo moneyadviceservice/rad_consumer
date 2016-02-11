@@ -90,7 +90,7 @@
   <div class="l-1col firm__divider">
 
     <% if firm_has_investing_types?(firm) %>
-      <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'investing__heading') %>
+      <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'firm__service-heading') %>
       <ul class="plain_list">
         <% if firm.ethical_investing_flag %>
           <li class="plain_list__item">
@@ -105,7 +105,7 @@
       </ul>
     <% end %>
 
-    <%= heading_tag(t('firms.show.panels.firm.services.languages'), level: 4, class: 'investing__heading') %>
+    <%= heading_tag(t('firms.show.panels.firm.services.languages'), level: 4, class: 'firm__service-heading') %>
     <ul class="plain_list">
       <% firm_language_list(firm.languages).sort.each do |language| %>
         <li class="plain_list__item">
