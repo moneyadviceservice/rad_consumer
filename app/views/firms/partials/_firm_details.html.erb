@@ -86,9 +86,10 @@
   </div>
 </div>
 
-<% if firm_has_investing_types?(firm) %>
-  <div class="l-firm__row">
-    <div class="l-1col firm__divider">
+<div class="l-firm__row">
+  <div class="l-1col firm__divider">
+
+    <% if firm_has_investing_types?(firm) %>
       <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'investing__heading') %>
       <ul class="investing__list">
         <% if firm.ethical_investing_flag %>
@@ -102,9 +103,22 @@
           </li>
         <% end %>
       </ul>
-    </div>
+    <% end %>
+
+    <%= heading_tag(t('XXX Languages spoken by adivsers'), level: 4, class: 'investing__heading') %>
+    <ul class="investing__list">
+      <li class="investing__list-item">
+        English
+      </li>
+      <% firm.languages.each do |language_code| %>
+        <li class="investing__list-item">
+          <%= LanguageList::LanguageInfo.find(language_code).common_name %>
+        </li>
+      <% end %>
+    </ul>
+
   </div>
-<% end %>
+</div>
 
 <% if firm_has_qualifications_or_accreditations?(firm) %>
   <div class="l-firm__row">
