@@ -319,6 +319,7 @@ cy:
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
     summary_of_results:
       showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau"
+      order: Cwmnïau a gyflwynir heb fod mewn unrhyw drefn benodol
 
     result:
       adviser: mae gan gynghorydd

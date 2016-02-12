@@ -1,12 +1,19 @@
 <% if search_form.valid? %>
   <% if @result.firms.any? %>
     <div class="l-results__summary">
-      <p class="l-results__summary-text t-results-summary-text">
-        <%= t('search.summary_of_results.showing',
-              first_record: @result.first_record,
-              last_record: @result.last_record,
-              total_records: @result.total_records) %>
-      </p>
+      <div class="l-results__summary-row">
+        <div class="l-results__summary-text t-results-summary-text">
+          <%= t('search.summary_of_results.showing',
+                first_record: @result.first_record,
+                last_record: @result.last_record,
+                total_records: @result.total_records) %>
+        </div>
+        <% unless search_form.face_to_face? %>
+          <div class="l-results__summary-text l-results__summary-text--right">
+            <%= t('search.summary_of_results.order') %>
+          </div>
+        <% end %>
+      </div>
     </div>
   <% else %>
     <p><%= t('search.no_results_message') %></p>
