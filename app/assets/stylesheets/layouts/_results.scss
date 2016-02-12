@@ -107,10 +107,29 @@
   }
 }
 
+.l-results__summary-row {
+  // This is necessary to collapse the far-left and far-right gutters
+  @include row(12);
+}
+
 .l-results__summary-text {
   @include body(16, 18);
   font-weight: 300;
-  margin: 0;
+
+  @include column(12);
+
+  @include respond-to($mq-m) {
+    @include column(6);
+  }
+}
+
+.l-results__summary-text--right {
+  margin-top: $baseline-unit;
+
+  @include respond-to($mq-m) {
+    text-align: right;
+    margin-top: 0;
+  }
 }
 
 .l-results__feedback {
