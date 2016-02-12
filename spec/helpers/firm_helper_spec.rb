@@ -143,4 +143,24 @@ RSpec.describe FirmHelper, type: :helper do
       it { expect(helper.minimum_fixed_fee(firm)).to eq('£21') }
     end
   end
+
+  describe 'ensure_external_link_has_protocol' do
+    context 'when the link protocol is http or https' do
+      let(:http_link) { 'http://example.org' }
+      let(:https_link) { 'https://example.org' }
+
+      it 'remains unchanged' do
+        expect(helper.ensure_external_link_has_protocol(http_link)).to eq(http_link)
+        expect(helper.ensure_external_link_has_protocol(https_link)).to eq(https_link)
+      end
+    end
+
+    context 'when the link does not have a protocol' do
+      let(:link) { 'example.org' }
+
+      it 'adds the http protocol' do
+        expect(helper.ensure_external_link_has_protocol(link)).to eq('http://example.org')
+      end
+    end
+  end
 end
