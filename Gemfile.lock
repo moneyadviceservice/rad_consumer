@@ -109,7 +109,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    mas-rad_core (0.0.97)
+    mas-rad_core (0.0.98)
       active_model_serializers
       geocoder
       httpclient
@@ -251,7 +251,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  mas-rad_core (= 0.0.97)
+  mas-rad_core (= 0.0.98)
   pg
   pry-rails
   rails (~> 4.2)
