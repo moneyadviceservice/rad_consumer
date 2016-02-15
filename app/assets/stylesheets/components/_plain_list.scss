@@ -1,8 +1,4 @@
-.investing__heading {
-  margin-bottom: 0;
-}
-
-.investing__list {
+.plain_list {
   list-style: none;
   margin-top: 0;
   margin-bottom: $baseline-unit;
@@ -10,7 +6,6 @@
   padding-left: 0;
 }
 
-.investing__list-item{
+.plain_list__item {
   margin-bottom: 0;
-  color: $investing-text-color;
 }
