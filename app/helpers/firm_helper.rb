@@ -4,7 +4,7 @@ module FirmHelper
   end
 
   def firm_language_list(language_codes)
-    (['eng'] + language_codes)
+    language_codes
       .map(&LanguageList::LanguageInfo.method(:find))
       .map(&:common_name)
       .sort
