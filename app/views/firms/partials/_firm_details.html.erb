@@ -86,36 +86,40 @@
   </div>
 </div>
 
-<div class="l-firm__row">
-  <div class="l-1col firm__divider">
+<% if firm_has_investing_types?(firm) || firm.languages.present? %>
+  <div class="l-firm__row">
+    <div class="l-1col firm__divider">
 
-    <% if firm_has_investing_types?(firm) %>
-      <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'firm__service-heading') %>
-      <ul class="plain_list">
-        <% if firm.ethical_investing_flag %>
-          <li class="plain_list__item">
-            <%= t('firms.show.panels.firm.services.investing.ethical') %>
-          </li>
-        <% end %>
-        <% if firm.sharia_investing_flag %>
-          <li class="plain_list__item">
-            <%= t('firms.show.panels.firm.services.investing.sharia') %>
-          </li>
-        <% end %>
-      </ul>
-    <% end %>
-
-    <%= heading_tag(t('firms.show.panels.firm.services.languages'), level: 4, class: 'firm__service-heading') %>
-    <ul class="plain_list">
-      <% firm_language_list(firm.languages).sort.each do |language| %>
-        <li class="plain_list__item">
-          <%= language %>
-        </li>
+      <% if firm_has_investing_types?(firm) %>
+        <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'firm__service-heading') %>
+        <ul class="plain_list">
+          <% if firm.ethical_investing_flag %>
+            <li class="plain_list__item">
+              <%= t('firms.show.panels.firm.services.investing.ethical') %>
+            </li>
+          <% end %>
+          <% if firm.sharia_investing_flag %>
+            <li class="plain_list__item">
+              <%= t('firms.show.panels.firm.services.investing.sharia') %>
+            </li>
+          <% end %>
+        </ul>
       <% end %>
-    </ul>
 
+      <% if firm.languages.present? %>
+        <%= heading_tag(t('firms.show.panels.firm.services.languages'), level: 4, class: 'firm__service-heading') %>
+        <ul class="plain_list">
+          <% firm_language_list(firm.languages).sort.each do |language| %>
+            <li class="plain_list__item">
+              <%= language %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+    </div>
   </div>
-</div>
+<% end %>
 
 <% if firm_has_qualifications_or_accreditations?(firm) %>
   <div class="l-firm__row">

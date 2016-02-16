@@ -166,20 +166,20 @@ RSpec.describe FirmHelper, type: :helper do
 
   describe 'firm_language_list' do
     context 'when passed an empty list' do
-      it 'returns only English' do
-        expect(firm_language_list([])).to eq(['English'])
+      it 'returns an empty list' do
+        expect(firm_language_list([])).to eq([])
       end
     end
 
     context 'when passed list of 3 letter language codes' do
       it 'returns English and the given codes translated to their common names' do
         expect(firm_language_list(%w(spa por aae)))
-          .to match_array(['English', 'Spanish', 'Portuguese', 'Arbëreshë Albanian'])
+          .to match_array(['Spanish', 'Portuguese', 'Arbëreshë Albanian'])
       end
 
       it 'returns the list alphabetically sorted' do
         expect(firm_language_list(%w(spa por aae)))
-          .to eq(['Arbëreshë Albanian', 'English', 'Portuguese', 'Spanish'])
+          .to eq(['Arbëreshë Albanian', 'Portuguese', 'Spanish'])
       end
     end
   end
