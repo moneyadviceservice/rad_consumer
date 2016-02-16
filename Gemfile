@@ -9,9 +9,10 @@ ruby '2.2.2'
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 4.2.5.1'
 
 gem 'active_model_serializers'
+gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
@@ -24,7 +25,6 @@ gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
-gem 'autoprefixer-rails'
 
 group :assets do
   gem 'jquery-rails'
@@ -33,6 +33,7 @@ end
 
 group :development, :test do
   gem 'capybara'
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'pry-rails'
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring'
-  gem 'dotenv-rails'
 end
 
 group :test do
