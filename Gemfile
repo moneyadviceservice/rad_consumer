@@ -9,7 +9,7 @@ ruby '2.2.2'
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '~> 4.2.5.1'
+gem 'rails', '~> 4.2.5.2'
 
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
@@ -20,7 +20,7 @@ gem 'dough-ruby',
     ref: 'cf08913'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.0.102'
+gem 'mas-rad_core', '0.0.103'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
