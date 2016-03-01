@@ -100,10 +100,12 @@ en:
 
   breadcrumbs:
     home: Home
-    parent: Work, pensions and retirement
-    parent_url: https://www.moneyadviceservice.org.uk/en/categories/work-pensions-and-retirement
-    child: Retirement income basics
-    child_url: https://www.moneyadviceservice.org.uk/en/categories/retirement-income-basics
+    pension_and_retirement: Pensions and Retirement
+    pension_and_retirement_url: https://www.moneyadviceservice.org.uk/en/categories/pensions-and-retirement
+    financial_advice: Financial Advice
+    financial_advice_url: https://www.moneyadviceservice.org.uk/en/categories/getting-advice-about-retirement
+    directory: Retirement Adviser Directory
+    directory_url: /en
 
   contact_panels:
     webchat:
