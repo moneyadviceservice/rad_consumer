@@ -312,6 +312,14 @@ cy:
           '1': SOLLA
           '2': Later Life Academy
           '3': ISO 22222
+      service:
+        heading: TBC
+        tooltip: TBC
+        options:
+          ethical_investing_flag:
+            title: Buddsoddiadau moesol
+          sharia_investing_flag:
+            title: Buddsoddiadau sy’n cydymffurfio â Sharia
       select_prompt: Dewiswch
       button_text: Chwilio
 

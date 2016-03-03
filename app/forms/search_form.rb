@@ -16,6 +16,11 @@ class SearchForm
     :wills_and_probate
   ]
 
+  OTHER_SERVICES = [
+    :ethical_investing_flag,
+    :sharia_investing_flag
+  ]
+
   attr_accessor :checkbox,
                 :advice_method,
                 :postcode,
@@ -24,7 +29,8 @@ class SearchForm
                 :firm_id,
                 :qualification_or_accreditation,
                 :random_search_seed,
-                *TYPES_OF_ADVICE
+                *TYPES_OF_ADVICE,
+                *OTHER_SERVICES
 
   before_validation :upcase_postcode, if: :face_to_face?
 
@@ -63,11 +69,19 @@ class SearchForm
   end
 
   def types_of_advice
-    TYPES_OF_ADVICE.select { |type| public_send(type) == '1' }
+    selected_checkbox_attributes TYPES_OF_ADVICE
   end
 
   def types_of_advice?
     types_of_advice.any?
+  end
+
+  def services
+    selected_checkbox_attributes OTHER_SERVICES
+  end
+
+  def services?
+    services.any?
   end
 
   def remote_advice_method_ids
@@ -120,6 +134,10 @@ class SearchForm
       .where(order: filters.keys)
       .pluck(:order, :id)
       .map { |order, id| [filters[order], "#{prefix_for(model)}#{id}"] }
+  end
+
+  def selected_checkbox_attributes(attribute_names)
+    attribute_names.select { |type| public_send(type) == '1' }
   end
 
   def selected_filter_id_for(model)
