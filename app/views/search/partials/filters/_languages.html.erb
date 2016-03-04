@@ -1,0 +1,15 @@
+<fieldset class="search-filter__languages">
+  <legend class="search-filter__label">
+    <%= t('search.filter.languages.heading') %>
+  </legend>
+
+  <div class="form__group-item">
+    <%= f.label :languages,
+                t('search.filter.languages.label'),
+                class: 'form__label-heading is-hidden' %>
+    <%= f.select :language,
+                  options_from_collection_for_select(form.options_for_language, :iso_639_3, :common_name, form.language ),
+                 { include_blank: t('search.filter.select_prompt') },
+                 { class: 't-languages search-filter__inset search-filter__constrained' } %>
+  </div>
+</fieldset>

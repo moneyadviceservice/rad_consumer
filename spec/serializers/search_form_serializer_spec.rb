@@ -106,6 +106,14 @@ RSpec.describe SearchFormSerializer do
       end
     end
 
+    context 'the language is set to a value' do
+      let(:params) { default_params.merge(language: 'nld') }
+
+      it 'includes a filter for language' do
+        expect(query_hash).to eq(bool: { must: [{ match: { languages: 'nld' } }] })
+      end
+    end
+
     context 'when phone or online' do
       before do
         params.merge!(

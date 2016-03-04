@@ -3,7 +3,6 @@ class SearchController < ApplicationController
 
   def index
     @form = SearchForm.new(search_form_params)
-
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
     else

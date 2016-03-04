@@ -41,6 +41,13 @@
           </div>
         <% end %>
 
+        <% if feature_enabled?('SHOW_LANGUAGES_FILTER') %>
+          <div class="l-results__filter search-filter__section">
+            <hr class="search-filter__divider">
+            <%= render 'search/partials/filters/languages', f: f, form: @form %>
+          </div>
+        <% end %>
+
         <div class="l-results__filter search-filter__section">
           <hr class="search-filter__divider">
           <%= render 'search/partials/filters/qualifications_and_accreditations', f: f, form: @form  %>

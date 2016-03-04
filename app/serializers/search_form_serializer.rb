@@ -21,11 +21,7 @@ class SearchFormSerializer < ActiveModel::Serializer
   end
 
   def query
-    if object.phone_or_online?
-      phone_or_online_query
-    else
-      face_to_face_query
-    end
+    object.phone_or_online? ? phone_or_online_query : face_to_face_query
   end
 
   private
@@ -53,6 +49,7 @@ class SearchFormSerializer < ActiveModel::Serializer
       expression.push(*postcode_queries)        if object.face_to_face?
       expression.push(*types_of_advice_queries) if object.types_of_advice?
       expression.push(*service_queries) if object.services?
+      expression.push(language_query) if object.language.present?
     end
   end
 
@@ -136,5 +133,9 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def service_queries
     object.services.map { |type| { match: { type => true } } }
+  end
+
+  def language_query
+    { match: { languages: object.language } }
   end
 end
