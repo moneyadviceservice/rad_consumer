@@ -31,4 +31,8 @@ module ApplicationHelper
       yield
     end
   end
+
+  def feature_enabled?(flag_name)
+    ENV[flag_name] == 'true'
+  end
 end

@@ -16,6 +16,9 @@ class SearchFormSection < SitePrism::Section
   element :wills_and_probate, '.t-wills_and_probate'
   element :qualifications_and_accreditations, '.t-qualifications-and-accreditations'
 
+  element :sharia_investing, '.t-sharia_investing_flag'
+  element :ethical_investing, '.t-ethical_investing_flag'
+
   def qualifications_and_accreditations_option_names
     qualifications_and_accreditations.all('option').map(&:text)
   end

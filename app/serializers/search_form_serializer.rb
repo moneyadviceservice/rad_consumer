@@ -52,6 +52,7 @@ class SearchFormSerializer < ActiveModel::Serializer
       expression << { term: { _id: object.firm_id } } if object.firm_id.present?
       expression.push(*postcode_queries)        if object.face_to_face?
       expression.push(*types_of_advice_queries) if object.types_of_advice?
+      expression.push(*service_queries) if object.services?
     end
   end
 
@@ -131,5 +132,9 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def types_of_advice_queries
     object.types_of_advice.map { |type| { range: { type => { gt: 0 } } } }
+  end
+
+  def service_queries
+    object.services.map { |type| { match: { type => true } } }
   end
 end

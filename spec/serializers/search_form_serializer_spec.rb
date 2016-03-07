@@ -85,6 +85,27 @@ RSpec.describe SearchFormSerializer do
       end
     end
 
+    context 'the types of advice set to a value' do
+      let(:params) { default_params.merge(pension_transfer: '1', wills_and_probate: '1') }
+
+      it 'includes a filter for the types of advice' do
+        expect(query_hash).to eq(bool: { must: [
+          { range: { pension_transfer: { gt: 0 } } },
+          { range: { wills_and_probate: { gt: 0 } } }
+        ] })
+      end
+    end
+
+    context 'the services set to a value' do
+      let(:params) { default_params.merge(ethical_investing_flag: '1', sharia_investing_flag: '1') }
+
+      it 'includes a filter for the services' do
+        ethical_condition = { match: { ethical_investing_flag: true } }
+        sharia_condition = { match: { sharia_investing_flag: true } }
+        expect(query_hash).to eq(bool: { must: [ethical_condition, sharia_condition] })
+      end
+    end
+
     context 'when phone or online' do
       before do
         params.merge!(

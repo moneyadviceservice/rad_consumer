@@ -54,6 +54,26 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#types_of_advice' do
+    let(:form) { described_class.new(types_of_advice) }
+
+    SearchForm::TYPES_OF_ADVICE.each do |advice_type|
+      context "#{advice_type} set" do
+        let(:types_of_advice) { { advice_type => '1' } }
+        it "contains #{advice_type}" do
+          expect(form.types_of_advice).to eql([advice_type])
+        end
+      end
+    end
+
+    context 'multiple flags set' do
+      let(:types_of_advice) { { pension_transfer: '1', inheritance_tax_planning: '1' } }
+      it 'contains both flag' do
+        expect(form.types_of_advice).to eql([:pension_transfer, :inheritance_tax_planning])
+      end
+    end
+  end
+
   describe '#types_of_advice?' do
     let(:form) { described_class.new(types_of_advice) }
 
@@ -70,6 +90,51 @@ RSpec.describe SearchForm do
 
       it 'returns true' do
         expect(form.types_of_advice?).to be(true)
+      end
+    end
+  end
+
+  describe '#services' do
+    let(:form) { described_class.new(services) }
+
+    context 'ethical investment flag set' do
+      let(:services) { { ethical_investing_flag: '1' } }
+      it 'contains ethical_investing_flag' do
+        expect(form.services).to eql([:ethical_investing_flag])
+      end
+    end
+
+    context 'sharia investment flag set' do
+      let(:services) { { sharia_investing_flag: '1' } }
+      it 'contains sharia_investing_flag' do
+        expect(form.services).to eql([:sharia_investing_flag])
+      end
+    end
+
+    context 'both flags set' do
+      let(:services) { { sharia_investing_flag: '1', ethical_investing_flag: '1' } }
+      it 'contains both flag' do
+        expect(form.services).to eql([:ethical_investing_flag, :sharia_investing_flag])
+      end
+    end
+  end
+
+  describe '#services?' do
+    let(:form) { described_class.new(services) }
+
+    context 'when no types of advice are selected' do
+      let(:services) { {} }
+
+      it 'returns false' do
+        expect(form.services?).to be(false)
+      end
+    end
+
+    context 'when one or more types of advice are selected' do
+      let(:services) { { sharia_investing_flag: '1' } }
+
+      it 'returns true' do
+        expect(form.services?).to be(true)
       end
     end
   end
