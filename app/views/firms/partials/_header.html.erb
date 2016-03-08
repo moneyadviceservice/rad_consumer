@@ -1,7 +1,7 @@
 <div class="firm__header">
   <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
   <% if search_form.face_to_face? %>
-    <%= render partial: 'search/partials/firm/adviser_distance', object: @firm, as: :firm, locals: { search_form: search_form }%>
+    <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: @firm.closest_adviser }%>
   <% end %>
   <% if search_form.face_to_face? && @offices.present? %>
     <%= render partial: 'firms/partials/firm_links',

@@ -17,8 +17,8 @@ module FirmHelper
                 class: style_classes
   end
 
-  def closest_adviser_text(firm_result)
-    I18n.t('search.result.miles_away', distance: format('%.1f', firm_result.closest_adviser.to_f))
+  def closest_adviser_text(distance)
+    I18n.t('search.result.miles_away', distance: format('%.1f', distance.to_f))
   end
 
   def minimum_pot_size_text(firm_result)
@@ -38,5 +38,9 @@ module FirmHelper
     else
       "http://#{link}"
     end
+  end
+
+  def recently_visited_firms
+    Firm.all
   end
 end

@@ -45,6 +45,8 @@ en:
           part_one: You have chosen a firm that offers advice
           part_two: by telephone or online only
           part_three: This often means less overheads for them, and therefore lower costs for you. The important thing to remember is that all the advisers on the directory - no matter how they offer advice – are fully regulated and offer the same protection.
+      recently_visited:
+        header: Other firms you've viewed
       website_address: 'Website'
       panels:
         firm:

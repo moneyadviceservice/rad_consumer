@@ -1,5 +1,5 @@
-<div class="firm__adviser-distance t-distance_to_the_nearest_adviser">
+<div class="firm__adviser-distance <%= distance_class if local_assigns[:distance_class] %> t-distance_to_the_nearest_adviser">
   <%= svg_icon :map_pin, class: 'firm__adviser-distance-pin' %>
   <%= t('search.result.adviser') %>
-  <%= closest_adviser_text(firm) %>
+  <%= closest_adviser_text(distance) %>
 </div>

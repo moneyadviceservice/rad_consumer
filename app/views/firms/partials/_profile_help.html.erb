@@ -1,3 +1,5 @@
+<%= render 'firms/partials/recently_visited', search_form: search_form %>
+
 <% if search_form.face_to_face? %>
 
   <%= heading_tag(t('firms.show.face_to_face.header'),

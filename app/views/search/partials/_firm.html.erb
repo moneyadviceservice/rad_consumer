@@ -14,7 +14,7 @@
 
   <div class="result__information">
     <% if search_form.face_to_face? %>
-      <%= render partial: 'search/partials/firm/adviser_distance', object: firm, as: :firm %>
+      <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: firm.closest_adviser } %>
       <%= render partial: 'search/partials/firm/num_offices_advisers', object: firm, as: :firm %>
     <% end %>
     <div class="result__offerings-qualifications">
