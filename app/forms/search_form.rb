@@ -16,10 +16,7 @@ class SearchForm
     :wills_and_probate
   ]
 
-  OTHER_SERVICES = [
-    :ethical_investing_flag,
-    :sharia_investing_flag
-  ]
+  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag]
 
   attr_accessor :checkbox,
                 :advice_method,
@@ -28,6 +25,7 @@ class SearchForm
                 :pension_pot_size,
                 :firm_id,
                 :qualification_or_accreditation,
+                :language,
                 :random_search_seed,
                 *TYPES_OF_ADVICE,
                 *OTHER_SERVICES
@@ -60,6 +58,14 @@ class SearchForm
     (options_for(Qualification) + options_for(Accreditation)).sort
   end
 
+  def options_for_language
+    languages = Firm.languages_used.map do |iso_639_3|
+      LanguageList::LanguageInfo.find iso_639_3
+    end
+
+    languages.sort_by(&:common_name)
+  end
+
   def any_pension_pot_size?
     pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
   end
@@ -85,11 +91,7 @@ class SearchForm
   end
 
   def remote_advice_method_ids
-    if phone_or_online?
-      OtherAdviceMethod.all.map(&:id)
-    else
-      []
-    end
+    phone_or_online? ? OtherAdviceMethod.all.map(&:id) : []
   end
 
   def selected_qualification_id

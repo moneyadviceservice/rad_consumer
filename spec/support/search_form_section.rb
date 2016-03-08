@@ -10,6 +10,7 @@ class SearchFormSection < SitePrism::Section
   element :retirement_income_products, '.t-retirement_income_products'
   element :pension_pot_size, '.t-pension-pot-size'
   element :pension_transfer, '.t-pension_transfer'
+  element :languages, '.t-languages'
   element :options_when_paying_for_care, '.t-options_when_paying_for_care'
   element :equity_release, '.t-equity_release'
   element :inheritance_tax_planning, '.t-inheritance_tax_planning'

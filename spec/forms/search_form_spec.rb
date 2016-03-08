@@ -247,6 +247,19 @@ RSpec.describe SearchForm do
     end
   end
 
+  describe '#options_for_languages' do
+    let(:form) { described_class.new }
+
+    before { allow(Firm).to receive(:languages_used).and_return(%w(sco swe de)) }
+
+    it 'returns the LanguageInfo for each iso_639_3 code sorted by common name' do
+      german = LanguageList::LanguageInfo.find 'de'
+      swedish = LanguageList::LanguageInfo.find 'swe'
+      scots = LanguageList::LanguageInfo.find 'sco'
+      expect(form.options_for_language).to eql([german, scots, swedish])
+    end
+  end
+
   describe '#options_for_qualifications_and_accreditations' do
     let(:form) { described_class.new }
 

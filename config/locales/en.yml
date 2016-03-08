@@ -322,6 +322,8 @@ en:
             title: Ethical investments
           sharia_investing_flag:
             title: Sharia compliant investments
+      languages:
+        heading: What language would you like to speak to an adviser in?
       select_prompt: Please select
       button_text: Search
 
