@@ -13,7 +13,7 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_face_to_face_advice
-      and_i_enter_a_valid_postcode
+      and_i_enter_a_valid_postcode 'RG2 9FL'
       and_i_indicate_that_i_need_help_with_my_pension_pot
       when_i_submit_the_search
       then_i_am_shown_firms_that_can_advise_on_pension_pots
@@ -27,7 +27,7 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_face_to_face_advice
-      and_i_enter_a_valid_postcode
+      and_i_enter_a_valid_postcode 'RG2 9FL'
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       when_i_submit_the_search
@@ -42,7 +42,7 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
       and_i_am_on_the_results_page_after_a_previous_search
       and_i_clear_any_filters_from_the_previous_search
       and_i_select_face_to_face_advice
-      and_i_enter_a_valid_postcode
+      and_i_enter_a_valid_postcode 'RG2 9FL'
       and_i_indicate_that_i_need_help_with_my_pension_pot
       and_i_select_a_pot_size_band_from_the_available_options
       and_i_indicate_that_i_would_like_to_transfer_my_pension
@@ -73,41 +73,6 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
     end
   end
 
-  def and_i_am_on_the_results_page_after_a_previous_search
-    landing_page.load
-    landing_page.in_person.tap do |f|
-      f.postcode.set 'RG2 9FL'
-      f.search.click
-    end
-
-    expect(results_page).to be_displayed
-  end
-
-  def and_i_clear_any_filters_from_the_previous_search
-    results_page.search_form.tap do |f|
-      f.face_to_face.set false
-      f.phone_or_online.set false
-
-      f.postcode.set nil
-
-      f.retirement_income_products.set false
-      f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
-      f.pension_transfer.set false
-      f.options_when_paying_for_care.set false
-      f.equity_release.set false
-      f.inheritance_tax_planning.set false
-      f.wills_and_probate.set false
-    end
-  end
-
-  def and_i_select_face_to_face_advice
-    results_page.search_form.face_to_face.set true
-  end
-
-  def and_i_enter_a_valid_postcode
-    results_page.search_form.postcode.set 'RG2 9FL'
-  end
-
   def and_i_indicate_that_i_need_help_with_my_pension_pot
     results_page.search_form.retirement_income_products.set true
   end
@@ -122,10 +87,6 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
 
   def and_i_indicate_that_i_would_like_to_transfer_my_pension
     results_page.search_form.pension_transfer.set true
-  end
-
-  def when_i_submit_the_search
-    results_page.search_form.search.click
   end
 
   def then_i_am_shown_firms_that_can_advise_on_pension_pots
