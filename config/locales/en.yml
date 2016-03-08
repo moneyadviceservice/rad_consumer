@@ -115,18 +115,18 @@ en:
       available_status: Launch chat
       default_status: Unavailable
       opening_hours:
-        weekdays_html: Monday to Friday, 8am&nbsp;to&nbsp;10pm
-        saturday_html: Saturday, 9am&nbsp;to&nbsp;10pm
-        sunday_html: Sunday, 10am&nbsp;to&nbsp;10pm
+        weekdays_html: Monday to Friday, 8am&nbsp;to&nbsp;8pm
+        saturday_html: Saturday, 9am&nbsp;to&nbsp;1pm
+        sunday_html: Sunday and Bank Holidays, closed
     call_us:
       heading: Call us
       description: Give us a call for free and impartial money advice.
-      telephone_number: 0300 500 5000
-      telephone_number_url: tel:+443005005000
+      telephone_number: 0800 138 7777
+      telephone_number_url: tel:+448001387777
       opening_hours:
         weekdays: Monday to Friday, 8am to 8pm
         saturday: Saturday, 9am to 1pm
-      smallprint_html: Calls cost the same as a normal call, if your calls are free, it&#39;s included.
+      smallprint_html: Calls are free.
     social:
       heading: Follow us
       description: Get up-to-date money advice from Twitter, Facebook and YouTube.

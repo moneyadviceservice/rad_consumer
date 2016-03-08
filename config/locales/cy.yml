@@ -114,19 +114,19 @@ cy:
       directions: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
       default_status: Ddim ar gael
       opening_hours:
-        weekdays_html: Dydd Llun i Dydd Gwener, 8am i 10pm
-        saturday_html: Dydd Sadwrn, 9am i 10pm
-        sunday_html: Dydd Sul, 10am i 10pm
+        weekdays_html: Dydd Llun i Dydd Gwener, 8am i 8pm
+        saturday_html: Dydd Sadwrn, 9am i 1pm
+        sunday_html: Dydd Sul a Gwyliau Banc, ar gau
 
     call_us:
       heading: Ffoniwch ni
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
-      telephone_number: 0300 500 5555
-      telephone_number_url: tel:+443005005555
+      telephone_number: 0800 138 0555
+      telephone_number_url: tel:+448001380555
       opening_hours:
         weekdays: Llun i Wener, 8am i 8pm
         saturday: Dydd Sadwrn, 9am i 1pm
-      smallprint_html: Yr un gost â galwad arferol, os yw eich galwadau am ddim, caiff ei gynnwys.
+      smallprint_html: Mae galwadau am ddim.
 
     social:
       heading: Dilynwch ni
