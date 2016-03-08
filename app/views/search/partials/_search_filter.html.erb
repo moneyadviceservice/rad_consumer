@@ -34,6 +34,11 @@
           <%= render 'search/partials/filters/pension_pots', f: f, form: @form %>
         </div>
 
+        <div class="l-results__filter search-filter__section">
+          <hr class="search-filter__divider">
+          <%= render 'search/partials/filters/qualifications_and_accreditations', f: f, form: @form  %>
+        </div>
+
         <% if feature_enabled?('SHOW_ETHICAL_AND_SHARIA_FILTER') %>
           <div class="l-results__filter search-filter__section">
             <hr class="search-filter__divider">
@@ -45,13 +50,9 @@
           <div class="l-results__filter search-filter__section">
             <hr class="search-filter__divider">
             <%= render 'search/partials/filters/languages', f: f, form: @form %>
+            <hr class="search-filter__divider">
           </div>
         <% end %>
-
-        <div class="l-results__filter search-filter__section">
-          <hr class="search-filter__divider">
-          <%= render 'search/partials/filters/qualifications_and_accreditations', f: f, form: @form  %>
-        </div>
 
         <div class="l-results__filter-button-container search-filter__section">
           <%= render 'shared/search_button', button_class: "l-results__filter-button" %>
