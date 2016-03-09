@@ -1,16 +1,12 @@
 .l-header {
   // override to force the header to be the correct height
   height: 73px;
+  display: block;
 }
 
-.l-header__logo {
-  @include column(8);
-  margin-top: 20px;
-
-
-  @include respond-to($mq-m) {
-    margin-top: 14px;
-  }
+.l-header .mas-logo {
+  width: 30%;
+  margin-top: $baseline-unit*2;
 }
 
 .l-header__locale {
