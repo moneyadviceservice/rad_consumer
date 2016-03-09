@@ -89,6 +89,8 @@ cy:
           telephone: Ffôn
           disabled_access: Mynediad i’r anabl
           show_more: Dangos mwy o swyddfeydd
+        advisers:
+          heading: TBC
 
   skip_links:
     to_main: Skip to main content
