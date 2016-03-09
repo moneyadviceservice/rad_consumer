@@ -1,5 +1,5 @@
 RSpec.describe RecentlyVisitedFirms do
-  def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1,2])
+  def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1, 2])
     FirmResult.new('_source' => { '_id' => id,
                                   'registered_name' => name,
                                   'advisers' => [],

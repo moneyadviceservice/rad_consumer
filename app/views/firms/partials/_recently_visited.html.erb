@@ -3,7 +3,7 @@
                 class: 'l-firm__heading l-firm__heading--collapse') %>
 
 <ol class="l-results__list recently-viewed">
-  <% recently_visited_firms.each do |recently_visited_firm_hash| %>
+  <% recently_visited_firms(@firm).each do |recently_visited_firm_hash| %>
     <li class="recently-viewed__item t-firm">
       <%= link_to recently_visited_firm_hash['name'], recently_visited_firm_hash['url'], class: "recently-viewed__item__firm-name" %>
 
