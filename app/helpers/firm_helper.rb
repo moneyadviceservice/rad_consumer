@@ -41,6 +41,6 @@ module FirmHelper
   end
 
   def recently_visited_firms
-    Firm.all
+    session[:recently_visited_firms]
   end
 end

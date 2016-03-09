@@ -5,13 +5,11 @@
 <ol class="l-results__list recently-viewed">
   <% recently_visited_firms.each do |firm| %>
     <li class="recently-viewed__item t-firm">
-      <%= link_to firm.registered_name, firm, class: "recently-viewed__item__firm-name" %>
+      <%= link_to firm['name'], firm['url'], class: "recently-viewed__item__firm-name" %>
 
       <% if search_form.face_to_face? %>
-        <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: @firm.closest_adviser, distance_class: 'recently-viewed__item__adviser-distance' }%>
+        <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: firm['closest_adviser'], distance_class: 'recently-viewed__item__adviser-distance' }%>
       <% end %>
     </li>
   <% end %>
 </ol>
-
-<%= session[:recently_visited_firms] %>
