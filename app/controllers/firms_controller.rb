@@ -5,6 +5,7 @@ class FirmsController < ApplicationController
 
     @firm  = result.firms.first
     @offices = Geosort.by_distance(@search_form.coordinates, @firm.offices)
+    @advisers = Geosort.by_distance(@search_form.coordinates, @firm.advisers)
 
     @latitude, @longitude = @search_form.coordinates
 
