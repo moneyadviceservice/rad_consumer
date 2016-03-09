@@ -14,6 +14,7 @@ class RecentlyVisitedFirms
     firms.unshift('id' => firm.id,
                   'name' => firm.name,
                   'closest_adviser' => firm.closest_adviser,
+                  'face_to_face?' => firm.in_person_advice_methods.present?,
                   'url' => url)
   end
 

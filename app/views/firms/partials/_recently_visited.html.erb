@@ -3,12 +3,12 @@
                 class: 'l-firm__heading l-firm__heading--collapse') %>
 
 <ol class="l-results__list recently-viewed">
-  <% recently_visited_firms.each do |firm| %>
+  <% recently_visited_firms.each do |recently_visited_firm_hash| %>
     <li class="recently-viewed__item t-firm">
-      <%= link_to firm['name'], firm['url'], class: "recently-viewed__item__firm-name" %>
+      <%= link_to recently_visited_firm_hash['name'], recently_visited_firm_hash['url'], class: "recently-viewed__item__firm-name" %>
 
-      <% if search_form.face_to_face? %>
-        <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: firm['closest_adviser'], distance_class: 'recently-viewed__item__adviser-distance' }%>
+      <% if recently_visited_firm_hash['face_to_face?'] %>
+        <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: recently_visited_firm_hash['closest_adviser'], distance_class: 'recently-viewed__item__adviser-distance' }%>
       <% end %>
     </li>
   <% end %>
