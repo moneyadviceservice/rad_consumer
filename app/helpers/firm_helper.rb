@@ -41,8 +41,8 @@ module FirmHelper
   end
 
   def recently_visited_firms(current_firm)
-    session[:recently_visited_firms].reject do |f|
-      f['id'] == current_firm.id
+    session[:recently_visited_firms].reject do |recently_visited_firm_hash|
+      recently_visited_firm_hash['id'] == current_firm.id
     end
   end
 end
