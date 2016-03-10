@@ -1,5 +1,6 @@
 RSpec.describe Geocode do
   class ExampleResult
+    attr_accessor :distance
     attr_reader :name, :location
 
     def initialize(name, lat, lon)

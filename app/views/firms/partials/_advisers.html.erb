@@ -1,7 +1,6 @@
 <div data-dough-component="ShowMore">
-  <% 6.times do %>
   <% advisers.each do |adviser| %>
-    <div class="adviser t-office" data-dough-show-more-item>
+    <div class="adviser t-adviser" data-dough-show-more-item>
       <div class="l-2col">
         <div class="l-2col-even l-adviser-col">
           <div class="address t-address">
@@ -10,12 +9,13 @@
         </div>
         <div class="l-2col-even l-adviser-col">
           <div>
+            <%= I18n.t('search.result.miles_away', distance: format('%.1f', adviser.distance)) %><br>
             <%= trim_postcode(adviser.postcode) %>
+            <%= render partial: 'search/partials/firm/qualifications', object: @firm, as: :firm %>
           </div>
         </div>
       </div>
     </div>
-  <% end %>
   <% end %>
 
   <a data-dough-show-more-trigger class="adviser__show-more-trigger is-hidden" href="#">
