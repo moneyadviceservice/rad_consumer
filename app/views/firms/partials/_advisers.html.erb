@@ -1,22 +1,24 @@
 <div data-dough-component="ShowMore">
+  <% 6.times do %>
   <% advisers.each do |adviser| %>
-    <div class="office t-office" data-dough-show-more-item>
+    <div class="adviser t-office" data-dough-show-more-item>
       <div class="l-2col">
-        <div class="l-2col-even l-office-col">
+        <div class="l-2col-even l-adviser-col">
           <div class="address t-address">
             <%= adviser.name %>
           </div>
         </div>
-        <div class="l-2col-even l-office-col">
-          <div class="office__telephone">
+        <div class="l-2col-even l-adviser-col">
+          <div>
             <%= trim_postcode(adviser.postcode) %>
           </div>
         </div>
       </div>
     </div>
   <% end %>
+  <% end %>
 
-  <a data-dough-show-more-trigger class="office__show-more-trigger is-hidden" href="#">
+  <a data-dough-show-more-trigger class="adviser__show-more-trigger is-hidden" href="#">
     <%= t('firms.show.panels.offices.show_more') %>
   </a>
 </div>
