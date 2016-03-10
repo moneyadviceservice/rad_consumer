@@ -10,7 +10,7 @@
         <div class="l-2col-even l-adviser-col">
           <div>
             <%= I18n.t('search.result.miles_away', distance: format('%.1f', adviser.distance)) %><br>
-            <%= trim_postcode(adviser.postcode) %>
+            <span class="t-postcode"><%= trim_postcode(adviser.postcode) %></span>
             <%= render partial: 'search/partials/firm/qualifications', object: @firm, as: :firm %>
           </div>
         </div>

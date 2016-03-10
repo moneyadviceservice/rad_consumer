@@ -5,6 +5,6 @@ module Geosort
       obj.distance = distance
     end
 
-    objects_with_location.sort_by { |result| result.distance }
+    objects_with_location.sort_by(&:distance)
   end
 end
