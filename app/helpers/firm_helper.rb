@@ -45,4 +45,8 @@ module FirmHelper
       recently_visited_firm_hash['id'] == current_firm.id
     end
   end
+
+  def trim_postcode(postcode)
+    postcode.split(' ').first
+  end
 end
