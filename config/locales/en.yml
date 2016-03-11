@@ -91,6 +91,7 @@ en:
           show_more: Show more offices
         advisers:
           heading: Advisers
+          none: No adviser information available at this time.
           show_more: Show more advisers
 
   skip_links:

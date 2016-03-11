@@ -19,7 +19,7 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
       given_firm_with_multiple_advisers_has_been_indexed
       and_i_perform_a_phone_or_online_search
       when_i_view_the_firm_profile
-      then_i_should_not_see_the_advisers_tab
+      then_i_should_see_a_number_of_remote_advisers_listed
     end
   end
 
@@ -67,6 +67,10 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
 
   def then_i_should_see_a_number_of_advisers_listed
     expect(profile_page.advisers.length).to eq(3)
+  end
+
+  def then_i_should_see_a_number_of_remote_advisers_listed
+    expect(profile_page.advisers.length).to eq(1)
   end
 
   def and_they_should_be_ordered_by_closest_to_search_postcode
