@@ -91,6 +91,7 @@ cy:
           show_more: Dangos mwy o swyddfeydd
         advisers:
           heading: TBC
+          show_more: TBC
 
   skip_links:
     to_main: Skip to main content
