@@ -1,8 +1,10 @@
 RSpec.describe FirmsController, type: :controller do
   let!(:firm) { FactoryGirl.create(:firm) }
   let(:search_form_params) { { 'advice_method' => SearchForm::ADVICE_METHOD_FACE_TO_FACE, 'postcode' => 'EC1N 2TD' } }
-  let(:firm_result_1) { double(offices: [], advisers: []) }
-  let(:firm_result_2) { double(offices: [], advisers: []) }
+  let(:offices) { [] }
+  let(:advisers) { [] }
+  let(:firm_result_1) { double(offices: offices, advisers: advisers) }
+  let(:firm_result_2) { double(offices: offices, advisers: advisers) }
   let(:firm_repository) { double }
 
   describe 'GET #show' do
@@ -43,6 +45,34 @@ RSpec.describe FirmsController, type: :controller do
       VCR.use_cassette(:geocode_search_form_postcode) do
         get :show, id: firm.id, locale: :en, search_form: search_form_params
         expect(assigns(:firm)).to eq(firm_result_1)
+      end
+    end
+
+    context 'geosorted offices' do
+      let(:offices) { :offices }
+
+      it 'assigns geosorted offices' do
+        VCR.use_cassette(:geocode_search_form_postcode) do
+          allow(Geosort).to receive(:by_distance).and_return(:geosorted_offices)
+          get :show, id: firm.id, locale: :en, search_form: search_form_params
+
+          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, offices)
+          expect(assigns(:offices)).to eq(:geosorted_offices)
+        end
+      end
+    end
+
+    context 'geosorted advisers' do
+      let(:advisers) { :advisers }
+
+      it 'assigns geosorted advisers' do
+        VCR.use_cassette(:geocode_search_form_postcode) do
+          allow(Geosort).to receive(:by_distance).and_return(:geosorted_advisers)
+          get :show, id: firm.id, locale: :en, search_form: search_form_params
+
+          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, :advisers)
+          expect(assigns(:advisers)).to eq(:geosorted_advisers)
+        end
       end
     end
 
