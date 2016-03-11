@@ -198,7 +198,7 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: 'https://fedb5feb4c074be48b1a-7d2b925ab3869b76f1d9fad9b2ecd2bb.ssl.cf3.rackcdn.com/rad_expert_transcript.cy.pdf'
+      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.cy.pdf'
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
@@ -210,7 +210,7 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: 'https://fedb5feb4c074be48b1a-7d2b925ab3869b76f1d9fad9b2ecd2bb.ssl.cf3.rackcdn.com/rad_customer_transcript.cy.pdf'
+      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.cy.pdf'
 
   pension_wise:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
