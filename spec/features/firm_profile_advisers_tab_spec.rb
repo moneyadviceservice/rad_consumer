@@ -20,17 +20,21 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
       and_i_perform_a_phone_or_online_search
       when_i_view_the_firm_profile
       then_i_should_see_a_number_of_remote_advisers_listed
+      and_they_should_be_ordered_alphabetically
     end
   end
 
   def given_firm_with_multiple_advisers_has_been_indexed
     with_fresh_index! do
       @firm = create(:firm_without_advisers)
-      create(:adviser, firm: @firm, postcode: 'EC1N 2TD', latitude: 51.518148, longitude: -0.108013, travel_distance: 100)
-      create(:adviser, firm: @firm, postcode: 'EC4N 7BP', latitude: 51.511224, longitude: -0.087422, travel_distance: 100)
-      create(:adviser, firm: @firm, postcode: 'EC1N 7SS', latitude: 51.519144, longitude: -0.108927, travel_distance: 100)
+      create(:adviser, name: 'in the middle', firm: @firm, postcode: 'EC1N 2TD', latitude: 51.518148, longitude: -0.108013, travel_distance: 100)
+      create(:adviser, name: 'furthest', firm: @firm, postcode: 'EC4N 7BP', latitude: 51.511224, longitude: -0.087422, travel_distance: 100)
+      create(:adviser, name: 'nearest', firm: @firm, postcode: 'EC1N 7SS', latitude: 51.519144, longitude: -0.108927, travel_distance: 100)
 
-      @remote_firm = create(:firm, :with_remote_advice)
+      @remote_firm = create(:firm_without_advisers, :with_remote_advice)
+      create(:adviser, name: 'C', firm: @remote_firm, postcode: 'EC1N 7SS', latitude: 51.519144, longitude: -0.108927, travel_distance: 100)
+      create(:adviser, name: 'B', firm: @remote_firm, postcode: 'EC4N 7BP', latitude: 51.511224, longitude: -0.087422, travel_distance: 100)
+      create(:adviser, name: 'A', firm: @remote_firm, postcode: 'EC1N 2TD', latitude: 51.518148, longitude: -0.108013, travel_distance: 100)
     end
   end
 
@@ -70,11 +74,14 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
   end
 
   def then_i_should_see_a_number_of_remote_advisers_listed
-    expect(profile_page.advisers.length).to eq(1)
+    expect(profile_page.advisers.length).to eq(3)
   end
 
   def and_they_should_be_ordered_by_closest_to_search_postcode
-    expect(profile_page.advisers.first.postcode.text).to eq('EC1N')
-    expect(profile_page.advisers.last.postcode.text).to eq('EC4N')
+    expect(profile_page.advisers.map { |a| a.name.text }).to eq(['nearest', 'in the middle', 'furthest'])
+  end
+
+  def and_they_should_be_ordered_alphabetically
+    expect(profile_page.advisers.map { |a| a.name.text }).to eq(%w(A B C))
   end
 end
