@@ -39,13 +39,6 @@
           <%= render 'search/partials/filters/qualifications_and_accreditations', f: f, form: @form  %>
         </div>
 
-        <% if feature_enabled?('SHOW_ETHICAL_AND_SHARIA_FILTER') %>
-          <div class="l-results__filter search-filter__section">
-            <hr class="search-filter__divider">
-            <%= render 'search/partials/filters/services', f: f, form: @form %>
-          </div>
-        <% end %>
-
         <% if feature_enabled?('SHOW_LANGUAGES_FILTER') %>
           <div class="l-results__filter search-filter__section">
             <hr class="search-filter__divider">
