@@ -14,10 +14,7 @@ gem 'rails', '~> 4.2.5.2'
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
-gem 'dough-ruby',
-    github: 'moneyadviceservice/dough',
-    require: 'dough',
-    ref: 'cf08913'
+gem 'dough-ruby', github: 'moneyadviceservice/dough', require: 'dough'
 gem 'geocoder'
 gem 'kaminari'
 gem 'mas-rad_core', '0.0.105'

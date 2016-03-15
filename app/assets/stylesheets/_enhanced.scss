@@ -1,6 +1,9 @@
+// These dough assets contain mixins and variables that we
+// use in our own stylesheets which is why we require them
 @import 'dough/assets/stylesheets/lib';
-@import 'dough/assets/stylesheets/common';
-@import 'dough/assets/stylesheets/optional';
+@import 'dough/assets/stylesheets/helpers/clearfix';
+@import 'dough/assets/stylesheets/helpers/inline_block';
+
 @import 'yeast/assets/lib/all';
 
 @import 'settings';
