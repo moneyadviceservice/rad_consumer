@@ -40,10 +40,8 @@ module FirmHelper
     end
   end
 
-  def recently_visited_firms(current_firm)
-    session[:recently_visited_firms].reject do |recently_visited_firm_hash|
-      recently_visited_firm_hash['id'] == current_firm.id
-    end
+  def recently_visited_firms
+    session[:recently_visited_firms]
   end
 
   def trim_postcode(postcode)
