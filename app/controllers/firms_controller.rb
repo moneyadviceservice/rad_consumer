@@ -7,5 +7,14 @@ class FirmsController < ApplicationController
     @offices = Geosort.by_distance(@search_form.coordinates, @firm.offices)
 
     @latitude, @longitude = @search_form.coordinates
+
+    store_recently_visited_firm
+  end
+
+  private
+
+  def store_recently_visited_firm
+    visited_firms = RecentlyVisitedFirms.new(session)
+    visited_firms.store(@firm, request.original_url)
   end
 end

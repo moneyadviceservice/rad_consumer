@@ -17,8 +17,8 @@ module FirmHelper
                 class: style_classes
   end
 
-  def closest_adviser_text(firm_result)
-    I18n.t('search.result.miles_away', distance: format('%.1f', firm_result.closest_adviser.to_f))
+  def closest_adviser_text(distance)
+    I18n.t('search.result.miles_away', distance: format('%.1f', distance.to_f))
   end
 
   def minimum_pot_size_text(firm_result)
@@ -37,6 +37,12 @@ module FirmHelper
       link
     else
       "http://#{link}"
+    end
+  end
+
+  def recently_visited_firms(current_firm)
+    session[:recently_visited_firms].reject do |recently_visited_firm_hash|
+      recently_visited_firm_hash['id'] == current_firm.id
     end
   end
 end

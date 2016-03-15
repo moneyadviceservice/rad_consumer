@@ -76,29 +76,25 @@ RSpec.describe FirmHelper, type: :helper do
   end
 
   describe 'closest_adviser_text' do
-    before do
-      allow(firm).to receive(:closest_adviser).and_return(closest_adviser)
-    end
-
-    subject { helper.closest_adviser_text(firm) }
+    subject { helper.closest_adviser_text(distance) }
 
     context 'when the adviser is less than 1 mile away' do
-      let(:closest_adviser) { '0.1358' }
+      let(:distance) { '0.1358' }
       it { is_expected.to eq('0.1 miles away') }
     end
 
     context 'when the adviser is exactly 1 mile away' do
-      let(:closest_adviser) { '1.0' }
+      let(:distance) { '1.0' }
       it { is_expected.to eq('1.0 miles away') }
     end
 
     context 'when the adviser is greater than 1 mile away' do
-      let(:closest_adviser) { '1.12345678' }
+      let(:distance) { '1.12345678' }
       it { is_expected.to eq('1.1 miles away') }
     end
 
     context 'when the adviser is exactly 2 miles away' do
-      let(:closest_adviser) { '2.00000' }
+      let(:distance) { '2.00000' }
       it { is_expected.to eq('2.0 miles away') }
     end
   end
@@ -180,6 +176,39 @@ RSpec.describe FirmHelper, type: :helper do
       it 'returns the list alphabetically sorted' do
         expect(firm_language_list(%w(spa por aae)))
           .to eq(['Arbëreshë Albanian', 'Portuguese', 'Spanish'])
+      end
+    end
+  end
+
+  describe 'recently_visited_firms' do
+    it 'retrieves firms from the session' do
+      session[:recently_visited_firms] = [
+        { 'id' => 1 },
+        { 'id' => 2 },
+        { 'id' => 3 }
+      ]
+
+      current_firm = double('id' => 5)
+      expect(helper.recently_visited_firms(current_firm)).to eql([
+        { 'id' => 1 },
+        { 'id' => 2 },
+        { 'id' => 3 }
+      ])
+    end
+
+    context 'when viewing firm that is already in recently_visited_firms list' do
+      it 'removes the current_firm from the list being displayed' do
+        session[:recently_visited_firms] = [
+          { 'id' => 1 },
+          { 'id' => 2 },
+          { 'id' => 3 }
+        ]
+
+        current_firm = double('id' => 2)
+        expect(helper.recently_visited_firms(current_firm)).to eql([
+          { 'id' => 1 },
+          { 'id' => 3 }
+        ])
       end
     end
   end
