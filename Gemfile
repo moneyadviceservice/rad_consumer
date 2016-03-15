@@ -14,7 +14,11 @@ gem 'rails', '~> 4.2.5.2'
 gem 'active_model_serializers'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
-gem 'dough-ruby', github: 'moneyadviceservice/dough', require: 'dough'
+# Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
+# is the same as the Gem version.
+gem 'dough-ruby', github: 'moneyadviceservice/dough',
+                  require: 'dough',
+                  ref: '22e643302724d85672e44ef966b895785704411c'
 gem 'geocoder'
 gem 'kaminari'
 gem 'mas-rad_core', '0.0.105'
