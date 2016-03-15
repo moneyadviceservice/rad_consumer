@@ -108,7 +108,6 @@ cy:
     directory: Cyfeirlyfr Cynghorydd Ymddeoliad
     directory_url: /cy
 
-
   contact_panels:
     webchat:
       heading: Gwe-sgwrs
@@ -119,7 +118,6 @@ cy:
         weekdays_html: Dydd Llun i Dydd Gwener, 8am i 8pm
         saturday_html: Dydd Sadwrn, 9am i 1pm
         sunday_html: Dydd Sul a Gwyliau Banc, ar gau
-
     call_us:
       heading: Ffoniwch ni
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
@@ -129,7 +127,6 @@ cy:
         weekdays: Llun i Wener, 8am i 8pm
         saturday: Dydd Sadwrn, 9am i 1pm
       smallprint_html: Mae galwadau am ddim.
-
     social:
       heading: Dilynwch ni
       description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
@@ -325,6 +322,8 @@ cy:
             title: Buddsoddiadau moesol
           sharia_investing_flag:
             title: Buddsoddiadau sy’n cydymffurfio â Sharia
+      languages:
+        heading: 'Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:'
       select_prompt: Dewiswch
       button_text: Chwilio
 
