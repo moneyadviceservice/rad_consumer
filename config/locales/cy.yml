@@ -315,8 +315,6 @@ cy:
           '2': Later Life Academy
           '3': ISO 22222
       service:
-        heading: TBC
-        tooltip: TBC
         options:
           ethical_investing_flag:
             title: Buddsoddiadau moesol

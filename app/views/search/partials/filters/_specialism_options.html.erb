@@ -19,5 +19,16 @@
         <% end %>
       </div>
     <% end %>
+
+    <% if feature_enabled?('SHOW_ETHICAL_AND_SHARIA_FILTER') %>
+      <% t('search.filter.service.options').each do |key, item| %>
+        <div class="form__group-item">
+          <%= f.check_box key, class: "form__group-input t-#{key} search-filter__checkbox" %>
+          <%= f.label key, class: 'search-filter__option' do %>
+            <%= raw item[:title] %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
 </fieldset>

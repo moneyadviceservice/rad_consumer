@@ -1,0 +1,223 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG2%209FL,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 14 Mar 2016 14:21:16 GMT
+      Expires:
+      - Tue, 15 Mar 2016 14:21:16 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '543'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG2 9FL",
+                       "short_name" : "RG2 9FL",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Cirrus Drive",
+                       "short_name" : "Cirrus Dr",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Shinfield",
+                       "short_name" : "Shinfield",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Wokingham",
+                       "short_name" : "Wokingham",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Cirrus Dr, Shinfield, Reading, Wokingham RG2 9FL, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.4190003,
+                          "lng" : -0.9502767
+                       },
+                       "southwest" : {
+                          "lat" : 51.4179808,
+                          "lng" : -0.9521336
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.41822819999999,
+                       "lng" : -0.9512305000000001
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.4198395302915,
+                          "lng" : -0.949856169708498
+                       },
+                       "southwest" : {
+                          "lat" : 51.41714156970851,
+                          "lng" : -0.952554130291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ4_UU462cdkgRDA1RtCdMqYc",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Mon, 14 Mar 2016 14:21:16 GMT
+- request:
+    method: get
+    uri: http://maps.googleapis.com/maps/api/geocode/json?address=RG2%209FL,%20United%20Kingdom&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 14 Mar 2016 14:21:16 GMT
+      Expires:
+      - Tue, 15 Mar 2016 14:21:16 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '543'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG2 9FL",
+                       "short_name" : "RG2 9FL",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Cirrus Drive",
+                       "short_name" : "Cirrus Dr",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Shinfield",
+                       "short_name" : "Shinfield",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Wokingham",
+                       "short_name" : "Wokingham",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Cirrus Dr, Shinfield, Reading, Wokingham RG2 9FL, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.4190003,
+                          "lng" : -0.9502767
+                       },
+                       "southwest" : {
+                          "lat" : 51.4179808,
+                          "lng" : -0.9521336
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.41822819999999,
+                       "lng" : -0.9512305000000001
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.4198395302915,
+                          "lng" : -0.949856169708498
+                       },
+                       "southwest" : {
+                          "lat" : 51.41714156970851,
+                          "lng" : -0.952554130291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ4_UU462cdkgRDA1RtCdMqYc",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Mon, 14 Mar 2016 14:21:16 GMT
+recorded_with: VCR 2.9.3

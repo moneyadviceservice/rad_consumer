@@ -1,9 +1,9 @@
-RSpec.feature 'Results page, consumer requires advice on various topics in person',
-              vcr: vcr_options_for_feature(:results_face_to_face_filter_for_other_advice_types) do
+RSpec.feature 'Results page, consumer requires ethical or sharia firms in person',
+              vcr: vcr_options_for_feature(:results_face_to_face_filter_for_ethical_and_sharia) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  scenario 'Filter for various types of advice' do
+  scenario 'Filter for ethical and sharia' do
     with_elastic_search! do
       given_reference_data_has_been_populated
       and_firms_with_advisers_were_previously_indexed
