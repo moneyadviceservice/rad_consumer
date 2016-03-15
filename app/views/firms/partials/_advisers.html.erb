@@ -21,7 +21,7 @@
             </div>
           </div>
 
-          <% if adviser.qualification_ids.present? or adviser.accreditation_ids.present? %>
+          <% if adviser.qualification_ids.present? || adviser.accreditation_ids.present? %>
             <div>
               <% adviser.qualification_ids.each do |id| %>
                 <%= render_logo(id, :qualification) %>
