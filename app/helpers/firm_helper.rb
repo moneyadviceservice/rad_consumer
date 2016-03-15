@@ -47,6 +47,6 @@ module FirmHelper
   end
 
   def trim_postcode(postcode)
-    postcode.split(' ').first
+    postcode.split.first
   end
 end
