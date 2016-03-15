@@ -307,8 +307,9 @@ en:
           - text: Or you can contact advisers offering both options to compare service and costs.
           - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       qualifications_and_accreditations:
-        heading: Accreditations & qualifications
+        heading: 'I would like an adviser with the following accreditations / qualifications:'
         label: Filter by adviser qualification or accreditation
+        url: '/en/glossary/#chartered_fp'
       qualification:
         ordinal:
           '3': Chartered Financial Planner
