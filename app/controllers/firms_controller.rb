@@ -15,8 +15,15 @@ class FirmsController < ApplicationController
   private
 
   def store_recently_visited_firm
+    url = firm_path(
+      params[:id], search_form: {
+        advice_method: params['search_form']['advice_method'],
+        pension_pot_size: params['search_form']['pension_pot_size'],
+        postcode: params['search_form']['postcode']
+      }
+    )
     visited_firms = RecentlyVisitedFirms.new(session)
-    visited_firms.store(@firm, request.original_url)
+    visited_firms.store(@firm, url)
   end
 
   private
