@@ -1,0 +1,42 @@
+<div data-dough-component="ShowMore">
+  <% if advisers.empty? %>
+    <div class="adviser t-adviser" data-dough-show-more-item>
+      <%= t('firms.show.panels.advisers.none') %>
+    </div>
+  <% else %>
+    <% advisers.each do |adviser| %>
+      <div class="adviser t-adviser" data-dough-show-more-item>
+        <div class="l-2col">
+          <div class="l-2col-even l-adviser-col">
+            <div class="address t-name">
+              <%= adviser.name %>
+            </div>
+          </div>
+          <div class="l-2col-even l-adviser-col">
+            <div>
+              <% if search_form.face_to_face? %>
+                <%= I18n.t('search.result.miles_away', distance: format('%.1f', adviser.distance)) %><br>
+                <span class="t-postcode"><%= trim_postcode(adviser.postcode) %></span>
+              <% end %>
+            </div>
+          </div>
+
+          <% if adviser.qualification_ids.present? || adviser.accreditation_ids.present? %>
+            <div>
+              <% adviser.qualification_ids.each do |id| %>
+                <%= render_logo(id, :qualification) %>
+              <% end %>
+              <% adviser.accreditation_ids.each do |id| %>
+                <%= render_logo(id, :accreditation) %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <a data-dough-show-more-trigger class="adviser__show-more-trigger is-hidden" href="#">
+    <%= t('firms.show.panels.advisers.show_more') %>
+  </a>
+</div>

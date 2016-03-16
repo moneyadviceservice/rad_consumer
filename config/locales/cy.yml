@@ -89,6 +89,10 @@ cy:
           telephone: Ffôn
           disabled_access: Mynediad i’r anabl
           show_more: Dangos mwy o swyddfeydd
+        advisers:
+          heading: Cynghorwyr
+          none: Nid oes gwybodaeth am gynghorydd ar gael ar hyn o bryd.
+          show_more: Dangos rhagor o gynghorwyr
 
   skip_links:
     to_main: Skip to main content

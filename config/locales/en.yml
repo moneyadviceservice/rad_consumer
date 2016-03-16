@@ -89,6 +89,10 @@ en:
           telephone: Telephone
           disabled_access: Disabled access
           show_more: Show more offices
+        advisers:
+          heading: Advisers
+          none: No adviser information available at this time.
+          show_more: Show more advisers
 
   skip_links:
     to_main: Skip to main content

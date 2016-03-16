@@ -5,6 +5,7 @@ class FirmsController < ApplicationController
 
     @firm  = result.firms.first
     @offices = Geosort.by_distance(@search_form.coordinates, @firm.offices)
+    @advisers = sort_advisers(@search_form, @firm.advisers)
 
     @latitude, @longitude = @search_form.coordinates
 
@@ -16,5 +17,15 @@ class FirmsController < ApplicationController
   def store_recently_visited_firm
     visited_firms = RecentlyVisitedFirms.new(session)
     visited_firms.store(@firm, request.original_url)
+  end
+
+  private
+
+  def sort_advisers(search_form, advisers)
+    if search_form.face_to_face?
+      Geosort.by_distance(search_form.coordinates, advisers)
+    else
+      advisers.sort { |a1, a2| a1.name <=> a2.name }
+    end
   end
 end

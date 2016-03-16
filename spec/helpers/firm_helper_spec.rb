@@ -212,4 +212,10 @@ RSpec.describe FirmHelper, type: :helper do
       end
     end
   end
+
+  describe 'trim adviser postcode' do
+    it 'trims the adviser postcode to the characters prior to the space when there is a space' do
+      expect(helper.trim_postcode('EC1N 2TD')).to eq('EC1N')
+    end
+  end
 end
