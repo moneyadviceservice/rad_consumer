@@ -188,28 +188,11 @@ RSpec.describe FirmHelper, type: :helper do
         { 'id' => 3 }
       ]
 
-      current_firm = double('id' => 5)
-      expect(helper.recently_visited_firms(current_firm)).to eql([
+      expect(helper.recently_visited_firms).to eql([
         { 'id' => 1 },
         { 'id' => 2 },
         { 'id' => 3 }
       ])
-    end
-
-    context 'when viewing firm that is already in recently_visited_firms list' do
-      it 'removes the current_firm from the list being displayed' do
-        session[:recently_visited_firms] = [
-          { 'id' => 1 },
-          { 'id' => 2 },
-          { 'id' => 3 }
-        ]
-
-        current_firm = double('id' => 2)
-        expect(helper.recently_visited_firms(current_firm)).to eql([
-          { 'id' => 1 },
-          { 'id' => 3 }
-        ])
-      end
     end
   end
 
