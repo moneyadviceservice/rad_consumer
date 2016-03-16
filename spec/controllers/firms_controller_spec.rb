@@ -92,17 +92,19 @@ RSpec.describe FirmsController, type: :controller do
       end
     end
 
-    it 'add requested firm in the recently_visited list' do
-      VCR.use_cassette(:geocode_search_form_postcode) do
-        url = firm_path(
-          firm.id, search_form: {
-            advice_method: search_form_params['advice_method'],
-            pension_pot_size: search_form_params['pension_pot_size'],
-            postcode: search_form_params['postcode']
-          }
-        )
-        expect_any_instance_of(RecentlyVisitedFirms).to receive(:store).with(firm_result_1, url)
-        get :show, id: firm.id, locale: :en, search_form: search_form_params
+    context 'recently_visited list' do
+      it 'adds firm in the recently_visited list AND cuts down the URL so as not to exceed cookie limit of 4k' do
+        VCR.use_cassette(:geocode_search_form_postcode) do
+          url = firm_path(
+            firm.id, search_form: {
+              advice_method: search_form_params['advice_method'],
+              pension_pot_size: search_form_params['pension_pot_size'],
+              postcode: search_form_params['postcode']
+            }
+          )
+          expect_any_instance_of(RecentlyVisitedFirms).to receive(:store).with(firm_result_1, url)
+          get :show, id: firm.id, locale: :en, search_form: search_form_params
+        end
       end
     end
   end
