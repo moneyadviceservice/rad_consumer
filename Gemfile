@@ -12,6 +12,7 @@ ruby '2.2.2'
 gem 'rails', '~> 4.2.5.2'
 
 gem 'active_model_serializers'
+gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
@@ -20,7 +21,7 @@ gem 'dough-ruby',
     ref: 'cf08913'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.0.106'
+gem 'mas-rad_core', path: '../mas-rad_core'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
@@ -40,7 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'site_prism'
-  gem 'spring'
+  gem 'spring', '1.3.6'
 end
 
 group :test do
