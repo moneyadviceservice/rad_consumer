@@ -14,12 +14,13 @@ class FirmsController < ApplicationController
 
   private
 
-  def store_recently_visited_firm
-    visited_firms = RecentlyVisitedFirms.new(session)
-    visited_firms.store(@firm, request.original_url)
+  def rad_consumer_session
+    @rad_consumer_session ||= RadConsumerSession.new(session)
   end
 
-  private
+  def store_recently_visited_firm
+    rad_consumer_session.store(@firm, request.original_url, search_path(search_form: params[:search_form]))
+  end
 
   def sort_advisers(search_form, advisers)
     if search_form.face_to_face?
