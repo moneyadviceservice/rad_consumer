@@ -21,7 +21,7 @@ gem 'dough-ruby',
     ref: 'cf08913'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', path: '../mas-rad_core'
+gem 'mas-rad_core', '0.0.107'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'

@@ -15,21 +15,6 @@ GIT
       rails (>= 3.2)
       sass-rails (~> 4.0.0)
 
-PATH
-  remote: ../mas-rad_core
-  specs:
-    mas-rad_core (0.0.107)
-      active_model_serializers
-      geocoder
-      httpclient
-      language_list
-      pg
-      rails (~> 4.2.5.2)
-      redis
-      statsd-ruby
-      uk_phone_numbers
-      uk_postcode
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -128,6 +113,17 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mas-rad_core (0.0.107)
+      active_model_serializers
+      geocoder
+      httpclient
+      language_list
+      pg
+      rails (~> 4.2.5.2)
+      redis
+      statsd-ruby
+      uk_phone_numbers
+      uk_postcode
     method_source (0.8.2)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
@@ -262,7 +258,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
-  mas-rad_core!
+  mas-rad_core (= 0.0.107)
   pg
   pry-rails
   rails (~> 4.2.5.2)
