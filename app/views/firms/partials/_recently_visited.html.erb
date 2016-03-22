@@ -10,6 +10,10 @@
 
         <% if recently_visited_firm_hash['face_to_face?'] %>
           <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: recently_visited_firm_hash['closest_adviser'], distance_class: 'recently-viewed__item__adviser-distance' }%>
+        <% else %>
+          <div>
+            <%= t('firms.show.recently_visited.remote') %>
+          </div>
         <% end %>
       </li>
     <% end %>
