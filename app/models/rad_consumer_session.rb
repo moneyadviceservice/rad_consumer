@@ -1,4 +1,4 @@
-class RecentlyVisitedFirms
+class RadConsumerSession
   def initialize(store)
     @store = store
     @store[:recently_visited_firms] ||= []
@@ -8,14 +8,20 @@ class RecentlyVisitedFirms
     @store[:recently_visited_firms]
   end
 
-  def store(firm_result, url)
+  def search_results_url
+    @store['most_recent_search_url']
+  end
+
+  def store(firm_result, profile_url, most_recent_search_url)
     return if firm_already_present?(firm_result)
     firms.pop if firms.length >= 3
     firms.unshift('id' => firm_result.id,
                   'name' => firm_result.name,
                   'closest_adviser' => firm_result.closest_adviser,
                   'face_to_face?' => firm_result.in_person_advice_methods.present?,
-                  'url' => url)
+                  'profile_url' => profile_url)
+
+    @store['most_recent_search_url'] = most_recent_search_url
   end
 
   private

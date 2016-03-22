@@ -11,7 +11,7 @@ RSpec.describe FirmsController, type: :controller do
     before do
       allow(FirmRepository).to receive(:new).and_return(firm_repository)
       allow(firm_repository).to receive(:search).and_return(double(firms: [firm_result_1, firm_result_2]))
-      allow_any_instance_of(RecentlyVisitedFirms).to receive(:store)
+      allow_any_instance_of(RadConsumerSession).to receive(:store)
     end
 
     it 'successfully renders the show page' do
@@ -87,7 +87,9 @@ RSpec.describe FirmsController, type: :controller do
 
     it 'add requested firm in the recentyl_visited list' do
       VCR.use_cassette(:geocode_search_form_postcode) do
-        expect_any_instance_of(RecentlyVisitedFirms).to receive(:store).with(firm_result_1, request.original_url)
+        search_url = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect_any_instance_of(RadConsumerSession)
+          .to receive(:store).with(firm_result_1, request.original_url, search_url)
         get :show, id: firm.id, locale: :en, search_form: search_form_params
       end
     end
