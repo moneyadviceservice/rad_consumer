@@ -8,22 +8,35 @@ RSpec.describe RadConsumerSession do
                    'sort' => [closest_adviser])
   end
 
-  let(:english_search_url) { '/en/search' }
-  let(:welsh_search_url) { '/cy/search' }
+  def params(id = '1')
+    {
+      search_form: {
+        'advice_method' => 'face_to_face', 'postcode' => 'EC1N 2TD'
+      },
+      'id' => id.to_s,
+      'locale' => 'en',
+      'controller' => 'firms',
+      'action' => 'show'
+    }
+  end
+
+  def expected_path(locale)
+    "/#{locale}/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD"
+  end
 
   subject { described_class.new({}) }
 
   describe '#search_results_url' do
     it 'returns the most_recent_search_url' do
-      subject.store(firm_result(1), '/profile-url', '/en/search/my-last-search', '/cy/search/my-last-search')
-      expect(subject.search_results_url['en']).to eq('/en/search/my-last-search')
-      expect(subject.search_results_url['cy']).to eq('/cy/search/my-last-search')
+      subject.store(firm_result(1), '/profile-url', params)
+      expect(subject.search_results_url['en']).to eq(expected_path('en'))
+      expect(subject.search_results_url['cy']).to eq(expected_path('cy'))
     end
   end
 
   describe 'recently visited firms' do
     it 'stores the attributes' do
-      subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), 'url', english_search_url, welsh_search_url)
+      subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), 'url', params)
 
       expect(subject.firms.first['id']).to eq(1)
       expect(subject.firms.first['name']).to eq('foobar')
@@ -34,32 +47,32 @@ RSpec.describe RadConsumerSession do
 
     context 'remote search' do
       it 'stores the attributes' do
-        subject.store(firm_result(1, in_person_advice_methods: []), 'url', english_search_url, welsh_search_url)
+        subject.store(firm_result(1, in_person_advice_methods: []), 'url', params)
 
         expect(subject.firms.first['face_to_face?']).to eq(false)
       end
     end
 
     it 'stores firms ordered by most recent first' do
-      subject.store(firm_result(1), 'url', english_search_url, welsh_search_url)
-      subject.store(firm_result(2), 'url', english_search_url, welsh_search_url)
+      subject.store(firm_result(1), 'url', params)
+      subject.store(firm_result(2), 'url', params(2))
 
       expect(subject.firms[0]['id']).to eq(2)
       expect(subject.firms[1]['id']).to eq(1)
     end
 
     it 'stores no duplicate firms' do
-      subject.store(firm_result(1), 'url', english_search_url, welsh_search_url)
-      subject.store(firm_result(1), 'url', english_search_url, welsh_search_url)
+      subject.store(firm_result(1), 'url', params)
+      subject.store(firm_result(1), 'url', params)
 
       expect(subject.firms.length).to eq(1)
     end
 
     it 'stores no more than three firms' do
-      subject.store(firm_result(1), 'url', english_search_url, welsh_search_url)
-      subject.store(firm_result(2), 'url', english_search_url, welsh_search_url)
-      subject.store(firm_result(3), 'url', english_search_url, welsh_search_url)
-      subject.store(firm_result(4), 'url', english_search_url, welsh_search_url)
+      subject.store(firm_result(1), 'url', params(1))
+      subject.store(firm_result(2), 'url', params(2))
+      subject.store(firm_result(3), 'url', params(3))
+      subject.store(firm_result(4), 'url', params(4))
 
       expect(subject.firms.map { |f| f['id'] }).to eq([4, 3, 2])
     end

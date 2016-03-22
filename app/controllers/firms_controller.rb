@@ -19,10 +19,7 @@ class FirmsController < ApplicationController
   end
 
   def store_recently_visited_firm
-    english_search = search_path(search_form: params[:search_form], locale: 'en')
-    welsh_search = search_path(search_form: params[:search_form], locale: 'cy')
-
-    rad_consumer_session.store(@firm, request.original_url, english_search, welsh_search)
+    rad_consumer_session.store(@firm, request.original_url, params)
   end
 
   def sort_advisers(search_form, advisers)
