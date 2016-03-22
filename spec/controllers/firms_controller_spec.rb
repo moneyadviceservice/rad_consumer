@@ -87,9 +87,10 @@ RSpec.describe FirmsController, type: :controller do
 
     it 'add requested firm in the recentyl_visited list' do
       VCR.use_cassette(:geocode_search_form_postcode) do
-        search_url = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        english_search_url = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        welsh_search_url = '/cy/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
         expect_any_instance_of(RadConsumerSession)
-          .to receive(:store).with(firm_result_1, request.original_url, search_url)
+          .to receive(:store).with(firm_result_1, request.original_url, english_search_url, welsh_search_url)
         get :show, id: firm.id, locale: :en, search_form: search_form_params
       end
     end
