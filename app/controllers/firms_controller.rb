@@ -19,7 +19,7 @@ class FirmsController < ApplicationController
   end
 
   def store_recently_visited_firm
-    rad_consumer_session.store(@firm, request.original_url, params)
+    rad_consumer_session.store(@firm, params)
   end
 
   def sort_advisers(search_form, advisers)

@@ -98,7 +98,7 @@ RSpec.describe FirmsController, type: :controller do
         }
 
         expect_any_instance_of(RadConsumerSession)
-          .to receive(:store).with(firm_result_1, request.original_url, expected_params)
+          .to receive(:store).with(firm_result_1, expected_params)
         get :show, id: firm.id, locale: :en, search_form: search_form_params
       end
     end
