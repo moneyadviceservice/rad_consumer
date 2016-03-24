@@ -1,0 +1,11 @@
+.tab-selector__trigger.is-active {
+  border: none;
+}
+
+.tab-selector__triggers-inner.is-inactive {
+  border: none;
+}
+
+.tab-selector__trigger-container .tab-selector__trigger:after {
+  border-bottom: none;
+}
