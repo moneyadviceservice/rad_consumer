@@ -20,10 +20,6 @@ RSpec.describe RadConsumerSession do
     }
   end
 
-  def expected_search_path(locale)
-    "/#{locale}/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD"
-  end
-
   def expected_firm_profile_path(id, locale)
     "/#{locale}/firms/#{id}?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD"
   end
@@ -31,10 +27,30 @@ RSpec.describe RadConsumerSession do
   subject { described_class.new({}) }
 
   describe '#search_results_url' do
-    it 'returns the most_recent_search_url' do
-      subject.store(firm_result(1), params)
-      expect(subject.search_results_url['en']).to eq(expected_search_path('en'))
-      expect(subject.search_results_url['cy']).to eq(expected_search_path('cy'))
+    before { subject.store(firm_result(1), params) }
+
+    context 'when locale is a string' do
+      it 'returns the search_results_url in english' do
+        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url('en')).to eq(expected_path)
+      end
+
+      it 'returns the search_results_url in welsh' do
+        expected_path = '/cy/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url('cy')).to eq(expected_path)
+      end
+    end
+
+    context 'when locale is a symbol' do
+      it 'returns the search_results_url in english' do
+        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url(:en)).to eq(expected_path)
+      end
+
+      it 'returns the search_results_url in welsh' do
+        expected_path = '/cy/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url(:cy)).to eq(expected_path)
+      end
     end
   end
 

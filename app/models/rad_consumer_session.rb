@@ -10,8 +10,8 @@ class RadConsumerSession
     @store[:recently_visited_firms]
   end
 
-  def search_results_url
-    @store['locale_to_search_path_mappings']
+  def search_results_url(locale)
+    @store['locale_to_search_path_mappings'][locale.to_s]
   end
 
   def store(firm_result, params)
