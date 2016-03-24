@@ -1,11 +1,54 @@
-.tab-selector__trigger.is-active {
-  border: none;
-}
+/* removing default styling for mobile views */
 
 .tab-selector__triggers-inner.is-inactive {
-  border: none;
+  border-bottom: none;
+}
+
+.tab-selector__triggers-inner.is-active {
+  border-bottom: none;
 }
 
 .tab-selector__trigger-container .tab-selector__trigger:after {
   border-bottom: none;
 }
+
+/* adding mobile styling */
+.tab-selector__trigger {
+  margin-top: $baseline-unit;
+}
+
+.tab-selector__trigger.is-inactive {
+  border: 1px solid $profile-tab-border-color;
+  border-radius: 5px;
+}
+
+.tab-selector__trigger-container.is-active .tab-selector__trigger.is-active {
+  border: 1px solid $profile-tab-border-color;
+  border-radius: 5px;
+  background-color: $profile-mobile-selected-tab-background-color;
+}
+
+/* adding non-mobile styles */
+
+.tab-selector__triggers-outer {
+  @include respond-to($mq-m) {
+    border-bottom: 1px solid $profile-tab-border-color;
+  }
+}
+
+.tab-selector__trigger-container.is-active .tab-selector__trigger.is-active {
+  @include respond-to($mq-m) {
+    border: 1px solid $profile-tab-border-color;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0;
+    background-color: $profile-non-mobile-selected-tab-background-color;
+  }
+}
+
+.tab-selector__trigger.is-inactive {
+  @include respond-to($mq-m) {
+    border: none;
+  }
+}
+
