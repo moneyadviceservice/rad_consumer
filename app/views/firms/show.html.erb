@@ -3,7 +3,7 @@
     <div class="l-1col">
       <%= heading_tag(t('page_title'), level: 1, class: 'l-firm__profile-heading') %>
       <span class="firm__back-link">
-        <%= link_to @rad_consumer_session.search_results_url do %>
+        <%= link_to @rad_consumer_session.search_results_url(I18n.locale) do %>
           <%= svg_icon 'pagination-prev', class: 'firm__back-icon'
           %><%= t('firms.show.go_back') %>
         <% end %>
