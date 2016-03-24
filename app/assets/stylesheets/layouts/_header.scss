@@ -12,5 +12,9 @@
 .l-header__locale {
   @include column(4);
   float: right;
-  margin-top: $baseline-unit*4;
+  margin-top: $baseline-unit*2.5;
+
+  @include respond-to($mq-m) {
+    margin-top: $baseline-unit*4;
+  }
 }

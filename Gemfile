@@ -15,10 +15,12 @@ gem 'active_model_serializers'
 gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
+# Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
+# is the same as the Gem version.
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
-    ref: 'cf08913'
+    tag: 'v5.12.0.267'
 gem 'geocoder'
 gem 'kaminari'
 gem 'mas-rad_core', '0.0.107'

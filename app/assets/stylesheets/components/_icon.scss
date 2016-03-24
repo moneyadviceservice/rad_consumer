@@ -1,0 +1,36 @@
+// Temporarily adds black definitions for the social sharing icons that were
+// changed to point to white ones in frontend as part of:
+// https://github.com/moneyadviceservice/frontend/pull/1256
+
+.icon--youtube-black {
+  background-position: -4px -70px;
+  width: 30px;
+  height: 30px;
+}
+
+.icon--facebook-black {
+  background-position: -36px -70px;
+  width: 24px;
+  height: 24px;
+}
+
+.icon--twitter-black {
+  background-position: -69px -70px;
+  width: 26px;
+  height: 25px;
+}
+
+// The 2x versions
+@include device-pixel-ratio() {
+  .icon--youtube-black {
+    background-position: -4px -4px;
+  }
+
+  .icon--facebook-black {
+    background-position: -40px -4px;
+  }
+
+  .icon--twitter-black {
+    background-position: -70px -3px;
+  }
+}

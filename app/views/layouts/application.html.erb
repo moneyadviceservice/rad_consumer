@@ -17,17 +17,18 @@
 
   <%= favicon_link_tag 'favicon.ico' %>
 
-  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/basic-d9d6ce6d2f790984f07aff8009901a29.css" media="screen" rel="stylesheet" />
+  <% # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version is the same as the Gem version. %>
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/basic-c6f0bc03dbe96c1cc8b39033ef43f72f.css" media="screen" rel="stylesheet" />
 
   <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
-  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/font_files-ff703b1d1494bc230ea71275731abdde.css" media="screen" rel="stylesheet" />
-  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/enhanced_fixed-ec3120ee9d7ff3a43394b5e68669525f.css" media="all" rel="stylesheet" />
-  <script src="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/html5shiv/dist/html5shiv-fee07e49a2d47f6e8f4f18d64a93ed5e.js"></script>
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/font_files-dcbb90df70309af8f6ceeaff0db9a5af.css" media="screen" rel="stylesheet" />
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/enhanced_fixed-1cca1e76da0e2d48be990410a432379f.css" media="all" rel="stylesheet" />
+  <script src="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/html5shiv/dist/html5shiv-ccc40f0f8bab80e89dfead2f99f6efdf.js"></script>
   <script>var responsiveStyle = false;</script>
   <![endif]-->
 
   <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
-  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/enhanced_responsive-6ee3e18dd34ca469b3528cdcd0a411c4.css" media="only all" rel="stylesheet" />
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/enhanced_responsive-d8208fa73813e571e25d02f662719e85.css" media="only all" rel="stylesheet" />
   <script>var responsiveStyle = true;</script>
   <!--<![endif]-->
 
@@ -268,17 +269,17 @@
 
             <div class="contact-panel__button-container">
               <a class="button contact-panel__button contact-panel__button--sharing t-twitter-link" lang="en" href="https://twitter.com/YourMoneyAdvice">
-                <span class="icon icon--twitter"></span>
+                <span class="icon icon--twitter-black"></span>
                 <span class="visually-hidden"><%= t('contact_panels.social.twitter') %></span>
               </a>
 
               <a class="button contact-panel__button contact-panel__button--sharing t-facebook-link" lang="en" href="https://www.facebook.com/MoneyAdviceService?ref=mas">
-                <span class="icon icon--facebook"></span>
+                <span class="icon icon--facebook-black"></span>
                 <span class="visually-hidden"><%= t('contact_panels.social.facebook') %></span>
               </a>
 
               <a class="button contact-panel__button contact-panel__button--sharing t-youtube-link" lang="en" href="https://www.youtube.com/user/MoneyAdviceService">
-                <span class="icon icon--youtube"></span>
+                <span class="icon icon--youtube-black"></span>
                 <span class="visually-hidden"><%= t('contact_panels.social.youtube') %></span>
               </a>
             </div>
