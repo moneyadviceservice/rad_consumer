@@ -108,6 +108,11 @@
               <%= t('firms.show.panels.firm.services.non_uk_residents') %>
             </li>
           <% end %>
+          <% if firm.workplace_financial_advice_flag %>
+            <li class="plain_list__item">
+              <%= t('firms.show.panels.firm.services.investing.workplace_financial_advice') %>
+            </li>
+          <% end %>
         </ul>
       <% end %>
 
