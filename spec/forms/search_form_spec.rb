@@ -118,10 +118,25 @@ RSpec.describe SearchForm do
       end
     end
 
-    context 'both flags set' do
-      let(:services) { { sharia_investing_flag: '1', ethical_investing_flag: '1' } }
+    context 'workplace financial advice flag set' do
+      let(:services) { { workplace_financial_advice_flag: '1' } }
+      it 'contains workplace_financial_advice_flag' do
+        expect(form.services).to eql([:workplace_financial_advice_flag])
+      end
+    end
+
+    context 'all flags set' do
+      let(:services) do
+        { sharia_investing_flag: '1',
+          ethical_investing_flag: '1',
+          workplace_financial_advice_flag: '1'
+        }
+      end
+
       it 'contains both flag' do
-        expect(form.services).to eql([:ethical_investing_flag, :sharia_investing_flag])
+        expect(form.services).to eql([:ethical_investing_flag,
+                                      :sharia_investing_flag,
+                                      :workplace_financial_advice_flag])
       end
     end
   end

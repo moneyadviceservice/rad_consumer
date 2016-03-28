@@ -329,6 +329,8 @@ en:
             title: Sharia compliant investments
           non_uk_residents_flag:
             title: Advice to UK expatriates
+          workplace_financial_advice_flag:
+            title: Workplace financial advice
       languages:
         heading: 'I would like an adviser who can speak the following language:'
       select_prompt: Please select
