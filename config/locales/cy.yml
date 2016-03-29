@@ -330,10 +330,11 @@ cy:
             title: Buddsoddiadau sy’n cydymffurfio â Sharia
           non_uk_residents_flag:
             title: Cyngor i alltudion y Deyrnas Unedig
-          workplace_financial_advice_flag:
-            title: Cyngor ariannol yn y gweithle
       languages:
         heading: 'Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:'
+      workplace_financial_advice_flag:
+        heading: TBD
+        title: Cyngor ariannol yn y gweithle
       select_prompt: Dewiswch
       button_text: Chwilio
 

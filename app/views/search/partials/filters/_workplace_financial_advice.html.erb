@@ -1,0 +1,9 @@
+<legend class="search-filter__label">
+  <%= t('search.filter.workplace_financial_advice_flag.heading') %>
+</legend>
+<div class="form__group-item">
+  <%= f.check_box 'workplace_financial_advice_flag', class: "form__group-input t-workplace_financial_advice_flag search-filter__checkbox" %>
+  <%= f.label 'workplace_financial_advice_flag', class: 'search-filter__option' do %>
+    <%= raw t('search.filter.workplace_financial_advice_flag.title') %>
+  <% end %>
+</div>
