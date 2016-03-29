@@ -111,6 +111,13 @@ RSpec.describe SearchForm do
       end
     end
 
+    context 'non uk residents flag set' do
+      let(:services) { { non_uk_residents_flag: '1' } }
+      it 'contains non_uk_residents_flag' do
+        expect(form.services).to eql([:non_uk_residents_flag])
+      end
+    end
+
     context 'both flags set' do
       let(:services) { { sharia_investing_flag: '1', ethical_investing_flag: '1' } }
       it 'contains both flag' do

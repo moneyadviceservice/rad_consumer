@@ -82,6 +82,7 @@ en:
               ethical: Ethical investments
               sharia: Sharia compliant investments
             languages: Additional languages spoken by advisers
+            non_uk_residents: Advice to UK expatriates
             qualifications:
               heading: Qualifications held by firm advisers
         offices:
@@ -326,6 +327,8 @@ en:
             title: Ethical investments
           sharia_investing_flag:
             title: Sharia compliant investments
+          non_uk_residents_flag:
+            title: Advice to UK expatriates
       languages:
         heading: 'I would like an adviser who can speak the following language:'
       select_prompt: Please select

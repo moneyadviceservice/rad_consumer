@@ -16,7 +16,7 @@ class SearchForm
     :wills_and_probate
   ]
 
-  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag]
+  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag, :non_uk_residents_flag]
 
   attr_accessor :checkbox,
                 :advice_method,
