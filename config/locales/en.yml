@@ -333,7 +333,8 @@ en:
       languages:
         heading: 'I would like an adviser who can speak the following language:'
       workplace_financial_advice_flag:
-        heading: 'I would like an adviser who specialises in providing financial advice through employers in the workplace:'
+        heading: 'I would like an adviser who provides financial advice to employers:'
+        tooltip: Tooltip
         title: Workplace financial advice
       select_prompt: Please select
       button_text: Search
