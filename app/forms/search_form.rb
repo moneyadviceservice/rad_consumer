@@ -16,7 +16,10 @@ class SearchForm
     :wills_and_probate
   ]
 
-  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag, :non_uk_residents_flag, :workplace_financial_advice_flag]
+  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag, :non_uk_residents_flag]
+  WORKPLACE_SERVICES = [:setting_up_workplace_pension_flag,
+                        :existing_workplace_pension_flag,
+                        :advice_for_employees_flag]
 
   attr_accessor :checkbox,
                 :advice_method,
@@ -28,7 +31,8 @@ class SearchForm
                 :language,
                 :random_search_seed,
                 *TYPES_OF_ADVICE,
-                *OTHER_SERVICES
+                *OTHER_SERVICES,
+                *WORKPLACE_SERVICES
 
   before_validation :upcase_postcode, if: :face_to_face?
 
@@ -83,7 +87,9 @@ class SearchForm
   end
 
   def services
-    selected_checkbox_attributes OTHER_SERVICES
+    result = selected_checkbox_attributes(OTHER_SERVICES)
+    result += [:workplace_financial_advice_flag] if selected_checkbox_attributes(WORKPLACE_SERVICES).present?
+    result
   end
 
   def services?

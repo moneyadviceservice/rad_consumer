@@ -118,10 +118,38 @@ RSpec.describe SearchForm do
       end
     end
 
-    context 'workplace financial advice flag set' do
-      let(:services) { { workplace_financial_advice_flag: '1' } }
-      it 'contains workplace_financial_advice_flag' do
-        expect(form.services).to eql([:workplace_financial_advice_flag])
+    context 'workplace financial advice flag service set' do
+      context 'setting_up_workplace_pension_flag' do
+        let(:services) { { setting_up_workplace_pension_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+      context 'existing_workplace_pension_flag' do
+        let(:services) { { existing_workplace_pension_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+      context 'advice_for_employees_flag' do
+        let(:services) { { advice_for_employees_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+
+      context 'multiple workplace financial advice options' do
+        let(:services) do
+          {
+            setting_up_workplace_pension_flag: '1',
+            existing_workplace_pension_flag: '1',
+            advice_for_employees_flag: '1'
+          }
+        end
+
+        it 'contains one workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
       end
     end
 
@@ -129,7 +157,7 @@ RSpec.describe SearchForm do
       let(:services) do
         { sharia_investing_flag: '1',
           ethical_investing_flag: '1',
-          workplace_financial_advice_flag: '1'
+          setting_up_workplace_pension_flag: '1'
         }
       end
 
