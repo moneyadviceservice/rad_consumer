@@ -2,10 +2,10 @@ class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
+  include ::Filters::PensionPot
+
   ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
   ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
-
-  ANY_SIZE_VALUE = 'any'
 
   TYPES_OF_ADVICE = [
     :pension_transfer,
@@ -25,7 +25,6 @@ class SearchForm
                 :advice_method,
                 :postcode,
                 :coordinates,
-                :pension_pot_size,
                 :firm_id,
                 :qualification_or_accreditation,
                 :language,
@@ -52,12 +51,6 @@ class SearchForm
     @coordinates ||= Geocode.call(postcode)
   end
 
-  def options_for_pension_pot_sizes
-    InvestmentSize.all.map do |investment_size|
-      [investment_size.localized_name, investment_size.id]
-    end << [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
-  end
-
   def options_for_qualifications_and_accreditations
     (options_for(Qualification) + options_for(Accreditation)).sort
   end
@@ -68,10 +61,6 @@ class SearchForm
     end
 
     languages.sort_by(&:common_name)
-  end
-
-  def any_pension_pot_size?
-    pension_pot_size && pension_pot_size == ANY_SIZE_VALUE
   end
 
   def retirement_income_products?
