@@ -10,7 +10,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is face to face' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE }
 
       describe '#face_to_face?' do
         it 'returns truthy' do
@@ -26,7 +26,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is phone or online' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       describe '#face_to_face?' do
         it 'returns falsey' do
@@ -43,7 +43,9 @@ RSpec.describe SearchForm do
   end
 
   context 'for the face to face advice method' do
-    let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa') }
+    let(:form) do
+      described_class.new(advice_method: Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa')
+    end
 
     it 'upcases the postcode before validation' do
       VCR.use_cassette(:rg2_1aa) do
@@ -201,7 +203,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when the advice method is face to face' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE }
 
       context 'and a correctly formatted postcode is present' do
         before { form.postcode = 'RG2 1AA' }
@@ -244,7 +246,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is phone or online' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       it 'passes on phone and online' do
         phone = OtherAdviceMethod.create name: 'phone'

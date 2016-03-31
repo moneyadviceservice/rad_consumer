@@ -2,12 +2,10 @@ class SearchForm
   include ActiveModel::Model
   include ActiveModel::Validations::Callbacks
 
+  include ::Filters::AdviceMethod
   include ::Filters::PensionPot
   include ::Filters::QualificationOrAccreditation
   include ::Filters::Language
-
-  ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
-  ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
 
   TYPES_OF_ADVICE = [
     :pension_transfer,
@@ -24,9 +22,6 @@ class SearchForm
                         :advice_for_employees_flag]
 
   attr_accessor :checkbox,
-                :advice_method,
-                :postcode,
-                :coordinates,
                 :firm_id,
                 :random_search_seed,
                 *TYPES_OF_ADVICE,
@@ -34,22 +29,8 @@ class SearchForm
                 *WORKPLACE_SERVICES
 
   before_validation :upcase_postcode, if: :face_to_face?
-
   validates :advice_method, presence: true
-
   validate :geocode_postcode, if: :face_to_face?
-
-  def face_to_face?
-    advice_method == ADVICE_METHOD_FACE_TO_FACE
-  end
-
-  def phone_or_online?
-    advice_method == ADVICE_METHOD_PHONE_OR_ONLINE
-  end
-
-  def coordinates
-    @coordinates ||= Geocode.call(postcode)
-  end
 
   def retirement_income_products?
     retirement_income_products == '1'
@@ -73,28 +54,11 @@ class SearchForm
     services.any?
   end
 
-  def remote_advice_method_ids
-    phone_or_online? ? OtherAdviceMethod.all.map(&:id) : []
-  end
-
-  def postcode
-    @postcode if face_to_face?
-  end
-
   def to_query
     SearchFormSerializer.new(self).to_json
   end
 
   private
-
-  def geocode_postcode
-    return if postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
-    errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
-  end
-
-  def upcase_postcode
-    postcode.try(:upcase!)
-  end
 
   def selected_checkbox_attributes(attribute_names)
     attribute_names.select { |type| public_send(type) == '1' }
