@@ -3,6 +3,7 @@ class SearchForm
   include ActiveModel::Validations::Callbacks
 
   include ::Filters::PensionPot
+  include ::Filters::Language
 
   ADVICE_METHOD_FACE_TO_FACE = 'face_to_face'
   ADVICE_METHOD_PHONE_OR_ONLINE = 'phone_or_online'
@@ -27,7 +28,6 @@ class SearchForm
                 :coordinates,
                 :firm_id,
                 :qualification_or_accreditation,
-                :language,
                 :random_search_seed,
                 *TYPES_OF_ADVICE,
                 *OTHER_SERVICES,
@@ -53,14 +53,6 @@ class SearchForm
 
   def options_for_qualifications_and_accreditations
     (options_for(Qualification) + options_for(Accreditation)).sort
-  end
-
-  def options_for_language
-    languages = Firm.languages_used.map do |iso_639_3|
-      LanguageList::LanguageInfo.find iso_639_3
-    end
-
-    languages.sort_by(&:common_name)
   end
 
   def retirement_income_products?
