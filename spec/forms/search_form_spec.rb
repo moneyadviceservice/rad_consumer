@@ -59,7 +59,7 @@ RSpec.describe SearchForm do
   describe '#types_of_advice' do
     let(:form) { described_class.new(types_of_advice) }
 
-    SearchForm::TYPES_OF_ADVICE.each do |advice_type|
+    Filters::TypeOfAdvice::TYPES_OF_ADVICE.each do |advice_type|
       context "#{advice_type} set" do
         let(:types_of_advice) { { advice_type => '1' } }
         it "contains #{advice_type}" do
