@@ -10,7 +10,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is face to face' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE }
 
       describe '#face_to_face?' do
         it 'returns truthy' do
@@ -26,7 +26,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is phone or online' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       describe '#face_to_face?' do
         it 'returns falsey' do
@@ -43,7 +43,9 @@ RSpec.describe SearchForm do
   end
 
   context 'for the face to face advice method' do
-    let(:form) { described_class.new(advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa') }
+    let(:form) do
+      described_class.new(advice_method: Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE, postcode: 'rg2 1aa')
+    end
 
     it 'upcases the postcode before validation' do
       VCR.use_cassette(:rg2_1aa) do
@@ -57,7 +59,7 @@ RSpec.describe SearchForm do
   describe '#types_of_advice' do
     let(:form) { described_class.new(types_of_advice) }
 
-    SearchForm::TYPES_OF_ADVICE.each do |advice_type|
+    Filters::TypeOfAdvice::TYPES_OF_ADVICE.each do |advice_type|
       context "#{advice_type} set" do
         let(:types_of_advice) { { advice_type => '1' } }
         it "contains #{advice_type}" do
@@ -118,10 +120,53 @@ RSpec.describe SearchForm do
       end
     end
 
-    context 'both flags set' do
-      let(:services) { { sharia_investing_flag: '1', ethical_investing_flag: '1' } }
+    context 'workplace financial advice flag service set' do
+      context 'setting_up_workplace_pension_flag' do
+        let(:services) { { setting_up_workplace_pension_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+      context 'existing_workplace_pension_flag' do
+        let(:services) { { existing_workplace_pension_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+      context 'advice_for_employees_flag' do
+        let(:services) { { advice_for_employees_flag: '1' } }
+        it 'contains workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+
+      context 'multiple workplace financial advice options' do
+        let(:services) do
+          {
+            setting_up_workplace_pension_flag: '1',
+            existing_workplace_pension_flag: '1',
+            advice_for_employees_flag: '1'
+          }
+        end
+
+        it 'contains one workplace_financial_advice_flag' do
+          expect(form.services).to eql([:workplace_financial_advice_flag])
+        end
+      end
+    end
+
+    context 'all flags set' do
+      let(:services) do
+        { sharia_investing_flag: '1',
+          ethical_investing_flag: '1',
+          setting_up_workplace_pension_flag: '1'
+        }
+      end
+
       it 'contains both flag' do
-        expect(form.services).to eql([:ethical_investing_flag, :sharia_investing_flag])
+        expect(form.services).to eql([:ethical_investing_flag,
+                                      :sharia_investing_flag,
+                                      :workplace_financial_advice_flag])
       end
     end
   end
@@ -158,7 +203,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when the advice method is face to face' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_FACE_TO_FACE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_FACE_TO_FACE }
 
       context 'and a correctly formatted postcode is present' do
         before { form.postcode = 'RG2 1AA' }
@@ -201,7 +246,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when advice method is phone or online' do
-      let(:advice_method) { SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE }
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       it 'passes on phone and online' do
         phone = OtherAdviceMethod.create name: 'phone'

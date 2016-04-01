@@ -1,0 +1,24 @@
+<fieldset class="search-filter__pension_pot">
+  <legend class="search-filter__label">
+    <%= t('search.filter.workplace_financial_advice_flag.heading') %>
+  </legend>
+
+  <div class="form__group-item">
+    <%= f.check_box 'setting_up_workplace_pension_flag', class: "form__group-input t-setting_up_workplace_pension search-filter__checkbox" %>
+    <%= f.label 'setting_up_workplace_pension', class: 'search-filter__option' do %>
+      <%= t('search.filter.workplace_financial_advice_flag.setting_up_workplace_pension') %>
+    <% end %>
+  </div>
+  <div class="form__group-item">
+    <%= f.check_box 'existing_workplace_pension_flag', class: "form__group-input t-existing_workplace_pension_flag search-filter__checkbox" %>
+    <%= f.label 'existing_workplace_pension_flag', class: 'search-filter__option' do %>
+      <%= t('search.filter.workplace_financial_advice_flag.existing_workplace_pension') %>
+    <% end %>
+  </div>
+  <div class="form__group-item">
+    <%= f.check_box 'advice_for_employees_flag', class: "form__group-input t-advice_for_employees_flag search-filter__checkbox" %>
+    <%= f.label 'advice_for_employees_flag', class: 'search-filter__option' do %>
+      <%= t('search.filter.workplace_financial_advice_flag.advice_for_employees') %>
+    <% end %>
+  </div>
+</fieldset>
