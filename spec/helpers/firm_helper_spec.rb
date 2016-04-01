@@ -4,46 +4,63 @@ RSpec.describe FirmHelper, type: :helper do
   let(:firm) { double }
 
   describe 'firm_has_investing_types?' do
+    let(:ethical_investing_flag) { false }
+    let(:sharia_investing_flag) { false }
+    let(:workplace_financial_advice_flag) { false }
+    let(:non_uk_residents_flag) { false }
+
     subject { helper.firm_has_investing_types?(firm) }
 
-    context 'it has neither sharia or ethical investing' do
-      before do
-        allow(firm).to receive(:ethical_investing_flag).and_return(false)
-        allow(firm).to receive(:sharia_investing_flag).and_return(false)
-      end
+    before do
+      allow(firm).to receive(:ethical_investing_flag).and_return(ethical_investing_flag)
+      allow(firm).to receive(:sharia_investing_flag).and_return(sharia_investing_flag)
+      allow(firm).to receive(:workplace_financial_advice_flag).and_return(workplace_financial_advice_flag)
+      allow(firm).to receive(:non_uk_residents_flag).and_return(non_uk_residents_flag)
+    end
 
+    context 'it has neither sharia, ethical investing, workplace or non uk residents' do
       it 'returns false' do
         expect(subject).to eq(false)
       end
     end
 
-    context 'it has sharia but not ethical investing' do
-      before do
-        allow(firm).to receive(:ethical_investing_flag).and_return(false)
-        allow(firm).to receive(:sharia_investing_flag).and_return(true)
-      end
+    context 'it has sharia only' do
+      let(:sharia_investing_flag) { true }
 
       it 'returns true' do
         expect(subject).to eq(true)
       end
     end
 
-    context 'it has ethical but not sharia investing' do
-      before do
-        allow(firm).to receive(:ethical_investing_flag).and_return(true)
-        allow(firm).to receive(:sharia_investing_flag).and_return(false)
-      end
+    context 'it has ethical only' do
+      let(:ethical_investing_flag) { true }
 
       it 'returns true' do
         expect(subject).to eq(true)
       end
     end
 
-    context 'it has ethical and sharia investing' do
-      before do
-        allow(firm).to receive(:ethical_investing_flag).and_return(true)
-        allow(firm).to receive(:sharia_investing_flag).and_return(true)
+    context 'it has workplace only' do
+      let(:workplace_financial_advice_flag) { true }
+
+      it 'returns true' do
+        expect(subject).to eq(true)
       end
+    end
+
+    context 'it has non uk residents only' do
+      let(:non_uk_residents_flag) { true }
+
+      it 'returns true' do
+        expect(subject).to eq(true)
+      end
+    end
+
+    context 'it has multiple options' do
+      let(:ethical_investing_flag) { true }
+      let(:sharia_investing_flag) { true }
+      let(:workplace_financial_advice_flag) { true }
+      let(:non_uk_residents_flag) { true }
 
       it 'returns true' do
         expect(subject).to eq(true)
