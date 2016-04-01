@@ -7,31 +7,15 @@ class SearchForm
   include ::Filters::PensionPot
   include ::Filters::QualificationOrAccreditation
   include ::Filters::Language
-
-  OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag, :non_uk_residents_flag]
-  WORKPLACE_SERVICES = [:setting_up_workplace_pension_flag,
-                        :existing_workplace_pension_flag,
-                        :advice_for_employees_flag]
+  include ::Filters::Service
 
   attr_accessor :checkbox,
                 :firm_id,
-                :random_search_seed,
-                *OTHER_SERVICES,
-                *WORKPLACE_SERVICES
+                :random_search_seed
 
   before_validation :upcase_postcode, if: :face_to_face?
   validates :advice_method, presence: true
   validate :geocode_postcode, if: :face_to_face?
-
-  def services
-    result = selected_checkbox_attributes(OTHER_SERVICES)
-    result += [:workplace_financial_advice_flag] if selected_checkbox_attributes(WORKPLACE_SERVICES).present?
-    result
-  end
-
-  def services?
-    services.any?
-  end
 
   def to_query
     SearchFormSerializer.new(self).to_json
