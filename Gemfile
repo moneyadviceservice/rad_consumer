@@ -23,7 +23,7 @@ gem 'dough-ruby',
     tag: 'v5.12.0.267'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.0.107'
+gem 'mas-rad_core', '0.0.109'
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'
