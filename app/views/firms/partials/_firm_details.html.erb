@@ -91,16 +91,16 @@
     <div class="l-1col firm__divider">
 
       <% if firm_has_other_services?(firm) %>
-        <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'firm__service-heading') %>
+        <%= heading_tag(t('firms.show.panels.firm.services.other.heading'), level: 4, class: 'firm__service-heading') %>
         <ul class="plain_list">
           <% if firm.ethical_investing_flag %>
             <li class="plain_list__item">
-              <%= t('firms.show.panels.firm.services.investing.ethical') %>
+              <%= t('firms.show.panels.firm.services.other.ethical') %>
             </li>
           <% end %>
           <% if firm.sharia_investing_flag %>
             <li class="plain_list__item">
-              <%= t('firms.show.panels.firm.services.investing.sharia') %>
+              <%= t('firms.show.panels.firm.services.other.sharia') %>
             </li>
           <% end %>
           <% if firm.non_uk_residents_flag %>
@@ -110,7 +110,7 @@
           <% end %>
           <% if firm.workplace_financial_advice_flag %>
             <li class="plain_list__item">
-              <%= t('firms.show.panels.firm.services.investing.workplace_financial_advice') %>
+              <%= t('firms.show.panels.firm.services.other.workplace_financial_advice') %>
             </li>
           <% end %>
         </ul>
