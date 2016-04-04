@@ -63,7 +63,7 @@ RSpec.describe RadConsumerSession do
   end
 
   describe '#store' do
-    describe 'most recent search' do
+    describe 'storing most recent search' do
       it 'always stores the most recent search (independently of the firm storing logic)' do
         # Store a firm result and search form params
         subject.store(firm_result(1), params)
@@ -83,7 +83,7 @@ RSpec.describe RadConsumerSession do
       end
     end
 
-    describe 'recently visited firms' do
+    describe 'storing recently visited firms' do
       it 'stores the attributes' do
         subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), params)
 
