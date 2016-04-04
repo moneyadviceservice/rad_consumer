@@ -1,5 +1,5 @@
 module FirmHelper
-  def firm_has_investing_types?(firm)
+  def firm_has_other_services?(firm)
     firm.ethical_investing_flag || firm.sharia_investing_flag ||
       firm.workplace_financial_advice_flag || firm.non_uk_residents_flag
   end

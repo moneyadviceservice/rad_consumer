@@ -86,11 +86,11 @@
   </div>
 </div>
 
-<% if firm_has_investing_types?(firm) || firm.languages.present? %>
+<% if firm_has_other_services?(firm) || firm.languages.present? %>
   <div class="l-firm__row">
     <div class="l-1col firm__divider">
 
-      <% if firm_has_investing_types?(firm) %>
+      <% if firm_has_other_services?(firm) %>
         <%= heading_tag(t('firms.show.panels.firm.services.investing.heading'), level: 4, class: 'firm__service-heading') %>
         <ul class="plain_list">
           <% if firm.ethical_investing_flag %>
