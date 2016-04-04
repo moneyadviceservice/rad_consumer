@@ -3,13 +3,13 @@ require 'spec_helper'
 RSpec.describe FirmHelper, type: :helper do
   let(:firm) { double }
 
-  describe 'firm_has_investing_types?' do
+  describe 'firm_has_other_services?' do
     let(:ethical_investing_flag) { false }
     let(:sharia_investing_flag) { false }
     let(:workplace_financial_advice_flag) { false }
     let(:non_uk_residents_flag) { false }
 
-    subject { helper.firm_has_investing_types?(firm) }
+    subject { helper.firm_has_other_services?(firm) }
 
     before do
       allow(firm).to receive(:ethical_investing_flag).and_return(ethical_investing_flag)

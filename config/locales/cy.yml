@@ -77,13 +77,13 @@ cy:
               equity_release: Rhyddhau Ecwiti
               inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
               wills_and_probate: Ewyllysiau a phrofiant
-            investing:
+            other:
               heading: Gwasanaethau Eraill
               ethical: Buddsoddiadau moesol
+              non_uk_residents: Cyngor i alltudion y Deyrnas Unedig
               sharia: Buddsoddiadau sy’n cydymffurfio â Sharia
               workplace_financial_advice: Cyngor ariannol yn y gweithle
             languages: Ieithoedd ychwanegol a siaradir gan gynghorwyr
-            non_uk_residents: Cyngor i alltudion y Deyrnas Unedig
             qualifications:
               heading: Cymwysterau a feddir gan gynghorwyr y cwmni
         offices:
