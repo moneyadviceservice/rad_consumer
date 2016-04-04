@@ -80,10 +80,10 @@ cy:
             other:
               heading: Gwasanaethau Eraill
               ethical: Buddsoddiadau moesol
+              non_uk_residents: Cyngor i alltudion y Deyrnas Unedig
               sharia: Buddsoddiadau sy’n cydymffurfio â Sharia
               workplace_financial_advice: Cyngor ariannol yn y gweithle
             languages: Ieithoedd ychwanegol a siaradir gan gynghorwyr
-            non_uk_residents: Cyngor i alltudion y Deyrnas Unedig
             qualifications:
               heading: Cymwysterau a feddir gan gynghorwyr y cwmni
         offices:
