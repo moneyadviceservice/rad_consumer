@@ -1,6 +1,7 @@
 module FirmHelper
   def firm_has_investing_types?(firm)
-    firm.ethical_investing_flag || firm.sharia_investing_flag
+    firm.ethical_investing_flag || firm.sharia_investing_flag ||
+      firm.workplace_financial_advice_flag || firm.non_uk_residents_flag
   end
 
   def firm_language_list(language_codes)
