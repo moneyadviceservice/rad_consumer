@@ -77,7 +77,8 @@ RSpec.describe RadConsumerSession do
         updated_search_params[:search_form]['advice_for_employees_flag'] = '1'
         subject.store(firm_result(1), updated_search_params)
 
-        expected_path = '/en/search?search_form%5Badvice_for_employees_flag%5D=1&search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expected_path = '/en/search?search_form%5Badvice_for_employees_flag%5D=1' \
+          '&search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
         expect(subject.search_results_url('en')).to eq(expected_path)
       end
     end
