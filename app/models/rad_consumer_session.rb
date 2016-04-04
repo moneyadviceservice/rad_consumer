@@ -15,8 +15,17 @@ class RadConsumerSession
   end
 
   def store(firm_result, params)
-    @store['locale_to_search_path_mappings'] = locale_to_search_path_mappings(params)
+    update_most_recent_search(params)
+    update_recently_visited_firms(firm_result, params)
+  end
 
+  private
+
+  def update_most_recent_search(params)
+    @store['locale_to_search_path_mappings'] = locale_to_search_path_mappings(params)
+  end
+
+  def update_recently_visited_firms(firm_result, params)
     return if firm_already_present?(firm_result)
     firms.pop if firms.length >= 3
     firms.unshift('id' => firm_result.id,
@@ -25,8 +34,6 @@ class RadConsumerSession
                   'face_to_face?' => firm_result.in_person_advice_methods.present?,
                   'profile_path' => locale_to_profile_path_mappings(params))
   end
-
-  private
 
   def firm_already_present?(firm_result)
     firms.any? { |firm_hash| firm_result.id == firm_hash['id'] }
