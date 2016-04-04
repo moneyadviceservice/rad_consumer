@@ -62,46 +62,48 @@ RSpec.describe RadConsumerSession do
     end
   end
 
-  describe 'recently visited firms' do
-    it 'stores the attributes' do
-      subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), params)
-
-      expect(subject.firms.first['id']).to eq(1)
-      expect(subject.firms.first['name']).to eq('foobar')
-      expect(subject.firms.first['closest_adviser']).to eq(10)
-      expect(subject.firms.first['face_to_face?']).to eq(true)
-    end
-
-    context 'remote search' do
+  describe '#store' do
+    describe 'recently visited firms' do
       it 'stores the attributes' do
-        subject.store(firm_result(1, in_person_advice_methods: []), params)
+        subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), params)
 
-        expect(subject.firms.first['face_to_face?']).to eq(false)
+        expect(subject.firms.first['id']).to eq(1)
+        expect(subject.firms.first['name']).to eq('foobar')
+        expect(subject.firms.first['closest_adviser']).to eq(10)
+        expect(subject.firms.first['face_to_face?']).to eq(true)
       end
-    end
 
-    it 'stores firms ordered by most recent first' do
-      subject.store(firm_result(1), params)
-      subject.store(firm_result(2), params(2))
+      context 'remote search' do
+        it 'stores the attributes' do
+          subject.store(firm_result(1, in_person_advice_methods: []), params)
 
-      expect(subject.firms[0]['id']).to eq(2)
-      expect(subject.firms[1]['id']).to eq(1)
-    end
+          expect(subject.firms.first['face_to_face?']).to eq(false)
+        end
+      end
 
-    it 'stores no duplicate firms' do
-      subject.store(firm_result(1), params)
-      subject.store(firm_result(1), params)
+      it 'stores firms ordered by most recent first' do
+        subject.store(firm_result(1), params)
+        subject.store(firm_result(2), params(2))
 
-      expect(subject.firms.length).to eq(1)
-    end
+        expect(subject.firms[0]['id']).to eq(2)
+        expect(subject.firms[1]['id']).to eq(1)
+      end
 
-    it 'stores no more than three firms' do
-      subject.store(firm_result(1), params(1))
-      subject.store(firm_result(2), params(2))
-      subject.store(firm_result(3), params(3))
-      subject.store(firm_result(4), params(4))
+      it 'stores no duplicate firms' do
+        subject.store(firm_result(1), params)
+        subject.store(firm_result(1), params)
 
-      expect(subject.firms.map { |f| f['id'] }).to eq([4, 3, 2])
+        expect(subject.firms.length).to eq(1)
+      end
+
+      it 'stores no more than three firms' do
+        subject.store(firm_result(1), params(1))
+        subject.store(firm_result(2), params(2))
+        subject.store(firm_result(3), params(3))
+        subject.store(firm_result(4), params(4))
+
+        expect(subject.firms.map { |f| f['id'] }).to eq([4, 3, 2])
+      end
     end
   end
 end
