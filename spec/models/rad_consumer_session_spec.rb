@@ -63,6 +63,25 @@ RSpec.describe RadConsumerSession do
   end
 
   describe '#store' do
+    describe 'most recent search' do
+      it 'always stores the most recent search (independently of the firm storing logic)' do
+        # Store a firm result and search form params
+        subject.store(firm_result(1), params)
+
+        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url('en')).to eq(expected_path)
+
+        # Store the same firm with different search params as if we are revisiting
+        # the same firm returned from a different search.
+        updated_search_params = params
+        updated_search_params[:search_form]['advice_for_employees_flag'] = '1'
+        subject.store(firm_result(1), updated_search_params)
+
+        expected_path = '/en/search?search_form%5Badvice_for_employees_flag%5D=1&search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
+        expect(subject.search_results_url('en')).to eq(expected_path)
+      end
+    end
+
     describe 'recently visited firms' do
       it 'stores the attributes' do
         subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), params)
