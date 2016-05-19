@@ -143,14 +143,7 @@ cy:
       contact_html: Am ragor o ffyrdd i gysylltu, ewch i'n tudalen <a href="/cy/static/cysylltu-a-ni">cysylltwch â ni</a>
 
   footer_primary:
-    newsletter:
-      heading: Newyddlen
-      benefits_html: |
-        <li>Offer da a newyddion am arian</li>
-        <li>Diolch am gofrestru</li>
-        <li>Awgrymiadau da ar reoli arian</li>
-      sign_up: Tanysgrifiwch i'n newyddlen rhad ac am ddim
-    links_left:
+    links:
       - title: Amdanom ni
         url: https://www.moneyadviceservice.org.uk/cy/static/amdanom-ni
       - title: Canolfan y cyfryngau
@@ -159,7 +152,6 @@ cy:
         url: https://www.moneyadviceservice.org.uk/cy/categories/Partners
       - title: Swyddi
         url: https://www.moneyadviceservice.org.uk/cy/static/swyddi
-    links_right:
       - title: Ein gwaith dyledion
         url: https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work
       - title: Offer a chyfrifianellau

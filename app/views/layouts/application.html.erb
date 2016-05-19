@@ -294,46 +294,15 @@
   <footer class="l-footer">
     <div class="l-footer-primary t-footer-primary">
       <div class="l-constrained">
-
-        <div class="l-footer-primary__left">
-          <form accept-charset="UTF-8" action="/en/newsletter-subscription" class="newsletter-signup t-newsletter" data-remote="true" method="post">
-            <div style="display:none">
-              <input name="utf8" type="hidden" value="&#x2713;" />
-            </div>
-
-            <input id="authenticity_token" name="authenticity_token" type="hidden" value="jeMmyTCj0dxGGMlOBX36RByXc9uH5VZe4/2aGpTnnoI=" />
-            <h2 aria-level="2" class="newsletter-signup__heading" role="heading"><%= t('footer_primary.newsletter.heading') %></h2>
-
-            <ul class="newsletter-signup__benefits-list list-benefits">
-              <%= t('footer_primary.newsletter.benefits_html') %>
-            </ul>
-
-            <fieldset class="newsletter-signup__form js-newsletter-form" id="newsletter_signup">
-                <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us#newsletter_signup" class="t-newsletter-button button newsletter-signup__button newsletter-signup__button--third-party button--normal-white-space"><%= t('footer_primary.newsletter.sign_up') %></a>
-            </fieldset>
-          </form>
-        </div>
-
-        <div class="l-footer-primary__right">
-          <nav role="navigation" aria-label="footer">
-            <ul class="l-footer-primary__list l-footer-primary__list--left">
-              <% t('footer_primary.links_left').each do |item| %>
-              <li class="footer-primary__list-item">
-                <a href="<%= item[:url] %>"><%= item[:title] %></a>
-              </li>
-              <% end %>
-            </ul>
-
-            <ul class="l-footer-primary__list l-footer-primary__list--right">
-              <% t('footer_primary.links_right').each do |item| %>
-              <li class="footer-primary__list-item">
-                <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
-              </li>
-              <% end %>
-            </ul>
-          </nav>
-        </div>
-
+        <nav role="navigation" aria-label="footer">
+          <ul class="footer-primary__list">
+            <% t('footer_primary.links').each do |item| %>
+            <li class="footer-primary__list-item">
+              <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
       </div>
     </div>
 
