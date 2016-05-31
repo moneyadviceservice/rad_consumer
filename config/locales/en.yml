@@ -143,14 +143,7 @@ en:
       contact_html: For more ways to get in touch, go to our <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">contact us</a> page.
 
   footer_primary:
-    newsletter:
-      heading: Newsletter
-      benefits_html: |
-        <li>Top tips on managing money</li>
-        <li>Useful tools and money news</li>
-        <li>All free and unbiased</li>
-      sign_up: Sign up to our free newsletter
-    links_left:
+    links:
       - title: About us
         url: https://www.moneyadviceservice.org.uk/en/static/about-us
       - title: Media centre
@@ -159,7 +152,6 @@ en:
         url: https://www.moneyadviceservice.org.uk/en/categories/partners
       - title: Jobs
         url: https://www.moneyadviceservice.org.uk/en/static/jobs
-    links_right:
       - title: Our debt work
         url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
       - title: Tools &amp; calculators
