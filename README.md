@@ -54,7 +54,7 @@ Download a backup of the Production DB and load it into your local DB. Follow th
 
 ### Set up Elasticsearch
 
-Make sure Elasticsearch is running. 
+Make sure Elasticsearch is running.
 
 __After starting Elasticsearch, verify the version - if you navigate to http://localhost:9200/ the `version.number` should be 1.7.x__
 
@@ -77,6 +77,13 @@ There are additional notes on Elasticsearch tasks on the [MAS wiki](https://mone
 
 For the firm profile maps to work, you will need to provide a Google Maps API
 key in `.env`. You can find an example at `.env.example`.
+
+### Sharia and Ethical Investment
+
+The search option provides a filter for targeting sharia and ethical investment
+firms. These investment search options can be activated for the RAD Consumer
+application by setting the feature flag. You can find an example at
+`.env.example`.
 
 ## Usage
 
