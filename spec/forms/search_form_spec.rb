@@ -40,6 +40,28 @@ RSpec.describe SearchForm do
         end
       end
     end
+
+    context 'when advice method is firm name search' do
+      let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_FIRM_NAME_SEARCH }
+
+      describe '#face_to_face?' do
+        it 'returns falsey' do
+          expect(form.face_to_face?).to be_falsey
+        end
+      end
+
+      describe '#phone_or_online?' do
+        it 'returns falsey' do
+          expect(form.phone_or_online?).to be_falsey
+        end
+      end
+
+      describe '#firm_name_search?' do
+        it 'returns truthy' do
+          expect(form.firm_name_search?).to be_truthy
+        end
+      end
+    end
   end
 
   context 'for the face to face advice method' do

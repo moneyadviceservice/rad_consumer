@@ -295,7 +295,10 @@ en:
         face_to_face: In-person
         phone_online: Phone or online only
         postcode_label: Postcode
+        firm_name: Name of firm
+        firm_name_label: Firm name
         postcode_placeholder: Enter a postcode
+        firm_name_placeholder: Enter a firm name
         tooltip:
           - text: Many financial advisers will meet in you in person either at their office, your home, or a place convenient to you.   If you prefer to meet your adviser face-to-face then you should choose the ‘in-person’ option and give your postcode.
           - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
