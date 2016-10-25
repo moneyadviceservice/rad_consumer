@@ -62,6 +62,11 @@ class SearchFormSerializer < ActiveModel::Serializer
     }
   end
 
+  # TODO
+  def firm_name_search
+    `curl -XGET -u mx7ti55j:rp7uor530hequt67  'https://juniper-2568190.eu-west-1.bonsai.io/rad_production/firms/_search?pretty=true&from=0' -d '{ "query": { "bool": { "must": [ { "match": { "registered_name" : "james  ruggiero ASSOCIATES"  } }] } } }'`
+  end
+
   def phone_or_online_query
     {
       function_score: {

@@ -46,5 +46,17 @@ RSpec.describe SearchFormSerializer do
         expect(subject.sort.first).to eq('_score')
       end
     end
+
+    context 'when firm name search' do
+      before do
+        params.merge!(
+          advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE
+        )
+      end
+
+      it 'sorts by registered name' do
+        expect(subject.sort.first).to eq('registered_name')
+      end
+    end
   end
 end
