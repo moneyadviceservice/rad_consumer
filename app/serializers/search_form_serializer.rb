@@ -21,7 +21,13 @@ class SearchFormSerializer < ActiveModel::Serializer
   end
 
   def query
-    object.phone_or_online? ? phone_or_online_query : face_to_face_query
+    if object.phone_or_online?
+      phone_or_online_query
+    elsif object.firm_name_search?
+      firm_name_search_query
+    else
+      face_to_face_query
+    end
   end
 
   private
@@ -62,11 +68,6 @@ class SearchFormSerializer < ActiveModel::Serializer
     }
   end
 
-  # TODO
-  def firm_name_search
-    `curl -XGET -u mx7ti55j:rp7uor530hequt67  'https://juniper-2568190.eu-west-1.bonsai.io/rad_production/firms/_search?pretty=true&from=0' -d '{ "query": { "bool": { "must": [ { "match": { "registered_name" : "james  ruggiero ASSOCIATES"  } }] } } }'`
-  end
-
   def phone_or_online_query
     {
       function_score: {
@@ -74,6 +75,29 @@ class SearchFormSerializer < ActiveModel::Serializer
         random_score: { seed: object.random_search_seed }
       }
     }
+  end
+
+  def firm_name_search_query
+    {
+      filtered: {
+        query: {
+          bool: {
+            must: [ { match: build_firm_search_query } ]
+          }
+        }
+      }
+    }
+  end
+
+  def build_firm_search_query
+    {
+      registered_name: object.firm_name
+    }
+  end
+
+  # TODO
+  def firm_name_search
+    `curl -XGET -u mx7ti55j:rp7uor530hequt67  'https://juniper-2568190.eu-west-1.bonsai.io/rad_production/firms/_search?pretty=true&from=0' -d '{ "query": { "bool": { "must": [ { "match": { "registered_name" : "james  ruggiero ASSOCIATES"  } }] } } }'`
   end
 
   def postcode_queries

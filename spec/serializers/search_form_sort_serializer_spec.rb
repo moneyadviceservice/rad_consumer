@@ -50,7 +50,7 @@ RSpec.describe SearchFormSerializer do
     context 'when firm name search' do
       before do
         params.merge!(
-          advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE
+          advice_method: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH
         )
       end
 

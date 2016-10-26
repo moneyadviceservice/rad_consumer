@@ -126,5 +126,14 @@ RSpec.describe SearchFormSerializer do
         expect(subject.query[:function_score]).to include(random_score: { seed: 1234 })
       end
     end
+
+    context 'when a firm name search' do
+      let(:search_query) { 'Luther Corp' }
+      let(:params) { { advice_method: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH, firm_name: search_query} }
+
+      it 'returns' do
+        expect(query_hash).to eq({ bool: { must: [{ match: { registered_name: search_query } }] } })
+      end
+    end
   end
 end
