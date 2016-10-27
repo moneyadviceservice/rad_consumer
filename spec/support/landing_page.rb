@@ -9,7 +9,7 @@ class LandingPage < SitePrism::Page
 
   section :in_person, InPersonSection, '.t-in-person'
   section :remote, RemoteSection, '.t-remote'
-  section :firm_search, FirmNameSearchSection, '#search_firm_name'
+  section :firm_search, FirmNameSearchSection, 'section#search_firm_name'
   section :search_filter, SearchFormSection, '.t-search-filter'
 
   element :search, '.button--primary'

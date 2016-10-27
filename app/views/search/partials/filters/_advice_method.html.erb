@@ -47,7 +47,7 @@
 
     <div class="form__group-item">
       <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
-        class: 'form__group-input t-firm_name_radio',
+        class: 'form__group-input t-firm_name_option',
         data: { results_filter_trigger: '3' } %>
       <%= f.label :advice_method, t('search.filter.receive_advice.firm_name'),
         value: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
