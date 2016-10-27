@@ -15,7 +15,7 @@ class SearchFormSerializer < ActiveModel::Serializer
         }
       end
 
-      options << '_score' if object.phone_or_online?
+      options << '_score' if object.phone_or_online? || object.firm_name_search?
       options << 'registered_name'
     end
   end
@@ -79,12 +79,8 @@ class SearchFormSerializer < ActiveModel::Serializer
 
   def firm_name_search_query
     {
-      filtered: {
-        query: {
-          bool: {
-            must: [ { match: build_firm_search_query } ]
-          }
-        }
+      bool: {
+        must: [ { match: build_firm_search_query } ]
       }
     }
   end
@@ -93,11 +89,6 @@ class SearchFormSerializer < ActiveModel::Serializer
     {
       registered_name: object.firm_name
     }
-  end
-
-  # TODO
-  def firm_name_search
-    `curl -XGET -u mx7ti55j:rp7uor530hequt67  'https://juniper-2568190.eu-west-1.bonsai.io/rad_production/firms/_search?pretty=true&from=0' -d '{ "query": { "bool": { "must": [ { "match": { "registered_name" : "james  ruggiero ASSOCIATES"  } }] } } }'`
   end
 
   def postcode_queries

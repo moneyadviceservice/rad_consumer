@@ -38,7 +38,7 @@ RSpec.feature 'Search for firm' do
 							longitude: -1.131257)
 
       @in_person_firm = create(:firm,
-                               registered_name: 'Pall Mall Financial Services Ltd.',
+                               registered_name: 'Pall Mall Financial Services Ltd',
                                other_advice_methods: [])
       create(:adviser,
 						  postcode: 'G1 5QT',
@@ -54,15 +54,14 @@ RSpec.feature 'Search for firm' do
 
   def when_i_search_for_an_existing_firm
     landing_page.load
-    landing_page.firm_search.tap do |section|
-      section.firm_name_option.set true
-			section.search_field.set 'Pall Mall'
-		end
+    landing_page.search_filter.firm_name_option.set true
+    landing_page.firm_search.firm_name.set 'Pall Mall Financial Services Ltd'
+
     landing_page.search.click
   end
 
 	def then_i_should_see_the_firm_in_search_results
-    expect(landing_page).to have_content('Pall Mall Financial Services Ltd.')
+    expect(landing_page).to have_content('Pall Mall Financial Services Ltd')
   end
 
   def and_i_should_not_see_other_firms_with_dissimilar_name

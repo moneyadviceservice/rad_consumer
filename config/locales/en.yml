@@ -292,10 +292,11 @@ en:
     filter:
       heading: Refine your search
       receive_advice:
-        face_to_face: In-person
-        phone_online: Phone or online only
+        alternative: Alternatively
+        face_to_face: I prefer Face-to-Face advice
+        phone_online: I prefer advice by phone only
         postcode_label: Postcode
-        firm_name: Name of firm
+        firm_name: I know the Name of the firm
         firm_name_label: Firm name
         postcode_placeholder: Enter a postcode
         firm_name_placeholder: Enter a firm name

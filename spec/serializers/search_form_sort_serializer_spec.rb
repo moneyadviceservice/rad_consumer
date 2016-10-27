@@ -54,8 +54,8 @@ RSpec.describe SearchFormSerializer do
         )
       end
 
-      it 'sorts by registered name' do
-        expect(subject.sort.first).to eq('registered_name')
+      it 'sorts by `_score` first' do
+        expect(subject.sort.first).to eq('_score')
       end
     end
   end

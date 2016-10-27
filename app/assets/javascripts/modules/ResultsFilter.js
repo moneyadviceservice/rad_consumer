@@ -14,6 +14,9 @@ define(['jquery'], function($) {
       $resultsFilterTargetTwo   = $('[data-results-filter-target="2"]'),
       $resultsFilterTargetThree = $('[data-results-filter-target="3"]'),
 
+      $resultsFilterTargetOneInput   = $('[data-results-input-target="1"]'),
+      $resultsFilterTargetThreeInput = $('[data-results-input-target="3"]'),
+
       statusHidden = 'is-hidden';
 
   if ($resultsFilterTriggerOne.is(':checked')) {
@@ -38,6 +41,7 @@ define(['jquery'], function($) {
     $elementTriggerOne.change(function() {
       $resultsFilterTarget.addClass(statusHidden);
       $elementTargetOne.toggleClass(statusHidden);
+      $resultsFilterTargetThreeInput.val('');
     });
 
     $elementTriggerTwo.change(function() {
@@ -47,6 +51,7 @@ define(['jquery'], function($) {
     $elementTriggerThree.change(function() {
       $resultsFilterTarget.addClass(statusHidden);
       $elementTargetThree.toggleClass(statusHidden);
+      $resultsFilterTargetOneInput.val('');
     });
   });
 });

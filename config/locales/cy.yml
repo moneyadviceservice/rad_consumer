@@ -292,10 +292,12 @@ cy:
     filter:
       heading: Chwiliwch yn fwy penodol
       receive_advice:
+        alternative: Alternatively
         face_to_face: Yn bersonol
         phone_online: Dros y ffôn neu ar-lein yn unig
         postcode_label: Cod post
         postcode_placeholder: Rhowch god post
+        firm_name_placeholder: Enter a firm name
         tooltip:
         - text: Bydd nifer o gynghorwyr ariannol yn cwrdd â chi’n bersonol yn eu swyddfa, yn eich cartref neu yn rhywle sy’n gyfleus i chi.   Os byddai’n well gennych chi gwrdd â’ch cynghorydd wyneb yn wyneb yna dylech ddewis yr opsiwn ‘yn bersonol’ a nodi’ch cod post.
         - text: Fodd bynnag, yn fwyfwy y dyddiau hyn, mae yna gynghorwyr sy’n cynnig cyngor dros y ffôn neu ar-lein yn unig.  Yn aml mae gan y cynghorwyr hyn lai o gostau ac os ydych chi’n fodlon derbyn eich cyngor fel hyn, yna gallech arbed ychydig o arian.  Dewiswch yr opsiwn ‘dros y ffôn neu ar-lein yn unig’.
