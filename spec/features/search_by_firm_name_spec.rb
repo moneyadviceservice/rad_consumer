@@ -61,7 +61,6 @@ RSpec.feature 'Search for firm' do
   end
 
 	def then_i_should_see_the_firm_in_search_results
-    landing_page.save_and_open_page
     expect(landing_page).to have_content('Pall Mall Financial Services Ltd')
   end
 
