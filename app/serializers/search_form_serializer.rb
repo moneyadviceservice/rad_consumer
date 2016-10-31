@@ -1,24 +1,8 @@
 class SearchFormSerializer < ActiveModel::Serializer
   self.root = false
+  include SearchFormSort
 
   attributes :sort, :query
-
-  def sort
-    [].tap do |options|
-      if object.face_to_face?
-        options << {
-          _geo_distance: {
-            'advisers.location' => object.coordinates.reverse,
-            order: 'asc',
-            unit: 'miles'
-          }
-        }
-      end
-
-      options << '_score' if object.phone_or_online? || object.firm_name_search?
-      options << 'registered_name'
-    end
-  end
 
   def query
     if object.phone_or_online?
@@ -53,7 +37,7 @@ class SearchFormSerializer < ActiveModel::Serializer
     investment_size_queries.tap do |expression|
       expression << { term: { _id: object.firm_id } } if object.firm_id.present?
       expression.push(*postcode_queries)        if object.face_to_face?
-      expression.push(*types_of_advice_queries) if object.types_of_advice?
+      expression.push(*types_of_advice_queries) if object.types_of_advice.present?
       expression.push(*service_queries) if object.services?
       expression.push(language_query) if object.language.present?
     end
@@ -80,7 +64,7 @@ class SearchFormSerializer < ActiveModel::Serializer
   def firm_name_search_query
     {
       bool: {
-        must: [ { match: build_firm_search_query } ]
+        must: [{ match: build_firm_search_query }]
       }
     }
   end
@@ -141,10 +125,6 @@ class SearchFormSerializer < ActiveModel::Serializer
         filters << { match: { investment_sizes: object.pension_pot_size } }
       end
     end
-  end
-
-  def types_of_advice?
-    object.types_of_advice.present?
   end
 
   def types_of_advice_queries

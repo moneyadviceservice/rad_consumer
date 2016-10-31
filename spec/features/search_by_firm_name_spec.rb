@@ -1,18 +1,16 @@
 RSpec.feature 'Search for firm' do
-
   let!(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
-	let!(:online_advice) { create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
-
+  let!(:online_advice) { create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
   let(:landing_page) { LandingPage.new }
 
   scenario 'search for firm by name' do
     with_elastic_search! do
-			given_some_firms_were_indexed
-			and_i_am_on_the_rad_landing_page
-			when_i_search_for_an_existing_firm
-			then_i_should_see_the_firm_in_search_results
+      given_some_firms_were_indexed
+      and_i_am_on_the_rad_landing_page
+      when_i_search_for_an_existing_firm
+      then_i_should_see_the_firm_in_search_results
       and_i_should_not_see_other_firms_with_dissimilar_name
-		end
+    end
   end
 
   def given_some_firms_were_indexed
@@ -40,7 +38,7 @@ RSpec.feature 'Search for firm' do
     landing_page.search.click
   end
 
-	def then_i_should_see_the_firm_in_search_results
+  def then_i_should_see_the_firm_in_search_results
     expect(landing_page).to have_content('Pall Mall Financial Services Ltd')
   end
 

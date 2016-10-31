@@ -3,7 +3,7 @@ RSpec.feature 'Consumer views advice filters on search results page',
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  let(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
+  let(:phone_advice) { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
 
   scenario 'Consumer views current filters applied to their search' do
     with_elastic_search! do
