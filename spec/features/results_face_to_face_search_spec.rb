@@ -2,8 +2,8 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
               vcr: vcr_options_for_feature(:results_face_to_face_search) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
-  let(:phone_advice)  { create(:other_advice_method, name: 'Phone', order: 1) }
-  let(:online_advice)  { create(:other_advice_method, name: 'Online', order: 2) }
+  let(:phone_advice) { create(:other_advice_method, name: 'Phone', order: 1) }
+  let(:online_advice) { create(:other_advice_method, name: 'Online', order: 2) }
 
   scenario 'Using only a valid postcode' do
     with_elastic_search! do

@@ -80,7 +80,7 @@ class SearchFormSerializer < ActiveModel::Serializer
   def firm_name_search_query
     {
       bool: {
-        must: [ { match: build_firm_search_query } ]
+        must: [{ match: build_firm_search_query }]
       }
     }
   end
