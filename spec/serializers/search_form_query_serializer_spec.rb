@@ -130,9 +130,9 @@ RSpec.describe SearchFormSerializer do
     context 'when a firm name search' do
       let(:search_query) { 'Luther Corp' }
       let(:query_hash) { subject.query }
-      let(:params) { { advice_method: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH, firm_name: search_query} }
+      let(:params) { { advice_method: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH, firm_name: search_query } }
 
-      it 'returns' do
+      it 'returns the right query structure' do
         expect(query_hash).to eq({ bool: { must: [{ match: { registered_name: search_query } }] } })
       end
     end
