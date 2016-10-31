@@ -293,10 +293,10 @@ en:
       heading: Refine your search
       receive_advice:
         alternative: Alternatively
-        face_to_face: I prefer Face-to-Face advice
+        face_to_face: I prefer face-to-face advice
         phone_online: I prefer advice by phone only
         postcode_label: Postcode
-        firm_name: I know the Name of the firm
+        firm_name: I know the name of the firm
         firm_name_label: Firm name
         postcode_placeholder: Enter a postcode
         firm_name_placeholder: Enter a firm name
