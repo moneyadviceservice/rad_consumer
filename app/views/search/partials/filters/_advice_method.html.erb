@@ -1,4 +1,4 @@
-<div class="l-results__form-row" data-results-filter>
+<div class="l-results__form-row">
 
 <div class="search-filter">
 
@@ -9,14 +9,14 @@
       <div class="form__group-item">
         <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE,
           class: 'form__group-input t-face_to_face_advice',
-          data: { results_filter_trigger: '1' }, checked: true %>
+          data: { results_filter_trigger: true}, checked: true %>
         <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'),
           value: SearchForm::ADVICE_METHOD_FACE_TO_FACE,
           class: 'search-filter__advice-label' %>
       </div>
 
       <div class="form__group-item is-hidden"
-           data-results-filter-target="1">
+           data-results-filter-target>
         <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'),
             class: 'form__label-heading visually-hidden' %>
           <%= f.text_field :postcode,
@@ -24,7 +24,7 @@
             maxlength: 8,
             required: true,
             placeholder: t('search.filter.receive_advice.postcode_placeholder'),
-            data: { results_input_target: '1' } %>
+            data: { results_input_target: true } %>
       </div>
     <% end %>
   </section>
@@ -36,7 +36,7 @@
       <div class="form__group-item">
         <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
           class: 'form__group-input t-phone_or_online t-remote',
-          data: { results_filter_trigger: '2' } %>
+          data: { results_filter_trigger: true } %>
         <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'),
           value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
           class: 'search-filter__advice-label' %>
@@ -54,19 +54,19 @@
     <div class="form__group-item">
       <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
         class: 'form__group-input t-firm_name_option',
-        data: { results_filter_trigger: '3' } %>
+        data: { results_filter_trigger: true } %>
       <%= f.label :advice_method, t('search.filter.receive_advice.firm_name'),
         value: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
         class: 'search-filter__advice-label' %>
     </div>
 
-    <div class="form__group-item is-hidden" data-results-filter-target="3">
+    <div class="form__group-item is-hidden" data-results-filter-target>
       <%= f.label :firm_name, t('search.filter.receive_advice.firm_name_label'),
         class: 'form__label-heading visually-hidden' %>
       <%= f.text_field :firm_name,
         class: 'search-filter__field search-filter__field--padded t-firm_name',
         placeholder: t('search.filter.receive_advice.firm_name_placeholder'),
-        data: { results_input_target: '3' } %>
+        data: { results_input_target: true } %>
     </div>
   <% end %>
   </section>
