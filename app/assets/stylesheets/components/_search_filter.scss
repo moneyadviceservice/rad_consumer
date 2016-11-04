@@ -1,8 +1,6 @@
 .search-filter {
   border-top-left-radius: $search-filter-radius;
   border-top-right-radius: $search-filter-radius;
-  border: 1px solid  $search-filter-border-color;
-  overflow: hidden;
 }
 
 .search-filter--container {
@@ -62,6 +60,15 @@
   border: 1px solid $search-filter-border-color;
 }
 
+.search-filter__alt-title {
+  @include body(18, 12);
+  font-weight: 500;
+  border-top: 1px solid $color-grey-light;
+  padding-top: $baseline-unit*3;
+  color: $color-black;
+  margin: $baseline-unit*4 $baseline-unit*3 $baseline-unit*4 0;
+}
+
 .search-filter__label {
   @include body(18, 24);
   font-weight: 700;
@@ -112,7 +119,7 @@
 
 .search-filter__field[type="text"] {
   width: 100%;
-  max-width: 200px;
+  max-width: 235px;
   height: 34px;
   border: 1px solid $search-filter-input-border-color;
   padding-left: $baseline-unit*2;
@@ -120,11 +127,6 @@
 
 .search-filter__field--padded {
   margin-bottom: $baseline-unit*4;
-}
-
-.search-filter__item-inset {
-  margin-top: $baseline-unit*2;
-  padding-left: $baseline-unit*4;
 }
 
 .search-filter__constrained {

@@ -2,10 +2,12 @@ class SearchFormSection < SitePrism::Section
   element :search, '.button--primary'
   element :face_to_face, '.t-face_to_face_advice'
   element :phone_or_online, '.t-phone_or_online'
+  element :firm_name_option, '.t-firm_name_option'
 
   element :postcode, '.t-postcode'
   element :phone, '.t-advice-method-1'
   element :online, '.t-advice-method-2'
+  element :firm_name, '.t-firm_name'
 
   element :retirement_income_products, '.t-retirement_income_products'
   element :pension_pot_size, '.t-pension-pot-size'

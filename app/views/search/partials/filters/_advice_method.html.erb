@@ -1,24 +1,74 @@
-<div class="l-results__form-row" data-results-filter>
-  <%= f.form_row(:postcode) do %>
-    <%= f.errors_for :postcode %>
+<div class="l-results__form-row">
+
+<div class="search-filter">
+
+  <section id='in-person'>
+    <%= f.form_row(:postcode) do %>
+      <%= f.errors_for :postcode %>
+
+      <div class="form__group-item">
+        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE,
+          class: 'form__group-input t-face_to_face_advice',
+          data: { results_filter_trigger: true}, checked: true %>
+        <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'),
+          value: SearchForm::ADVICE_METHOD_FACE_TO_FACE,
+          class: 'search-filter__advice-label' %>
+      </div>
+
+      <div class="form__group-item is-hidden"
+           data-results-filter-target>
+        <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'),
+            class: 'form__label-heading visually-hidden' %>
+          <%= f.text_field :postcode,
+            class: 'search-filter__field search-filter__field--padded t-postcode',
+            maxlength: 8,
+            required: true,
+            placeholder: t('search.filter.receive_advice.postcode_placeholder'),
+            data: { results_input_target: true } %>
+      </div>
+    <% end %>
+  </section>
+
+  <section id='phone_or_online'>
+    <%= f.form_row(:advice_methods) do %>
+      <%= f.errors_for :advice_methods %>
+
+      <div class="form__group-item">
+        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
+          class: 'form__group-input t-phone_or_online t-remote',
+          data: { results_filter_trigger: true } %>
+        <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'),
+          value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
+          class: 'search-filter__advice-label' %>
+      </div>
+    <% end %>
+  </section>
+
+  <section id='search_firm_name'>
+
+  <h3 class="search-filter__alt-title"><%= t('search.filter.receive_advice.alternative') %></h3>
+  
+  <%= f.form_row(:firm_name) do %>
+    <%= f.errors_for :firm_name %>
 
     <div class="form__group-item">
-      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'form__group-input t-face_to_face_advice', data: { results_filter_trigger: '1' }, checked: true %>
-      <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'), value: SearchForm::ADVICE_METHOD_FACE_TO_FACE, class: 'search-filter__advice-label' %>
+      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
+        class: 'form__group-input t-firm_name_option',
+        data: { results_filter_trigger: true } %>
+      <%= f.label :advice_method, t('search.filter.receive_advice.firm_name'),
+        value: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
+        class: 'search-filter__advice-label' %>
     </div>
 
-    <div class="form__group-item search-filter__item-inset is-hidden" data-results-filter-target="2">
-      <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'), class: 'form__label-heading visually-hidden' %>
-      <%= f.text_field :postcode, class: 'search-filter__field search-filter__field--padded t-postcode', maxlength: 8, required: true, placeholder: t('search.filter.receive_advice.postcode_placeholder') %>
+    <div class="form__group-item is-hidden" data-results-filter-target>
+      <%= f.label :firm_name, t('search.filter.receive_advice.firm_name_label'),
+        class: 'form__label-heading visually-hidden' %>
+      <%= f.text_field :firm_name,
+        class: 'search-filter__field search-filter__field--padded t-firm_name',
+        placeholder: t('search.filter.receive_advice.firm_name_placeholder'),
+        data: { results_input_target: true } %>
     </div>
   <% end %>
-
-  <%= f.form_row(:advice_methods) do %>
-    <%= f.errors_for :advice_methods %>
-
-    <div class="form__group-item">
-      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'form__group-input t-phone_or_online t-remote', data: { results_filter_trigger: '2' } %>
-      <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'), value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE, class: 'search-filter__advice-label' %>
-    </div>
-  <% end %>
+  </section>
+  </div>
 </div>

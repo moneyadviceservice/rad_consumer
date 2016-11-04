@@ -2,7 +2,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
               vcr: vcr_options_for_feature(:landing_face_to_face_search) do
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
-  let(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
+  let(:phone_advice) { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
 
   scenario 'Using a valid postcode' do
     with_elastic_search! do

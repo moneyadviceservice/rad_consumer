@@ -126,47 +126,14 @@ RSpec.describe SearchFormSerializer do
         expect(subject.query[:function_score]).to include(random_score: { seed: 1234 })
       end
     end
-  end
 
-  describe '#sort' do
-    it 'is `registered_name` by default' do
-      expect(subject.sort).to eq(['registered_name'])
-    end
+    context 'when a firm name search' do
+      let(:search_query) { 'Luther Corp' }
+      let(:query_hash) { subject.query }
+      let(:params) { { advice_method: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH, firm_name: search_query } }
 
-    context 'when face to face' do
-      before do
-        params.merge!(
-          advice_method: SearchForm::ADVICE_METHOD_FACE_TO_FACE,
-          postcode: 'EC1N 2TD'
-        )
-      end
-
-      it 'sorts by geo distance first' do
-        VCR.use_cassette(:geocode_search_form_postcode) do
-          expect(subject.sort.first).to eq(_geo_distance: {
-                                             'advisers.location' => [-0.1085203, 51.5180697],
-                                             order: 'asc',
-                                             unit: 'miles'
-                                           })
-        end
-      end
-
-      it 'sorts by `registered_name` second' do
-        VCR.use_cassette(:geocode_search_form_postcode) do
-          expect(subject.sort.last).to eq('registered_name')
-        end
-      end
-    end
-
-    context 'when phone or online' do
-      before do
-        params.merge!(
-          advice_method: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE
-        )
-      end
-
-      it 'sorts by `_score` first' do
-        expect(subject.sort.first).to eq('_score')
+      it 'returns the right query structure' do
+        expect(query_hash).to eq(bool: { must: [{ match: { registered_name: search_query } }] })
       end
     end
   end
