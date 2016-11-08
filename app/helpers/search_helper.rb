@@ -20,7 +20,7 @@ module SearchHelper
     return if key == 'ignored'
 
     info = t("search.accreditations.items.#{key}")
-    link_to "glossary/##{key}", class: "accreditation t-#{kind}" do
+    link_to glossary_path(locale: locale, anchor: key), class: "accreditation t-#{kind}" do
       image_tag "#{key}.png", alt: info[:title], class: 'accreditation__img'
     end
   end
