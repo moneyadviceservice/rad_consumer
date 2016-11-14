@@ -5,7 +5,8 @@ require(['jquery', 'componentLoader', 'eventsWithPromises'], function ($, compon
   componentLoader.init($('body'));
 });
 
-require(['NestedOptions', 'FurtherInfo', 'SearchFilter', 'ResultsFilter', 'EducationModule', 'ResultsModule'],
-        function (NestedOptions) {
+require(['NestedOptions', 'ResultsFilter', 'FurtherInfo', 'SearchFilter', 'EducationModule', 'ResultsModule'],
+        function (NestedOptions, ResultsFilter) {
   new NestedOptions();
+  new ResultsFilter();
 });
