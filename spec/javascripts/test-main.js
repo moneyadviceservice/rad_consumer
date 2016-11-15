@@ -29,7 +29,8 @@ require.config({
     async: 'vendor/assets/bower_components/requirejs-plugins/src/async',
     NestedOptions: 'app/assets/javascripts/modules/NestedOptions',
     FirmMap: 'app/assets/javascripts/modules/FirmMap',
-    ShowMore: 'app/assets/javascripts/modules/ShowMore'
+    ShowMore: 'app/assets/javascripts/modules/ShowMore',
+    ResultsFilter: 'app/assets/javascripts/modules/ResultsFilter'
   },
 
   shim: {
