@@ -3,7 +3,7 @@
     "index": {
       "analysis": {
         "analyzer": {
-          "firm_name_analyzer": { "tokenizer": "keyword", "filter": "lowercase" }
+          "firm_name_analyzer": { "tokenizer": "whitespace", "filter": "lowercase" }
         }
       }
     }
