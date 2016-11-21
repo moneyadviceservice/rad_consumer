@@ -13,6 +13,15 @@ RSpec.feature 'Search for firm' do
     end
   end
 
+  scenario 'search for similar firms' do
+    with_elastic_search! do
+      given_some_firms_were_indexed
+      and_i_am_on_the_rad_landing_page
+      when_i_do_a_full_name_search_for_an_existing_firm
+      then_i_should_see_similar_firms_in_the_search_results
+    end
+  end
+
   def given_some_firms_were_indexed
     with_fresh_index! do
       @phone_firm = create(:firm, registered_name: 'The Willers Ltd', in_person_advice_methods: [], other_advice_methods: [phone_advice])
@@ -42,8 +51,21 @@ RSpec.feature 'Search for firm' do
     expect(landing_page).to have_content('Pall Mall Financial Services Ltd')
   end
 
+  def when_i_do_a_full_name_search_for_an_existing_firm
+    landing_page.load
+    landing_page.search_filter.firm_name_option.set true
+    landing_page.firm_search.firm_name.set 'Pall Mall Financial Services Ltd'
+
+    landing_page.search.click
+  end
+
   def and_i_should_not_see_other_firms_with_dissimilar_name
     expect(landing_page).not_to have_content('The Equiters Ltd')
     expect(landing_page).not_to have_content('The Willers Ltd')
+  end
+
+  def then_i_should_see_similar_firms_in_the_search_results
+    expect(landing_page).to have_content('The Equiters Ltd')
+    expect(landing_page).to have_content('The Willers Ltd')
   end
 end
