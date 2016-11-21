@@ -33,7 +33,7 @@ RSpec.feature 'Search for firm' do
   def when_i_search_for_an_existing_firm
     landing_page.load
     landing_page.search_filter.firm_name_option.set true
-    landing_page.firm_search.firm_name.set 'Pall Mall Financial Services Ltd'
+    landing_page.firm_search.firm_name.set 'Pall Mall'
 
     landing_page.search.click
   end
