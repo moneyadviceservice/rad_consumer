@@ -14,6 +14,7 @@
 //= depend_on_asset dough/assets/js/lib/componentLoader
 //= depend_on_asset dough/assets/js/components/DoughBaseComponent
 //= depend_on_asset dough/assets/js/components/TabSelector
+//= depend_on_asset dough/assets/js/components/Validation
 //= depend_on_asset modules/FirmMap
 //= depend_on_asset modules/ShowMore
 
@@ -21,7 +22,7 @@
   def requirejs_path(asset)
     javascript_path(asset).sub(/.js\z/, '')
   end
-
+  
   requirejs_config = {
     paths: {
       jquery: requirejs_path('jquery/dist/jquery'),
@@ -39,6 +40,7 @@
       componentLoader: requirejs_path('dough/assets/js/lib/componentLoader'),
       DoughBaseComponent: requirejs_path('dough/assets/js/components/DoughBaseComponent'),
       TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
+      Validation: requirejs_path('dough/assets/js/components/Validation'),
       FirmMap: requirejs_path('modules/FirmMap'),
       async: requirejs_path('requirejs-plugins/src/async'),
       rsvp: requirejs_path('rsvp/rsvp'),

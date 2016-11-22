@@ -41,6 +41,7 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
   def and_i_perform_an_in_person_search
     landing_page.load
     landing_page.in_person.tap do |f|
+      f.face_to_face.set true
       f.postcode.set 'EC1N 7SS'
       f.search.click
     end

@@ -61,6 +61,7 @@ RSpec.feature 'Consumer views advice filters on search results page',
   def and_i_have_performed_a_search_from_the_landing_page
     landing_page.load
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'G1 5QT'
       section.search.click
     end
@@ -68,6 +69,7 @@ RSpec.feature 'Consumer views advice filters on search results page',
 
   def when_i_search_with_a_reading_postcode
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'G1 5QT'
       section.search.click
     end

@@ -61,10 +61,8 @@
 }
 
 .search-filter__alt-title {
-  @include body(18, 12);
+  @include body(16, 12);
   font-weight: 500;
-  border-top: 1px solid $color-grey-light;
-  padding-top: $baseline-unit*3;
   color: $color-black;
   margin: $baseline-unit*4 $baseline-unit*3 $baseline-unit*4 0;
 }
@@ -105,8 +103,18 @@
 }
 
 .search-filter__button {
+  @include column(12);
   margin-top: $baseline-unit*4;
   margin-bottom: $baseline-unit*3;
+  margin-left: 0;
+
+  @include respond-to($mq-s) {
+    @include column(4);
+  }
+
+  @include respond-to($mq-m) {
+    @include column(5);
+  }
 }
 
 .search-filter__button--inline {

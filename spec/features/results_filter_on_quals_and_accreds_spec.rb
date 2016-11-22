@@ -90,6 +90,7 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
     landing_page.load
 
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set postcode
       section.search.click
     end

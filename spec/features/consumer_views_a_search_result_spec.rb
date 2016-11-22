@@ -61,6 +61,7 @@ RSpec.feature 'Consumer views a search result',
     landing_page.load
 
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'RG2 9FL'
       section.search.click
     end

@@ -7,9 +7,11 @@
       <%= f.errors_for :postcode %>
 
       <div class="form__group-item">
-        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE,
+        <%= f.radio_button(:advice_method, SearchForm::ADVICE_METHOD_FACE_TO_FACE,
+          required: '',
           class: 'form__group-input t-face_to_face_advice',
-          data: { results_filter_trigger: true}, checked: true %>
+          data: { results_filter_trigger: true,
+                  'dough-validation-empty' => "Please make a selection"}) %>
         <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'),
           value: SearchForm::ADVICE_METHOD_FACE_TO_FACE,
           class: 'search-filter__advice-label' %>
@@ -22,7 +24,6 @@
           <%= f.text_field :postcode,
             class: 'search-filter__field search-filter__field--padded t-postcode',
             maxlength: 8,
-            required: true,
             placeholder: t('search.filter.receive_advice.postcode_placeholder'),
             data: { results_input_target: true } %>
       </div>
@@ -34,9 +35,11 @@
       <%= f.errors_for :advice_methods %>
 
       <div class="form__group-item">
-        <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
+        <%= f.radio_button(:advice_method, SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
+          required: '',
           class: 'form__group-input t-phone_or_online t-remote',
-          data: { results_filter_trigger: true } %>
+          data: { results_filter_trigger: true,
+                  'dough-validation-empty' => "Please make a selection"}) %>
         <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'),
           value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
           class: 'search-filter__advice-label' %>
@@ -52,9 +55,11 @@
     <%= f.errors_for :firm_name %>
 
     <div class="form__group-item">
-      <%= f.radio_button :advice_method, SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
+      <%= f.radio_button(:advice_method, SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
+        required: '',
         class: 'form__group-input t-firm_name_option',
-        data: { results_filter_trigger: true } %>
+        data: { results_filter_trigger: true,
+                'dough-validation-empty' => "Please make a selection"}) %>
       <%= f.label :advice_method, t('search.filter.receive_advice.firm_name'),
         value: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
         class: 'search-filter__advice-label' %>
