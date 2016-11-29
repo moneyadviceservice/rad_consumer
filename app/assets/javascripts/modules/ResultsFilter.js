@@ -12,12 +12,13 @@ define(['jquery'], function($) {
     $resultsFilterSwitch.change(function(){
       $resultsFilterTargets.addClass(statusHidden);
       $resultsFilterInputs.val('');
-      $(this).parent().siblings('[data-results-filter-target]').removeClass(statusHidden);
+      $(this).parentsUntil('section').siblings('[data-results-filter-target]').removeClass(statusHidden);
     });
-  //Run on page load to display active search box
-  $activeResultsFilterSwitch.parent().siblings('[data-results-filter-target]').removeClass(statusHidden);
+
+    //Run on page load to display active search box
+    $activeResultsFilterSwitch.parent().siblings('[data-results-filter-target]').removeClass(statusHidden);
   };
 
-return resultsFilter;
+  return resultsFilter;
 
 });

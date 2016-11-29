@@ -1,6 +1,7 @@
 def and_i_am_on_the_results_page_after_a_previous_search
   landing_page.load
   landing_page.in_person.tap do |f|
+    f.face_to_face.set true
     f.postcode.set 'RG2 9FL'
     f.search.click
   end

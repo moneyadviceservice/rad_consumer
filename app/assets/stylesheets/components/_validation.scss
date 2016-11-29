@@ -1,0 +1,7 @@
+.validation-summary__error--no-link {
+  list-style: none;
+  margin-right: $baseline-unit*2;
+  border-left: 5px solid $color-validation-border;
+  background-color: $color-validation-summary-background;
+  padding: $baseline-unit*2;
+}

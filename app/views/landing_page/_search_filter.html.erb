@@ -1,5 +1,13 @@
-<%= form_for @form, url: search_path, method: :get, html: { class: 'form form--collapse t-in-person', novalidate: true }, data: { search_filter: '' }, builder: Dough::Forms::Builders::Validation do |f| %>
-  <%= f.hidden_field :advice_method, value: SearchForm::ADVICE_METHOD_FACE_TO_FACE %>
+<%= form_for @form, url: search_path, 
+                    method: :get, 
+                    html: {class: 'form form--collapse t-in-person', 
+                           novalidate: true}, 
+                    data: {search_filter: '', 
+                           dough_component: 'Validation',
+                           'dough-validation-config' => 
+                           '{"showInlineValidation":false, "showValidationSummaryLinks":false}'
+                            },
+                    builder: Dough::Forms::Builders::Validation do |f| %>
 
   <%= content_for :validation_summary do %>
     <div class="l-constrained">

@@ -94,6 +94,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
 
   def when_i_search_with_a_reading_postcode
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'RG2 9FL'
       section.search.click
     end
@@ -119,6 +120,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
 
   def when_i_submit_a_invalid_postcode_search
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'Z'
       section.search.click
     end
@@ -126,6 +128,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
 
   def when_i_submit_a_postcode_that_cannot_be_geocoded
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'ZZ1 1ZZ'
       section.search.click
     end

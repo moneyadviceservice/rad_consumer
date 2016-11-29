@@ -73,6 +73,7 @@ RSpec.feature 'Consumer views channel filters on search results page',
   def and_i_have_performed_an_in_person_search_from_the_landing_page
     landing_page.load
     landing_page.in_person.tap do |section|
+      section.face_to_face.set true
       section.postcode.set 'G1 5QT'
       section.search.click
     end

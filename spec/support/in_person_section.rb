@@ -1,4 +1,5 @@
 class InPersonSection < SitePrism::Section
+  element :face_to_face, '.t-face_to_face_advice'
   element :postcode, '.t-postcode'
   element :search, '.button--primary'
 
