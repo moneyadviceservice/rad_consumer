@@ -11,7 +11,7 @@
           required: '',
           class: 'form__group-input t-face_to_face_advice',
           data: { results_filter_trigger: true,
-                  'dough-validation-empty' => "Please make a selection"}) %>
+                  'dough-validation-empty' => t('search.filter.receive_advice.no_method_selected')}) %>
         <%= f.label :advice_method, t('search.filter.receive_advice.face_to_face'),
           value: SearchForm::ADVICE_METHOD_FACE_TO_FACE,
           class: 'search-filter__advice-label' %>
@@ -39,7 +39,7 @@
           required: '',
           class: 'form__group-input t-phone_or_online t-remote',
           data: { results_filter_trigger: true,
-                  'dough-validation-empty' => "Please make a selection"}) %>
+                  'dough-validation-empty' => t('search.filter.receive_advice.no_method_selected')}) %>
         <%= f.label :advice_method, t('search.filter.receive_advice.phone_online'),
           value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
           class: 'search-filter__advice-label' %>
@@ -59,7 +59,7 @@
         required: '',
         class: 'form__group-input t-firm_name_option',
         data: { results_filter_trigger: true,
-                'dough-validation-empty' => "Please make a selection"}) %>
+                'dough-validation-empty' => t('search.filter.receive_advice.no_method_selected')}) %>
       <%= f.label :advice_method, t('search.filter.receive_advice.firm_name'),
         value: SearchForm::ADVICE_METHOD_FIRM_NAME_SEARCH,
         class: 'search-filter__advice-label' %>
