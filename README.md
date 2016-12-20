@@ -65,6 +65,12 @@ Push the index by running the following command. For the production environment 
 $ curl -XPOST http://127.0.0.1:9200/rad_development -d @elastic_search_mapping.json
 ```
 
+Copy data from rad production database
+```sh
+$ heroku pg:backups:download --app rad-production
+$ pg_restore -d rad_development -h127.0.0.1 -p 5432 -U postgres latest.dump
+```
+
 Once you've pushed the index, run the following rake task to populate it:
 ```sh
 bundle exec rake firms:index
