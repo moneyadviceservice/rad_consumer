@@ -31,6 +31,7 @@ Rails.application.configure do
   # Vendor JavaScript
   config.assets.precompile += %w(
     jquery/dist/jquery.js
+    jquery-ui/jquery-ui.js
     jquery-ujs/src/rails.js
     jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
     eventsWithPromises/src/eventsWithPromises.js
