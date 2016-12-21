@@ -3,10 +3,18 @@ class SearchController < ApplicationController
 
   def index
     @form = SearchForm.new(search_form_params)
+
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
+      respond_to do |format|
+        format.html { render :index }
+        format.json { render body: parse(result: @result.firms).to_json }
+      end
     else
-      render searchable_view
+      respond_to do |format|
+        format.html { render searchable_view }
+        format.json { render body: parse.to_json }
+      end
     end
   end
 
@@ -31,6 +39,31 @@ class SearchController < ApplicationController
   end
 
   def search_form_params
-    params.require(:search_form).merge(random_search_seed: random_search_seed)
+    case request.format
+    when 'json'
+      firm_search_params
+    else
+      params.require(:search_form).merge(random_search_seed: random_search_seed)
+    end
+  end
+
+  def firm_search_params
+    { pension_pot_size: 'any',
+      postcode: '',
+      advice_method: 'firm_name_search',
+      firm_name: params[:term],
+      random_search_seed: random_search_seed
+    }
+  end
+
+  def parse(result: [])
+    return result if result.empty?
+
+    result.map! do |firm|
+      {
+        label: firm.name,
+        value: firm_path(id: firm.id, search_form: firm_search_params)
+      }
+    end
   end
 end

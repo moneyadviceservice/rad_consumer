@@ -8,7 +8,8 @@ define(['jquery'], function($) {
     $resultsFilterTargets = $('[data-results-filter-target]'),
     $activeResultsFilterSwitch = $('[data-results-filter-trigger]:checked'),
     $resultsFilterAutoComplete = $('[data-results-input-autocomplete]'),
-    statusHidden = 'is-hidden';
+    statusHidden = 'is-hidden',
+    autoCompleteSource = '/' + window.location.pathname.split('/')[1] + '/search.json';
 
     $resultsFilterSwitch.change(function(){
       $resultsFilterTargets.addClass(statusHidden);
@@ -17,9 +18,14 @@ define(['jquery'], function($) {
     });
 
     $resultsFilterAutoComplete.autocomplete({
-      highlight: true, // Or string with your own classname
+      highlight: true,
       minLength: 3,
-      source: ['Mojito', 'Long Island Iced Tea', 'Margarita', 'Pina Colada', 'Mai Tai']
+      source: autoCompleteSource,
+      select: function( event, ui ) {
+        event.stopPropagation();
+        window.location = ui.item.value;
+        return false;
+      }
     });
 
     //Run on page load to display active search box
