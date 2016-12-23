@@ -1,7 +1,7 @@
 //= require require_config.js.erb
 
 // Components
-require(['jquery', 'jqueryUi', 'componentLoader', 'eventsWithPromises'], function ($, componentLoader, eventsWithPromises) {
+require(['jquery', 'componentLoader', 'eventsWithPromises'], function ($, componentLoader, eventsWithPromises) {
   componentLoader.init($('body'));
 });
 

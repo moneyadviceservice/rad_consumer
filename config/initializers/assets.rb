@@ -3,6 +3,7 @@ Rails.application.configure do
   config.assets.version = '1.0'
 
   config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+  config.assets.paths << Rails.root.join('vendor', 'javascripts')
 
   # Application Stylesheets
   config.assets.precompile += %w(
@@ -31,7 +32,7 @@ Rails.application.configure do
   # Vendor JavaScript
   config.assets.precompile += %w(
     jquery/dist/jquery.js
-    jquery-ui/jquery-ui.js
+    typeahead.js
     jquery-ujs/src/rails.js
     jqueryThrottleDebounce/jquery.ba-throttle-debounce.js
     eventsWithPromises/src/eventsWithPromises.js

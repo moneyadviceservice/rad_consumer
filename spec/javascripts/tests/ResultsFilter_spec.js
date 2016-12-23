@@ -6,10 +6,11 @@ describe('show search inputs on radio button change', function () {
   beforeEach(function(done){
     var self = this;
 
-    requirejs(['ResultsFilter'], function (ResultsFilter) {
+    requirejs(['jquery', 'ResultsFilter'], function ($, ResultsFilter) {
       self.$html = $(window.__html__['spec/javascripts/fixtures/ResultsFilter.html']).appendTo('body');
       self.$resultsFilterTrigger = $('[data-results-filter-trigger]');
       self.$resultsFilterTarget = $('[data-results-filter-target]');
+      self.$resultsAutoComplete = $('[data-results-input-autocomplete]');
       new ResultsFilter();
       done();
     });
@@ -43,5 +44,11 @@ describe('show search inputs on radio button change', function () {
       target.parent().find('[data-results-filter-trigger]').click();
       expect(target).to.not.have.class('is-hidden');
     });
+  });
+
+  describe('Typeahead tests', function() {
+    it('initialises the typeahead library', function() {
+     expect(this.$resultsAutoComplete).to.have.class('tt-input');
+   });
   });
 });

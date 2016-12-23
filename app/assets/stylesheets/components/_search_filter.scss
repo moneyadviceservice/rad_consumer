@@ -150,3 +150,16 @@
 .search-filter__last-filter {
   margin-bottom: $baseline-unit*4;
 }
+
+// Classes used in Typeahead plugin, cannot be BEM-ified
+.tt-dropdown-menu {
+  margin-top: 0;
+}
+
+.search-filter__autocomplete-link {
+  padding: 0.75rem;
+  display: block;
+  .tt-cursor & {
+    color: white;
+  }
+}

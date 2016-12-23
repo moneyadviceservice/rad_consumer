@@ -26,4 +26,7 @@ bower.json
 # node modules
 /node_modules/
 
+# PhantomJS Logs
+/coverage/
+
 .tags

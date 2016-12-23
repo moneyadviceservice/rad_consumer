@@ -22,6 +22,7 @@ require.config({
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start,
   paths: {
+    typeahead: 'vendor/assets/javascripts/typeahead',
     componentLoader: 'vendor/assets/bower_components/dough/assets/js/lib/componentLoader',
     DoughBaseComponent: 'vendor/assets/bower_components/dough/assets/js/components/DoughBaseComponent',
     jquery: 'vendor/assets/bower_components/jquery/dist/jquery',
