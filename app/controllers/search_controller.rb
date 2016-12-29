@@ -8,12 +8,12 @@ class SearchController < ApplicationController
       @result = FirmRepository.new.search(@form.to_query, page: page)
       respond_to do |format|
         format.html { render :index }
-        format.json { render body: parse(result: @result.firms).to_json }
+        format.json { render body: filter(result: @result.firms).to_json }
       end
     else
       respond_to do |format|
         format.html { render searchable_view }
-        format.json { render body: parse.to_json }
+        format.json { render body: filter.to_json }
       end
     end
   end
@@ -56,7 +56,7 @@ class SearchController < ApplicationController
     }
   end
 
-  def parse(result: [])
+  def filter(result: [])
     return result if result.empty?
 
     result.map! do |firm|
