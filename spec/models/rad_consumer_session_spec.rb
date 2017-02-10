@@ -1,11 +1,14 @@
 RSpec.describe RadConsumerSession do
   def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1, 2])
-    FirmResult.new('_source' => { '_id' => id,
-                                  'registered_name' => name,
-                                  'advisers' => [],
-                                  'offices' => [],
-                                  'in_person_advice_methods' => in_person_advice_methods },
-                   'sort' => [closest_adviser])
+    result = FirmResult.new('_source' => {
+                              '_id' => id,
+                              'registered_name' => name,
+                              'advisers' => [],
+                              'offices' => [],
+                              'in_person_advice_methods' => in_person_advice_methods
+                            })
+    result.closest_adviser = closest_adviser
+    result
   end
 
   def params(id = '1')
