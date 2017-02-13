@@ -32,6 +32,12 @@ RSpec.describe RadConsumerSession do
   describe '#search_results_url' do
     before { subject.store(firm_result(1), params) }
 
+    context 'when locale mapping is blank' do
+      it 'returns nil' do
+        expect(described_class.new({}).search_results_url('en')).to be(nil)
+      end
+    end
+
     context 'when locale is a string' do
       it 'returns the search_results_url in english' do
         expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
