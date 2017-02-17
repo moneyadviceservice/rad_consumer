@@ -11,7 +11,7 @@ class RadConsumerSession
   end
 
   def search_results_url(locale)
-    @store['locale_to_search_path_mappings'][locale.to_s]
+    (@store['locale_to_search_path_mappings'] || {})[locale.to_s]
   end
 
   def store(firm_result, params)

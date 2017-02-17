@@ -1,11 +1,14 @@
 RSpec.describe RadConsumerSession do
   def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1, 2])
-    FirmResult.new('_source' => { '_id' => id,
-                                  'registered_name' => name,
-                                  'advisers' => [],
-                                  'offices' => [],
-                                  'in_person_advice_methods' => in_person_advice_methods },
-                   'sort' => [closest_adviser])
+    result = FirmResult.new('_source' => {
+                              '_id' => id,
+                              'registered_name' => name,
+                              'advisers' => [],
+                              'offices' => [],
+                              'in_person_advice_methods' => in_person_advice_methods
+                            })
+    result.closest_adviser = closest_adviser
+    result
   end
 
   def params(id = '1')
@@ -28,6 +31,12 @@ RSpec.describe RadConsumerSession do
 
   describe '#search_results_url' do
     before { subject.store(firm_result(1), params) }
+
+    context 'when locale mapping is blank' do
+      it 'returns nil' do
+        expect(described_class.new({}).search_results_url('en')).to be(nil)
+      end
+    end
 
     context 'when locale is a string' do
       it 'returns the search_results_url in english' do

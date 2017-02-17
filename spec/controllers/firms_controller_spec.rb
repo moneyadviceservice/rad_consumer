@@ -1,16 +1,18 @@
 RSpec.describe FirmsController, type: :controller do
   let!(:firm) { FactoryGirl.create(:firm) }
   let(:search_form_params) { { 'advice_method' => SearchForm::ADVICE_METHOD_FACE_TO_FACE, 'postcode' => 'EC1N 2TD' } }
-  let(:offices) { [] }
-  let(:advisers) { [] }
-  let(:firm_result_1) { double(offices: offices, advisers: advisers) }
-  let(:firm_result_2) { double(offices: offices, advisers: advisers) }
+  let(:adviser) { OpenStruct.new(distance: 4, location: []) }
+  let(:office) { OpenStruct.new(distance: 10, location: []) }
+  let(:firm_result) do
+    OpenStruct.new(offices: [office], advisers: [adviser])
+  end
   let(:firm_repository) { double }
 
   describe 'GET #show' do
     before do
       allow(FirmRepository).to receive(:new).and_return(firm_repository)
-      allow(firm_repository).to receive(:search).and_return(double(firms: [firm_result_1, firm_result_2]))
+      allow(firm_repository).to receive(:find).and_return(firm_result)
+      allow(FirmResult).to receive(:new).and_return(firm_result)
       allow_any_instance_of(RadConsumerSession).to receive(:store)
     end
 
@@ -45,20 +47,18 @@ RSpec.describe FirmsController, type: :controller do
     it 'assigns the first firm result to the view' do
       VCR.use_cassette(:geocode_search_form_postcode) do
         get :show, id: firm.id, locale: :en, search_form: search_form_params
-        expect(assigns(:firm)).to eq(firm_result_1)
+        expect(assigns(:firm)).to eq(firm_result)
       end
     end
 
     context 'geosorted offices' do
-      let(:offices) { :offices }
-
       it 'assigns geosorted offices' do
         VCR.use_cassette(:geocode_search_form_postcode) do
-          allow(Geosort).to receive(:by_distance).and_return(:geosorted_offices)
+          allow(Geosort).to receive(:by_distance).and_return([office])
           get :show, id: firm.id, locale: :en, search_form: search_form_params
 
-          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, offices)
-          expect(assigns(:offices)).to eq(:geosorted_offices)
+          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, [office])
+          expect(assigns(:offices)).to eq([office])
         end
       end
     end
@@ -68,11 +68,11 @@ RSpec.describe FirmsController, type: :controller do
 
       it 'assigns geosorted advisers' do
         VCR.use_cassette(:geocode_search_form_postcode) do
-          allow(Geosort).to receive(:by_distance).and_return(:geosorted_advisers)
+          allow(Geosort).to receive(:by_distance).and_return([adviser])
           get :show, id: firm.id, locale: :en, search_form: search_form_params
 
-          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, :advisers)
-          expect(assigns(:advisers)).to eq(:geosorted_advisers)
+          expect(Geosort).to have_received(:by_distance).with(assigns(:search_form).coordinates, [adviser])
+          expect(assigns(:advisers)).to eq([adviser])
         end
       end
     end
@@ -98,7 +98,7 @@ RSpec.describe FirmsController, type: :controller do
         }
 
         expect_any_instance_of(RadConsumerSession)
-          .to receive(:store).with(firm_result_1, expected_params)
+          .to receive(:store).with(firm_result, expected_params)
         get :show, id: firm.id, locale: :en, search_form: search_form_params
       end
     end
