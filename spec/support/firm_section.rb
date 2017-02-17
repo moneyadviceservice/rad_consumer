@@ -33,4 +33,8 @@ class FirmSection < SitePrism::Section
   def minimum_pot_size
     root_element.find('.t-minimum-pot-size').text
   end
+
+  def <=>(other)
+    name <=> other.name
+  end
 end

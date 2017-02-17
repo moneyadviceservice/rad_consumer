@@ -14,6 +14,7 @@ class LandingPage < SitePrism::Page
 
   element :search, '.button--primary'
   element :errors, '.l-landing-page__validation'
+  sections :firms, FirmSection, 'li.t-firm'
 
   def invalid_parameters?
     has_css?('.field_with_errors')

@@ -1,7 +1,9 @@
-RSpec.feature 'Search for firm' do
+RSpec.feature 'Search for firm',
+              vcr: vcr_options_for_feature(:search_by_firm_name) do
   let!(:phone_advice)  { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
   let!(:online_advice) { create(:other_advice_method, name: 'Advice online (e.g. by video call / conference / email)', order: 2) }
   let(:landing_page) { LandingPage.new }
+  let(:profile_page) { ProfilePage.new }
 
   scenario 'search for firm by name' do
     with_elastic_search! do
@@ -19,6 +21,16 @@ RSpec.feature 'Search for firm' do
       and_i_am_on_the_rad_landing_page
       when_i_do_a_full_name_search_for_an_existing_firm
       then_i_should_see_similar_firms_in_the_search_results
+    end
+  end
+
+  scenario 'viewing firms from the search results page' do
+    with_elastic_search! do
+      given_some_firms_were_indexed
+      and_i_am_on_the_rad_landing_page
+      when_i_do_a_full_name_search_for_an_existing_firm
+      when_i_view_the_second_firm_profile
+      then_i_should_see_the_second_firm_profile
     end
   end
 
@@ -47,6 +59,11 @@ RSpec.feature 'Search for firm' do
     landing_page.search.click
   end
 
+  def when_i_view_the_second_firm_profile
+    landing_page.firms.sort[1].view_profile.click
+    expect(profile_page).to be_displayed
+  end
+
   def then_i_should_see_the_firm_in_search_results
     expect(landing_page).to have_content('Pall Mall Financial Services Ltd')
   end
@@ -67,5 +84,10 @@ RSpec.feature 'Search for firm' do
   def then_i_should_see_similar_firms_in_the_search_results
     expect(landing_page).to have_content('The Equiters Ltd')
     expect(landing_page).to have_content('The Willers Ltd')
+  end
+
+  def then_i_should_see_the_second_firm_profile
+    expect(profile_page).to have_content('The Equiters Ltd')
+    expect(profile_page.telephone.text).to eq('07111 333 222')
   end
 end
