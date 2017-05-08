@@ -90,6 +90,7 @@ cy:
           heading: Swyddfeydd
           email_office: E-bostio’r swyddfa
           telephone: Ffôn
+          website: Gwefan
           disabled_access: Mynediad i’r anabl
           show_more: Dangos mwy o swyddfeydd
         advisers:

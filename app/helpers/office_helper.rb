@@ -8,4 +8,8 @@ module OfficeHelper
       office.address_postcode
     ].join(', ')
   end
+
+  def display_website(office, firm)
+    office.website.present? ? office.website : firm.website_address
+  end
 end

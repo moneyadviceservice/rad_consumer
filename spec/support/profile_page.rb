@@ -9,4 +9,5 @@ class ProfilePage < SitePrism::Page
   element :adviser_tab, '[data-dough-tab-selector-trigger="3"]'
   element :telephone, '.t-telephone'
   element :email, '.t-email'
+  element :website, '.t-website'
 end
