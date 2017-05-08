@@ -50,7 +50,7 @@ $ cp config/example.database.yml config/database.yml
 ```
 Be sure to remove or modify the `username` attribute.
 
-Download a backup of the Production DB and load it into your local DB. Follow the instructions for how to [load it into your local development database here:](https://moneyadviceserviceuk.atlassian.net/wiki/pages/viewpage.action?pageId=63635527#DatabaseTasks(PostgreSQL)-Loadintoyourlocaldevelopmentdatabase)
+Download a backup of the Production DB and load it into your local DB. Follow the instructions for how to [load it into your local development database here:](https://maswiki.valiantyscloud.net/pages/viewpage.action?pageId=63635527)
 
 ### Set up Elasticsearch
 
@@ -71,7 +71,7 @@ bundle exec rake firms:index
 ```
 If you navigate to your [local Elasticsearch instance](http://localhost:9200/rad_development/firms/_search) you should now be able to see the list of firms.
 
-There are additional notes on Elasticsearch tasks on the [MAS wiki](https://moneyadviceserviceuk.atlassian.net/wiki/display/RRAD/Elasticsearch+Tasks)
+There are additional notes on Elasticsearch tasks on the [MAS wiki](https://maswiki.valiantyscloud.net/display/RRAD/Elasticsearch+Tasks)
 
 ### Google Maps API
 
