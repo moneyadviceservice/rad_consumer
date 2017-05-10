@@ -14,6 +14,7 @@ Consumer search for the Retirement Adviser Directory
 * [PostgreSQL](http://www.postgresql.org/)
 * [Elasticsearch 1.5 or 1.7](https://www.elastic.co/products/elasticsearch) - install with `brew install elasticsearch17`
 * [RAD](https://github.com/moneyadviceservice/rad) (for PostgreSQL set up)
+* [mas-rad_core](https://github.com/moneyadviceservice/mas-rad_core) 
 
 ## Installation
 
@@ -33,10 +34,17 @@ $ npm install
 
 ---
 
-**NOTE this application shares access to a PostgreSQL database with the rad
+**NOTES:
+This application shares access to a PostgreSQL database with the rad
 project. DO NOT install the database from here. Instead install
 [rad](https://github.com/moneyadviceservice/rad) first as this contains all the
-extra seed data required.**
+extra seed data required.
+
+This application uses the public [mas-rad_core](https://github.com/moneyadviceservice/mas-rad_core) 
+gem to enable authorised users to manipulate the advisor directory data. Many of the tests in rad-consumer 
+use the factories defined in mas-rad_core.
+
+**
 
 ---
 
@@ -109,3 +117,11 @@ To run the javascript tests:
 ```
 $ node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run=true
 ```
+
+## Contributing
+1. Set up the application, run all the tests and ensure you can successfully run 
+the application
+2. Create a feature branch. 
+3. Make your changes, ensure all changes include appropriate test coverage.
+4. Run rubocop and ensure all cops pass.
+5. Push your feature branch and create a pr.
