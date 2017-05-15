@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+source 'http://gems.dev.mas.local'
 ruby '2.2.2'
 
 # RULES OF THE GEMFILE
@@ -21,8 +21,11 @@ gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
     tag: 'v5.22.0.286'
+# gem 'dough-ruby', '~> 5.24.1'
 gem 'geocoder'
 gem 'kaminari'
+gem 'mas-cms-client', path: '../mas-cms-client'
+# gem 'mas-cms-client', path: '~> 1.2'
 gem 'mas-rad_core', '0.1.2'
 gem 'pg'
 gem 'rollbar'

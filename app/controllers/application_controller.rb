@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  def clumps
+    Mas::Cms::Clump.all
+  end
+  helper_method :clumps
+
   private
 
   def default_url_options(options = {})

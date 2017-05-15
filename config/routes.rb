@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     get '/glossary', to: 'glossary#show'
 
     resources :firms, only: [:show]
+    resources :categories, only: 'show'
   end
 end
