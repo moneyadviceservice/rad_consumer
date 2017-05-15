@@ -5,16 +5,6 @@ GIT
     bowndler (1.0.2)
       thor
 
-GIT
-  remote: git://github.com/moneyadviceservice/dough.git
-  revision: 119805a310ee13a4d3473a5d92ee1e61dfc9e3a6
-  tag: v5.22.0.286
-  specs:
-    dough-ruby (5.22.0)
-      activesupport
-      rails (>= 3.2)
-      sass-rails (~> 4.0.0)
-
 PATH
   remote: ../mas-cms-client
   specs:
@@ -94,6 +84,10 @@ GEM
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
       railties (~> 4.0)
+    dough-ruby (5.24.1.290)
+      activesupport
+      rails (>= 3.2, < 5)
+      sass-rails
     erubis (2.7.0)
     execjs (2.5.2)
     factory_girl (4.5.0)
@@ -274,7 +268,7 @@ DEPENDENCIES
   bowndler!
   capybara
   dotenv-rails
-  dough-ruby!
+  dough-ruby (~> 5.24.1)
   factory_girl_rails
   faker
   geocoder
