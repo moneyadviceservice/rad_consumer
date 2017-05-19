@@ -1,0 +1,53 @@
+<footer class="l-footer">
+  <div class="l-footer-primary t-footer-primary">
+    <div class="l-constrained">
+      <nav role="navigation" aria-label="footer">
+        <ul class="footer-primary__list">
+          <% t('footer_primary.links').each do |item| %>
+          <li class="footer-primary__list-item">
+            <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
+          </li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="l-footer-secondary t-footer-secondary">
+    <div class="l-constrained">
+
+      <div class="l-footer-secondary__list--left">
+        <ul class="footer-secondary__list">
+          <li class="footer-secondary__list-item l-language-link">
+            <a class="t-cy-link" href="https://www.moneyadviceservice.org.uk/cy/empty" lang="cy">
+              <span class="icon icon--globe"></span>
+              Cymraeg
+            </a>
+          </li>
+
+          <li class="footer-secondary__list-item accessibility-feedback-link">
+            <a class="footer-secondary__link" href="http://accessin.org/usersubmit_mas.php?param=nojscript"
+               onclick="window.open('http://accessin.org/usersubmit_mas.php?param=' + window.location,'',
+                   'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800');
+                   return false;" title="Please use this button to tell us if you have an accessibility issue on our website"
+               target="_blank">
+              <span class="icon icon--accessibility"></span><%= t('footer_secondary.accessin.button') %>
+              <span class="visually-hidden"><%= t('footer_secondary.accessin.hidden_text') %></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="l-footer-secondary__list--right">
+        <ul class="footer-secondary__list">
+          <% t('footer_secondary.links').each do |item| %>
+          <li class="footer-secondary__list-item">
+            <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</footer>
