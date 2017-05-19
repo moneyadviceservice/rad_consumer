@@ -148,6 +148,9 @@
   <script>
     <%= raw Rails.application.assets['modernizr/modernizr'] %>
   </script>
+
+  <%= stylesheet_link_tag 'mas/global_nav/engine', media: 'all' %>
+  <%= javascript_include_tag 'mas/global_nav/engine' %>
 </head>
 <body id="top">
   <% if Rails.env.production? %>
@@ -175,6 +178,7 @@
 
   <%= render 'svg_icons' %>
   <%= render 'header' %>
+  <%= render template: 'mas/global_nav/clumps/index' %>
   <%= render 'breadcrumbs' %>
 
   <main role="main" id="main">

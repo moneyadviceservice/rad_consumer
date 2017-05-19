@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+# source 'http://gems.dev.mas.local'
 
 ruby '2.2.2'
 
@@ -23,7 +24,11 @@ gem 'dough-ruby',
     tag: 'v5.22.0.286'
 gem 'geocoder'
 gem 'kaminari'
+gem 'mas-cms-client', path: '../mas-cms-client'
 gem 'mas-rad_core', '0.1.2'
+# gem 'mas-global_nav', path: 'git@github.com:moneyadviceservice/mas-global_nav'
+gem 'mas-global_nav', require: 'mas/global_nav', path: '../mas-global_nav'
+
 gem 'pg'
 gem 'rollbar'
 gem 'uglifier', '>= 1.3.0'

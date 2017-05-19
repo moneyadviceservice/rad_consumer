@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
     resources :firms, only: [:show]
   end
+  
 end
