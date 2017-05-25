@@ -173,9 +173,9 @@
     <%= t('skip_links.to_accessibility') %>
   </a>
 
-  <%= render 'shared/svg_icons' %>
-  <%= render 'shared/header' %>
-  <%= render 'shared/breadcrumbs' %>
+  <%= render 'svg_icons' %>
+  <%= render 'header' %>
+  <%= render 'breadcrumbs' %>
 
   <main role="main" id="main">
     <%= content_for :validation_summary %>
@@ -185,7 +185,7 @@
     <%= render 'contact_methods/contact_us' %>
   </main>
 
-  <%= render 'shared/footer' %>
+  <%= render 'footer' %>
 
 <%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
 
