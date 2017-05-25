@@ -16,9 +16,9 @@
     <section class="l-landing-page__2col search-filter l-landing-page__search-filter t-search-filter" data-further-info>
       <h2 class="l-landing-page__search-filter__header">
         <%= t('find_retirement_adviser.heading') %>
-        <%= render 'shared/further_info_trigger' %>
+        <%= render 'further_info_trigger' %>
       </h2>
-      <%= render 'shared/further_info_content' %>
+      <%= render 'further_info_content' %>
       <%= render 'landing_page/search_filter' %>
     </section>
     <section class="l-landing-page__2col">
@@ -29,7 +29,7 @@
           <li data-further-info>
             <%= raw item[:text] %>
             <% if item[:tooltip] %>
-              <%= render 'shared/further_info_trigger' %>
+              <%= render 'further_info_trigger' %>
               <p class="is-hidden further-info__content" data-further-info-target><%= item[:tooltip] %></p>
             <% end %>
           </li>
