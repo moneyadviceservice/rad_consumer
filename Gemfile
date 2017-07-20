@@ -40,7 +40,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'pry-rails'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '3.6.0'
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring', '1.3.6'
