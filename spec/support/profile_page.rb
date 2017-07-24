@@ -1,4 +1,6 @@
 class ProfilePage < SitePrism::Page
+  require_relative './office_section'
+  require_relative './adviser_section'
   set_url_matcher %r{/(en|cy)/firms}
 
   sections :offices, OfficeSection, '.t-office'
