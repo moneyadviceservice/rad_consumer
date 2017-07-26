@@ -5,6 +5,11 @@ class SearchController < ApplicationController
     @form = SearchForm.new(search_form_params)
     if @form.valid?
       @result = FirmRepository.new.search(@form.to_query, page: page)
+      if @result.total_pages < page
+        render file: 'public/404.html',
+               status: :not_found,
+               layout: false
+      end
     else
       render searchable_view
     end
