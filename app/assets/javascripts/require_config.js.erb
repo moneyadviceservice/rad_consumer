@@ -19,34 +19,35 @@
 //= depend_on_asset modules/ShowMore
 
 <%
-  def requirejs_path(asset)
-    javascript_path(asset).sub(/.js\z/, '')
-  end
-  
-  requirejs_config = {
-    paths: {
-      jquery: requirejs_path('jquery/dist/jquery'),
-      jqueryThrottleDebounce: requirejs_path('jqueryThrottleDebounce/jquery.ba-throttle-debounce'),
-      eventsWithPromises: requirejs_path('eventsWithPromises/src/eventsWithPromises'),
-      FurtherInfo: requirejs_path('modules/FurtherInfo'),
-      SearchFilter: requirejs_path('modules/SearchFilter'),
-      NestedOptions: requirejs_path('modules/NestedOptions'),
-      ResultsFilter: requirejs_path('modules/ResultsFilter'),
-      EducationModule: requirejs_path('modules/EducationModule'),
-      ResultsModule: requirejs_path('modules/ResultsModule'),
-      featureDetect: requirejs_path('dough/assets/js/lib/featureDetect'),
-      utilities: requirejs_path('dough/assets/js/lib/utilities'),
-      mediaQueries: requirejs_path('dough/assets/js/lib/mediaQueries'),
-      componentLoader: requirejs_path('dough/assets/js/lib/componentLoader'),
-      DoughBaseComponent: requirejs_path('dough/assets/js/components/DoughBaseComponent'),
-      TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
-      Validation: requirejs_path('dough/assets/js/components/Validation'),
-      FirmMap: requirejs_path('modules/FirmMap'),
-      async: requirejs_path('requirejs-plugins/src/async'),
-      rsvp: requirejs_path('rsvp/rsvp'),
-      ShowMore: requirejs_path('modules/ShowMore')
-    }
+def requirejs_path(asset)
+javascript_path(asset).sub(/.js\z/, '')
+end
+
+requirejs_config = {
+  paths: {
+    jquery: requirejs_path('jquery/dist/jquery'),
+    jqueryThrottleDebounce: requirejs_path('jqueryThrottleDebounce/jquery.ba-throttle-debounce'),
+    eventsWithPromises: requirejs_path('eventsWithPromises/src/eventsWithPromises'),
+    FurtherInfo: requirejs_path('modules/FurtherInfo'),
+    SearchFilter: requirejs_path('modules/SearchFilter'),
+    NestedOptions: requirejs_path('modules/NestedOptions'),
+    ResultsFilter: requirejs_path('modules/ResultsFilter'),
+    EducationModule: requirejs_path('modules/EducationModule'),
+    ResultsModule: requirejs_path('modules/ResultsModule'),
+    featureDetect: requirejs_path('dough/assets/js/lib/featureDetect'),
+    utilities: requirejs_path('dough/assets/js/lib/utilities'),
+    mediaQueries: requirejs_path('dough/assets/js/lib/mediaQueries'),
+    componentLoader: requirejs_path('dough/assets/js/lib/componentLoader'),
+    DoughBaseComponent: requirejs_path('dough/assets/js/components/DoughBaseComponent'),
+    TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
+    Validation: requirejs_path('dough/assets/js/components/Validation'),
+    FirmMap: requirejs_path('modules/FirmMap'),
+    async: requirejs_path('requirejs-plugins/src/async'),
+    rsvp: requirejs_path('rsvp/rsvp'),
+    ShowMore: requirejs_path('modules/ShowMore'),
+    GlobalNav: requirejs_path('components/GlobalNav')
   }
+}
 %>
 
 // If requirejs is present convert the requirejs_config hash to a JSON object

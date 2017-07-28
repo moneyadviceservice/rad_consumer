@@ -26,6 +26,7 @@ Rails.application.configure do
     modules/ShowMore.js
     dough/assets/js/lib/*.js
     dough/assets/js/**/*.js
+    components/*.js
   )
 
   # Vendor JavaScript

@@ -15,6 +15,11 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  def clumps
+    Mas::Cms::Clump.all(locale: params[:locale], cached: true)
+  end
+  helper_method :clumps
+
   protected
 
   def page

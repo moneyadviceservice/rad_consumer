@@ -35,4 +35,8 @@ module ApplicationHelper
   def feature_enabled?(flag_name)
     ENV[flag_name] == 'true'
   end
+
+  def category_path(id)
+    "/#{locale}/categories/#{id}"
+  end
 end

@@ -3,6 +3,14 @@
 @import 'dough/assets/stylesheets/optional';
 @import 'yeast/assets/lib/all';
 
+@import 'yeast/assets/base/variables';
+@import 'yeast/assets/layout/variables';
+@import 'yeast/assets/layout/common/all';
+
+// Dough Theme Components
+@import 'yeast/assets/components/dough_theme/variables';
+@import 'yeast/assets/components/dough_theme/_all.scss';
+
 @import 'settings';
 @import 'temp_overrides';
 
@@ -18,6 +26,7 @@
 
 @import 'states/is_hidden';
 
+// Local Components
 @import 'components/accreditation';
 @import 'components/advice_method';
 @import 'components/advice_reasons';
@@ -47,5 +56,6 @@
 @import 'components/validation';
 @import 'components/tab_selector';
 @import 'components/video';
+@import 'components/common/all';
 
 @import 'print';
