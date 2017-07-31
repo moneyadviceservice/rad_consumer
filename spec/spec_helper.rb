@@ -2,6 +2,7 @@ ENV['RAILS_ENV'] ||= 'test'
 
 require_relative '../config/environment'
 require 'rspec/rails'
+require 'webmock/rspec'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -19,3 +20,5 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include ElasticSearchHelper, type: :feature
 end
+
+WebMock.disable_net_connect!
