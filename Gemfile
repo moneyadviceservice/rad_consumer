@@ -23,7 +23,9 @@ gem 'dough-ruby',
     tag: 'v5.22.0.286'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-cms-client', '~> 1.1'
+gem 'mas-cms-client',
+    git: 'git@github.com:moneyadviceservice/mas-cms-client.git',
+    ref: '0a72b4e' # This points to the currently most recent version, 1.3.0
 gem 'mas-rad_core', '0.1.2'
 gem 'pg'
 gem 'rollbar'
