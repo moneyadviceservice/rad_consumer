@@ -24,9 +24,16 @@ Rails.application.configure do
     modules/ResultsModule.js
     modules/FirmMap.js
     modules/ShowMore.js
+    modules/common.js
+    modules/i18n.js
+    modules/log.js
+    modules/mas_pubsub.js
+    modules/globals.js
     dough/assets/js/lib/*.js
     dough/assets/js/**/*.js
     components/*.js
+    translations/cy.js
+    translations/en.js
   )
 
   # Vendor JavaScript
