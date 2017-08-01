@@ -12,7 +12,7 @@ class LandingPage < SitePrism::Page
   section :firm_search, FirmNameSearchSection, 'section#search_firm_name'
   section :search_filter, SearchFormSection, '.t-search-filter'
 
-  element :search, '.button--primary'
+  element :search, '.search-filter__button'
   element :errors, '.l-landing-page__validation'
   sections :firms, FirmSection, 'li.t-firm'
 

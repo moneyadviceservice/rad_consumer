@@ -1,0 +1,14 @@
+<form data-dough-component="ClearInput" action="<%= global_nav_url("/#{locale}/search") %>" method="get" role="search" class="search" >
+  <label class="visually-hidden" for="search"><%= t('search_box.label') %></label>
+
+  <input data-dough-clear-input class="search__input" id="search" required type="search" name="query" value="<%= params[:query] %>" autocomplete="off"
+         placeholder="<%= t('search_box.placeholder') %>" data-dough-search-input/>
+  <button data-dough-clear-input-button type="reset" class="search__clear">
+    <span class="icon icon--clear"></span>
+    <span class="visually-hidden"><%= t('search_box.clear_hidden_text') %></span>
+  </button>
+  <button class="search__submit search__submit--white" type="submit">
+    <span class="icon icon--search"></span>
+    <span class="visually-hidden"><%= t('search_box.button_text') %></span>
+  </button>
+</form>

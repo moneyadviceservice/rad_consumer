@@ -12,6 +12,12 @@ en:
   feedback_button: Tell us how we can improve this tool
 
   blog_link: https://www.moneyadviceservice.org.uk/blog
+  search_box:
+    label: Search the Money Advice Service
+    placeholder: Search
+    button_text: Search
+    clear_hidden_text: clear the search field
+
 
   pagination:
     previous: 'Prev'
@@ -104,6 +110,12 @@ en:
     to_main: Skip to main content
     to_accessibility: Accessibility Statement
     to_accessibility_link: https://www.moneyadviceservice.org.uk/en/static/accessibility
+
+  layouts:
+    home: Home
+    base:
+      title: Money Advice Service
+      strapline: Free and impartial money advice
 
   locales:
     cy: Cymraeg

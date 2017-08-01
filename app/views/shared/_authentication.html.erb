@@ -1,0 +1,15 @@
+<ul class="authentication">
+  <li class="authentication__item l-language-link authentication__item--last">
+    <% if I18n.locale == :en %>
+      <%= link_to({ locale: :cy }, { lang: :cy }) do %>
+        <span class="icon icon--globe"></span>
+        <%= t('locales.cy') %>
+      <% end %>
+    <% else %>
+      <%= link_to({ locale: :en }, { lang: :en }) do %>
+        <span class="icon icon--globe"></span>
+        <%= t('locales.en') %>
+      <% end %>
+    <% end %>
+  </li>
+</ul>

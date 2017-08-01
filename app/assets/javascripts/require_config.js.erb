@@ -27,6 +27,7 @@
 //= depend_on_asset dough/assets/js/components/Validation
 //= depend_on_asset modules/FirmMap
 //= depend_on_asset modules/ShowMore
+//= depend_on_asset components/ClearInput
 
 <%
 def requirejs_path(asset)
@@ -65,7 +66,8 @@ requirejs_config = {
     globals: requirejs_path('modules/globals'),
     i18n: requirejs_path('modules/i18n'),
     log: requirejs_path('modules/log'),
-    pubsub: requirejs_path('modules/mas_pubsub')
+    pubsub: requirejs_path('modules/mas_pubsub'),
+    ClearInput: requirejs_path('components/ClearInput'),
   }
 }
 %>
