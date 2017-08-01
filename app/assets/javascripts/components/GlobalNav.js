@@ -259,7 +259,7 @@ define(['jquery', 'DoughBaseComponent', 'mediaQueries', 'utilities', 'common'], 
         if ($(e.target).parents('[data-dough-component="GlobalNav"]').length == 0) {
           self.$globalNavClump.removeClass('is-active');
         }
-      })
+      });
     }
 
     this.$globalNavClumpHeading
@@ -275,7 +275,7 @@ define(['jquery', 'DoughBaseComponent', 'mediaQueries', 'utilities', 'common'], 
         e.preventDefault();
       }).on('touchstart', function(e) {
         // remove hover event handler if touch event detected
-        $(e.target).parents('[data-dough-nav-clump-heading]').off('mouseenter')
+        $(e.target).parents('[data-dough-nav-clump-heading]').off('mouseenter');
       }).on('touchend', function(e) {
         if (!mediaQueries.atSmallViewport()) {
           var index = $(e.target).parents('[data-dough-nav-clump-heading]');
