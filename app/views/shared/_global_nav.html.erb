@@ -26,12 +26,12 @@
               <ul data-dough-subcategories class="global-subnav__categories" role="menu" aria-label="<%= clump.name %>">
                 <% clump.categories.each do |category| %>
                   <li class="global-subnav__category <%= 'global-subnav__category--double' if category.categories.count > 5 %>" role="none">
-                    <%= link_to category.title, category_path(category.id), class: 'global-subnav__category__heading', role: 'menuitem' %>
+                    <%= link_to category.title, category_url(category.id), class: 'global-subnav__category__heading', role: 'menuitem' %>
 
                     <ul class="global-subnav__subcategories">
                       <% category.categories.each do |subcategory| %>
                         <li class="global-subnav__subcategory" role="none">
-                          <%= link_to subcategory.title, category_path(subcategory.id), class: 'global-subnav__subcategory__link', role: 'menuitem' %>
+                          <%= link_to subcategory.title, category_url(subcategory.id), class: 'global-subnav__subcategory__link', role: 'menuitem' %>
                         </li>
                       <% end %>
                     </ul>
@@ -42,7 +42,7 @@
                   <ul class="global-subnav__subcategories">
                     <% clump.links.each do |link| %>
                       <li class="global-subnav__tool" role="none">
-                        <%= link_to link.text, link.url, class: 'global-subnav__tool__link', role: 'menuitem' %>
+                        <%= link_to link.text, global_nav_url(link.url), class: 'global-subnav__tool__link', role: 'menuitem' %>
 
                         <span class="global-subnav__tools__icon">
                            <svg class="global-subnav__tool-icon" role="presentation" viewBox="0 0 100 100" focusable="false">

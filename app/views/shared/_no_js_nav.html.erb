@@ -4,7 +4,7 @@
       <% clumps.each do |clump| %>
         <% clump.categories.each do |category| %>
           <li class="no-js-nav__category" role="none">
-            <%= link_to category.title, category_path(category.id), role: 'menuitem', class: 'no-js-nav__link' %>
+            <%= link_to category.title, category_url(category.id), role: 'menuitem', class: 'no-js-nav__link' %>
           </li>
         <% end %>
       <% end %>
