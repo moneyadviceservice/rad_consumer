@@ -1,0 +1,13 @@
+cy:
+  blog_link: https://www.moneyadviceservice.org.uk/blog
+  search_box:
+    label: Chwiliwch drwy'r Gwasanaeth Cynghori Ariannol
+    placeholder: Chwilio
+    button_text: Chwilio
+    clear_hidden_text: clirio'r maes chwilio
+  layouts:
+    home: Hafan
+    base:
+      title: Y Gwasanaeth Cynghori Ariannol
+      strapline: Cyngor ariannol am ddim a diduedd
+

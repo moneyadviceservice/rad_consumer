@@ -11,14 +11,6 @@ cy:
 
   feedback_button: "Dywedwch wrthym sut y gallwn wella'r offeryn hwn"
 
-  blog_link: https://www.moneyadviceservice.org.uk/blog
-
-  search_box:
-    label: Chwiliwch drwy'r Gwasanaeth Cynghori Ariannol
-    placeholder: Chwilio
-    button_text: Chwilio
-    clear_hidden_text: clirio'r maes chwilio
-
   pagination:
     previous: 'Flaenorol'
     next: 'Nesaf'
@@ -110,12 +102,6 @@ cy:
     to_main: Skip to main content
     to_accessibility: Accessibility Statement
     to_accessibility_link: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
-
-  layouts:
-    home: Hafan
-    base:
-      title: Y Gwasanaeth Cynghori Ariannol
-      strapline: Cyngor ariannol am ddim a diduedd
 
   locales:
     cy: Cymraeg
