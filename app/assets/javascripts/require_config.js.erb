@@ -1,13 +1,3 @@
-//= depend_on_asset translations/en
-//= depend_on_asset translations/cy
-
-//= depend_on_asset modules/globals
-//= depend_on_asset modules/common
-//= depend_on_asset modules/log
-//= depend_on_asset modules/i18n
-
-//= depend_on_asset modules/mas_pubsub
-
 //= depend_on_asset jquery/dist/jquery
 //= depend_on_asset modules/FurtherInfo
 //= depend_on_asset modules/SearchFilter
@@ -27,49 +17,59 @@
 //= depend_on_asset dough/assets/js/components/Validation
 //= depend_on_asset modules/FirmMap
 //= depend_on_asset modules/ShowMore
-//= depend_on_asset components/ClearInput
+
+//= depend_on_asset translations/en
+//= depend_on_asset translations/cy
+
+//= depend_on_asset modules/globals
+//= depend_on_asset modules/common
+//= depend_on_asset modules/log
+//= depend_on_asset modules/i18n
+//= depend_on_asset modules/mas_pubsub
 
 <%
-def requirejs_path(asset)
-javascript_path(asset).sub(/.js\z/, '')
-end
+  def requirejs_path(asset)
+    javascript_path(asset).sub(/.js\z/, '')
+  end
 
-requirejs_config = {
-  paths: {
-    # Translation JSON files
-    en: requirejs_path('translations/en'),
-    cy: requirejs_path('translations/cy'),
-    i18nTokens: requirejs_path('translations/' + I18n.locale.to_s),
+  requirejs_config = {
+    paths: {
+      jquery: requirejs_path('jquery/dist/jquery'),
+      jqueryThrottleDebounce: requirejs_path('jqueryThrottleDebounce/jquery.ba-throttle-debounce'),
+      eventsWithPromises: requirejs_path('eventsWithPromises/src/eventsWithPromises'),
+      FurtherInfo: requirejs_path('modules/FurtherInfo'),
+      SearchFilter: requirejs_path('modules/SearchFilter'),
+      NestedOptions: requirejs_path('modules/NestedOptions'),
+      ResultsFilter: requirejs_path('modules/ResultsFilter'),
+      EducationModule: requirejs_path('modules/EducationModule'),
+      ResultsModule: requirejs_path('modules/ResultsModule'),
+      featureDetect: requirejs_path('dough/assets/js/lib/featureDetect'),
+      utilities: requirejs_path('dough/assets/js/lib/utilities'),
+      mediaQueries: requirejs_path('dough/assets/js/lib/mediaQueries'),
+      componentLoader: requirejs_path('dough/assets/js/lib/componentLoader'),
+      DoughBaseComponent: requirejs_path('dough/assets/js/components/DoughBaseComponent'),
+      TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
+      Validation: requirejs_path('dough/assets/js/components/Validation'),
+      FirmMap: requirejs_path('modules/FirmMap'),
+      async: requirejs_path('requirejs-plugins/src/async'),
+      rsvp: requirejs_path('rsvp/rsvp'),
+      ShowMore: requirejs_path('modules/ShowMore'),
 
-    jquery: requirejs_path('jquery/dist/jquery'),
-    jqueryThrottleDebounce: requirejs_path('jqueryThrottleDebounce/jquery.ba-throttle-debounce'),
-    eventsWithPromises: requirejs_path('eventsWithPromises/src/eventsWithPromises'),
-    FurtherInfo: requirejs_path('modules/FurtherInfo'),
-    SearchFilter: requirejs_path('modules/SearchFilter'),
-    NestedOptions: requirejs_path('modules/NestedOptions'),
-    ResultsFilter: requirejs_path('modules/ResultsFilter'),
-    EducationModule: requirejs_path('modules/EducationModule'),
-    ResultsModule: requirejs_path('modules/ResultsModule'),
-    featureDetect: requirejs_path('dough/assets/js/lib/featureDetect'),
-    utilities: requirejs_path('dough/assets/js/lib/utilities'),
-    mediaQueries: requirejs_path('dough/assets/js/lib/mediaQueries'),
-    componentLoader: requirejs_path('dough/assets/js/lib/componentLoader'),
-    DoughBaseComponent: requirejs_path('dough/assets/js/components/DoughBaseComponent'),
-    TabSelector: requirejs_path('dough/assets/js/components/TabSelector'),
-    Validation: requirejs_path('dough/assets/js/components/Validation'),
-    FirmMap: requirejs_path('modules/FirmMap'),
-    async: requirejs_path('requirejs-plugins/src/async'),
-    rsvp: requirejs_path('rsvp/rsvp'),
-    ShowMore: requirejs_path('modules/ShowMore'),
-    GlobalNav: requirejs_path('components/GlobalNav'),
-    common: requirejs_path('modules/common'),
-    globals: requirejs_path('modules/globals'),
-    i18n: requirejs_path('modules/i18n'),
-    log: requirejs_path('modules/log'),
-    pubsub: requirejs_path('modules/mas_pubsub'),
-    ClearInput: requirejs_path('components/ClearInput'),
+      # Global nav dependencies
+      en: requirejs_path('translations/en'),
+      cy: requirejs_path('translations/cy'),
+      i18nTokens: requirejs_path('translations/' + I18n.locale.to_s),
+
+      common: requirejs_path('modules/common'),
+      globals: requirejs_path('modules/globals'),
+      i18n: requirejs_path('modules/i18n'),
+      log: requirejs_path('modules/log'),
+      pubsub: requirejs_path('modules/mas_pubsub'),
+
+      GlobalNav: requirejs_path('components/GlobalNav'),
+      ClearInput: requirejs_path('components/ClearInput'),
+    }
   }
-}
 %>
 
 // If requirejs is present convert the requirejs_config hash to a JSON object
