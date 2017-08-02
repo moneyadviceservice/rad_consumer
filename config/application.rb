@@ -34,7 +34,7 @@ module RadConsumer
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.mas_public_website_url = ENV['MAS_PUBLIC_WEBSITE_URL']
+    config.mas_public_website_url = ENV['MAS_PUBLIC_WEBSITE_URL'] || 'https://www.moneyadviceservice.org.uk/'
   end
 end
 
