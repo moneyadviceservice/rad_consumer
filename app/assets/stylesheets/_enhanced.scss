@@ -3,13 +3,9 @@
 @import 'dough/assets/stylesheets/optional';
 @import 'yeast/assets/lib/all';
 
-@import 'yeast/assets/base/variables';
-@import 'yeast/assets/layout/variables';
-@import 'yeast/assets/layout/common/all';
-
 // Dough Theme Components
 @import 'yeast/assets/components/dough_theme/variables';
-@import 'yeast/assets/components/dough_theme/_all.scss';
+@import 'yeast/assets/components/dough_theme/all';
 
 @import 'settings';
 @import 'temp_overrides';
