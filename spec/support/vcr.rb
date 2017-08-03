@@ -7,7 +7,7 @@ VCR.configure do |config|
   # Allow access to Elastic Search running locally but record CMS
   config.ignore_request do |request|
     uri = URI(request.uri)
-    uri.host == 'localhost' && uri.port == 9200
+    uri.host == 'localhost' && uri.port != 3000
   end
 
   config.around_http_request do |request|
@@ -22,5 +22,5 @@ VCR.configure do |config|
 end
 
 def vcr_options_for_feature(cassette_name)
-  { cassette_name: cassette_name, record: :new_episodes }
+  { cassette_name: cassette_name, record: :none }
 end

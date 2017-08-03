@@ -17,4 +17,4 @@ script:
   - npm test
   - bundle exec rubocop -DS
 env:
-  - SHOW_ETHICAL_AND_SHARIA_FILTER=true SHOW_LANGUAGES_FILTER=true
+  - MAS_CMS_URL=http://localhost:3000/ SHOW_ETHICAL_AND_SHARIA_FILTER=true SHOW_LANGUAGES_FILTER=true
