@@ -15,6 +15,7 @@ Consumer search for the Retirement Adviser Directory
 * [Elasticsearch 1.5 or 1.7](https://www.elastic.co/products/elasticsearch) - install with `brew install elasticsearch17`
 * [RAD](https://github.com/moneyadviceservice/rad) (for PostgreSQL set up)
 * [mas-rad_core](https://github.com/moneyadviceservice/mas-rad_core) 
+* [mas-cms-client] (https://github.com/moneyadviceservice/mas-cms-client)
 
 ## Installation
 
