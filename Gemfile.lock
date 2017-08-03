@@ -16,9 +16,8 @@ GIT
       sass-rails (~> 4.0.0)
 
 GIT
-  remote: git@github.com:moneyadviceservice/mas-cms-client.git
+  remote: git://github.com/moneyadviceservice/mas-cms-client.git
   revision: 0a72b4ee10feb3082a4ed46e165ca4fd5daff5da
-  ref: 0a72b4e
   specs:
     mas-cms-client (1.3.0)
       activemodel (~> 4.2)
