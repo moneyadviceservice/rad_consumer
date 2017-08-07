@@ -9,7 +9,7 @@ VCR.configure do |config|
   # Allow access to Elastic Search running locally but record CMS
   config.ignore_request do |request|
     uri = URI(request.uri)
-    puts "request #{uri}"
+    puts "[#{uri.port == 9200}]request #{uri}"
     uri.port == 9200
   end
 
