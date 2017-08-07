@@ -5,7 +5,7 @@ VCR.configure do |config|
 
   # Allow access to Elastic Search running locally
   # config.ignore_localhost = true
-  config.ignore_localhost = false
+  config.ignore_localhost = true
   # Allow access to Elastic Search running locally but record CMS
   config.ignore_request do |request|
     uri = URI(request.uri)
