@@ -13,15 +13,15 @@ VCR.configure do |config|
   #  uri.port == 9200
   #end
 
-  config.around_http_request do |request|
-    uri = URI(request.uri)
-    if ENV['MAS_CMS_URL'] =~ /#{uri.host}/
-      VCR.use_cassette("/CMS/#{request.method}#{uri.path}#{uri.query}", &request)
-    else
-      puts "request #{uri}"
-      request.proceed
-    end
-  end
+  #config.around_http_request do |request|
+  #  uri = URI(request.uri)
+  #  if ENV['MAS_CMS_URL'] =~ /#{uri.host}/
+  #    VCR.use_cassette("/CMS/#{request.method}#{uri.path}#{uri.query}", &request)
+  #  else
+  #    puts "request #{uri}"
+  #    request.proceed
+  #  end
+  #end
 end
 
 def vcr_options_for_feature(cassette_name)
