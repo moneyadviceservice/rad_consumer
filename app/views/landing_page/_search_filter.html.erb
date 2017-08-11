@@ -1,10 +1,10 @@
-<%= form_for @form, url: search_path, 
-                    method: :get, 
-                    html: {class: 'form form--collapse t-in-person', 
-                           novalidate: true}, 
-                    data: {search_filter: '', 
+<%= form_for @form, url: search_path,
+                    method: :get,
+                    html: {class: 'form form--collapse t-in-person',
+                           novalidate: true},
+                    data: {search_filter: '',
                            dough_component: 'Validation',
-                           'dough-validation-config' => 
+                           'dough-validation-config' =>
                            '{"showInlineValidation":false, "showValidationSummaryLinks":false}'
                             },
                     builder: Dough::Forms::Builders::Validation do |f| %>
@@ -20,9 +20,8 @@
   <%= f.hidden_field :pension_pot_size, value: SearchForm::ANY_SIZE_VALUE %>
 
   <div class="search-filter--container">
-    <div class="l-results__filter">
+    <div class="l-results__filter" role="group" aria-labelledby="find_retirement_adviser_heading">
       <fieldset class="form__group search-filter__section">
-        <legend class='visually-hidden'><%= t('find_retirement_adviser.heading') %></legend>
         <%= render partial: 'search/partials/filters/advice_method', locals: {f: f} %>
         <%= render 'search_button', button_class: "search-filter__button" %>
       </fieldset>
