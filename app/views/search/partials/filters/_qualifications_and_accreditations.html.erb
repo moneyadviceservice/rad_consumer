@@ -1,8 +1,13 @@
-<fieldset class="search-filter__qualifications_accreditations search-filter__last-filter">
+<fieldset class="search-filter__qualifications_accreditations search-filter__last-filter" data-further-info>
   <legend class="search-filter__label">
     <%= t('search.filter.qualifications_and_accreditations.heading') %>
-    <%= render 'further_info_trigger', url: t('search.filter.qualifications_and_accreditations.url') %>
+    <%= render 'further_info_trigger' %>
   </legend>
+
+  <p class="is-hidden further-info__content" data-further-info-target>
+      <%= t('search.filter.qualifications_and_accreditations.tooltip_html') %>
+  </p>
+
 
   <div class="form__group-item">
     <%= f.label :qualification_or_accreditation,
