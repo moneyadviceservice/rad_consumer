@@ -22,6 +22,7 @@
   <div class="search-filter--container">
     <div class="l-results__filter">
       <fieldset class="form__group search-filter__section">
+        <legend class='visually-hidden'><%= t('find_retirement_adviser.heading') %></legend>
         <%= render partial: 'search/partials/filters/advice_method', locals: {f: f} %>
         <%= render 'search_button', button_class: "search-filter__button" %>
       </fieldset>
