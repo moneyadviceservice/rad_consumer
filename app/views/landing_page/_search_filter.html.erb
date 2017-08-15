@@ -1,10 +1,10 @@
-<%= form_for @form, url: search_path, 
-                    method: :get, 
-                    html: {class: 'form form--collapse t-in-person', 
-                           novalidate: true}, 
-                    data: {search_filter: '', 
+<%= form_for @form, url: search_path,
+                    method: :get,
+                    html: {class: 'form form--collapse t-in-person',
+                           novalidate: true},
+                    data: {search_filter: '',
                            dough_component: 'Validation',
-                           'dough-validation-config' => 
+                           'dough-validation-config' =>
                            '{"showInlineValidation":false, "showValidationSummaryLinks":false}'
                             },
                     builder: Dough::Forms::Builders::Validation do |f| %>
