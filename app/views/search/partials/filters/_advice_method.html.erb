@@ -44,13 +44,18 @@
           value: SearchForm::ADVICE_METHOD_PHONE_OR_ONLINE,
           class: 'search-filter__advice-label' %>
       </div>
+
+      <%
+        # This auxiliary div is needed to get consistent spacing between the
+        # sections. If we don't add it, then the form__group-item:last-child
+        # style is used and the margin-bottom is set to 0
+       %>
+      <div class="form__group-item"></div>
     <% end %>
   </section>
 
   <section id='search_firm_name'>
 
-  <h3 class="search-filter__alt-title"><%= t('search.filter.receive_advice.alternative') %></h3>
-  
   <%= f.form_row(:firm_name) do %>
     <%= f.errors_for :firm_name %>
 
