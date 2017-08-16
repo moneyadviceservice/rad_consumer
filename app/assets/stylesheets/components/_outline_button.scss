@@ -13,7 +13,7 @@
   &[href^="tel:"] {
     color: $color-blue-medium;
 
-    &:hover {
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
