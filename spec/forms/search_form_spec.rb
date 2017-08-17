@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 RSpec.describe SearchForm do
   describe 'advice method predicates' do
     let(:form) { described_class.new(advice_method: advice_method) }
@@ -314,8 +315,8 @@ RSpec.describe SearchForm do
       expect(form.options_for_pension_pot_sizes).to include(*tuples)
     end
 
-    it 'returns the any size option as the last element' do
-      expect(form.options_for_pension_pot_sizes.last).to eql([
+    it 'returns the any size option as the first element' do
+      expect(form.options_for_pension_pot_sizes.first).to eql([
         I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
       ])
     end
