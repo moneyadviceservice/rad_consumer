@@ -2,7 +2,7 @@
   <span class="next">
     <%= link_to(url, rel: 'next', class: 'pagination__button pagination__button--next button button--compact') do %>
     <span class="button--compact__text"><%= t('pagination.next').html_safe %></span>
-      <svg title="<%= t('pagination.previous') %>" xmlns="http://www.w3.org/2000/svg" class="pagination__icon">
+      <svg focusable="false" title="<%= t('pagination.previous') %>" xmlns="http://www.w3.org/2000/svg" class="pagination__icon">
         <use xlink:href="#icon-pagination-next"></use>
       </svg>
     <% end %>
