@@ -1,10 +1,10 @@
-<%= form_for @form, url: search_path, 
-                    method: :get, 
-                    html: {class: 'form form--collapse t-in-person', 
-                           novalidate: true}, 
-                    data: {search_filter: '', 
+<%= form_for @form, url: search_path,
+                    method: :get,
+                    html: {class: 'form form--collapse t-in-person',
+                           novalidate: true},
+                    data: {search_filter: '',
                            dough_component: 'Validation',
-                           'dough-validation-config' => 
+                           'dough-validation-config' =>
                            '{"showInlineValidation":false, "showValidationSummaryLinks":false}'
                             },
                     builder: Dough::Forms::Builders::Validation do |f| %>
@@ -22,6 +22,10 @@
   <div class="search-filter--container">
     <div class="l-results__filter">
       <fieldset class="form__group search-filter__section">
+        <legend class="l-landing-page__search-filter__header">
+          <%= t('find_retirement_adviser.heading') %>
+          <%= render 'further_info_trigger' %>
+        </legend>
         <%= render partial: 'search/partials/filters/advice_method', locals: {f: f} %>
         <%= render 'search_button', button_class: "search-filter__button" %>
       </fieldset>

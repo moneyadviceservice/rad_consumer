@@ -5,7 +5,7 @@
 
 .search-filter--container {
   @include row(12);
-  padding-top: $baseline-unit*3;
+  padding-top: $baseline-unit*2;
 }
 
 .search-filter--container .l-results__filter {
