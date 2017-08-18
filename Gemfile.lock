@@ -7,13 +7,13 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/dough.git
-  revision: 119805a310ee13a4d3473a5d92ee1e61dfc9e3a6
-  tag: v5.22.0.286
+  revision: fb1efabba4eaf4a30f5edf878f1c5ec4b4ef5527
+  tag: v5.25.3.295
   specs:
-    dough-ruby (5.22.0)
+    dough-ruby (5.25.3)
       activesupport
-      rails (>= 3.2)
-      sass-rails (~> 4.0.0)
+      rails (>= 3.2, < 5)
+      sass-rails
 
 GEM
   remote: https://rubygems.org/
