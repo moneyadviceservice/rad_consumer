@@ -22,6 +22,8 @@ cy:
     show:
       title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+      video1_title: Cyngor ariannol wedi ei reoleiddio
+      video2_title: Cyngor ymddeoliad wedi ei reoleiddio
 
   firms:
     show:
