@@ -20,6 +20,25 @@
   height: 25px;
 }
 
+.icon--further-info {
+  display: none;
+  font-weight: 700;
+  font-style: italic;
+  color: $color-green-primary;
+  padding: $baseline-unit;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    color: $color-green-primary;
+  }
+
+  .js & {
+    display: inline-block;
+  }
+}
+
 // The 2x versions
 @include device-pixel-ratio() {
   .icon--youtube-black {

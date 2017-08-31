@@ -26,6 +26,7 @@
           <%= t('find_retirement_adviser.heading') %>
           <%= render 'further_info_trigger' %>
         </legend>
+        <%= render 'further_info_content' %>
         <%= render partial: 'search/partials/filters/advice_method', locals: {f: f} %>
         <%= render 'search_button', button_class: "search-filter__button" %>
       </fieldset>

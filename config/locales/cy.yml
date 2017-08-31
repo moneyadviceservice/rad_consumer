@@ -5,6 +5,7 @@ cy:
         postcode: Cod post
   global:
     required: Gofynnol
+    further_information: Rhagor o wybodaeth
 
   mas: Y Gwasanaeth Cynghori Ariannol
   mas_home_url: https://www.moneyadviceservice.org.uk/cy
@@ -311,6 +312,8 @@ cy:
         - text: Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr ar Gyfeirlyfr y Gwasanaeth Cynghori Ariannol – waeth sut y cynigiant gyngor – wedi eu rheoleiddio.  Mae gennych union yr un diogelwch pa un ai’ch bod yn cwrdd â rhywun wyneb yn wyneb neu’n delio ag ef neu hi’n unigol dros y ffôn neu ar-lein.
       qualifications_and_accreditations:
         heading: 'Hoffwn gael cynghorydd sydd â’r achrediadau / cymwysterau canlynol:'
+        tooltip_html: |
+          Dysgwch ragor am achrediadau/cymwysterau cynghorydd trwy glicio  <a href="https://directory.moneyadviceservice.org.uk/cy/glossary" target="_blank">yma</a>.
         label: Hidlo yn Ùl cymhwyster neu achrediad
         url: '/cy/glossary#chartered_fp'
       qualification:

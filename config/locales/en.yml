@@ -5,6 +5,7 @@ en:
         postcode: Postcode
   global:
     required: Required
+    further_information: Further information
 
   mas: The Money Advice Service
   mas_home_url: https://www.moneyadviceservice.org.uk/en
@@ -311,6 +312,8 @@ en:
           - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       qualifications_and_accreditations:
         heading: 'I would like an adviser with the following accreditations / qualifications:'
+        tooltip_html: |
+          Find out more about adviser accreditations/qualifications by clicking <a href="https://directory.moneyadviceservice.org.uk/en/glossary/#chartered_fp" target="_blank">here</a>.
         label: Filter by adviser qualification or accreditation
         url: '/en/glossary/#chartered_fp'
       qualification:

@@ -1,5 +1,3 @@
-<a href="<%= url if local_assigns[:url] %>" class="further-info__trigger" data-further-info-trigger>
-  <svg focusable="false" class="svg-icon further-info__svg-icon" xmlns="http://www.w3.org/2000/svg" style="">
-    <use xlink:href="#icon-tooltip"></use>
-  </svg>
+<a href="<%= url if local_assigns[:url] %>" class="icon--further-info" role="button" data-further-info-trigger aria-label="<%= t('global.further_information') %>">
+  i
 </a>
