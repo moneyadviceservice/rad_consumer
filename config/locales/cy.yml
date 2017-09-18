@@ -167,18 +167,22 @@ cy:
     links:
       - title: Amdanom ni
         url: https://www.moneyadviceservice.org.uk/cy/static/amdanom-ni
+      - title: Ein gwaith dyledion
+        url: https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work
       - title: Canolfan y cyfryngau
         url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
+      - title: Galluogrwydd Ariannol
+        url: http://www.fincap.org.uk/cymru
       - title: Partneriaid
         url: https://www.moneyadviceservice.org.uk/cy/categories/Partners
       - title: Swyddi
         url: https://www.moneyadviceservice.org.uk/cy/static/swyddi
-      - title: Ein gwaith dyledion
-        url: https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work
       - title: Offer a chyfrifianellau
         url: https://www.moneyadviceservice.org.uk/cy/categories/tools-and-calculators
-      - title: Your Money Advice blog
-        url: https://blog.moneyadviceservice.org.uk
+    new-window-label: Yn agor mewn ffenestr newydd
+    facebook-likes: Wedi hoffi
+    twitter-followers: Dilynwyr
+    youtube-views: Gwelwyd
 
   footer_secondary:
     accessin:

@@ -166,18 +166,22 @@ en:
     links:
       - title: About us
         url: https://www.moneyadviceservice.org.uk/en/static/about-us
+      - title: Our debt work
+        url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
       - title: Media centre
         url: https://www.moneyadviceservice.org.uk/en/static/media-centre
+      - title: Financial Capability
+        url: http://www.fincap.org.uk/
       - title: Partners
         url: https://www.moneyadviceservice.org.uk/en/categories/partners
       - title: Jobs
         url: https://www.moneyadviceservice.org.uk/en/static/jobs
-      - title: Our debt work
-        url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
       - title: Tools &amp; calculators
         url: https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators
-      - title: Your Money Advice blog
-        url: https://blog.moneyadviceservice.org.uk
+    new-window-label: Opens in a new window
+    facebook-likes: Likes
+    twitter-followers: Followers
+    youtube-views: Views
 
   footer_secondary:
     accessin:
