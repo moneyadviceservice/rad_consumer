@@ -11,6 +11,12 @@
         <%= t('contact_panels.webchat.directions') %>
       </p>
 
+      <ul class="t-chat-opening-times contact-panel__list unstyled-list">
+        <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.weekdays_html') %></li>
+        <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.saturday_html') %></li>
+        <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.sunday_html') %></li>
+      </ul>
+
       <div class="contact-panel__button-container" id="js-chat-cta">
         <div class="contact-panel__button button is-disabled t-chat-button">
           <%= t('contact_panels.webchat.default_status') %>
@@ -18,10 +24,5 @@
       </div>
     </div>
 
-    <ul class="t-chat-opening-times contact-panel__list unstyled-list">
-      <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.weekdays_html') %></li>
-      <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.saturday_html') %></li>
-      <li class="contact-panel__additional-info"><%= t('contact_panels.webchat.opening_hours.sunday_html') %></li>
-    </ul>
   </div>
 </div>
