@@ -150,6 +150,9 @@
   </script>
 </head>
 <body id="top">
+  <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
+  <%= render 'shared/svg/icon_sprite' %>
+  <!--<![endif]-->
   <% if Rails.env.production? %>
     <noscript>
       <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVFLH9" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe>
@@ -203,27 +206,27 @@
     if (sWOImage.width == 1) {
 
       var sWOChatElement = document.createElement('div');
-      var sWOChatElementText = document.createTextNode("Currently busy");
+      var sWOChatElementText = document.createTextNode("<%= t('contact_panels.webchat.busy.call_to_action') %>");
 
       sWOChatElement.className = "contact-panel__button button is-disabled t-chat-button";
       sWOChatElement.appendChild(sWOChatElementText);
 
       chatCTA.innerHTML = "";
       chatCTA.appendChild(sWOChatElement);
-      chatDescription.innerHTML = "Sorry, all of our advisers are currently busy. Please try again later.";
+      chatDescription.innerHTML = "<%= t('contact_panels.webchat.busy.description') %>";
 
       chatContent.className = "contact-panel__dynamic-content is-loaded";
 
     } else {
 
       var sWOChatElement = document.createElement('a');
-      var sWOChatElementText = document.createTextNode("Launch chat");
+      var sWOChatElementText = document.createTextNode("<%= t('contact_panels.webchat.available.call_to_action') %>");
       sWOChatElement.className = "contact-panel__button button t-chat-button";
       sWOChatElement.appendChild(sWOChatElementText);
 
       chatCTA.innerHTML = "";
       chatCTA.appendChild(sWOChatElement);
-      chatDescription.innerHTML = "Got a question? Our advisers will point you in the right direction.";
+      chatDescription.innerHTML = "<%= t('contact_panels.webchat.available.description') %>";
       chatContent.className = "contact-panel__dynamic-content is-loaded";
 
 

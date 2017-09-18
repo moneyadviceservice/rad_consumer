@@ -121,30 +121,47 @@ cy:
 
   contact_panels:
     webchat:
-      heading: Gwe-sgwrs
-      nojs_html: Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
-      directions: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
-      default_status: Ddim ar gael
-      opening_hours:
-        weekdays_html: Dydd Llun i Dydd Gwener, 8am i 8pm
-        saturday_html: Dydd Sadwrn, 9am i 1pm
-        sunday_html: Dydd Sul a Gwyliau Banc, ar gau
+      title: Gwe-sgwrs
+      available:
+        call_to_action: Lansio sgwrs
+        description: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
+      unavailable:
+        call_to_action: Ddim ar gael
+      busy:
+        call_to_action: Yn brysur ar hyn o bryd
+        description: Mae'n ddrwg gennym, mae pob un o'n cynghorwyr yn brysur ar hyn o bryd. Rhowch gynnig arall arni yn nes ymlaen.
+      javascript:
+        description_html: |
+          Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar
+          <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
+      offline:
+        call_to_action: All-lein
+        description: Gwe-sgwrs ar gael o %{hours}.
+      smallprint: Dim ond yn Saesneg mae gwe-sgwrsio ar gael.
+      bank_holiday_html: |
+        Dydd Sul a Gwyliau Banc, ar gau
+      offline_migration_html: Dydd Llun i Dydd Gwener, 8am i 8pm<br />Ar ddydd Sadwrn 06/02/2016 bydd gwaith cynnal a chadw’n golygu na fydd y We-sgwrs ar gael
     call_us:
-      heading: Ffoniwch ni
+      title: Ffoniwch ni
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
       telephone_number: 0800 138 0555
       telephone_number_url: tel:+448001380555
-      opening_hours:
+      opening_times:
         weekdays: Llun i Wener, 8am i 8pm
         saturday: Dydd Sadwrn, 9am i 1pm
-      smallprint_html: Mae galwadau am ddim.
-    social:
-      heading: Dilynwch ni
+        sunday: Dydd Sul a Gwyliau Banc, ar gau
+      opening_times_html: |
+        <ul class="contact-panel__list">
+          <li class="contact-panel__additional-info">Llun i Wener, 8am i 8pm</li>
+          <li class="contact-panel__additional-info">Dydd Sadwrn, 9am i 1pm</li>
+          <li class="contact-panel__additional-info">Dydd Sul a Gwyliau Banc, ar gau</li>
+        </ul>
+      smallprint: "Mae galwadau am ddim."
+    sharing:
+      title: Dilynwch ni
       description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
-      twitter: Twitter
-      facebook: Facebook
-      youtube: YouTube
-      contact_html: Am ragor o ffyrdd i gysylltu, ewch i'n tudalen <a href="/cy/static/cysylltu-a-ni">cysylltwch â ni</a>
+      more_info_html: |
+        Am ragor o ffyrdd i gysylltu, ewch i'n tudalen <a href="/cy/corporate/cysylltu-a-ni">cysylltwch â ni</a>
 
   footer_primary:
     links:
