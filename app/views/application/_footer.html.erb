@@ -1,21 +1,46 @@
 <footer class="l-footer">
   <div class="l-footer-primary t-footer-primary">
     <div class="l-constrained">
-      <nav role="navigation" aria-label="footer">
-        <ul class="footer-primary__list">
-          <% t('footer_primary.links').each do |item| %>
-          <li class="footer-primary__list-item">
-            <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
-          </li>
-          <% end %>
-        </ul>
-      </nav>
+      <%= render 'contact_methods/follow_us' %>
+      <div class="l-footer-primary__right">
+        <nav role="navigation" aria-label="footer">
+          <ul class="l-footer-primary__list">
+            <% t('footer_primary.links').each do |item| %>
+            <li class="footer-primary__list-item footer-primary__corporate-link">
+              <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
+            </li>
+            <% end %>
+          </ul>
+          <div class="footer-primary__blog">
+            <%= link_to 'Blog', 'https://blog.moneyadviceservice.org.uk', target: "_blank", class: 'footer-primary__blog-link' %>
+          </div>
+          <div class="footer-primary__clear-english">
+            <a
+              class="footer-primary__clear-english-link"
+              href="https://www.clearest.co.uk/silver-standard"
+              target="_blank"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon svg-icon--clear-english" aria-labelledby="clear-english-label" focusable="false">
+                <title id="clear-english-label">Clear English Standard Winning Website Silver Level</title>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-icon--clear-english"></use>
+              </svg>
+
+              <span class="icon icon--clear-english"></span>
+
+              <span class="footer-primary__clear-english-text">
+                <span>Clear English Standard</span>
+                <span>Winning Website</span>
+                <span>Silver Level</span>
+              </span>
+              <span class="visually-hidden">Clear English Award - <%= t('footer.new-window-label') %></span>
+            </a>
+          </div>
+        </nav>
+      </div>
     </div>
   </div>
-
   <div class="l-footer-secondary t-footer-secondary">
-    <div class="l-constrained">
-
+    <div class="l-footer-secondary--inner">
       <div class="l-footer-secondary__list--left">
         <ul class="footer-secondary__list">
           <li class="footer-secondary__list-item l-language-link">
@@ -24,7 +49,6 @@
               Cymraeg
             </a>
           </li>
-
           <li class="footer-secondary__list-item accessibility-feedback-link">
             <a class="footer-secondary__link" href="http://accessin.org/usersubmit_mas.php?param=nojscript"
                onclick="window.open('http://accessin.org/usersubmit_mas.php?param=' + window.location,'',
@@ -37,7 +61,6 @@
           </li>
         </ul>
       </div>
-
       <div class="l-footer-secondary__list--right">
         <ul class="footer-secondary__list">
           <% t('footer_secondary.links').each do |item| %>
@@ -47,7 +70,6 @@
           <% end %>
         </ul>
       </div>
-
     </div>
   </div>
 </footer>

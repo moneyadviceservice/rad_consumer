@@ -20,7 +20,7 @@ gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
-    tag: 'v5.22.0.286'
+    tag: 'v5.25.3.296'
 gem 'geocoder'
 gem 'kaminari'
 gem 'mas-rad_core', '0.1.2'

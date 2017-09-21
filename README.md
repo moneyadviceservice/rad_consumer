@@ -118,6 +118,15 @@ To run the javascript tests:
 $ node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run=true
 ```
 
+## Limitations
+
+As rad_consumer exists outside of the frontend project it is required that the frontend production CSS is linked to in order to inherit properties for the following elements:
+
+- Header Styles
+- Footer Styles
+- Layout (Constrained)
+- Colours
+
 ## Contributing
 1. Set up the application, run all the tests and ensure you can successfully run 
 the application

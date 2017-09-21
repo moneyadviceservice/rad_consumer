@@ -121,47 +121,67 @@ en:
 
   contact_panels:
     webchat:
-      heading: Web chat
-      nojs_html: Sorry, web chat is only available on <a href="http://www.enable-javascript.com/">internet browsers with JavaScript
-      directions: Got a question? Our advisers will point you in the right direction.
-      default_status: Unavailable
-      opening_hours:
-        weekdays_html: Monday to Friday, 8am&nbsp;to&nbsp;8pm
-        saturday_html: Saturday, 9am&nbsp;to&nbsp;1pm
-        sunday_html: Sunday and Bank Holidays, closed
+      title: Web chat
+      available:
+        call_to_action: Launch chat
+        description: Got a question? Our advisers will point you in the right direction.
+      unavailable:
+        call_to_action: Unavailable
+      busy:
+        call_to_action: Currently busy
+        description: Sorry, all of our advisers are currently busy. Please try again later.
+      javascript:
+        description_html: |
+          Sorry, web chat is only available on
+          <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
+      offline:
+        call_to_action: Offline
+        description: Web chat is available from %{hours}.
+      bank_holiday_html: |
+        Sunday and Bank Holidays, closed
+      offline_migration_html: Monday to Friday, 8am to 8pm<br />On Saturday 06/02/2016 Web chat will be unavailable due to maintenance
     call_us:
-      heading: Call us
+      title: Call us
       description: Give us a call for free and impartial money advice.
       telephone_number: 0800 138 7777
       telephone_number_url: tel:+448001387777
-      opening_hours:
+      opening_times:
         weekdays: Monday to Friday, 8am to 8pm
         saturday: Saturday, 9am to 1pm
-      smallprint_html: Calls are free.
-    social:
-      heading: Follow us
+        sunday: Sunday and Bank Holidays, closed
+      opening_times_html: |
+        <ul class="contact-panel__list">
+          <li class="contact-panel__additional-info">Monday to Friday, 8am to 8pm</li>
+          <li class="contact-panel__additional-info">Saturday, 9am to 1pm</li>
+          <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
+        </ul>
+      smallprint: "Calls are free."
+    sharing:
+      title: Follow us
       description: Get up-to-date money advice from Twitter, Facebook and YouTube.
-      twitter: Twitter
-      facebook: Facebook
-      youtube: YouTube
-      contact_html: For more ways to get in touch, go to our <a href="https://www.moneyadviceservice.org.uk/en/static/contact-us">contact us</a> page.
+      more_info_html: |
+        For more ways to get in touch, go to our <a href="/en/corporate/contact-us">contact us</a> page.
 
   footer_primary:
     links:
       - title: About us
         url: https://www.moneyadviceservice.org.uk/en/static/about-us
+      - title: Our debt work
+        url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
       - title: Media centre
         url: https://www.moneyadviceservice.org.uk/en/static/media-centre
+      - title: Financial Capability
+        url: http://www.fincap.org.uk/
       - title: Partners
         url: https://www.moneyadviceservice.org.uk/en/categories/partners
       - title: Jobs
         url: https://www.moneyadviceservice.org.uk/en/static/jobs
-      - title: Our debt work
-        url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
       - title: Tools &amp; calculators
         url: https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators
-      - title: Your Money Advice blog
-        url: https://blog.moneyadviceservice.org.uk
+    new-window-label: Opens in a new window
+    facebook-likes: Likes
+    twitter-followers: Followers
+    youtube-views: Views
 
   footer_secondary:
     accessin:
