@@ -25,14 +25,14 @@
 %>
 
 <% if svg_fallback_support %>
-<span class="<%= no_svg_icon_class %>">
+  <span class="<%= no_svg_icon_class %>">
 <% end %>
 <svg xmlns="http://www.w3.org/2000/svg" class="<%= svg_icon_class %>" focusable="false" <%= accessibility_title %>>
   <use xlink:href="#svg-icon--<%= local_assigns[:icon] %>"></use>
 </svg>
 <% if accessibility_description.length > 0 %>
-<span class="visually-hidden"><%= accessibility_description %></span>
+  <span class="visually-hidden"><%= accessibility_description %></span>
 <% end %>
 <% if svg_fallback_support %>
-</span>
+  </span>
 <% end %>
