@@ -44,9 +44,7 @@ cy:
       remote:
         header: Cynghorwyr dros y ffôn neu ar-lein yn unig
         text:
-          part_one: "Rydych wedi dewis cwmni sy’n cynnig cyngor"
-          part_two: dros y ffôn neu ar-lein yn unig
-          part_three: "Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch."
+          part_one: "Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch."
       recently_visited:
         header: CwmnÏau eraill yr edrychoch arnynt
         remote: Dros y ffôn neu ar-lein yn unig

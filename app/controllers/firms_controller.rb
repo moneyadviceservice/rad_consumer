@@ -6,7 +6,7 @@ class FirmsController < ApplicationController
     @advisers = sort_advisers(@search_form, @firm.advisers)
     @firm.closest_adviser = closest_adviser
     @latitude, @longitude = @search_form.coordinates
-
+    @firm_profile_presenter = FirmProfilePresenter.new(@firm)
     store_recently_visited_firm
   end
 
