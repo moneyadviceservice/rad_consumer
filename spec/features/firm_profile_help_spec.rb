@@ -6,6 +6,7 @@ RSpec.feature 'Help section on a firm profile', :vcr do
       given_firm_with_offices
       when_i_view_the_firm_profile
       then_i_should_see_how_near_adviser_text
+      then_i_should_not_see_phone_or_online_text
     end
   end
 
@@ -14,6 +15,7 @@ RSpec.feature 'Help section on a firm profile', :vcr do
       given_firm_without_offices
       when_i_view_the_remote_firm_profile
       then_i_should_see_phone_or_online_text
+      then_i_should_not_see_how_near_adviser_text
     end
   end
 
@@ -52,11 +54,17 @@ RSpec.feature 'Help section on a firm profile', :vcr do
 
   def then_i_should_see_how_near_adviser_text
     expect(profile_page.side_info).to have_content('How near is your adviser?')
+  end
+
+  def then_i_should_not_see_phone_or_online_text
     expect(profile_page.side_info).not_to have_content('Phone or online only advisers')
+  end
+
+  def then_i_should_not_see_how_near_adviser_text
+    expect(profile_page.side_info).not_to have_content('How near is your adviser?')
   end
 
   def then_i_should_see_phone_or_online_text
     expect(profile_page.side_info).to have_content('Phone or online only advisers')
-    expect(profile_page.side_info).not_to have_content('How near is your adviser?')
   end
 end
