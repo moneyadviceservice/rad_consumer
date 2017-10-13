@@ -1,0 +1,8 @@
+<%= heading_tag(t("firms.show.#{type_of_advice_method}.header"),
+                level: 3,
+                class: 'l-firm__heading l-firm__heading--collapse') %>
+<p>
+  <%= t("firms.show.#{type_of_advice_method}.text").html_safe %>
+
+  <%= render 'firms/partials/guide_link' %>
+</p>
