@@ -1,5 +1,4 @@
 class SearchFormSerializer < ActiveModel::Serializer
-  self.root = false
   include SearchFormSort
 
   attributes :sort, :query
