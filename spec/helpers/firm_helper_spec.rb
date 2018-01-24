@@ -186,12 +186,12 @@ RSpec.describe FirmHelper, type: :helper do
 
     context 'when passed list of 3 letter language codes' do
       it 'returns English and the given codes translated to their common names' do
-        expect(firm_language_list(%w(spa por aae)))
+        expect(firm_language_list(%w[spa por aae]))
           .to match_array(['Spanish', 'Portuguese', 'Arbëreshë Albanian'])
       end
 
       it 'returns the list alphabetically sorted' do
-        expect(firm_language_list(%w(spa por aae)))
+        expect(firm_language_list(%w[spa por aae]))
           .to eq(['Arbëreshë Albanian', 'Portuguese', 'Spanish'])
       end
     end
@@ -206,10 +206,10 @@ RSpec.describe FirmHelper, type: :helper do
       ]
 
       expect(helper.recently_visited_firms).to eql([
-        { 'id' => 1 },
-        { 'id' => 2 },
-        { 'id' => 3 }
-      ])
+                                                     { 'id' => 1 },
+                                                     { 'id' => 2 },
+                                                     { 'id' => 3 }
+                                                   ])
     end
   end
 

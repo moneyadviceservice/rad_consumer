@@ -1,5 +1,8 @@
 Documentation:
   Enabled: false
+Metrics/BlockLength:
+  Exclude:
+  - '**/*_spec.rb'
 Metrics/ClassLength:
   Max: 120
 Metrics/LineLength:
@@ -33,7 +36,6 @@ Style/StringLiterals:
 Lint/ShadowingOuterLocalVariable:
   Enabled: false
 AllCops:
-  RunRailsCops: true
   Exclude:
   - 'bin/**/*'
   - 'config/**/*'

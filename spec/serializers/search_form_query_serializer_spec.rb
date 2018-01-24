@@ -90,9 +90,9 @@ RSpec.describe SearchFormSerializer do
 
       it 'includes a filter for the types of advice' do
         expect(query_hash).to eq(bool: { must: [
-          { range: { pension_transfer: { gt: 0 } } },
-          { range: { wills_and_probate: { gt: 0 } } }
-        ] })
+                                   { range: { pension_transfer: { gt: 0 } } },
+                                   { range: { wills_and_probate: { gt: 0 } } }
+                                 ] })
       end
     end
 

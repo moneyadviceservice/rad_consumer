@@ -86,7 +86,7 @@ There are additional notes on Elasticsearch tasks on the [MAS wiki](https://masw
 For the firm profile maps to work, you will need to provide a Google Maps API
 key in `.env`. You can find an example at `.env.example`.
 
-### Sharia and Ethical Investment
+### Sharia and Ethical Investment
 
 The search option provides a filter for targeting sharia and ethical investment
 firms. These investment search options can be activated for the RAD Consumer

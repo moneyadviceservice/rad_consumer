@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 RSpec.describe SearchForm do
   describe 'advice method predicates' do
     let(:form) { described_class.new(advice_method: advice_method) }
@@ -94,7 +93,7 @@ RSpec.describe SearchForm do
     context 'multiple flags set' do
       let(:types_of_advice) { { pension_transfer: '1', inheritance_tax_planning: '1' } }
       it 'contains both flag' do
-        expect(form.types_of_advice).to eql([:pension_transfer, :inheritance_tax_planning])
+        expect(form.types_of_advice).to eql(%i[pension_transfer inheritance_tax_planning])
       end
     end
   end
@@ -182,14 +181,13 @@ RSpec.describe SearchForm do
       let(:services) do
         { sharia_investing_flag: '1',
           ethical_investing_flag: '1',
-          setting_up_workplace_pension_flag: '1'
-        }
+          setting_up_workplace_pension_flag: '1' }
       end
 
       it 'contains both flag' do
-        expect(form.services).to eql([:ethical_investing_flag,
-                                      :sharia_investing_flag,
-                                      :workplace_financial_advice_flag])
+        expect(form.services).to eql(%i[ethical_investing_flag
+                                        sharia_investing_flag
+                                        workplace_financial_advice_flag])
       end
     end
   end
@@ -316,16 +314,17 @@ RSpec.describe SearchForm do
     end
 
     it 'returns the any size option as the first element' do
-      expect(form.options_for_pension_pot_sizes.first).to eql([
+      expected = [
         I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
-      ])
+      ]
+      expect(form.options_for_pension_pot_sizes.first).to eql(expected)
     end
   end
 
   describe '#options_for_languages' do
     let(:form) { described_class.new }
 
-    before { allow(Firm).to receive(:languages_used).and_return(%w(sco swe de)) }
+    before { allow(Firm).to receive(:languages_used).and_return(%w[sco swe de]) }
 
     it 'returns the LanguageInfo for each iso_639_3 code sorted by common name' do
       german = LanguageList::LanguageInfo.find 'de'
@@ -343,7 +342,8 @@ RSpec.describe SearchForm do
       Qualification.create(id: 2, order: 3, name: 'Chartered Financial Planner')
       Qualification.create(id: 3, order: 4, name: 'Certified Financial Planner')
       Qualification.create(
-        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent')
+        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent'
+      )
 
       Accreditation.create(id: 4, order: 1, name: 'SOLLA')
       Accreditation.create(id: 5, order: 2, name: 'Later Life Academy')
@@ -357,7 +357,7 @@ RSpec.describe SearchForm do
           ['Chartered Financial Planner', 'q2'],
           ['ISO 22222', 'a6'],
           ['Later Life Academy', 'a5'],
-          %w(SOLLA a4) # Rubocop expects %w for this row
+          %w[SOLLA a4] # Rubocop expects %w for this row
         ]
         expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
       end

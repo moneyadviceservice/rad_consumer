@@ -103,7 +103,6 @@ RSpec.feature 'Consumer views a search result',
            latitude: 51.428473,
            longitude: -0.943616,
            accreditations: accreditations.map { |i| create(:accreditation, order: i) },
-           qualifications: qualifications.map { |i| create(:qualification, order: i) }
-          )
+           qualifications: qualifications.map { |i| create(:qualification, order: i) })
   end
 end

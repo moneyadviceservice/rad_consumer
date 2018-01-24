@@ -1,9 +1,9 @@
 module Filters
   module Service
-    OTHER_SERVICES = [:ethical_investing_flag, :sharia_investing_flag, :non_uk_residents_flag]
-    WORKPLACE_SERVICES = [:setting_up_workplace_pension_flag,
-                          :existing_workplace_pension_flag,
-                          :advice_for_employees_flag]
+    OTHER_SERVICES = %i[ethical_investing_flag sharia_investing_flag non_uk_residents_flag].freeze
+    WORKPLACE_SERVICES = %i[setting_up_workplace_pension_flag
+                            existing_workplace_pension_flag
+                            advice_for_employees_flag].freeze
 
     attr_accessor(*OTHER_SERVICES)
     attr_accessor(*WORKPLACE_SERVICES)

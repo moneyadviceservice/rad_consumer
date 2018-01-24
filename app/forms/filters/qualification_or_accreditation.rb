@@ -29,7 +29,7 @@ module Filters
     end
 
     def filters_for(model)
-      key_to_i = -> (k, v) { [k.to_s.to_i, v] }
+      key_to_i = ->(k, v) { [k.to_s.to_i, v] }
       I18n.t("search.filter.#{model.model_name.i18n_key}.ordinal").map(&key_to_i).to_h
     end
 

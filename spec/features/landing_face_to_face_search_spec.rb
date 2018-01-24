@@ -72,16 +72,14 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
                        postcode: 'RG2 8EE',
                        latitude: 51.428473,
                        longitude: -0.943616,
-                       travel_distance: 100
-                      )
+                       travel_distance: 100)
 
       @first = create(:adviser,
                       firm: create(:firm, registered_name: 'AAA'),
                       postcode: 'RG2 8EE',
                       latitude: 51.428473,
                       longitude: -0.943616,
-                      travel_distance: 100
-                     )
+                      travel_distance: 100)
 
       @leicester = create(:adviser, postcode: 'LE1 6SL', latitude: 52.633013, longitude: -1.131257, travel_distance: 650)
       @glasgow   = create(:adviser, postcode: 'G1 5QT', latitude: 55.856191, longitude: -4.247082, travel_distance: 10)
@@ -112,10 +110,10 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
 
   def and_the_firms_are_ordered_by_distance_and_name
     expect(results_page.firm_names).to eql([
-      @first.firm.registered_name,
-      @second.firm.registered_name,
-      @leicester.firm.registered_name
-    ])
+                                             @first.firm.registered_name,
+                                             @second.firm.registered_name,
+                                             @leicester.firm.registered_name
+                                           ])
   end
 
   def when_i_submit_a_invalid_postcode_search

@@ -132,7 +132,7 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   FilterOption = Struct.new(:order, :name)
 
   def enabled_options_for(model)
-    to_obj = -> (k, v) { FilterOption.new(k.to_s.to_i, v) }
+    to_obj = ->(k, v) { FilterOption.new(k.to_s.to_i, v) }
     I18n.t("search.filter.#{model.model_name.i18n_key}.ordinal").map(&to_obj)
   end
 
@@ -151,7 +151,6 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
            latitude: 55.9469408,
            longitude: -3.2017516,
            accreditations: accreditations.map { |opt| ord_to_accreditation[opt.order] },
-           qualifications: qualifications.map { |opt| ord_to_qualification[opt.order] }
-          )
+           qualifications: qualifications.map { |opt| ord_to_qualification[opt.order] })
   end
 end

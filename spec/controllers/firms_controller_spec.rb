@@ -26,7 +26,8 @@ RSpec.describe FirmsController, type: :controller do
     it "creates a search form with search_form params and the firm's id" do
       VCR.use_cassette(:geocode_search_form_postcode) do
         allow(SearchForm).to receive(:new).and_return(
-          double(to_query: {}, coordinates: [51.5, -0.1], face_to_face?: true))
+          double(to_query: {}, coordinates: [51.5, -0.1], face_to_face?: true)
+        )
         get :show, id: firm.id, locale: :en, search_form: search_form_params
 
         expected_params = search_form_params.merge('firm_id' => firm.id.to_s)
