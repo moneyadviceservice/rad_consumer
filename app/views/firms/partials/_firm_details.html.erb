@@ -67,8 +67,8 @@
   <%= heading_tag(t('firms.show.panels.firm.locations'), level: 3, class: 'l-firm__heading is-hidden-no-js') %>
 
   <%= firm_map_component(center: {lat: latitude, lng: longitude},
-        adviserPinUrl: image_path('pins/adviser.png'),
-        officePinUrl: image_path('pins/office.png')) do %>
+        adviser_pin_url: image_path('pins/adviser.png'),
+        office_pin_url: image_path('pins/office.png')) do %>
     <div class="firm__map" data-dough-map></div>
 
     <ul class="firm__map-pin-items is-hidden">

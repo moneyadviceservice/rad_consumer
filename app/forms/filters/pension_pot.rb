@@ -1,6 +1,6 @@
 module Filters
   module PensionPot
-    ANY_SIZE_VALUE = 'any'
+    ANY_SIZE_VALUE = 'any'.freeze
 
     attr_accessor :pension_pot_size
 

@@ -83,6 +83,6 @@ RSpec.feature 'Firm profile advisers tab', vcr: vcr_options_for_feature(:firm_pr
   end
 
   def and_they_should_be_ordered_alphabetically
-    expect(profile_page.advisers.map { |a| a.name.text }).to eq(%w(A B C))
+    expect(profile_page.advisers.map { |a| a.name.text }).to eq(%w[A B C])
   end
 end

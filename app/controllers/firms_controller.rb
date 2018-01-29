@@ -36,7 +36,7 @@ class FirmsController < ApplicationController
     if search_form.face_to_face?
       Geosort.by_distance(search_form.coordinates, advisers)
     else
-      advisers.sort { |a1, a2| a1.name <=> a2.name }
+      advisers.sort_by(&:name)
     end
   end
 end

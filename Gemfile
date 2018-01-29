@@ -9,9 +9,9 @@ ruby '2.2.2'
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '~> 4.2.5.2'
+gem 'rails', '~> 4.2.10'
 
-gem 'active_model_serializers'
+gem 'active_model_serializers', '~> 0.10.7'
 gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
@@ -23,9 +23,9 @@ gem 'dough-ruby',
     tag: 'v5.25.3.296'
 gem 'geocoder'
 gem 'kaminari'
-gem 'mas-rad_core', '0.1.2'
-gem 'pg'
-gem 'rollbar'
+gem 'mas-rad_core', '~> 0.1.4'
+gem 'pg', '< 1.0'
+gem 'rollbar', '~> 2.15.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 

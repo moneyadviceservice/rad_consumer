@@ -1,13 +1,13 @@
 module Filters
   module TypeOfAdvice
-    TYPES_OF_ADVICE = [
-      :pension_transfer,
-      :retirement_income_products,
-      :options_when_paying_for_care,
-      :equity_release,
-      :inheritance_tax_planning,
-      :wills_and_probate
-    ]
+    TYPES_OF_ADVICE = %i[
+      pension_transfer
+      retirement_income_products
+      options_when_paying_for_care
+      equity_release
+      inheritance_tax_planning
+      wills_and_probate
+    ].freeze
 
     attr_accessor(*TYPES_OF_ADVICE)
 

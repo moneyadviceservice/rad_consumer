@@ -1,11 +1,15 @@
 language: ruby
 sudo: false
 cache: bundler
-dist: precise
+dist: trusty
 rvm:
   - 2.2.2
+node_js:
+  - "node"
 services:
   - elasticsearch
+before_install:
+  - curl -O https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb && sudo dpkg -i --force-confnew elasticsearch-1.7.3.deb && sudo service elasticsearch restart
 before_script:
   - cp config/example.database.yml config/database.yml
   - psql -c "create database rad_test;" -U postgres

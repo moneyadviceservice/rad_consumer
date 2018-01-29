@@ -17,14 +17,14 @@ module ApplicationHelper
     end
   end
 
-  def firm_map_component(center:, adviserPinUrl:, officePinUrl:)
+  def firm_map_component(center:, adviser_pin_url:, office_pin_url:)
     options = {
       'data-dough-component': 'FirmMap',
       'data-dough-firm-map-config': {
         apiKey: ENV['GOOGLE_MAPS_API_KEY'],
         center: center,
-        adviserPinUrl: adviserPinUrl,
-        officePinUrl: officePinUrl
+        adviserPinUrl: adviser_pin_url,
+        officePinUrl: office_pin_url
       }.to_json
     }
     content_tag :div, options do

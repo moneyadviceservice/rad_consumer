@@ -1,11 +1,12 @@
 module Filters
   module AdviceMethod
-    ADVICE_METHOD_FACE_TO_FACE     = 'face_to_face'
-    ADVICE_METHOD_PHONE_OR_ONLINE  = 'phone_or_online'
-    ADVICE_METHOD_FIRM_NAME_SEARCH = 'firm_name_search'
-    NONE                           = 'none'
+    ADVICE_METHOD_FACE_TO_FACE     = 'face_to_face'.freeze
+    ADVICE_METHOD_PHONE_OR_ONLINE  = 'phone_or_online'.freeze
+    ADVICE_METHOD_FIRM_NAME_SEARCH = 'firm_name_search'.freeze
+    NONE                           = 'none'.freeze
 
-    attr_accessor :advice_method, :postcode, :coordinates, :firm_name
+    attr_accessor :advice_method, :firm_name
+    attr_writer :coordinates, :postcode
 
     def firm_name_search?
       advice_method == ADVICE_METHOD_FIRM_NAME_SEARCH
