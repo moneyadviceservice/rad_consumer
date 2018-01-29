@@ -23,4 +23,10 @@ RSpec.describe ApplicationHelper, type: :helper do
       end
     end
   end
+
+  describe '#load_modernizr' do
+    it 'returns raw text of Modernizr library' do
+      expect(helper.load_modernizr).to match(/Modernizr/)
+    end
+  end
 end
