@@ -35,4 +35,8 @@ module ApplicationHelper
   def feature_enabled?(flag_name)
     ENV[flag_name] == 'true'
   end
+
+  def load_modernizr
+    Sprockets::Railtie.build_environment(Rails.application, true)['modernizr/modernizr'].to_s.html_safe
+  end
 end
