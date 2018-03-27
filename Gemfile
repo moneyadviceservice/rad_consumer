@@ -35,6 +35,7 @@ group :assets do
 end
 
 group :development, :test do
+  gem 'brakeman', require: false
   gem 'capybara'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'site_prism'
   gem 'spring', '1.3.6'
+  gem 'tzinfo-data'
 end
 
 group :test do
