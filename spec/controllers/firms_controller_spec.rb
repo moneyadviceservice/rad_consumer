@@ -13,7 +13,7 @@ RSpec.describe FirmsController, type: :controller do
       allow(FirmRepository).to receive(:new).and_return(firm_repository)
       allow(firm_repository).to receive(:find).and_return(firm_result)
       allow(FirmResult).to receive(:new).and_return(firm_result)
-      allow_any_instance_of(RadConsumerSession).to receive(:store)
+      allow_any_instance_of(SessionJar).to receive(:store)
     end
 
     it 'successfully renders the show page' do
@@ -98,7 +98,7 @@ RSpec.describe FirmsController, type: :controller do
           'action' => 'show'
         }
 
-        expect_any_instance_of(RadConsumerSession)
+        expect_any_instance_of(SessionJar)
           .to receive(:store).with(firm_result, expected_params)
         get :show, id: firm.id, locale: :en, search_form: search_form_params
       end

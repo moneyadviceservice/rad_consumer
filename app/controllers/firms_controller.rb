@@ -24,12 +24,12 @@ class FirmsController < ApplicationController
     @advisers.first.try(:distance)
   end
 
-  def rad_consumer_session
-    @rad_consumer_session ||= RadConsumerSession.new(session)
+  def session_jar
+    @session_jar ||= SessionJar.new(session)
   end
 
   def store_recently_visited_firm
-    rad_consumer_session.store(@firm, params)
+    session_jar.store(@firm, params)
   end
 
   def sort_advisers(search_form, advisers)

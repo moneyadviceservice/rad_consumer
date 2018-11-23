@@ -21,12 +21,15 @@ gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
     tag: 'v5.25.3.296'
-gem 'geocoder'
+gem 'geocoder', '~> 1.4.7'
+gem 'httpclient', '~> 2.8.3'
 gem 'kaminari'
-gem 'mas-rad_core', '~> 0.1.5'
+gem 'language_list', '~> 1.2.1'
 gem 'pg', '< 1.0'
+gem 'redis', '~> 3.3.5'
 gem 'rollbar', '~> 2.15.5'
 gem 'uglifier', '>= 1.3.0'
+gem 'uk_phone_numbers', '~> 0.1.1'
 gem 'unicorn'
 
 group :assets do
