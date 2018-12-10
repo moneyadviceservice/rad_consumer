@@ -24,6 +24,15 @@ module ElasticSearchHelper
   end
 
   def index_all!
-    Firm.all.map(&:notify_indexer)
+    Firm.find_each do |firm|
+      json = FirmSerializer.new(firm).as_json
+      path = "#{firm.model_name.plural}/#{firm.to_param}"
+
+      client.store(path, json)
+    end
+  end
+
+  def client
+    @client ||= ElasticSearchClient.new
   end
 end
