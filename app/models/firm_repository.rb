@@ -1,9 +1,8 @@
 class FirmRepository
-  attr_reader :client, :serializer
+  attr_reader :client
 
-  def initialize(client = ElasticSearchClient, serializer = FirmSerializer)
-    @client     = client.new
-    @serializer = serializer
+  def initialize(client = ElasticSearchClient)
+    @client = client.new
   end
 
   def find(firm)
@@ -15,8 +14,6 @@ class FirmRepository
     response = client.search("firms/_search?from=#{from_for(page)}", query)
     SearchResult.new(response, page: page)
   end
-
-  private
 
   def from_for(page)
     return 0 if page == 1
