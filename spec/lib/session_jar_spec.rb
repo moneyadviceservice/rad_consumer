@@ -1,4 +1,4 @@
-RSpec.describe RadConsumerSession do
+RSpec.describe SessionJar do
   def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1, 2])
     result = FirmResult.new('_source' => {
                               '_id' => id,

@@ -1,5 +1,5 @@
 class Adviser < ActiveRecord::Base
-  scope :geocoded, -> { where.not(latitude: nil, longitude: nil) }
+  include Geocodable
 
   belongs_to :firm
 

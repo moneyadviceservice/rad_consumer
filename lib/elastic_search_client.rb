@@ -6,13 +6,6 @@ class ElasticSearchClient
     @server = ENV.fetch('BONSAI_URL', 'http://localhost:9200')
   end
 
-  def store(path, json)
-    log("PUT /#{path}\nRequest Body: #{json}")
-
-    res = http.put(uri_for(path), JSON.generate(json))
-    res.ok?
-  end
-
   def search(path, json = '')
     log("POST /#{path}\nRequest Body: #{json}")
 

@@ -23,20 +23,10 @@ RSpec.describe ElasticSearchClient do
     end
   end
 
-  describe '#store' do
-    context 'when successful' do
-      it 'returns truthily' do
-        VCR.use_cassette('elasticsearch/store_firm_1') do
-          expect(described_class.new.store('firms/1', {})).to be_truthy
-        end
-      end
-    end
-  end
-
   describe '#search' do
     context 'when successful' do
-      it 'returns an OK status' do
-        VCR.use_cassette('elasticsearch/search_firms') do
+      it 'returns an OK status', :localhost_vcr do
+        VCR.use_cassette('search_firms') do
           expect(described_class.new.search('firms/_search')).to be_ok
         end
       end
@@ -45,8 +35,8 @@ RSpec.describe ElasticSearchClient do
 
   describe '#find' do
     context 'when successful' do
-      it 'returns an OK status' do
-        VCR.use_cassette('elasticsearch/find_firm') do
+      it 'returns an OK status', :localhost_vcr do
+        VCR.use_cassette('find_firm') do
           expect(described_class.new.find('firms/257')).to be_ok
         end
       end

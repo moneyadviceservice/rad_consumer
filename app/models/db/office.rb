@@ -1,5 +1,5 @@
 class Office < ActiveRecord::Base
-  belongs_to :firm
+  include Geocodable
 
-  scope :geocoded, -> { where.not(latitude: nil, longitude: nil) }
+  belongs_to :firm
 end

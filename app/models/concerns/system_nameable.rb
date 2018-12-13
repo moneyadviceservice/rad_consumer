@@ -1,9 +1,7 @@
 module SystemNameable
-  def self.included(base)
-    base.extend(ClassMethods)
-  end
+  extend ActiveSupport::Concern
 
-  module ClassMethods
+  class_methods do
     def system_name(id)
       order = find(id).order
       self::SYSTEM_NAMES.fetch(order, :not_found)
