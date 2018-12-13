@@ -16,6 +16,6 @@ class OfficeResult
     @telephone_number = data['telephone_number']
     @disabled_access  = data['disabled_access']
     @location = Location.new data['location']['lat'], data['location']['lon']
-    @website          = data['website']
+    @website = data['website']
   end
 end

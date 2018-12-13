@@ -29,5 +29,5 @@ module Paginateable
     10
     # MAS::RadCore::PAGE_SIZE
   end
-  alias :limit_value :page_size
+  alias limit_value page_size
 end

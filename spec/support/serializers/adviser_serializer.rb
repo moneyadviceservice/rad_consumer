@@ -1,5 +1,4 @@
 class AdviserSerializer < ActiveModel::Serializer
-
   attributes :_id, :name, :postcode, :range, :location, :range_location, :qualification_ids, :accreditation_ids
 
   def _id

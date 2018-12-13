@@ -22,14 +22,13 @@ gem 'dough-ruby',
     require: 'dough',
     tag: 'v5.25.3.296'
 gem 'geocoder'
-gem 'kaminari'
-# gem 'mas-rad_core', '~> 0.1.5'
-gem 'uk_phone_numbers'
-gem 'language_list'
 gem 'httpclient'
+gem 'kaminari'
+gem 'language_list'
 gem 'pg', '< 1.0'
 gem 'rollbar', '~> 2.15.5'
 gem 'uglifier', '>= 1.3.0'
+gem 'uk_phone_numbers'
 gem 'unicorn'
 
 group :assets do
