@@ -13,7 +13,7 @@ before_install:
 before_script:
   - cp config/example.database.yml config/database.yml
   - psql -c "create database rad_test;" -U postgres
-  - bundle exec rake db:migrate
+  - bundle exec rake db:schema:load
   - npm install
   - npm install -g bower karma-cli
   - bundle exec bowndler update
