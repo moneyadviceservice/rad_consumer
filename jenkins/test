@@ -37,7 +37,6 @@ function info {
 run npm install --quiet
 run bundle install --quiet
 run bundle update brakeman --quiet
-run mv config/jenk{.example,}.yml
 run bundle exec rake db:drop db:setup
 run bundle exec rspec
 run bundle exec ./node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run

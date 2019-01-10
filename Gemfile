@@ -15,9 +15,6 @@ gem 'active_model_serializers', '~> 0.10.7'
 gem 'activerecord-session_store'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
-gem 'brakeman', '~> 4.3.0', require: false
-gem 'danger', require: false
-gem 'danger-rubocop', require: false
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
 # is the same as the Gem version.
 gem 'dough-ruby',
@@ -50,7 +47,11 @@ group :development, :test do
 end
 
 group :test do
+  gem 'brakeman', '~> 4.3.0', require: false
+  gem 'danger', require: false
+  gem 'danger-rubocop', require: false  
   gem 'faker'
+  gem 'tzinfo-data'
   gem 'vcr'
   gem 'webmock'
 end
