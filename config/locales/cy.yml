@@ -181,6 +181,10 @@ cy:
     facebook-likes: Wedi hoffi
     twitter-followers: Dilynwyr
     youtube-views: Gwelwyd
+    copyright:
+      copyright: Hawlfraint
+      organisation: The Money Advice Service
+      address: 120 Holborn, London EC1N 2TD
 
   footer_secondary:
     accessin:

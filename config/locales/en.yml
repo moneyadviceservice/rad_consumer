@@ -179,6 +179,10 @@ en:
     facebook-likes: Likes
     twitter-followers: Followers
     youtube-views: Views
+    copyright:
+      copyright: Copyright
+      organisation: The Money Advice Service
+      address: 120 Holborn, London EC1N 2TD
 
   footer_secondary:
     accessin:
