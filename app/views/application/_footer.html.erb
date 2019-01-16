@@ -37,6 +37,8 @@
           </div>
         </nav>
       </div>
+      <p class="footer-primary__copyright">&copy; <%= "#{t('footer_primary.copyright.copyright')} #{DateTime.now.year} #{t('footer_primary.copyright.organisation')} #{t('footer_primary.copyright.address')}" %>
+      </p>
     </div>
   </div>
   <div class="l-footer-secondary t-footer-secondary">
@@ -59,12 +61,23 @@
               <span class="visually-hidden"><%= t('footer_secondary.accessin.hidden_text') %></span>
             </a>
           </li>
+          <li class="footer-secondary__list-item">
+            <a class="footer-secondary__link footer-secondary__sfgb-link" href="https://singlefinancialguidancebody.org.uk/" target="_blank">
+              <span class="footer-secondary__sfgb-text">
+                <span><%= t('footer_secondary.sfgb.part_of') %></span>
+                <span><strong><%= t('footer_secondary.sfgb.single_financial') %></strong></span>
+                <span><strong><%= t('footer_secondary.sfgb.guidance_body') %></strong></span>
+              </span>
+              <%= image_tag('sfgb-logo.png', class: 'footer-secondary__sfgb-logo', alt: "#{t('footer_secondary.sfgb.single_financial')} #{t('footer_secondary.sfgb.guidance_body')} logo") %>
+              <span class="visually-hidden"><%= t('footer_secondary.sfgb.hidden_text') %></span>
+            </a>
+          </li>
         </ul>
       </div>
       <div class="l-footer-secondary__list--right">
         <ul class="footer-secondary__list">
           <% t('footer_secondary.links').each do |item| %>
-          <li class="footer-secondary__list-item">
+          <li class="footer-secondary__list-item footer-secondary__link-item">
             <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
           </li>
           <% end %>

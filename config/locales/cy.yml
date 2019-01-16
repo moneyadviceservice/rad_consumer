@@ -181,18 +181,27 @@ cy:
     facebook-likes: Wedi hoffi
     twitter-followers: Dilynwyr
     youtube-views: Gwelwyd
+    copyright:
+      copyright: Hawlfraint
+      organisation: The Money Advice Service
+      address: 120 Holborn, London EC1N 2TD
 
   footer_secondary:
     accessin:
       button: Adrodd ar broblem hygyrchedd
       hidden_text: Ffurflen adborth yn agor mewn ffenestr newydd
+    sfgb:
+      part_of: Rhan o'r
+      single_financial: Corff Sengl ar
+      guidance_body: Ganllawiau Ariannol
+      hidden_text: Yn agor mewn ffenestr newydd
     links:
       - title: Cysylltu â ni
         url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
       - title: Amodau a Thelerau
         url: https://www.moneyadviceservice.org.uk/cy/static/telerau-ac-amodau
-      - title: Preifatrwydd
-        url: https://www.moneyadviceservice.org.uk/cy/static/polisipreifatrwydd
+      - title: Rhybudd preifatrwydd
+        url: https://www.moneyadviceservice.org.uk/cy/corporate/polisipreifatrwydd
       - title: Hygyrchedd
         url: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
       - title: Cwcis

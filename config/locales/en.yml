@@ -179,18 +179,27 @@ en:
     facebook-likes: Likes
     twitter-followers: Followers
     youtube-views: Views
+    copyright:
+      copyright: Copyright
+      organisation: The Money Advice Service
+      address: 120 Holborn, London EC1N 2TD
 
   footer_secondary:
     accessin:
       button: Report an accessibility problem
       hidden_text: Feedback form opens in a new window
+    sfgb:
+      part_of: Part of the
+      single_financial: Single Financial
+      guidance_body: Guidance Body
+      hidden_text: Opens in a new window
     links:
       - title: Contact us
         url: https://www.moneyadviceservice.org.uk/en/static/contact-us
       - title: Terms &amp; conditions
         url: https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions
-      - title: Privacy
-        url: https://www.moneyadviceservice.org.uk/en/static/privacy
+      - title: Privacy notice
+        url: https://www.moneyadviceservice.org.uk/en/corporate/privacy
       - title: Accessibility
         url: https://www.moneyadviceservice.org.uk/en/static/accessibility
       - title: Cookies
