@@ -1,6 +1,6 @@
 module ElasticSearchHelper
   BASE_PATH = 'http://127.0.0.1:9200/rad_test'.freeze
-  MAPPINGS = 'elastic_search_mapping.json'.freeze
+  MAPPINGS = 'spec/fixtures/elastic_search_mapping.json'.freeze
 
   def with_fresh_index!
     rebuild_index!
@@ -11,7 +11,7 @@ module ElasticSearchHelper
 
   def rebuild_index!
     client.delete(BASE_PATH)
-    client.post(BASE_PATH, File.read(MAPPINGS))
+    client.post(BASE_PATH, File.read(Rails.root.join(MAPPINGS)))
   end
 
   def refresh_index!
