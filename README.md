@@ -6,7 +6,7 @@ Consumer search for the Retirement Adviser Directory
 
 ## Prerequisites
 
-* [Ruby 2.2.2](http://www.ruby-lang.org/en)
+* [Ruby 2.5.3](http://www.ruby-lang.org/en)
 * [Node.js](http://nodejs.org/)
 * [Bundler](http://bundler.io)
 * [PostgreSQL](http://www.postgresql.org/)

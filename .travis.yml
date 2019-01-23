@@ -3,7 +3,7 @@ sudo: false
 cache: bundler
 dist: trusty
 rvm:
-  - 2.2.2
+  - 2.5.3
 node_js:
   - "node"
 services:
