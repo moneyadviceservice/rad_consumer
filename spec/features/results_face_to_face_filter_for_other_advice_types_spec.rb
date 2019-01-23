@@ -25,18 +25,18 @@ RSpec.feature 'Results page, consumer requires advice on various topics in perso
 
   def and_firms_with_advisers_were_previously_indexed
     with_fresh_index! do
-      @first = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'first')
+      @first = create(:firm, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'first')
       @leicester = create(:adviser, firm: @first, latitude: 52.633013, longitude: -1.131257)
 
-      @second = create(:firm_with_no_business_split, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'second')
+      @second = create(:firm, retirement_income_products_flag: true, wills_and_probate_flag: true, registered_name: 'second')
       @glasgow = create(:adviser, firm: @second, latitude: 55.856191, longitude: -4.247082)
 
-      @excluded = create(:firm_with_no_business_split, retirement_income_products_flag: true, registered_name: 'exluded')
+      @excluded = create(:firm, retirement_income_products_flag: true, registered_name: 'exluded')
       create(:adviser, firm: @excluded, latitude: 51.428473, longitude: -0.943616)
 
       #  This firm isn't strictly needed here. If something was wrong an extra result (this one)
       #  would appear and so it would break a results count test somewhere.
-      create(:firm_with_no_business_split, retirement_income_products_flag: true, registered_name: 'extra') do |f|
+      create(:firm, retirement_income_products_flag: true, registered_name: 'extra') do |f|
         create(:adviser, firm: f, latitude: 51.428473, longitude: -0.943616)
       end
     end

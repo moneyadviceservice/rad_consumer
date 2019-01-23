@@ -3,12 +3,9 @@ RSpec.feature 'Consumer views a search result',
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
 
-  let(:principal) { create(:principal) }
-  let(:firm_without_offices) do
-    create(:firm_with_no_business_split,
-           :without_offices,
+  let(:firm) do
+    create(:firm,
            website_address: 'http://www.example.com',
-           principal: principal,
            free_initial_meeting: true,
            minimum_fixed_fee: 1000,
            retirement_income_products_flag: true,
@@ -20,9 +17,6 @@ RSpec.feature 'Consumer views a search result',
            in_person_advice_methods: [1, 2].map { |i| create(:in_person_advice_method, order: i) },
            other_advice_methods: [1, 2].map { |i| create(:other_advice_method, order: i) },
            investment_sizes: [1, 2].map { |i| create(:investment_size, id: i, order: i) })
-  end
-  let(:firm) do
-    firm_without_offices.tap { |f| create(:office, telephone_number: '02082524727', firm: f) }
   end
 
   scenario 'Viewing a single Firm result in English' do

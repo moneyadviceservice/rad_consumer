@@ -3,6 +3,7 @@ Documentation:
 Metrics/BlockLength:
   Exclude:
   - '**/*_spec.rb'
+  - 'spec/support/factories.rb'
 Metrics/ClassLength:
   Max: 120
 Metrics/LineLength:
@@ -17,7 +18,7 @@ Style/ClassAndModuleChildren:
   Enabled: false
 Style/CollectionMethods:
   Enabled: false
-Style/DotPosition:
+Layout/DotPosition:
   EnforcedStyle: leading
 Style/FormatString:
   Enabled: false

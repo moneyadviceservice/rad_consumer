@@ -1,4 +1,7 @@
 module ElasticSearchHelper
+  BASE_PATH = 'http://127.0.0.1:9200/rad_test'.freeze
+  MAPPINGS = 'spec/fixtures/elastic_search_mapping.json'.freeze
+
   def with_fresh_index!
     rebuild_index!
     yield if block_given?
@@ -7,13 +10,17 @@ module ElasticSearchHelper
   end
 
   def rebuild_index!
-    `curl -XDELETE -sS http://127.0.0.1:9200/rad_test`
-    `curl -XPOST -sS http://127.0.0.1:9200/rad_test -d @elastic_search_mapping.json`
+    client.delete(BASE_PATH)
+    client.post(BASE_PATH, File.read(Rails.root.join(MAPPINGS)))
   end
 
   def refresh_index!
-    `curl -XPOST -sS http://127.0.0.1:9200/rad_test/_refresh`
-    `sleep 3` if ENV['TRAVIS']
+    client.post(BASE_PATH + '/_refresh')
+    sleep 3 if ENV['TRAVIS']
+  end
+
+  def add_to_index(path, json)
+    client.put(BASE_PATH + path, JSON.generate(json))
   end
 
   def with_elastic_search!
@@ -24,6 +31,15 @@ module ElasticSearchHelper
   end
 
   def index_all!
-    Firm.all.map(&:notify_indexer)
+    Firm.find_each do |firm|
+      json = FirmSerializer.new(firm).as_json
+      path = "/#{firm.model_name.plural}/#{firm.to_param}"
+
+      add_to_index(path, json)
+    end
+  end
+
+  def client
+    @client ||= HTTPClient.new
   end
 end

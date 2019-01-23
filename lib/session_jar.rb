@@ -1,4 +1,4 @@
-class RadConsumerSession
+class SessionJar
   include Rails.application.routes.url_helpers
 
   def initialize(store)

@@ -46,12 +46,12 @@ RSpec.feature 'Consumer filters results based on qualifications and accreditatio
   # Construct the firm and adviser fixtures
   #
   let(:firm_1) do
-    FactoryGirl.create(:firm_without_advisers) do |f|
+    FactoryGirl.create(:firm) do |f|
       create_adviser(f, postcode, qualifications: [qual_a, qual_b], accreditations: [accr_a])
     end
   end
   let(:firm_2) do
-    FactoryGirl.create(:firm_without_advisers) do |f|
+    FactoryGirl.create(:firm) do |f|
       create_adviser(f, postcode, qualifications: [qual_a], accreditations: [accr_b])
     end
   end
