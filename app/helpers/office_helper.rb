@@ -1,4 +1,6 @@
 module OfficeHelper
+  SCHEME = 'https://'.freeze
+
   def office_address(office)
     [
       office.address_line_one,
@@ -10,6 +12,12 @@ module OfficeHelper
   end
 
   def display_website(office, firm)
-    office.website.present? ? office.website : firm.website_address
+    user_uri = office.website.present? ? office.website : firm.website_address
+    uri = URI(user_uri.strip)
+    "#{uri.host}#{uri.path}"
+  end
+
+  def website_url(office, firm)
+    "#{SCHEME}#{display_website(office, firm)}"
   end
 end

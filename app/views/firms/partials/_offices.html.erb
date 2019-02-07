@@ -29,7 +29,7 @@
             <% end %>
           </div>
           <div class="office__website">
-            <%= link_to display_website(office, firm), class: 'contact-link' do %>
+            <%= link_to website_url(office, firm), class: 'contact-link' do %>
               <%= svg_icon :offsite_link, title: t('firms.show.panels.offices.website'), class: 'contact-link__svg-icon'
               %><%= display_website(office, firm) %>
             <% end %>
