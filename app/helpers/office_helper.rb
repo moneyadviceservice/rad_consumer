@@ -12,12 +12,16 @@ module OfficeHelper
   end
 
   def display_website(office, firm)
-    user_uri = office.website.present? ? office.website : firm.website_address
-    uri = URI(user_uri.strip)
-    "#{uri.host}#{uri.path}"
+    (office.website.presence || firm.website_address).to_s
   end
 
   def website_url(office, firm)
-    "#{SCHEME}#{display_website(office, firm)}"
+    user_uri = URI(display_website(office, firm))
+
+    case user_uri
+    when ->(uri) { uri.to_s.blank? } then nil
+    when ->(uri) { uri.scheme.present? } then user_uri.to_s
+    else "#{SCHEME}#{user_uri}"
+    end
   end
 end

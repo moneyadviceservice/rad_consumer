@@ -39,35 +39,55 @@ RSpec.describe OfficeHelper, type: :helper do
 
   describe '#display_website' do
     context 'when the office has its own website address' do
-      it 'returns the office website without scheme for display' do
-        expected = 'www.postman.com'
+      it 'returns the office website' do
+        expected = 'http://www.postman.com'
         expect(display_website(office_result, firm_result)).to eq(expected)
-      end
-
-      context 'when the office website has no scheme' do
-        let(:website) { 'www.firmsite.co.uk' }
-
-        it 'returns the firm\'s website' do
-          expected = 'www.firmsite.co.uk'
-          expect(display_website(office_result, firm_result)).to eq(expected)
-        end
       end
     end
 
     context 'when the office no website address' do
       let(:website) { nil }
 
-      it 'returns the firm\'s website without scheme for display' do
-        expected = 'www.firmsite.com'
+      it 'returns the firm\'s website' do
+        expected = 'http://www.firmsite.com'
         expect(display_website(office_result, firm_result)).to eq(expected)
       end
     end
   end
 
   describe '#website_url' do
-    it 'adds the scheme to the url to function as link' do
-      expected = 'https://www.postman.com'
+    let(:website) { 'www.no-scheme.com' }
+
+    it 'ensures the return of display_website has a scheme' do
+      expected = 'https://www.no-scheme.com'
       expect(website_url(office_result, firm_result)).to eq(expected)
+    end
+
+    context 'when the scheme is present' do
+      let(:website) { 'http://www.with-scheme.com' }
+
+      it 'does not change its value' do
+        expected = 'http://www.with-scheme.com'
+        expect(website_url(office_result, firm_result)).to eq(expected)
+      end
+    end
+
+    context 'when the website is not present' do
+      let(:website) { nil }
+
+      let(:firm_data) do
+        {
+          '_source' => {
+            'offices' => [office_result],
+            'advisers' => [],
+            'website_address' => ''
+          }
+        }
+      end
+
+      it 'returns' do
+        expect(website_url(office_result, firm_result)).to eq(nil)
+      end
     end
   end
 end
