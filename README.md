@@ -67,6 +67,24 @@ No further steps required.
 For the firm profile maps to work, you will need to provide a Google Maps API
 key in `.env`. You can find an example at `.env.example`.
 
+### Google Geocoder API
+
+For the firms search by postcode to work, you will need to provide a Google Geocoder API
+key in `.env`. You can find an example at `.env.example`.
+
+Alternatively, you can stub the Geocoder to return an array of predetermined coordinates. i.e:
+```ruby
+class Geocode
+  def self.call(postcode)
+    # Geocoder.coordinates("#{postcode}, United Kingdom")
+    # i.e. London
+    [51.5074, 0.1278] 
+  end
+end	
+```
+
+or set the `lookup` to `:test` and provide a stub. More info [here](https://github.com/alexreisner/geocoder)
+
 ### Sharia and Ethical Investment
 
 The search option provides a filter for targeting sharia and ethical investment

@@ -19,7 +19,15 @@ RSpec.describe OfficeHelper, type: :helper do
 
   let(:website) { 'http://www.postman.com' }
   let(:office_result) { OfficeResult.new(data) }
-  let(:firm_data) { firm_data }
+  let(:firm_data) do
+    {
+      '_source' => {
+        'offices' => [office_result],
+        'advisers' => [],
+        'website_address' => 'http://www.firmsite.com'
+      }
+    }
+  end
   let(:firm_result) { FirmResult.new(firm_data) }
 
   describe '#office_address' do
@@ -47,13 +55,39 @@ RSpec.describe OfficeHelper, type: :helper do
     end
   end
 
-  def firm_data
-    {
-      '_source' => {
-        'offices' => [office_result],
-        'advisers' => [],
-        'website_address' => 'http://www.firmsite.com'
-      }
-    }
+  describe '#website_url' do
+    let(:website) { 'www.no-scheme.com' }
+
+    it 'ensures the return of display_website has a scheme' do
+      expected = 'https://www.no-scheme.com'
+      expect(website_url(office_result, firm_result)).to eq(expected)
+    end
+
+    context 'when the scheme is present' do
+      let(:website) { 'http://www.with-scheme.com' }
+
+      it 'does not change its value' do
+        expected = 'http://www.with-scheme.com'
+        expect(website_url(office_result, firm_result)).to eq(expected)
+      end
+    end
+
+    context 'when the website is not present' do
+      let(:website) { nil }
+
+      let(:firm_data) do
+        {
+          '_source' => {
+            'offices' => [office_result],
+            'advisers' => [],
+            'website_address' => ''
+          }
+        }
+      end
+
+      it 'returns' do
+        expect(website_url(office_result, firm_result)).to eq(nil)
+      end
+    end
   end
 end
