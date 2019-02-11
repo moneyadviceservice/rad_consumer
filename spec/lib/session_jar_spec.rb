@@ -28,6 +28,7 @@ RSpec.describe SessionJar do
   end
 
   subject { described_class.new({}) }
+  let(:page) { '2' }
 
   describe '#search_results_url' do
     before { subject.store(firm_result(1), params) }
@@ -35,6 +36,14 @@ RSpec.describe SessionJar do
     context 'when locale mapping is blank' do
       it 'returns nil' do
         expect(described_class.new({}).search_results_url('en')).to be(nil)
+      end
+    end
+
+    context 'when :last_visited_page key is present' do
+      subject { described_class.new(last_visited_page: page) }
+
+      it 'adds the page to the search query params' do
+        expect(subject.search_results_url('en')).to match(/\/en\/search\?page=2/)
       end
     end
 
@@ -133,6 +142,14 @@ RSpec.describe SessionJar do
 
         expect(subject.firms.map { |f| f['id'] }).to eq([4, 3, 2])
       end
+    end
+  end
+
+  describe '#previous_search?' do
+    subject { described_class.new(last_visited_page: page) }
+
+    it 'returns true if :last_visited_page key is present' do
+      expect(subject.previous_search?).to eq true
     end
   end
 end

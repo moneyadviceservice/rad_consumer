@@ -64,11 +64,11 @@ RSpec.feature 'Results page, consumer requires help with their pension in person
   end
 
   def and_i_enter_an_invalid_postcode
-    results_page.search_form.postcode.set 'B4D'
+    results_page.search_form.postcode.set 'NOTVALID'
   end
 
   def and_i_enter_a_postcode_that_cannot_be_geocoded
-    results_page.search_form.postcode.set 'ZZ1 1ZZ'
+    results_page.search_form.postcode.set 'NOTACODE'
   end
 
   def then_i_see_firms_that_cover_my_postcode

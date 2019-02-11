@@ -1,6 +1,6 @@
 module Helpers
   module SearchController
-  MAX_RANDOM_SEED_VALUE = 1024
+    MAX_RANDOM_SEED_VALUE = 1024
 
     def search_filter_options_description?
       false
@@ -19,11 +19,15 @@ module Helpers
     def random_search_seed
       session[:random_search_seed] ||= rand(MAX_RANDOM_SEED_VALUE)
     end
-    
+
+    def set_last_visited_page
+      session[:last_visited_page] = params[:page] || 1
+    end
+
     def search_form_params
       params.require(:search_form).merge(random_search_seed: random_search_seed)
     end
-    
+
     def not_found
       {
         file: 'public/404.html',
