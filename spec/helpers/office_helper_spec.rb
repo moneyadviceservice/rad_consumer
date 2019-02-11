@@ -72,6 +72,15 @@ RSpec.describe OfficeHelper, type: :helper do
       end
     end
 
+    context 'when the url has extra spaces' do
+      let(:website) { 'http://www.with-scheme.com ' }
+
+      it 'strips the return before calling URI' do
+        expected = 'http://www.with-scheme.com'
+        expect(website_url(office_result, firm_result)).to eq(expected)
+      end
+    end
+
     context 'when the website is not present' do
       let(:website) { nil }
 
