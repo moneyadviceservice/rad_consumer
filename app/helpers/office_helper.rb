@@ -16,7 +16,7 @@ module OfficeHelper
   end
 
   def website_url(office, firm)
-    user_uri = URI(display_website(office, firm))
+    user_uri = URI(display_website(office, firm).strip)
 
     case user_uri
     when ->(uri) { uri.to_s.blank? } then nil
