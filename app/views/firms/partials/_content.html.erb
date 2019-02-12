@@ -7,16 +7,12 @@
             <%= t('firms.show.panels.firm.heading') %>
           </a>
         </div>
-
-        <% if @search_form.face_to_face? %>
-          <div class="tab-selector__trigger-container is-inactive" data-dough-tab-selector-trigger-container>
-            <a class="tab-selector__trigger" href="#panel-2" data-dough-tab-selector-trigger="2">
-              <%= t('firms.show.panels.offices.heading') %>
-              (<%= @firm.total_offices %>)
-            </a>
-          </div>
-        <% end %>
-
+        <div class="tab-selector__trigger-container is-inactive" data-dough-tab-selector-trigger-container>
+          <a class="tab-selector__trigger" href="#panel-2" data-dough-tab-selector-trigger="2">
+            <%= t('firms.show.panels.offices.heading') %>
+            (<%= @firm.total_offices %>)
+          </a>
+        </div>
         <div class="tab-selector__trigger-container is-inactive" data-dough-tab-selector-trigger-container>
           <a class="tab-selector__trigger" href="#panel-3" data-dough-tab-selector-trigger="3">
             <%= t('firms.show.panels.advisers.heading') %>
@@ -30,14 +26,12 @@
       <h2 class="tab-selector__target-heading firm__details-heading"><%= t('firms.show.panels.firm.heading') %></h2>
       <%= render partial: 'firms/partials/firm_details', locals: { firm: @firm, latitude: @latitude, longitude: @longitude, search_form: @search_form } %>
     </div>
-
-    <% if @search_form.face_to_face? %>
-      <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
-        <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.offices.heading') %></h2>
-        <%= render partial: 'firms/partials/offices', locals: { firm: @firm, offices: @offices } %>
-      </div>
-    <% end %>
-
+    
+    <div class="tab-selector__target is-inactive" id="panel-2" data-dough-tab-selector-target="2">
+      <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.offices.heading') %></h2>
+      <%= render partial: 'firms/partials/offices', locals: { firm: @firm, offices: @offices } %>
+    </div>
+    
     <div class="tab-selector__target is-inactive" id="panel-3" data-dough-tab-selector-target="3">
       <h2 class="tab-selector__target-heading"><%= t('firms.show.panels.advisers.heading') %></h2>
       <%= render partial: 'firms/partials/advisers', locals: { firm: @firm, advisers: @advisers, search_form: @search_form } %>

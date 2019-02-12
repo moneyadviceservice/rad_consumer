@@ -43,6 +43,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'pry-rails'
+  gem 'rb-readline'
   gem 'rspec-rails', '3.6.0'
   gem 'rubocop'
   gem 'site_prism'
