@@ -7,7 +7,9 @@ if Rails.env.production?
     api_key: ENV['GOOGLE_GEOCODER_API_KEY'],
     cache: Redis.new(url: ENV['REDISTOGO_URL'])
   )
-else
+end
+
+if Rails.env.development?
   Geocoder.configure(
     lookup: :google,
     use_https: false,
