@@ -19,6 +19,10 @@ class SessionJar
     update_recently_visited_firms(firm_result, params)
   end
 
+  def previous_search?
+    @store[:last_visited_page].present?
+  end
+
   private
 
   def update_most_recent_search(params)
@@ -47,7 +51,7 @@ class SessionJar
   end
 
   def search_path_for(params, locale)
-    search_path(search_form: params[:search_form], locale: locale)
+    search_path(search_form: params[:search_form], page: @store[:last_visited_page], locale: locale)
   end
 
   def locale_to_profile_path_mappings(params)

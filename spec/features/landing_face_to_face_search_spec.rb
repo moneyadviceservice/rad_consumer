@@ -3,6 +3,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
   let(:landing_page) { LandingPage.new }
   let(:results_page) { ResultsPage.new }
   let(:phone_advice) { create(:other_advice_method, name: 'Advice by telephone', order: 1) }
+  let(:firm_page)    { ProfilePage.new }
 
   scenario 'Using a valid postcode' do
     with_elastic_search! do
@@ -36,6 +37,9 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
       and_i_see_i_am_viewing_firms_one_to_ten_of_twenty_one
       when_i_click_next
       then_i_see_i_am_viewing_firms_eleven_to_twenty_of_twenty_one
+      then_i_click_on_the_first_firm
+      when_i_click('Back to results')
+      then_i_see_i_am_viewing_firms_eleven_to_twenty_of_twenty_one
     end
   end
 
@@ -53,12 +57,20 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
     expect(results_page.firms.count).to eq(10)
   end
 
+  def then_i_click_on_the_first_firm
+    results_page.firms.first.view_profile.click
+  end
+
   def and_i_see_i_am_viewing_firms_one_to_ten_of_twenty_one
     expect(results_page).to be_showing_firms(1, to: 10, of: 21)
   end
 
   def when_i_click_next
     results_page.next_page
+  end
+
+  def when_i_click(link_text)
+    click_link(link_text)
   end
 
   def then_i_see_i_am_viewing_firms_eleven_to_twenty_of_twenty_one
@@ -119,7 +131,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
   def when_i_submit_a_invalid_postcode_search
     landing_page.in_person.tap do |section|
       section.face_to_face.set true
-      section.postcode.set 'Z'
+      section.postcode.set 'NOTVALID'
       section.search.click
     end
   end
@@ -127,7 +139,7 @@ RSpec.feature 'Landing page, consumer requires general advice in person',
   def when_i_submit_a_postcode_that_cannot_be_geocoded
     landing_page.in_person.tap do |section|
       section.face_to_face.set true
-      section.postcode.set 'ZZ1 1ZZ'
+      section.postcode.set 'NOTACODE'
       section.search.click
     end
   end
