@@ -38,7 +38,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'capybara'
+  gem 'byebug'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'launchy'
@@ -51,7 +51,10 @@ group :development, :test do
 end
 
 group :test do
+  gem 'capybara'
+  gem 'cucumber'
   gem 'faker'
   gem 'vcr'
+  gem 'poltergeist'
   gem 'webmock'
 end
