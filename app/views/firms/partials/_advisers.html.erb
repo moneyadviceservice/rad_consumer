@@ -14,7 +14,7 @@
           </div>
           <div class="l-2col-even l-adviser-col">
             <div>
-              <% if search_form.face_to_face? %>
+              <% if params[:postcode].present? && adviser.distance %>
                 <%= I18n.t('search.result.miles_away', distance: format('%.1f', adviser.distance)) %><br>
                 <span class="t-postcode"><%= trim_postcode(adviser.postcode) %></span>
               <% end %>

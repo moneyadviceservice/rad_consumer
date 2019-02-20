@@ -27,13 +27,5 @@ module Helpers
     def search_form_params
       params.require(:search_form).merge(random_search_seed: random_search_seed)
     end
-
-    def not_found
-      {
-        file: 'public/404.html',
-        status: :not_found,
-        layout: false
-      }
-    end
   end
 end

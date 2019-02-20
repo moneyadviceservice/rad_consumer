@@ -1,17 +1,10 @@
-require 'uk_phone_numbers'
-
-class FirmResult
-  ADVICE_TYPE_NOT_SELECTED_VALUE = 0
-
+class FirmPresenter
   LESS_THAN_FIFTY_K_ID = 1
 
-  # TODO: add back:
-  # address_line_one
-  # address_line_two
-  # address_town
-  # address_county
-  # address_postcode
   DIRECTLY_MAPPED_FIELDS = %i[
+    id
+    registered_name
+    telephone_number
     website_address
     email_address
     free_initial_meeting
@@ -27,6 +20,8 @@ class FirmResult
     non_uk_residents_flag
     languages
     telephone_number
+    total_advisers
+    total_offices
   ].freeze
 
   TYPES_OF_ADVICE_FIELDS = %i[
@@ -38,33 +33,29 @@ class FirmResult
     wills_and_probate
   ].freeze
 
-  attr_reader :id,
-              :name,
-              :closest_adviser,
-              *DIRECTLY_MAPPED_FIELDS,
-              *TYPES_OF_ADVICE_FIELDS
+  MAPPED_FIELDS = (DIRECTLY_MAPPED_FIELDS + TYPES_OF_ADVICE_FIELDS).freeze
 
-  def initialize(object, closest_adviser:)
-    @id = object['ObjectID']
-    @name = object['registered_name']
-    @closest_adviser = closest_adviser
-    @telephone_number = object['telephone_number']
-    # @offices = object['offices'] TODO: add back, missing from index atm
-    # @total_offices = object['offices'].count TODO: add back, missing from index atm
+  UNMAPPED_FIELDS = %i[
+    offices
+    advisers
+    closest_adviser_distance
+  ].freeze
 
-    (DIRECTLY_MAPPED_FIELDS + TYPES_OF_ADVICE_FIELDS).each do |field|
+  attr_reader(*MAPPED_FIELDS)
+  attr_accessor(*UNMAPPED_FIELDS)
+
+  def initialize(object)
+    @object = object
+
+    MAPPED_FIELDS.each do |field|
       instance_variable_set("@#{field}", object[field.to_s])
     end
   end
 
-  # TODO: add back
-  # def offices
-  #   @offices.map { |office_data| OfficeResult.new(office_data) }
-  #           .sort_by(&:address_town)
-  # end
+  alias name registered_name
 
   def includes_advice_type?(advice_type)
-    public_send(advice_type) > ADVICE_TYPE_NOT_SELECTED_VALUE
+    public_send(advice_type)
   end
 
   def types_of_advice
@@ -84,4 +75,8 @@ class FirmResult
   end
 
   alias free_initial_meeting? free_initial_meeting
+
+  private
+
+  attr_reader :object
 end

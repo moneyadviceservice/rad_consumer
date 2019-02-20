@@ -12,7 +12,8 @@ module FirmHelper
   end
 
   def type_of_advice_list_item(firm, type, style_classes)
-    return unless firm.includes_advice_type? type
+    return unless firm.includes_advice_type?(type)
+
     content_tag :li,
                 I18n.t("firms.show.panels.firm.services.types_of_advice.#{type}"),
                 class: style_classes

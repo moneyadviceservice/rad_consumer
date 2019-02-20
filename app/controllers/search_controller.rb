@@ -5,11 +5,13 @@ class SearchController < ApplicationController
     @form = SearchForm.new(search_form_params)
 
     if @form.valid?
-      @result = FirmRepository.new.search(@form.to_query, page: page)
-
-      return render not_found if @result.total_pages < page
-
-      set_last_visited_page
+      json = SearchFirms.call(
+        params: @form.as_json,
+        page: page,
+        session: session
+      )
+      @results = SearchResultsPresenter.new(json, page: page)
+      return render not_found if @results.total_pages < page
     else
       render searchable_view
     end

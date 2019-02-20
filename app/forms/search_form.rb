@@ -17,8 +17,8 @@ class SearchForm
   validates :advice_method, presence: true
   validate :geocode_postcode, if: :face_to_face?
 
-  def to_query
-    SearchFormSerializer.new(self).to_json
+  def as_json
+    super(except: %w[validation_context errors]).with_indifferent_access
   end
 
   private

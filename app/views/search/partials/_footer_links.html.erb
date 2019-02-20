@@ -2,7 +2,7 @@
   <a href="https://www.moneyadviceservice.org.uk/<%= I18n.locale %>/improvements/?source=rad"><%= t('feedback_button') %></a>
 </div>
 
-<% if @result.try { firms.any? } %>
+<% if @results.firms.any? %>
   <div class="l-results__back-to-top back-to-top">
     <%= link_to '#top', class: 'back-to-top__link' do %>
       <%= t('search.back_to_top') %>

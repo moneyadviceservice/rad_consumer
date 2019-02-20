@@ -1,4 +1,14 @@
-module Paginateable
+module Pagination
+  PAGE_SIZE = 10
+
+  def total_records
+    raise NotImplementedError
+  end
+
+  def current_page
+    raise NotImplementedError
+  end
+
   def total_pages
     if total_records < page_size
       1
@@ -7,10 +17,6 @@ module Paginateable
     else
       (total_records / page_size) + 1
     end
-  end
-
-  def total_records
-    json['hits']['total']
   end
 
   def first_record
@@ -26,7 +32,8 @@ module Paginateable
   end
 
   def page_size
-    10
+    PAGE_SIZE
   end
+
   alias limit_value page_size
 end

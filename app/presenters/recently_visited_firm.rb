@@ -4,11 +4,11 @@ class RecentlyVisitedFirm < OpenStruct
   end
 
   def translated_profile_path
-    profile_path[I18n.locale.to_s]
+    profile_path[I18n.locale]
   end
 
-  def closest_adviser?
-    face_to_face? && closest_adviser.to_f > 0
+  def closest_adviser_distance?
+    face_to_face? && closest_adviser_distance.to_f > 0
   end
 
   def phone_or_online_only?

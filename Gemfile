@@ -13,6 +13,7 @@ gem 'rails', '~> 4.2.10'
 
 gem 'active_model_serializers', '~> 0.10.7'
 gem 'activerecord-session_store'
+gem 'algoliasearch'
 gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
@@ -37,6 +38,11 @@ group :assets do
   gem 'sass-rails'
 end
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'dotenv-rails'
@@ -54,7 +60,7 @@ group :test do
   gem 'capybara'
   gem 'cucumber'
   gem 'faker'
-  gem 'vcr'
   gem 'poltergeist'
+  gem 'vcr'
   gem 'webmock'
 end
