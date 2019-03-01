@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Tue, 05 Mar 2019 13:55:06 GMT
+      Expires:
+      - Wed, 06 Mar 2019 13:55:06 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '412'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=315
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "United Kingdom",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 60.91569999999999,
+                          "lng" : 33.9165549
+                       },
+                       "southwest" : {
+                          "lat" : 34.5614,
+                          "lng" : -8.8988999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.378051,
+                       "lng" : -3.435973
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 61.5471111,
+                          "lng" : 9.584415699999999
+                       },
+                       "southwest" : {
+                          "lat" : 47.5554486,
+                          "lng" : -18.5319589
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
+                 "types" : [ "country", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Tue, 05 Mar 2019 13:55:06 GMT
+recorded_with: VCR 4.0.0

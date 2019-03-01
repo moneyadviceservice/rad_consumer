@@ -7,7 +7,7 @@ class FirmsController < ApplicationController
 
     @advisers = @firm.advisers
     @offices = @firm.offices
-    @latitude, @longitude = coordinates
+    @latitude, @longitude = map_center_coordinates
 
     store_recently_visited_firm
   end
@@ -15,11 +15,17 @@ class FirmsController < ApplicationController
   private
 
   def profile_params
-    params.permit(:id, :postcode)
+    params.permit(:id, :postcode, :locale).merge!(coordinates: coordinates)
   end
 
   def coordinates
-    return Geocode.call(params[:postcode]) if params[:postcode].present?
+    @coordinates ||= begin
+      Geocode.call(params[:postcode]) if params[:postcode].present?
+    end
+  end
+
+  def map_center_coordinates
+    return coordinates if coordinates
 
     location = @firm.advisers.first.location
     [location.latitude, location.longitude]

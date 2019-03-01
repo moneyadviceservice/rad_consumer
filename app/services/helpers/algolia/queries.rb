@@ -7,6 +7,7 @@ module Helpers::Algolia
       randomisation: %w[firm.id]
     }.freeze
 
+    FIRST_PAGE = 0
     MAX_HITS_TOTAL = 1_000
     MAX_HITS_PER_PAGE = 10
     MAX_SEARCH_RADIUS = 1_207_008 # 750miles
@@ -80,10 +81,12 @@ module Helpers::Algolia
         [
           '',
           paginate(
-            aroundLatLng: params.coordinates,
-            distinct: false,
-            getRankingInfo: params.coordinates.present?,
-            facetFilters: ["firm.id:#{params.id}"]
+            {
+              aroundLatLng: params.coordinates,
+              distinct: false,
+              getRankingInfo: params.coordinates.present?,
+              facetFilters: ["firm.id:#{params.id}"]
+            }, hits_per_page: MAX_HITS_TOTAL
           )
         ]
       )
@@ -95,9 +98,11 @@ module Helpers::Algolia
         [
           '',
           paginate(
-            aroundLatLng: params.coordinates,
-            getRankingInfo: params.coordinates.present?,
-            facetFilters: ["firm_id:#{params.id}"]
+            {
+              aroundLatLng: params.coordinates,
+              getRankingInfo: params.coordinates.present?,
+              facetFilters: ["firm_id:#{params.id}"]
+            }, hits_per_page: MAX_HITS_TOTAL
           )
         ]
       )
@@ -115,6 +120,7 @@ module Helpers::Algolia
         params = q[:value].last
         params[:attributesToRetrieve] = retrieve_attributes
         params[:hitsPerPage] = MAX_HITS_TOTAL
+        params[:page] = FIRST_PAGE
       end
     end
   end

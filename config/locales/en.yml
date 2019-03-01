@@ -480,7 +480,7 @@ en:
       '2': '£50,000'
       '3': '£100,000'
       '4': 'Over £150,000'
-  other_advice_method:
+  other_advice_methods:
     ordinal:
       '1': 'Phone'
       '2': 'Online'

@@ -62,6 +62,10 @@ module Helpers::ParamsParser
   end
 
   def extract_coordinates(params)
-    params[:coordinates]&.map(&:to_f) || Geocode.call(params[:postcode])
+    if params[:coordinates]&.any?
+      params[:coordinates].map(&:to_f)
+    else
+      Geocode.call(params[:postcode])
+    end
   end
 end

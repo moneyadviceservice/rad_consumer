@@ -5,7 +5,7 @@ dist: trusty
 rvm:
   - 2.5.3
 node_js:
-  - "node"
+  - 'node'
 services:
   - elasticsearch
 before_install:
@@ -19,6 +19,7 @@ before_script:
   - bundle exec bowndler update
 script:
   - bundle exec rspec
+  - bundle exec cucumber
   - npm test
   - bundle exec rubocop -DS
 env:

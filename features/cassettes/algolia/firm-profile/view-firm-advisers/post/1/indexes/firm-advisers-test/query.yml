@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"attributesToRetrieve=%5B%22firm.id%22%5D\u0026distinct=true\u0026page=0\u0026hitsPerPage=999\u0026query=Test+Firm+Central+London"}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 13 Mar 2019 12:25:37 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Mar 2019 12:25:37 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '517'
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"firm":{"id":1},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> <em>Central</em> <em>London</em>","matchLevel":"full","fullyHighlighted":true,"matchedWords":["test","firm","central","london"]}}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":999,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"Test
+        Firm Central London","params":"attributesToRetrieve=%5B%22firm.id%22%5D&distinct=true&page=0&hitsPerPage=999&query=Test+Firm+Central+London"}
+
+'
+    http_version: 
+  recorded_at: Wed, 13 Mar 2019 12:25:37 GMT
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026page=0\u0026hitsPerPage=10\u0026facetFilters=%5B%5B%22firm.id%3A1%22%5D%5D\u0026query=Test+Firm+Central+London"}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 13 Mar 2019 12:25:37 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Mar 2019 12:25:37 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"firm":{"id":1,"registered_name":"Test Firm Central London","postcode_searchable":true,"telephone_number":"07111
+        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> <em>Central</em> <em>London</em>","matchLevel":"full","fullyHighlighted":true,"matchedWords":["test","firm","central","london"]}}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"Test
+        Firm Central London","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&page=0&hitsPerPage=10&facetFilters=%5B%5B%22firm.id%3A1%22%5D%5D&query=Test+Firm+Central+London"}
+
+'
+    http_version: 
+  recorded_at: Wed, 13 Mar 2019 12:25:37 GMT
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026distinct=false\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 13 Mar 2019 12:25:38 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Mar 2019 12:25:38 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Dr. Einar
+        Stamm","postcode":"EC1N 2TD","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
+        Firm Central London","postcode_searchable":true,"telephone_number":"07111
+        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":482477,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":482477}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"name":"Gail
+        D''Amore","postcode":"EC4V 4AY","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
+        Firm Central London","postcode_searchable":true,"telephone_number":"07111
+        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609402","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":483492,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":483492}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A1%22%5D&page=0&hitsPerPage=10&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Wed, 13 Mar 2019 12:25:38 GMT
+recorded_with: VCR 4.0.0

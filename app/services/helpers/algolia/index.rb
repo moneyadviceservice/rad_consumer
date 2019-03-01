@@ -5,8 +5,8 @@ module Helpers::Algolia
     class UnvailableIndexError < StandardError; end
 
     INDECES = {
-      advisers: 'firm-advisers',
-      offices: 'firm-offices'
+      advisers: "firm-advisers#{'-test' if Rails.env.test?}",
+      offices: "firm-offices#{'-test' if Rails.env.test?}"
     }.freeze
     MAX_BROWSABLE_PAGES = 10
     MAX_BROWSABLE_HITS_PER_PAGE = 1000
@@ -26,7 +26,9 @@ module Helpers::Algolia
       hits += response['hits']
       page += 1
 
-      offset_query!(query, page)
+      Rails.logger.debug "Browsing page #{page}/#{pages}"
+
+      offset_query_page!(query, page)
 
       browse(query: query, page: page, pages: pages, hits: hits)
     end
@@ -43,16 +45,10 @@ module Helpers::Algolia
       page.zero? || page < pages && page < MAX_BROWSABLE_PAGES
     end
 
-    def offset_query!(query, page)
+    def offset_query_page!(query, page)
       query.tap do |q|
         query = q[:value].last
-        query.merge!(
-          paginate(
-            query,
-            page: page + 1,
-            hits_per_page: MAX_BROWSABLE_HITS_PER_PAGE
-          )
-        )
+        query[:page] = page
       end
     end
   end

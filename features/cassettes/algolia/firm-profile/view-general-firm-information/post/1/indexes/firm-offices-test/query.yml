@@ -1,0 +1,151 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-offices-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm_id%3A1%22%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Wed, 13 Mar 2019 12:19:29 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 13 Mar 2019 12:19:29 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"firm_id":1,"address_line_one":"7238
+        Elwin Center","address_line_two":"Suite 735","address_town":"South Verona","address_county":"South
+        Dakota","address_postcode":"EC1N 2TD","email_address":"office271@example.net","telephone_number":"07111
+        333 271","disabled_access":false,"website":"http://example.net/offices/271","objectID":"133609492","_highlightResult":{"_geoloc":{"lat":{"value":"51.51807","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.10852","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"7238
+        Elwin Center","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        735","matchLevel":"none","matchedWords":[]},"address_town":{"value":"South
+        Verona","matchLevel":"none","matchedWords":[]},"address_county":{"value":"South
+        Dakota","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC1N
+        2TD","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office271@example.net","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 271","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/271","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":482477,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":482477}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"firm_id":1,"address_line_one":"125
+        Nicolas Plaza","address_line_two":"Suite 650","address_town":"West Josue","address_county":"Wisconsin","address_postcode":"EC4V
+        4AY","email_address":"office885@example.com","telephone_number":"07111 333
+        885","disabled_access":false,"website":"http://example.net/offices/885","objectID":"133609482","_highlightResult":{"_geoloc":{"lat":{"value":"51.51193","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.095115","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"125
+        Nicolas Plaza","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        650","matchLevel":"none","matchedWords":[]},"address_town":{"value":"West
+        Josue","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Wisconsin","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC4V
+        4AY","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office885@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 885","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/885","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":483492,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":483492}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A1%22%5D&page=0&hitsPerPage=10&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Wed, 13 Mar 2019 12:19:29 GMT
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-offices-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm_id%3A1%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 14 Mar 2019 03:59:56 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 14 Mar 2019 03:59:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"firm_id":1,"address_line_one":"7238
+        Elwin Center","address_line_two":"Suite 735","address_town":"South Verona","address_county":"South
+        Dakota","address_postcode":"EC1N 2TD","email_address":"office271@example.net","telephone_number":"07111
+        333 271","disabled_access":false,"website":"http://example.net/offices/271","objectID":"133609492","_highlightResult":{"_geoloc":{"lat":{"value":"51.51807","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.10852","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"7238
+        Elwin Center","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        735","matchLevel":"none","matchedWords":[]},"address_town":{"value":"South
+        Verona","matchLevel":"none","matchedWords":[]},"address_county":{"value":"South
+        Dakota","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC1N
+        2TD","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office271@example.net","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 271","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/271","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":482477,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":482477}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"firm_id":1,"address_line_one":"125
+        Nicolas Plaza","address_line_two":"Suite 650","address_town":"West Josue","address_county":"Wisconsin","address_postcode":"EC4V
+        4AY","email_address":"office885@example.com","telephone_number":"07111 333
+        885","disabled_access":false,"website":"http://example.net/offices/885","objectID":"133609482","_highlightResult":{"_geoloc":{"lat":{"value":"51.51193","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.095115","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"125
+        Nicolas Plaza","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        650","matchLevel":"none","matchedWords":[]},"address_town":{"value":"West
+        Josue","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Wisconsin","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC4V
+        4AY","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office885@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 885","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/885","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":483492,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":483492}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 03:59:56 GMT
+recorded_with: VCR 4.0.0

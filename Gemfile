@@ -26,7 +26,7 @@ gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'kaminari'
 gem 'language_list', '~> 1.2.1'
-gem 'pg', '< 1.0'
+gem 'pg', '~> 0.20.0'
 gem 'redis', '~> 3.3.5'
 gem 'rollbar', '~> 2.15.5'
 gem 'uglifier', '>= 1.3.0'
@@ -50,17 +50,17 @@ group :development, :test do
   gem 'launchy'
   gem 'pry-rails'
   gem 'rb-readline'
-  gem 'rspec-rails', '3.6.0'
+  gem 'rspec-rails', '~> 3.8'
   gem 'rubocop'
-  gem 'site_prism'
   gem 'spring', '1.3.6'
 end
 
 group :test do
   gem 'capybara'
-  gem 'cucumber'
+  gem 'cucumber-rails', require: false
   gem 'faker'
   gem 'poltergeist'
+  gem 'site_prism'
   gem 'vcr'
   gem 'webmock'
 end

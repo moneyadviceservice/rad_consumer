@@ -261,7 +261,6 @@ RSpec.describe SearchForm do
       end
 
       it 'does not pass on any advice methods' do
-        OtherAdviceMethod.create name: 'phone'
         expect(form.remote_advice_method_ids).to be_empty
       end
     end
@@ -270,9 +269,8 @@ RSpec.describe SearchForm do
       let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       it 'passes on phone and online' do
-        phone = OtherAdviceMethod.create name: 'phone'
-        online = OtherAdviceMethod.create name: 'online'
-        expect(form.remote_advice_method_ids).to eq([phone.id, online.id])
+        expected_method_ids = %i[1 2]
+        expect(form.remote_advice_method_ids).to eq(expected_method_ids)
       end
 
       it 'does not pass on the postcode' do
@@ -303,14 +301,15 @@ RSpec.describe SearchForm do
   describe '#options_for_pension_pot_sizes' do
     let(:form) { described_class.new }
 
-    let(:investment_sizes) { create_list(:investment_size, 3) }
-
-    before { allow(InvestmentSize).to receive(:all).and_return(investment_sizes) }
-
     it 'returns the localized name and ID for each investment size' do
-      tuples = investment_sizes.map { |i| [i.localized_name, i.id] }
+      expected_list = [
+        ['Under £50,000', '1'],
+        ['£50,000', '2'],
+        ['£100,000', '3'],
+        ['Over £150,000', '4']
+      ]
 
-      expect(form.options_for_pension_pot_sizes).to include(*tuples)
+      expect(form.options_for_pension_pot_sizes).to include(*expected_list)
     end
 
     it 'returns the any size option as the first element' do
@@ -324,42 +323,33 @@ RSpec.describe SearchForm do
   describe '#options_for_languages' do
     let(:form) { described_class.new }
 
-    before { allow(Firm).to receive(:languages_used).and_return(%w[sco swe de]) }
-
     it 'returns the LanguageInfo for each iso_639_3 code sorted by common name' do
-      german = LanguageList::LanguageInfo.find 'de'
-      swedish = LanguageList::LanguageInfo.find 'swe'
-      scots = LanguageList::LanguageInfo.find 'sco'
-      expect(form.options_for_language).to eql([german, scots, swedish])
+      supported_languages = %w[
+        afr ara ben bfi bul cym dan deu ell fas fra guj hin ita
+        mar nld pan pol por ron rus spa sqi tur ukr urd vie zho
+      ]
+      expected_list = supported_languages.map do |language|
+        LanguageList::LanguageInfo.find(language)
+      end
+
+      expect(form.options_for_language).to match_array(expected_list)
     end
   end
 
   describe '#options_for_qualifications_and_accreditations' do
     let(:form) { described_class.new }
 
-    before :each do
-      Qualification.create(id: 1, order: 1, name: 'Should not be returned in the resulting options')
-      Qualification.create(id: 2, order: 3, name: 'Chartered Financial Planner')
-      Qualification.create(id: 3, order: 4, name: 'Certified Financial Planner')
-      Qualification.create(
-        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent'
-      )
-
-      Accreditation.create(id: 4, order: 1, name: 'SOLLA')
-      Accreditation.create(id: 5, order: 2, name: 'Later Life Academy')
-      Accreditation.create(id: 6, order: 3, name: 'ISO 22222')
-    end
-
     context 'for all qualifications and accreditations that have translation keys' do
       it 'provides a list of alphabetically ordered options ' do
         expected_list = [
-          ['Certified Financial Planner', 'q3'],
-          ['Chartered Financial Planner', 'q2'],
-          ['ISO 22222', 'a6'],
-          ['Later Life Academy', 'a5'],
-          %w[SOLLA a4] # Rubocop expects %w for this row
+          ['Certified Financial Planner', 'q4'],
+          ['Chartered Financial Planner', 'q3'],
+          ['ISO 22222', 'a3'],
+          ['Later Life Academy', 'a2'],
+          %w[SOLLA a1]
         ]
-        expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
+        expect(form.options_for_qualifications_and_accreditations)
+          .to eql(expected_list)
       end
     end
   end
@@ -488,19 +478,30 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#to_query' do
+  describe '#as_json' do
     let(:serializer) { double }
-    let(:form) { described_class.new }
+    let(:form) do
+      described_class.new(
+        options_when_paying_for_care: '1',
+        equity_release: '1',
+        inheritance_tax_planning: '1',
+        wills_and_probate: '1'
+      )
+    end
 
     before do
       allow(Geocode).to receive(:call).and_return(true)
-      allow(SearchFormSerializer).to receive(:new).and_return(serializer)
     end
 
-    it 'builds the query JSON via the `SearchFormSerializer`' do
-      expect(serializer).to receive(:as_json)
-
-      form.to_query
+    it 'builds the query JSON' do
+      expect(form.as_json).to eq(
+        {
+          options_when_paying_for_care: 1,
+          equity_release: 1,
+          inheritance_tax_planning: 1,
+          wills_and_probate: 1
+        }
+      )
     end
   end
 end

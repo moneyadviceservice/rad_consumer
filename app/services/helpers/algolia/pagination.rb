@@ -4,7 +4,7 @@ module Helpers::Algolia
 
     FIXED_PAGE = 1
     MAX_HITS_PER_PAGE = 10
-    MAX_PAGE_LIMIT = 1000
+    MAX_PAGE_LIMIT = 1_000
 
     def paginate(hash, page: FIXED_PAGE, hits_per_page: MAX_HITS_PER_PAGE)
       hash.merge(pagination(page, hits_per_page))

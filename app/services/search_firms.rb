@@ -54,7 +54,7 @@ class SearchFirms
     browse_query = browse_query_for(:geolocation, source_query: query)
     in_range_ids = fetch_in_consumer_range_firm_ids(query: browse_query)
 
-    add_filter_by_firm_ids!(query: query, ids: in_range_ids)
+    filter_query_by_firm_ids!(query: query, ids: in_range_ids)
   end
 
   def with_randomisation
@@ -73,11 +73,12 @@ class SearchFirms
 
     page_random_ids = randomised_firm_ids.fetch(params.page - 1, [])
 
-    add_filter_by_firm_ids!(query: query, ids: page_random_ids)
+    filter_query_by_firm_ids!(query: query, ids: page_random_ids)
   end
 
-  def add_filter_by_firm_ids!(query:, ids:)
+  def filter_query_by_firm_ids!(query:, ids:)
     firm_ids_filter = ids.reduce([]) { |acc, id| acc << "firm.id:#{id}" }
+    return if firm_ids_filter.blank?
 
     query.tap do |q|
       query = q[:value].last
