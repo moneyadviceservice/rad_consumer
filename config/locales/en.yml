@@ -360,7 +360,36 @@ en:
           non_uk_residents_flag:
             title: Advice to UK expatriates
       languages:
-        heading: 'I would like an adviser who can speak the following language:'
+        heading: "I would like an adviser who can speak the following language:"
+        options:
+          - afr
+          - ara
+          - ben
+          - bfi
+          - bul
+          - cym
+          - dan
+          - deu
+          - ell
+          - fas
+          - fra
+          - guj
+          - hin
+          - ita
+          - mar
+          - nld
+          - pan
+          - pol
+          - por
+          - ron
+          - rus
+          - spa
+          - sqi
+          - tur
+          - ukr
+          - urd
+          - vie
+          - zho
       workplace_financial_advice_flag:
         heading: 'I am an employer. I would like help with:'
         setting_up_workplace_pension: Setting up a workplace pension scheme

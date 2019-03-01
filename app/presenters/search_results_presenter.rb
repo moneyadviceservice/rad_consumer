@@ -1,4 +1,5 @@
 class SearchResultsPresenter
+  include ApplicationHelper
   include Pagination
 
   attr_reader :current_page

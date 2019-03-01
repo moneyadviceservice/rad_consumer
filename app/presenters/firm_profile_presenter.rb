@@ -1,4 +1,6 @@
 class FirmProfilePresenter
+  include ApplicationHelper
+
   def initialize(json)
     @json = json
   end

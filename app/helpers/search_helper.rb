@@ -26,6 +26,6 @@ module SearchHelper
   end
 
   def qualification_or_accreditation_key(id, kind)
-    kind.to_s.titleize.constantize.friendly_name(id)
+    I18n.t("#{kind}.ordinal.#{id}")
   end
 end

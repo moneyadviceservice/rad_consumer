@@ -5,8 +5,8 @@ module Filters
     attr_accessor :pension_pot_size
 
     def options_for_pension_pot_sizes
-      InvestmentSize.all.map do |investment_size|
-        [investment_size.localized_name, investment_size.id]
+      I18n.t('investment_size.ordinal').map do |id, name|
+        [name, id.to_s]
       end.unshift(
         [I18n.t('search_filter.pension_pot.any_size_option'), ANY_SIZE_VALUE]
       )

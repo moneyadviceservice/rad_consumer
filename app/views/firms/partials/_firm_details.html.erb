@@ -23,7 +23,7 @@
         <ul class="advice-method__list">
           <% firm.in_person_advice_methods.each do |id| %>
             <li class="advice-method__list-item">
-              <%= InPersonAdviceMethod.friendly_name(id) %>
+              <%= t("in_person_advice_method.ordinal.#{id}") %>
             </li>
           <% end %>
         </ul>
@@ -31,7 +31,7 @@
     <% end %>
 
     <% firm.other_advice_methods.each do |id| %>
-      <% system_name = OtherAdviceMethod.system_name(id) %>
+      <% system_name = t("other_advice_methods.ordinal.#{id}").underscore %>
       <% text = t("firms.show.panels.firm.services.advice_methods.#{system_name}") %>
 
       <div class="advice-method">
