@@ -70,7 +70,7 @@ RSpec.describe SearchForm do
     end
 
     it 'upcases the postcode before validation' do
-      VCR.use_cassette(:rg2_1aa) do
+      VCR.use_cassette(:geocoded_postcode) do
         form.validate
 
         expect(form.postcode).to eql('RG2 1AA')
@@ -230,7 +230,7 @@ RSpec.describe SearchForm do
         before { form.postcode = 'RG2 1AA' }
 
         it 'is valid' do
-          VCR.use_cassette(:rg2_1aa) do
+          VCR.use_cassette(:geocoded_postcode) do
             expect(form).to be_valid
           end
         end
@@ -494,14 +494,14 @@ RSpec.describe SearchForm do
     end
 
     it 'builds the query JSON' do
-      expect(form.as_json).to eq(
-        {
-          options_when_paying_for_care: 1,
-          equity_release: 1,
-          inheritance_tax_planning: 1,
-          wills_and_probate: 1
-        }
-      )
+      expected_hash = {
+        options_when_paying_for_care: '1',
+        equity_release: '1',
+        inheritance_tax_planning: '1',
+        wills_and_probate: '1'
+      }.with_indifferent_access
+
+      expect(form.as_json).to eq(expected_hash)
     end
   end
 end

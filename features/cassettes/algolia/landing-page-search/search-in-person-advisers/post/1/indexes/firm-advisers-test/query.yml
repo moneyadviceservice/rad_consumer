@@ -5,7 +5,7 @@ http_interactions:
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=999\u0026query="}'
+      string: '{"params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
       - Algolia for Ruby (1.25.2); Ruby (2.5.3)
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 13 Mar 2019 15:13:29 GMT
+      - Mon, 18 Mar 2019 18:35:38 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 13 Mar 2019 15:13:29 GMT
+      - Mon, 18 Mar 2019 18:35:39 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -58,11 +58,11 @@ http_interactions:
         MacGyver III","travel_distance":100,"firm":{"id":2},"objectID":"133609432","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":3,"geoDistance":3938,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":3938}}},{"_geoloc":{"lat":50.826334,"lng":-0.140818},"name":"Mrs.
         Connie Streich","travel_distance":100,"firm":{"id":3},"objectID":"133609442","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76976,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76976}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":999,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D&getRankingInfo=true&page=0&hitsPerPage=999&query=","serverUsed":"c11-eu-1.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76976,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76976}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","serverUsed":"c11-eu-1.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Wed, 13 Mar 2019 15:13:29 GMT
+  recorded_at: Mon, 18 Mar 2019 18:35:39 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -77,7 +77,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Wed, 13 Mar 2019 15:13:29 GMT
+      - Mon, 18 Mar 2019 18:35:39 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -92,7 +92,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 13 Mar 2019 15:13:29 GMT
+      - Mon, 18 Mar 2019 18:35:39 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -126,68 +126,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Wed, 13 Mar 2019 15:13:29 GMT
-- request:
-    method: post
-    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Thu, 14 Mar 2019 04:00:02 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Thu, 14 Mar 2019 04:00:02 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: UTF-8
-      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Dr. Einar
-        Stamm","travel_distance":100,"firm":{"id":1},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":9,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":9}}},{"_geoloc":{"lat":51.510643,"lng":-0.052898},"name":"Kaleb
-        MacGyver III","travel_distance":100,"firm":{"id":2},"objectID":"133609432","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":3,"geoDistance":3938,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":3938}}},{"_geoloc":{"lat":50.826334,"lng":-0.140818},"name":"Mrs.
-        Connie Streich","travel_distance":100,"firm":{"id":3},"objectID":"133609442","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76976,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76976}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5180697%2C-0.1085203%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
-
-'
-    http_version: 
-  recorded_at: Thu, 14 Mar 2019 04:00:02 GMT
+  recorded_at: Mon, 18 Mar 2019 18:35:39 GMT
 recorded_with: VCR 4.0.0

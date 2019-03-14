@@ -4,37 +4,39 @@ class SessionJar
   def initialize(session)
     @session = session
     @session[:recently_visited_firms] ||= []
-    @session[:last_visited_results] ||= { params: {}, randomised_firm_ids: [] }
+    @session[:last_search] ||= { params: {}, randomised_firm_ids: [] }
   end
 
   def recently_visited_firms
     @session[:recently_visited_firms]
   end
 
-  def last_search_results
-    @session[:last_visited_results]
+  def last_search
+    @session[:last_search]
+  end
+
+  def last_search_url(locale)
+    return if last_search[:params].blank?
+
+    search_path_for(last_search[:params], locale)
+  end
+
+  def last_search_randomised_firm_ids
+    @session[:last_search][:randomised_firm_ids]
   end
 
   def already_stored_search?(params, page_sensitive: true)
-    return false if last_search_results&.fetch(:params, nil).blank?
+    return false if last_search&.fetch(:params, nil).blank?
 
-    last_params = last_search_results[:params].except(page_sensitive || :page)
+    last_params = last_search[:params].except(page_sensitive || :page)
     last_params == params.except(page_sensitive || :page)
-  end
-
-  def last_search_results_url(locale)
-    search_path_for(last_search_results[:params], locale)
-  end
-
-  def last_results_randomised_firm_ids
-    @session[:last_visited_results][:randomised_firm_ids]
   end
 
   def update_most_recent_search(params, randomised_firm_ids = [])
     return if already_stored_search?(params)
 
-    @session[:last_visited_results][:params] = params
-    @session[:last_visited_results][:randomised_firm_ids] = randomised_firm_ids
+    @session[:last_search][:params] = params
+    @session[:last_search][:randomised_firm_ids] = randomised_firm_ids
   end
 
   def update_recently_visited_firms(firm_result, params)

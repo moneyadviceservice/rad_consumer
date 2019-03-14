@@ -1,6 +1,6 @@
 class SearchResultsPresenter
   include ApplicationHelper
-  include Pagination
+  include Results::Pagination
 
   attr_reader :current_page
 
@@ -9,17 +9,13 @@ class SearchResultsPresenter
     @current_page = page
   end
 
-  def hits
-    json['hits']
-  end
-
   def total_records
     json['nbHits']
   end
 
   def firms
     @firms ||= hits.map do |hit|
-      FirmPresenter.new(hit['firm']).tap do |firm|
+      Results::FirmPresenter.new(hit['firm']).tap do |firm|
         firm.closest_adviser_distance = closest_adviser_distance(hit)
       end
     end
@@ -28,6 +24,10 @@ class SearchResultsPresenter
   private
 
   attr_reader :json
+
+  def hits
+    json['hits']
+  end
 
   def closest_adviser_distance(hit)
     return unless hit['_rankingInfo']

@@ -210,4 +210,59 @@ http_interactions:
 '
     http_version: 
   recorded_at: Thu, 14 Mar 2019 03:59:17 GMT
+- request:
+    method: post
+    uri: https://fc0uq0wje5-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"attributesToRetrieve=%5B%22firm.id%22%5D\u0026distinct=true\u0026page=0\u0026hitsPerPage=1000\u0026query=london"}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 18 Mar 2019 17:57:56 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Mar 2019 17:57:56 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '67'
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+    body:
+      encoding: UTF-8
+      string: '{"message":"Index firm-advisers-test does not exist","status":404}
+
+'
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 17:57:57 GMT
 recorded_with: VCR 4.0.0

@@ -62,7 +62,7 @@ class SearchFirms
 
     @randomised_firm_ids =
       if session_jar.already_stored_search?(raw_params, page_sensitive: false)
-        session_jar.last_results_randomised_firm_ids
+        session_jar.last_search_randomised_firm_ids
       else
         browse_query = browse_query_for(:randomisation, source_query: query)
         calculate_random_firm_ids(

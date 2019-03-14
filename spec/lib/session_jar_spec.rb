@@ -1,155 +1,433 @@
 RSpec.describe SessionJar do
-  def firm_result(id, name: 'foobar', closest_adviser: 10, in_person_advice_methods: [1, 2])
-    result = FirmResult.new('_source' => {
-                              '_id' => id,
-                              'registered_name' => name,
-                              'advisers' => [],
-                              'offices' => [],
-                              'in_person_advice_methods' => in_person_advice_methods
-                            })
-    result.closest_adviser = closest_adviser
-    result
-  end
+  let(:session_jar) { described_class.new(session) }
 
-  def params(id = '1')
-    {
-      search_form: {
-        'advice_method' => 'face_to_face', 'postcode' => 'EC1N 2TD'
-      },
-      'id' => id.to_s,
-      'locale' => 'en',
-      'controller' => 'firms',
-      'action' => 'show'
-    }
-  end
+  describe '.recently_visited_firms' do
+    context 'when there are no previously visited firms' do
+      let(:session) { { recently_visited_firms: [] } }
 
-  def expected_firm_profile_path(id, locale)
-    "/#{locale}/firms/#{id}?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD"
-  end
-
-  subject { described_class.new({}) }
-  let(:page) { '2' }
-
-  describe '#search_results_url' do
-    before { subject.store(firm_result(1), params) }
-
-    context 'when locale mapping is blank' do
-      it 'returns nil' do
-        expect(described_class.new({}).search_results_url('en')).to be(nil)
-      end
+      it { expect(session_jar.recently_visited_firms).to be_blank }
     end
 
-    context 'when :last_visited_page key is present' do
-      subject { described_class.new(last_visited_page: page) }
-
-      it 'adds the page to the search query params' do
-        expect(subject.search_results_url('en')).to match(/\/en\/search\?page=2/)
+    context 'when previously visited firms are present' do
+      let(:session) { { recently_visited_firms: firm_params } }
+      let(:firm_params) do
+        [
+          {
+            'id': 1,
+            'name': 'Advisers Ltd 1',
+            'closest_adviser_distance': 146.92107239,
+            'face_to_face?': true,
+            'profile_path': {
+              'en': 'en/firms/381',
+              'cy': 'cy/firms/381'
+            }
+          },
+          {
+            'id': 2,
+            'name': 'Advisers Ltd 2',
+            'closest_adviser_distance': 136.13408919,
+            'face_to_face?': true,
+            'profile_path': {
+              'en': 'en/firms/1550',
+              'cy': 'cy/firms/1550'
+            }
+          },
+          {
+            'id': 3,
+            'name': 'Advisers Ltd 3',
+            'closest_adviser_distance': 0.05468056,
+            'face_to_face?': true,
+            'profile_path': {
+              'en': 'en/firms/3?postcode=EC1N+2TD',
+              'cy': 'cy/firms/3?postcode=EC1N+2TD'
+            }
+          }
+        ]
       end
-    end
 
-    context 'when locale is a string' do
-      it 'returns the search_results_url in english' do
-        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url('en')).to eq(expected_path)
-      end
-
-      it 'returns the search_results_url in welsh' do
-        expected_path = '/cy/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url('cy')).to eq(expected_path)
-      end
-    end
-
-    context 'when locale is a symbol' do
-      it 'returns the search_results_url in english' do
-        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url(:en)).to eq(expected_path)
-      end
-
-      it 'returns the search_results_url in welsh' do
-        expected_path = '/cy/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url(:cy)).to eq(expected_path)
+      it 'returns them' do
+        expect(session_jar.recently_visited_firms)
+          .to eq(firm_params)
       end
     end
   end
 
-  describe 'profile_path' do
-    it 'returns the most_recent_search_url' do
-      subject.store(firm_result(1), params)
-      expect(subject.firms[0]['profile_path']['en']).to eq(expected_firm_profile_path(1, 'en'))
-      expect(subject.firms[0]['profile_path']['cy']).to eq(expected_firm_profile_path(1, 'cy'))
+  describe '.last_search_results' do
+    context 'when there is no last search' do
+      let(:session) { { last_search: {} } }
+
+      it { expect(session_jar.recently_visited_firms).to be_blank }
+    end
+
+    context 'when last search is present' do
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'aviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
+      end
+
+      it 'returns it' do
+        expect(session_jar.last_search).to eq(search_params)
+      end
     end
   end
 
-  describe '#store' do
-    describe 'storing most recent search' do
-      it 'always stores the most recent search (independently of the firm storing logic)' do
-        # Store a firm result and search form params
-        subject.store(firm_result(1), params)
+  describe '.last_search_url' do
+    context 'when there is no last search' do
+      let(:session) { {} }
 
-        expected_path = '/en/search?search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url('en')).to eq(expected_path)
-
-        # Store the same firm with different search params as if we are revisiting
-        # the same firm returned from a different search.
-        updated_search_params = params
-        updated_search_params[:search_form]['advice_for_employees_flag'] = '1'
-        subject.store(firm_result(1), updated_search_params)
-
-        expected_path = '/en/search?search_form%5Badvice_for_employees_flag%5D=1' \
-          '&search_form%5Badvice_method%5D=face_to_face&search_form%5Bpostcode%5D=EC1N+2TD'
-        expect(subject.search_results_url('en')).to eq(expected_path)
+      %i[en cy].each do |locale|
+        it { expect(session_jar.last_search_url(locale)).to be_nil }
       end
     end
 
-    describe 'storing recently visited firms' do
-      it 'stores the attributes' do
-        subject.store(firm_result(1, name: 'foobar', closest_adviser: 10), params)
-
-        expect(subject.firms.first['id']).to eq(1)
-        expect(subject.firms.first['name']).to eq('foobar')
-        expect(subject.firms.first['closest_adviser']).to eq(10)
-        expect(subject.firms.first['face_to_face?']).to eq(true)
+    context 'when last search is present' do
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'adviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
       end
 
-      context 'remote search' do
-        it 'stores the attributes' do
-          subject.store(firm_result(1, in_person_advice_methods: []), params)
-
-          expect(subject.firms.first['face_to_face?']).to eq(false)
+      %i[en cy].each do |locale|
+        it "returns the relative search path for #{locale} translation" do
+          expected_url = search_path(
+            page: search_params[:params][:page],
+            search_form: search_params[:params].except(:page),
+            locale: locale
+          )
+          expect(session_jar.last_search_url(locale)).to eq(expected_url)
         end
       end
+    end
+  end
 
-      it 'stores firms ordered by most recent first' do
-        subject.store(firm_result(1), params)
-        subject.store(firm_result(2), params(2))
+  describe '.last_search_randomised_firm_ids' do
+    context 'when there is no last search' do
+      let(:session) { {} }
 
-        expect(subject.firms[0]['id']).to eq(2)
-        expect(subject.firms[1]['id']).to eq(1)
+      it { expect(session_jar.last_search_randomised_firm_ids).to be_blank }
+    end
+
+    context 'when last search is present' do
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          randomised_firm_ids: [3, 199, 42]
+        }
       end
 
-      it 'stores no duplicate firms' do
-        subject.store(firm_result(1), params)
-        subject.store(firm_result(1), params)
-
-        expect(subject.firms.length).to eq(1)
-      end
-
-      it 'stores no more than three firms' do
-        subject.store(firm_result(1), params(1))
-        subject.store(firm_result(2), params(2))
-        subject.store(firm_result(3), params(3))
-        subject.store(firm_result(4), params(4))
-
-        expect(subject.firms.map { |f| f['id'] }).to eq([4, 3, 2])
+      it 'returns them' do
+        expect(session_jar.last_search_randomised_firm_ids)
+          .to eq(search_params[:randomised_firm_ids])
       end
     end
   end
 
-  describe '#previous_search?' do
-    subject { described_class.new(last_visited_page: page) }
+  describe '.already_stored_search?' do
+    subject(:already_stored_search?) do
+      session_jar.already_stored_search?(
+        current_params,
+        page_sensitive: page_sensitive
+      )
+    end
+    let(:current_params) { {} }
+    let(:page_sensitive) { true }
 
-    it 'returns true if :last_visited_page key is present' do
-      expect(subject.previous_search?).to eq true
+    context 'when there is no last search' do
+      let(:session) { {} }
+
+      it { expect(already_stored_search?).to eq(false) }
+    end
+
+    context 'when there is a last search but with different params' do
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'adviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
+      end
+
+      it { expect(already_stored_search?).to eq(false) }
+    end
+
+    context 'when there is a last search with the same params' do
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'adviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
+      end
+      let(:current_params) { search_params[:params] }
+
+      it { expect(already_stored_search?).to eq(true) }
+    end
+
+    context 'when page sensitive param is set to true' do
+      let(:page_sensitive) { true }
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'adviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
+      end
+      let(:current_params) { search_params[:params].merge(page: 10) }
+
+      it 'returns false despite the page being different' do
+        expect(already_stored_search?).to eq(false)
+      end
+    end
+
+    context 'when page sensitive param is set to false' do
+      let(:page_sensitive) { false }
+      let(:session) { { last_search: search_params } }
+      let(:search_params) do
+        {
+          params: {
+            pension_pot_size: 'any',
+            advice_method: 'firm_name_search',
+            postcode: '',
+            firm_name: 'adviser',
+            random_search_seed: 7,
+            retirement_income_products: 0,
+            pension_transfer: 0,
+            options_when_paying_for_care: 0,
+            equity_release: 0,
+            inheritance_tax_planning: 0,
+            wills_and_probate: 0,
+            ethical_investing_flag: 0,
+            sharia_investing_flag: 0,
+            non_uk_residents_flag: 0,
+            qualification_or_accreditation: '',
+            language: '',
+            setting_up_workplace_pension_flag: 0,
+            existing_workplace_pension_flag: 0,
+            advice_for_employees_flag: 0,
+            page: 1
+          }
+        }
+      end
+      let(:current_params) { search_params[:params].merge(page: 10) }
+
+      it 'returns true despite the page being different' do
+        expect(already_stored_search?).to eq(true)
+      end
+    end
+  end
+
+  describe '.update_most_recent_search' do
+    subject(:update_most_recent_search) do
+      session_jar.update_most_recent_search(
+        search_params,
+        randomised_firm_ids
+      )
+    end
+    let(:randomised_firm_ids) { [3, 1, 100] }
+    let(:search_params) do
+      {
+        pension_pot_size: 'any',
+        advice_method: 'firm_name_search',
+        postcode: '',
+        firm_name: 'adviser',
+        random_search_seed: 7,
+        retirement_income_products: 0,
+        pension_transfer: 0,
+        options_when_paying_for_care: 0,
+        equity_release: 0,
+        inheritance_tax_planning: 0,
+        wills_and_probate: 0,
+        ethical_investing_flag: 0,
+        sharia_investing_flag: 0,
+        non_uk_residents_flag: 0,
+        qualification_or_accreditation: '',
+        language: '',
+        setting_up_workplace_pension_flag: 0,
+        existing_workplace_pension_flag: 0,
+        advice_for_employees_flag: 0,
+        page: 1
+      }
+    end
+
+    context 'when there is no last search' do
+      let(:session) { {} }
+
+      it 'saves the current search and randomised ids' do
+        update_most_recent_search
+        expect(session_jar.last_search).to eq(
+          params: search_params,
+          randomised_firm_ids: randomised_firm_ids
+        )
+      end
+    end
+
+    context 'when last search is present but with different params' do
+      let(:session) do
+        {
+          last_search: {
+            params: search_params.merge(page: 100),
+            randomised_firm_ids: []
+          }
+        }
+      end
+
+      it 'saves the current search and randomised ids' do
+        update_most_recent_search
+        expect(session_jar.last_search).to eq(
+          params: search_params,
+          randomised_firm_ids: randomised_firm_ids
+        )
+      end
+    end
+  end
+
+  describe '.update_recently_visited_firms' do
+    def firm_params(id)
+      {
+        'id': id,
+        'name': "Advisers Ltd #{id}",
+        'closest_adviser_distance': 146.92107239,
+        'face_to_face?': false,
+        'profile_path': {
+          'en': "/en/firms/#{id}",
+          'cy': "/cy/firms/#{id}"
+        }
+      }
+    end
+
+    context 'when adding previously visited firms' do
+      def add_firm(id)
+        firm_params = firm_params(id)
+        firm_result = instance_double(
+          Results::FirmPresenter,
+          id: firm_params[:id],
+          name: firm_params[:name],
+          closest_adviser_distance: firm_params[:closest_adviser_distance],
+          in_person_advice_methods: []
+        )
+
+        params = { id: firm_params[:id] }
+        session_jar.update_recently_visited_firms(firm_result, params)
+      end
+
+      let(:session) { {} }
+
+      before do
+        add_firm(1)
+        add_firm(2)
+        add_firm(3)
+        2.times { add_firm(4) }
+      end
+
+      it 'saves the last 3 visited firms without adding duplicates' do
+        expect(session_jar.recently_visited_firms)
+          .to eq([firm_params(4), firm_params(3), firm_params(2)])
+      end
     end
   end
 end

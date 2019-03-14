@@ -13,7 +13,7 @@ Feature: Firm profile
     Then I can see the following details
       | name                 | value                |
       | Minimum fee          | £0                   |
-      | Minimum pot size     | £50,000              |
+      | Minimum pot size     | No minimum pot size  |
       | Free initial meeting | Free initial meeting |
     And I can see the following firm services
       | name                              |

@@ -7,7 +7,7 @@ class RecentlyVisitedFirm < OpenStruct
     profile_path[I18n.locale]
   end
 
-  def closest_adviser_distance?
+  def closest_adviser?
     face_to_face? && closest_adviser_distance.to_f > 0
   end
 

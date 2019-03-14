@@ -126,7 +126,7 @@ RSpec.describe SearchFirms do
         results = perform_search['hits']
         firm_ids = results.map { |hit| hit['firm']['id'] }
         session_assigned_firm_ids =
-          args[:session][:last_visited_results][:randomised_firm_ids].flatten
+          args[:session][:last_search][:randomised_firm_ids].flatten
 
         expect(firm_ids).to eq(session_assigned_firm_ids)
       end
@@ -181,7 +181,7 @@ RSpec.describe SearchFirms do
           results = perform_search['hits']
           firm_ids = results.map { |hit| hit['firm']['id'] }
           session_assigned_firm_ids =
-            args[:session][:last_visited_results][:randomised_firm_ids].flatten
+            args[:session][:last_search][:randomised_firm_ids].flatten
 
           firm_names = results.map { |hit| hit['firm']['registered_name'] }
 

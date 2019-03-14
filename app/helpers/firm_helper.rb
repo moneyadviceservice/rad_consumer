@@ -24,10 +24,11 @@ module FirmHelper
   end
 
   def minimum_pot_size_text(firm_result)
-    text = t('investment_size.ordinal')[:"#{firm_result.investment_sizes.first}"]
+    all_lowest = t('investment_size.ordinal').keys.min.to_s.to_i
+    firm_lowest = firm_result.investment_sizes.first
+    return t('investment_size.no_minimum') if firm_lowest == all_lowest
 
-    return I18n.t('investment_size.no_minimum') unless text
-    text
+    t("investment_size.ordinal.#{firm_lowest}")
   end
 
   def minimum_fixed_fee(firm_result)

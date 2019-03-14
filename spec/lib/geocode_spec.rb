@@ -5,12 +5,12 @@ RSpec.describe Geocode, '#call' do
     Geocode.call('RG1 1GG')
   end
 
-  it 'returns the lat/long pair' do
-    VCR.use_cassette(:rg11gg) do
+  it 'returns the lat/long pair', :aggreate_failures do
+    VCR.use_cassette(:geocoded_postcode) do
       latitude, longitude = Geocode.call('RG11GG')
 
-      expect(latitude).to eql(51.45326439999999)
-      expect(longitude).to eql(-0.9634222000000001)
+      expect(latitude).to eql(51.4607254)
+      expect(longitude).to eql(-0.9747992000000001)
     end
   end
 end

@@ -25,6 +25,8 @@ module SearchHelper
     end
   end
 
+  private
+
   def qualification_or_accreditation_key(id, kind)
     I18n.t("#{kind}.ordinal.#{id}")
   end

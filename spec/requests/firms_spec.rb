@@ -1,4 +1,4 @@
-RSpec.describe 'Firms', type: :controller do
+RSpec.describe 'Firms' do
   before { VCR.insert_cassette(cassette_name) }
   after { VCR.eject_cassette }
 

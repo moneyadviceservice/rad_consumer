@@ -118,20 +118,20 @@ RSpec.describe FirmHelper, type: :helper do
 
   describe 'minimum_pot_size_text' do
     let(:available_ordinals) { I18n.t('investment_size.ordinal').keys.map(&:to_s).map(&:to_i) }
-    let(:lowest_size) { InvestmentSize.lowest }
-    let(:other_size) { InvestmentSize.where.not(order: lowest_size.order).first }
-    let(:expected_friendly_name) { I18n.t("investment_size.ordinal.#{other_size.order}") }
+    let(:lowest_size) { available_ordinals.first }
+    let(:other_size) { (available_ordinals - [lowest_size]).first }
     subject { helper.minimum_pot_size_text(firm) }
 
     before do
-      available_ordinals.each do |ordinal|
-        FactoryGirl.create(:investment_size, order: ordinal)
-      end
-      allow(firm).to receive(:investment_sizes).and_return(firm_investment_sizes.map(&:id))
+      allow(firm).to receive(:investment_sizes)
+        .and_return(firm_investment_sizes)
     end
 
     context 'when the minimum size is not `Under £50k`' do
       let(:firm_investment_sizes) { [other_size] }
+      let(:expected_friendly_name) do
+        I18n.t("investment_size.ordinal.#{other_size}")
+      end
 
       it { is_expected.to eq(expected_friendly_name) }
     end

@@ -5,19 +5,11 @@ class FirmProfilePresenter
     @json = json
   end
 
-  def advisers_hits
-    json[:advisers]['hits']
-  end
-
-  def offices_hits
-    json[:offices]['hits']
-  end
-
   def firm
     return unless advisers_hits.first&.fetch('firm')
 
     hit = advisers_hits.first['firm']
-    FirmPresenter.new(hit).tap do |firm|
+    Results::FirmPresenter.new(hit).tap do |firm|
       firm.offices = offices
       firm.advisers = advisers
       firm.closest_adviser_distance = closest_adviser_distance
@@ -28,15 +20,23 @@ class FirmProfilePresenter
 
   attr_reader :json
 
+  def advisers_hits
+    json[:advisers]['hits']
+  end
+
+  def offices_hits
+    json[:offices]['hits']
+  end
+
   def offices
     offices_hits.map do |hit|
-      OfficePresenter.new(hit)
+      Results::OfficePresenter.new(hit)
     end
   end
 
   def advisers
     advisers_hits.map do |hit|
-      AdviserPresenter.new(hit.except('firm')).tap do |adviser|
+      Results::AdviserPresenter.new(hit.except('firm')).tap do |adviser|
         adviser.distance = adviser_distance(hit)
       end
     end
