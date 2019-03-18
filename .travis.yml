@@ -18,7 +18,7 @@ before_script:
   - npm install -g bower karma-cli
   - bundle exec bowndler update
 script:
-  - bundle exec rspec
+  - bundle exec rspec --exclude-pattern "spec/features/**/*_spec.rb"
   - bundle exec cucumber
   - npm test
   - bundle exec rubocop -DS
