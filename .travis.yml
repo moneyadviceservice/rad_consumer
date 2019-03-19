@@ -6,13 +6,9 @@ rvm:
   - 2.5.3
 node_js:
   - 'node'
-services:
-  - elasticsearch
-before_install:
-  - curl -O https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.3.deb && sudo dpkg -i --force-confnew elasticsearch-1.7.3.deb && sudo service elasticsearch restart
 before_script:
   - cp config/example.database.yml config/database.yml
-  - psql -c "create database rad_test;" -U postgres
+  - psql -c "create database rad_consumer_test;" -U postgres
   - bundle exec rake db:schema:load
   - npm install
   - npm install -g bower karma-cli
@@ -22,5 +18,3 @@ script:
   - bundle exec cucumber
   - npm test
   - bundle exec rubocop -DS
-env:
-  - SHOW_ETHICAL_AND_SHARIA_FILTER=true SHOW_LANGUAGES_FILTER=true
