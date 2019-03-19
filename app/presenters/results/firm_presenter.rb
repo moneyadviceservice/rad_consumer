@@ -59,8 +59,10 @@ module Results
       public_send(advice_type)
     end
 
-    def types_of_advice
-      TYPES_OF_ADVICE_FIELDS.select { |field| public_send(field).nonzero? }
+    def type_of_advice_method
+      return :face_to_face if in_person_advice_methods.present?
+
+      :remote
     end
 
     def minimum_fixed_fee?

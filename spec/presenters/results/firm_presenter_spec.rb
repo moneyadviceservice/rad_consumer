@@ -96,6 +96,20 @@ RSpec.describe Results::FirmPresenter do
     end
   end
 
+  describe '#type_of_advice_method' do
+    context 'when no in person advice methods are present' do
+      it { expect(presenter.type_of_advice_method).to eq(:remote) }
+    end
+
+    context 'when in person advice methods are present' do
+      before do
+        object.merge!(in_person_advice_methods: [1])
+      end
+
+      it { expect(presenter.type_of_advice_method).to eq(:face_to_face) }
+    end
+  end
+
   describe '#minimum_pot_size_id' do
     it 'returns the minimum pot size id' do
       expect(presenter.minimum_pot_size_id).to eq(1)
