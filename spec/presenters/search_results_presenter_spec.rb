@@ -47,8 +47,7 @@ RSpec.describe SearchResultsPresenter do
               "registered_name": {
                 "value": 'Best Advisers Ltd',
                 "matchLevel": 'none',
-                "matchedWords": [
-                ]
+                "matchedWords": []
               }
             }
           },
@@ -107,8 +106,7 @@ RSpec.describe SearchResultsPresenter do
             "sharia_investing_flag": false,
             "workplace_financial_advice_flag": false,
             "non_uk_residents_flag": false,
-            "languages": [
-            ],
+            "languages": [],
             "total_offices": 1,
             "total_advisers": 6
           },

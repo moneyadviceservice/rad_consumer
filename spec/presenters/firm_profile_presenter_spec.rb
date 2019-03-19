@@ -58,8 +58,7 @@ RSpec.describe FirmProfilePresenter do
                 "registered_name": {
                   "value": 'Best Advisers Ltd',
                   "matchLevel": 'none',
-                  "matchedWords": [
-                  ]
+                  "matchedWords": []
                 }
               }
             },
@@ -129,8 +128,7 @@ RSpec.describe FirmProfilePresenter do
               "sharia_investing_flag": false,
               "workplace_financial_advice_flag": false,
               "non_uk_residents_flag": false,
-              "languages": [
-              ],
+              "languages": [],
               "total_offices": 1,
               "total_advisers": 6
             },
@@ -140,8 +138,7 @@ RSpec.describe FirmProfilePresenter do
                 "registered_name": {
                   "value": 'Best Advisers Ltd',
                   "matchLevel": 'none',
-                  "matchedWords": [
-                  ]
+                  "matchedWords": []
                 }
               }
             },
@@ -201,73 +198,53 @@ RSpec.describe FirmProfilePresenter do
                 "lat": {
                   "value": '51.511949',
                   "matchLevel": 'none',
-                  "matchedWords": [
-
-                  ]
+                  "matchedWords": []
                 },
                 "lng": {
                   "value": '-0.108293',
                   "matchLevel": 'none',
-                  "matchedWords": [
-
-                  ]
+                  "matchedWords": []
                 }
               },
               "firm_id": {
                 "value": '1',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "address_line_one": {
                 "value": 'Temple Chambers',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "address_line_two": {
                 "value": '1-2 Temple Avenue',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "address_town": {
                 "value": 'London',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "address_county": {
                 "value": 'Greater London ',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "address_postcode": {
                 "value": 'EC4Y 0HP',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "email_address": {
                 "value": 'hello@bestadvisers.co.uk ',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               },
               "telephone_number": {
                 "value": '020 7555 8001',
                 "matchLevel": 'none',
-                "matchedWords": [
-
-                ]
+                "matchedWords": []
               }
             },
             "_rankingInfo": {
