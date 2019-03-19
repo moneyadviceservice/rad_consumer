@@ -1,5 +1,6 @@
 module Helpers::Algolia
   module Randomisation
+    include Index
     include Pagination
 
     def calculate_random_firm_ids(query:, seed:)

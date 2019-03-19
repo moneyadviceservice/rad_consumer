@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:33 GMT
+      - Tue, 19 Mar 2019 11:53:45 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:33 GMT
+      - Tue, 19 Mar 2019 11:53:45 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -69,9 +69,9 @@ http_interactions:
         650","matchLevel":"none","matchedWords":[]},"address_town":{"value":"West
         Josue","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Wisconsin","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC4V
         4AY","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office885@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
-        333 885","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/885","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-1.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        333 885","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/885","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:33 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:45 GMT
 recorded_with: VCR 4.0.0

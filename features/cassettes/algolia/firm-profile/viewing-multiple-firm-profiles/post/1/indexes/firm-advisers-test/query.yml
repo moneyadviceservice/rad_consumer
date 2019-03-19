@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:34 GMT
+      - Tue, 19 Mar 2019 11:53:46 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:34 GMT
+      - Tue, 19 Mar 2019 11:53:46 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -56,7 +56,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:34 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:46 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -71,7 +71,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:34 GMT
+      - Tue, 19 Mar 2019 11:53:46 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -86,7 +86,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:34 GMT
+      - Tue, 19 Mar 2019 11:53:46 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -116,7 +116,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:34 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:46 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -131,7 +131,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:35 GMT
+      - Tue, 19 Mar 2019 11:53:47 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -146,7 +146,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:35 GMT
+      - Tue, 19 Mar 2019 11:53:47 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -177,11 +177,11 @@ http_interactions:
         D''Amore","postcode":"EC4V 4AY","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
         Firm Central London","postcode_searchable":true,"telephone_number":"07111
         333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609402","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":483492,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":483492}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-1.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":483492,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":483492}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:35 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:47 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -196,7 +196,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:36 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -211,7 +211,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:36 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
@@ -238,7 +238,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:36 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:48 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -253,7 +253,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:36 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -268,7 +268,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:36 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -298,7 +298,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:36 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:48 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -313,7 +313,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:35:37 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -328,7 +328,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:35:37 GMT
+      - Tue, 19 Mar 2019 11:53:48 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -359,9 +359,9 @@ http_interactions:
         Maggio III","postcode":"E1 0AE","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":2,"registered_name":"Test
         Firm East London","postcode_searchable":true,"telephone_number":"07111 333
         301","website_address":"http://example.net/offices/301","email_address":"office301@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[3],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":1,"total_advisers":2},"objectID":"133609422","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":2,"geoDistance":484907,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":484907}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A2%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-1.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":2,"geoDistance":484907,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":484907}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A2%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:37 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:48 GMT
 recorded_with: VCR 4.0.0

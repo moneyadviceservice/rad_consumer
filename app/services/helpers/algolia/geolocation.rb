@@ -1,5 +1,7 @@
 module Helpers::Algolia
   module Geolocation
+    include Index
+
     def fetch_in_consumer_range_firm_ids(query:)
       browse(query: query)
         .select { |hit| in_range?(hit) }

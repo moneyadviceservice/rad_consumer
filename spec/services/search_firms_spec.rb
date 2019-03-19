@@ -103,7 +103,7 @@ RSpec.describe SearchFirms do
                 'firm.in_person_advice_methods:-1',
                 'firm.in_person_advice_methods:-2',
                 'firm.in_person_advice_methods:-3',
-                ['firm.id:5', 'firm.id:6', 'firm.id:4']
+                ['firm.id:4', 'firm.id:5', 'firm.id:6']
               ],
               page: 0,
               hitsPerPage: 10

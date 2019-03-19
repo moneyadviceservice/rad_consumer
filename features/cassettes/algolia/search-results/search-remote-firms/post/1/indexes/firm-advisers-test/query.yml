@@ -5,7 +5,7 @@ http_interactions:
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A6%22%2C%22firm.id%3A4%22%2C%22firm.id%3A5%22%5D%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
+      string: '{"params":"attributesToRetrieve=%5B%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
       - Algolia for Ruby (1.25.2); Ruby (2.5.3)
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:03:35 GMT
+      - Tue, 19 Mar 2019 11:53:54 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:03:35 GMT
+      - Tue, 19 Mar 2019 11:53:54 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -52,78 +52,14 @@ http_interactions:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"hits":[{"firm":{"id":6,"registered_name":"Test Firm Remote 3","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5,"registered_name":"Test
-        Firm Remote 2","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[2],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4,"registered_name":"Test
-        Firm Remote 1","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A6%22%2C%22firm.id%3A4%22%2C%22firm.id%3A5%22%5D%5D&page=0&hitsPerPage=10&query="}
+      string: '{"hits":[{"firm":{"id":6},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm.id%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%5D&page=0&hitsPerPage=1000&query="}
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:03:36 GMT
-- request:
-    method: post
-    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A4%22%2C%22firm.id%3A6%22%2C%22firm.id%3A5%22%5D%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Mon, 18 Mar 2019 18:04:38 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 18 Mar 2019 18:04:38 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: UTF-8
-      string: '{"hits":[{"firm":{"id":6,"registered_name":"Test Firm Remote 3","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5,"registered_name":"Test
-        Firm Remote 2","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[2],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4,"registered_name":"Test
-        Firm Remote 1","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A4%22%2C%22firm.id%3A6%22%2C%22firm.id%3A5%22%5D%5D&page=0&hitsPerPage=10&query="}
-
-'
-    http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:04:38 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:54 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -138,7 +74,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Mon, 18 Mar 2019 18:22:52 GMT
+      - Tue, 19 Mar 2019 11:53:56 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -153,7 +89,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 18 Mar 2019 18:22:52 GMT
+      - Tue, 19 Mar 2019 11:53:56 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -185,189 +121,5 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:22:52 GMT
-- request:
-    method: post
-    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A5%22%2C%22firm.id%3A6%22%2C%22firm.id%3A4%22%5D%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Mon, 18 Mar 2019 18:23:19 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 18 Mar 2019 18:23:19 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: UTF-8
-      string: '{"hits":[{"firm":{"id":6,"registered_name":"Test Firm Remote 3","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5,"registered_name":"Test
-        Firm Remote 2","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[2],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4,"registered_name":"Test
-        Firm Remote 1","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A5%22%2C%22firm.id%3A6%22%2C%22firm.id%3A4%22%5D%5D&page=0&hitsPerPage=10&query="}
-
-'
-    http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:23:20 GMT
-- request:
-    method: post
-    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"attributesToRetrieve=%5B%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Mon, 18 Mar 2019 18:35:46 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 18 Mar 2019 18:35:46 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: UTF-8
-      string: '{"hits":[{"firm":{"id":6},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm.id%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%5D&page=0&hitsPerPage=1000&query="}
-
-'
-    http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:46 GMT
-- request:
-    method: post
-    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A6%22%2C%22firm.id%3A5%22%2C%22firm.id%3A4%22%5D%5D\u0026page=0\u0026hitsPerPage=10\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Mon, 18 Mar 2019 18:35:48 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 18 Mar 2019 18:35:48 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-      Content-Encoding:
-      - gzip
-    body:
-      encoding: UTF-8
-      string: '{"hits":[{"firm":{"id":6,"registered_name":"Test Firm Remote 3","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609472","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 3","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":5,"registered_name":"Test
-        Firm Remote 2","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[2],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609462","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 2","matchLevel":"none","matchedWords":[]}}}},{"firm":{"id":4,"registered_name":"Test
-        Firm Remote 1","postcode_searchable":false,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[1],"investment_sizes":[1],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609452","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Remote 1","matchLevel":"none","matchedWords":[]}}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%5B%22firm.other_advice_methods%3A1%22%2C%22firm.other_advice_methods%3A2%22%5D%2C%22firm.in_person_advice_methods%3A-1%22%2C%22firm.in_person_advice_methods%3A-2%22%2C%22firm.in_person_advice_methods%3A-3%22%2C%5B%22firm.id%3A6%22%2C%22firm.id%3A5%22%2C%22firm.id%3A4%22%5D%5D&page=0&hitsPerPage=10&query="}
-
-'
-    http_version: 
-  recorded_at: Mon, 18 Mar 2019 18:35:48 GMT
+  recorded_at: Tue, 19 Mar 2019 11:53:56 GMT
 recorded_with: VCR 4.0.0

@@ -22,7 +22,7 @@ module Helpers::Algolia
     end
 
     def valid_page?(page)
-      page >= 0 && page <= MAX_PAGE_LIMIT
+      page > 0 && page <= MAX_PAGE_LIMIT
     end
   end
 end
