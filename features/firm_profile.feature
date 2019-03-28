@@ -6,14 +6,14 @@ Feature: Firm profile
     When I am viewing the profile for firm "Test Firm Central London"
     Then I can see the following general information
       | name                     | telephone     | email                 |
-      | Test Firm Central London | 07111 333 271 | office271@example.net |
+      | Test Firm Central London | 07111 333 789 | office789@example.org |
 
   Scenario: View firm details
     When I am viewing the profile for firm "Test Firm Central London"
     Then I can see the following details
       | name                 | value                |
       | Minimum fee          | £0                   |
-      | Minimum pot size     | No minimum pot size  |
+      | Minimum pot size     | £100,000             |
       | Free initial meeting | Free initial meeting |
     And I can see the following firm services
       | name                              |
@@ -24,24 +24,24 @@ Feature: Firm profile
       | Inheritance tax planning          |
       | Wills & probate                   |
     And I can see the following remote advice methods
-      | name         |
-      | At your home |
+      | name               |
+      | At their office(s) |
 
   Scenario: View firm offices
     When I am viewing the profile for firm "Test Firm Central London"
     And I click on the "offices" tab
     Then I can see the following offices
       | postcode | telephone     | email                 | website                        |
-      | EC1N 2TD | 07111 333 271 | office271@example.net | http://example.net/offices/271 |
-      | EC4V 4AY | 07111 333 885 | office885@example.com | http://example.net/offices/885 |
+      | EC1N 2TD | 07111 333 789 | office789@example.org | http://example.net/offices/789 |
+      | EC4V 4AY | 07111 333 135 | office135@example.org | http://example.net/offices/135 |
 
   Scenario: View firm advisers
     When I am viewing the profile for firm "Test Firm Central London"
     And I click on the "advisers" tab
     Then I can see the following advisers
-      | name            |
-      | Dr. Einar Stamm |
-      | Gail D'Amore    |
+      | name           |
+      | Addison Klocko |
+      | Caitlyn Kohler |
 
   Scenario: Viewing a firm profile following search "in person" results
     When I am performing the "in person" search with value "EC4A 2AH"

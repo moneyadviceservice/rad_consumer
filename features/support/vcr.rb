@@ -18,5 +18,4 @@ VCR.configure do |c|
   end
 
   c.filter_sensitive_data('<GOOGLE_GEOCODER_API_KEY>') { ENV['GOOGLE_GEOCODER_API_KEY'] }
-  c.filter_sensitive_data('<GOOGLE_GEOCODER_API_KEY>') { ENV['GOOGLE_GEOCODER_API_KEY'] }
 end
