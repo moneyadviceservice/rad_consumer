@@ -13,16 +13,12 @@ Feature: Firm profile
     Then I can see the following details
       | name                 | value                |
       | Minimum fee          | £0                   |
-      | Minimum pot size     | £100,000             |
+      | Minimum pot size     | No minimum pot size  |
       | Free initial meeting | Free initial meeting |
     And I can see the following firm services
       | name                              |
       | Pension pot savings & investments |
-      | Transferring a pension            |
-      | Options when paying for care      |
       | Equity release                    |
-      | Inheritance tax planning          |
-      | Wills & probate                   |
     And I can see the following remote advice methods
       | name               |
       | At their office(s) |

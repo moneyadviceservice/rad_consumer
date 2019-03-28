@@ -5,7 +5,7 @@ http_interactions:
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-offices-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm_id%3A2%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026facetFilters=%5B%22firm_id%3A2%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
       - Algolia for Ruby (1.25.2); Ruby (2.5.3)
@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 28 Mar 2019 11:20:24 GMT
+      - Wed, 03 Apr 2019 14:47:05 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 28 Mar 2019 11:20:24 GMT
+      - Wed, 03 Apr 2019 14:47:05 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -59,9 +59,9 @@ http_interactions:
         Kiehn Mountain","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
         507","matchLevel":"none","matchedWords":[]},"address_town":{"value":"New Roderick","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Vermont","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"E1
         0AE","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office417@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
-        333 417","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/417","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":2,"geoDistance":484907,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":484907}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A2%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        333 417","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/417","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":2,"geoDistance":484907,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":484907}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&facetFilters=%5B%22firm_id%3A2%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Thu, 28 Mar 2019 11:20:24 GMT
+  recorded_at: Wed, 03 Apr 2019 14:47:05 GMT
 recorded_with: VCR 4.0.0

@@ -38,6 +38,8 @@ module Helpers::Algolia
     def post(query)
       INDECES.key?(query[:index]) || raise(UnvailableIndexError)
 
+      Rails.logger.debug("ALGOLIA QUERY: #{query}")
+
       ::Algolia::Index.new(INDECES[query[:index]]).search(*query[:value])
     end
 

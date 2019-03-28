@@ -79,6 +79,7 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
       OpenStruct.new(
         advice_method: 'in_person',
         coordinates: [55.378051, -3.435973],
+        filters: [],
         page: 1
       )
     end
@@ -110,6 +111,7 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
     let(:params) do
       OpenStruct.new(
         advice_method: 'phone_or_online',
+        filters: [],
         seed: 438,
         page: 1
       )
@@ -146,6 +148,7 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
         name: 'adviser',
         advice_method: 'firm_name_search',
         coordinates: [55.378051, -3.435973],
+        filters: [],
         seed: 438,
         page: 1
       )
@@ -158,6 +161,7 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
           {
             attributesToRetrieve: ['firm'],
             distinct: true,
+            facetFilters: [],
             hitsPerPage: 10,
             page: 0
           }
@@ -174,7 +178,8 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
     let(:params) do
       OpenStruct.new(
         id: 1,
-        coordinates: [55.378051, -3.435973]
+        coordinates: [55.378051, -3.435973],
+        filters: []
       )
     end
     let(:expected_query) do
@@ -203,7 +208,8 @@ RSpec.describe Helpers::Algolia::Queries, type: :helper do
     let(:params) do
       OpenStruct.new(
         id: 1,
-        coordinates: [55.378051, -3.435973]
+        coordinates: [55.378051, -3.435973],
+        filters: []
       )
     end
     let(:expected_query) do

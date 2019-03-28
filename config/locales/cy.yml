@@ -15,7 +15,7 @@ cy:
   pagination:
     previous: 'Flaenorol'
     next: 'Nesaf'
-    truncate: "&hellip;"
+    truncate: '&hellip;'
     page: Tudalen
     of: o
 
@@ -36,7 +36,7 @@ cy:
       email_firm: E-bostio’r cwmni
       face_to_face:
         header: Pa mor agos yw eich cynghorydd?
-        text: "Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod."
+        text: 'Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod.'
       guide_link:
         text: Am ragor o gymorth i ddewis cynghorydd
         article_url: pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
@@ -44,7 +44,7 @@ cy:
       remote:
         header: Cynghorwyr dros y ffôn neu ar-lein yn unig
         text:
-          part_one: "Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch."
+          part_one: 'Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch.'
       recently_visited:
         header: CwmnÏau eraill yr edrychoch arnynt
         remote: Dros y ffôn neu ar-lein yn unig
@@ -72,12 +72,12 @@ cy:
               online: Trwy gynhadledd fideo
             types_of_advice:
               heading: Mathau o gyngor a gynigir
-              retirement_income_products: Cynilion a buddsoddiadau cronfeydd pensiwn
-              pension_transfer: Trosglwyddo pensiwn
-              options_when_paying_for_care: Dewisiadau wrth dalu am ofal
-              equity_release: Rhyddhau Ecwiti
-              inheritance_tax_planning: Cynllunio ar gyfer treth etifeddiant
-              wills_and_probate: Ewyllysiau a phrofiant
+              retirement_income_products_flag: Cynilion a buddsoddiadau cronfeydd pensiwn
+              pension_transfer_flag: Trosglwyddo pensiwn
+              long_term_care_flag: Dewisiadau wrth dalu am ofal
+              equity_release_flag: Rhyddhau Ecwiti
+              inheritance_tax_and_estate_planning_flag: Cynllunio ar gyfer treth etifeddiant
+              wills_and_probate_flag: Ewyllysiau a phrofiant
             other:
               heading: Gwasanaethau Eraill
               ethical: Buddsoddiadau moesol
@@ -154,7 +154,7 @@ cy:
           <li class="contact-panel__additional-info">Dydd Sadwrn, 9am i 1pm</li>
           <li class="contact-panel__additional-info">Dydd Sul a Gwyliau Banc, ar gau</li>
         </ul>
-      smallprint: "Mae galwadau am ddim."
+      smallprint: 'Mae galwadau am ddim.'
     sharing:
       title: Dilynwch ni
       description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
@@ -234,9 +234,9 @@ cy:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
     guides_html: 'Ein canllawiau, <a href="https://www.moneyadviceservice.org.uk/cy/articles/ymddeoliad-a-pam-ddylwn-i-gael-cyngor">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyadviceservice.org.uk/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
-    - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
-    - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
-    - text: Gallant argymell gweithred sydd wedi ei deilwra ar eich cyfer chi a rhoi cymorth i chi beidio gwneud penderfyniadau costus.
+      - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
+      - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
+      - text: Gallant argymell gweithred sydd wedi ei deilwra ar eich cyfer chi a rhoi cymorth i chi beidio gwneud penderfyniadau costus.
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
@@ -277,7 +277,7 @@ cy:
 
   more_help:
     heading: Rhagor o help i ddewis cynghorydd ariannol?
-    content: "Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:"
+    content: 'Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:'
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
         url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
@@ -292,25 +292,29 @@ cy:
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
       tooltip: Gyda rhai elfennau o gyngor ariannol mae’n ofynnol i’r cynghorydd feddu ar gymwysterau ychwanegol (er enghraifft gyda rhai trosglwyddiadau pensiwn) ac mae rhai cynghorwyr yn dewis arbenigo mewn rhai meysydd penodol. Os allech chi nodi’r math o gyngor a ddymunwch, bydd hyn o gymorth i ni fedru’ch paru â chwmni sydd a chynghorydd a all fodloni’ch gofynion. Mae croeso i chi dicio unrhyw flwch sy’n berthnasol. Os nad yw’r cyngor a ddymunwch wedi ei nodi yma, yna gadewch y rhan hon yn wag.
 
-    pension_pot:
+    investment_sizes:
       heading: Beth yw maint eich cronfa bensiwn / buddsoddiad?
       tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa, cynilion neu fuddsoddiadau pensiwn. Os gallwch chi ddarparu amcangyfrif o faint sydd gennych yn eich cronfa bensiwn a chynilion/buddsoddiadau eraill, gallwn eich paru gyda chwmni sy'n gallu'ch helpu.
-      pension_pot_size: Maint eich cronfa bensiwn/buddsoddiad
+      text: Maint eich cronfa bensiwn/buddsoddiad
       any_size_option: Dwi ddim yn gwybod / nid wyf am ddweud
 
     options:
-      retirement_income_products:
+      retirement_income_products_flag:
         title: Cronfa bensiwn / cynilion neu fuddsoddiadau eraill
-      pension_transfer:
+      pension_transfer_flag:
         title: Trosglwyddo pensiwn cyfredol neu flaenorol
-      options_when_paying_for_care:
+      long_term_care_flag:
         title: Dewisiadau wrth dalu am ofal
-      equity_release:
+      equity_release_flag:
         title: Rhyddhau ecwiti
-      inheritance_tax_planning:
+      inheritance_tax_and_estate_planning_flag:
         title: Cynllunio ar gyfer treth etifeddiant
-      wills_and_probate:
+      wills_and_probate_flag:
         title: 'Ewyllysiau a phrofiant'
+      ethical_investing_flag:
+        title: Buddsoddiadau moesol
+      sharia_investing_flag:
+        title: Buddsoddiadau sy’n cydymffurfio â Sharia
 
   search: &search
     errors:
@@ -334,10 +338,10 @@ cy:
         firm_name_placeholder: Rhowch enw'r cwmni
         no_method_selected: Dewiswch
         tooltip:
-        - text: Bydd nifer o gynghorwyr ariannol yn cwrdd â chi’n bersonol yn eu swyddfa, yn eich cartref neu yn rhywle sy’n gyfleus i chi.   Os byddai’n well gennych chi gwrdd â’ch cynghorydd wyneb yn wyneb yna dylech ddewis yr opsiwn ‘yn bersonol’ a nodi’ch cod post.
-        - text: Fodd bynnag, yn fwyfwy y dyddiau hyn, mae yna gynghorwyr sy’n cynnig cyngor dros y ffôn neu ar-lein yn unig.  Yn aml mae gan y cynghorwyr hyn lai o gostau ac os ydych chi’n fodlon derbyn eich cyngor fel hyn, yna gallech arbed ychydig o arian.  Dewiswch yr opsiwn ‘dros y ffôn neu ar-lein yn unig’.
-        - text: Neu gallwch gysylltu â chynghorwyr sy’n cynnig y ddau opsiwn i gymharu gwasanaeth a chostau.
-        - text: Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr ar Gyfeirlyfr y Gwasanaeth Cynghori Ariannol – waeth sut y cynigiant gyngor – wedi eu rheoleiddio.  Mae gennych union yr un diogelwch pa un ai’ch bod yn cwrdd â rhywun wyneb yn wyneb neu’n delio ag ef neu hi’n unigol dros y ffôn neu ar-lein.
+          - text: Bydd nifer o gynghorwyr ariannol yn cwrdd â chi’n bersonol yn eu swyddfa, yn eich cartref neu yn rhywle sy’n gyfleus i chi.   Os byddai’n well gennych chi gwrdd â’ch cynghorydd wyneb yn wyneb yna dylech ddewis yr opsiwn ‘yn bersonol’ a nodi’ch cod post.
+          - text: Fodd bynnag, yn fwyfwy y dyddiau hyn, mae yna gynghorwyr sy’n cynnig cyngor dros y ffôn neu ar-lein yn unig.  Yn aml mae gan y cynghorwyr hyn lai o gostau ac os ydych chi’n fodlon derbyn eich cyngor fel hyn, yna gallech arbed ychydig o arian.  Dewiswch yr opsiwn ‘dros y ffôn neu ar-lein yn unig’.
+          - text: Neu gallwch gysylltu â chynghorwyr sy’n cynnig y ddau opsiwn i gymharu gwasanaeth a chostau.
+          - text: Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr ar Gyfeirlyfr y Gwasanaeth Cynghori Ariannol – waeth sut y cynigiant gyngor – wedi eu rheoleiddio.  Mae gennych union yr un diogelwch pa un ai’ch bod yn cwrdd â rhywun wyneb yn wyneb neu’n delio ag ef neu hi’n unigol dros y ffôn neu ar-lein.
       qualifications_and_accreditations:
         heading: 'Hoffwn gael cynghorydd sydd â’r achrediadau / cymwysterau canlynol:'
         tooltip_html: |
@@ -355,14 +359,10 @@ cy:
           '3': ISO 22222
       service:
         options:
-          ethical_investing_flag:
-            title: Buddsoddiadau moesol
-          sharia_investing_flag:
-            title: Buddsoddiadau sy’n cydymffurfio â Sharia
           non_uk_residents_flag:
             title: Cyngor i alltudion y Deyrnas Unedig
       languages:
-        heading: "Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:"
+        heading: 'Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:'
         options:
           - afr
           - ara
@@ -404,16 +404,16 @@ cy:
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
     summary_of_results:
-      showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau"
+      showing: 'Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau'
       order: Cwmnïau a gyflwynir heb fod mewn unrhyw drefn benodol
 
     result:
       adviser: mae gan gynghorydd
-      miles_away: "%{distance} o filltiroedd i ffwrdd"
-      firm_has: ""
-      and: ", "
-      number_of_advisers: "Cynghorydd: %{count}"
-      number_of_offices: "Swyddfa: %{count}"
+      miles_away: '%{distance} o filltiroedd i ffwrdd'
+      firm_has: ''
+      and: ', '
+      number_of_advisers: 'Cynghorydd: %{count}'
+      number_of_offices: 'Swyddfa: %{count}'
       view_profile: Gweld y proffil
 
     keywords:
@@ -472,8 +472,8 @@ cy:
 
   advice_methods:
     ordinal:
-      "1": Ffôn
-      "2": Ar-lein
+      '1': Ffôn
+      '2': Ar-lein
 
   investment_size:
     no_minimum: Dim isafswm ym maint y gronfa

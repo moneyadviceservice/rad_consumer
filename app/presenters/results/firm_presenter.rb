@@ -25,12 +25,12 @@ module Results
     ].freeze
 
     TYPES_OF_ADVICE_FIELDS = %i[
-      retirement_income_products
-      pension_transfer
-      options_when_paying_for_care
-      equity_release
-      inheritance_tax_planning
-      wills_and_probate
+      retirement_income_products_flag
+      pension_transfer_flag
+      long_term_care_flag
+      equity_release_flag
+      inheritance_tax_and_estate_planning_flag
+      wills_and_probate_flag
     ].freeze
 
     MAPPED_FIELDS = (DIRECTLY_MAPPED_FIELDS + TYPES_OF_ADVICE_FIELDS).freeze

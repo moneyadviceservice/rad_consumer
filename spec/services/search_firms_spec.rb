@@ -24,7 +24,7 @@ RSpec.describe SearchFirms do
         'ethical_investing_flag' => '0',
         'sharia_investing_flag' => '0',
         'non_uk_residents_flag' => '0',
-        'pension_pot_size' => 'any',
+        'investment_sizes' => 'any',
         'qualification_or_accreditation' => '',
         'language' => '',
         'setting_up_workplace_pension_flag' => '0',

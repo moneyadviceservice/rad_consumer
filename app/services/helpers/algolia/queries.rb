@@ -22,6 +22,7 @@ module Helpers::Algolia
     end
 
     def face_to_face_query(params)
+      base_filters = ['firm.postcode_searchable:true']
       query_for(
         :advisers,
         [
@@ -32,7 +33,7 @@ module Helpers::Algolia
               aroundRadius: MAX_SEARCH_RADIUS,
               attributesToRetrieve: ['firm'],
               distinct: true,
-              facetFilters: ['firm.postcode_searchable:true'],
+              facetFilters: build_filters(base_filters, params.filters),
               getRankingInfo: true
             }, page: params.page
           )
@@ -40,7 +41,16 @@ module Helpers::Algolia
       )
     end
 
-    def phone_or_online_query(*_params)
+    def phone_or_online_query(params)
+      base_filters = [
+        [
+          'firm.other_advice_methods:1',
+          'firm.other_advice_methods:2'
+        ],
+        'firm.in_person_advice_methods:-1',
+        'firm.in_person_advice_methods:-2',
+        'firm.in_person_advice_methods:-3'
+      ]
       query_for(
         :advisers,
         [
@@ -48,28 +58,22 @@ module Helpers::Algolia
           paginate(
             attributesToRetrieve: ['firm'],
             distinct: true,
-            facetFilters: [
-              [
-                'firm.other_advice_methods:1',
-                'firm.other_advice_methods:2'
-              ],
-              'firm.in_person_advice_methods:-1',
-              'firm.in_person_advice_methods:-2',
-              'firm.in_person_advice_methods:-3'
-            ]
+            facetFilters: build_filters(base_filters, params.filters)
           )
         ]
       )
     end
 
     def by_firm_name_query(params)
+      base_filters = []
       query_for(
         :advisers,
         [
           params.name,
           paginate(
             attributesToRetrieve: ['firm'],
-            distinct: true
+            distinct: true,
+            facetFilters: build_filters(base_filters, params.filters)
           )
         ]
       )
@@ -84,8 +88,8 @@ module Helpers::Algolia
             {
               aroundLatLng: params.coordinates,
               distinct: false,
-              getRankingInfo: params.coordinates.present?,
-              facetFilters: ["firm.id:#{params.id}"]
+              facetFilters: ["firm.id:#{params.id}"],
+              getRankingInfo: params.coordinates.present?
             }, hits_per_page: MAX_HITS_TOTAL
           )
         ]
@@ -100,8 +104,8 @@ module Helpers::Algolia
           paginate(
             {
               aroundLatLng: params.coordinates,
-              getRankingInfo: params.coordinates.present?,
-              facetFilters: ["firm_id:#{params.id}"]
+              facetFilters: ["firm_id:#{params.id}"],
+              getRankingInfo: params.coordinates.present?
             }, hits_per_page: MAX_HITS_TOTAL
           )
         ]
@@ -112,6 +116,21 @@ module Helpers::Algolia
 
     def query_for(index, query)
       { index: index, value: query }
+    end
+
+    def build_filters(base_filters, params_filters)
+      params_filters.each do |key, value|
+        if key.end_with?('_flag')
+          next unless value == '1'
+
+          value = true
+        end
+
+        next if value == 'any'
+
+        base_filters.push("firm.#{key}:#{value}")
+      end
+      base_filters
     end
 
     def browse_query(query:, retrieve_attributes: [])

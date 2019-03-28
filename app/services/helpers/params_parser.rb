@@ -3,8 +3,13 @@ module Helpers::ParamsParser
 
   DEFAULT_PAGE = 1
   SEARCH_TYPES = %w[face_to_face phone_or_online firm_name_search].freeze
-  SEARCH_FIRMS_PARAMS = %i[name advice_method coordinates seed page].freeze
+  SEARCH_FIRMS_PARAMS = %i[name advice_method coordinates filters seed page].freeze
   FETCH_FIRM_PROFILE_PARAMS = %i[id coordinates page].freeze
+  WORKPLACE_FINANCIAL_ADVICE_FLAGS = %i[
+    setting_up_workplace_pension_flag
+    existing_workplace_pension_flag
+    advice_for_employees_flag
+  ].freeze
 
   SearchFirmsParams = Struct.new(*SEARCH_FIRMS_PARAMS) do
     def valid?
@@ -32,6 +37,7 @@ module Helpers::ParamsParser
         params[:name],
         params[:advice_method],
         params[:coordinates],
+        params[:filters],
         params[:seed],
         params[:page]
       )
@@ -56,6 +62,7 @@ module Helpers::ParamsParser
       name: params[:firm_name],
       advice_method: params[:advice_method],
       coordinates: extract_coordinates(params),
+      filters: extract_filters(params),
       page: params[:page] || DEFAULT_PAGE,
       seed: params[:random_search_seed]
     }
@@ -67,5 +74,38 @@ module Helpers::ParamsParser
     else
       Geocode.call(params[:postcode])
     end
+  end
+
+  def extract_filters(params)
+    filters = params.fetch(:filters, {})
+    extract_qualification_or_accreditations!(filters)
+    extract_workplace_financial_advice!(filters)
+  end
+
+  def extract_qualification_or_accreditations!(filters)
+    qualification_or_accreditation = filters[:qualification_or_accreditation]
+
+    if qualification_or_accreditation
+      if qualification_or_accreditation.start_with?('a')
+        key = :adviser_accreditation_ids
+      elsif qualification_or_accreditation.start_with?('q')
+        key = :adviser_qualification_ids
+      end
+
+      filters[key] = qualification_or_accreditation[1..-1] if key
+    end
+
+    filters.except!(:qualification_or_accreditation)
+  end
+
+  def extract_workplace_financial_advice!(filters)
+    if WORKPLACE_FINANCIAL_ADVICE_FLAGS.map do |flag|
+         filters[flag] == '1'
+       end.compact.any?
+
+      filters[:workplace_financial_advice_flag] = '1'
+    end
+
+    filters.except!(*WORKPLACE_FINANCIAL_ADVICE_FLAGS)
   end
 end

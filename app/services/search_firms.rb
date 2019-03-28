@@ -78,7 +78,7 @@ class SearchFirms
 
   def filter_query_by_firm_ids!(query:, ids:)
     firm_ids_filter = ids.sort.reduce([]) { |acc, id| acc << "firm.id:#{id}" }
-    return if firm_ids_filter.blank?
+    return query if firm_ids_filter.blank?
 
     query.tap do |q|
       query = q[:value].last

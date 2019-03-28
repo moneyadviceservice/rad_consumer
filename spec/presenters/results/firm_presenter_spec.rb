@@ -21,12 +21,12 @@ RSpec.describe Results::FirmPresenter do
       languages: nil,
       total_advisers: nil,
       total_offices: nil,
-      retirement_income_products: false,
-      pension_transfer: true,
-      options_when_paying_for_care: true,
-      equity_release: true,
-      inheritance_tax_planning: false,
-      wills_and_probate: nil
+      retirement_income_products_flag: false,
+      pension_transfer_flag: true,
+      long_term_care_flag: true,
+      equity_release_flag: true,
+      inheritance_tax_and_estate_planning_flag: false,
+      wills_and_probate_flag: nil
     }.with_indifferent_access
   end
   subject(:presenter) { described_class.new(object) }
@@ -52,12 +52,12 @@ RSpec.describe Results::FirmPresenter do
       languages
       total_advisers
       total_offices
-      retirement_income_products
-      pension_transfer
-      options_when_paying_for_care
-      equity_release
-      inheritance_tax_planning
-      wills_and_probate
+      retirement_income_products_flag
+      pension_transfer_flag
+      long_term_care_flag
+      equity_release_flag
+      inheritance_tax_and_estate_planning_flag
+      wills_and_probate_flag
     ].each do |field|
       it { expect(presenter).to respond_to(field) }
       it { expect(presenter.public_send(field)).to eq(object[field]) }
@@ -91,8 +91,8 @@ RSpec.describe Results::FirmPresenter do
 
   describe '#includes_advice_type?' do
     it 'returns whether an advice type is available or not' do
-      expect(presenter.retirement_income_products).to eq(false)
-      expect(presenter.pension_transfer).to eq(true)
+      expect(presenter.retirement_income_products_flag).to eq(false)
+      expect(presenter.pension_transfer_flag).to eq(true)
     end
   end
 

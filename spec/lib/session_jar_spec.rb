@@ -64,7 +64,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'aviser',
@@ -108,7 +108,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'adviser',
@@ -188,7 +188,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'adviser',
@@ -220,7 +220,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'adviser',
@@ -254,7 +254,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'adviser',
@@ -290,7 +290,7 @@ RSpec.describe SessionJar do
       let(:search_params) do
         {
           params: {
-            pension_pot_size: 'any',
+            investment_sizes: 'any',
             advice_method: 'firm_name_search',
             postcode: '',
             firm_name: 'adviser',
@@ -331,7 +331,7 @@ RSpec.describe SessionJar do
     let(:randomised_firm_ids) { [3, 1, 100] }
     let(:search_params) do
       {
-        pension_pot_size: 'any',
+        investment_sizes: 'any',
         advice_method: 'firm_name_search',
         postcode: '',
         firm_name: 'adviser',

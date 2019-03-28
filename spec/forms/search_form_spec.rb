@@ -91,9 +91,9 @@ RSpec.describe SearchForm do
     end
 
     context 'multiple flags set' do
-      let(:types_of_advice) { { pension_transfer: '1', inheritance_tax_planning: '1' } }
+      let(:types_of_advice) { { pension_transfer_flag: '1', inheritance_tax_and_estate_planning_flag: '1' } }
       it 'contains both flag' do
-        expect(form.types_of_advice).to eql(%i[pension_transfer inheritance_tax_planning])
+        expect(form.types_of_advice).to eql(%i[pension_transfer_flag inheritance_tax_and_estate_planning_flag])
       end
     end
   end
@@ -110,7 +110,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when one or more types of advice are selected' do
-      let(:types_of_advice) { { equity_release: '1' } }
+      let(:types_of_advice) { { equity_release_flag: '1' } }
 
       it 'returns true' do
         expect(form.types_of_advice?).to be(true)
@@ -280,25 +280,25 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#retirement_income_products?' do
+  describe '#retirement_income_products_flag?' do
     context 'when the option is selected' do
-      subject { described_class.new(retirement_income_products: '1') }
+      subject { described_class.new(retirement_income_products_flag: '1') }
 
-      it '#retirement_income_products? is truthy' do
-        expect(subject).to be_retirement_income_products
+      it '#retirement_income_products_flag? is truthy' do
+        expect(subject).to be_retirement_income_products_flag
       end
     end
 
     context 'when the option is not selected' do
-      subject { described_class.new(retirement_income_products: nil) }
+      subject { described_class.new(retirement_income_products_flag: nil) }
 
-      it '#retirement_income_products? is falsey' do
-        expect(subject).to_not be_retirement_income_products
+      it '#retirement_income_products_flag? is falsey' do
+        expect(subject).to_not be_retirement_income_products_flag
       end
     end
   end
 
-  describe '#options_for_pension_pot_sizes' do
+  describe '#options_for_investment_sizes' do
     let(:form) { described_class.new }
 
     it 'returns the localized name and ID for each investment size' do
@@ -309,14 +309,14 @@ RSpec.describe SearchForm do
         ['Over £150,000', '4']
       ]
 
-      expect(form.options_for_pension_pot_sizes).to include(*expected_list)
+      expect(form.options_for_investment_sizes).to include(*expected_list)
     end
 
     it 'returns the any size option as the first element' do
       expected = [
-        I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
+        I18n.t('search_filter.investment_sizes.any_size_option'), SearchForm::ANY_SIZE_VALUE
       ]
-      expect(form.options_for_pension_pot_sizes.first).to eql(expected)
+      expect(form.options_for_investment_sizes.first).to eql(expected)
     end
   end
 
@@ -428,51 +428,35 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#any_pension_pot_size?' do
-    subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
-
-    context 'when any pension pot size is indicated' do
-      let(:form) { described_class.new(pension_pot_size: SearchForm::ANY_SIZE_VALUE) }
-
-      it { is_expected.to be_truthy }
-    end
-
-    context 'when a particular pension pot size is specified' do
-      let(:form) { described_class.new(pension_pot_size: '3') }
-
-      it { is_expected.to be_falsey }
-    end
-  end
-
-  describe '#pension_transfer' do
+  describe '#pension_transfer_flag' do
     let(:form) do
       described_class.new(
-        pension_transfer: pension_transfer,
-        options_when_paying_for_care: '1',
-        equity_release: '1',
-        inheritance_tax_planning: '1',
-        wills_and_probate: '1'
+        pension_transfer_flag: pension_transfer_flag,
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
       )
     end
 
     context 'when retirement products is selected' do
-      before { form.retirement_income_products = '1' }
+      before { form.retirement_income_products_flag = '1' }
 
-      let(:pension_transfer) { '1' }
+      let(:pension_transfer_flag) { '1' }
 
       it 'returns the value for pension transfer' do
-        expect(form.pension_transfer).to eql(pension_transfer)
+        expect(form.pension_transfer_flag).to eql(pension_transfer_flag)
       end
     end
 
     context 'when retirement products is not selected' do
-      before { form.retirement_income_products = nil }
+      before { form.retirement_income_products_flag = nil }
 
       context 'but pension transfer is selected' do
-        let(:pension_transfer) { '1' }
+        let(:pension_transfer_flag) { '1' }
 
         it 'still returns "1"' do
-          expect(form.pension_transfer).to eql('1')
+          expect(form.pension_transfer_flag).to eql('1')
         end
       end
     end
@@ -482,10 +466,10 @@ RSpec.describe SearchForm do
     let(:serializer) { double }
     let(:form) do
       described_class.new(
-        options_when_paying_for_care: '1',
-        equity_release: '1',
-        inheritance_tax_planning: '1',
-        wills_and_probate: '1'
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
       )
     end
 
@@ -495,10 +479,10 @@ RSpec.describe SearchForm do
 
     it 'builds the query JSON' do
       expected_hash = {
-        options_when_paying_for_care: '1',
-        equity_release: '1',
-        inheritance_tax_planning: '1',
-        wills_and_probate: '1'
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
       }.with_indifferent_access
 
       expect(form.as_json).to eq(expected_hash)

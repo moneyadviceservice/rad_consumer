@@ -1,12 +1,12 @@
 module Filters
   module TypeOfAdvice
     TYPES_OF_ADVICE = %i[
-      pension_transfer
-      retirement_income_products
-      options_when_paying_for_care
-      equity_release
-      inheritance_tax_planning
-      wills_and_probate
+      pension_transfer_flag
+      retirement_income_products_flag
+      long_term_care_flag
+      equity_release_flag
+      inheritance_tax_and_estate_planning_flag
+      wills_and_probate_flag
     ].freeze
 
     attr_accessor(*TYPES_OF_ADVICE)
@@ -19,8 +19,8 @@ module Filters
       types_of_advice.any?
     end
 
-    def retirement_income_products?
-      retirement_income_products == '1'
+    def retirement_income_products_flag?
+      retirement_income_products_flag == '1'
     end
   end
 end

@@ -14,7 +14,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 28 Mar 2019 11:20:21 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -29,7 +29,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 28 Mar 2019 11:20:21 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -62,7 +62,7 @@ http_interactions:
 
 '
     http_version: 
-  recorded_at: Thu, 28 Mar 2019 11:20:21 GMT
+  recorded_at: Wed, 03 Apr 2019 14:47:03 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
@@ -77,7 +77,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 28 Mar 2019 11:20:21 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -92,7 +92,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 28 Mar 2019 11:20:21 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -116,23 +116,23 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"hits":[{"firm":{"id":1,"registered_name":"Test Firm Central London","postcode_searchable":true,"telephone_number":"07111
-        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[3,4],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"firm":{"id":2,"registered_name":"Test
         Firm East London","postcode_searchable":true,"telephone_number":"07111 333
-        417","website_address":"http://example.net/offices/417","email_address":"office417@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[3,4],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":1,"total_advisers":2},"objectID":"4","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        417","website_address":"http://example.net/offices/417","email_address":"office417@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[2],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":1,"total_advisers":2},"objectID":"4","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":3,"geoDistance":4061,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":4061}}},{"firm":{"id":3,"registered_name":"Test
-        Firm Brighton","postcode_searchable":true,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[3,4],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Brighton","postcode_searchable":true,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[3],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76510,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76510}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%2C%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%5D%5D&getRankingInfo=true&page=0&hitsPerPage=10&query=","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Thu, 28 Mar 2019 11:20:21 GMT
+  recorded_at: Wed, 03 Apr 2019 14:47:03 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026distinct=false\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026distinct=false\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
       - Algolia for Ruby (1.25.2); Ruby (2.5.3)
@@ -141,7 +141,7 @@ http_interactions:
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 28 Mar 2019 11:20:22 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -156,7 +156,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 28 Mar 2019 11:20:22 GMT
+      - Wed, 03 Apr 2019 14:47:03 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -182,14 +182,14 @@ http_interactions:
       string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Addison
         Klocko","postcode":"EC1N 2TD","travel_distance":100,"qualification_ids":[3,4],"accreditation_ids":[1,2],"firm":{"id":1,"registered_name":"Test
         Firm Central London","postcode_searchable":true,"telephone_number":"07111
-        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[3,4],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"name":"Caitlyn
         Kohler","postcode":"EC4V 4AY","travel_distance":100,"qualification_ids":[3,4],"accreditation_ids":[1,2],"firm":{"id":1,"registered_name":"Test
         Firm Central London","postcode_searchable":true,"telephone_number":"07111
-        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[3,4],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"1","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+        333 135","website_address":"http://example.net/offices/135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"1","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&distinct=false&facetFilters=%5B%22firm.id%3A1%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
 '
     http_version: 
-  recorded_at: Thu, 28 Mar 2019 11:20:22 GMT
+  recorded_at: Wed, 03 Apr 2019 14:47:03 GMT
 recorded_with: VCR 4.0.0

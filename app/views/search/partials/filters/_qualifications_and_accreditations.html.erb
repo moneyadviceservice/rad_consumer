@@ -16,6 +16,7 @@
     <%= f.select :qualification_or_accreditation,
                  form.options_for_qualifications_and_accreditations,
                  { include_blank: t('search.filter.select_prompt') },
-                 { class: 't-qualifications-and-accreditations search-filter__inset search-filter__constrained' } %>
+                 { name: "search_form[filters[qualification_or_accreditation]]",
+                   class: 't-qualifications-and-accreditations search-filter__inset search-filter__constrained' } %>
   </div>
 </fieldset>

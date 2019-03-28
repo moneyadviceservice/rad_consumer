@@ -1,6 +1,6 @@
 module Filters
   module Language
-    attr_accessor :language
+    attr_accessor :languages
 
     def options_for_language
       languages = I18n.t('search.filter.languages.options').map do |iso6393|
