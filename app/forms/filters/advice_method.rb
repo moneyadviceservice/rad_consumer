@@ -29,7 +29,7 @@ module Filters
     end
 
     def remote_advice_method_ids
-      phone_or_online? ? OtherAdviceMethod.all.map(&:id) : []
+      phone_or_online? ? I18n.t('other_advice_methods.ordinal').keys : []
     end
 
     private

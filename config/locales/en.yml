@@ -15,7 +15,7 @@ en:
   pagination:
     previous: 'Prev'
     next: 'Next'
-    truncate: "&hellip;"
+    truncate: '&hellip;'
     page: Page
     of: of
 
@@ -71,12 +71,12 @@ en:
               online: By video conferencing
             types_of_advice:
               heading: Types of advice offered
-              retirement_income_products: Pension pot savings & investments
-              pension_transfer: Transferring a pension
-              options_when_paying_for_care: Options when paying for care
-              equity_release: Equity release
-              inheritance_tax_planning: Inheritance tax planning
-              wills_and_probate: Wills & probate
+              retirement_income_products_flag: Pension pot savings & investments
+              pension_transfer_flag: Transferring a pension
+              long_term_care_flag: Options when paying for care
+              equity_release_flag: Equity release
+              inheritance_tax_and_estate_planning_flag: Inheritance tax planning
+              wills_and_probate_flag: Wills & probate
             other:
               heading: Other services
               ethical: Ethical investments
@@ -152,7 +152,7 @@ en:
           <li class="contact-panel__additional-info">Saturday, 9am to 1pm</li>
           <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
         </ul>
-      smallprint: "Calls are free."
+      smallprint: 'Calls are free.'
     sharing:
       title: Follow us
       description: Get up-to-date money advice from Twitter, Facebook and YouTube.
@@ -231,9 +231,9 @@ en:
   more_reasons:
     heading: Reasons to take financial advice
     key_points:
-    - text: Financial advisers are regulated so you are protected if things go wrong.
-    - text: They can choose products from a wide range of providers.
-    - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
+      - text: Financial advisers are regulated so you are protected if things go wrong.
+      - text: They can choose products from a wide range of providers.
+      - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
     guides_html: 'Our guides, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
     video:
       description: Watch this short video showing customers discussing financial advice.
@@ -275,7 +275,7 @@ en:
 
   more_help:
     heading: More help choosing a financial adviser?
-    content: "If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:"
+    content: 'If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:'
     links:
       - title: Retirement – why should I get advice?
         url: https://www.moneyadviceservice.org.uk/en/articles/when-and-where-to-get-pensions-help-and-advice
@@ -290,25 +290,31 @@ en:
       instructions: Tick all that apply. If none apply leave blank.
       tooltip: Some areas of financial advice require the adviser to hold additional qualifications (for example, certain pension transfers) and  some advisers choose to specialise in particular areas.  If you can indicate the type of advice you are looking for, this will help us match you to a firm which has an adviser who can meet your needs.  Feel free to tick any box that applies.  If the advice you are looking for isn’t covered here, then just leave this section blank.
 
-    pension_pot:
+    investment_size:
       heading: What is your pension pot / investment size?
       tooltip: Not all financial advisers provide advice for all levels of pension pots, savings or investments. If you can provide an estimate of how much you have in your pension pot and other savings/investments, we can match you with a firm who can help you.
-      pension_pot_size: Select pension pot(s) / savings amount
+      text: Select pension pot(s) / savings amount
       any_size_option: I don't know / don't wish to say
 
     options:
-      retirement_income_products:
+      retirement_income_products_flag:
         title: Pension pot / other savings or investments
-      pension_transfer:
+      pension_transfer_flag:
         title: Transferring a current or previous pension
-      options_when_paying_for_care:
+      long_term_care_flag:
         title: Options when paying for care
-      equity_release:
+      equity_release_flag:
         title: Equity release
-      inheritance_tax_planning:
+      inheritance_tax_and_estate_planning_flag:
         title: Inheritance tax planning
-      wills_and_probate:
+      wills_and_probate_flag:
         title: 'Wills &amp; probate'
+      ethical_investing_flag:
+        title: Ethical investments
+      sharia_investing_flag:
+        title: Sharia compliant investments
+      non_uk_residents_flag:
+        title: Advice to UK expatriates
 
   search: &search
     errors:
@@ -351,16 +357,37 @@ en:
           '1': SOLLA
           '2': Later Life Academy
           '3': ISO 22222
-      service:
-        options:
-          ethical_investing_flag:
-            title: Ethical investments
-          sharia_investing_flag:
-            title: Sharia compliant investments
-          non_uk_residents_flag:
-            title: Advice to UK expatriates
       languages:
         heading: 'I would like an adviser who can speak the following language:'
+        options:
+          - afr
+          - ara
+          - ben
+          - bfi
+          - bul
+          - cym
+          - dan
+          - deu
+          - ell
+          - fas
+          - fra
+          - guj
+          - hin
+          - ita
+          - mar
+          - nld
+          - pan
+          - pol
+          - por
+          - ron
+          - rus
+          - spa
+          - sqi
+          - tur
+          - ukr
+          - urd
+          - vie
+          - zho
       workplace_financial_advice_flag:
         heading: 'I am an employer. I would like help with:'
         setting_up_workplace_pension: Setting up a workplace pension scheme
@@ -373,20 +400,20 @@ en:
     back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
     summary_of_results:
-      showing: "Showing %{first_record}-%{last_record} of %{total_records} firms"
+      showing: 'Showing %{first_record}-%{last_record} of %{total_records} firms'
       order: Firms presented in no particular order
 
     result:
       adviser: has an adviser
-      miles_away: "%{distance} miles away"
-      firm_has: "Firm has"
-      and: " and"
+      miles_away: '%{distance} miles away'
+      firm_has: 'Firm has'
+      and: ' and'
       number_of_advisers:
-        one: "%{count} adviser"
-        other: "%{count} advisers"
+        one: '%{count} adviser'
+        other: '%{count} advisers'
       number_of_offices:
-        one: "%{count} office"
-        other: "%{count} offices"
+        one: '%{count} office'
+        other: '%{count} offices'
       view_profile: View profile
 
     keywords:
@@ -431,7 +458,7 @@ en:
         - text: It’s always a good idea contact several firms and talk through your requirements and the services they offer you before deciding on the best match for you.
 
     education_module_two:
-      heading:  Online / telephone based advice
+      heading: Online / telephone based advice
       content:
         - text: You may be able to save money by finding an adviser who will deal with you online or by phone.
         - text: These advisers are regulated in exactly the same way and you will have exactly the same protections as if you used a face-to-face adviser.
@@ -441,8 +468,8 @@ en:
 
   advice_methods:
     ordinal:
-      "1": Phone
-      "2": Online
+      '1': Phone
+      '2': Online
 
   investment_size:
     no_minimum: No minimum pot size
@@ -451,7 +478,7 @@ en:
       '2': '£50,000'
       '3': '£100,000'
       '4': 'Over £150,000'
-  other_advice_method:
+  other_advice_methods:
     ordinal:
       '1': 'Phone'
       '2': 'Online'

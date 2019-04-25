@@ -1,42 +1,46 @@
 module Filters
   module QualificationOrAccreditation
+    PREFIXES = {
+      qualification: 'q',
+      accreditation: 'a'
+    }.freeze
+
     attr_accessor :qualification_or_accreditation
 
     def options_for_qualifications_and_accreditations
-      (options_for(Qualification) + options_for(Accreditation)).sort
+      (options_for(:qualification) + options_for(:accreditation)).sort
     end
 
     def selected_qualification_id
-      selected_filter_id_for(Qualification)
+      selected_filter_id_for(:qualification)
     end
 
     def selected_accreditation_id
-      selected_filter_id_for(Accreditation)
+      selected_filter_id_for(:accreditation)
     end
 
     private
 
-    def options_for(model)
-      filters = filters_for(model)
-      model
-        .where(order: filters.keys)
-        .pluck(:order, :id)
-        .map { |order, id| [filters[order], "#{prefix_for(model)}#{id}"] }
+    def options_for(filter_type)
+      filters = filters_for(filter_type)
+      filters.map(&:reverse).map do |name, id|
+        [name, "#{prefix_for(filter_type)}#{id}"]
+      end
     end
 
-    def prefix_for(model)
-      model.model_name.singular[0]
+    def prefix_for(filter_type)
+      PREFIXES[filter_type]
     end
 
-    def filters_for(model)
+    def filters_for(filter_type)
       key_to_i = ->(k, v) { [k.to_s.to_i, v] }
-      I18n.t("search.filter.#{model.model_name.i18n_key}.ordinal").map(&key_to_i).to_h
+      I18n.t("search.filter.#{filter_type}.ordinal").map(&key_to_i).to_h
     end
 
-    def selected_filter_id_for(model)
+    def selected_filter_id_for(filter_type)
       is_desired_type = ->(prefix, item) { !!item[/^#{prefix}/] }
       extract_id = ->(item) { item[1..-1] }
-      type_prefix = prefix_for(model)
+      type_prefix = prefix_for(filter_type)
 
       [qualification_or_accreditation]
         .compact

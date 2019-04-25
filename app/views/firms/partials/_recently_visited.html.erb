@@ -9,7 +9,7 @@
         <%= link_to recently_visited_firm.name, recently_visited_firm.translated_profile_path, class: "recently-viewed__item__firm-name" %>
 
         <% if recently_visited_firm.closest_adviser? %>
-          <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: recently_visited_firm.closest_adviser, distance_class: 'recently-viewed__item__adviser-distance' }%>
+          <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: recently_visited_firm.closest_adviser_distance, distance_class: 'recently-viewed__item__adviser-distance' }%>
         <% elsif recently_visited_firm.phone_or_online_only? %>
           <div>
             <%= t('firms.show.recently_visited.remote') %>

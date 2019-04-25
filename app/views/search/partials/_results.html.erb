@@ -1,12 +1,12 @@
 <% if search_form.valid? %>
-  <% if @result.firms.any? %>
+  <% if @results.firms.any? %>
     <div class="l-results__summary">
       <div class="l-results__summary-row">
         <div class="l-results__summary-text t-results-summary-text">
           <%= t('search.summary_of_results.showing',
-                first_record: @result.first_record,
-                last_record: @result.last_record,
-                total_records: @result.total_records) %>
+                first_record: @results.first_record,
+                last_record: @results.last_record,
+                total_records: @results.total_records) %>
         </div>
         <% unless search_form.face_to_face? %>
           <div class="l-results__summary-text l-results__summary-text--right">
@@ -20,10 +20,10 @@
   <% end %>
 
   <ol class="l-results__list">
-    <%= render partial: 'search/partials/firm', collection: @result.firms, as: :firm, locals: { search_form: search_form } %>
+    <%= render partial: 'search/partials/firm', collection: @results.firms, as: :firm, locals: { search_form: search_form } %>
   </ol>
 
-  <%= paginate @result %>
+  <%= paginate @results %>
 
 <% else %>
   <p class="t-incorrect-criteria"><%= t('search.incorrect_search_criteria') %></p>

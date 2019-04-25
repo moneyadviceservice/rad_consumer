@@ -70,7 +70,7 @@ RSpec.describe SearchForm do
     end
 
     it 'upcases the postcode before validation' do
-      VCR.use_cassette(:rg2_1aa) do
+      VCR.use_cassette(:geocoded_postcode) do
         form.validate
 
         expect(form.postcode).to eql('RG2 1AA')
@@ -91,9 +91,9 @@ RSpec.describe SearchForm do
     end
 
     context 'multiple flags set' do
-      let(:types_of_advice) { { pension_transfer: '1', inheritance_tax_planning: '1' } }
+      let(:types_of_advice) { { pension_transfer_flag: '1', inheritance_tax_and_estate_planning_flag: '1' } }
       it 'contains both flag' do
-        expect(form.types_of_advice).to eql(%i[pension_transfer inheritance_tax_planning])
+        expect(form.types_of_advice).to eql(%i[pension_transfer_flag inheritance_tax_and_estate_planning_flag])
       end
     end
   end
@@ -110,7 +110,7 @@ RSpec.describe SearchForm do
     end
 
     context 'when one or more types of advice are selected' do
-      let(:types_of_advice) { { equity_release: '1' } }
+      let(:types_of_advice) { { equity_release_flag: '1' } }
 
       it 'returns true' do
         expect(form.types_of_advice?).to be(true)
@@ -230,7 +230,7 @@ RSpec.describe SearchForm do
         before { form.postcode = 'RG2 1AA' }
 
         it 'is valid' do
-          VCR.use_cassette(:rg2_1aa) do
+          VCR.use_cassette(:geocoded_postcode) do
             expect(form).to be_valid
           end
         end
@@ -261,7 +261,6 @@ RSpec.describe SearchForm do
       end
 
       it 'does not pass on any advice methods' do
-        OtherAdviceMethod.create name: 'phone'
         expect(form.remote_advice_method_ids).to be_empty
       end
     end
@@ -270,9 +269,8 @@ RSpec.describe SearchForm do
       let(:advice_method) { Filters::AdviceMethod::ADVICE_METHOD_PHONE_OR_ONLINE }
 
       it 'passes on phone and online' do
-        phone = OtherAdviceMethod.create name: 'phone'
-        online = OtherAdviceMethod.create name: 'online'
-        expect(form.remote_advice_method_ids).to eq([phone.id, online.id])
+        expected_method_ids = %i[1 2]
+        expect(form.remote_advice_method_ids).to eq(expected_method_ids)
       end
 
       it 'does not pass on the postcode' do
@@ -282,84 +280,76 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#retirement_income_products?' do
+  describe '#retirement_income_products_flag?' do
     context 'when the option is selected' do
-      subject { described_class.new(retirement_income_products: '1') }
+      subject { described_class.new(retirement_income_products_flag: '1') }
 
-      it '#retirement_income_products? is truthy' do
-        expect(subject).to be_retirement_income_products
+      it '#retirement_income_products_flag? is truthy' do
+        expect(subject).to be_retirement_income_products_flag
       end
     end
 
     context 'when the option is not selected' do
-      subject { described_class.new(retirement_income_products: nil) }
+      subject { described_class.new(retirement_income_products_flag: nil) }
 
-      it '#retirement_income_products? is falsey' do
-        expect(subject).to_not be_retirement_income_products
+      it '#retirement_income_products_flag? is falsey' do
+        expect(subject).to_not be_retirement_income_products_flag
       end
     end
   end
 
-  describe '#options_for_pension_pot_sizes' do
+  describe '#options_for_investment_sizes' do
     let(:form) { described_class.new }
 
-    let(:investment_sizes) { create_list(:investment_size, 3) }
-
-    before { allow(InvestmentSize).to receive(:all).and_return(investment_sizes) }
-
     it 'returns the localized name and ID for each investment size' do
-      tuples = investment_sizes.map { |i| [i.localized_name, i.id] }
+      expected_list = [
+        ['Under £50,000', '1'],
+        ['£50,000', '2'],
+        ['£100,000', '3'],
+        ['Over £150,000', '4']
+      ]
 
-      expect(form.options_for_pension_pot_sizes).to include(*tuples)
+      expect(form.options_for_investment_sizes).to include(*expected_list)
     end
 
     it 'returns the any size option as the first element' do
       expected = [
-        I18n.t('search_filter.pension_pot.any_size_option'), SearchForm::ANY_SIZE_VALUE
+        I18n.t('search_filter.investment_size.any_size_option'), SearchForm::ANY_SIZE_VALUE
       ]
-      expect(form.options_for_pension_pot_sizes.first).to eql(expected)
+      expect(form.options_for_investment_sizes.first).to eql(expected)
     end
   end
 
   describe '#options_for_languages' do
     let(:form) { described_class.new }
 
-    before { allow(Firm).to receive(:languages_used).and_return(%w[sco swe de]) }
-
     it 'returns the LanguageInfo for each iso_639_3 code sorted by common name' do
-      german = LanguageList::LanguageInfo.find 'de'
-      swedish = LanguageList::LanguageInfo.find 'swe'
-      scots = LanguageList::LanguageInfo.find 'sco'
-      expect(form.options_for_language).to eql([german, scots, swedish])
+      supported_languages = %w[
+        afr ara ben bfi bul cym dan deu ell fas fra guj hin ita
+        mar nld pan pol por ron rus spa sqi tur ukr urd vie zho
+      ]
+      expected_list = supported_languages.map do |language|
+        LanguageList::LanguageInfo.find(language)
+      end
+
+      expect(form.options_for_language).to match_array(expected_list)
     end
   end
 
   describe '#options_for_qualifications_and_accreditations' do
     let(:form) { described_class.new }
 
-    before :each do
-      Qualification.create(id: 1, order: 1, name: 'Should not be returned in the resulting options')
-      Qualification.create(id: 2, order: 3, name: 'Chartered Financial Planner')
-      Qualification.create(id: 3, order: 4, name: 'Certified Financial Planner')
-      Qualification.create(
-        id: 4, order: 5, name: 'Pension transfer qualifications - holder of G60, AF3, AwPETR®, or equivalent'
-      )
-
-      Accreditation.create(id: 4, order: 1, name: 'SOLLA')
-      Accreditation.create(id: 5, order: 2, name: 'Later Life Academy')
-      Accreditation.create(id: 6, order: 3, name: 'ISO 22222')
-    end
-
     context 'for all qualifications and accreditations that have translation keys' do
       it 'provides a list of alphabetically ordered options ' do
         expected_list = [
-          ['Certified Financial Planner', 'q3'],
-          ['Chartered Financial Planner', 'q2'],
-          ['ISO 22222', 'a6'],
-          ['Later Life Academy', 'a5'],
-          %w[SOLLA a4] # Rubocop expects %w for this row
+          ['Certified Financial Planner', 'q4'],
+          ['Chartered Financial Planner', 'q3'],
+          ['ISO 22222', 'a3'],
+          ['Later Life Academy', 'a2'],
+          %w[SOLLA a1]
         ]
-        expect(form.options_for_qualifications_and_accreditations).to eql(expected_list)
+        expect(form.options_for_qualifications_and_accreditations)
+          .to eql(expected_list)
       end
     end
   end
@@ -438,69 +428,64 @@ RSpec.describe SearchForm do
     end
   end
 
-  describe '#any_pension_pot_size?' do
-    subject(:any_pension_pot_size?) { form.any_pension_pot_size? }
-
-    context 'when any pension pot size is indicated' do
-      let(:form) { described_class.new(pension_pot_size: SearchForm::ANY_SIZE_VALUE) }
-
-      it { is_expected.to be_truthy }
-    end
-
-    context 'when a particular pension pot size is specified' do
-      let(:form) { described_class.new(pension_pot_size: '3') }
-
-      it { is_expected.to be_falsey }
-    end
-  end
-
-  describe '#pension_transfer' do
+  describe '#pension_transfer_flag' do
     let(:form) do
       described_class.new(
-        pension_transfer: pension_transfer,
-        options_when_paying_for_care: '1',
-        equity_release: '1',
-        inheritance_tax_planning: '1',
-        wills_and_probate: '1'
+        pension_transfer_flag: pension_transfer_flag,
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
       )
     end
 
     context 'when retirement products is selected' do
-      before { form.retirement_income_products = '1' }
+      before { form.retirement_income_products_flag = '1' }
 
-      let(:pension_transfer) { '1' }
+      let(:pension_transfer_flag) { '1' }
 
       it 'returns the value for pension transfer' do
-        expect(form.pension_transfer).to eql(pension_transfer)
+        expect(form.pension_transfer_flag).to eql(pension_transfer_flag)
       end
     end
 
     context 'when retirement products is not selected' do
-      before { form.retirement_income_products = nil }
+      before { form.retirement_income_products_flag = nil }
 
       context 'but pension transfer is selected' do
-        let(:pension_transfer) { '1' }
+        let(:pension_transfer_flag) { '1' }
 
         it 'still returns "1"' do
-          expect(form.pension_transfer).to eql('1')
+          expect(form.pension_transfer_flag).to eql('1')
         end
       end
     end
   end
 
-  describe '#to_query' do
+  describe '#as_json' do
     let(:serializer) { double }
-    let(:form) { described_class.new }
+    let(:form) do
+      described_class.new(
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
+      )
+    end
 
     before do
       allow(Geocode).to receive(:call).and_return(true)
-      allow(SearchFormSerializer).to receive(:new).and_return(serializer)
     end
 
-    it 'builds the query JSON via the `SearchFormSerializer`' do
-      expect(serializer).to receive(:as_json)
+    it 'builds the query JSON' do
+      expected_hash = {
+        long_term_care_flag: '1',
+        equity_release_flag: '1',
+        inheritance_tax_and_estate_planning_flag: '1',
+        wills_and_probate_flag: '1'
+      }.with_indifferent_access
 
-      form.to_query
+      expect(form.as_json).to eq(expected_hash)
     end
   end
 end

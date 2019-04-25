@@ -1,27 +1,34 @@
 class FirmsController < ApplicationController
   def show
-    @search_form = SearchForm.new(firm_search_params)
-    @firm = FirmResult.new(firm_repository)
-    @offices = Geosort.by_distance(@search_form.coordinates, @firm.offices)
-    @advisers = sort_advisers(@search_form, @firm.advisers)
-    @firm.closest_adviser = closest_adviser
-    @latitude, @longitude = @search_form.coordinates
-    @firm_profile_presenter = FirmProfilePresenter.new(@firm)
+    json = FetchFirmProfile.call(params: profile_params)
+
+    @firm = FirmProfilePresenter.new(json).firm
+    return render not_found unless @firm
+
+    @advisers = @firm.advisers
+    @offices = @firm.offices
+    @latitude, @longitude = map_center_coordinates
+
     store_recently_visited_firm
   end
 
   private
 
-  def firm_repository
-    FirmRepository.new.find(Firm.find(params[:id]))
+  def profile_params
+    params.permit(:id, :postcode, :locale).merge!(coordinates: coordinates)
   end
 
-  def firm_search_params
-    (params[:search_form] || {}).merge(firm_id: params[:id])
+  def coordinates
+    @coordinates ||= begin
+      Geocode.call(params[:postcode]) if params[:postcode].present?
+    end
   end
 
-  def closest_adviser
-    @advisers.first.try(:distance)
+  def map_center_coordinates
+    return coordinates if coordinates
+
+    location = @firm.advisers.first.location
+    [location.latitude, location.longitude]
   end
 
   def session_jar
@@ -29,14 +36,6 @@ class FirmsController < ApplicationController
   end
 
   def store_recently_visited_firm
-    session_jar.store(@firm, params)
-  end
-
-  def sort_advisers(search_form, advisers)
-    if search_form.face_to_face?
-      Geosort.by_distance(search_form.coordinates, advisers)
-    else
-      advisers.sort_by(&:name)
-    end
+    session_jar.update_recently_visited_firms(@firm, params)
   end
 end

@@ -4,21 +4,30 @@ class SearchForm
 
   include ::Filters::AdviceMethod
   include ::Filters::TypeOfAdvice
-  include ::Filters::PensionPot
+  include ::Filters::InvestmentSize
   include ::Filters::QualificationOrAccreditation
   include ::Filters::Language
   include ::Filters::Service
 
   attr_accessor :checkbox,
                 :firm_id,
-                :random_search_seed
+                :random_search_seed,
+                :filters
 
   before_validation :upcase_postcode, if: :face_to_face?
   validates :advice_method, presence: true
   validate :geocode_postcode, if: :face_to_face?
 
-  def to_query
-    SearchFormSerializer.new(self).to_json
+  def initialize(attributes = {})
+    attributes.fetch(:filters, {}).each do |key, value|
+      public_send("#{key}=", value) if respond_to?("#{key}=")
+    end
+
+    super(attributes)
+  end
+
+  def as_json
+    super(except: %w[validation_context errors]).with_indifferent_access
   end
 
   private

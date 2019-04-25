@@ -7,14 +7,14 @@ default: &default
 
 development:
   <<: *default
-  database: rad_development
+  database: rad_consumer_development
 
 test:
   <<: *default
-  database: rad_test
+  database: rad_consumer_test
 
 production:
   <<: *default
-  database: rad_production
+  database: rad_consumer_production
   username: rad
   password: <%= ENV['RAD_DATABASE_PASSWORD'] %>

@@ -18,17 +18,15 @@ RSpec.describe OfficeHelper, type: :helper do
   end
 
   let(:website) { 'http://www.postman.com' }
-  let(:office_result) { OfficeResult.new(data) }
+  let(:office_result) { Results::OfficePresenter.new(data) }
   let(:firm_data) do
     {
-      '_source' => {
-        'offices' => [office_result],
-        'advisers' => [],
-        'website_address' => 'http://www.firmsite.com'
-      }
+      'offices' => [office_result],
+      'advisers' => [],
+      'website_address' => 'http://www.firmsite.com'
     }
   end
-  let(:firm_result) { FirmResult.new(firm_data) }
+  let(:firm_result) { Results::FirmPresenter.new(firm_data) }
 
   describe '#office_address' do
     it 'outputs a ", " concatenated string of the address' do

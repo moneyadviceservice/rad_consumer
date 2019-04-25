@@ -1,0 +1,138 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"attributesToRetrieve=%5B%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%5D\u0026page=0\u0026hitsPerPage=1000\u0026query=Test+Firm"}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 25 Apr 2019 15:32:12 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 25 Apr 2019 15:32:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"firm":{"id":6},"objectID":"8","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 3","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":5},"objectID":"7","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 2","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":4},"objectID":"6","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 1","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":3},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Brighton","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":2},"objectID":"4","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> East London","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":1},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Central London","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}}],"nbHits":6,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"Test
+        Firm","params":"attributesToRetrieve=%5B%22firm.id%22%5D&distinct=true&facetFilters=%5B%5D&page=0&hitsPerPage=1000&query=Test+Firm"}
+
+'
+    http_version: 
+  recorded_at: Thu, 25 Apr 2019 15:32:12 GMT
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%2C%22firm.id%3A4%22%2C%22firm.id%3A5%22%2C%22firm.id%3A6%22%5D%5D\u0026page=0\u0026hitsPerPage=10\u0026query=Test+Firm"}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 25 Apr 2019 15:32:12 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 25 Apr 2019 15:32:12 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"firm":{"id":6,"registered_name":"Test Firm Remote 3","postcode_searchable":false,"website_address":null,"telephone_number":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":false,"pension_transfer_flag":true,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[1,2],"investment_sizes":[4],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"8","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 3","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":5,"registered_name":"Test
+        Firm Remote 2","postcode_searchable":false,"website_address":null,"telephone_number":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[1,2],"investment_sizes":[2,4],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":true,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"7","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 2","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":4,"registered_name":"Test
+        Firm Remote 1","postcode_searchable":false,"website_address":null,"telephone_number":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[1,2],"investment_sizes":[4],"in_person_advice_methods":[],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"6","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Remote 1","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":3,"registered_name":"Test
+        Firm Brighton","postcode_searchable":true,"website_address":null,"telephone_number":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[3],"in_person_advice_methods":[2],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Brighton","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":2,"registered_name":"Test
+        Firm East London","postcode_searchable":true,"website_address":"http://example.net/test-firm-east-london","telephone_number":"07111
+        333 417","email_address":"office417@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[2],"in_person_advice_methods":[2],"adviser_qualification_ids":[3],"adviser_accreditation_ids":[1],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":["ita","fra"],"total_offices":1,"total_advisers":2},"objectID":"4","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> East London","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}},{"firm":{"id":1,"registered_name":"Test
+        Firm Central London","postcode_searchable":true,"website_address":"http://example.net/test-firm-central-london","telephone_number":"07111
+        333 135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":true,"non_uk_residents_flag":false,"languages":["ita"],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"<em>Test</em>
+        <em>Firm</em> Central London","matchLevel":"full","fullyHighlighted":false,"matchedWords":["test","firm"]}}}}],"nbHits":6,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"Test
+        Firm","params":"attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%2C%22firm.id%3A4%22%2C%22firm.id%3A5%22%2C%22firm.id%3A6%22%5D%5D&page=0&hitsPerPage=10&query=Test+Firm"}
+
+'
+    http_version: 
+  recorded_at: Thu, 25 Apr 2019 15:32:12 GMT
+recorded_with: VCR 4.0.0

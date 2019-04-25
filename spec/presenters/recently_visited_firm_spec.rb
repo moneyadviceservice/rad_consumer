@@ -38,7 +38,7 @@ RSpec.describe RecentlyVisitedFirm do
 
       context 'when has closest adviser (user searched by location)' do
         before do
-          expect(recently_visited_firm).to receive(:closest_adviser).and_return(0.34)
+          expect(recently_visited_firm).to receive(:closest_adviser_distance).and_return(0.34)
         end
 
         it 'returns true' do
@@ -48,7 +48,7 @@ RSpec.describe RecentlyVisitedFirm do
 
       context 'when does not have closest adviser (user searched by name)' do
         before do
-          expect(recently_visited_firm).to receive(:closest_adviser).and_return(nil)
+          expect(recently_visited_firm).to receive(:closest_adviser_distance).and_return(nil)
         end
 
         it 'returns false' do
