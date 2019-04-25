@@ -313,6 +313,8 @@ en:
         title: Ethical investments
       sharia_investing_flag:
         title: Sharia compliant investments
+      non_uk_residents_flag:
+        title: Advice to UK expatriates
 
   search: &search
     errors:
@@ -355,10 +357,6 @@ en:
           '1': SOLLA
           '2': Later Life Academy
           '3': ISO 22222
-      service:
-        options:
-          non_uk_residents_flag:
-            title: Advice to UK expatriates
       languages:
         heading: 'I would like an adviser who can speak the following language:'
         options:

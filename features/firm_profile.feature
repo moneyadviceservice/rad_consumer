@@ -19,6 +19,8 @@ Feature: Firm profile
       | name                              |
       | Pension pot savings & investments |
       | Equity release                    |
+      | Workplace financial advice        |
+      | Italian                           |
     And I can see the following remote advice methods
       | name               |
       | At their office(s) |
