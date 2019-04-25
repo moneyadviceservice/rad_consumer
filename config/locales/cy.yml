@@ -292,7 +292,7 @@ cy:
       instructions: Ticiwch bopeth sy’n berthnasol. Gadewch yn wag os nad oes unrhyw beth yn berthnasol.
       tooltip: Gyda rhai elfennau o gyngor ariannol mae’n ofynnol i’r cynghorydd feddu ar gymwysterau ychwanegol (er enghraifft gyda rhai trosglwyddiadau pensiwn) ac mae rhai cynghorwyr yn dewis arbenigo mewn rhai meysydd penodol. Os allech chi nodi’r math o gyngor a ddymunwch, bydd hyn o gymorth i ni fedru’ch paru â chwmni sydd a chynghorydd a all fodloni’ch gofynion. Mae croeso i chi dicio unrhyw flwch sy’n berthnasol. Os nad yw’r cyngor a ddymunwch wedi ei nodi yma, yna gadewch y rhan hon yn wag.
 
-    investment_sizes:
+    investment_size:
       heading: Beth yw maint eich cronfa bensiwn / buddsoddiad?
       tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa, cynilion neu fuddsoddiadau pensiwn. Os gallwch chi ddarparu amcangyfrif o faint sydd gennych yn eich cronfa bensiwn a chynilion/buddsoddiadau eraill, gallwn eich paru gyda chwmni sy'n gallu'ch helpu.
       text: Maint eich cronfa bensiwn/buddsoddiad

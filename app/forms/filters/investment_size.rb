@@ -8,7 +8,7 @@ module Filters
       I18n.t('investment_size.ordinal').map do |id, name|
         [name, id.to_s]
       end.unshift(
-        [I18n.t('search_filter.investment_sizes.any_size_option'), ANY_SIZE_VALUE]
+        [I18n.t('search_filter.investment_size.any_size_option'), ANY_SIZE_VALUE]
       )
     end
   end

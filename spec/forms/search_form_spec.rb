@@ -314,7 +314,7 @@ RSpec.describe SearchForm do
 
     it 'returns the any size option as the first element' do
       expected = [
-        I18n.t('search_filter.investment_sizes.any_size_option'), SearchForm::ANY_SIZE_VALUE
+        I18n.t('search_filter.investment_size.any_size_option'), SearchForm::ANY_SIZE_VALUE
       ]
       expect(form.options_for_investment_sizes.first).to eql(expected)
     end
