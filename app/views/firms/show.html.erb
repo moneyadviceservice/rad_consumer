@@ -14,13 +14,20 @@
 
     <div class="l-firm__main">
       <div class="firm">
-        <%= render partial: 'firms/partials/header', locals: { search_form: @search_form } %>
-        <%= render partial: 'firms/partials/content', locals: { search_form: @search_form } %>
+        <%= render partial: 'firms/partials/header',
+                   locals: { firm: @firm, offices: @firm.offices } %>
+        <%= render partial: 'firms/partials/content',
+                   locals: {
+                     firm: @firm,
+                     offices: @firm.offices,
+                     advisers: @firm.advisers
+                   } %>
       </div>
     </div>
 
     <div class="l-firm__side">
-      <%= render 'firms/partials/profile_help' %>
+      <%= render partial: 'firms/partials/profile_help',
+                 locals: { firm: @firm } %>
     </div>
   </div>
 </div>

@@ -39,9 +39,9 @@ $ bundle exec rake db:create \
   && for env in development test; do RAILS_ENV=$env bundle exec rake db:migrate; done
 ```
 
-#### Production/Test Algolia Indeces
+#### Production/Test Algolia Indices
 
-If you want to consume the production indeces, you need to change
+If you want to consume the production indices, you need to change
 `ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` accordingly in [config/initializers/algoliasearch.rb](config/initializers/algoliasearch.rb)
 
 ### Google Maps API

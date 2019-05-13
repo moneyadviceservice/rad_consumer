@@ -4,7 +4,7 @@ module Helpers::Algolia
 
     class UnvailableIndexError < StandardError; end
 
-    INDECES = {
+    INDICES = {
       advisers: "firm-advisers#{'-test' if Rails.env.test?}",
       offices: "firm-offices#{'-test' if Rails.env.test?}"
     }.freeze
@@ -36,11 +36,11 @@ module Helpers::Algolia
     private
 
     def post(query)
-      INDECES.key?(query[:index]) || raise(UnvailableIndexError)
+      INDICES.key?(query[:index]) || raise(UnvailableIndexError)
 
       Rails.logger.debug("ALGOLIA QUERY: #{query}")
 
-      ::Algolia::Index.new(INDECES[query[:index]]).search(*query[:value])
+      ::Algolia::Index.new(INDICES[query[:index]]).search(*query[:value])
     end
 
     def keep_browsing?(page, pages)

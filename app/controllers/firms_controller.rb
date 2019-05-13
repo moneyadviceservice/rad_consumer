@@ -5,10 +5,6 @@ class FirmsController < ApplicationController
     @firm = FirmProfilePresenter.new(json).firm
     return render not_found unless @firm
 
-    @advisers = @firm.advisers
-    @offices = @firm.offices
-    @latitude, @longitude = map_center_coordinates
-
     store_recently_visited_firm
   end
 
@@ -25,11 +21,11 @@ class FirmsController < ApplicationController
   end
 
   def map_center_coordinates
-    return coordinates if coordinates
+    return Location.new(*coordinates) if coordinates
 
-    location = @firm.advisers.first.location
-    [location.latitude, location.longitude]
+    @firm.advisers.first.location
   end
+  helper_method :map_center_coordinates
 
   def session_jar
     @session_jar ||= SessionJar.new(session)

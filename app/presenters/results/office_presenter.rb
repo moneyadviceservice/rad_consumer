@@ -14,20 +14,20 @@ module Results
 
     attr_reader(*DIRECTLY_MAPPED_FIELDS)
 
-    def initialize(object)
-      @object = object
+    def initialize(office)
+      @office = office
 
       DIRECTLY_MAPPED_FIELDS.each do |field|
-        instance_variable_set("@#{field}", object[field.to_s])
+        instance_variable_set("@#{field}", office[field.to_s])
       end
     end
 
     def location
-      Location.new(*object['_geoloc'].values)
+      Location.new(*office['_geoloc'].values)
     end
 
     private
 
-    attr_reader :object
+    attr_reader :office
   end
 end

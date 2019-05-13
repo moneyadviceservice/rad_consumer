@@ -13,20 +13,20 @@ module Results
     attr_reader(*DIRECTLY_MAPPED_FIELDS)
     attr_accessor(*OTHER_FIELDS)
 
-    def initialize(object)
-      @object = object
+    def initialize(adviser)
+      @adviser = adviser
 
       DIRECTLY_MAPPED_FIELDS.each do |field|
-        instance_variable_set("@#{field}", object[field.to_s])
+        instance_variable_set("@#{field}", adviser[field.to_s])
       end
     end
 
     def location
-      Location.new(*object['_geoloc'].values)
+      Location.new(*adviser['_geoloc'].values)
     end
 
     private
 
-    attr_reader :object
+    attr_reader :adviser
   end
 end

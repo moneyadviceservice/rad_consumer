@@ -44,11 +44,11 @@ module Results
     attr_reader(*MAPPED_FIELDS)
     attr_accessor(*OTHER_FIELDS)
 
-    def initialize(object)
-      @object = object
+    def initialize(firm)
+      @firm = firm
 
       MAPPED_FIELDS.each do |field|
-        instance_variable_set("@#{field}", object[field.to_s])
+        instance_variable_set("@#{field}", firm[field.to_s])
       end
     end
 
@@ -79,6 +79,6 @@ module Results
 
     private
 
-    attr_reader :object
+    attr_reader :firm
   end
 end
