@@ -82,16 +82,19 @@ module Helpers::ParamsParser
     extract_workplace_financial_advice!(filters)
   end
 
+  def qualification_or_accreditation_key(value)
+    if value.start_with?('a')
+      :adviser_accreditation_ids
+    elsif value.start_with?('q')
+      :adviser_qualification_ids
+    end
+  end
+
   def extract_qualification_or_accreditations!(filters)
     qualification_or_accreditation = filters[:qualification_or_accreditation]
 
     if qualification_or_accreditation
-      if qualification_or_accreditation.start_with?('a')
-        key = :adviser_accreditation_ids
-      elsif qualification_or_accreditation.start_with?('q')
-        key = :adviser_qualification_ids
-      end
-
+      key = qualification_or_accreditation_key(qualification_or_accreditation)
       filters[key] = qualification_or_accreditation[1..-1] if key
     end
 
@@ -99,13 +102,15 @@ module Helpers::ParamsParser
   end
 
   def extract_workplace_financial_advice!(filters)
-    if WORKPLACE_FINANCIAL_ADVICE_FLAGS.map do |flag|
-         filters[flag] == '1'
-       end.compact.any?
-
+    any_workplace_financial_advice_flag?(filters) &&
       filters[:workplace_financial_advice_flag] = '1'
-    end
 
     filters.except!(*WORKPLACE_FINANCIAL_ADVICE_FLAGS)
+  end
+
+  def any_workplace_financial_advice_flag?(filters)
+    WORKPLACE_FINANCIAL_ADVICE_FLAGS.map do |flag|
+      filters[flag] == '1'
+    end.compact.any?
   end
 end

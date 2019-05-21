@@ -11,13 +11,10 @@ module Results
     end
 
     def total_pages
-      if total_records < page_size
-        1
-      elsif (total_records % page_size).zero?
-        total_records / page_size
-      else
-        (total_records / page_size) + 1
-      end
+      return 1 if total_records < page_size
+      return (total_records / page_size) if multiple_of_page_size?
+
+      total_records / page_size + 1
     end
 
     def first_record
@@ -34,6 +31,10 @@ module Results
 
     def page_size
       PAGE_SIZE
+    end
+
+    def multiple_of_page_size?
+      (total_records % page_size).zero?
     end
 
     alias limit_value page_size

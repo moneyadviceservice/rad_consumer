@@ -3,11 +3,12 @@
     <div class="l-2col">
       <div class="result__firm-name">
         <span class="result__heading-text t-name">
-          <%= link_to firm.name, firm_path({ id: firm.id }.merge(params[:search_form][:postcode].present? ? { postcode: params[:search_form][:postcode] } : {})) %>
+          <%= link_to firm.name, firm_profile_link(firm.id, params[:search_form][:postcode]) %>
         </span>
       </div>
       <div class="result__profile-link is-hidden-on-mobile">
-        <%= link_to t('search.result.view_profile'), firm_path({ id: firm.id }.merge(params[:search_form][:postcode].present? ? { postcode: params[:search_form][:postcode] } : {})), class: 'outline-button outline-button--light outline-button--margin-collapse t-view-profile' %>
+        <%= link_to t('search.result.view_profile'), firm_profile_link(firm.id, params[:search_form][:postcode]),
+            class: 'outline-button outline-button--light outline-button--margin-collapse t-view-profile' %>
       </div>
     </div>
   <% end %>

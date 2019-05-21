@@ -44,7 +44,11 @@ module Helpers::Algolia
     end
 
     def keep_browsing?(page, pages)
-      page.zero? || page < pages && page < MAX_BROWSABLE_PAGES
+      page.zero? || within_range?(page, pages)
+    end
+
+    def within_range?(page, pages)
+      page < pages && page < MAX_BROWSABLE_PAGES
     end
 
     def offset_query_page!(query, page)

@@ -90,4 +90,25 @@ RSpec.describe SearchHelper, type: :helper do
       end
     end
   end
+
+  describe '#firm_profile_link' do
+    subject { helper.firm_profile_link(firm_id, postcode) }
+    let(:firm_id) { 1 }
+
+    context 'when postcode is present' do
+      let(:postcode) { 'EC1N 2TD' }
+
+      it 'returns a link to the firm profile with the postcode' do
+        is_expected.to eq('/en/firms/1?postcode=EC1N+2TD')
+      end
+    end
+
+    context 'when postcode is not present' do
+      let(:postcode) { nil }
+
+      it 'returns a link to the firm profile without the postcode' do
+        is_expected.to eq('/en/firms/1')
+      end
+    end
+  end
 end
