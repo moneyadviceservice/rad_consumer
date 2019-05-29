@@ -3,19 +3,12 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.configure_rspec_metadata!
 
-  # Allow access to Elastic Search running locally
-  config.ignore_localhost = true
-end
+  record_mode = ENV['FORCE_RECORD_VCR'] == 'true' ? :all : :new_episodes
+  config.default_cassette_options = { record: record_mode }
 
-def vcr_options_for_feature(cassette_name)
-  { cassette_name: cassette_name, record: :new_episodes }
-end
+  config.filter_sensitive_data('<GOOGLE_GEOCODER_API_KEY>') { ENV['GOOGLE_GEOCODER_API_KEY'] }
+  config.filter_sensitive_data('<GOOGLE_GEOCODER_API_KEY>') { ENV['GOOGLE_GEOCODER_API_KEY'] }
 
-RSpec.configure do |config|
-  config.around(:each, :localhost_vcr) do |example|
-    raise 'Cannot use :localhost_vcr since VCR is off' unless VCR.turned_on?
-    VCR.configuration.ignore_localhost = false
-    example.run
-    VCR.configuration.ignore_localhost = true
-  end
+  config.filter_sensitive_data('<API_KEY>') { ENV['ALGOLIA_API_KEY'] }
+  config.filter_sensitive_data('<APP_ID>') { ENV['ALGOLIA_APP_ID'] }
 end

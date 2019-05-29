@@ -20,4 +20,12 @@ class ApplicationController < ActionController::Base
   def page
     params[:page].try(:to_i) || 1
   end
+
+  def not_found
+    {
+      file: 'public/404.html',
+      status: :not_found,
+      layout: false
+    }
+  end
 end

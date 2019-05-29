@@ -32,6 +32,10 @@ module ApplicationHelper
     end
   end
 
+  def meters_to_miles(meters)
+    (meters || 0) * 0.00062137
+  end
+
   def feature_enabled?(flag_name)
     ENV[flag_name] == 'true'
   end

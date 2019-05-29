@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-offices-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B55.378051%2C-3.435973%5D\u0026facetFilters=%5B%22firm_id%3A2%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 25 Apr 2019 15:32:10 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 25 Apr 2019 15:32:10 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"_geoloc":{"lat":51.510643,"lng":-0.052898},"firm_id":2,"address_line_one":"57328
+        Kiehn Mountain","address_line_two":"Suite 507","address_town":"New Roderick","address_county":"Vermont","address_postcode":"E1
+        0AE","email_address":"office417@example.com","telephone_number":"07111 333
+        417","disabled_access":false,"website":"http://example.net/offices/417","objectID":"3","_highlightResult":{"_geoloc":{"lat":{"value":"51.510643","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.052898","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"2","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"57328
+        Kiehn Mountain","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        507","matchLevel":"none","matchedWords":[]},"address_town":{"value":"New Roderick","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Vermont","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"E1
+        0AE","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office417@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 417","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/417","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":2,"geoDistance":484907,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":484907}}}],"nbHits":1,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B55.378051%2C-3.435973%5D&facetFilters=%5B%22firm_id%3A2%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"16169862","serverUsed":"c11-eu-2.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Thu, 25 Apr 2019 15:32:10 GMT
+recorded_with: VCR 4.0.0

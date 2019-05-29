@@ -6,29 +6,10 @@ Consumer search for the Retirement Adviser Directory
 
 ## Prerequisites
 
-* [Ruby 2.5.3](http://www.ruby-lang.org/en)
-* [Node.js](http://nodejs.org/)
-* [Bundler](http://bundler.io)
-* [PostgreSQL](http://www.postgresql.org/)
-* [Elasticsearch 1.5 or 1.7](https://www.elastic.co/products/elasticsearch)
-* [RAD](https://github.com/moneyadviceservice/rad) (for PostgreSQL and Elasticsearch set up)
-
----
-
-**NOTES:**
-
-**This application shares _read_ access to a Postgres database and an
-Elasticsearch instance with the `rad` project.**
-
-**DO NOT install them from here. Instead install [rad](https://github.com/moneyadviceservice/rad)
-first as this contains all the extra seed data required as well.**
-
-**Acceptance tests in `rad_consumer` are also dependant on the above setup.**
-
-**Please refer to the [Limitations](#limitations) section below for further info
-regarding the consequences on development.**
-
----
+- [Ruby 2.5.3](http://www.ruby-lang.org/en)
+- [Node.js](http://nodejs.org/)
+- [Bundler](http://bundler.io)
+- [PostgreSQL](http://www.postgresql.org/)
 
 ## Installation
 
@@ -42,25 +23,26 @@ $ npm install
 
 ### Set up database
 
-**Please make sure you have already followed the steps from [`rad`: Set up the database](https://github.com/moneyadviceservice/rad/blob/master/README.md#set-up-elasticsearch).**
-
-Additionally, you need to setup the database connection to the shared database:
+Additionally, you need to setup the database connection to the database:
 
 ```sh
 $ cp config/example.database.yml config/database.yml
 ```
-Be sure to remove or modify the `username` attribute if it needs to be.
 
-#### Production seeds
+Be sure to remove or modify the `username` attribute if it needs to be,
+then run:
 
-Download a backup of the Production DB and load it into your local DB.
-Follow the instructions for how to [load it into your local development database here](https://maswiki.valiantyscloud.net/pages/viewpage.action?pageId=63635527).
+Make sure Postgres is running, then run:
 
-### Set up Elasticsearch
+```sh
+$ bundle exec rake db:create \
+  && for env in development test; do RAILS_ENV=$env bundle exec rake db:migrate; done
+```
 
-**Please make sure you have already followed the steps from [`rad`: Set up Elasticsearch](https://github.com/moneyadviceservice/rad/blob/master/README.md#set-up-elasticsearch).**
+#### Production/Test Algolia Indices
 
-No further steps required.
+If you want to consume the production indices, you need to change
+`ALGOLIA_APP_ID` and `ALGOLIA_API_KEY` accordingly in [config/initializers/algoliasearch.rb](config/initializers/algoliasearch.rb)
 
 ### Google Maps API
 
@@ -73,14 +55,15 @@ For the firms search by postcode to work, you will need to provide a Google Geoc
 key in `.env`. You can find an example at `.env.example`.
 
 Alternatively, you can stub the Geocoder to return an array of predetermined coordinates. i.e:
+
 ```ruby
 class Geocode
   def self.call(postcode)
     # Geocoder.coordinates("#{postcode}, United Kingdom")
     # i.e. London
-    [51.5074, 0.1278] 
+    [51.5074, 0.1278]
   end
-end	
+end
 ```
 
 or set the `lookup` to `:test` and provide a stub. More info [here](https://github.com/alexreisner/geocoder)
@@ -111,6 +94,12 @@ To run the RSpec tests:
 $ bundle exec rspec
 ```
 
+To run the Cucumber tests:
+
+```sh
+$ bundle exec cucumber
+```
+
 To run the javascript tests:
 
 ```
@@ -118,26 +107,6 @@ $ node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run=true
 ```
 
 ## Limitations
-
-### Database
-
-`rad_consumer` depends on 8 tables from the database owned by
-the `rad` repository.
-
-Their barebone models are defined in [app/models/db/](app/models/db).
-
-As a consequence, every time a new migration that impacts any of these tables is
-added to the `rad` repository, **the `schema.rb` needs to be updated on
-`rad_consumer` as well**.
-
-One easy way to do that is to run the following command in here:
-
-```sh
-$ bundle exec rake db:schema:dump
-```
-
-Please discard any changes that are not related to the new migration, e.g. tables
-that are not used by `rad_consumer`.
 
 ### Stylesheets
 
@@ -153,7 +122,7 @@ following elements:
 ## Contributing
 
 1. Set up the application, run all the tests and ensure you can successfully run
-the application
+   the application
 2. Create a feature branch.
 3. Make your changes, ensure all changes include appropriate test coverage.
 4. Run rubocop and ensure all cops pass.

@@ -1,13 +1,22 @@
 <div class="firm__header">
-  <%= heading_tag(@firm.name, level: 2, class: 'firm__name') %>
-  <% if search_form.face_to_face? %>
-    <%= render partial: 'search/partials/firm/adviser_distance', locals: { distance: @firm.closest_adviser }%>
+  <%= heading_tag(firm.name, level: 2, class: 'firm__name') %>
+  <% if firm.closest_adviser_distance.present? %>
+    <%= render partial: 'search/partials/firm/adviser_distance',
+               locals: { distance: firm.closest_adviser_distance } %>
   <% end %>
-  <% if search_form.face_to_face? && @offices.present? %>
+  <% if offices.present? %>
     <%= render partial: 'firms/partials/firm_links',
-             locals: { telephone_number: @offices.first.telephone_number, email_address: @offices.first.email_address, website_address: display_website(@offices.first, @firm) } %>
+              locals: {
+                telephone_number: offices.first.telephone_number,
+                email_address: offices.first.email_address,
+                website_address: display_website(offices.first, firm)
+              } %>
   <% else %>
     <%= render partial: 'firms/partials/firm_links',
-               locals: { telephone_number: @firm.telephone_number, email_address: @firm.email_address, website_address: @firm.website_address } %>
+               locals: {
+                 telephone_number: firm.telephone_number,
+                 email_address: firm.email_address,
+                 website_address: firm.website_address
+               } %>
   <% end %>
 </div>
