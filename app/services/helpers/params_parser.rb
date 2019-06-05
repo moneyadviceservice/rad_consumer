@@ -61,19 +61,11 @@ module Helpers::ParamsParser
       id: params[:id],
       name: params[:firm_name],
       advice_method: params[:advice_method],
-      coordinates: extract_coordinates(params),
+      coordinates: params[:coordinates]&.map(&:to_f),
       filters: extract_filters(params),
       page: params[:page] || DEFAULT_PAGE,
       seed: params[:random_search_seed]
     }
-  end
-
-  def extract_coordinates(params)
-    if params[:coordinates]&.any?
-      params[:coordinates].map(&:to_f)
-    else
-      Geocode.call(params[:postcode])
-    end
   end
 
   def extract_filters(params)

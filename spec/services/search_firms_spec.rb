@@ -41,7 +41,7 @@ RSpec.describe SearchFirms do
       let(:cassette_name) { :search_in_person_valid_geocode }
       let(:params) do
         base_search_params.merge(
-          postcode: 'EC4A 2AH',
+          coordinates: ['51.5139284', '-0.1113308'],
           advice_method: 'face_to_face'
         )
       end

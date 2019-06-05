@@ -36,7 +36,6 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
               coordinates: [],
               filters: {},
               random_search_seed: 123,
-              postcode: 'EC1N 2TD',
               page: 1
             }
           end
@@ -46,7 +45,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
               described_class::SearchFirmsParams.new(
                 '',
                 'face_to_face',
-                [55.378051, -3.435973],
+                [],
                 {},
                 123,
                 1
@@ -60,7 +59,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
             {
               firm_name: '',
               advice_method: 'face_to_face',
-              coordinates: [55.378051, -3.435973],
+              coordinates: ['55.378051', '-3.435973'],
               filters: {},
               random_search_seed: 123,
               page: 1
@@ -100,7 +99,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
               described_class::SearchFirmsParams.new(
                 '',
                 'phone_or_online',
-                [55.378051, -3.435973],
+                [],
                 { adviser_qualification_ids: '1' },
                 123,
                 1
@@ -128,7 +127,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
               described_class::SearchFirmsParams.new(
                 'test',
                 'phone_or_online',
-                [55.378051, -3.435973],
+                [],
                 { adviser_accreditation_ids: '2' },
                 123,
                 1
@@ -157,7 +156,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
               described_class::SearchFirmsParams.new(
                 'test',
                 'phone_or_online',
-                [55.378051, -3.435973],
+                [],
                 { workplace_financial_advice_flag: '1' },
                 123,
                 1
@@ -198,7 +197,7 @@ RSpec.describe Helpers::ParamsParser, type: :helper do
           expect(parse).to eq(
             described_class::FetchFirmProfileParams.new(
               1,
-              [55.378051, -3.435973],
+              [],
               1
             )
           )
