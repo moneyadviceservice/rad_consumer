@@ -44,10 +44,10 @@ group :development do
 end
 
 group :development, :test do
-  gem 'byebug'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'launchy'
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rb-readline'
   gem 'rspec-rails', '~> 3.8'
