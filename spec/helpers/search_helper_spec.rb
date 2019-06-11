@@ -111,4 +111,24 @@ RSpec.describe SearchHelper, type: :helper do
       end
     end
   end
+
+  describe '#render_logo' do
+    context 'when the professional credential identifier is marked "ignored"' do
+      let(:id) { 1 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+
+    context 'when a professional credential was not matched' do
+      let(:id) { 99999 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+  end
 end
