@@ -130,5 +130,16 @@ RSpec.describe SearchHelper, type: :helper do
         expect(helper.render_logo(id, kind)).to be_blank
       end
     end
+
+    context 'when a professional credential identifier is present' do
+      let(:id) { 3 }
+      let(:kind) { :accreditation }
+
+      it 'returns logo markup for that credential' do
+        markup = Nokogiri::HTML(helper.render_logo(id, kind))
+
+        expect(markup.css('a.accreditation img[alt="ISO 22222"]')).to be_present
+      end
+    end
   end
 end

@@ -443,7 +443,7 @@ cy:
           title: SOLLA
           id: solla
           description: Mae cynllun achredu Society of Later Life Advisers (SOLLA) yn cael ei archwilio a’i gefnogi gan Bartneriaeth Sgiliau Ariannol a Chyfreithiol (FSLP), sef y corff sy’n gosod y safonau. Mae cynghorwyr ariannol sy’n ennill achrediad SOLLA wedi dangos lefel uchel o wybodaeth ac arbenigedd ym maes cynllunio ariannol bywyd hŷn. Mae’r sefydliad i ddefnyddwyr, Which?, ynghyd ag amryw o awdurdodau lleol yn argymell y dylai unigolion sy’n chwilio am gyngor mewn meysydd mwy cymhleth fel cynllunio ariannol ar gyfer pethau fel talu am ofal neu ryddhau ecwiti, geisio cyngor gan gynghorydd SOLLA achrededig.
-          link: Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>
+          link: 'Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>'
         later_life_academy:
           title: Academi Bywyd Hŷn
           id: later_life_academy
@@ -452,6 +452,13 @@ cy:
           title: ISO 22222
           id: iso_22222
           description: Dyma safon ryngwladol ar gyfer cynllunio ariannol, a ddatblygwyd gan y Sefydliad Safoni Rhyngwladol (ISO) mewn cydweithrediad â’r Sefydliad Safonau Prydeinig (BSI). Rhaid i gynghorwyr sy’n cyrraedd y safon hon ddangos lefelau uchel o ymddygiad moesol, gallu a phrofiad. ISO yw’r datblygwr mwyaf yn y byd o safonau rhyngwladol gwirfoddol.
+        chartered_wealth:
+          title: Chartered Wealth Manager
+          description: Mae statws Rheolwr Cyfoeth Siartredig hefyd yn cael ei ddyfarnu gan y Sefydliad Siartredig Gwarantau a Buddsoddiadau (CISI).  Er mwyn cael dyfarniad o’r teitl Rheolwr Cyfoeth Siartredig, rhaid i gynghorwyr ariannol feddu ar Gymhwyster Rheolwr Cyfoeth Siartredig CISI Lefel 7 (Gradd Meistr CISI mewn Rheoli Cyfoeth yn flaenorol) neu feddu ar ardystiad Cynllunydd Ariannol Ardystiedig a bod yn aelod Siartredig o’r CISI.  Rhaid bod cynghorwyr hefyd wedi cwblhau un flwyddyn o ddatblygiad proffesiynol parhaus y gellir ei ddilysu.
+        pension_transfer_gold:
+          title: Pension Transfer Gold Standard
+          description: Mae Safon Aur Trosglwyddiadau Pensiwn yn god ymarfer gorau sydd wedi ei fabwysiadu'n wirfoddol gan gwmnïau a chynghorwyr ariannol a reoleiddir yn cynnig cyngor arbenigol ar drosglwyddiadau pensiwn.  Yn benodol mae’r Safon yn cynnig cyngor ariannol ar drosglwyddiadau o gynlluniau pensiwn sydd â buddion wedi eu diogelu neu warantu.  Mae cwmnïau a chynghorwyr ariannol sy'n mabwysiadu'r Safon yn dilyn cyfres o egwyddorion yn ychwanegol i’r hyn sy'n ofynnol gan reoleiddiad. <br /> <br /> Ar gyfer eich diogelwch chi, mae’r Llywodraeth wedi ei gwneud yn ofyniad cyfreithiol i geisio cyngor ariannol cyn i chi drosglwyddo o gynlluniau pensiwn penodol.  Mae’r Safon Aur Trosglwyddiadau Pensiwn wedi ei gynllunio i'ch helpu i adnabod a chanfod cwmnïau a chynghorwyr sy'n gallu darparu'r cyngor arbenigol hwn ac sy’n ymlynu i safonau proffesiynol uchel.
+          link: Ceir rhagor o wybodaeth <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">yma</a>.
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
@@ -502,6 +509,8 @@ cy:
       '7': ignored
       '8': ignored
       '9': ignored
+      '10': chartered_wealth
+      '11': pension_transfer_gold
   accreditation:
     ordinal:
       '1': solla
