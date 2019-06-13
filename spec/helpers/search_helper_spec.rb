@@ -111,4 +111,35 @@ RSpec.describe SearchHelper, type: :helper do
       end
     end
   end
+
+  describe '#render_logo' do
+    context 'when the professional credential identifier is marked "ignored"' do
+      let(:id) { 1 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+
+    context 'when a professional credential was not matched' do
+      let(:id) { 99999 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+
+    context 'when a professional credential identifier is present' do
+      let(:id) { 3 }
+      let(:kind) { :accreditation }
+
+      it 'returns logo markup for that credential' do
+        markup = Nokogiri::HTML(helper.render_logo(id, kind))
+
+        expect(markup.css('a.accreditation img[alt="ISO 22222"]')).to be_present
+      end
+    end
+  end
 end

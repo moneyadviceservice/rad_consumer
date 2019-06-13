@@ -448,6 +448,13 @@ en:
         iso_22222:
           title: ISO 22222
           description: This is an international standard for financial planning, developed by the International Organisation for Standardisation (ISO) in collaboration with the British Standards Institute (BSI).  Advisers who are awarded this standard must demonstrate high levels of ethical behavior, competency and experience. ISO is the world’s largest developer of voluntary international standards.
+        chartered_wealth:
+          title: Chartered Wealth Manager
+          description: Chartered Wealth Manager status is also awarded by the Chartered Institute of Securities and Investments (CISI).  To be awarded the title Chartered Wealth Manager, financial advisers must possess the Level 7 CISI Chartered Wealth Manager Qualification (formerly known as the CISI Masters in Wealth Management) or hold the Certified Financial Planner certification and be a Chartered member of the CISI.  Advisers must also have completed one year of verifiable continued professional development.
+        pension_transfer_gold:
+          title: Pension Transfer Gold Standard
+          description: The Pension Transfer Gold Standard is a code of best practice voluntarily adopted by regulated financial firms and advisers offering specialist advice on pension transfers.  In particular the Standard covers financial advice on transfers from pension schemes that have protected or guaranteed benefits.  Financial firms and advisers who adopt the Standard adhere to a set of principles over and above those they are required to follow by  regulation. <br /> <br /> For your own protection, the Government has made it a legal requirement to seek financial advice before you transfer from certain pension schemes.  The Pension Transfer Gold Standard is designed to help you recognise  and find firms and advisers that are able to provide this specialist advice and which adheres to high professional standards.
+          link: You can find out more <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">here</a>.
 
     education_module_one:
       heading: How were these results decided?
@@ -498,6 +505,8 @@ en:
       '7': ignored
       '8': ignored
       '9': ignored
+      '10': chartered_wealth
+      '11': pension_transfer_gold
   accreditation:
     ordinal:
       '1': solla

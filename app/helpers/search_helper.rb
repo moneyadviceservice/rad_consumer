@@ -18,6 +18,7 @@ module SearchHelper
   def render_logo(id, kind)
     key = qualification_or_accreditation_key(id, kind)
     return if key == 'ignored'
+    return if key.match?(/^translation missing/)
 
     info = t("search.accreditations.items.#{key}")
     link_to glossary_path(locale: locale, anchor: key), class: "accreditation t-#{kind}" do
