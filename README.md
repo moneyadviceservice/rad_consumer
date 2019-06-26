@@ -96,6 +96,11 @@ $ bundle exec rspec
 
 To run the Cucumber tests:
 
+Some of the tests use cassettes rather than calling algolia. The env vars are
+in the .env.test file. Login into the algolia app using the credentials on keePassX and find 
+the ALGOLIA_APP_KEY for the ALGOLIA_APP_ID supplied in the .env.test file.
+
+Then run:
 ```sh
 $ bundle exec cucumber
 ```
@@ -127,3 +132,5 @@ following elements:
 3. Make your changes, ensure all changes include appropriate test coverage.
 4. Run rubocop and ensure all cops pass.
 5. Push your feature branch and create a pr.
+
+[Technical Docs](https://github.com/moneyadviceservice/technical-docs/tree/master/rad)

@@ -352,6 +352,8 @@ en:
         ordinal:
           '3': Chartered Financial Planner
           '4': Certified Financial Planner
+          '10': Chartered Wealth Manager
+          '11': Pension Transfer Gold Standard
       accreditation:
         ordinal:
           '1': SOLLA

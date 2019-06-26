@@ -344,8 +344,10 @@ RSpec.describe SearchForm do
         expected_list = [
           ['Certified Financial Planner', 'q4'],
           ['Chartered Financial Planner', 'q3'],
+          ['Chartered Wealth Manager', 'q10'],
           ['ISO 22222', 'a3'],
           ['Later Life Academy', 'a2'],
+          ['Pension Transfer Gold Standard', 'q11'],
           %w[SOLLA a1]
         ]
         expect(form.options_for_qualifications_and_accreditations)
