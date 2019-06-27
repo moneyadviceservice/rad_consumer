@@ -23,11 +23,10 @@ Feature: Search filters
 
   Scenario: Filter by accreditations and qualifications
     When I am performing the "firm by name" search with value "Test Firm"
-    And I choose the accreditation / qualification "SOLLA"
+    And I choose the accreditation / qualification "Pension Transfer Gold Standard"
     Then I should see the following firms
       | name                     |
       | Test Firm East London    |
-      | Test Firm Central London |
 
   Scenario: Filter by adviser spoken language
     When I am performing the "firm by name" search with value "Test Firm"
