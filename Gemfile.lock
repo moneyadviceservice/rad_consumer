@@ -1,11 +1,4 @@
 GIT
-  remote: git://github.com/moneyadviceservice/bowndler.git
-  revision: f836a295f0eac8ba02a6dc4733d000a7f1fc8a00
-  specs:
-    bowndler (1.0.2)
-      thor
-
-GIT
   remote: git://github.com/moneyadviceservice/dough.git
   revision: 798809e10fed5563be7a654edfd20a6a82e3412e
   tag: v5.25.3.296
@@ -80,6 +73,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bowndler (1.0.2)
+      thor
     builder (3.2.3)
     byebug (11.0.1)
     capybara (2.18.0)
@@ -318,7 +313,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
-  bowndler!
+  bowndler
   capybara
   cucumber-rails
   dotenv-rails
