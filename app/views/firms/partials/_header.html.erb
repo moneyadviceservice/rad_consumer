@@ -7,7 +7,7 @@
   <% if offices.present? %>
     <%= render partial: 'firms/partials/firm_links',
               locals: {
-                telephone_number: offices.first.telephone_number,
+                telephone_number: firm.telephone_number,
                 email_address: offices.first.email_address,
                 website_address: display_website(offices.first, firm)
               } %>
