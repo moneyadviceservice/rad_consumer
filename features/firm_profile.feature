@@ -6,7 +6,7 @@ Feature: Firm profile
     When I am viewing the profile for firm "Test Firm Central London"
     Then I can see the following general information
       | name                     | telephone     | email                 |
-      | Test Firm Central London | 07111 333 789 | office789@example.org |
+      | Test Firm Central London | 07111 333 135 | office789@example.org |
 
   Scenario: View firm details
     When I am viewing the profile for firm "Test Firm Central London"
