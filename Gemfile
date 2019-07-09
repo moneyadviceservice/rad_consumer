@@ -21,7 +21,7 @@ gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
-    tag: 'v5.25.3.296'
+    tag: 'v5.30.5.327'
 gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'kaminari'

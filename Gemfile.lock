@@ -7,10 +7,10 @@ GIT
 
 GIT
   remote: git://github.com/moneyadviceservice/dough.git
-  revision: 798809e10fed5563be7a654edfd20a6a82e3412e
-  tag: v5.25.3.296
+  revision: 552004cc4658bdb2e935571b3db6f414007b94e2
+  tag: v5.30.5.327
   specs:
-    dough-ruby (5.25.3)
+    dough-ruby (5.30.5)
       activemodel
       activesupport
       rails (>= 3.2, < 5)
@@ -182,6 +182,8 @@ GEM
     multi_test (0.1.2)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    opening_hours (0.0.7)
+      activesupport
     parallel (1.12.1)
     parser (2.5.0.5)
       ast (~> 2.4.0)
@@ -331,6 +333,7 @@ DEPENDENCIES
   kaminari
   language_list (~> 1.2.1)
   launchy
+  opening_hours
   pg (~> 0.20.0)
   poltergeist
   pry-byebug

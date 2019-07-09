@@ -1,0 +1,89 @@
+.l-contact-panel {
+  @include column(4);
+}
+.contact-panel {
+  @include column(12);
+
+  color: $color-grey-medium-dark;
+  text-align: center;
+  padding: $baseline-unit*2 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include respond-to($mq-s) {
+    padding: $baseline-unit*4 0;
+  }
+}
+
+.contact-link {
+  color: $contact-link-text-color;
+  line-height: $baseline-unit*6;
+
+  // These are usually set either by us or by default, but
+  // tel links are strange and we need to tell them again.
+  &[href^="tel:"] {
+    color: $contact-link-text-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.contact-panel__list {
+  @extend .unstyled-list;
+  margin: 0 0 $baseline-unit;
+  flex-grow: 2;
+
+  @include respond-to($mq-s) {
+    margin: $baseline-unit*2 0;
+  }
+}
+
+.contact-panel__dynamic-content {
+  &.is-loading {
+    .contact-panel__chat-description,
+    .contact-panel__button {
+      visibility: hidden;
+    }
+    .contact-panel__preloader {
+      visibility: visible;
+    }
+  }
+
+  &.is-loaded {
+    & {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 2;
+    }
+    .contact-panel__chat-description,
+    .contact-panel__button {
+      visibility: visible;
+    }
+    .contact-panel__preloader {
+      display: none;
+    }
+  }
+}
+
+.contact-link__svg-icon {
+  @include inline-block();
+  position: relative;
+  top: 5px;
+  margin-right: $baseline-unit;
+  width: 20px;
+  height: 20px;
+  fill: $contact-link-fill-color;
+}
+
+.icon--whatsapp {
+  display: inline-block;
+  width: 59px;
+  height: 59px;
+  margin: 0 $baseline-unit 0 0;
+  vertical-align: middle;
+  background: none;
+}
