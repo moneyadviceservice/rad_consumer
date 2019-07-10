@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  include Chat
+
   private
 
   def default_url_options(options = {})

@@ -1,28 +1,32 @@
-<div class="l-contact-panel">
-  <div class="contact-panel contact-panel__chat-open" id="js-whatsapp">
-    <h2 aria-level="2" class="contact-panel__heading" role="heading">
-      <%= render 'contact_methods/whatsapp_logo' %>WhatsApp
-    </h2>
-    <p class="contact-panel__chat-javascript">
-      <%= t('contact_panels.webchat.nojs_html') %></a>.
-    </p>
-    <div class="contact-panel__dynamic-content is-loaded" id="js-whatsapp-content">
-      <ul class="contact-panel__chat-description contact-panel__list unstyled-list" id="js-whatsapp-description">
-        <li class="contact-panel__additional-info">
-          <%= t('contact_panels.whatsapp.text1') %>
-        </li>
-        <li class="contact-panel__additional-info">
-          <%= t('contact_panels.whatsapp.text2') %>
-        </li>
-        <li class="contact-panel__additional-info">
-          <p><%= t('contact_panels.whatsapp.text3') %></p>
-        </li>
-      </ul>
-      <div class="contact-panel__button-container" id="js-whatsapp-cta">
-        <div class="contact-panel__button button">
-          <%= t('contact_panels.webchat.default_status') %>
-        </div>
+<div class="contact-panel contact-panel__chat-open" id="js-whatsapp">
+  <h2 aria-level="2" class="contact-panel__heading" role="heading">
+    <%= render 'contact_methods/whatsapp_logo' %>WhatsApp
+  </h2>
+  <p class="contact-panel__chat-javascript">
+    <%= t('contact_panels.webchat.nojs_html') %></a>.
+  </p>
+  <div class="contact-panel__dynamic-content is-loaded" id="js-whatsapp-content">
+    <ul class="contact-panel__chat-description contact-panel__list unstyled-list" id="js-whatsapp-description">
+      <li class="contact-panel__additional-info">
+        <%= t('contact_panels.whatsapp.text1') %>
+      </li>
+      <li class="contact-panel__additional-info">
+        <%= t('contact_panels.whatsapp.text2') %>
+      </li>
+      <li class="contact-panel__additional-info">
+        <p><%= t('contact_panels.whatsapp.text3') %></p>
+      </li>
+    </ul>
+    <% if chat_opening_hours.open? %>
+      <div class="contact-panel__button-container">
+        <a class="contact-panel__button button t-whatsapp-button" href="https://wa.me/447701342744">
+          <%= t('contact_panels.webchat.available.call_to_action') %>
+        </a>
       </div>
-    </div>
+    <% else %>
+      <p>
+        <%= t('contact_panels.webchat.unavailable.call_to_action') %>
+      </p>
+    <% end %>
   </div>
 </div>
