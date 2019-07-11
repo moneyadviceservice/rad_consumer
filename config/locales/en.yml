@@ -194,11 +194,10 @@ en:
     accessin:
       button: Report an accessibility problem
       hidden_text: Feedback form opens in a new window
-    sfgb:
-      part_of: Part of the
-      single_financial: Single Financial
-      guidance_body: Guidance Body
-      hidden_text: Opens in a new window
+    mps_provided_1: The Money 
+    mps_provided_2: Advice Service 
+    mps_provided_3: is provided by
+    mps: Money & Pensions Service
     links:
       - title: Contact us
         url: https://www.moneyadviceservice.org.uk/en/static/contact-us

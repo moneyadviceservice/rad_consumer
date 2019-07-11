@@ -195,11 +195,10 @@ cy:
     accessin:
       button: Adrodd ar broblem hygyrchedd
       hidden_text: Ffurflen adborth yn agor mewn ffenestr newydd
-    sfgb:
-      part_of: Rhan o'r
-      single_financial: Corff Sengl ar
-      guidance_body: Ganllawiau Ariannol
-      hidden_text: Yn agor mewn ffenestr newydd
+    mps_provided_1: Gwasanaeth
+    mps_provided_2: Cynghori Ariannol yn
+    mps_provided_3: cael ei ddarparu gan 
+    mps: Gwasanaeth Arian a Phensiynau 
     links:
       - title: Cysylltu â ni
         url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
