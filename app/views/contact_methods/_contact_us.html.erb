@@ -1,7 +1,11 @@
-<div class="l-contact-panels t-contact-panels  ">
-  <%= render 'contact_methods/webchat' %>
-  <div class="contact-panel__border"></div>
-  <%= render 'contact_methods/whatsapp' %>
-  <div class="contact-panel__border"></div>
-  <%= render 'contact_methods/call_us' %>
+<div class="l-contact-panels">
+  <div class="l-contact-panel contact-panel__dynamic-content">
+    <%= render 'contact_methods/webchat' %>
+  </div>
+  <div class="l-contact-panel contact-panel__dynamic-content contact-panel__whatsapp">
+    <%= render 'contact_methods/whatsapp' %>
+  </div>
+  <div class="l-contact-panel contact-panel__dynamic-content">
+    <%= render 'contact_methods/call_us' %>
+  </div>
 </div>
