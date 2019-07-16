@@ -127,8 +127,7 @@ en:
       busy:
         call_to_action: Currently busy
         description: Sorry, all of our advisers are currently busy. Please try again later.
-      javascript:
-        description_html: |
+      nojs_html: |
           Sorry, web chat is only available on
           <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
       offline:
