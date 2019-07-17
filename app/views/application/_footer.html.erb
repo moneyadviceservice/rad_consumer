@@ -75,15 +75,15 @@
             </li>
           </ul>
         </div>
-      </div>
-      <div class="l-footer-secondary__list--right">
-        <ul class="l-footer-secondary__list">
+        <div class="l-footer-secondary__list--right">
+          <ul class="l-footer-secondary__list">
           <% t('footer_secondary.links').each do |item| %>
           <li class="l-footer-secondary__list-item footer-secondary__link-item">
             <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
           </li>
           <% end %>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
