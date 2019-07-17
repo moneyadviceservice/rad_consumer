@@ -16,6 +16,11 @@ Bundler.require(*Rails.groups)
 
 module RadConsumer
   class Application < Rails::Application
+    config.time_zone = 'Europe/London'
+    config.chat_opening_hours = OpeningHours.new('8:00 AM', '6:00 PM')
+    config.chat_opening_hours.update(:sat, '08:00 AM', '3:00 PM')
+    config.chat_opening_hours.closed(:sun)
+    
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('app', 'forms')
     config.autoload_paths += Dir[Rails.root.join("app", "models", "{*/}")]

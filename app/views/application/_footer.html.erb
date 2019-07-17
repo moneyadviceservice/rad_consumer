@@ -42,46 +42,48 @@
     </div>
   </div>
   <div class="l-footer-secondary t-footer-secondary">
-    <div class="l-footer-secondary--inner">
-      <div class="l-footer-secondary__list--left">
-        <ul class="footer-secondary__list">
-          <li class="footer-secondary__list-item l-language-link">
-            <a class="t-cy-link" href="https://www.moneyadviceservice.org.uk/cy/empty" lang="cy">
-              <span class="icon icon--globe"></span>
-              Cymraeg
-            </a>
-          </li>
-          <li class="footer-secondary__list-item accessibility-feedback-link">
-            <a class="footer-secondary__link" href="http://accessin.org/usersubmit_mas.php?param=nojscript"
-               onclick="window.open('http://accessin.org/usersubmit_mas.php?param=' + window.location,'',
-                   'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800');
-                   return false;" title="Please use this button to tell us if you have an accessibility issue on our website"
-               target="_blank">
-              <span class="icon icon--accessibility"></span><%= t('footer_secondary.accessin.button') %>
-              <span class="visually-hidden"><%= t('footer_secondary.accessin.hidden_text') %></span>
-            </a>
-          </li>
-          <li class="footer-secondary__list-item">
-            <a class="footer-secondary__link footer-secondary__sfgb-link" href="https://singlefinancialguidancebody.org.uk/" target="_blank">
-              <span class="footer-secondary__sfgb-text">
-                <span><%= t('footer_secondary.sfgb.part_of') %></span>
-                <span><strong><%= t('footer_secondary.sfgb.single_financial') %></strong></span>
-                <span><strong><%= t('footer_secondary.sfgb.guidance_body') %></strong></span>
-              </span>
-              <%= image_tag('sfgb-logo.png', class: 'footer-secondary__sfgb-logo', alt: "#{t('footer_secondary.sfgb.single_financial')} #{t('footer_secondary.sfgb.guidance_body')} logo") %>
-              <span class="visually-hidden"><%= t('footer_secondary.sfgb.hidden_text') %></span>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="l-footer-secondary__list--right">
-        <ul class="footer-secondary__list">
+    <div class="l-constrained">
+      <div class="l-footer-secondary--inner">
+        <div class="l-footer-secondary__list--left">
+          <ul class="l-footer-secondary__list">
+            <li class="l-footer-secondary__list-item  l-language-link">
+              <a class="t-cy-link" href="https://www.moneyadviceservice.org.uk/cy/empty" lang="cy">
+                <span class="icon icon--globe"></span>
+                Cymraeg
+              </a>
+            </li>
+            <li class="l-footer-secondary__list-item accessibility-feedback-link">
+              <a class="footer-secondary__link" href="http://accessin.org/usersubmit_mas.php?param=nojscript"
+                 onclick="window.open('http://accessin.org/usersubmit_mas.php?param=' + window.location,'',
+                     'resizable=yes,location=no,scrollbars=yes,toolbar=no,left=20,top=0,height=900,width=800');
+                     return false;" title="Please use this button to tell us if you have an accessibility issue on our website"
+                 target="_blank">
+                <span class="icon icon--accessibility"></span><%= t('footer_secondary.accessin.button') %>
+                <span class="visually-hidden"><%= t('footer_secondary.accessin.hidden_text') %></span>
+              </a>
+            </li>
+            <li class="l-footer-secondary__list-item footer-secondary__mps-link">
+              <a href="https://moneyandpensionsservice.org.uk/" target="_blank">
+                <span class="footer-secondary__mps-text">
+                  <span><%= t('footer_secondary.mps_provided_1') %></span>
+                  <span><%= t('footer_secondary.mps_provided_2') %></span>
+                  <span><%= t('footer_secondary.mps_provided_3') %></span>
+                </span>
+                <%= image_tag("mps-logo-#{locale}.png", class: 'mps-logo__img', alt: "#{t('footer_secondary.mps')} logo") %>
+                <span class="visually-hidden">opens in a new window</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="l-footer-secondary__list--right">
+          <ul class="l-footer-secondary__list">
           <% t('footer_secondary.links').each do |item| %>
-          <li class="footer-secondary__list-item footer-secondary__link-item">
+          <li class="l-footer-secondary__list-item footer-secondary__link-item">
             <a href="<%= item[:url] %>"><%= raw item[:title] %></a>
           </li>
           <% end %>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

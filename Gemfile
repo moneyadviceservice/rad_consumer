@@ -21,11 +21,12 @@ gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     github: 'moneyadviceservice/dough',
     require: 'dough',
-    tag: 'v5.25.3.296'
+    tag: 'v5.30.5.327'
 gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'kaminari'
 gem 'language_list', '~> 1.2.1'
+gem 'opening_hours'
 gem 'pg', '~> 0.20.0'
 gem 'redis', '~> 3.3.5'
 gem 'rollbar', '~> 2.15.5'

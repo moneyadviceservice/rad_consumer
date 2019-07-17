@@ -128,8 +128,7 @@ cy:
       busy:
         call_to_action: Yn brysur ar hyn o bryd
         description: Mae'n ddrwg gennym, mae pob un o'n cynghorwyr yn brysur ar hyn o bryd. Rhowch gynnig arall arni yn nes ymlaen.
-      javascript:
-        description_html: |
+      nojs_html: |
           Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar
           <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
       offline:
@@ -145,6 +144,11 @@ cy:
           <li class="contact-panel__additional-info">Dydd Sadwrn, 8am i 3pm</li>
           <li class="contact-panel__additional-info">Dydd Sul a Gwyliau Banc, ar gau</li>
         </ul>
+    whatsapp:
+      title: WhatsApp
+      text1: Angen help i gael trefn ar eich dyledion, neu a oes gennych chi gwestiynau credyd neu eisiau arweiniad ar bensiynau?
+      text2: Ychwanegwch +44 7701 342744 i’ch Whatsapp ac anfon neges atom.
+      text3: Ar gyfer popeth arall, cysylltwch â ni trwy Sgwrsio Gwe neu Ffonio.
     call_us:
       title: Ffoniwch ni
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
@@ -190,11 +194,10 @@ cy:
     accessin:
       button: Adrodd ar broblem hygyrchedd
       hidden_text: Ffurflen adborth yn agor mewn ffenestr newydd
-    sfgb:
-      part_of: Rhan o'r
-      single_financial: Corff Sengl ar
-      guidance_body: Ganllawiau Ariannol
-      hidden_text: Yn agor mewn ffenestr newydd
+    mps_provided_1: Gwasanaeth
+    mps_provided_2: Cynghori Ariannol yn
+    mps_provided_3: cael ei ddarparu gan 
+    mps: Gwasanaeth Arian a Phensiynau 
     links:
       - title: Cysylltu â ni
         url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
