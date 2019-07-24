@@ -43,8 +43,7 @@ cy:
         link_text: gweler ein canllaw
       remote:
         header: Cynghorwyr dros y ffôn neu ar-lein yn unig
-        text:
-          part_one: 'Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch.'
+        text: 'Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch.'
       recently_visited:
         header: CwmnÏau eraill yr edrychoch arnynt
         remote: Dros y ffôn neu ar-lein yn unig
@@ -196,8 +195,8 @@ cy:
       hidden_text: Ffurflen adborth yn agor mewn ffenestr newydd
     mps_provided_1: Gwasanaeth
     mps_provided_2: Cynghori Ariannol yn
-    mps_provided_3: cael ei ddarparu gan 
-    mps: Gwasanaeth Arian a Phensiynau 
+    mps_provided_3: cael ei ddarparu gan
+    mps: Gwasanaeth Arian a Phensiynau
     links:
       - title: Cysylltu â ni
         url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
@@ -494,7 +493,7 @@ cy:
       '2': '£50,000'
       '3': '£100,000'
       '4': 'Mae dros £150,000'
-  other_advice_method:
+  other_advice_methods:
     ordinal:
       '1': 'Ffôn'
       '2': 'Ar-lein'
