@@ -463,6 +463,10 @@ cy:
           title: Pension Transfer Gold Standard
           description: Mae Safon Aur Trosglwyddiadau Pensiwn yn god ymarfer gorau sydd wedi ei fabwysiadu'n wirfoddol gan gwmnïau a chynghorwyr ariannol a reoleiddir yn cynnig cyngor arbenigol ar drosglwyddiadau pensiwn.  Yn benodol mae’r Safon yn cynnig cyngor ariannol ar drosglwyddiadau o gynlluniau pensiwn sydd â buddion wedi eu diogelu neu warantu.  Mae cwmnïau a chynghorwyr ariannol sy'n mabwysiadu'r Safon yn dilyn cyfres o egwyddorion yn ychwanegol i’r hyn sy'n ofynnol gan reoleiddiad. <br /> <br /> Ar gyfer eich diogelwch chi, mae’r Llywodraeth wedi ei gwneud yn ofyniad cyfreithiol i geisio cyngor ariannol cyn i chi drosglwyddo o gynlluniau pensiwn penodol.  Mae’r Safon Aur Trosglwyddiadau Pensiwn wedi ei gynllunio i'ch helpu i adnabod a chanfod cwmnïau a chynghorwyr sy'n gallu darparu'r cyngor arbenigol hwn ac sy’n ymlynu i safonau proffesiynol uchel.
           link: Ceir rhagor o wybodaeth <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">yma</a>.
+        bs8577_certified:
+          title: Y Safon Brydeinig mewn Cynllunio Ariannol BS 8577
+          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol. 
+          link: Mae rhagor o wybodaeth ar gael yn <a href="http://standardsinternational.co.uk/certification/bs-8577/">yma</a>
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
@@ -520,7 +524,7 @@ cy:
       '1': solla
       '2': later_life_academy
       '3': iso_22222
-      '4': ignored
+      '4': bs8577_certified
 
   glossary:
     show:
