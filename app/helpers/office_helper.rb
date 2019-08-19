@@ -1,6 +1,14 @@
 module OfficeHelper
   SCHEME = 'https://'.freeze
 
+  def display_telephone(firm)
+    if params[:postcode].present? && firm.offices.present?
+      firm.offices.first.telephone_number
+    else
+      firm.telephone_number
+    end
+  end
+
   def office_address(office)
     [
       office.address_line_one,
