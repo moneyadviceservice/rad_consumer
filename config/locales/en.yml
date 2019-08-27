@@ -461,6 +461,10 @@ en:
           title: Pension Transfer Gold Standard
           description: The Pension Transfer Gold Standard is a code of best practice voluntarily adopted by regulated financial firms and advisers offering specialist advice on pension transfers.  In particular the Standard covers financial advice on transfers from pension schemes that have protected or guaranteed benefits.  Financial firms and advisers who adopt the Standard adhere to a set of principles over and above those they are required to follow by  regulation. <br /> <br /> For your own protection, the Government has made it a legal requirement to seek financial advice before you transfer from certain pension schemes.  The Pension Transfer Gold Standard is designed to help you recognise  and find firms and advisers that are able to provide this specialist advice and which adheres to high professional standards.
           link: You can find out more <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">here</a>.
+        bs8577_certified:
+          title: British Standard in Financial Planning BS 8577
+          description: The British Standard in Financial Planning BS 8577 sets out a framework for firms offering financial advice and planning services.  It was developed by the British Standards Institute (BSI) and specifies best practice for embedding an effective operational management system within the firm, enabling firms which hold the Standard to provide the highest possible standard of service.  The Standard incorporates all aspects that support the provision of advice services, outlining core competencies required from companies, their advisers and planners to ensure a fair, transparent and professional interaction with clients.  Firms holding BS 8577 often have Financial Advisers who hold the ISO 22222 which is an international standard in personal financial planning.
+          link: You can find out more <a href="http://standardsinternational.co.uk/certification/bs-8577/">here</a>.
 
     education_module_one:
       heading: How were these results decided?
@@ -518,7 +522,7 @@ en:
       '1': solla
       '2': later_life_academy
       '3': iso_22222
-      '4': ignored
+      '4': bs8577_certified
 
   glossary:
     show:
