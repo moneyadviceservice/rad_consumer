@@ -153,8 +153,7 @@ cy:
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
       telephone_number: 0800 138 0555
       telephone_number_url: tel:+448001380555
-      opening_times_html: |
-        <ul class="contact-panel__list">
+      opening_times_html: 
           <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
           <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
       smallprint: 'Mae galwadau am ddim.'

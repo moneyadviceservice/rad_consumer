@@ -152,11 +152,9 @@ en:
       description: Give us a call for free and impartial money advice.
       telephone_number: 0800 138 7777
       telephone_number_url: tel:+448001387777
-      opening_times_html: |
-        <ul class="contact-panel__list">
+      opening_times_html: 
           <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
           <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
-        </ul>
       smallprint: 'Calls are free.'
     sharing:
       title: Follow us
