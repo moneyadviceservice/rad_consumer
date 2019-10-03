@@ -137,11 +137,9 @@ en:
         Sunday and Bank Holidays, closed
       offline_migration_html: Monday to Friday, 8am to 8pm<br />On Saturday 06/02/2016 Web chat will be unavailable due to maintenance
       opening_times_html: |
-        <ul class="contact-panel__list">
-          <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
-          <li class="contact-panel__additional-info">Saturday, 8am to 3pm</li>
-          <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
-        </ul>
+        <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
+        <li class="contact-panel__additional-info">Saturday, 8am to 3pm</li>
+        <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
     whatsapp:
       title: WhatsApp
       text1: Need help sorting out your debts, have credit questions or want pensions guidance?
@@ -152,7 +150,7 @@ en:
       description: Give us a call for free and impartial money advice.
       telephone_number: 0800 138 7777
       telephone_number_url: tel:+448001387777
-      opening_times_html: 
+      opening_times_html: |
           <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
           <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
       smallprint: 'Calls are free.'
