@@ -127,13 +127,8 @@
 .contact-panel__telephone:visited,
 .contact-panel__telephone:hover {
   @include inline-block;
-  @include body(24, 48);
   @extend %font-heading-heavy;
   color: $color-heading-default;
-
-  @include respond-to($mq-l) {
-    @include body(30, 48);
-  }
 }
 
 .no-js .contact-panel__chat-description {
