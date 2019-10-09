@@ -154,6 +154,10 @@ en:
           <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
           <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
       smallprint: 'Calls are free.'
+      email_info: Our general email address is
+      email_address: enquiries@maps.org.uk
+      email_button: Send Email
+      email_response_time: We will normally respond to your enquiry within 48 hours of receipt.
     sharing:
       title: Follow us
       description: Get up-to-date money advice from Twitter, Facebook and YouTube.

@@ -7,7 +7,7 @@
     <li class="t-contact-introduction contact-panel__additional-info contact-panel__contact-introduction">
       <%= t('contact_panels.call_us.description') %>
     </li>
-    <li>
+    <li class="contact-panel__additional-info">
       <p class="contact-panel__contact-number">
         <a class="contact-panel__telephone t-contact-number" href="<%= t('contact_panels.call_us.telephone_number_url') %>">
           <%= t('contact_panels.call_us.telephone_number') %>
@@ -15,5 +15,22 @@
       </p>
     </li>
     <%= t('contact_panels.call_us.opening_times_html') %>
+    <li class="contact-panel__additional-info">
+      <p>
+        <%= t('contact_panels.call_us.email_info') %>
+        <a href="<%= t('contact_panels.call_us.email_address') %>"><%= t('contact_panels.call_us.email_address') %></a>.
+      </p>
+    </li>
+    <!-- Button -->
+    <li class="contact-panel__additional-info">
+      <div class="contact-panel__button-container">
+        <a class="contact-panel__button button" href="mailto:<%= t('contact_panels.call_us.email_address') %>">
+          <%= t('contact_panels.call_us.email_button') %>
+        </a>
+      </div>
+    </li>
+    <li class="contact-panel__additional-info">
+      <p><%= t('contact_panels.call_us.email_response_time') %></p>
+    </li>
   </ul>
 </div>

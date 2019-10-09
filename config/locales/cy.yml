@@ -155,6 +155,10 @@ cy:
           <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
           <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
       smallprint: 'Mae galwadau am ddim.'
+      email_info: Ein cyfeiriad e-bost cyffredinol yw
+      email_address: enquiries@maps.org.uk
+      email_button: Anfon e-bost
+      email_response_time: Fel rheol byddwn yn ymateb i’ch ymholiad o fewn 48 awr ar ôl derbyn.
     sharing:
       title: Dilynwch ni
       description: Ceisiwch y wybodaeth ddiweddaraf o Twitter, Facebook a YouTube.
