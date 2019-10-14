@@ -1,18 +1,28 @@
 <div class="contact-panel contact-panel__chat-open t-chat" id="js-chat">
-  <h2 aria-level="2" class="contact-panel__heading" role="heading"><span class="icon icon--web-chat"></span><%= t('contact_panels.webchat.title') %></h2>
-  <p class="contact-panel__chat-javascript t-chat-javascript">
-    <%= t('contact_panels.webchat.nojs_html') %></a>
-  </p>
+  <!-- Top Logo -->
+  <h2 aria-level="2" class="contact-panel__heading" role="heading">
+    <span class="icon icon--web-chat"></span>
+    <%= t('contact_panels.webchat.title') %>
+  </h2>
+  <!-- Spinning Loader -->
   <div class="contact-panel__dynamic-content is-loading" id="js-chat-content">
     <div class="contact-panel__preloader"></div>
     <p class="contact-panel__chat-description t-chat-description" id="js-chat-description">
       <%= t('contact_panels.webchat.directions') %>
     </p>
+  </div>
+  <!-- Opening Times -->
+  <ul class="t-chat-opening-times contact-panel__list unstyled-list">
     <%= t('contact_panels.webchat.opening_times_html') %>
-    <div class="contact-panel__button-container" id="js-chat-cta">
-      <div class="contact-panel__button button is-disabled t-chat-button">
-        <%= t('contact_panels.webchat.default_status') %>
-      </div>
+  </ul>
+  <!-- Button -->
+  <div class="contact-panel__button-container" id="js-chat-cta">
+    <div class="contact-panel__button button is-disabled t-chat-button">
+      <%= t('contact_panels.webchat.default_status') %>
     </div>
   </div>
+  <!-- No js enabled text -->
+  <p class="contact-panel__chat-javascript t-chat-javascript">
+    <%= t('contact_panels.webchat.nojs_html') %></a>
+  </p>
 </div>

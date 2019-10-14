@@ -137,27 +137,27 @@ en:
         Sunday and Bank Holidays, closed
       offline_migration_html: Monday to Friday, 8am to 8pm<br />On Saturday 06/02/2016 Web chat will be unavailable due to maintenance
       opening_times_html: |
-        <ul class="contact-panel__list">
-          <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
-          <li class="contact-panel__additional-info">Saturday, 8am to 3pm</li>
-          <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
-        </ul>
+        <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
+        <li class="contact-panel__additional-info">Saturday, 8am to 3pm</li>
+        <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
     whatsapp:
       title: WhatsApp
       text1: Need help sorting out your debts, have credit questions or want pensions guidance?
       text2: Add +44 7701 342744 to your Whatsapp and send us a message.
       text3: For everything else please contact us via Webchat or Telephone.
     call_us:
-      title: Call us
+      title: Contact us
       description: Give us a call for free and impartial money advice.
       telephone_number: 0800 138 7777
       telephone_number_url: tel:+448001387777
       opening_times_html: |
-        <ul class="contact-panel__list">
           <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
           <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
-        </ul>
       smallprint: 'Calls are free.'
+      email_info: Our general email address is
+      email_address: enquiries@maps.org.uk
+      email_button: Send Email
+      email_response_time: We will normally respond to your enquiry within 48 hours of receipt.
     sharing:
       title: Follow us
       description: Get up-to-date money advice from Twitter, Facebook and YouTube.
