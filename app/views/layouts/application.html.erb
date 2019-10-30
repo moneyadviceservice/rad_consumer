@@ -29,7 +29,7 @@
 
   <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
   <link rel="stylesheet" media="only all" href="https://mascdn.azureedge.net/frontend/a/enhanced_responsive-12af46c058768d4bd3f57082d8d046e9.css" />
-  
+
   <script>var responsiveStyle = true;</script>
   <!--<![endif]-->
 
@@ -146,9 +146,7 @@
   <script>var responsiveStyle = true;</script>
   <!--<![endif]-->
 
-  <script>
-    <%= load_modernizr %>
-  </script>
+  <%= javascript_include_tag('modernizr/modernizr') %>
 </head>
 <body id="top">
   <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
