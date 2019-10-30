@@ -3,16 +3,16 @@ require 'spec_helper'
 RSpec.describe OfficeHelper, type: :helper do
   let(:data) do
     {
-      '_id'              => 123,
+      '_id' => 123,
       'address_line_one' => 'c/o Postman Pat',
       'address_line_two' => 'Forge Cottage',
-      'address_town'     => 'Greendale',
-      'address_county'   => 'Cumbria',
+      'address_town' => 'Greendale',
+      'address_county' => 'Cumbria',
       'address_postcode' => 'LA8 9BE',
-      'email_address'    => 'postie@example.com',
+      'email_address' => 'postie@example.com',
       'telephone_number' => '5555 555 5555',
-      'disabled_access'  => true,
-      'website'          => website,
+      'disabled_access' => true,
+      'website' => website,
       'location' => { 'lat' => 51.5180697, 'lon' => -0.1085203 }
     }
   end
