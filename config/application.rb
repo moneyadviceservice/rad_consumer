@@ -20,7 +20,7 @@ module RadConsumer
     config.chat_opening_hours = OpeningHours.new('8:00 AM', '6:00 PM')
     config.chat_opening_hours.update(:sat, '08:00 AM', '3:00 PM')
     config.chat_opening_hours.closed(:sun)
-    
+
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('app', 'forms')
     config.autoload_paths += Dir[Rails.root.join("app", "models", "{*/}")]
@@ -41,6 +41,12 @@ module RadConsumer
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Switch off sassc concurrency. See this issue
+    # https://github.com/rails/sprockets/issues/581#issuecomment-486984663
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
   end
 end
 
