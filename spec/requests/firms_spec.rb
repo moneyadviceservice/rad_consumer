@@ -8,9 +8,7 @@ RSpec.describe 'Firms' do
     it 'retrieves a firm', :aggregate_failures do
       get '/en/firms/1'
 
-      expect(response).to render_template(:show)
       expect(response).to have_http_status(:ok)
-
       expect(response.body).to include('Test Firm Central London')
     end
   end
@@ -21,9 +19,7 @@ RSpec.describe 'Firms' do
     it 'retrieves a firm with the nearest adviser', :aggregate_failures do
       get '/en/firms/1', params: { postcode: 'EC4A 2AH' }
 
-      expect(response).to render_template(:show)
       expect(response).to have_http_status(:ok)
-
       expect(response.body).to include('Test Firm Central London')
       expect(response.body).to match(/has an adviser\s+\d+.\d+ miles away/)
     end
