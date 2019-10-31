@@ -39,9 +39,6 @@ module RadConsumer
 
     config.autoload_paths += Dir["#{config.root}/app/services/**/"]
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
-
     # Switch off sassc concurrency. See this issue
     # https://github.com/rails/sprockets/issues/581#issuecomment-486984663
     config.assets.configure do |env|
