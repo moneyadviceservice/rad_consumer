@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :firm, traits: [:with_no_business_split] do
     sequence(:fca_number, 100000) { |n| n }
     sequence(:registered_name) { |n| "Financial Advice #{n} Ltd." }
@@ -8,16 +8,16 @@ FactoryGirl.define do
     investment_sizes { create_list(:investment_size, rand(5..10)) }
 
     trait :with_no_business_split do
-      retirement_income_products_flag false
-      pension_transfer_flag false
-      long_term_care_flag false
-      equity_release_flag false
-      inheritance_tax_and_estate_planning_flag false
-      wills_and_probate_flag false
+      retirement_income_products_flag { false }
+      pension_transfer_flag { false }
+      long_term_care_flag { false }
+      equity_release_flag { false }
+      inheritance_tax_and_estate_planning_flag { false }
+      wills_and_probate_flag { false }
     end
 
     transient do
-      offices_count 1
+      offices_count { 1 }
     end
 
     after(:create) do |firm, evaluator|
@@ -26,7 +26,7 @@ FactoryGirl.define do
     end
 
     transient do
-      advisers_count 1
+      advisers_count { 1 }
     end
 
     after(:create) do |firm, evaluator|
@@ -36,12 +36,12 @@ FactoryGirl.define do
     factory :firm_without_advisers, traits: [:without_advisers]
 
     trait :without_advisers do
-      advisers_count 0
+      advisers_count { 0 }
     end
 
     trait :with_remote_advice do
       other_advice_methods { create_list(:other_advice_method, rand(1..3)) }
-      in_person_advice_methods []
+      in_person_advice_methods { [] }
     end
   end
 
@@ -59,11 +59,11 @@ FactoryGirl.define do
     sequence(:reference_number, 10000) { |n| "ABC#{n}" }
     name { Faker::Name.name }
     postcode { Faker::Address.postcode }
-    travel_distance '650'
+    travel_distance { '650' }
     latitude  { Faker::Address.latitude.to_f.round(6) }
     longitude { Faker::Address.longitude.to_f.round(6) }
     firm factory: :firm_without_advisers
-    bypass_reference_number_check false
+    bypass_reference_number_check { false }
   end
 
   factory :office do
@@ -71,9 +71,9 @@ FactoryGirl.define do
     address_line_two { Faker::Address.secondary_address }
     address_town { Faker::Address.city }
     address_county { Faker::Address.state }
-    address_postcode 'EC1N 2TD'
+    address_postcode { 'EC1N 2TD' }
     email_address { Faker::Internet.email }
-    telephone_number '07111 333 222'
+    telephone_number { '07111 333 222' }
     disabled_access { [true, false].sample }
     latitude  { Faker::Address.latitude.to_f.round(6) }
     longitude { Faker::Address.longitude.to_f.round(6) }

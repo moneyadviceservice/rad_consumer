@@ -43,7 +43,7 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'launchy'
   gem 'pry-byebug'
   gem 'pry-rails'
