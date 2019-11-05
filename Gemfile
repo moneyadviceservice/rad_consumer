@@ -9,7 +9,7 @@ ruby File.read('.ruby-version').chomp
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '5.0.7.2'
+gem 'rails', '5.1.7'
 
 gem 'active_model_serializers'
 gem 'activerecord-session_store'
@@ -39,6 +39,7 @@ gem 'unicorn'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'listen'
 end
 
 group :development, :test do
