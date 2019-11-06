@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module RadConsumer
   class Application < Rails::Application
-    config.load_defaults 5.1
+    config.load_defaults 5.2
     Rails.application.config.active_record.belongs_to_required_by_default = false
 
     config.time_zone = 'Europe/London'
