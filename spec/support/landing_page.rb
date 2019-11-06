@@ -2,6 +2,7 @@ require_relative 'in_person_section'
 require_relative 'remote_section'
 require_relative 'firm_name_search_section'
 require_relative 'search_form_section'
+require_relative 'firm_section'
 
 class LandingPage < SitePrism::Page
   set_url '/en'
