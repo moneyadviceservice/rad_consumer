@@ -12,13 +12,11 @@
   <link href="https://directory.moneyadviceservice.org.uk/cy" hreflang="cy-GB" rel="alternate" />
   <link href="https://directory.moneyadviceservice.org.uk/<%= I18n.locale %>" rel="canonical" />
 
-  <%= stylesheet_link_tag 'dough/assets/stylesheets/basic' %>
   <%= stylesheet_link_tag 'dough/assets/stylesheets/font_files' %>
 
   <%= favicon_link_tag 'favicon.ico' %>
 
   <% # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version is the same as the Gem version. %>
-  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/basic-c6f0bc03dbe96c1cc8b39033ef43f72f.css" media="screen" rel="stylesheet" />
 
   <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
   <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/font_files-dcbb90df70309af8f6ceeaff0db9a5af.css" media="screen" rel="stylesheet" />
@@ -28,8 +26,6 @@
   <![endif]-->
 
   <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
-  <link rel="stylesheet" media="only all" href="https://mascdn.azureedge.net/frontend/a/enhanced_responsive-12af46c058768d4bd3f57082d8d046e9.css" />
-
   <script>var responsiveStyle = true;</script>
   <!--<![endif]-->
 
