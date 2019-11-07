@@ -62,7 +62,7 @@ group :test do
   gem 'danger-rubocop', require: false
   gem 'faker'
   gem 'poltergeist'
-  gem 'site_prism'
+  gem 'site_prism', '~> 2.17'
   gem 'tzinfo-data'
   gem 'vcr'
   gem 'webmock'
