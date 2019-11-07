@@ -14,7 +14,6 @@ gem 'rails', '5.2.3'
 gem 'active_model_serializers'
 gem 'activerecord-session_store'
 gem 'algoliasearch'
-gem 'autoprefixer-rails'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
 # is the same as the Gem version.

@@ -79,8 +79,6 @@ GEM
       json (>= 1.5.1)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.7.1)
-      execjs
     backports (3.15.0)
     better_errors (2.5.1)
       coderay (>= 1.0.0)
@@ -378,7 +376,6 @@ DEPENDENCIES
   active_model_serializers
   activerecord-session_store
   algoliasearch
-  autoprefixer-rails
   better_errors
   binding_of_caller
   bowndler!
