@@ -16,9 +16,7 @@ module RadConsumer
     config.chat_opening_hours.update(:sat, '08:00 AM', '3:00 PM')
     config.chat_opening_hours.closed(:sun)
 
-    config.autoload_paths << Rails.root.join('lib')
-    config.autoload_paths << Rails.root.join('app', 'forms')
-    config.autoload_paths += Dir[Rails.root.join("app", "models", "{*/}")]
+    config.eager_load_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
