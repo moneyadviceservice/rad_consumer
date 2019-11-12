@@ -29,6 +29,7 @@ module Helpers::ParamsParser
   end
 
   def parse(params:, strategy:)
+    params = params.to_h.symbolize_keys
     params = extract(params)
 
     case strategy

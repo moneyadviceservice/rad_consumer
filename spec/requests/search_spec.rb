@@ -15,11 +15,9 @@ RSpec.describe 'Search' do
       end
 
       it 'returns firms with in person advisers', :aggregate_failures do
-        get '/en/search', **params
+        get '/en/search', params: params
 
-        expect(response).to render_template(:index)
         expect(response).to have_http_status(:ok)
-
         expect(response.body).to include(
           'Test Firm Central London',
           'Test Firm East London',
@@ -42,11 +40,9 @@ RSpec.describe 'Search' do
       end
 
       it 'returns an error message', :aggregate_failures do
-        get '/en/search', **params
+        get '/en/search', params: params
 
-        expect(response).to render_template(:_summary_for_errors_li)
         expect(response).to have_http_status(:ok)
-
         expect(response.body).to include(
           'Please double-check for the following errors',
           'Postcode is incorrect'
@@ -67,11 +63,9 @@ RSpec.describe 'Search' do
 
     it 'returns firms with exclusively phone or online advisers' do
       aggregate_failures do
-        get '/en/search', **params
+        get '/en/search', params: params
 
-        expect(response).to render_template(:index)
         expect(response).to have_http_status(:ok)
-
         expect(response.body).to include(
           'Test Firm Remote 1',
           'Test Firm Remote 2',
@@ -93,11 +87,9 @@ RSpec.describe 'Search' do
     end
 
     it 'returns firms matching the provided name', :aggregate_failures do
-      get '/en/search', **params
+      get '/en/search', params: params
 
-      expect(response).to render_template(:index)
       expect(response).to have_http_status(:ok)
-
       expect(response.body).to include(
         'Test Firm Central London',
         'Test Firm East London'

@@ -36,6 +36,7 @@ module Filters
 
     def geocode_postcode
       return if postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
+
       errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
     end
 

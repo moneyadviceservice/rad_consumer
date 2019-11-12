@@ -25,7 +25,7 @@ module Helpers
     end
 
     def search_form_params
-      params.require(:search_form).merge(random_search_seed: random_search_seed)
+      params.require(:search_form).permit!.merge(random_search_seed: random_search_seed)
     end
   end
 end

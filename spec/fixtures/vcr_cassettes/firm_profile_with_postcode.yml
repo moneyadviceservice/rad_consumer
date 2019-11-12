@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A%202AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -21,27 +21,28 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Thu, 14 Mar 2019 02:44:12 GMT
+      - Mon, 04 Nov 2019 13:16:44 GMT
+      Pragma:
+      - no-cache
       Expires:
-      - Fri, 15 Mar 2019 02:44:12 GMT
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
       Access-Control-Allow-Origin:
       - "*"
       Server:
       - mafe
-      Content-Length:
-      - '412'
       X-Xss-Protection:
-      - 1; mode=block
+      - '0'
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=272
-      Cache-Control:
-      - public, max-age=86400
-      Age:
-      - '4501'
+      - gfet4t7; dur=236
       Alt-Svc:
-      - quic=":443"; ma=2592000; v="46,44,43,39"
+      - quic=":443"; ma=2592000; v="46,43",h3-Q049=":443"; ma=2592000,h3-Q048=":443";
+        ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: ASCII-8BIT
       string: |
@@ -50,62 +51,92 @@ http_interactions:
               {
                  "address_components" : [
                     {
+                       "long_name" : "EC4A 2AH",
+                       "short_name" : "EC4A 2AH",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Fleet Street",
+                       "short_name" : "Fleet St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Holborn",
+                       "short_name" : "Holborn",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Greater London",
+                       "short_name" : "Greater London",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "England",
+                       "short_name" : "England",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
                        "long_name" : "United Kingdom",
                        "short_name" : "GB",
                        "types" : [ "country", "political" ]
                     }
                  ],
-                 "formatted_address" : "United Kingdom",
+                 "formatted_address" : "Fleet St, Holborn, London EC4A 2AH, UK",
                  "geometry" : {
                     "bounds" : {
                        "northeast" : {
-                          "lat" : 60.91569999999999,
-                          "lng" : 33.9165549
+                          "lat" : 51.5141193,
+                          "lng" : -0.111087
                        },
                        "southwest" : {
-                          "lat" : 34.5614,
-                          "lng" : -8.8988999
+                          "lat" : 51.5138213,
+                          "lng" : -0.1116846
                        }
                     },
                     "location" : {
-                       "lat" : 55.378051,
-                       "lng" : -3.435973
+                       "lat" : 51.5139284,
+                       "lng" : -0.1113308
                     },
                     "location_type" : "APPROXIMATE",
                     "viewport" : {
                        "northeast" : {
-                          "lat" : 61.5471111,
-                          "lng" : 9.584415699999999
+                          "lat" : 51.51531928029149,
+                          "lng" : -0.110036819708498
                        },
                        "southwest" : {
-                          "lat" : 47.5554486,
-                          "lng" : -18.5319589
+                          "lat" : 51.51262131970849,
+                          "lng" : -0.112734780291502
                        }
                     }
                  },
-                 "place_id" : "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
-                 "types" : [ "country", "political" ]
+                 "place_id" : "ChIJxwm7XrMEdkgRRsHhHI1JUag",
+                 "types" : [ "postal_code" ]
               }
            ],
            "status" : "OK"
         }
     http_version: 
-  recorded_at: Thu, 14 Mar 2019 03:59:13 GMT
+  recorded_at: Mon, 04 Nov 2019 13:16:44 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026distinct=false\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026distinct=false\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      - Algolia for Ruby (1.27.1); Ruby (2.6.5)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 14 Mar 2019 03:59:15 GMT
+      - Mon, 04 Nov 2019 13:16:44 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -120,7 +151,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Mar 2019 03:59:15 GMT
+      - Mon, 04 Nov 2019 13:16:44 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -129,6 +160,10 @@ http_interactions:
       - keep-alive
       X-Alg-Pt:
       - '1'
+      X-Alg-Dq:
+      - '1'
+      Accept-Encoding:
+      - deflate, gzip
       Access-Control-Allow-Origin:
       - "*"
       Timing-Allow-Origin:
@@ -143,34 +178,32 @@ http_interactions:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Dr. Einar
-        Stamm","postcode":"EC1N 2TD","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
-        Firm Central London","postcode_searchable":true,"telephone_number":"07111
-        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"name":"Gail
-        D''Amore","postcode":"EC4V 4AY","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
-        Firm Central London","postcode_searchable":true,"telephone_number":"07111
-        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609402","_highlightResult":{"firm":{"registered_name":{"value":"Test
-        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&distinct=false&getRankingInfo=true&facetFilters=%5B%22firm.id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
-
-'
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Addison
+        Klocko","postcode":"EC1N 2TD","travel_distance":100,"qualification_ids":[],"accreditation_ids":[],"firm":{"id":1,"registered_name":"Test
+        Firm Central London","postcode_searchable":true,"website_address":"http://example.net/test-firm-central-london","telephone_number":"07111
+        333 135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":true,"non_uk_residents_flag":false,"languages":["ita"],"total_offices":2,"total_advisers":2},"objectID":"2","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"name":"Caitlyn
+        Kohler","postcode":"EC4V 4AY","travel_distance":100,"qualification_ids":[3,4],"accreditation_ids":[1,2],"firm":{"id":1,"registered_name":"Test
+        Firm Central London","postcode_searchable":true,"website_address":"http://example.net/test-firm-central-london","telephone_number":"07111
+        333 135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":true,"non_uk_residents_flag":false,"languages":["ita"],"total_offices":2,"total_advisers":2},"objectID":"1","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&distinct=false&facetFilters=%5B%22firm.id%3A1%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false,"processingTimeMS":1}'
     http_version: 
-  recorded_at: Thu, 14 Mar 2019 03:59:15 GMT
+  recorded_at: Mon, 04 Nov 2019 13:16:44 GMT
 - request:
     method: post
     uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-offices-test/query
     body:
       encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm_id%3A1%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026facetFilters=%5B%22firm_id%3A1%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
     headers:
       User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      - Algolia for Ruby (1.27.1); Ruby (2.6.5)
       Accept:
       - "*/*"
       Accept-Encoding:
       - gzip,deflate
       Date:
-      - Thu, 14 Mar 2019 03:59:15 GMT
+      - Mon, 04 Nov 2019 13:16:44 GMT
       X-Algolia-Api-Key:
       - "<API_KEY>"
       X-Algolia-Application-Id:
@@ -185,7 +218,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 14 Mar 2019 03:59:15 GMT
+      - Mon, 04 Nov 2019 13:16:44 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Transfer-Encoding:
@@ -194,6 +227,10 @@ http_interactions:
       - keep-alive
       X-Alg-Pt:
       - '1'
+      X-Alg-Dq:
+      - '1'
+      Accept-Encoding:
+      - deflate, gzip
       Access-Control-Allow-Origin:
       - "*"
       Timing-Allow-Origin:
@@ -208,81 +245,21 @@ http_interactions:
       - gzip
     body:
       encoding: UTF-8
-      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"firm_id":1,"address_line_one":"7238
-        Elwin Center","address_line_two":"Suite 735","address_town":"South Verona","address_county":"South
-        Dakota","address_postcode":"EC1N 2TD","email_address":"office271@example.net","telephone_number":"07111
-        333 271","disabled_access":false,"website":"http://example.net/offices/271","objectID":"133609492","_highlightResult":{"_geoloc":{"lat":{"value":"51.51807","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.10852","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"7238
-        Elwin Center","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
-        735","matchLevel":"none","matchedWords":[]},"address_town":{"value":"South
-        Verona","matchLevel":"none","matchedWords":[]},"address_county":{"value":"South
-        Dakota","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC1N
-        2TD","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office271@example.net","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
-        333 271","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/271","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"firm_id":1,"address_line_one":"125
-        Nicolas Plaza","address_line_two":"Suite 650","address_town":"West Josue","address_county":"Wisconsin","address_postcode":"EC4V
-        4AY","email_address":"office885@example.com","telephone_number":"07111 333
-        885","disabled_access":false,"website":"http://example.net/offices/885","objectID":"133609482","_highlightResult":{"_geoloc":{"lat":{"value":"51.51193","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.095115","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"125
-        Nicolas Plaza","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
-        650","matchLevel":"none","matchedWords":[]},"address_town":{"value":"West
-        Josue","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Wisconsin","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC4V
-        4AY","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office885@example.com","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
-        333 885","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/885","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&getRankingInfo=true&facetFilters=%5B%22firm_id%3A1%22%5D&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
-
-'
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"firm_id":1,"address_line_one":"49759
+        Wyman Parkways","address_line_two":"Suite 863","address_town":"Devanhaven","address_county":"Illinois","address_postcode":"EC1N
+        2TD","email_address":"office789@example.org","telephone_number":"07111 333
+        789","disabled_access":false,"website":"http://example.net/offices/789","objectID":"2","_highlightResult":{"_geoloc":{"lat":{"value":"51.51807","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.10852","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"49759
+        Wyman Parkways","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Suite
+        863","matchLevel":"none","matchedWords":[]},"address_town":{"value":"Devanhaven","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Illinois","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC1N
+        2TD","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office789@example.org","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 789","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/789","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.51193,"lng":-0.095115},"firm_id":1,"address_line_one":"493
+        Tremblay Pass","address_line_two":"Apt. 746","address_town":"Kaseyview","address_county":"Alaska","address_postcode":"EC4V
+        4AY","email_address":"office135@example.org","telephone_number":"07111 333
+        135","disabled_access":true,"website":"http://example.net/offices/135","objectID":"1","_highlightResult":{"_geoloc":{"lat":{"value":"51.51193","matchLevel":"none","matchedWords":[]},"lng":{"value":"-0.095115","matchLevel":"none","matchedWords":[]}},"firm_id":{"value":"1","matchLevel":"none","matchedWords":[]},"address_line_one":{"value":"493
+        Tremblay Pass","matchLevel":"none","matchedWords":[]},"address_line_two":{"value":"Apt.
+        746","matchLevel":"none","matchedWords":[]},"address_town":{"value":"Kaseyview","matchLevel":"none","matchedWords":[]},"address_county":{"value":"Alaska","matchLevel":"none","matchedWords":[]},"address_postcode":{"value":"EC4V
+        4AY","matchLevel":"none","matchedWords":[]},"email_address":{"value":"office135@example.org","matchLevel":"none","matchedWords":[]},"telephone_number":{"value":"07111
+        333 135","matchLevel":"none","matchedWords":[]},"website":{"value":"http://example.net/offices/135","matchLevel":"none","matchedWords":[]}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&facetFilters=%5B%22firm_id%3A1%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-offices-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false,"processingTimeMS":1}'
     http_version: 
-  recorded_at: Thu, 14 Mar 2019 03:59:15 GMT
-- request:
-    method: post
-    uri: https://fc0uq0wje5-dsn.algolia.net/1/indexes/firm-advisers-test/query
-    body:
-      encoding: UTF-8
-      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026distinct=false\u0026getRankingInfo=true\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
-    headers:
-      User-Agent:
-      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
-      Accept:
-      - "*/*"
-      Accept-Encoding:
-      - gzip,deflate
-      Date:
-      - Mon, 18 Mar 2019 17:57:58 GMT
-      X-Algolia-Api-Key:
-      - "<API_KEY>"
-      X-Algolia-Application-Id:
-      - "<APP_ID>"
-      Content-Type:
-      - application/json; charset=utf-8
-  response:
-    status:
-      code: 404
-      message: Not Found
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 18 Mar 2019 17:57:58 GMT
-      Content-Type:
-      - application/json; charset=UTF-8
-      Content-Length:
-      - '67'
-      Connection:
-      - keep-alive
-      X-Alg-Pt:
-      - '1'
-      Access-Control-Allow-Origin:
-      - "*"
-      Timing-Allow-Origin:
-      - "*"
-      Cache-Control:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      Content-Disposition:
-      - inline; filename=a.txt
-    body:
-      encoding: UTF-8
-      string: '{"message":"Index firm-advisers-test does not exist","status":404}
-
-'
-    http_version: 
-  recorded_at: Mon, 18 Mar 2019 17:57:58 GMT
-recorded_with: VCR 4.0.0
+  recorded_at: Mon, 04 Nov 2019 13:16:44 GMT
+recorded_with: VCR 5.0.0
