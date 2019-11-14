@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Retirement Adviser Directory",
   "scripts": {
-    "test": "./node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run=true && ./node_modules/.bin/jshint app/assets/javascripts/ spec/javascripts/tests/"
+    "test": "./node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run=true && ./node_modules/.bin/jshint app/assets/javascripts/ spec/javascripts/tests/",
+    "postinstall": "node -e \"try { require('fs').symlinkSync(require('path').resolve('node_modules/@bower_components'), 'vendor/assets/bower_components', 'junction') } catch (e) { }\""
   },
   "devDependencies": {
     "chai": "^4.1.2",
@@ -27,5 +28,19 @@
     "requirejs": "2.3.5",
     "sinon": "^4.2.1",
     "sinon-chai": "^2.14.0"
+  },
+  "dependencies": {
+    "@bower_components/dough": "moneyadviceservice/dough#master",
+    "@bower_components/eventsWithPromises": "moneyadviceservice/eventsWithPromises#Update_Version_Package_Json",
+    "@bower_components/jquery": "jquery/jquery-dist#3.3.*",
+    "@bower_components/jqueryThrottleDebounce": "cowboy/jquery-throttle-debounce#*",
+    "@bower_components/normalize-css": "necolas/normalize.css#~3.0.0",
+    "@bower_components/requirejs": "jrburke/requirejs-bower#2.1.*",
+    "@bower_components/requirejs-plugins": "millermedeiros/requirejs-plugins#~1.0.3",
+    "@bower_components/rsvp": "components/rsvp.js#0.3.16",
+    "@bower_components/yeast": "moneyadviceservice/yeast#1.9.0"
+  },
+  "engines": {
+    "yarn": ">= 1.0.0"
   }
 }
