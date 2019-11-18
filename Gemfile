@@ -45,7 +45,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'launchy'
-  gem 'listen'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'rb-readline'
