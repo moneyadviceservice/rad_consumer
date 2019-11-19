@@ -37,7 +37,9 @@ run bundle install --quiet
 run npm install
 run bundle update brakeman --quiet
 run bundle exec bowndler install --allow-root
-run bundle exec rake db:drop db:setup
+run bundle exec rake db:drop
+run bundle exec rake db:create
+run bundle exec rake db:schema:load
 run bundle exec rspec
 run bundle exec cucumber
 run ./node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run
