@@ -14,13 +14,6 @@ gem 'rails', '5.2.3'
 gem 'active_model_serializers'
 gem 'activerecord-session_store'
 gem 'algoliasearch'
-gem 'bowndler', github: 'moneyadviceservice/bowndler'
-# Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
-# is the same as the Gem version.
-gem 'dough-ruby',
-    git: 'https://github.com/moneyadviceservice/dough.git',
-    branch: 'rails-5',
-    ref: 'b8b1d649'
 gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
