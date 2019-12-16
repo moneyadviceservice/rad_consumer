@@ -39,4 +39,8 @@ module ApplicationHelper
   def feature_enabled?(flag_name)
     ENV[flag_name] == 'true'
   end
+
+  def locale_class
+    "theme-#{I18n.locale}" unless I18n.locale == :en
+  end
 end
