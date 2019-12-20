@@ -42,7 +42,7 @@ run bundle exec rspec
 run bundle exec cucumber
 run ./node_modules/.bin/karma start spec/javascripts/karma.conf.js --single-run
 run bundle exec rubocop -DS
-run bundle exec brakeman -q --no-pager --ensure-latest
+info bundle exec brakeman -q --no-pager --ensure-latest
 
 if [ -f /.dockerenv ]; then
   run bundle exec danger --dangerfile=jenkins/Dangerfile --verbose

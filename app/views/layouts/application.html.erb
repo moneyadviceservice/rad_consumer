@@ -144,7 +144,7 @@
 
   <%= javascript_include_tag('modernizr/modernizr') %>
 </head>
-<body id="top">
+<body id="top" class="<%= locale_class %>">
   <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
   <%= render 'shared/svg/icon_sprite' %>
   <!--<![endif]-->
@@ -172,6 +172,7 @@
   </a>
 
   <%= render 'svg_icons' %>
+  <%= render 'maps_banner' %>
   <%= render 'header' %>
   <%= render 'breadcrumbs' %>
 
