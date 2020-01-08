@@ -19,6 +19,9 @@ class SearchForm
   validate :geocode_postcode, if: :face_to_face?
 
   def initialize(attributes = {})
+    attributes.each do |key, _|
+      attributes.delete(key.to_sym) unless SearchForm.attribute_method? key
+    end
     attributes.fetch(:filters, {}).each do |key, value|
       public_send("#{key}=", value) if respond_to?("#{key}=")
     end

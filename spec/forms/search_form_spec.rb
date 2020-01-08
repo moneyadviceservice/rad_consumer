@@ -490,4 +490,12 @@ RSpec.describe SearchForm do
       expect(form.as_json).to eq(expected_hash)
     end
   end
+
+  describe '#new' do
+    it 'gracefully discards unsupported params' do
+      expect(described_class.attribute_method?('pension_pot_size')).to be_falsey
+      expect(described_class.attribute_method?('advice_method')).to be_truthy
+      expect { described_class.new(pension_pot_size: 'any', advice_method: 'face_to_face') }.to_not raise_exception
+    end
+  end
 end

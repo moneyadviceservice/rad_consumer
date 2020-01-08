@@ -4,7 +4,6 @@ class RemoteSection < SitePrism::Section
   element :search, '.button--primary'
 
   element :retirement_income_products, '.t-retirement_income_products'
-  element :pension_pot_size, '.t-pension-pot-size'
   element :pension_transfer, '.t-pension_transfer'
   element :options_when_paying_for_care, '.t-options_when_paying_for_care'
   element :equity_release, '.t-equity_release'
