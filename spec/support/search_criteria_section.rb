@@ -1,7 +1,6 @@
 class SearchCriteriaSection < SitePrism::Section
   element :postcode, '#search_form_postcode'
   element :pension_pot, '#search_form_pension_pot'
-  element :pension_pot_size, '#search_form_pension_pot_size'
   element :pension_pot_transfer, '#search_form_pension_pot_transfer'
 
   element :options_when_paying_for_care, '#search_form_options_when_paying_for_care'

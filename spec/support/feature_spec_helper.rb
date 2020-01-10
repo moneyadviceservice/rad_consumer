@@ -17,7 +17,6 @@ def and_i_clear_any_filters_from_the_previous_search
     f.postcode.set nil
 
     f.retirement_income_products.set false
-    f.pension_pot_size.set SearchForm::ANY_SIZE_VALUE
     f.pension_transfer.set false
     f.options_when_paying_for_care.set false
     f.equity_release.set false
