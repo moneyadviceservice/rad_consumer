@@ -122,6 +122,7 @@ en:
     directory_url: /en
 
   contact_panels:
+    language_availability: This service is currently only available in English.
     webchat:
       title: Web chat
       available:
