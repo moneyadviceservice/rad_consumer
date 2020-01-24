@@ -122,6 +122,7 @@ cy:
     directory_url: /cy
 
   contact_panels:
+    language_availability: Ar hyn o bryd mae’r gwasanaeth hwn ar gael yn Saesneg yn unig.
     webchat:
       title: Gwe-sgwrs
       available:
