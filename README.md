@@ -2,13 +2,10 @@
 
 Consumer search for the Retirement Adviser Directory
 
-![Build Status](https://travis-ci.org/moneyadviceservice/rad_consumer.svg?branch=master)
-
 ## Prerequisites
 
-- [Ruby 2.5.3](http://www.ruby-lang.org/en)
+- [Ruby 2.6.5](http://www.ruby-lang.org/en)
 - [Node.js](http://nodejs.org/)
-- [Bundler](http://bundler.io)
 - [PostgreSQL](http://www.postgresql.org/)
 
 ## Installation
@@ -16,9 +13,10 @@ Consumer search for the Retirement Adviser Directory
 Make sure all dependencies are available to the application:
 
 ```sh
-$ bundle install
-$ bundle exec bowndler update
-$ npm install
+npm install
+npm install bower -g
+bundle install
+bundle exec bowndler update
 ```
 
 ### Set up database
@@ -35,8 +33,10 @@ then run:
 Make sure Postgres is running, then run:
 
 ```sh
-$ bundle exec rake db:create \
-  && for env in development test; do RAILS_ENV=$env bundle exec rake db:migrate; done
+bundle exec rake db:create
+bundle exec rake db:schema:load
+bundle exec rake db:seed
+bundle exec rake db:test:prepare
 ```
 
 #### Production/Test Algolia Indices
@@ -97,7 +97,7 @@ $ bundle exec rspec
 To run the Cucumber tests:
 
 Some of the tests use cassettes rather than calling algolia. The env vars are
-in the .env.test file. Login into the algolia app using the credentials on keePassX and find 
+in the .env.test file. Login into the algolia app using the credentials on keePassX and find
 the ALGOLIA_APP_KEY for the ALGOLIA_APP_ID supplied in the .env.test file.
 
 Then run:
