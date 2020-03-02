@@ -18,4 +18,5 @@ RSpec.configure do |config|
 
   config.include FactoryBot::Syntax::Methods
   config.include Rails.application.routes.url_helpers
+  config.example_status_persistence_file_path = '.spec/test_status.txt'
 end
