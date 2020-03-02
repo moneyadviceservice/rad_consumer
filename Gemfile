@@ -19,8 +19,8 @@ gem 'bowndler', github: 'moneyadviceservice/bowndler'
 # is the same as the Gem version.
 gem 'dough-ruby',
     git: 'https://github.com/moneyadviceservice/dough.git',
-    branch: 'rails-5',
-    ref: 'b8b1d649'
+    branch: 'master',
+    ref: '238a329'
 gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
