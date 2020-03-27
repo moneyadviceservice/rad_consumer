@@ -20,7 +20,7 @@ gem 'bowndler', github: 'moneyadviceservice/bowndler'
 gem 'dough-ruby',
     git: 'https://github.com/moneyadviceservice/dough.git',
     branch: 'master',
-    ref: '238a329'
+    ref: 'bc219c1'
 gem 'geocoder', '~> 1.4.7'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
