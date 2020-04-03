@@ -1,0 +1,7 @@
+// This is a temporary over-ride to the Yeast styles for this banner
+// It is needed because there is no WhatsApp button on RAD
+// This should be added and this style removed
+
+.covid_banner {
+	padding-right: $default-gutter; // calc(76px + #{$default-gutter * 4}); 
+}

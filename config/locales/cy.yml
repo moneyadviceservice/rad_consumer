@@ -112,6 +112,11 @@ cy:
     mps_provided_2: yn cael ei ddarparu gan
     mps: Gwasanaeth Arian a Phensiynau
 
+  covid_banner: 
+    head: Coronafeirws – beth mae’n ei olygu i chi
+    body_html: <a href="%{href}">Darganfyddwch beth mae gennych hawl iddo</a>
+    href: https://www.moneyadviceservice.org.uk/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
+
   breadcrumbs:
     home: Hafan
     pension_and_retirement: Pensiynau ac ymddeoliad
