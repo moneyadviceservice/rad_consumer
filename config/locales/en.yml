@@ -372,7 +372,6 @@ en:
       accreditation:
         ordinal:
           '1': SOLLA
-          '2': Later Life Academy
           '3': ISO 22222
       languages:
         heading: 'I would like an adviser who can speak the following language:'
@@ -459,9 +458,6 @@ en:
           title: SOLLA
           description: The Society of Later Life Advisers (SOLLA) accreditation scheme is audited and endorsed by the standard setting body the Financial Skills and Legal Partnership (FSLP). Individual financial advisers who gain the SOLLA accreditation have demonstrated a high level of knowledge and expertise in the area of later life financial planning.  The consumer organisation Which? and many local authorities recommend that individuals looking for advice in more complex areas of financial planning such as paying for care or equity release seek advice from an accredited SOLLA adviser.
           link: You can find out more <a href="http://societyoflaterlifeadvisers.co.uk/">here</a>.
-        later_life_academy:
-          title: Later Life Academy
-          description: The Later Life Academy is a voluntary training programme, accredited by the National Skills Council, for qualified advisers. This means advisers who are members of the Later Life Academy have been through additional training in subjects relating to retirement planning. All members of the Later Life Academy offer the initial meeting at their own expense.
         iso_22222:
           title: ISO 22222
           description: This is an international standard for financial planning, developed by the International Organisation for Standardisation (ISO) in collaboration with the British Standards Institute (BSI).  Advisers who are awarded this standard must demonstrate high levels of ethical behavior, competency and experience. ISO is the world’s largest developer of voluntary international standards.
@@ -531,7 +527,6 @@ en:
   accreditation:
     ordinal:
       '1': solla
-      '2': later_life_academy
       '3': iso_22222
       '4': bs8577_certified
 

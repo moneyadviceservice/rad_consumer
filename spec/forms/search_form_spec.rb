@@ -346,7 +346,6 @@ RSpec.describe SearchForm do
           ['Chartered Financial Planner', 'q3'],
           ['Chartered Wealth Manager', 'q10'],
           ['ISO 22222', 'a3'],
-          ['Later Life Academy', 'a2'],
           ['Pension Transfer Gold Standard', 'q11'],
           %w[SOLLA a1]
         ]
