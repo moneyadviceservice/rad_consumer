@@ -371,7 +371,6 @@ cy:
       accreditation:
         ordinal:
           '1': SOLLA
-          '2': Later Life Academy
           '3': ISO 22222
       service:
         options:
@@ -460,10 +459,6 @@ cy:
           id: solla
           description: Mae cynllun achredu Society of Later Life Advisers (SOLLA) yn cael ei archwilio a’i gefnogi gan Bartneriaeth Sgiliau Ariannol a Chyfreithiol (FSLP), sef y corff sy’n gosod y safonau. Mae cynghorwyr ariannol sy’n ennill achrediad SOLLA wedi dangos lefel uchel o wybodaeth ac arbenigedd ym maes cynllunio ariannol bywyd hŷn. Mae’r sefydliad i ddefnyddwyr, Which?, ynghyd ag amryw o awdurdodau lleol yn argymell y dylai unigolion sy’n chwilio am gyngor mewn meysydd mwy cymhleth fel cynllunio ariannol ar gyfer pethau fel talu am ofal neu ryddhau ecwiti, geisio cyngor gan gynghorydd SOLLA achrededig.
           link: 'Mae rhagor o wybodaeth ar gael yn <a href="http://societyoflaterlifeadvisers.co.uk/">yma</a>'
-        later_life_academy:
-          title: Academi Bywyd Hŷn
-          id: later_life_academy
-          description: Rhaglen hyfforddiant wirfoddol yw’r Academi Bywyd Hŷn, wedi ei hachredu gan y Cyngor Sgiliau Cenedlaethol, ar gyfer cynghorwyr cymwys. Golyga hyn bod cynghorwyr sy’n aelodau o’r Academi Bywyd Hŷn wedi cael hyfforddiant ychwanegol mewn pynciau sy’n ymwneud â chynllunio ymddeoliad. Mae pob aelod o’r Academi Bywyd Hŷn yn cynnig eu hamser ar gyfer y cyfarfod cyntaf o’u gwirfodd.
         iso_22222:
           title: ISO 22222
           id: iso_22222
@@ -534,7 +529,6 @@ cy:
   accreditation:
     ordinal:
       '1': solla
-      '2': later_life_academy
       '3': iso_22222
       '4': bs8577_certified
 
