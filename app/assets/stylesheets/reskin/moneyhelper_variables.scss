@@ -1,0 +1,58 @@
+// -- Colours -----------------------------------------
+$white: #ffffff;
+
+$text_secondary: #000B3B;
+
+$input_border: #60637E;
+
+$blue_primary: #0F19A0;
+
+$magenta_primary: #C82A87;
+$magenta_dark: #AE0060;
+$magenta_darker: #9C0052;
+$button_active_bg: #9C0052;
+
+$yellow_secondary: #F0F05A;
+
+$teal_secondary: #00788F;
+
+$red_error: #D00000;
+
+$support_focus: #8200D1;
+
+$link_visited: #792B9E;
+
+$light_grey: #F3F3FA;
+$light_grey_2: #F3F1F3;
+// ----------------------------------------------------
+
+// -- Dimensions --------------------------------------
+$border_radius: 4px;
+$mobile_width: 768px;
+// ----------------------------------------------------
+
+// -- Fonts -------------------------------------------
+@font-face{
+    font-family: 'Roobert-Regular';
+    src: font-url('Roobert-Regular.woff2') format('woff2'),
+         font-url('Roobert-Regular.woff') format('woff');
+}
+@font-face{
+    font-family: 'Roobert-bold';
+    src: font-url('Roobert-Bold.woff2') format('woff2'),
+         font-url('Roobert-Bold.woff') format('woff');
+}
+// ----------------------------------------------------
+
+// -- Icons -------------------------------------------
+
+// -- Pop-ups --
+    // -- Close 'x' --
+        $close_svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9Im5vbmUiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSI2MDIiIHdpZHRoPSI4MDIiIHk9Ii0xIiB4PSItMSI+PC9yZWN0PgogPC9nPgogPGc+CiAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogIDxyZWN0IGlkPSJzdmdfMSIgZmlsbD0iIzBGMTlBMCIgdHJhbnNmb3JtPSJyb3RhdGUoLTQ1IDcuOTk5OTk5OTk5OTk5OTk3LDguMDAwMDAxOTA3MzQ4NjMxKSAiIGhlaWdodD0iMTcuNDA3NCIgd2lkdGg9IjMuNTU1NTYiIHk9Ii0wLjcwMzciIHg9IjYuMjIyMjIiPjwvcmVjdD4KICA8cmVjdCBpZD0ic3ZnXzIiIGZpbGw9IiMwRjE5QTAiIHRyYW5zZm9ybT0icm90YXRlKDQ1IDguMDAwMDAwMDAwMDAwMDA1LDguMDAwMDAwOTUzNjc0MzEzKSAiIGhlaWdodD0iMTcuNDA3NCIgd2lkdGg9IjMuNTU1NTYiIHk9Ii0wLjcwMzciIHg9IjYuMjIyMjIiPjwvcmVjdD4KIDwvZz4KPC9zdmc+");
+    // -- Information 'i' --
+        $i_svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMiIgaGVpZ2h0PSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCiA8Zz4KICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+CiAgPHJlY3QgZmlsbD0ibm9uZSIgaWQ9ImNhbnZhc19iYWNrZ3JvdW5kIiBoZWlnaHQ9IjEyIiB3aWR0aD0iNCIgeT0iLTEiIHg9Ii0xIj48L3JlY3Q+CiA8L2c+CiA8Zz4KICA8dGl0bGU+TGF5ZXIgMTwvdGl0bGU+CiAgPHBhdGggaWQ9InN2Z18xIiBmaWxsPSIjMEYxOUEwIiBkPSJtMiwwbC0yLDBsMCw3bDIsMGwwLC03eiI+PC9wYXRoPgogIDxwYXRoIHN0cm9rZT0ibnVsbCIgaWQ9InN2Z180IiBmaWxsPSIjMEYxOUEwIiBkPSJtMiw4LjI0NDM0bC0yLDBsMCwxLjc1NTY2bDIsMGwwLC0xLjc1NTY2eiI+PC9wYXRoPgogPC9nPgo8L3N2Zz4=");
+
+// -- Select up/down arrows --
+    $select_down_svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CgogPGc+CiAgPHRpdGxlPmJhY2tncm91bmQ8L3RpdGxlPgogIDxyZWN0IGZpbGw9IiNjODJhODciIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgaGVpZ2h0PSI0MiIgd2lkdGg9IjQyIiB5PSItMSIgeD0iLTEiPjwvcmVjdD4KIDwvZz4KIDxnPgogIDx0aXRsZT5MYXllciAxPC90aXRsZT4KICA8cGF0aCBpZD0ic3ZnXzEiIGZpbGw9IndoaXRlIiBkPSJtMzEuNjY2NjcsMTcuMTY2NjdsLTMuMzMzMywtMy4zMzMzM2wtNi41LDYuNWMtMSwxIC0yLjUsMSAtMy41LDBsLTYuNjY2NzEsLTYuNWwtMy4zMzMzMywzLjMzMzMzbDYuOTk5OTksNi45OTk5N2MyLjY2NjY1LDIuNjY2NyA2LjgzMzM1LDIuNjY2NyA5LjUwMDA1LDBsNi44MzMzLC02Ljk5OTk3eiI+PC9wYXRoPgogPC9nPgo8L3N2Zz4=");
+    $select_up_svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8Zz4KICA8dGl0bGU+YmFja2dyb3VuZDwvdGl0bGU+CiAgPHJlY3QgeD0iLTEiIHk9Ii0xIiB3aWR0aD0iNDIiIGhlaWdodD0iNDIiIGlkPSJjYW52YXNfYmFja2dyb3VuZCIgZmlsbD0iI2M4MmE4NyI+PC9yZWN0PgogPC9nPgoKIDxnPgogIDx0aXRsZT5MYXllciAxPC90aXRsZT4KICA8cGF0aCB0cmFuc2Zvcm09InJvdGF0ZSgxODAgMjAsMjAuMDAwMDAxOTA3MzQ4NjMzKSAiIGQ9Im0zMS42NjY2NywxNy4xNjY2N2wtMy4zMzMzLC0zLjMzMzMzbC02LjUsNi41Yy0xLDEgLTIuNSwxIC0zLjUsMGwtNi42NjY3MSwtNi41bC0zLjMzMzMzLDMuMzMzMzNsNi45OTk5OSw2Ljk5OTk3YzIuNjY2NjUsMi42NjY3IDYuODMzMzUsMi42NjY3IDkuNTAwMDUsMGw2LjgzMzMsLTYuOTk5OTd6IiBmaWxsPSJ3aGl0ZSIgaWQ9InN2Z18xIj48L3BhdGg+CiA8L2c+Cjwvc3ZnPg==");
+// ----------------------------------------------------
