@@ -1,0 +1,142 @@
+// -- RAD specific styles -------------------------------------------------
+
+// -- Headings / Paragraph / Info --------------------------------------
+
+    .l-landing-page__search-filter__header {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 32px;
+            line-height: 39px;
+            color: $text_secondary;
+            
+            a.icon--further-info {
+                width: 25px;
+                height: 25px;
+                background-size: 25px 25px;
+                top: 15px;
+                @media(max-width: $mobile_width){
+                    width: 20px;
+                    height: 20px;
+                    background-size: 20px 20px;           
+                }      
+            }
+            @media(max-width: $mobile_width){
+                font-size: 25px;
+                line-height: 33px;            
+            }        
+        }
+
+    
+    h2.l-landing-page__section-header{
+        font-size: 38px;
+        line-height: 43px;
+        @media(max-width:$mobile_width){
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+
+    h2.l-landing-page__heading {
+        color: $text_secondary;
+    }
+
+    h3.advert__header {
+        color: $text_secondary;
+        @media(max-width:$mobile_width){
+            color: $text_secondary;
+        }
+    }
+
+    .education__heading, 
+    .education__icon {
+        font-size: 32px;
+        line-height: 39px;
+        @media(max-width: $mobile_width){
+            font-size: 25px;
+            line-height: 33px;            
+        }
+    }
+
+    .education__heading-text {
+        padding-left: 5px;
+    }
+// ----------------------------------------------------
+
+
+// -- Icons -------------------------------------------
+
+    .icon--further-info {
+            text-indent: -9999px;
+            background-image: $i_svg_rad;
+            background-repeat: no-repeat;
+            width: 18px;
+            height: 18px;
+            position: relative;
+            top: 10px;
+            &:hover,
+            &:focus,
+            &:visited {
+            text-decoration: none;
+            }
+        }
+
+// ----------------------------------------------------
+
+// -- List Items --------------------------------------
+
+    .list-benefits li, .l-landing-page__3col {
+            font-family: 'Roobert-Regular', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 23px;
+            color: $text_secondary;
+        }
+
+// ----------------------------------------------------
+
+// -- Hyperlinks --------------------------------------
+
+    .l-landing-page__register-link, 
+    .advice-reasons__explaination,
+    .video__description,
+    .l-landing-page__other-information{
+        a{
+            font-family: 'Roobert-Regular', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 23px;
+            text-decoration: underline;
+            color: $magenta_primary;
+            &:hover{
+                text-decoration: none;
+                color: $magenta_dark;
+            }
+            &:visited{
+                color: $link_visited;
+            }
+        }
+    }
+// ----------------------------------------------------
+
+// -- Background / Borders ----------------------------
+
+    .l-landing-page__search-filter, .advert , .l-landing-page__advice-reasons{
+        background-color: $light_grey_2;
+    }
+
+    .further-info__content {
+        border-left: 5px solid $teal_secondary;
+    }
+// ----------------------------------------------------
+
+// -- Button ------------------------------------------
+
+    .search-filter__button {
+
+        .pagination__icon {
+            display: none;
+        }
+    }
+// ----------------------------------------------------
