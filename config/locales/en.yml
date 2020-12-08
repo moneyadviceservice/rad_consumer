@@ -256,7 +256,7 @@ en:
       download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.en.pdf'
 
   pension_wise:
-    heading: Have you had your free guidance appointment yet?
+    heading: Have you had your free guidance appointment yet?......
     description:
       - text: Pension Wise is a free and impartial government service that helps you understand your new pension options.
       - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Find out more from Pension Wise</a>
