@@ -3,49 +3,50 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'Roobert-Bold', sans-serif;
     font-style: normal;
     font-weight: bold;
-}
-h1{
-    font-size: 48px;
-    line-height: 54px;
     color: $blue_primary;
-    @media(max-width:$mobile_width){
-        font-size: 38px;
-        line-height: 46px;
-    }
 }
-h2{
-    font-size: 38px;
-    line-height: 43px;
-    color: $blue_primary;
-    @media(max-width:$mobile_width){
-        font-size: 28px;
-        line-height: 36px;
-    }
-}
-h3{
-    font-size: 32px;
-    line-height: 39px;
-    color: $text_secondary;
-    @media(max-width: $mobile_width){
-        font-size: 25px;
-        line-height: 33px;            
-    }
-}
+// h1{
+//     font-size: 48px;
+//     line-height: 54px;
+//     color: $blue_primary;
+//     @media(max-width:$mobile_width){
+//         font-size: 38px;
+//         line-height: 46px;
+//     }
+// }
+// h2{
+//     font-size: 38px;
+//     line-height: 43px;
+//     color: $blue_primary;
+//     @media(max-width:$mobile_width){
+//         font-size: 28px;
+//         line-height: 36px;
+//     }
+// }
+// h3{
+//     font-size: 32px;
+//     line-height: 39px;
+//     color: $text_secondary;
+//     @media(max-width: $mobile_width){
+//         font-size: 25px;
+//         line-height: 33px;            
+//     }
+// }
 // -- *Note H4 restricted to footer links - out of scope for reskin tools --
-h5{
-    font-size: 22px;
-    line-height: 28px;
-    color: $text_secondary;
-    @media(max-width: $mobile_width){
-        font-size: 20px;
-        line-height: 25px;            
-    }        
-}
-h6{
-    font-size: 19px;
-    line-height: 25px;
-    color: $text_secondary;
-}
+// h5{
+//     font-size: 22px;
+//     line-height: 28px;
+//     color: $text_secondary;
+//     @media(max-width: $mobile_width){
+//         font-size: 20px;
+//         line-height: 25px;            
+//     }        
+// }
+// h6{
+//     font-size: 19px;
+//     line-height: 25px;
+//     color: $text_secondary;
+// }
 // ---------------------------------------------------------------------------------
 
 
