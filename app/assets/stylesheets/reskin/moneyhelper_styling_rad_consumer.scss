@@ -45,6 +45,12 @@ h5.advice-method__heading {
         fill: $blue_primary;
     }
 }
+
+h2.search-filter__heading{
+    @media (max-width: $mobile_width) {
+        color: $search-filter-heading-color;
+    }
+}
 // ----------------------------------------------------
 
 // -- Icons -------------------------------------------
@@ -59,27 +65,34 @@ h5.advice-method__heading {
     position: relative;
     top: 5px;
     left: 2px;
-    &:hover,
-    &:focus,
-    &:visited {
-        text-decoration: none;
-        z-index: 9999999999;
+    //&:hover,
+    &:focus {
+        outline: none;
+        background: unset;
+        background-image: $i_svg_rad;
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        top: 5px;
+        left: 2px;
     }
+    // &:visited {
+    //     text-decoration: none;
+    //     z-index: 9999999999;
+    // }
 }
-.callout__heading {
-    a {
-        top: 10px;
+
+a {
+    &:focus {
+        outline: none;
+        background: unset;
+        }
+}
+
+.l-firm__row h4 a {
+    top:10px;
+    &:focus {
+        top:10px;
     }
-}
-a:focus,
-.button-link:focus {
-    outline: none;
-    background: unset;
-    background-image: $i_svg_rad;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    top: 5px;
-    left: 2px;
 }
 // ----------------------------------------------------
 
@@ -145,19 +158,18 @@ a:focus,
 .further-info__content {
     border-left: 5px solid $teal_secondary;
 }
-
 .callout {
     background: $light_grayish_magenta;
 }
 
 .validation-summary {
-    .validation-summary__content-container {
+    .validation-summary__content-container, .validation-summary__error--no-link {
         background-color: $red_error_background;
         .validation-summary__title {
             color: $red_error;
             font-weight: bold;
         }
-        padding: 1px 10px;
+        //padding: 1px 10px;
         border-left: 4px solid $red_error;
         color: $red_error;
     }
@@ -181,9 +193,27 @@ a:focus,
 
 .outline-button,
 .l-results__pagination span a {
-    @extend .button;
-    @extend .button--secondary;
-    @extend .button--secondary;
+    font-size: 16px;
+    border: 1px solid $magenta_primary;
+    border-radius: $border_radius;
+    box-shadow: 0px 2px 0px rgba(0, 11, 59, 0.25);
+    padding: 8px 16px; 
+    //@extend .button--secondary;
+    &:hover{
+        background: $light_grey_2;
+        border: 1px solid $magenta_dark;
+    }
+    &:focus{
+        background-color: $yellow_secondary;
+        border: 2px solid $support_focus;
+        color: $text_secondary;
+    }
+    &:active{
+        //font-weight: 600;
+        color: $text_secondary;
+        border: 2px solid $support_focus;
+        box-shadow: 0px 2px 0px $white, inset 0px 5px 2px rgba(0, 11, 59, 0.25);
+    }
 }
 
 .l-results__pagination span a .pagination__icon {
@@ -258,17 +288,17 @@ a:focus,
 
 // -- Input Items  ------------------------------------
 
-input[type="text"]:focus + label::before,
-input[type="number"]:focus + label::before,
-input[type="email"]:focus + label::before,
-input[type="search"]:focus + label::before,
-input[type="password"]:focus + label::before,
-input[type="checkbox"]:focus + label::before,
-input[type="checkbox"]:active + label::before,
-input[type="radio"]:focus + label::before {
-    box-shadow: 0 0 0 4px $yellow_secondary;
-    outline: 0;
-}
+// input[type="text"]:focus + label::before,
+// input[type="number"]:focus + label::before,
+// input[type="email"]:focus + label::before,
+// input[type="search"]:focus + label::before,
+// input[type="password"]:focus + label::before,
+// input[type="checkbox"]:focus + label::before,
+// input[type="checkbox"]:active + label::before,
+// input[type="radio"]:focus + label::before {
+//     box-shadow: 0 0 0 4px $yellow_secondary;
+//     outline: 0;
+// }
 
 select {
     -webkit-appearance: none;
@@ -290,4 +320,6 @@ select {
       margin-top: $baseline-unit;
     }
   }
+
 // ----------------------------------------------------
+

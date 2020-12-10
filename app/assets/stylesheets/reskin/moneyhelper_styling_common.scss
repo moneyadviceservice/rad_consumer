@@ -3,50 +3,50 @@ h1,h2,h3,h4,h5,h6{
     font-family: 'Roobert-Bold', sans-serif;
     font-style: normal;
     font-weight: bold;
-    color: $blue_primary;
+    
 }
-// h1{
-//     font-size: 48px;
-//     line-height: 54px;
-//     color: $blue_primary;
-//     @media(max-width:$mobile_width){
-//         font-size: 38px;
-//         line-height: 46px;
-//     }
-// }
-// h2{
-//     font-size: 38px;
-//     line-height: 43px;
-//     color: $blue_primary;
-//     @media(max-width:$mobile_width){
-//         font-size: 28px;
-//         line-height: 36px;
-//     }
-// }
-// h3{
-//     font-size: 32px;
-//     line-height: 39px;
-//     color: $text_secondary;
-//     @media(max-width: $mobile_width){
-//         font-size: 25px;
-//         line-height: 33px;            
-//     }
-// }
+h1{
+    // font-size: 48px;
+    // line-height: 54px;
+    color: $blue_primary;
+    @media(max-width:$mobile_width){
+        // font-size: 38px;
+        // line-height: 46px;
+    }
+}
+h2{
+    // font-size: 38px;
+    // line-height: 43px;
+    color: $blue_primary;
+    @media(max-width:$mobile_width){
+        // font-size: 28px;
+        // line-height: 36px;
+    }
+}
+h3{
+    // font-size: 32px;
+    // line-height: 39px;
+    color: $text_secondary;
+    @media(max-width: $mobile_width){
+        // font-size: 25px;
+        // line-height: 33px;            
+    }
+}
 // -- *Note H4 restricted to footer links - out of scope for reskin tools --
-// h5{
-//     font-size: 22px;
-//     line-height: 28px;
-//     color: $text_secondary;
-//     @media(max-width: $mobile_width){
-//         font-size: 20px;
-//         line-height: 25px;            
-//     }        
-// }
-// h6{
-//     font-size: 19px;
-//     line-height: 25px;
-//     color: $text_secondary;
-// }
+h5{
+    // font-size: 22px;
+    // line-height: 28px;
+    color: $text_secondary;
+    @media(max-width: $mobile_width){
+        // font-size: 20px;
+        // line-height: 25px;            
+    }        
+}
+h6{
+    // font-size: 19px;
+    // line-height: 25px;
+    color: $text_secondary;
+}
 // ---------------------------------------------------------------------------------
 
 
@@ -101,7 +101,9 @@ p{
             background-image: $search_svg;
             background-repeat: no-repeat;
             background-position: 25% 50%;
-
+            &:focus {
+                background-image: $search_svg_black;
+            }
         }
     }
 
@@ -195,95 +197,103 @@ input[type=number]{
     }
 }
 
-input[type=radio]{
-    display: none;
-    + label{
-        padding-left: 40px;
-        display: block;
-        margin-bottom: 20px;
-        position: relative;
-        cursor: pointer;
-        &:before{
-            content: '';
-            border: 1px solid $input_border;
-            border-radius: 50%;
-            display: block;
-            height: 28px;
-            width: 28px;
-            position: absolute;
-            left: 0;
-        }
+input[type="radio"],
+input[type="checkbox"]{
+    &:focus,
+    &:hover{
+        outline: 2px solid $support_focus;
     }
-    &:checked{
-        + label{
-            &:after{
-                content: '';
-                display: block;
-                width: 16px;
-                height: 16px;
-                background: $magenta_primary;
-                border-radius: 50%;
-                position: absolute;
-                left: 6px;
-                top: 6px;
-            }
-        }
-    }
-    &:focus{
-        + label{
-            &:before{
-                box-shadow: 0 0 10px $yellow_secondary;
-            }
-        }
-    }
-    
 }
 
-input[type=checkbox]{
-    display: none;
-    + label{
-        padding-left: 40px;
-        display: block;
-        margin-bottom: 20px;
-        position: relative;
-        cursor: pointer;
-        &:before{
-            content: '';
-            border: 1px solid $input_border;
-            border-radius: 4px;
-            display: block;
-            height: 28px;
-            width: 28px;
-            position: absolute;
-            left: 0;
-
-        }
-    }
-
-    &:checked{
-        + label{
-            &:after{
-                content: '';
-                display: block;
-                width: 20px;
-                height: 14px;
-                background: $checkbox;
-                background-repeat: no-repeat;
-                position: absolute;
-                left: 4px;
-                top: 6px;
-            }
-        }
-    }
-    &:focus{
-        + label{
-            &:before{
-                box-shadow: 0 0 10px $yellow_secondary;
-            }
-        }
-    }
+// input[type=radio]{
+//     display: none;
+//     + label{
+//         padding-left: 40px;
+//         display: block;
+//         margin-bottom: 20px;
+//         position: relative;
+//         cursor: pointer;
+//         &:before{
+//             content: '';
+//             border: 1px solid $input_border;
+//             border-radius: 50%;
+//             display: block;
+//             height: 28px;
+//             width: 28px;
+//             position: absolute;
+//             left: 0;
+//         }
+//     }
+//     &:checked{
+//         + label{
+//             &:after{
+//                 content: '';
+//                 display: block;
+//                 width: 16px;
+//                 height: 16px;
+//                 background: $magenta_primary;
+//                 border-radius: 50%;
+//                 position: absolute;
+//                 left: 6px;
+//                 top: 6px;
+//             }
+//         }
+//     }
+//     &:focus{
+//         + label{
+//             &:before{
+//                 box-shadow: 0 0 10px $yellow_secondary;
+//             }
+//         }
+//     }
     
-}
+// }
+
+// input[type=checkbox]{
+//     display: none;
+//     + label{
+//         padding-left: 40px;
+//         display: block;
+//         margin-bottom: 20px;
+//         position: relative;
+//         cursor: pointer;
+//         &:before{
+//             content: '';
+//             border: 1px solid $input_border;
+//             border-radius: 4px;
+//             display: block;
+//             height: 28px;
+//             width: 28px;
+//             position: absolute;
+//             left: 0;
+
+//         }
+//     }
+
+//     &:checked{
+//         + label{
+//             &:after{
+//                 content: '';
+//                 display: block;
+//                 width: 20px;
+//                 height: 14px;
+//                 background: $checkbox;
+//                 background-repeat: no-repeat;
+//                 position: absolute;
+//                 left: 4px;
+//                 top: 6px;
+//             }
+//         }
+//     }
+//     &:focus{
+//         + label{
+//             &:before{
+//                 box-shadow: 0 0 10px $yellow_secondary;
+//             }
+//         }
+//     }
+    
+// }
 
 select{
     width: 285px;
