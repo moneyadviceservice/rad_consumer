@@ -1,5 +1,249 @@
-<% content_for(:head) do %>
-  <%= stylesheet_link_tag 'enhanced_fixed', media: 'all' %>
-<% end %>
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html lang="<%= I18n.locale %>" class="ie ie8 no-js"> <![endif]-->
+<html lang="<%= I18n.locale %>">
+<head>
+  <title><%= page_tag('title_tag') %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="<%= page_tag('meta_tag_description') %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
 
-<%= yield %>
+  <link href="https://directory.moneyadviceservice.org.uk/en" hreflang="en-GB" rel="alternate" />
+  <link href="https://directory.moneyadviceservice.org.uk/cy" hreflang="cy-GB" rel="alternate" />
+  <link href="https://directory.moneyadviceservice.org.uk/<%= I18n.locale %>" rel="canonical" />
+
+  <%= stylesheet_link_tag 'dough/assets/stylesheets/font_files' %>
+
+  <%= favicon_link_tag 'favicon.ico' %>
+
+  <% # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version is the same as the Gem version. %>
+
+  <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/font_files-dcbb90df70309af8f6ceeaff0db9a5af.css" media="screen" rel="stylesheet" />
+  <link href="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/enhanced_fixed-1cca1e76da0e2d48be990410a432379f.css" media="all" rel="stylesheet" />
+  <script src="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/html5shiv/dist/html5shiv-ccc40f0f8bab80e89dfead2f99f6efdf.js"></script>
+  <script>var responsiveStyle = false;</script>
+  <![endif]-->
+
+  <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
+  <script>var responsiveStyle = true;</script>
+  <!--<![endif]-->
+
+  <script src="https://cdn.optimizely.com/js/6461312121.js"></script>
+
+  <script type="text/javascript">
+    var dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      'Responsive page': 'Yes',
+      'event': 'Responsive page'
+    });
+
+    var require = {
+      config: {
+        globals: (function(w, d) {
+          var html, appendFile, bootstrap, fonts, supports;
+
+          appendFile = function(tag, src, content) {
+            var position = d.getElementsByTagName('script')[0],
+                file = d.createElement(tag);
+            if (tag === 'script') {
+              file.async = true;
+              file.type = "text/javascript";
+            }
+            if (src) file.src = src;
+            if (content) file.innerHTML = content;
+            position.parentNode.insertBefore(file, position);
+          };
+
+          html = d.getElementsByTagName('html')[0];
+
+          bootstrap = {
+            env: 'production',
+            timestamp: new Date().getTime(),
+            i18nLocale: 'en',
+            googleApiCx: '011931388747222259444:qxgwfm5hlog'
+          };
+
+          fonts = {
+            url: 'https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/dough/assets/stylesheets/font_base64-28a0a91cf9910ceb5cc55a64841ae31a.css',
+            cacheName: 'MAS.fonts',
+            loadClass: 'wf-museosans-n4-active fontsLoaded',
+            localstorage: undefined,
+            loadWithJS: responsiveStyle
+          };
+
+          supports = (function() {
+            var S = {};
+
+            function supportTest(prop, context) {
+              try {
+                return prop in context && context[prop] !== null;
+              } catch (e) {
+                return false;
+              }
+            }
+
+            S.js = supportTest('querySelector', d) && supportTest('localStorage', w) && supportTest('addEventListener', w) ? 'advanced' : 'basic';
+            S.touch = supportTest('ontouchstart', w) || supportTest('onmsgesturechange', w);
+            S.localstorage = supportTest('localStorage', w);
+            S.svg = (function() {
+              return !!d.createElementNS && !!d.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect
+            })();
+            S.test = supportTest;
+
+            return S
+          })();
+
+
+          if (supports.localstorage && localStorage.getItem(fonts.cacheName) !== null) {
+            html.className = html.className += (' ' + fonts.loadClass);
+            appendFile('style', false, localStorage.getItem(fonts.cacheName));
+            fonts.localstorage = true;
+          }
+
+          html.className = html.className.replace('supports-js', 'supports-js js js-' + supports.js);
+
+          setTimeout(function() {
+            var src = d.location.protocol + "//dnn506yrbagrg.cloudfront.net/pages/scripts/0018/4438.js?" + Math.floor(new Date().getTime() / 3600000);
+            appendFile('script', src);
+          }, 1);
+
+          var vp, ua, gs, sf;
+          vp = d.querySelector && d.querySelector('meta[name="viewport"]');
+          ua = navigator.userAgent;
+          sf = function() {
+            if (vp && /iPhone|iPad|iPod/.test(ua) && !/Opera Mini/.test(ua)) {
+              vp.content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+              d.addEventListener("gesturestart", gs, false);
+            }
+          };
+          gs = function() {
+            vp.content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          };
+
+          return {
+            bootstrap: bootstrap,
+            fonts: fonts,
+            supports: supports
+          };
+        })(window, document)
+      }
+    };
+  </script>
+
+  <!--[if ( gte IE 7 ) & ( lte IE 8 ) & (!IEMobile) ]>
+    <%= stylesheet_link_tag 'enhanced_fixed', media: 'all' %>
+    <script>var responsiveStyle = false;</script>
+  <![endif]-->
+
+  <%# Responsive styles for all modern devices, excluded from older IE version %>
+  <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
+  <%= stylesheet_link_tag 'enhanced_responsive', media: 'only all' %>
+  <script>var responsiveStyle = true;</script>
+  <!--<![endif]-->
+
+  <%= javascript_include_tag('modernizr/modernizr') %>
+</head>
+
+
+<body id="top" class="<%= locale_class %>">
+  <!--[if ( !IE ) | ( gte IE 9 ) ]><!-->
+  <%= render 'shared/svg/icon_sprite' %>
+  <!--<![endif]-->
+  <% if Rails.env.production? %>
+    <noscript>
+      <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WVFLH9" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe>
+    </noscript>
+
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WVFLH9');
+    </script>
+  <% end %>
+
+  <a class="skip-to-link" href="#main"><%= t('skip_links.to_main') %></a>
+  <a class="skip-to-link" href="<%= t('skip_links.to_accessibility_link') %>">
+    <%= t('skip_links.to_accessibility') %>
+  </a>
+
+  <%= render 'svg_icons' %>
+
+  <main role="main" id="main">
+    <%= content_for :validation_summary %>
+
+    <%= yield %>
+  </main>
+
+
+<%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
+
+<script src="https://masjumpprdstorage.blob.core.windows.net/responsive-assets/a/webchat-8a47f66c98f9abd3ce2afd710aff5891.js"></script>
+<script type='text/javascript'>
+  sWODomain = 'www.moneyadviceservice.org.uk';
+  sWOChatstart = 'https://webchat.moneyadviceservice.org.uk/newchat/chat.aspx';
+
+  sWOImageLoaded = function() {
+
+    var chatCTA = document.getElementById('js-chat-cta'),
+        chatDescription = document.getElementById('js-chat-description'),
+        chatContent = document.getElementById('js-chat-content');
+
+    if (sWOImage.width == 1) {
+
+      var sWOChatElement = document.createElement('div');
+      var sWOChatElementText = document.createTextNode("<%= t('contact_panels.webchat.busy.call_to_action') %>");
+
+      sWOChatElement.className = "contact-panel__button button is-disabled t-chat-button";
+      sWOChatElement.appendChild(sWOChatElementText);
+
+      chatCTA.innerHTML = "";
+      chatCTA.appendChild(sWOChatElement);
+      chatDescription.innerHTML = "<%= t('contact_panels.webchat.busy.description') %>";
+
+      chatContent.className = "contact-panel__dynamic-content is-loaded";
+
+    } else {
+
+      var sWOChatElement = document.createElement('a');
+      var sWOChatElementText = document.createTextNode("<%= t('contact_panels.webchat.available.call_to_action') %>");
+      sWOChatElement.className = "contact-panel__button button t-chat-button";
+      sWOChatElement.appendChild(sWOChatElementText);
+
+      chatCTA.innerHTML = "";
+      chatCTA.appendChild(sWOChatElement);
+      chatDescription.innerHTML = "<%= t('contact_panels.webchat.available.description') %>";
+      chatContent.className = "contact-panel__dynamic-content is-loaded";
+
+
+      sWOChatElement.onclick = function() {
+        window.open(sWOChatElement.href, "Chat", "width=484,height=361,scrollbars=yes,resizable=yes");
+        return false;
+      };
+
+      sWOChatElement.href = sWOChatstart;
+      sWOChatElement.target = "_blank";
+    }
+  };
+
+  if (typeof sWOTrackPage == 'function') {
+    sWOTrackPage();
+    setTimeout("sWOInvite='';sWOResponse='N';sWOPage=(sWOPage || '')+'%3Ftimer%3Dtrue';sWOTrackPage();", 30000);
+  }
+</script>
+
+<script type="text/javascript">
+  setTimeout(function(){var a=document.createElement("script");
+  var b=document.getElementsByTagName("script")[0];
+  a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0018/4438.js?"+Math.floor(new Date().getTime()/3600000);
+  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+<%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
+</body>
+</html>

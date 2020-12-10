@@ -28,3 +28,5 @@ bower.json
 
 .rubocop-*
 .tags
+
+.DS_Store
