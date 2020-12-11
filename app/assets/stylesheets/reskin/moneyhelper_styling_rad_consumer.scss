@@ -3,22 +3,7 @@
 // -- Headings / Paragraph / Info --------------------------------------
 
 .l-landing-page__search-filter__header {
-    font-style: normal;
-    font-weight: bold;
     color: $text_secondary;
-
-    a.icon--further-info {
-        width: 24px;
-        height: 24px;
-        background-size: 24px 24px;
-        top: 4px;
-        @media (max-width: $mobile_width) {
-            width: 22px;
-            height: 22px;
-            background-size: 22px 22px;
-            top: 6px;
-        }
-    }
 }
 
 h2.l-landing-page__heading {
@@ -55,45 +40,39 @@ h2.search-filter__heading{
 
 // -- Icons -------------------------------------------
 
-.icon--further-info {
-    text-indent: -9999px;
-    background-image: $i_svg_rad;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    background-size: 20px 20px;
-    position: relative;
-    top: 5px;
-    left: 2px;
-    //&:hover,
+
+
+.js .icon--further-info {
+    font-family: Times, "Times New Roman", Georgia, serif;
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: bold;
+	line-height: 20px;
+    padding: 0 0 0 7px;
+    width: 25px;
+    height: 25px;
+    background-color: $light_grey_2;
+	color: $magenta_primary;
+	border: 3px solid $magenta_primary;
+    border-radius: 50%;
     &:focus {
+        background-color: $yellow_secondary;
+        border-color: $support_focus;
+        color: $support_focus;
         outline: none;
-        background: unset;
-        background-image: $i_svg_rad;
-        background-repeat: no-repeat;
-        background-size: 20px 20px;
-        top: 5px;
-        left: 2px;
     }
-    // &:visited {
-    //     text-decoration: none;
-    //     z-index: 9999999999;
-    // }
+    @media print{
+        display: none;
+    }
+    
 }
 
-a {
-    &:focus {
-        outline: none;
-        background: unset;
-        }
+.pagination__icon {
+    display: none;
 }
 
-.l-firm__row h4 a {
-    top:10px;
-    &:focus {
-        top:10px;
-    }
-}
+
+
 // ----------------------------------------------------
 
 // -- List Items --------------------------------------
@@ -198,7 +177,7 @@ a {
     border-radius: $border_radius;
     box-shadow: 0px 2px 0px rgba(0, 11, 59, 0.25);
     padding: 8px 16px; 
-    //@extend .button--secondary;
+    @extend .button--secondary;
     &:hover{
         background: $light_grey_2;
         border: 1px solid $magenta_dark;
@@ -216,9 +195,7 @@ a {
     }
 }
 
-.l-results__pagination span a .pagination__icon {
-    display: none;
-}
+
 
 .outline-button,
 .office__telephone,
@@ -286,29 +263,12 @@ a {
 
 // ----------------------------------------------------
 
-// -- Input Items  ------------------------------------
+// -- Input Items / Labels ----------------------------
 
-// input[type="text"]:focus + label::before,
-// input[type="number"]:focus + label::before,
-// input[type="email"]:focus + label::before,
-// input[type="search"]:focus + label::before,
-// input[type="password"]:focus + label::before,
-// input[type="checkbox"]:focus + label::before,
-// input[type="checkbox"]:active + label::before,
-// input[type="radio"]:focus + label::before {
-//     box-shadow: 0 0 0 4px $yellow_secondary;
-//     outline: 0;
-// }
 
-select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding-left: 5px;
-}
-
-.search-filter__constrained {
-    max-width: unset;
+label{
+    font-family: inherit;
+    font-weight: normal;
 }
 
 // ----------------------------------------------------
@@ -322,4 +282,5 @@ select {
   }
 
 // ----------------------------------------------------
+
 
