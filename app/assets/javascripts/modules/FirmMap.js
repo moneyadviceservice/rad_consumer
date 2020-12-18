@@ -101,15 +101,33 @@ define(['jquery', 'DoughBaseComponent'],
    * @param {GoogleMap} gMap Instance of the map to position markers onto
    */
   FirmMapProto._positionMarkers = function(gMap) {
-    var $advisers = this.$find('[data-dough-map-point]');
+    var $elements = this.$find('[data-dough-map-point]'),
+        infoWindow = new google.maps.InfoWindow();
 
-    $advisers.each($.proxy(function(_, adviser) {
-      var $adviser = $(adviser),
-          markerConfig = this._generateMarkerConfig($adviser);
+    $elements.each($.proxy(function(_, element) {
+      var $element = $(element),
+          markerConfig = this._generateMarkerConfig($element),
+          marker;
 
       markerConfig.map = gMap;
-      new google.maps.Marker(markerConfig);
+      marker = new google.maps.Marker(markerConfig);
+      FirmMapProto._addMarkerClickEvent(gMap, marker, infoWindow, $element.text());
     }, this));
+  };
+
+  /**
+   * _addMarkerClickEvent
+   *
+   * Sets up the click event to display the content for a given marker
+   *
+   * @private
+   *
+   */
+  FirmMapProto._addMarkerClickEvent = function(map, marker, infoWindow, content){
+    google.maps.event.addListener(marker, 'click', function() {
+      infoWindow.setContent(content);
+      infoWindow.open(map, this);
+    });
   };
 
   /**
@@ -130,12 +148,16 @@ define(['jquery', 'DoughBaseComponent'],
    * @returns {Object} Config for creating a google maps marker with
    */
   FirmMapProto._generateMarkerConfig = function($element) {
+    var pinUrlString = $element.data('dough-map-point-type') + 'PinUrl';
+    var iconUrl = this.config[pinUrlString];
+
     return {
       position: {
         lat: $element.data('dough-map-point-lat'),
         lng: $element.data('dough-map-point-lng')
       },
-      icon: { url: this.config.adviserPinUrl }
+      icon: { url: iconUrl },
+      clickable: ($element.data('dough-map-point-type') === 'office')
     };
   };
 

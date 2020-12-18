@@ -4,6 +4,7 @@ class FirmSection < SitePrism::Section
 
   element :free_initial_meeting, '.t-free-initial-meeting'
   element :adviser_distance, '.t-adviser-distance'
+  element :view_profile, '.t-view-profile'
 
   def name
     root_element.find('.t-name').text
@@ -31,5 +32,9 @@ class FirmSection < SitePrism::Section
 
   def minimum_pot_size
     root_element.find('.t-minimum-pot-size').text
+  end
+
+  def <=>(other)
+    name <=> other.name
   end
 end

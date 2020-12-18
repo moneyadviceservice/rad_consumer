@@ -1,9 +1,37 @@
 class FirmsController < ApplicationController
   def show
-    @search_form = SearchForm.new(params[:search_form].merge(firm_id: params[:id]))
-    result = FirmRepository.new.search(@search_form.to_query)
+    json = FetchFirmProfile.call(params: profile_params)
 
-    @firm  = result.firms.first
-    @latitude, @longitude = @search_form.coordinates
+    @firm = FirmProfilePresenter.new(json).firm
+    return render not_found unless @firm
+
+    store_recently_visited_firm
+  end
+
+  private
+
+  def profile_params
+    params.permit(:id, :postcode, :locale).merge!(coordinates: coordinates)
+  end
+
+  def coordinates
+    @coordinates ||= begin
+      Geocode.call(params[:postcode]) if params[:postcode].present?
+    end
+  end
+
+  def map_center_coordinates
+    return Location.new(*coordinates) if coordinates
+
+    @firm.advisers.first.location
+  end
+  helper_method :map_center_coordinates
+
+  def session_jar
+    @session_jar ||= SessionJar.new(session)
+  end
+
+  def store_recently_visited_firm
+    session_jar.update_recently_visited_firms(@firm, params)
   end
 end

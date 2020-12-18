@@ -25,3 +25,6 @@ bower.json
 
 # node modules
 /node_modules/
+
+.rubocop-*
+.tags

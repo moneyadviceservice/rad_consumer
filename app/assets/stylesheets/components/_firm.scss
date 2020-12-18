@@ -1,6 +1,12 @@
 .firm {
   @include clearfix();
   margin-bottom: $baseline-unit*6;
+
+  color: $firm-text-color;
+}
+
+.firm__details-heading {
+  margin-top: 0;
 }
 
 .firm__header {
@@ -8,8 +14,16 @@
   border: 1px solid $firm-border-color;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  padding: $baseline-unit*2;
-  color: $color-black;
+  padding: $baseline-unit*2 $baseline-unit*4;
+}
+
+.firm__service-heading {
+  margin-bottom: 0;
+}
+
+.firm__types-of-advice-heading {
+  @include body(16, 16);
+  margin-top: 0;
 }
 
 .firm__back-link {
@@ -19,7 +33,7 @@
 
 .firm__adviser-distance {
   margin-left: -2px;
-  margin-bottom: $baseline-unit*1;
+  margin-bottom: 0;
   font-weight: bold;
   color: $adviser-distance-text-color;
 }
@@ -42,7 +56,7 @@
   box-shadow: 0 1px 0 0 $result-shadow-color;
 
   @include respond-to($mq-m) {
-    padding-bottom: $baseline-unit*6;
+    padding-bottom: 0;
   }
 }
 
@@ -75,10 +89,20 @@
 }
 
 .firm__map {
-  height: 400px;
-  width: 100%;
+  display: none;
+
+  .js & {
+    display: block;
+    height: 400px;
+    width: 100%;
+    margin-bottom: $baseline-unit*4;
+  }
+}
+
+.firm__map-pin-items {
+  display: none;
 }
 
 .firm__divider {
-  border-top: 1px solid $color-grey-normal;
+  border-top: 1px solid $firm-divider-color;
 }

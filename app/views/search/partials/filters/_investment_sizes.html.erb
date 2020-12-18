@@ -1,0 +1,19 @@
+<fieldset class="search-filter__investment_size" data-further-info>
+  <legend class="search-filter__label">
+    <%= t('search_filter.investment_size.heading') %>
+    <%= render 'further_info_trigger' %>
+  </legend>
+
+  <p class="is-hidden further-info__content" data-further-info-target>
+    <%= t('search_filter.investment_size.tooltip') %>
+  </p>
+
+  <div class="form__group-item">
+    <%= f.label :investment_sizes, t('search_filter.investment_size.text'), class: 'form__label-heading is-hidden' %>
+    <%= f.select :investment_sizes,
+      form.options_for_investment_sizes,
+      { include_blank: false },
+      { name: "search_form[filters[investment_sizes]]",
+        class: 't-pension-pot-size search-filter__inset search-filter__constrained' } %>
+  </div>
+</fieldset>

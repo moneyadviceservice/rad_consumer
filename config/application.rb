@@ -1,14 +1,6 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -16,8 +8,15 @@ Bundler.require(*Rails.groups)
 
 module RadConsumer
   class Application < Rails::Application
-    config.autoload_paths << Rails.root.join('lib')
-    config.autoload_paths << Rails.root.join('app', 'forms')
+    config.load_defaults 5.2
+    Rails.application.config.active_record.belongs_to_required_by_default = false
+
+    config.time_zone = 'Europe/London'
+    config.chat_opening_hours = OpeningHours.new('8:00 AM', '6:00 PM')
+    config.chat_opening_hours.update(:sat, '08:00 AM', '3:00 PM')
+    config.chat_opening_hours.closed(:sun)
+
+    config.eager_load_paths << Rails.root.join('lib')
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -31,7 +30,14 @@ module RadConsumer
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
+    config.autoload_paths += Dir["#{config.root}/app/services/**/"]
+
+    # Switch off sassc concurrency. See this issue
+    # https://github.com/rails/sprockets/issues/581#issuecomment-486984663
+    config.assets.configure do |env|
+      env.export_concurrent = false
+    end
   end
 end
+
+ActiveRecord::SessionStore::Session.table_name = 'rad_consumer_sessions'

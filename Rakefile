@@ -6,23 +6,16 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 require 'rake/file_utils'
-include FileUtils
 
-KARMA_COMMAND = 'node_modules/.bin/karma'
-JSHINT_COMMAND = 'node_modules/.bin/jshint'
+KARMA_COMMAND = 'node_modules/.bin/karma'.freeze
+JSHINT_COMMAND = 'node_modules/.bin/jshint'.freeze
 
-def described_task(name, description:)
-  task name do
-    puts "\nRunning #{description}\n"
-    yield
-    puts
-  end
-end
-
-described_task :npm_test, description: 'npm test' do
-  fail 'ERROR: karma is not installed' unless File.exist? KARMA_COMMAND
-  fail 'ERROR: JSHint is not installed' unless File.exist? JSHINT_COMMAND
+task :npm_test do
+  puts 'Running npm test'
+  raise 'ERROR: karma is not installed' unless File.exist? KARMA_COMMAND
+  raise 'ERROR: JSHint is not installed' unless File.exist? JSHINT_COMMAND
   sh 'npm test'
+  puts
 end
 
 if Rails.env.production?
@@ -30,5 +23,5 @@ if Rails.env.production?
 else
   require 'rubocop/rake_task'
   RuboCop::RakeTask.new
-  task default: [:spec, :rubocop, :npm_test]
+  task default: %i[spec rubocop npm_test]
 end

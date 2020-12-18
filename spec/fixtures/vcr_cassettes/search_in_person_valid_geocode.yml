@@ -1,0 +1,392 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 14 Mar 2019 03:59:17 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 14 Mar 2019 03:59:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"_geoloc":{"lat":51.51807,"lng":-0.10852},"name":"Dr. Einar
+        Stamm","travel_distance":100,"firm":{"id":1},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"_geoloc":{"lat":51.510643,"lng":-0.052898},"name":"Kaleb
+        MacGyver III","travel_distance":100,"firm":{"id":2},"objectID":"133609432","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":3,"geoDistance":4061,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":4061}}},{"_geoloc":{"lat":50.826334,"lng":-0.140818},"name":"Mrs.
+        Connie Streich","travel_distance":100,"firm":{"id":3},"objectID":"133609442","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76510,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76510}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 03:59:17 GMT
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22firm%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%2C%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%5D%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=10\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Thu, 14 Mar 2019 03:59:17 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 14 Mar 2019 03:59:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+      Content-Encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"hits":[{"firm":{"id":1,"registered_name":"Test Firm Central London","postcode_searchable":true,"telephone_number":"07111
+        333 885","website_address":"http://example.net/offices/885","email_address":"office885@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[1],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":2,"total_advisers":2},"objectID":"133609412","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":1,"geoDistance":490,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":51.518,"lng":-0.1086,"distance":490}}},{"firm":{"id":2,"registered_name":"Test
+        Firm East London","postcode_searchable":true,"telephone_number":"07111 333
+        301","website_address":"http://example.net/offices/301","email_address":"office301@example.com","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[3],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":1,"total_advisers":2},"objectID":"133609432","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm East London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":3,"geoDistance":4061,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":51.5106,"lng":-0.0529,"distance":4061}}},{"firm":{"id":3,"registered_name":"Test
+        Firm Brighton","postcode_searchable":true,"telephone_number":null,"website_address":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products":true,"pension_transfer":true,"options_when_paying_for_care":true,"equity_release":true,"inheritance_tax_planning":true,"wills_and_probate":true,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[3],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"133609442","_highlightResult":{"firm":{"registered_name":{"value":"Test
+        Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76510,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76510}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%2C%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%5D%5D&getRankingInfo=true&page=0&hitsPerPage=10&query=","serverUsed":"c11-eu-3.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
+
+'
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 03:59:17 GMT
+- request:
+    method: post
+    uri: https://fc0uq0wje5-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D\u0026aroundRadius=1207008\u0026attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D\u0026distinct=true\u0026facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.25.2); Ruby (2.5.3)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 18 Mar 2019 17:57:57 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 18 Mar 2019 17:57:57 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '67'
+      Connection:
+      - keep-alive
+      X-Alg-Pt:
+      - '1'
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache
+      X-Content-Type-Options:
+      - nosniff
+      Content-Disposition:
+      - inline; filename=a.txt
+    body:
+      encoding: UTF-8
+      string: '{"message":"Index firm-advisers-test does not exist","status":404}
+
+'
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 17:57:57 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 13 Mar 2019 17:17:00 GMT
+      Expires:
+      - Thu, 14 Mar 2019 17:17:00 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '412'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=276
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '34552'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "United Kingdom",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 60.91569999999999,
+                          "lng" : 33.9165549
+                       },
+                       "southwest" : {
+                          "lat" : 34.5614,
+                          "lng" : -8.8988999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.378051,
+                       "lng" : -3.435973
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 61.5471111,
+                          "lng" : 9.584415699999999
+                       },
+                       "southwest" : {
+                          "lat" : 47.5554486,
+                          "lng" : -18.5319589
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
+                 "types" : [ "country", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 02:52:52 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A%202AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Thu, 14 Mar 2019 01:24:27 GMT
+      Expires:
+      - Fri, 15 Mar 2019 01:24:27 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '522'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=357
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '5336'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "EC4A 2AH",
+                       "short_name" : "EC4A 2AH",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Fleet Street",
+                       "short_name" : "Fleet St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "London",
+                       "short_name" : "London",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Greater London",
+                       "short_name" : "Greater London",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "England",
+                       "short_name" : "England",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Fleet St, London EC4A 2AH, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.5141193,
+                          "lng" : -0.111087
+                       },
+                       "southwest" : {
+                          "lat" : 51.5138213,
+                          "lng" : -0.1116846
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.5139284,
+                       "lng" : -0.1113308
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.51531928029149,
+                          "lng" : -0.110036819708498
+                       },
+                       "southwest" : {
+                          "lat" : 51.51262131970849,
+                          "lng" : -0.112734780291502
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJxwm7XrMEdkgRRsHhHI1JUag",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Thu, 14 Mar 2019 02:53:23 GMT
+recorded_with: VCR 4.0.0

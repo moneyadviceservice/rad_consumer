@@ -16,6 +16,7 @@ RSpec.configure do |config|
   config.disable_monkey_patching!
   config.infer_spec_type_from_file_location!
 
-  config.include FactoryGirl::Syntax::Methods
-  config.include ElasticSearchHelper, type: :feature
+  config.include FactoryBot::Syntax::Methods
+  config.include Rails.application.routes.url_helpers
+  config.example_status_persistence_file_path = '.spec/test_status.txt'
 end

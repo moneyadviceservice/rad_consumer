@@ -5,33 +5,33 @@ RSpec.describe SearchHelper, type: :helper do
     subject { helper.firm_has_qualifications_or_accreditations?(firm) }
 
     let(:firm) do
-      double(FirmResult,
+      double(Results::FirmPresenter,
              adviser_qualification_ids: adviser_qualification_ids,
              adviser_accreditation_ids: adviser_accreditation_ids)
     end
 
-    let(:qualification_1) do
-      Qualification.create!(id: 1, name: 'Qual 1', order: 1) # Ignored
-    end
-
-    let(:qualification_2) do
-      Qualification.create!(id: 2, name: 'Qual 2', order: 3) # Not ignored
-    end
-
-    let(:accreditation_1) do
-      Accreditation.create!(id: 1, name: 'Accred 1', order: 4) # Ignored
-    end
-
-    let(:accreditation_2) do
-      Accreditation.create!(id: 2, name: 'Accred 2', order: 1) # Not ignored
-    end
-
     let(:no_qualifications) { [] }
     let(:no_accreditations) { [] }
-    let(:ignored_qualifications) { [qualification_1.id] }
-    let(:ignored_accreditations) { [accreditation_1.id] }
-    let(:visible_qualifications) { [qualification_2.id] }
-    let(:visible_accreditations) { [accreditation_2.id] }
+    let(:ignored_qualifications) do
+      I18n.t('qualification.ordinal')
+          .select { |_k, v| v == 'ignored' }
+          .keys.map(&:to_s).map(&:to_i)
+    end
+    let(:ignored_accreditations) do
+      I18n.t('accreditation.ordinal')
+          .select { |_k, v| v == 'ignored' }
+          .keys.map(&:to_s).map(&:to_i)
+    end
+    let(:visible_qualifications) do
+      I18n.t('qualification.ordinal')
+          .reject { |_k, v| v == 'ignored' }
+          .keys.map(&:to_s).map(&:to_i)
+    end
+    let(:visible_accreditations) do
+      I18n.t('accreditation.ordinal')
+          .reject { |_k, v| v == 'ignored' }
+          .keys.map(&:to_s).map(&:to_i)
+    end
 
     context 'with no qualifications' do
       let(:adviser_qualification_ids) { no_qualifications }
@@ -91,13 +91,55 @@ RSpec.describe SearchHelper, type: :helper do
     end
   end
 
-  describe '#qualification_or_accreditation_key' do
-    it 'calls friendly_name on classified `kind`' do
-      Fred = double
-      expect(Fred).to receive(:friendly_name)
-        .with(1).and_return(:something)
-      return_value = helper.qualification_or_accreditation_key(1, :fred)
-      expect(return_value).to eq(:something)
+  describe '#firm_profile_link' do
+    subject { helper.firm_profile_link(firm_id, postcode) }
+    let(:firm_id) { 1 }
+
+    context 'when postcode is present' do
+      let(:postcode) { 'EC1N 2TD' }
+
+      it 'returns a link to the firm profile with the postcode' do
+        is_expected.to eq('/en/firms/1?postcode=EC1N+2TD')
+      end
+    end
+
+    context 'when postcode is not present' do
+      let(:postcode) { nil }
+
+      it 'returns a link to the firm profile without the postcode' do
+        is_expected.to eq('/en/firms/1')
+      end
+    end
+  end
+
+  describe '#render_logo' do
+    context 'when the professional credential identifier is marked "ignored"' do
+      let(:id) { 1 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+
+    context 'when a professional credential was not matched' do
+      let(:id) { 99999 }
+      let(:kind) { :qualification }
+
+      it 'returns nothing' do
+        expect(helper.render_logo(id, kind)).to be_blank
+      end
+    end
+
+    context 'when a professional credential identifier is present' do
+      let(:id) { 3 }
+      let(:kind) { :accreditation }
+
+      it 'returns logo markup for that credential' do
+        markup = Nokogiri::HTML(helper.render_logo(id, kind))
+
+        expect(markup.css('a.accreditation img[alt="ISO 22222"]')).to be_present
+      end
     end
   end
 end

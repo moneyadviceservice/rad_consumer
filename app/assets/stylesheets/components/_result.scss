@@ -66,6 +66,7 @@
 
 .result__office-adviser-count {
   @include body(16, 16);
+  margin-top: $baseline-unit;
 }
 
 .result__qualifications {

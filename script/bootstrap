@@ -1,0 +1,8 @@
+set -e
+
+rbenv install -s
+gem install bundler
+bundle install
+bundle exec bowndler update
+
+npm install

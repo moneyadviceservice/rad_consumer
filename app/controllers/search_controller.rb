@@ -1,27 +1,21 @@
 class SearchController < ApplicationController
+  include Helpers::SearchController
+
   def index
-    @form = SearchForm.new(params[:search_form])
+    @form = SearchForm.new(search_form_params)
 
     if @form.valid?
-      @result = FirmRepository.new.search(@form.to_query, page: page)
+      json = SearchFirms.call(
+        params: @form.as_json,
+        page: page,
+        session: session
+      )
+      @results = SearchResultsPresenter.new(json, page: page)
+      return render not_found if @results.total_pages < page
     else
       render searchable_view
     end
   end
 
-  def search_filter_options_description?
-    false
-  end
-
   helper_method :search_filter_options_description?
-
-  private
-
-  def searchable_view
-    from_results? ? 'search/index' : 'landing_page/show'
-  end
-
-  def from_results?
-    params.key?(:origin)
-  end
 end

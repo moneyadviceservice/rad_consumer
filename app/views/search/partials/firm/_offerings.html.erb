@@ -1,7 +1,8 @@
 <div class="result__information__item">
   <p class="keyword t-minimum-pot-size">
     <% if firm.minimum_pot_size? %>
-      <%= t('search.keywords.minimum_pot_size.title') %> <%= InvestmentSize.friendly_name(firm.minimum_pot_size_id) %>
+      <%= t('search.keywords.minimum_pot_size.title') %>
+      <%= t('investment_size.ordinal')[:"#{firm.minimum_pot_size_id}"] %>
     <% else %>
       <%= t('search.keywords.minimum_pot_size.none') %>
     <% end %>

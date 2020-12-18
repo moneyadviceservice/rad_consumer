@@ -23,6 +23,7 @@ Rails.application.configure do
     modules/EducationModule.js
     modules/ResultsModule.js
     modules/FirmMap.js
+    modules/ShowMore.js
     dough/assets/js/lib/*.js
     dough/assets/js/**/*.js
   )

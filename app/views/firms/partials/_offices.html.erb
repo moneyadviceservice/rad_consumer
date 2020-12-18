@@ -1,10 +1,53 @@
-<p class="address adr" >
-  <span class="visually-hidden fn org"><%= firm.name %></span>
-  <span class="address__line line-one"><%= firm.address_line_one %></span>
-  <% if firm.address_line_two.present? %>
-    <span class="address__line line-two"><%= firm.address_line_two %></span>
+<div data-dough-component="ShowMore">
+  <% offices.each do |office| %>
+    <div class="office t-office" data-dough-show-more-item>
+      <div class="l-2col">
+        <div class="l-2col-even l-office-col">
+          <div class="address t-address">
+            <div class="address__line"><%= office.address_line_one %>,</div>
+            <% if office.address_line_two.present? %>
+              <div class="address__line"><%= office.address_line_two %>,</div>
+            <% end %>
+            <div class="address__line"><%= office.address_town %>,</div>
+            <% if office.address_county.present? %>
+              <div class="address__line"><%= office.address_county %>,</div>
+            <% end %>
+            <div class="address__line t-postcode"><%= office.address_postcode %></div>
+          </div>
+        </div>
+        <div class="l-2col-even l-office-col">
+          <div class="office__telephone">
+            <%= link_to "tel:#{office.telephone_number}", class: 'contact-link' do %>
+              <%= svg_icon :phone_ringing, title: t('firms.show.panels.offices.telephone'), class: 'contact-link__svg-icon'
+              %><%= office.telephone_number %>
+            <% end %>
+          </div>
+          <div class="office__email">
+            <%= link_to "mailto:#{office.email_address}", class: 'contact-link' do %>
+              <%= svg_icon :envelope, title: t('firms.show.panels.offices.email_office'), class: 'contact-link__svg-icon'
+              %><%= t('firms.show.panels.offices.email_office') %>
+            <% end %>
+          </div>
+          <div class="office__website">
+            <%= link_to website_url(office, firm), class: 'contact-link', target: '_blank' do %>
+              <%= svg_icon :offsite_link, title: t('firms.show.panels.offices.website'), class: 'contact-link__svg-icon'
+              %><%= display_website(office, firm) %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% if office.disabled_access %>
+        <div class="l-1col l-office-col">
+          <div class="office__disabled-access">
+            <%= svg_icon :tick_mark, class: 'office__tick-icon' %>
+            <%= t('firms.show.panels.offices.disabled_access') %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-  <span class="address__line locality"><%= firm.address_town %></span>
-  <span class="address__line region"><%= firm.address_county %></span>
-  <span class="address__line post-code"><%= firm.address_postcode %></span>
-</p>
+
+  <a data-dough-show-more-trigger class="office__show-more-trigger is-hidden" href="#">
+    <%= t('firms.show.panels.offices.show_more') %>
+  </a>
+</div>

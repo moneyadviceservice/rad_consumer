@@ -5,6 +5,17 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
 
+  BANNER_DISMISSED_COOKIE_NAME = '_covid_banner'.freeze
+  BANNER_DISMISSED_COOKIE_VALUE = 'y'.freeze
+
+  include Chat
+
+  def covid_banner_dismissed?
+    cookies.permanent[BANNER_DISMISSED_COOKIE_NAME] != BANNER_DISMISSED_COOKIE_VALUE
+  end
+
+  helper_method :covid_banner_dismissed?
+
   private
 
   def default_url_options(options = {})
@@ -19,5 +30,13 @@ class ApplicationController < ActionController::Base
 
   def page
     params[:page].try(:to_i) || 1
+  end
+
+  def not_found
+    {
+      file: 'public/404.html',
+      status: :not_found,
+      layout: false
+    }
   end
 end

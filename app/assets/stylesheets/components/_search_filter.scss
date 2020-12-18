@@ -1,13 +1,11 @@
 .search-filter {
   border-top-left-radius: $search-filter-radius;
   border-top-right-radius: $search-filter-radius;
-  border: 1px solid  $search-filter-border-color;
-  overflow: hidden;
 }
 
 .search-filter--container {
   @include row(12);
-  padding-top: $baseline-unit*3;
+  padding-top: $baseline-unit*2;
 }
 
 .search-filter--container .l-results__filter {
@@ -62,6 +60,13 @@
   border: 1px solid $search-filter-border-color;
 }
 
+.search-filter__alt-title {
+  @include body(16, 12);
+  font-weight: 500;
+  color: $color-black;
+  margin: $baseline-unit*4 $baseline-unit*3 $baseline-unit*4 0;
+}
+
 .search-filter__label {
   @include body(18, 24);
   font-weight: 700;
@@ -98,8 +103,18 @@
 }
 
 .search-filter__button {
+  @include column(12);
   margin-top: $baseline-unit*4;
   margin-bottom: $baseline-unit*3;
+  margin-left: 0;
+
+  @include respond-to($mq-s) {
+    @include column(4);
+  }
+
+  @include respond-to($mq-m) {
+    @include column(5);
+  }
 }
 
 .search-filter__button--inline {
@@ -112,7 +127,7 @@
 
 .search-filter__field[type="text"] {
   width: 100%;
-  max-width: 200px;
+  max-width: 235px;
   height: 34px;
   border: 1px solid $search-filter-input-border-color;
   padding-left: $baseline-unit*2;
@@ -120,11 +135,6 @@
 
 .search-filter__field--padded {
   margin-bottom: $baseline-unit*4;
-}
-
-.search-filter__item-inset {
-  margin-top: $baseline-unit*2;
-  padding-left: $baseline-unit*4;
 }
 
 .search-filter__constrained {

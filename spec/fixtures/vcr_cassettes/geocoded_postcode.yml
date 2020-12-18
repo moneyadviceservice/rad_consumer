@@ -1,0 +1,221 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=RG2%201AA,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 18 Mar 2019 10:39:40 GMT
+      Expires:
+      - Tue, 19 Mar 2019 10:39:40 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '477'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=380
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '714'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG2",
+                       "short_name" : "RG2",
+                       "types" : [ "postal_code", "postal_code_prefix" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "England",
+                       "short_name" : "England",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Reading RG2, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.4483857,
+                          "lng" : -0.8797254999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.3775133,
+                          "lng" : -1.0000148
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.4115607,
+                       "lng" : -0.9262349
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.4483857,
+                          "lng" : -0.8797254999999999
+                       },
+                       "southwest" : {
+                          "lat" : 51.3775133,
+                          "lng" : -1.0000148
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJJ-zUf1OCdkgRhlweI7vWAN0",
+                 "types" : [ "postal_code", "postal_code_prefix" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 10:51:34 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=RG11GG,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 18 Mar 2019 10:39:43 GMT
+      Expires:
+      - Tue, 19 Mar 2019 10:39:43 GMT
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      Content-Length:
+      - '497'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=301
+      Cache-Control:
+      - public, max-age=86400
+      Age:
+      - '711'
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="46,44,43,39"
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "RG1 1GY",
+                       "short_name" : "RG1 1GY",
+                       "types" : [ "postal_code" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "postal_town" ]
+                    },
+                    {
+                       "long_name" : "Reading",
+                       "short_name" : "Reading",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "England",
+                       "short_name" : "England",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Reading RG1 1GY, UK",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 51.461134,
+                          "lng" : -0.9740101999999998
+                       },
+                       "southwest" : {
+                          "lat" : 51.460577,
+                          "lng" : -0.9754035
+                       }
+                    },
+                    "location" : {
+                       "lat" : 51.4607254,
+                       "lng" : -0.9747992000000001
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 51.4622044802915,
+                          "lng" : -0.9733578697084978
+                       },
+                       "southwest" : {
+                          "lat" : 51.4595065197085,
+                          "lng" : -0.9760558302915019
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJVxBDmxmbdkgRqXJ-A18b3ks",
+                 "types" : [ "postal_code" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Mon, 18 Mar 2019 10:51:34 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,18 @@
+.adviser {
+  @include clearfix();
+  border-top: 1px solid $adviser-border-color;
+  color: $adviser-text-color;
+  padding: $baseline-unit*4 0;
+}
+
+.adviser:first-of-type {
+  border: none;
+  padding-top: $baseline-unit*2;
+}
+
+.adviser__show-more-trigger {
+  display: block;
+  border-top: 1px solid $adviser-border-color;
+  text-align: center;
+  padding-top: $baseline-unit*2;
+}

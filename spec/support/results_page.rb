@@ -19,10 +19,6 @@ class ResultsPage < SitePrism::Page
     first("a[rel='next']").click
   end
 
-  def showing_firms?(first, to:, of:)
-    summary.text == "Showing #{first}-#{to} of #{of} firms"
-  end
-
   def firm_names
     firms.collect(&:name)
   end

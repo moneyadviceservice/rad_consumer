@@ -2,23 +2,32 @@
   <div class="l-firm">
     <div class="l-1col">
       <%= heading_tag(t('page_title'), level: 1, class: 'l-firm__profile-heading') %>
-      <span class="firm__back-link">
-        <%= link_to search_path(search_form: params[:search_form]) do %>
-          <%= svg_icon 'pagination-prev', class: 'firm__back-icon'
-          %><%= t('firms.show.go_back') %>
-        <% end %>
-      </span>
+      <% if @session_jar.last_search.present? %>
+        <span class="firm__back-link">
+          <%= link_to @session_jar.last_search_url(I18n.locale) do %>
+            <%= svg_icon 'pagination-prev', class: 'firm__back-icon'
+            %><%= t('firms.show.go_back') %>
+          <% end %>
+        </span>
+      <% end %>
     </div>
 
     <div class="l-firm__main">
       <div class="firm">
-        <%= render partial: 'firms/partials/header', locals: { search_form: @search_form } %>
-        <%= render partial: 'firms/partials/content', locals: { search_form: @search_form } %>
+        <%= render partial: 'firms/partials/header',
+                   locals: { firm: @firm, offices: @firm.offices } %>
+        <%= render partial: 'firms/partials/content',
+                   locals: {
+                     firm: @firm,
+                     offices: @firm.offices,
+                     advisers: @firm.advisers
+                   } %>
       </div>
     </div>
 
     <div class="l-firm__side">
-      <%= render 'firms/partials/profile_help', search_form: @search_form %>
+      <%= render partial: 'firms/partials/profile_help',
+                 locals: { firm: @firm } %>
     </div>
   </div>
 </div>

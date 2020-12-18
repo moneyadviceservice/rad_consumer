@@ -21,6 +21,10 @@
   margin-bottom: 0;
 }
 
+.l-firm__heading {
+  margin-top: $baseline-unit;
+}
+
 .l-firm__heading--collapse {
   margin-top: -($baseline-unit);
 }
@@ -42,4 +46,9 @@
   @include respond-to($mq-xl) {
     padding-left: $baseline-unit*5;
   }
+}
+
+.l-firm__tab-triggers {
+  margin-left: $baseline-unit*2;
+  margin-right: $baseline-unit*2;
 }
