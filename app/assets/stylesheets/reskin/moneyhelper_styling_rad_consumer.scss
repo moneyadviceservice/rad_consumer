@@ -3,6 +3,7 @@
 // -- Headings / Paragraph / Info --------------------------------------
 
 .l-landing-page__search-filter__header {
+    font-family: "Roobert-Regular", sans-serif;
     color: $text_secondary;
 }
 
@@ -85,6 +86,12 @@ h2.search-filter__heading{
     color: $text_secondary;
 }
 
+.validation-summary__error {
+    a {
+        font-family: "Roobert-Regular", sans-serif;
+    }
+}
+
 // ----------------------------------------------------
 
 // -- Hyperlinks --------------------------------------
@@ -93,7 +100,8 @@ h2.search-filter__heading{
 .advice-reasons__explaination,
 .video__description,
 .l-landing-page__other-information,
-.recently-viewed__item {
+.recently-viewed__item,
+.unstyled-list li {
     a {
         font-family: "Roobert-Regular", sans-serif;
         font-style: normal;
@@ -168,6 +176,11 @@ h2.search-filter__heading{
     .pagination__icon {
         display: none;
     }
+}
+
+
+h2 a.outline-button {
+    font-family: 'Roobert-SemiBold', sans-serif;
 }
 
 .outline-button,
@@ -266,10 +279,10 @@ h2.search-filter__heading{
 // -- Input Items / Labels ----------------------------
 
 
-label{
-    font-family: inherit;
-    font-weight: normal;
-}
+// label{
+//     font-family: inherit;
+//     font-weight: normal;
+// }
 
 // ----------------------------------------------------
 
