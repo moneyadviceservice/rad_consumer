@@ -44,6 +44,12 @@ $mobile_width: 768px;
     src: font-url('Roobert-Bold.woff2') format('woff2'),
          font-url('Roobert-Bold.woff') format('woff');
 }
+
+@font-face{
+    font-family: 'Roobert-SemiBold';
+    src: font-url('Roobert-SemiBold.woff2') format('woff2'),
+         font-url('Roobert-SemiBold.woff') format('woff');
+}
 // ----------------------------------------------------
 
 // -- Icons -------------------------------------------
