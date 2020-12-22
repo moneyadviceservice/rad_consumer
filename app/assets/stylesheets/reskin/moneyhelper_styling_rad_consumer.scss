@@ -100,8 +100,7 @@ h2.search-filter__heading{
 .advice-reasons__explaination,
 .video__description,
 .l-landing-page__other-information,
-.recently-viewed__item,
-.unstyled-list li {
+.recently-viewed__item {
     a {
         font-family: "Roobert-Regular", sans-serif;
         font-style: normal;
@@ -127,6 +126,11 @@ h2.search-filter__heading{
     &:visited {
         color: $link_visited;
     }
+}
+
+.is-hidden-on-mobile a {
+    font-family: "Roobert-Regular", sans-serif;
+    color: $magenta_primary;
 }
 
 // ----------------------------------------------------
