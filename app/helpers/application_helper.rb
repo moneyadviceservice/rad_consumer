@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def rad_signup_url
-    'https://radsignup.moneyadviceservice.org.uk/'
+    'https://radsignup.moneyhelper.org/'
   end
 
   def svg_icon(name, options = {})

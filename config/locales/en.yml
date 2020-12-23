@@ -7,8 +7,8 @@ en:
     required: Required
     further_information: Further information
 
-  mas: The Money Advice Service
-  mas_home_url: https://www.moneyadviceservice.org.uk/en
+  mas: Money Helper
+  mas_home_url: https://www.moneyhelper.org/en
 
   feedback_button: Tell us how we can improve this tool
 
@@ -101,7 +101,7 @@ en:
   skip_links:
     to_main: Skip to main content
     to_accessibility: Accessibility Statement
-    to_accessibility_link: https://www.moneyadviceservice.org.uk/en/static/accessibility
+    to_accessibility_link: https://www.moneyhelper.org/en/static/accessibility
 
   locales:
     cy: Cymraeg
@@ -115,14 +115,14 @@ en:
   covid_banner:
     head: Coronavirus – what it means for you
     body_html: <a href="%{href}">Find out what you're entitled to</a>
-    href: https://www.moneyadviceservice.org.uk/en/articles/coronavirus-what-it-means-for-you
+    href: https://www.moneyhelper.org/en/articles/coronavirus-what-it-means-for-you
 
   breadcrumbs:
     home: Home
     pension_and_retirement: Pensions and Retirement
-    pension_and_retirement_url: https://www.moneyadviceservice.org.uk/en/categories/pensions-and-retirement
+    pension_and_retirement_url: https://www.moneyhelper.org/en/categories/pensions-and-retirement
     financial_advice: Financial Advice
-    financial_advice_url: https://www.moneyadviceservice.org.uk/en/categories/getting-advice-about-retirement
+    financial_advice_url: https://www.moneyhelper.org/en/categories/getting-advice-about-retirement
     directory: Retirement Adviser Directory
     directory_url: /en
 
@@ -178,19 +178,19 @@ en:
   footer_primary:
     links:
       - title: About us
-        url: https://www.moneyadviceservice.org.uk/en/static/about-us
+        url: https://www.moneyhelper.org/en/static/about-us
       - title: Our debt work
-        url: https://www.moneyadviceservice.org.uk/en/categories/our-debt-work
+        url: https://www.moneyhelper.org/en/categories/our-debt-work
       - title: Media centre
-        url: https://www.moneyadviceservice.org.uk/en/static/media-centre
+        url: https://www.moneyhelper.org/en/static/media-centre
       - title: Financial Capability
         url: http://www.fincap.org.uk/
       - title: Partners
-        url: https://www.moneyadviceservice.org.uk/en/categories/partners
+        url: https://www.moneyhelper.org/en/categories/partners
       - title: Jobs
-        url: https://www.moneyadviceservice.org.uk/en/static/jobs
+        url: https://www.moneyhelper.org/en/static/jobs
       - title: Tools &amp; calculators
-        url: https://www.moneyadviceservice.org.uk/en/categories/tools-and-calculators
+        url: https://www.moneyhelper.org/en/categories/tools-and-calculators
     new-window-label: Opens in a new window
     facebook-likes: Likes
     twitter-followers: Followers
@@ -210,17 +210,17 @@ en:
     mps: Money & Pensions Service
     links:
       - title: Contact us
-        url: https://www.moneyadviceservice.org.uk/en/static/contact-us
+        url: https://www.moneyhelper.org/en/static/contact-us
       - title: Terms &amp; conditions
-        url: https://www.moneyadviceservice.org.uk/en/static/terms-and-conditions
+        url: https://www.moneyhelper.org/en/static/terms-and-conditions
       - title: Privacy notice
-        url: https://www.moneyadviceservice.org.uk/en/corporate/privacy
+        url: https://www.moneyhelper.org/en/corporate/privacy
       - title: Accessibility
-        url: https://www.moneyadviceservice.org.uk/en/static/accessibility
+        url: https://www.moneyhelper.org/en/static/accessibility
       - title: Cookies
-        url: https://www.moneyadviceservice.org.uk/en/static/cookie_notice_en
+        url: https://www.moneyhelper.org/en/static/cookie_notice_en
       - title: Sitemap
-        url: https://www.moneyadviceservice.org.uk/en/sitemap
+        url: https://www.moneyhelper.org/en/sitemap
 
   page_title: Find a retirement adviser
 
@@ -249,7 +249,7 @@ en:
       - text: Financial advisers are regulated so you are protected if things go wrong.
       - text: They can choose products from a wide range of providers.
       - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
-    guides_html: 'Our guides, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
+    guides_html: 'Our guides, <a href="https://www.moneyhelper.org/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
@@ -269,17 +269,17 @@ en:
     heading: Retirement income options
     content: Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
     link_text: Understand and compare retirement income options
-    link_url: 'https://www.moneyadviceservice.org.uk/en/retirement-income-options'
+    link_url: 'https://www.moneyhelper.org/en/retirement-income-options'
 
   useful_links:
     heading: Useful links
     links:
       - text: Choosing a financial adviser
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser'
+        url: 'https://www.moneyhelper.org/en/articles/choosing-a-financial-adviser'
       - text: Checklist - preparing for retirement
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/checklist-things-to-do-as-retirement-approaches'
+        url: 'https://www.moneyhelper.org/en/articles/checklist-things-to-do-as-retirement-approaches'
       - text: Options for using your pension pot
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/options-for-using-your-pension-pot'
+        url: 'https://www.moneyhelper.org/en/articles/options-for-using-your-pension-pot'
 
   our_promise:
     heading: Our promise to you
@@ -293,11 +293,11 @@ en:
     content: 'If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:'
     links:
       - title: Retirement – why should I get advice?
-        url: https://www.moneyadviceservice.org.uk/en/articles/when-and-where-to-get-pensions-help-and-advice
+        url: https://www.moneyhelper.org/en/articles/when-and-where-to-get-pensions-help-and-advice
       - title: Choosing a financial adviser
-        url: https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser
+        url: https://www.moneyhelper.org/en/articles/choosing-a-financial-adviser
       - title: Key questions to ask your financial adviser
-        url: https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser
+        url: https://www.moneyhelper.org/en/articles/key-questions-to-ask-your-financial-adviser
 
   search_filter:
     landing_page:
@@ -356,11 +356,11 @@ en:
           - text: Many financial advisers will meet in you in person either at their office, your home, or a place convenient to you.   If you prefer to meet your adviser face-to-face then you should choose the ‘in-person’ option and give your postcode.
           - text: However, increasingly, there are advisers who offer advice by telephone or online only.  These advisers often have less overheads and if you are happy to receive advice this way, you may find it can save you money.  Choose the ‘phone or online only’ option.
           - text: Or you can contact advisers offering both options to compare service and costs.
-          - text: The important thing to remember is that all the advisers on the Money Advice Service Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
+          - text: The important thing to remember is that all the advisers on the Money Helper Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       qualifications_and_accreditations:
         heading: 'I would like an adviser with the following accreditations / qualifications:'
         tooltip_html: |
-          Find out more about adviser accreditations/qualifications by clicking <a href="https://directory.moneyadviceservice.org.uk/en/glossary/#chartered_fp" target="_blank">here</a>.
+          Find out more about adviser accreditations/qualifications by clicking <a href="https://directory.moneyhelper.org/en/glossary/#chartered_fp" target="_blank">here</a>.
         label: Filter by adviser qualification or accreditation
         url: '/en/glossary/#chartered_fp'
       qualification:
