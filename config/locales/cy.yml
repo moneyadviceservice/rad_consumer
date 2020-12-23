@@ -7,8 +7,8 @@ cy:
     required: Gofynnol
     further_information: Rhagor o wybodaeth
 
-  mas: Y Gwasanaeth Cynghori Ariannol
-  mas_home_url: https://www.moneyadviceservice.org.uk/cy
+  mas: Helpiwr Arian
+  mas_home_url: https://www.moneyhelper.org/cy
 
   feedback_button: "Dywedwch wrthym sut y gallwn wella'r offeryn hwn"
 
@@ -101,7 +101,7 @@ cy:
   skip_links:
     to_main: Skip to main content
     to_accessibility: Accessibility Statement
-    to_accessibility_link: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
+    to_accessibility_link: https://www.moneyhelper.org/cy/static/hygyrchedd
 
   locales:
     cy: Cymraeg
@@ -115,14 +115,14 @@ cy:
   covid_banner: 
     head: Coronafeirws – beth mae’n ei olygu i chi
     body_html: <a href="%{href}">Darganfyddwch beth mae gennych hawl iddo</a>
-    href: https://www.moneyadviceservice.org.uk/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
+    href: https://www.moneyhelper.org/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
 
   breadcrumbs:
     home: Hafan
     pension_and_retirement: Pensiynau ac ymddeoliad
-    pension_and_retirement_url: https://www.moneyadviceservice.org.uk/cy/categories/pensions-and-retirement
+    pension_and_retirement_url: https://www.moneyhelper.org/cy/categories/pensions-and-retirement
     financial_advice: Cyngor ariannol
-    financial_advice_url: https://www.moneyadviceservice.org.uk/cy/categories/getting-advice-about-retirement
+    financial_advice_url: https://www.moneyhelper.org/cy/categories/getting-advice-about-retirement
     directory: Cyfeirlyfr Cynghorydd Ymddeoliad
     directory_url: /cy
 
@@ -179,19 +179,19 @@ cy:
   footer_primary:
     links:
       - title: Amdanom ni
-        url: https://www.moneyadviceservice.org.uk/cy/static/amdanom-ni
+        url: https://www.moneyhelper.org/cy/static/amdanom-ni
       - title: Ein gwaith dyledion
-        url: https://www.moneyadviceservice.org.uk/cy/categories/our-debt-work
+        url: https://www.moneyhelper.org/cy/categories/our-debt-work
       - title: Canolfan y cyfryngau
-        url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
+        url: https://www.moneyhelper.org/cy/static/canolfan-gyfryngau
       - title: Galluogrwydd Ariannol
         url: http://www.fincap.org.uk/cymru
       - title: Partneriaid
-        url: https://www.moneyadviceservice.org.uk/cy/categories/Partners
+        url: https://www.moneyhelper.org/cy/categories/Partners
       - title: Swyddi
-        url: https://www.moneyadviceservice.org.uk/cy/static/swyddi
+        url: https://www.moneyhelper.org/cy/static/swyddi
       - title: Offer a chyfrifianellau
-        url: https://www.moneyadviceservice.org.uk/cy/categories/tools-and-calculators
+        url: https://www.moneyhelper.org/cy/categories/tools-and-calculators
     new-window-label: Yn agor mewn ffenestr newydd
     facebook-likes: Wedi hoffi
     twitter-followers: Dilynwyr
@@ -211,17 +211,17 @@ cy:
     mps: Gwasanaeth Arian a Phensiynau
     links:
       - title: Cysylltu â ni
-        url: https://www.moneyadviceservice.org.uk/cy/static/cysylltu-a-ni
+        url: https://www.moneyhelper.org/cy/static/cysylltu-a-ni
       - title: Amodau a Thelerau
-        url: https://www.moneyadviceservice.org.uk/cy/static/telerau-ac-amodau
+        url: https://www.moneyhelper.org/cy/static/telerau-ac-amodau
       - title: Rhybudd preifatrwydd
-        url: https://www.moneyadviceservice.org.uk/cy/corporate/polisipreifatrwydd
+        url: https://www.moneyhelper.org/cy/corporate/polisipreifatrwydd
       - title: Hygyrchedd
-        url: https://www.moneyadviceservice.org.uk/cy/static/hygyrchedd
+        url: https://www.moneyhelper.org/cy/static/hygyrchedd
       - title: Cwcis
-        url: https://www.moneyadviceservice.org.uk/cy/static/cookie_notice_cy
+        url: https://www.moneyhelper.org/cy/static/cookie_notice_cy
       - title: Map safle
-        url: https://www.moneyadviceservice.org.uk/cy/static/canolfan-gyfryngau
+        url: https://www.moneyhelper.org/cy/static/canolfan-gyfryngau
 
   page_title: Dod o hyd i gynghorydd ymddeoliad
 
@@ -246,7 +246,7 @@ cy:
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
-    guides_html: 'Ein canllawiau, <a href="https://www.moneyadviceservice.org.uk/cy/articles/ymddeoliad-a-pam-ddylwn-i-gael-cyngor">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyadviceservice.org.uk/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
+    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org/cy/articles/ymddeoliad-a-pam-ddylwn-i-gael-cyngor">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyhelper.org/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyhelper.org/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
       - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
       - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
@@ -270,17 +270,17 @@ cy:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
     link_text: Deall a chymharu opsiynau incwm ymddeol
-    link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
+    link_url: 'https://www.moneyhelper.org/cy/opsiynau-incwm-ymddeoliad'
 
   useful_links:
     heading: Dolen ddefnyddiol
     links:
       - text: Dewis cynghorydd ariannol
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol'
+        url: 'https://www.moneyhelper.org/cy/articles/dewis-cynghorydd-ariannol'
       - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
+        url: 'https://www.moneyhelper.org/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
       - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
+        url: 'https://www.moneyhelper.org/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
 
   our_promise:
     heading: Ein haddewid i chi
@@ -294,11 +294,11 @@ cy:
     content: 'Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:'
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
-        url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        url: https://www.moneyhelper.org/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
       - title: Dewis cynghorydd ariannol
-        url: https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol
+        url: https://www.moneyhelper.org/cy/articles/dewis-cynghorydd-ariannol
       - title: Cwestiynau allweddol i’w gofyn i’ch cynghorydd ariannol
-        url: https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
+        url: https://www.moneyhelper.org/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
 
   search_filter:
     landing_page:
@@ -359,7 +359,7 @@ cy:
       qualifications_and_accreditations:
         heading: 'Hoffwn gael cynghorydd sydd â’r achrediadau / cymwysterau canlynol:'
         tooltip_html: |
-          Dysgwch ragor am achrediadau/cymwysterau cynghorydd trwy glicio  <a href="https://directory.moneyadviceservice.org.uk/cy/glossary" target="_blank">yma</a>.
+          Dysgwch ragor am achrediadau/cymwysterau cynghorydd trwy glicio  <a href="https://directory.moneyhelper.org/cy/glossary" target="_blank">yma</a>.
         label: Hidlo yn Ùl cymhwyster neu achrediad
         url: '/cy/glossary#chartered_fp'
       qualification:
