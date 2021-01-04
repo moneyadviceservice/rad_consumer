@@ -24,7 +24,7 @@ gem 'dough-ruby',
 gem 'geocoder', '~> 1.6.3'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
-gem 'kaminari'
+gem 'kaminari', '>= 1.2.1'
 gem 'language_list', '~> 1.2.1'
 gem 'opening_hours'
 gem 'pg', '~> 0.20.0'
