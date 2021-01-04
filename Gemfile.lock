@@ -230,7 +230,7 @@ GEM
     nap (1.1.0)
     nio4r (2.5.2)
     no_proxy_fix (0.1.2)
-    nokogiri (1.10.8)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -398,6 +398,7 @@ DEPENDENCIES
   language_list (~> 1.2.1)
   launchy
   listen
+  nokogiri (= 1.10.10)
   opening_hours
   pg (~> 0.20.0)
   poltergeist
