@@ -199,7 +199,8 @@ GEM
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
     kgio (2.11.2)
-    kramdown (2.1.0)
+    kramdown (2.3.0)
+      rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     language_list (1.2.1)
@@ -289,6 +290,7 @@ GEM
       ffi (~> 1.0)
     rb-readline (0.5.5)
     redis (3.3.5)
+    rexml (3.2.4)
     rollbar (2.15.6)
       multi_json
     rspec-core (3.9.0)
