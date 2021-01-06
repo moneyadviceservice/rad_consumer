@@ -170,7 +170,7 @@ GEM
     faraday-http-cache (2.0.0)
       faraday (~> 0.8)
     ffi (1.11.1)
-    geocoder (1.4.9)
+    geocoder (1.6.4)
     gherkin (5.1.0)
     git (1.5.0)
     globalid (0.4.2)
@@ -388,7 +388,7 @@ DEPENDENCIES
   dough-ruby!
   factory_bot_rails
   faker
-  geocoder (~> 1.4.7)
+  geocoder (~> 1.6.4)
   httpclient (~> 2.8.3)
   jquery-rails
   kaminari

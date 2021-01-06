@@ -21,7 +21,7 @@ gem 'dough-ruby',
     git: 'https://github.com/moneyadviceservice/dough.git',
     branch: 'master',
     ref: 'bc219c1'
-gem 'geocoder', '~> 1.4.7'
+gem 'geocoder', '~> 1.6.4'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
 gem 'kaminari'
