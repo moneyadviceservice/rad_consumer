@@ -25,6 +25,28 @@ p{
 }
 // ---------------------------------------------------------------------------------
 
+// -- Links ------------------------------------------------------------------------
+    a{
+        color: $magenta_primary!important;
+        text-decoration: underline;
+        font-size: 18px!important;
+        &:hover{
+            color: $magenta_dark;
+            text-decoration: none;
+        }
+        &:active{
+            color: $magenta_darker;
+            text-decoration: none;
+        }
+        &:focus{
+            color: $text_secondary;
+            background-color: $yellow_secondary;
+            border-bottom: 4px solid $support_focus;
+            text-decoration: none!important;
+            outline: none;
+        }
+    }
+// ---------------------------------------------------------------------------------
 
 // -- Buttons ----------------------------------------------------------------------
 .button{
