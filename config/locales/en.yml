@@ -249,7 +249,7 @@ en:
       - text: Financial advisers are regulated so you are protected if things go wrong.
       - text: They can choose products from a wide range of providers.
       - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
-    guides_html: 'Our guides, <a href="https://www.moneyadviceservice.org.uk/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyadviceservice.org.uk/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyadviceservice.org.uk/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
+    guides_html: 'Our guides, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-problems/complaints/how-to-complain-about-a-pension">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
@@ -275,11 +275,11 @@ en:
     heading: Useful links
     links:
       - text: Choosing a financial adviser
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser'
+        url: 'https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser'
       - text: Checklist - preparing for retirement
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/checklist-things-to-do-as-retirement-approaches'
+        url: 'https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/when-can-i-retire/checklist-preparing-for-retirement'
       - text: Options for using your pension pot
-        url: 'https://www.moneyadviceservice.org.uk/en/articles/options-for-using-your-pension-pot'
+        url: 'https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/drawing-a-pension/your-options-for-using-your-defined-contribution-pension'
 
   our_promise:
     heading: Our promise to you
@@ -293,11 +293,11 @@ en:
     content: 'If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:'
     links:
       - title: Retirement – why should I get advice?
-        url: https://www.moneyadviceservice.org.uk/en/articles/when-and-where-to-get-pensions-help-and-advice
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice
       - title: Choosing a financial adviser
-        url: https://www.moneyadviceservice.org.uk/en/articles/choosing-a-financial-adviser
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser
       - title: Key questions to ask your financial adviser
-        url: https://www.moneyadviceservice.org.uk/en/articles/key-questions-to-ask-your-financial-adviser
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser
 
   search_filter:
     landing_page:

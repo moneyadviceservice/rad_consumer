@@ -246,7 +246,7 @@ cy:
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
-    guides_html: 'Ein canllawiau, <a href="https://www.moneyadviceservice.org.uk/cy/articles/ymddeoliad-a-pam-ddylwn-i-gael-cyngor">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyadviceservice.org.uk/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
+    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyadviceservice.org.uk/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
       - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
       - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
@@ -270,17 +270,17 @@ cy:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
     link_text: Deall a chymharu opsiynau incwm ymddeol
-    link_url: 'https://www.moneyadviceservice.org.uk/cy/opsiynau-incwm-ymddeoliad'
+    link_url: 'https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/pension-wise/explore-your-pension-options'
 
   useful_links:
     heading: Dolen ddefnyddiol
     links:
       - text: Dewis cynghorydd ariannol
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol'
+        url: 'https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser'
       - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
+        url: 'https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/when-can-i-retire/checklist-preparing-for-retirement' 
       - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
-        url: 'https://www.moneyadviceservice.org.uk/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
+        url: 'https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/drawing-a-pension/your-options-for-using-your-defined-contribution-pension'
 
   our_promise:
     heading: Ein haddewid i chi
@@ -294,11 +294,11 @@ cy:
     content: 'Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:'
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
-        url: https://www.moneyadviceservice.org.uk/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice
       - title: Dewis cynghorydd ariannol
-        url: https://www.moneyadviceservice.org.uk/cy/articles/dewis-cynghorydd-ariannol
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser
       - title: Cwestiynau allweddol i’w gofyn i’ch cynghorydd ariannol
-        url: https://www.moneyadviceservice.org.uk/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser
 
   search_filter:
     landing_page:
