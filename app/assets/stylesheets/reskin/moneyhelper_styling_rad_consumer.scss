@@ -260,11 +260,12 @@ h2 a.outline-button {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     &:hover {
-        background: $light_grayish_magenta;
+        background: rgba(255,255,255,0.01);
         text-decoration: underline;
     }
     &:focus {
         background: $yellow_secondary;
+        outline: none;
     }
 
     @media (max-width: $mobile_width) {
@@ -292,6 +293,7 @@ h2 a.outline-button {
     &:focus {
         background: $yellow_secondary;
         border-bottom: 3px solid #8200d1;
+        outline: none;
     }
     @media (max-width: $mobile_width) {
         border: 1px solid #9da1ca;
@@ -349,3 +351,63 @@ h2 a.outline-button,
     text-decoration: none;
 }
 
+.js .icon--further-info{
+    font-size: 16px!important;
+}
+.l-landing-page__register-link{
+    font-size: 16px;
+}
+.result__heading-text{
+    .t-name a{
+        font-size: 23px!important;
+    }
+}
+.t-distance_to_the_nearest_adviser{
+    font-family: 'Roobert-SemiBold', sans-serif;
+    color: $text_secondary;
+    font-weight: normal;
+    .firm__adviser-distance-pin{
+        fill: $text_secondary;
+    }
+}
+.t-number_of_advisers_message{
+    font-family: 'Roobert-Regular', sans-serif;
+    color: $text_secondary;
+}
+.t-view-profile{
+    font-size: 14px;
+}
+.firm__back-link a{
+    font-family: 'Roobert-Regular', sans-serif;
+}
+.outline-button{
+    svg{
+        width: 16px;
+        height: 16px;
+        margin: 0px 0.375rem 2px 0;
+    }
+}
+.tab-selector__trigger{
+    font-family: 'Roobert-Regular', sans-serif;
+}
+.plain_list,
+.callout__item,
+.advice-method__list,
+.address__line,
+.office__disabled-access{
+    font-family: 'Roobert-Regular', sans-serif;
+    color: $text_secondary;
+}
+.contact-link{
+    font-family: 'Roobert-Regular', sans-serif;
+    &__svg-icon{
+        width: 16px;
+        height: 16px;
+        margin-bottom: 2px;
+    }
+}
+.address.t-name,
+.l-adviser-col{
+    font-family: 'Roobert-Regular', sans-serif;
+    color: $text_secondary;
+}
