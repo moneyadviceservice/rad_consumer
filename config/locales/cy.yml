@@ -112,7 +112,7 @@ cy:
     mps_provided_2: yn cael ei ddarparu gan
     mps: Gwasanaeth Arian a Phensiynau
 
-  covid_banner: 
+  covid_banner:
     head: Coronafeirws – beth mae’n ei olygu i chi
     body_html: <a href="%{href}">Darganfyddwch beth mae gennych hawl iddo</a>
     href: https://www.moneyadviceservice.org.uk/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
@@ -162,7 +162,7 @@ cy:
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
       telephone_number: 0800 138 0555
       telephone_number_url: tel:+448001380555
-      opening_times_html: 
+      opening_times_html:
           <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
           <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
       smallprint: 'Mae galwadau am ddim.'
@@ -368,6 +368,8 @@ cy:
           '4': Certified Financial Planner
           '10': Chartered Wealth Manager
           '11': Pension Transfer Gold Standard
+          '12': Chartered Associate of The London Institute of Banking &amp; Finance
+          '13': Chartered Fellow of The London Institute of Banking &amp; Finance
       accreditation:
         ordinal:
           '1': SOLLA
@@ -472,8 +474,14 @@ cy:
           link: Ceir rhagor o wybodaeth <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">yma</a>.
         bs8577_certified:
           title: Y Safon Brydeinig mewn Cynllunio Ariannol BS 8577
-          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol. 
+          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://standardsinternational.co.uk/certification/bs-8577/">yma</a>
+        chartered_associate:
+          title: Chartered Associate of The London Institute of Banking &amp; Finance
+          description: Chartered Associates of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of three years’ professional experience in financial services and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.\nChartered Associate status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
+        chartered_fellow:
+          title: Chartered Fellow of The London Institute of Banking &amp; Finance
+          description: Chartered Fellows of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of 20 years’ professional experience and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.\nIn addition, as part of the application process, they are required to provide evidence of their contribution to the goals of The London Institute of Banking &amp; Finance and how they have supported the development of professionalism/professional education in the banking and finance sector.\nChartered Fellow status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
@@ -526,6 +534,8 @@ cy:
       '9': ignored
       '10': chartered_wealth
       '11': pension_transfer_gold
+      '12': chartered_associate
+      '13': chartered_fellow
   accreditation:
     ordinal:
       '1': solla
