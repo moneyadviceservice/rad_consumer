@@ -9,7 +9,7 @@ ruby File.read('.ruby-version').chomp
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '5.2.3'
+gem 'rails', '~> 5.2.4'
 
 gem 'active_model_serializers'
 gem 'activerecord-session_store'
@@ -21,11 +21,12 @@ gem 'dough-ruby',
     git: 'https://github.com/moneyadviceservice/dough.git',
     branch: 'master',
     ref: 'bc219c1'
-gem 'geocoder', '~> 1.4.7'
+gem 'geocoder', '~> 1.6.3'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
-gem 'kaminari'
+gem 'kaminari', '>= 1.2.1'
 gem 'language_list', '~> 1.2.1'
+gem 'nokogiri', '= 1.10.10'
 gem 'opening_hours'
 gem 'pg', '~> 0.20.0'
 gem 'redis', '~> 3.3.5'
