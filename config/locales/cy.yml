@@ -368,8 +368,8 @@ cy:
           '4': Certified Financial Planner
           '10': Chartered Wealth Manager
           '11': Pension Transfer Gold Standard
-          '12': Chartered Associate of The London Institute of Banking &amp; Finance
-          '13': Chartered Fellow of The London Institute of Banking &amp; Finance
+          '12': Chartered Associate of The London Institute of Banking Finance
+          '13': Chartered Fellow of The London Institute of Banking Finance
       accreditation:
         ordinal:
           '1': SOLLA
@@ -478,10 +478,10 @@ cy:
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://standardsinternational.co.uk/certification/bs-8577/">yma</a>
         chartered_associate:
           title: Chartered Associate of The London Institute of Banking &amp; Finance
-          description: Chartered Associates of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of three years’ professional experience in financial services and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.\nChartered Associate status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
+          description: Chartered Associates of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of three years’ professional experience in financial services and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.  Chartered Associate status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
         chartered_fellow:
           title: Chartered Fellow of The London Institute of Banking &amp; Finance
-          description: Chartered Fellows of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of 20 years’ professional experience and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.\nIn addition, as part of the application process, they are required to provide evidence of their contribution to the goals of The London Institute of Banking &amp; Finance and how they have supported the development of professionalism/professional education in the banking and finance sector.\nChartered Fellow status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
+          description: Chartered Fellows of The London Institute of Banking &amp; Finance hold the Level 6 Diploma in Financial Advice or equivalent qualification. They have a minimum of 20 years’ professional experience and commit to keeping their knowledge up to date by following the Institute’s Continuing Professional Development programme.  In addition, as part of the application process, they are required to provide evidence of their contribution to the goals of The London Institute of Banking &amp; Finance and how they have supported the development of professionalism/professional education in the banking and finance sector.  Chartered Fellow status can only be awarded by The London Institute of Banking &amp; Finance. Advisers who achieve Chartered status have a higher level of qualification than the minimum required to practice and must adhere to the strict code of practice and standards applied by their professional body, The London Institute of Banking &amp; Finance.
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
