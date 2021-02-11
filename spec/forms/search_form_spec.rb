@@ -342,6 +342,8 @@ RSpec.describe SearchForm do
     context 'for all qualifications and accreditations that have translation keys' do
       it 'provides a list of alphabetically ordered options ' do
         expected_list = [
+          ['Chartered Associate of The London Institute of Banking &amp; Finance', 'q12'],
+          ['Chartered Fellow of The London Institute of Banking & Finance', 'q13'],
           ['Certified Financial Planner', 'q4'],
           ['Chartered Financial Planner', 'q3'],
           ['Chartered Wealth Manager', 'q10'],
