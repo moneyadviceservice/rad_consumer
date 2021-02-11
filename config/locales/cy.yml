@@ -112,7 +112,7 @@ cy:
     mps_provided_2: yn cael ei ddarparu gan
     mps: Gwasanaeth Arian a Phensiynau
 
-  covid_banner: 
+  covid_banner:
     head: Coronafeirws – beth mae’n ei olygu i chi
     body_html: <a href="%{href}">Darganfyddwch beth mae gennych hawl iddo</a>
     href: https://www.moneyadviceservice.org.uk/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
@@ -162,7 +162,7 @@ cy:
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
       telephone_number: 0800 138 0555
       telephone_number_url: tel:+448001380555
-      opening_times_html: 
+      opening_times_html:
           <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
           <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
       smallprint: 'Mae galwadau am ddim.'
@@ -368,6 +368,8 @@ cy:
           '4': Certified Financial Planner
           '10': Chartered Wealth Manager
           '11': Pension Transfer Gold Standard
+          '12': Chartered Associate of The London Institute of Banking Finance
+          '13': Chartered Fellow of The London Institute of Banking Finance
       accreditation:
         ordinal:
           '1': SOLLA
@@ -472,8 +474,14 @@ cy:
           link: Ceir rhagor o wybodaeth <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">yma</a>.
         bs8577_certified:
           title: Y Safon Brydeinig mewn Cynllunio Ariannol BS 8577
-          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol. 
+          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://standardsinternational.co.uk/certification/bs-8577/">yma</a>
+        chartered_associate:
+          title: Cydymaith Siartredig y London Institute of Banking & Finance
+          description: Mae gan Gymdeithion Siartredig y ‘London Institute of Banking & Finance’ Diploma Lefel 6 mewn Cyngor Ariannol neu gymhwyster cyfatebol. Mae ganddynt o leiaf tair blynedd o brofiad proffesiynol mewn gwasanaethau ariannol ac maen nhw'n ymrwymo i gadw eu gwybodaeth yn gyfredol trwy ddilyn rhaglen Datblygiad Proffesiynol Parhaus y Sefydliad. Gallai dim ond y ‘London Institute of Banking & Finance’ dyfarnu statws Cydymaith Siartedig. Mae gan gynghorwyr sy'n cyflawni statws Siartredig lefel uwch o gymhwyster na'r isafswm sy'n ofynnol i ymarfer a rhaid iddynt gadw at y cod ymarfer a'r safonau llym a gymhwysir gan eu corff proffesiynol, y ‘London Institute of Banking & Finance’.
+        chartered_fellow:
+          title: Cymrawd Siartredig y London Institute of Banking & Finance
+          description: Mae gan Gymrodyr Siartredig y ‘London Institute of Banking & Finance’ Diploma Lefel 6 mewn Cyngor Ariannol neu gymhwyster cyfatebol. Mae ganddynt o leiaf 20 mlynedd o brofiad proffesiynol ac maen nhw wedi ymrwymo i gadw eu gwybodaeth yn gyfredol trwy ddilyn rhaglen Datblygiad Proffesiynol Parhaus y Sefydliad. Yn ogystal, fel rhan o'r broses ymgeisio, mae'n ofynnol iddynt ddarparu tystiolaeth o'u cyfraniad at nodau’r ‘London Institute of Banking & Finance’ a sut y maent wedi cefnogi datblygiad proffesiynoldeb/addysg broffesiynol yn y sector bancio a chyllid. Gallai dim ond y ‘London Institute of Banking & Finance’ dyfarnu statws Cymrawd Siartredig. Mae gan gynghorwyr sy'n cyflawni statws Siartredig lefel uwch o gymhwyster na'r isafswm sy'n ofynnol i ymarfer a rhaid iddynt gadw at y cod ymarfer a'r safonau llym a gymhwysir gan eu corff proffesiynol, y ‘London Institute of Banking & Finance’.
 
     education_module_one:
       heading: Sur benderfynwyd ar y canlyniadau?
@@ -526,6 +534,8 @@ cy:
       '9': ignored
       '10': chartered_wealth
       '11': pension_transfer_gold
+      '12': chartered_associate
+      '13': chartered_fellow
   accreditation:
     ordinal:
       '1': solla
