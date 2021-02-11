@@ -346,7 +346,7 @@ RSpec.describe SearchForm do
           ['Chartered Fellow of The London Institute of Banking & Finance', 'q13'],
           ['Certified Financial Planner', 'q4'],
           ['Chartered Financial Planner', 'q3'],
-          ['Chartered Wealth Manager', 'q10'],s
+          ['Chartered Wealth Manager', 'q10'],
           ['ISO 22222', 'a3'],
           ['Pension Transfer Gold Standard', 'q11'],
           %w[SOLLA a1]
