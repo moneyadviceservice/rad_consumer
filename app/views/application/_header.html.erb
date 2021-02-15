@@ -8,9 +8,9 @@
 
     <div class="l-header__locale locale">
       <% if I18n.locale == I18n.default_locale %>
-        <%= link_to t('locales.cy'), request.path_parameters.merge(locale: 'cy', only_path: true), class: 'locale__link' %>
+        <%= link_to t('locales.cy'), request.path_parameters.merge(locale: 'cy', only_path: true).merge(params: request.params), class: 'locale__link' %>
       <% else %>
-        <%= link_to t('locales.en'), request.path_parameters.merge(locale: 'en', only_path: true), class: 'locale__link' %>
+        <%= link_to t('locales.en'), request.path_parameters.merge(locale: 'en', only_path: true).merge(params: request.params), class: 'locale__link' %>
       <% end %>
     </div>
   </div>
