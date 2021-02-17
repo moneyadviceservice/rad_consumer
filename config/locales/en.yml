@@ -369,8 +369,8 @@ en:
           '4': Certified Financial Planner
           '10': Chartered Wealth Manager
           '11': Pension Transfer Gold Standard
-          '12': Chartered Associate of The London Institute of Banking Finance
-          '13': Chartered Fellow of The London Institute of Banking Finance
+          '12': Chartered Associate of The London Institute of Banking & Finance
+          '13': Chartered Fellow of The London Institute of Banking & Finance
       accreditation:
         ordinal:
           "1": SOLLA
