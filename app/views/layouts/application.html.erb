@@ -172,9 +172,6 @@
   </a>
 
   <%= render 'svg_icons' %>
-  <%= render 'mh_banner' %>
-  <%= render 'header' %>
-  <%= render 'breadcrumbs' %>
 
   <% if covid_banner_dismissed? %>
     <%= render 'covid_banner' %>
@@ -188,7 +185,6 @@
     <%= render 'contact_methods/contact_us' %>
   </main>
 
-  <%= render 'footer' %>
 
 <%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
 
