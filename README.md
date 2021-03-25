@@ -148,24 +148,28 @@ When changes are made that apply to both the MAS and moneyhelper site you will n
 Push first to the MAS staging environment:
 
 ```sh
+$ git checkout master
 $ git push mas-rad-consumer-staging master
 ```
 
 Once this has built you can deploy to the AEM preview environment:
 
 ```sh
+$ git checkout feature/NTT_Rebased
 $ git push mas-rad-consumer-preview feature/NTT_Rebased:master
 ```
 
 When your changes have been approved you can deploy to production.  As before deploy to MAS first:
 
 ```sh
+$ git checkout master
 $ git push git push rad-consumer-production master
 ```
 
-Once this has built you can deploy to the AEM prodiction environment:
+Once this has built you can deploy to the AEM production environment:
 
 ```sh
+$ git checkout feature/NTT_Rebased
 $ git push rad-consumer-aem-321 feature/NTT_Rebased:master
 ```
 
