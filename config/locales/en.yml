@@ -13,27 +13,27 @@ en:
   feedback_button: Tell us how we can improve this tool
 
   pagination:
-    previous: 'Prev'
-    next: 'Next'
-    truncate: '&hellip;'
+    previous: "Prev"
+    next: "Next"
+    truncate: "&hellip;"
     page: Page
     of: of
 
   landing_page:
     show:
-      title_tag: 'Retirement Adviser Directory | Find a regulated financial adviser'
+      title_tag: "Retirement Adviser Directory | Find a regulated financial adviser"
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
       video1_title: Regulated financial advice
       video2_title: Regulated retirement advice
 
   firms:
     show:
-      title_tag: 'Retirement Adviser Directory | Find a retirement adviser'
-      meta_tag_description: 'Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.'
-      go_back: 'Back to results'
-      telephone_number: 'Telephone'
-      email_address: 'Email'
-      email_firm: 'Email firm'
+      title_tag: "Retirement Adviser Directory | Find a retirement adviser"
+      meta_tag_description: "Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers."
+      go_back: "Back to results"
+      telephone_number: "Telephone"
+      email_address: "Email"
+      email_firm: "Email firm"
       face_to_face:
         header: How near is your adviser?
         text: Many firms have advisers who don’t work from the office all the time and are based in different parts of the UK. So don’t worry if the address of the firm seems far away, there should be an adviser located near to the post code you’ve entered. Advisers will also usually give you a choice of where to meet.
@@ -47,11 +47,11 @@ en:
       recently_visited:
         header: Other firms you've viewed
         remote: Phone or online only
-      website_address: 'Website'
+      website_address: "Website"
       panels:
         firm:
-          heading: 'Firm details'
-          locations: 'Adviser & office locations'
+          heading: "Firm details"
+          locations: "Adviser & office locations"
           callout:
             minimum_fee:
               heading: Minimum fee
@@ -112,7 +112,7 @@ en:
     mps_provided_2: Service is provided by
     mps: Money & Pensions Service
 
-  covid_banner: 
+  covid_banner:
     head: Coronavirus – what it means for you
     body_html: <a href="%{href}">Find out what you're entitled to</a>
     href: https://www.moneyhelper.org/en/articles/coronavirus-what-it-means-for-you
@@ -139,8 +139,8 @@ en:
         call_to_action: Currently busy
         description: Sorry, all of our advisers are currently busy. Please try again later.
       nojs_html: |
-          Sorry, web chat is only available on
-          <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
+        Sorry, web chat is only available on
+        <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
       offline:
         call_to_action: Offline
         description: Web chat is available from %{hours}.
@@ -162,9 +162,9 @@ en:
       telephone_number: 0800 138 7777
       telephone_number_url: tel:+448001387777
       opening_times_html: |
-          <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
-          <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
-      smallprint: 'Calls are free.'
+        <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
+        <li class="contact-panel__additional-info">Saturday, Sunday and Bank Holidays, closed</li>
+      smallprint: "Calls are free."
       email_info: Our general email address is
       email_address: enquiries@maps.org.uk
       email_button: Send Email
@@ -204,8 +204,8 @@ en:
     accessin:
       button: Report an accessibility problem
       hidden_text: Feedback form opens in a new window
-    mps_provided_1: The Money 
-    mps_provided_2: Advice Service 
+    mps_provided_1: The Money
+    mps_provided_2: Advice Service
     mps_provided_3: is provided by
     mps: Money & Pensions Service
     links:
@@ -241,7 +241,7 @@ en:
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.en.pdf'
+      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.en.pdf"
 
   more_reasons:
     heading: Reasons to take financial advice
@@ -249,11 +249,11 @@ en:
       - text: Financial advisers are regulated so you are protected if things go wrong.
       - text: They can choose products from a wide range of providers.
       - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
-    guides_html: 'Our guides, <a href="https://www.moneyhelper.org/en/articles/retirement-why-should-i-get-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org/en/articles/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org/en/articles/your-options-if-things-go-wrong-with-your-pension">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org/en/articles/Guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
+    guides_html: 'Our guides, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-problems/complaints/how-to-complain-about-a-pension">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.en.pdf'
+      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.en.pdf"
 
   pension_wise:
     heading: Have you had your free guidance appointment yet?
@@ -269,17 +269,17 @@ en:
     heading: Retirement income options
     content: Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
     link_text: Understand and compare retirement income options
-    link_url: 'https://www.moneyhelper.org/en/retirement-income-options'
+    link_url: "https://www.moneyhelper.org/en/retirement-income-options"
 
   useful_links:
     heading: Useful links
     links:
       - text: Choosing a financial adviser
-        url: 'https://www.moneyhelper.org/en/articles/choosing-a-financial-adviser'
+        url: "https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser"
       - text: Checklist - preparing for retirement
-        url: 'https://www.moneyhelper.org/en/articles/checklist-things-to-do-as-retirement-approaches'
+        url: "https://www.moneyhelper.org/en/articles/checklist-things-to-do-as-retirement-approaches"
       - text: Options for using your pension pot
-        url: 'https://www.moneyhelper.org/en/articles/options-for-using-your-pension-pot'
+        url: "https://www.moneyhelper.org/en/articles/options-for-using-your-pension-pot"
 
   our_promise:
     heading: Our promise to you
@@ -290,7 +290,7 @@ en:
 
   more_help:
     heading: More help choosing a financial adviser?
-    content: 'If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:'
+    content: "If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:"
     links:
       - title: Retirement – why should I get advice?
         url: https://www.moneyhelper.org/en/articles/when-and-where-to-get-pensions-help-and-advice
@@ -323,7 +323,7 @@ en:
       inheritance_tax_and_estate_planning_flag:
         title: Inheritance tax planning
       wills_and_probate_flag:
-        title: 'Wills &amp; probate'
+        title: "Wills &amp; probate"
       ethical_investing_flag:
         title: Ethical investments
       sharia_investing_flag:
@@ -336,7 +336,7 @@ en:
       geocode_failure: is incorrect
       missing_advice_method: To continue please select online, telephone or both and run your search again.
     index:
-      title_tag: 'Search results | Retirement Adviser Directory'
+      title_tag: "Search results | Retirement Adviser Directory"
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
     incorrect_search_criteria: Please correct the problem with your search criteria and try again.
 
@@ -358,23 +358,23 @@ en:
           - text: Or you can contact advisers offering both options to compare service and costs.
           - text: The important thing to remember is that all the advisers on the Money Helper Directory – no matter how they offer advice – are fully regulated.  You have exactly the same protection whether you see someone face-to-face or deal with them exclusively by phone or online.
       qualifications_and_accreditations:
-        heading: 'I would like an adviser with the following accreditations / qualifications:'
+        heading: "I would like an adviser with the following accreditations / qualifications:"
         tooltip_html: |
           Find out more about adviser accreditations/qualifications by clicking <a href="https://directory.moneyhelper.org/en/glossary/#chartered_fp" target="_blank">here</a>.
         label: Filter by adviser qualification or accreditation
-        url: '/en/glossary/#chartered_fp'
+        url: "/en/glossary/#chartered_fp"
       qualification:
         ordinal:
-          '3': Chartered Financial Planner
-          '4': Certified Financial Planner
-          '10': Chartered Wealth Manager
-          '11': Pension Transfer Gold Standard
+          "3": Chartered Financial Planner
+          "4": Certified Financial Planner
+          "10": Chartered Wealth Manager
+          "11": Pension Transfer Gold Standard
       accreditation:
         ordinal:
-          '1': SOLLA
-          '3': ISO 22222
+          "1": SOLLA
+          "3": ISO 22222
       languages:
-        heading: 'I would like an adviser who can speak the following language:'
+        heading: "I would like an adviser who can speak the following language:"
         options:
           - afr
           - ara
@@ -405,7 +405,7 @@ en:
           - vie
           - zho
       workplace_financial_advice_flag:
-        heading: 'I am an employer. I would like help with:'
+        heading: "I am an employer. I would like help with:"
         setting_up_workplace_pension: Setting up a workplace pension scheme
         existing_workplace_pension: An existing workplace pension scheme
         advice_for_employees: Financial advice for my employees
@@ -416,20 +416,20 @@ en:
     back_to_top: Go to top
     no_results_message: There are no results matching your search criteria. Please amend your criteria and try again.
     summary_of_results:
-      showing: 'Showing %{first_record}-%{last_record} of %{total_records} firms'
+      showing: "Showing %{first_record}-%{last_record} of %{total_records} firms"
       order: Firms presented in no particular order
 
     result:
       adviser: has an adviser
-      miles_away: '%{distance} miles away'
-      firm_has: 'Firm has'
-      and: ' and'
+      miles_away: "%{distance} miles away"
+      firm_has: "Firm has"
+      and: " and"
       number_of_advisers:
-        one: '%{count} adviser'
-        other: '%{count} advisers'
+        one: "%{count} adviser"
+        other: "%{count} advisers"
       number_of_offices:
-        one: '%{count} office'
-        other: '%{count} offices'
+        one: "%{count} office"
+        other: "%{count} offices"
       view_profile: View profile
 
     keywords:
@@ -437,13 +437,13 @@ en:
         title: Free first meeting
         tooltip: This firm will offer an initial meeting by phone or face-to-face at their own expense. The firm will use this meeting to establish your needs and to see if they can help you.
       minimum_pot_size:
-        title: 'Minimum pot size: '
-        none: 'No minimum pot size'
+        title: "Minimum pot size: "
+        none: "No minimum pot size"
         tooltip: Not all financial advisers provide advice for all levels of pension pot or savings. This tells you the minimum level of pension pot/savings you must have in order to deal with this firm.
 
     accreditations:
       glossary_heading: Qualifications / Accreditations
-      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
+      logo_alt_text: "Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO."
       items:
         chartered_fp:
           title: Chartered Financial Planner
@@ -492,47 +492,47 @@ en:
 
   advice_methods:
     ordinal:
-      '1': Phone
-      '2': Online
+      "1": Phone
+      "2": Online
 
   investment_size:
     no_minimum: No minimum pot size
     ordinal:
-      '1': 'Under £50,000'
-      '2': '£50,000'
-      '3': '£100,000'
-      '4': 'Over £150,000'
+      "1": "Under £50,000"
+      "2": "£50,000"
+      "3": "£100,000"
+      "4": "Over £150,000"
   other_advice_methods:
     ordinal:
-      '1': 'Phone'
-      '2': 'Online'
+      "1": "Phone"
+      "2": "Online"
   in_person_advice_method:
     ordinal:
-      '1': At your home
-      '2': At their office(s)
-      '3': At an agreed location
+      "1": At your home
+      "2": At their office(s)
+      "3": At an agreed location
   qualification:
     ordinal:
-      '1': ignored
-      '2': ignored
-      '3': chartered_fp
-      '4': certified_fp
-      '5': ignored
-      '6': ignored
-      '7': ignored
-      '8': ignored
-      '9': ignored
-      '10': chartered_wealth
-      '11': pension_transfer_gold
+      "1": ignored
+      "2": ignored
+      "3": chartered_fp
+      "4": certified_fp
+      "5": ignored
+      "6": ignored
+      "7": ignored
+      "8": ignored
+      "9": ignored
+      "10": chartered_wealth
+      "11": pension_transfer_gold
   accreditation:
     ordinal:
-      '1': solla
-      '3': iso_22222
-      '4': bs8577_certified
+      "1": solla
+      "3": iso_22222
+      "4": bs8577_certified
 
   glossary:
     show:
-      title_tag: 'Glossary | Retirement Adviser Directory'
+      title_tag: "Glossary | Retirement Adviser Directory"
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
 
     page_title: Glossary
