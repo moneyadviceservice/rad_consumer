@@ -259,7 +259,7 @@ en:
     heading: Have you had your free guidance appointment yet?
     description:
       - text: Pension Wise is a free and impartial government service that helps you understand your new pension options.
-      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Find out more from Pension Wise</a>
+      - text: <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/pension-wise" target="_blank">Find out more from Pension Wise</a>
 
   workplace_scheme:
     question: Are you a member of a union or other affinity group?
