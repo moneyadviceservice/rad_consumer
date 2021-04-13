@@ -13,22 +13,22 @@ cy:
   feedback_button: "Dywedwch wrthym sut y gallwn wella'r offeryn hwn"
 
   pagination:
-    previous: 'Flaenorol'
-    next: 'Nesaf'
-    truncate: '&hellip;'
+    previous: "Flaenorol"
+    next: "Nesaf"
+    truncate: "&hellip;"
     page: Tudalen
     of: o
 
   landing_page:
     show:
-      title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
+      title_tag: "Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir"
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
       video1_title: Cyngor ariannol wedi ei reoleiddio
       video2_title: Cyngor ymddeoliad wedi ei reoleiddio
 
   firms:
     show:
-      title_tag: 'Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir'
+      title_tag: "Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir"
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
       go_back: Yn ôl i’r canlyniadau
       telephone_number: Ffôn
@@ -36,14 +36,14 @@ cy:
       email_firm: E-bostio’r cwmni
       face_to_face:
         header: Pa mor agos yw eich cynghorydd?
-        text: 'Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod.'
+        text: "Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod."
       guide_link:
         text: Am ragor o gymorth i ddewis cynghorydd
         article_url: pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
         link_text: gweler ein canllaw
       remote:
         header: Cynghorwyr dros y ffôn neu ar-lein yn unig
-        text: 'Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch.'
+        text: "Rydych wedi dewis cwmni sy’n cynnig cyngor <strong>dros y ffôn neu ar-lein yn unig</strong>. Mae hyn yn golygu llai o gostau i’r cwmni, a chostau llai i chi o ganlyniad. Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr sydd ar y cyfeirlyfr - waeth sut y cynigiant gyngor – wedi eu rheoleiddio ac yn cynnig yr un diogelwch."
       recently_visited:
         header: CwmnÏau eraill yr edrychoch arnynt
         remote: Dros y ffôn neu ar-lein yn unig
@@ -112,7 +112,7 @@ cy:
     mps_provided_2: yn cael ei ddarparu gan
     mps: Gwasanaeth Arian a Phensiynau
 
-  covid_banner: 
+  covid_banner:
     head: Coronafeirws – beth mae’n ei olygu i chi
     body_html: <a href="%{href}">Darganfyddwch beth mae gennych hawl iddo</a>
     href: https://www.moneyhelper.org/cy/articles/coronafirws-beth-mae-yn-ei-olygu-i-chi
@@ -139,8 +139,8 @@ cy:
         call_to_action: Yn brysur ar hyn o bryd
         description: Mae'n ddrwg gennym, mae pob un o'n cynghorwyr yn brysur ar hyn o bryd. Rhowch gynnig arall arni yn nes ymlaen.
       nojs_html: |
-          Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar
-          <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
+        Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar
+        <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
       offline:
         call_to_action: All-lein
         description: Gwe-sgwrs ar gael o %{hours}.
@@ -162,10 +162,10 @@ cy:
       description: Ffoniwch ni am gyngor ariannol am ddim a diduedd.
       telephone_number: 0800 138 0555
       telephone_number_url: tel:+448001380555
-      opening_times_html: 
-          <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
-          <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
-      smallprint: 'Mae galwadau am ddim.'
+      opening_times_html:
+        <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
+        <li class="contact-panel__additional-info">Dydd Sadwrn ar gau, Dydd Sul a Gwyliau Banc, ar gau</li>
+      smallprint: "Mae galwadau am ddim."
       email_info: Ein cyfeiriad e-bost cyffredinol yw
       email_address: enquiries@maps.org.uk
       email_button: Anfon e-bost
@@ -242,11 +242,11 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.cy.pdf'
+      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.cy.pdf"
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
-    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org/cy/articles/ymddeoliad-a-pam-ddylwn-i-gael-cyngor">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyhelper.org/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyhelper.org/cy/articles/eich-opsiynau-os-bydd-pethaun-mynd-o-le-gydach-pensiwn">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org/cy/articles/canllaw-i-ffioedd-cynghorwyr-ariannol">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
+    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/pension-problems/complaints/how-to-complain-about-a-pension">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
       - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
       - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
@@ -254,13 +254,13 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: 'https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.cy.pdf'
+      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.cy.pdf"
 
   pension_wise:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
     description:
       - text: Gwasanaeth diduedd ac am ddim gan y llywodraeth yw Pension Wise sy’n rhoi cymorth i chi ddeall eich opsiynau pensiwn newydd.
-      - text: <a href="https://www.pensionwise.gov.uk" target="_blank">Dysgwch ragor gan Pension wise</a>
+      - text: <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/pension-wise" target="_blank">Dysgwch ragor gan Pension wise</a>
 
   workplace_scheme:
     question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
@@ -270,17 +270,17 @@ cy:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
     link_text: Deall a chymharu opsiynau incwm ymddeol
-    link_url: 'https://www.moneyhelper.org/cy/opsiynau-incwm-ymddeoliad'
+    link_url: "https://www.moneyhelper.org/cy/opsiynau-incwm-ymddeoliad"
 
   useful_links:
     heading: Dolen ddefnyddiol
     links:
       - text: Dewis cynghorydd ariannol
-        url: 'https://www.moneyhelper.org/cy/articles/dewis-cynghorydd-ariannol'
+        url: "https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser"
       - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
-        url: 'https://www.moneyhelper.org/cy/articles/rhestr-wirio-pethau-iw-gwneud-wrth-ich-ymddeoliad-agosau'
+        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/when-can-i-retire/checklist-preparing-for-retirement"
       - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
-        url: 'https://www.moneyhelper.org/cy/articles/yr-opsiynau-ar-gyfer-defnyddioch-cronfa-bensiwn'
+        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/drawing-a-pension/your-options-for-using-your-defined-contribution-pension"
 
   our_promise:
     heading: Ein haddewid i chi
@@ -291,7 +291,7 @@ cy:
 
   more_help:
     heading: Rhagor o help i ddewis cynghorydd ariannol?
-    content: 'Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:'
+    content: "Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:"
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
         url: https://www.moneyhelper.org/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
@@ -324,7 +324,7 @@ cy:
       inheritance_tax_and_estate_planning_flag:
         title: Cynllunio ar gyfer treth etifeddiant
       wills_and_probate_flag:
-        title: 'Ewyllysiau a phrofiant'
+        title: "Ewyllysiau a phrofiant"
       ethical_investing_flag:
         title: Buddsoddiadau moesol
       sharia_investing_flag:
@@ -357,27 +357,27 @@ cy:
           - text: Neu gallwch gysylltu â chynghorwyr sy’n cynnig y ddau opsiwn i gymharu gwasanaeth a chostau.
           - text: Y peth pwysig i’w gofio yw bod pob un o’r cynghorwyr ar Gyfeirlyfr y Gwasanaeth Cynghori Ariannol – waeth sut y cynigiant gyngor – wedi eu rheoleiddio.  Mae gennych union yr un diogelwch pa un ai’ch bod yn cwrdd â rhywun wyneb yn wyneb neu’n delio ag ef neu hi’n unigol dros y ffôn neu ar-lein.
       qualifications_and_accreditations:
-        heading: 'Hoffwn gael cynghorydd sydd â’r achrediadau / cymwysterau canlynol:'
+        heading: "Hoffwn gael cynghorydd sydd â’r achrediadau / cymwysterau canlynol:"
         tooltip_html: |
           Dysgwch ragor am achrediadau/cymwysterau cynghorydd trwy glicio  <a href="https://directory.moneyhelper.org/cy/glossary" target="_blank">yma</a>.
         label: Hidlo yn Ùl cymhwyster neu achrediad
-        url: '/cy/glossary#chartered_fp'
+        url: "/cy/glossary#chartered_fp"
       qualification:
         ordinal:
-          '3': Chartered Financial Planner
-          '4': Certified Financial Planner
-          '10': Chartered Wealth Manager
-          '11': Pension Transfer Gold Standard
+          "3": Chartered Financial Planner
+          "4": Certified Financial Planner
+          "10": Chartered Wealth Manager
+          "11": Pension Transfer Gold Standard
       accreditation:
         ordinal:
-          '1': SOLLA
-          '3': ISO 22222
+          "1": SOLLA
+          "3": ISO 22222
       service:
         options:
           non_uk_residents_flag:
             title: Cyngor i alltudion y Deyrnas Unedig
       languages:
-        heading: 'Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:'
+        heading: "Hoffwn gael cynghorydd a all siarad yr iaith ganlynol:"
         options:
           - afr
           - ara
@@ -419,16 +419,16 @@ cy:
     back_to_top: "Ewch i'r brig"
     no_results_message: Nid oes canlyniadau sy’n cyfateb â meini prawf eich chwiliad. Newidiwch eich meini prawf a rhoi cynnig arall arni.
     summary_of_results:
-      showing: 'Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau'
+      showing: "Yn dangos %{first_record}-%{last_record} o %{total_records} cwmnïau"
       order: Cwmnïau a gyflwynir heb fod mewn unrhyw drefn benodol
 
     result:
       adviser: mae gan gynghorydd
-      miles_away: '%{distance} o filltiroedd i ffwrdd'
-      firm_has: ''
-      and: ', '
-      number_of_advisers: 'Cynghorydd: %{count}'
-      number_of_offices: 'Swyddfa: %{count}'
+      miles_away: "%{distance} o filltiroedd i ffwrdd"
+      firm_has: ""
+      and: ", "
+      number_of_advisers: "Cynghorydd: %{count}"
+      number_of_offices: "Swyddfa: %{count}"
       view_profile: Gweld y proffil
 
     keywords:
@@ -436,13 +436,13 @@ cy:
         title: Cyfarfod cychwynnol am ddim
         tooltip: Bydd y cwmni hwn yn cynnig cyfarfod cychwynnol dros y ffôn neu wyneb yn wyneb ar ei gost ei hun. Bydd y cwmni’n defnyddio’r cyfarfod hwn i ddeall eich anghenion ac i weld a all fod o gymorth i chi.
       minimum_pot_size:
-        none: 'Dim isafswm ym maint y gronfa'
-        title: 'Isafswm maint y gronfa: '
+        none: "Dim isafswm ym maint y gronfa"
+        title: "Isafswm maint y gronfa: "
         tooltip: Nid yw pob cynghorydd ariannol yn darparu cyngor ar gyfer pob lefel o gronfa neu gynilion pensiwn. Mae hyn yn nodi wrthych beth yw isafswm lefel y gronfa / cynilion sydd yn rhaid i chi ei gael er mwyn medru delio â’r cwmni hwn.
 
     accreditations:
       glossary_heading: Cymwysterau / Achrediadau
-      logo_alt_text: 'Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO.'
+      logo_alt_text: "Logos for qualifications provided by: Chartered Financial Planners, CFP, Solla (the society for later life advisers), Later Life Academy and ISO."
       items:
         chartered_fp:
           title: Cynllunydd Ariannol Siartredig
@@ -472,7 +472,7 @@ cy:
           link: Ceir rhagor o wybodaeth <a href="https://www.thepfs.org/media/10121247/pension-transfer-gold-standard-logo-consumer-guide-a5-size-web-p1.pdf">yma</a>.
         bs8577_certified:
           title: Y Safon Brydeinig mewn Cynllunio Ariannol BS 8577
-          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol. 
+          description: Mae’r Safon Brydeinig mewn Cynllunio Ariannol BS 8577 yn sefydlu fframwaith i gwmnïau sy'n cynnig cyngor a gwasanaethau cynllunio ariannol. Fe’i datblygwyd gan y Sefydliad Safonau Prydeinig (BSI) ac mae’n dynodi’r arfer gorau ar gyfer mewnosod system reoli weithredol effeithiol o fewn y cwmni, i alluogi cwmnïau sy’n meddu ar y Safon i ddarparu'r gwasanaeth o’r radd uchaf posibl. Mae’r Safon yn ymgorffori’r holl agweddau sy'n cefnogi darpariaeth gwasanaethau cyngor, gan amlinellu cymwyseddau craidd sy'n ofynnol gan gwmnïau, eu cynghorwyr a chynllunwyr i sicrhau rhyngweithiad teg, tryloyw a phroffesiynol gyda chleientiaid. Yn aml bydd gan gwmnïau sy'n meddu ar BS 8577 Gynghorwyr Ariannol sydd ag ISO 22222, sef safon ryngwladol mewn cynllunio ariannol personol.
           link: Mae rhagor o wybodaeth ar gael yn <a href="http://standardsinternational.co.uk/certification/bs-8577/">yma</a>
 
     education_module_one:
@@ -494,47 +494,47 @@ cy:
 
   advice_methods:
     ordinal:
-      '1': Ffôn
-      '2': Ar-lein
+      "1": Ffôn
+      "2": Ar-lein
 
   investment_size:
     no_minimum: Dim isafswm ym maint y gronfa
     ordinal:
-      '1': 'O dan £50,000'
-      '2': '£50,000'
-      '3': '£100,000'
-      '4': 'Mae dros £150,000'
+      "1": "O dan £50,000"
+      "2": "£50,000"
+      "3": "£100,000"
+      "4": "Mae dros £150,000"
   other_advice_methods:
     ordinal:
-      '1': 'Ffôn'
-      '2': 'Ar-lein'
+      "1": "Ffôn"
+      "2": "Ar-lein"
   in_person_advice_method:
     ordinal:
-      '1': 'Yn eich cartref'
-      '2': Yn eu swyddfa neu swyddfeydd
-      '3': Yn rhywle a gytunwyd
+      "1": "Yn eich cartref"
+      "2": Yn eu swyddfa neu swyddfeydd
+      "3": Yn rhywle a gytunwyd
   qualification:
     ordinal:
-      '1': ignored
-      '2': ignored
-      '3': chartered_fp
-      '4': certified_fp
-      '5': ignored
-      '6': ignored
-      '7': ignored
-      '8': ignored
-      '9': ignored
-      '10': chartered_wealth
-      '11': pension_transfer_gold
+      "1": ignored
+      "2": ignored
+      "3": chartered_fp
+      "4": certified_fp
+      "5": ignored
+      "6": ignored
+      "7": ignored
+      "8": ignored
+      "9": ignored
+      "10": chartered_wealth
+      "11": pension_transfer_gold
   accreditation:
     ordinal:
-      '1': solla
-      '3': iso_22222
-      '4': bs8577_certified
+      "1": solla
+      "3": iso_22222
+      "4": bs8577_certified
 
   glossary:
     show:
-      title_tag: 'Geirfa | Cyfeirlyfr Cynghorydd Ymddeoliad'
+      title_tag: "Geirfa | Cyfeirlyfr Cynghorydd Ymddeoliad"
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
 
     page_title: Geirfa
