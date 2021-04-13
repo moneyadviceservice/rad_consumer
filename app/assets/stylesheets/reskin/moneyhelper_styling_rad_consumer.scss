@@ -113,6 +113,11 @@ h2.search-filter__heading {
   }
 }
 
+.advice-reasons__explaination a,
+.useful-link {
+  color: $teal_secondary !important;
+}
+
 .result__firm-name a {
   color: $blue_primary !important;
   &:hover {
