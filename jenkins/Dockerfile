@@ -5,6 +5,7 @@ RUN apt-get -qq update > /dev/null && \
   apt-get install -y shared-mime-info && \
   apt-get -qq clean  > /dev/null && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  
 
 
 WORKDIR /var/tmp/app/

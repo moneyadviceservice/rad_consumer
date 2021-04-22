@@ -60,6 +60,9 @@ Style/OptionHash:
     - 'app/controllers/application_controller.rb'
     - 'app/helpers/application_helper.rb'
 
+Style/DoubleNegation:
+  Enabled: false
+
 # Offense count: 217
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https

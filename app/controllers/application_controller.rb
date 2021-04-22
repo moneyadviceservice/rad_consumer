@@ -32,6 +32,10 @@ class ApplicationController < ActionController::Base
     params[:page].try(:to_i) || 1
   end
 
+  def syndicated_tool_request?
+    !!request.headers['X-Syndicated-Tool']
+  end
+
   def not_found
     {
       file: 'public/404.html',
