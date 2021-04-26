@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def rad_signup_url
     # Before go-live swap for this link:
-    #'https://radsignup.moneyhelper.org.uk/'
+    # 'https://radsignup.moneyhelper.org.uk/'
     'https://mas-rad-preview-zoli.herokuapp.com/'
   end
 
