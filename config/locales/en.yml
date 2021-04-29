@@ -23,7 +23,9 @@ en:
     show:
       title_tag: "Retirement Adviser Directory | Find a regulated financial adviser"
       meta_tag_description: Use the Retirement Adviser Directory to find FCA regulated financial advisers for help with retirement planning, inheritance tax, equity release, wills and probate, long-term care and pension transfers.
+      video1_url: "https://www.youtube.com/embed/c5-FA88x6oo"
       video1_title: Regulated financial advice
+      video2_url: "https://www.youtube.com/embed/-LWmF7xcsvU"
       video2_title: Regulated retirement advice
 
   firms:
@@ -241,7 +243,7 @@ en:
     video:
       description: Watch this short video to find out how people have benefited from talking to a financial adviser.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.en.pdf"
+      download_transcript_link: "https://masassets.blob.core.windows.net/cms/files/000/001/217/original/Retirement_Advisor_Directory_EN.pdf"
 
   more_reasons:
     heading: Reasons to take financial advice
@@ -253,7 +255,7 @@ en:
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
-      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.en.pdf"
+      download_transcript_link: "https://masassets.blob.core.windows.net/cms/files/000/001/220/original/Retirement_Advisor_Directory_-_Customer_video_EN.pdf"
 
   pension_wise:
     heading: Have you had your free guidance appointment yet?
@@ -365,12 +367,12 @@ en:
         url: "/en/glossary/#chartered_fp"
       qualification:
         ordinal:
-          '3': Chartered Financial Planner
-          '4': Certified Financial Planner
-          '10': Chartered Wealth Manager
-          '11': Pension Transfer Gold Standard
-          '12': Chartered Associate of The London Institute of Banking & Finance
-          '13': Chartered Fellow of The London Institute of Banking & Finance
+          "3": Chartered Financial Planner
+          "4": Certified Financial Planner
+          "10": Chartered Wealth Manager
+          "11": Pension Transfer Gold Standard
+          "12": Chartered Associate of The London Institute of Banking & Finance
+          "13": Chartered Fellow of The London Institute of Banking & Finance
       accreditation:
         ordinal:
           "1": SOLLA
@@ -521,19 +523,19 @@ en:
       "3": At an agreed location
   qualification:
     ordinal:
-      '1': ignored
-      '2': ignored
-      '3': chartered_fp
-      '4': certified_fp
-      '5': ignored
-      '6': ignored
-      '7': ignored
-      '8': ignored
-      '9': ignored
-      '10': chartered_wealth
-      '11': pension_transfer_gold
-      '12': chartered_associate
-      '13': chartered_fellow
+      "1": ignored
+      "2": ignored
+      "3": chartered_fp
+      "4": certified_fp
+      "5": ignored
+      "6": ignored
+      "7": ignored
+      "8": ignored
+      "9": ignored
+      "10": chartered_wealth
+      "11": pension_transfer_gold
+      "12": chartered_associate
+      "13": chartered_fellow
   accreditation:
     ordinal:
       "1": solla

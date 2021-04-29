@@ -23,7 +23,9 @@ cy:
     show:
       title_tag: "Cyfeirlyfr Cynghorydd Ymddeoliad | Dod o hyd i gynghorydd ariannol a reoleiddir"
       meta_tag_description: Defnyddiwch y Cyfeirlyfr Cynghorydd Ymddeoliad i ddod o hyd i gynghorwyr ariannol a reoleiddir i helpu gyda chynllunio ymddeoliad, treth etifeddiant, rhyddhau ecwiti, ewyllysiau a phrofebion, gofal hirdymor a throsglwyddo pensiwn.
+      video1_url: "https://www.youtube.com/embed/GJrzQR1u9qg"
       video1_title: Cyngor ariannol wedi ei reoleiddio
+      video2_url: "https://www.youtube.com/embed/-LWmF7xcsvU"
       video2_title: Cyngor ymddeoliad wedi ei reoleiddio
 
   firms:
@@ -242,7 +244,7 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_expert_transcript.cy.pdf"
+      download_transcript_link: "https://masassets.blob.core.windows.net/cms/files/000/001/218/original/Pensions_and_retirement_tools_CY.pdf "
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
@@ -254,7 +256,7 @@ cy:
     video:
       description: Gwyliwch y fideo byr hwn i weld sut y llwyddodd pobl i elwa wrth ddefnyddio cynghorwyr.
       download_transcript_text: (Lawrlwythwch sgript y fideo)
-      download_transcript_link: "https://masjumpprdstorage.blob.core.windows.net/assets/rad_customer_transcript.cy.pdf"
+      download_transcript_link: "https://masassets.blob.core.windows.net/cms/files/000/001/219/original/Retirement_Advisor_Directory_-_Customer_video_CY.pdf"
 
   pension_wise:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
@@ -364,12 +366,12 @@ cy:
         url: "/cy/glossary#chartered_fp"
       qualification:
         ordinal:
-          '3': Chartered Financial Planner
-          '4': Certified Financial Planner
-          '10': Chartered Wealth Manager
-          '11': Pension Transfer Gold Standard
-          '12': Chartered Associate of The London Institute of Banking & Finance
-          '13': Chartered Fellow of The London Institute of Banking & Finance
+          "3": Chartered Financial Planner
+          "4": Certified Financial Planner
+          "10": Chartered Wealth Manager
+          "11": Pension Transfer Gold Standard
+          "12": Chartered Associate of The London Institute of Banking & Finance
+          "13": Chartered Fellow of The London Institute of Banking & Finance
       accreditation:
         ordinal:
           "1": SOLLA
@@ -523,19 +525,19 @@ cy:
       "3": Yn rhywle a gytunwyd
   qualification:
     ordinal:
-      '1': ignored
-      '2': ignored
-      '3': chartered_fp
-      '4': certified_fp
-      '5': ignored
-      '6': ignored
-      '7': ignored
-      '8': ignored
-      '9': ignored
-      '10': chartered_wealth
-      '11': pension_transfer_gold
-      '12': chartered_associate
-      '13': chartered_fellow
+      "1": ignored
+      "2": ignored
+      "3": chartered_fp
+      "4": certified_fp
+      "5": ignored
+      "6": ignored
+      "7": ignored
+      "8": ignored
+      "9": ignored
+      "10": chartered_wealth
+      "11": pension_transfer_gold
+      "12": chartered_associate
+      "13": chartered_fellow
   accreditation:
     ordinal:
       "1": solla
