@@ -107,10 +107,9 @@ cy:
     cy: Cymraeg
     en: English
 
-  maps_banner:
-    mps_provided_1: Gwasanaeth Cynghori Ariannol
-    mps_provided_2: yn cael ei ddarparu gan
-    mps: Gwasanaeth Arian a Phensiynau
+  mh_banner: 
+    header: Rydym yn newid ein enw i HelpwrArian
+    body: Cyn bo hir bydd y Gwasanaeth Cynghori Ariannol yn dod yn HelpwrArian, y ffordd hawdd i gael help am ddim i’ch dewisiadau arian a phensiwn.
 
   covid_banner:
     head: Coronafeirws – beth mae’n ei olygu i chi
