@@ -107,10 +107,9 @@ en:
     cy: Cymraeg
     en: English
 
-  maps_banner:
-    mps_provided_1: The Money Advice
-    mps_provided_2: Service is provided by
-    mps: Money & Pensions Service
+  mh_banner: 
+    header: We're changing to MoneyHelper
+    body: Money Advice Service will soon become MoneyHelper, the easy way to get free help for your money and pensions.
 
   covid_banner:
     head: Coronavirus – what it means for you
