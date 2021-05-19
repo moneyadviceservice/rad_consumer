@@ -28,3 +28,4 @@ bower.json
 
 .rubocop-*
 .tags
+rad-localhost.*
