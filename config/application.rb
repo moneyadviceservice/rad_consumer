@@ -2,6 +2,8 @@ require_relative 'boot'
 
 require 'rails/all'
 
+require_relative '../app/middleware/partner_tools_cookies.rb'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -17,7 +19,20 @@ module RadConsumer
     config.chat_opening_hours.closed(:sun)
 
     config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_paths += Dir["#{config.root}/app/services/**/", Rails.root.join("app/middleware")]
 
+    # config.middleware.use CaptureRequestId # capture X-Request-ID header
+    # config.middleware.use OverrideHead # convert HEAD requests to GET and return an empty body
+    config.middleware.insert_after(ActionDispatch::Static, PartnerToolsCookies)
+    
+    # config.middleware.use Rack::Session::Cookie,
+    #     :key          => 'rack.session', 
+    #     :httponly     => true,
+    #     :same_site    => :strict,
+    #     :path         => '/',
+    #     :expire_after => 86400,
+    #     :secret       => 1234
+    
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -30,7 +45,7 @@ module RadConsumer
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
 
-    config.autoload_paths += Dir["#{config.root}/app/services/**/"]
+    
 
     # Switch off sassc concurrency. See this issue
     # https://github.com/rails/sprockets/issues/581#issuecomment-486984663
@@ -41,3 +56,5 @@ module RadConsumer
 end
 
 ActiveRecord::SessionStore::Session.table_name = 'rad_consumer_sessions'
+
+
