@@ -433,7 +433,7 @@ DEPENDENCIES
   language_list (~> 1.2.1)
   launchy
   listen
-  mimemagic
+  mimemagic (~> 0.3)
   nokogiri (= 1.10.10)
   opening_hours
   pg (~> 0.20.0)
