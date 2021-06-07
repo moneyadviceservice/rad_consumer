@@ -28,3 +28,5 @@ bower.json
 
 .rubocop-*
 .tags
+
+.spec/test_status.txt
