@@ -8,9 +8,7 @@ module ApplicationHelper
   end
 
   def rad_signup_url
-    # Before go-live swap for this link:
-    # 'https://radsignup.moneyhelper.org.uk/'
-    'https://mas-rad-preview-zoli.herokuapp.com/'
+    'https://radsignup.moneyhelper.org.uk/'.freeze
   end
 
   def svg_icon(name, options = {})
