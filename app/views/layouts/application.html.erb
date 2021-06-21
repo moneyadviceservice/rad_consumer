@@ -173,7 +173,12 @@
 
   <%= render 'svg_icons' %>
 
-  <main role="main" id="main">
+  <main 
+    role="main" 
+    id="main"
+    data-dough-component="PostMessages"
+    data-dough-post-messages-config='{"masresize": "true"}'
+  >
     <%= content_for :validation_summary %>
 
     <%= yield %>
