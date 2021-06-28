@@ -40,7 +40,7 @@ cy:
         text: "Mae gan nifer o gwmniau gynghorwyr nad ydynt yn gweithio o’r swyddfa drwy’r adeg ac wedi eu lleoli mewn gwahanol rannau o’r DU. Felly peidiwch â phoeni os yw cyfeiriad y cwmni’n ymddangos ymhell i ffwrdd, efallai y bydd cynghorydd wedi ei leoli yn ardal y cod post a nodwyd gennych. Fel arfer bydd cynghorwyr yn rhoi dewis i chi hefyd o ble i gyfarfod."
       guide_link:
         text: Am ragor o gymorth i ddewis cynghorydd
-        article_url: pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        article_url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice
         link_text: gweler ein canllaw
       remote:
         header: Cynghorwyr dros y ffôn neu ar-lein yn unig
@@ -246,7 +246,7 @@ cy:
 
   more_reasons:
     heading: Rhagor o resymau dros gymryd cyngor ariannol
-    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/pension-problems/complaints/how-to-complain-about-a-pension">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
+    guides_html: 'Ein canllawiau, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice" target="_blank">Ymddeoliad – pam ddylwn i gael cyngor?</a>, <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/financial-advisers/key-questions-to-ask-your-financial-adviser" target="_blank">Cwestiynau allweddol i’w gofyn i’ch cynghorydd</a>, <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/pension-problems/dealing-with-pension-problems-and-making-a-complaint" target="_blank">Beth i’w wneud os yw pethau’n mynd o chwith </a> a <a href="https://www.moneyhelper.org.uk/cy/getting-help-and-advice/financial-advisers/guide-to-financial-adviser-fees" target="_blank">Bydd talu am gyngor ariannol yn</a> datgelu rhagior i chi.'
     key_points:
       - text: Mae cynghorwyr ariannol wedi’u rheoleiddio er mwyn eich amddiffyn chi os aiff pethau o chwith.
       - text: Gallant ddewis cynnyrch gan ystod eang o ddarparwyr.
@@ -270,17 +270,17 @@ cy:
     heading: Dewisiadau incwm ymddeol
     content: Archwiliwch yr ystyriaethau allweddol wrth i chi nesáu at ymddeoliad, a chymharu opsiynau a chael arweiniad ar y camau nesaf.
     link_text: Deall a chymharu opsiynau incwm ymddeol
-    link_url: "https://www.moneyhelper.org/cy/opsiynau-incwm-ymddeoliad"
+    link_url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/your-options-for-using-your-defined-contribution-pension-pot"
 
   useful_links:
     heading: Dolen ddefnyddiol
     links:
       - text: Dewis cynghorydd ariannol
-        url: "https://www.moneyhelper.org.uk/cy/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser"
+        url: "https://www.moneyhelper.org.uk/cy/getting-help-and-advice/financial-advisers/choosing-a-financial-adviser"
       - text: Rhestr wirio – paratoi ar gyfer ymddeoliad
-        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/when-can-i-retire/checklist-preparing-for-retirement"
+        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/checklist-things-to-do-as-retirement-approaches"
       - text: Yr opsiynau ar gyfer defnyddio’ch cronfa bensiwn
-        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/drawing-a-pension/your-options-for-using-your-defined-contribution-pension"
+        url: "https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/your-options-for-using-your-defined-contribution-pension-pot"
 
   our_promise:
     heading: Ein haddewid i chi
@@ -294,11 +294,11 @@ cy:
     content: "Os hoffech ychydig mwy o help ynglŷn â sut i fynd ati i ddewis cynghorydd ariannol cyn codi’r ffôn, edrychwch ar ein canllawiau:"
     links:
       - title: Ymddeoliad – pam ddylwn i gael cyngor?
-        url: https://www.moneyhelper.org/cy/articles/pryd-a-ble-i-gael-cymorth-a-chyngor-ar-bensiynau
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice
       - title: Dewis cynghorydd ariannol
-        url: https://www.moneyhelper.org/cy/articles/dewis-cynghorydd-ariannol
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/financial-advisers/choosing-a-financial-adviser
       - title: Cwestiynau allweddol i’w gofyn i’ch cynghorydd ariannol
-        url: https://www.moneyhelper.org/cy/articles/cwestiynau-allweddol-iw-gofyn-ich-cynghorydd-ariannol
+        url: https://www.moneyhelper.org.uk/cy/getting-help-and-advice/financial-advisers/key-questions-to-ask-your-financial-adviser
 
   search_filter:
     landing_page:

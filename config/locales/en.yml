@@ -40,7 +40,7 @@ en:
         text: Many firms have advisers who don’t work from the office all the time and are based in different parts of the UK. So don’t worry if the address of the firm seems far away, there should be an adviser located near to the post code you’ve entered. Advisers will also usually give you a choice of where to meet.
       guide_link:
         text: For more help choosing an adviser
-        article_url: when-and-where-to-get-pensions-help-and-advice
+        article_url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice
         link_text: see our guide
       remote:
         header: Phone or online only advisers
@@ -249,7 +249,7 @@ en:
       - text: Financial advisers are regulated so you are protected if things go wrong.
       - text: They can choose products from a wide range of providers.
       - text: They can recommend a course of action that is personal to you and help you avoid making expensive mistakes.
-    guides_html: 'Our guides, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/retirement-advice/when-and-where-to-get-pensions-help-and-advice">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/key-questions-to-ask-your-financial-adviser">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-problems/complaints/how-to-complain-about-a-pension">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/guide-to-financial-adviser-fees">Paying for financial advice</a> will tell you more.'
+    guides_html: 'Our guides, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice" target="_blank">Retirement – why should I get advice?</a>, <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/financial-advisers/key-questions-to-ask-your-financial-adviser" target="_blank">Key questions to ask your adviser</a>, <a href="https://www.moneyhelper.org.uk/en/pensions-and-retirement/pension-problems/dealing-with-pension-problems-and-making-a-complaint" target="_blank">What to do if things go wrong</a> and <a href="https://www.moneyhelper.org.uk/en/getting-help-and-advice/financial-advisers/guide-to-financial-adviser-fees" target="_blank">Paying for financial advice</a> will tell you more.'
     video:
       description: Watch this short video showing customers discussing financial advice.
       download_transcript_text: (Download the video transcript)
@@ -269,17 +269,17 @@ en:
     heading: Retirement income options
     content: Explore the key considerations as you approach retirement, compare options, and get guidance on the next steps.
     link_text: Understand and compare retirement income options
-    link_url: "https://www.moneyhelper.org/en/retirement-income-options"
+    link_url: "https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/your-options-for-using-your-defined-contribution-pension-pot"
 
   useful_links:
     heading: Useful links
     links:
       - text: Choosing a financial adviser
-        url: "https://www.moneyhelper.org.uk/en/getting-help-and-advice/advice/financial-advisers/choosing-a-financial-adviser"
+        url: "https://www.moneyhelper.org.uk/en/getting-help-and-advice/financial-advisers/choosing-a-financial-adviser"
       - text: Checklist - preparing for retirement
-        url: "https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/when-can-i-retire/checklist-preparing-for-retirement"
+        url: "https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/checklist-things-to-do-as-retirement-approaches"
       - text: Options for using your pension pot
-        url: "https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/drawing-a-pension/your-options-for-using-your-defined-contribution-pension"
+        url: "https://www.moneyhelper.org.uk/en/pensions-and-retirement/taking-your-pension/your-options-for-using-your-defined-contribution-pension-pot"
 
   our_promise:
     heading: Our promise to you
@@ -293,11 +293,11 @@ en:
     content: "If you’d like a bit more help about how you go about choosing a financial adviser before picking up the phone, have a look at our guides:"
     links:
       - title: Retirement – why should I get advice?
-        url: https://www.moneyhelper.org/en/articles/when-and-where-to-get-pensions-help-and-advice
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/retirement-advice/retirement-why-should-i-get-advice
       - title: Choosing a financial adviser
-        url: https://www.moneyhelper.org/en/articles/choosing-a-financial-adviser
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/financial-advisers/choosing-a-financial-adviser
       - title: Key questions to ask your financial adviser
-        url: https://www.moneyhelper.org/en/articles/key-questions-to-ask-your-financial-adviser
+        url: https://www.moneyhelper.org.uk/en/getting-help-and-advice/financial-advisers/key-questions-to-ask-your-financial-adviser
 
   search_filter:
     landing_page:
