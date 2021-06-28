@@ -112,7 +112,9 @@
       <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
       <ul class="unstyled-list">
         <% t('useful_links.links').each do |item| %>
-          <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
+          <li>
+            <a href="<%= item[:url] %>" target="_blank"><%= item[:text] %></a>
+          </li>
         <% end %>
       </ul>
     </section>
