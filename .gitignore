@@ -18,6 +18,7 @@ config/database.yml
 /log/*
 !/log/.keep
 /tmp
+/.spec
 
 # bower components
 bower.json
