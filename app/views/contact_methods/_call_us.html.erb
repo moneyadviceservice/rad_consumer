@@ -9,7 +9,7 @@
     </li>
     <li class="contact-panel__additional-info">
       <p class="contact-panel__contact-number">
-        <a class="contact-panel__telephone t-contact-number" href="<%= t('contact_panels.call_us.telephone_number_url') %>">
+        <a class="contact-panel__telephone t-contact-number" href="<%= t('contact_panels.call_us.telephone_number_url') %>" target="_parent">
           <%= t('contact_panels.call_us.telephone_number') %>
         </a>
       </p>
@@ -18,13 +18,13 @@
     <li class="contact-panel__additional-info">
       <p>
         <%= t('contact_panels.call_us.email_info') %>
-        <a href="mailto:<%= t('contact_panels.call_us.email_address') %>"><%= t('contact_panels.call_us.email_address') %></a>.
+        <a href="mailto:<%= t('contact_panels.call_us.email_address') %>" target="_parent"><%= t('contact_panels.call_us.email_address') %></a>.
       </p>
     </li>
     <!-- Button -->
     <li class="contact-panel__additional-info">
       <div class="contact-panel__button-container">
-        <a class="contact-panel__button button" href="mailto:<%= t('contact_panels.call_us.email_address') %>">
+        <a class="contact-panel__button button" href="mailto:<%= t('contact_panels.call_us.email_address') %>" target="_parent">
           <%= t('contact_panels.call_us.email_button') %>
         </a>
       </div>
