@@ -17,13 +17,13 @@
         </div>
         <div class="l-2col-even l-office-col">
           <div class="office__telephone">
-            <%= link_to "tel:#{office.telephone_number}", class: 'contact-link' do %>
+            <%= link_to "tel:#{office.telephone_number}", class: 'contact-link', target: '_parent' do %>
               <%= svg_icon :phone_ringing, title: t('firms.show.panels.offices.telephone'), class: 'contact-link__svg-icon'
               %><%= office.telephone_number %>
             <% end %>
           </div>
           <div class="office__email">
-            <%= link_to "mailto:#{office.email_address}", class: 'contact-link' do %>
+            <%= link_to "mailto:#{office.email_address}", class: 'contact-link', target: '_parent' do %>
               <%= svg_icon :envelope, title: t('firms.show.panels.offices.email_office'), class: 'contact-link__svg-icon'
               %><%= t('firms.show.panels.offices.email_office') %>
             <% end %>
