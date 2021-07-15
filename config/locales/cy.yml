@@ -260,7 +260,7 @@ cy:
     heading: A ydych chi wedi cael eich apwyntiad cynghori am ddim eto?
     description:
       - text: Gwasanaeth diduedd ac am ddim gan y llywodraeth yw Pension Wise sy’n rhoi cymorth i chi ddeall eich opsiynau pensiwn newydd.
-      - text: <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/taking-your-pension/pension-wise" target="_blank">Dysgwch ragor gan Pension wise</a>
+      - text: <a href="https://www.moneyhelper.org.uk/cy/pensions-and-retirement/pension-wise" target="_blank">Dysgwch ragor gan Pension wise</a>
 
   workplace_scheme:
     question: A ydych chi’n aelod o undeb neu grŵp affinedd arall?
