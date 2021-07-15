@@ -58,4 +58,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Ensure iFrame is mountable in AEM
+  config.action_dispatch.default_headers = {'X-Frame-Options' => 'ALLOWALL'}
 end

@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 
-  <link href="https://directory.moneyadviceservice.org.uk/en" hreflang="en-GB" rel="alternate" />
-  <link href="https://directory.moneyadviceservice.org.uk/cy" hreflang="cy-GB" rel="alternate" />
-  <link href="https://directory.moneyadviceservice.org.uk/<%= I18n.locale %>" rel="canonical" />
+  <link href="https://directory.moneyhelper.org/en" hreflang="en-GB" rel="alternate" />
+  <link href="https://directory.moneyhelper.org/cy" hreflang="cy-GB" rel="alternate" />
+  <link href="https://directory.moneyhelper.org/<%= I18n.locale %>" rel="canonical" />
 
   <%= stylesheet_link_tag 'dough/assets/stylesheets/font_files' %>
 
@@ -172,23 +172,18 @@
   </a>
 
   <%= render 'svg_icons' %>
-  <%= render 'mh_banner' %>
-  <%= render 'header' %>
-  <%= render 'breadcrumbs' %>
 
-  <% if covid_banner_dismissed? %>
-    <%= render 'covid_banner' %>
-  <% end %>
-
-  <main role="main" id="main">
+  <main 
+    role="main" 
+    id="main"
+    data-dough-component="PostMessages"
+    data-dough-post-messages-config='{"masresize": "true"}'
+  >
     <%= content_for :validation_summary %>
 
     <%= yield %>
-
-    <%= render 'contact_methods/contact_us' %>
   </main>
 
-  <%= render 'footer' %>
 
 <%= javascript_include_tag 'requirejs/require', data: { main: javascript_path('application') } %>
 

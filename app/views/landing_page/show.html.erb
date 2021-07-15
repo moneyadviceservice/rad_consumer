@@ -6,7 +6,7 @@
       <% end %>
     </div>
     <div class="l-2col-side l-landing-page__register-link">
-      <%= link_to t('rad_signup_link'), rad_signup_url %>
+      <%= link_to t('rad_signup_link'), rad_signup_url, target: "_blank" %>
     </div>
   </div>
 </div>
@@ -41,7 +41,7 @@
     </section>
     <section class="l-landing-page__2col">
       <div class="video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/_MMnVaQeFqk?rel=0" frameborder="0" allowfullscreen title="<%= t('landing_page.show.video1_title')%>"></iframe>
+        <iframe width="560" height="315" src="<%= t('landing_page.show.video1_url')%>" frameborder="0" allowfullscreen title="<%= t('landing_page.show.video1_title')%>"></iframe>
       </div>
       <p class="video__description">
         <%= t('find_retirement_adviser.video.description') %>
@@ -51,7 +51,7 @@
     <section class="l-landing-page__2col">
       <div class="advert">
         <%= heading_tag(t('pension_wise.heading'), level: 3, class: 'advert__header') %>
-        <%= image_tag('pensionwise_logo.png', class: 'advert__img', alt: '') %>
+        <%= image_tag('pensionwise_logo.svg', class: 'advert__img', alt: '') %>
         <% t('pension_wise.description').each do |item| %>
           <p class="advert__intro"><%= raw item[:text] %></p>
         <% end %>
@@ -85,7 +85,7 @@
       <%= heading_tag(t('more_reasons.heading'), level: 2, class: 'l-landing-page__section-header') %>
 
       <div class="video-wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/5LbktkByOeo?rel=0" frameborder="0" allowfullscreen title="<%= t('landing_page.show.video2_title')%>"></iframe>
+        <iframe width="560" height="315" src="<%= t('landing_page.show.video2_url')%>" frameborder="0" allowfullscreen title="<%= t('landing_page.show.video2_title')%>"></iframe>
       </div>
       <p class="video__description">
         <%= t('more_reasons.video.description') %>
@@ -112,7 +112,9 @@
       <%= heading_tag(t('useful_links.heading'), level: 2, class: 'l-landing-page__heading') %>
       <ul class="unstyled-list">
         <% t('useful_links.links').each do |item| %>
-          <li><a href="<%= item[:url] %>"><%= item[:text] %></a></li>
+          <li>
+            <a href="<%= item[:url] %>" target="_blank"><%= item[:text] %></a>
+          </li>
         <% end %>
       </ul>
     </section>

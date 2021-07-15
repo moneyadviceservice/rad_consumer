@@ -1,11 +1,13 @@
+@import "../reskin//moneyhelper_variables";
+
 .education {
-  padding-top: $baseline-unit*4;
+  padding-top: $baseline-unit * 4;
 }
 
 .education__heading {
   @include body(22, 28);
   margin-top: 0;
-  margin-bottom: $baseline-unit*4;
+  margin-bottom: $baseline-unit * 4;
 
   @include respond-to($mq-m) {
     margin-bottom: 0;
@@ -15,6 +17,7 @@
 .education__heading-text {
   @include inline-block();
   width: 93%;
+  color: $teal_secondary;
 }
 
 .education__button {
@@ -46,9 +49,9 @@
 }
 
 .education__icon--minus:before {
-  content: '–';
+  content: "–";
 }
 
 .education__icon--plus:before {
-  content: '+';
+  content: "+";
 }
