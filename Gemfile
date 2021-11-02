@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# force Bundler to use HTTPS for github repos
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
+
 ruby File.read('.ruby-version').chomp
 
 # RULES OF THE GEMFILE
@@ -17,10 +20,7 @@ gem 'algoliasearch'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
 # is the same as the Gem version.
-gem 'dough-ruby',
-    git: 'https://github.com/moneyadviceservice/dough.git',
-    branch: 'PostMessages_v6.2',
-    ref: '4a52cb8'
+gem 'dough-ruby', github: 'moneyadviceservice/dough', branch: 'PostMessages_v6.2', ref: '4a52cb8'
 gem 'geocoder', '~> 1.6.3'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'
