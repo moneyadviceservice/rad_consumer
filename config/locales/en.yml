@@ -360,7 +360,7 @@ en:
       qualifications_and_accreditations:
         heading: "I would like an adviser with the following accreditations / qualifications:"
         tooltip_html: |
-          Find out more about adviser accreditations/qualifications by clicking <a href="https://directory.moneyhelper.org/en/glossary/#chartered_fp" target="_blank">here</a>.
+          Find out more about adviser accreditations/qualifications by clicking <a href="/en/glossary/#chartered_fp" class="js-no-jump">here</a>.
         label: Filter by adviser qualification or accreditation
         url: "/en/glossary/#chartered_fp"
       qualification:
