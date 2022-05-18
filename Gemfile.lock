@@ -224,7 +224,7 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.0.2)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.0)
     minitest (5.14.4)
     multi_json (1.15.0)
     multi_test (0.1.2)
@@ -232,10 +232,10 @@ GEM
     nap (1.1.0)
     nio4r (2.5.3)
     no_proxy_fix (0.1.2)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.5)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.13.5-x86_64-darwin)
       racc (~> 1.4)
     octokit (4.14.0)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -405,7 +405,7 @@ DEPENDENCIES
   launchy
   listen
   mimemagic (~> 0.3)
-  nokogiri (= 1.12.5)
+  nokogiri (= 1.13.5)
   opening_hours
   pg (~> 0.20.0)
   poltergeist
