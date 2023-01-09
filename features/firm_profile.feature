@@ -42,7 +42,7 @@ Feature: Firm profile
       | Caitlyn Kohler |
 
   Scenario: Viewing a firm profile following search "in person" results
-    When I am performing the "in person" search with value "EC4A 2AH"
+    When I am performing the "in person" search with value "EC4A2AH"
     And I open the profile of firm "Test Firm Central London" from the results
     Then I can see the closest adviser "0.3" miles away
     When I click on the "offices" tab

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A%202AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A2AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''
@@ -21,30 +21,25 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Mon, 09 Jan 2023 14:21:46 GMT
-      Pragma:
-      - no-cache
+      - Thu, 28 Mar 2019 11:20:21 GMT
       Expires:
-      - Fri, 01 Jan 1990 00:00:00 GMT
+      - Fri, 29 Mar 2019 11:20:21 GMT
       Cache-Control:
-      - no-cache, must-revalidate
+      - public, max-age=86400
       Access-Control-Allow-Origin:
       - "*"
-      X-Goog-Maps-Metro-Area:
-      - London
       Server:
       - mafe
+      Content-Length:
+      - '522'
       X-Xss-Protection:
-      - '0'
+      - 1; mode=block
       X-Frame-Options:
       - SAMEORIGIN
       Server-Timing:
-      - gfet4t7; dur=84
+      - gfet4t7; dur=361
       Alt-Svc:
-      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
-        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
-      Transfer-Encoding:
-      - chunked
+      - quic=":443"; ma=2592000; v="46,44,43,39"
     body:
       encoding: ASCII-8BIT
       string: |
@@ -87,27 +82,27 @@ http_interactions:
                  "geometry" : {
                     "bounds" : {
                        "northeast" : {
-                          "lat" : 51.5141126,
-                          "lng" : -0.1110886
+                          "lat" : 51.5141193,
+                          "lng" : -0.111087
                        },
                        "southwest" : {
-                          "lat" : 51.5137844,
-                          "lng" : -0.111383
+                          "lat" : 51.5138213,
+                          "lng" : -0.1116846
                        }
                     },
                     "location" : {
-                       "lat" : 51.5139684,
-                       "lng" : -0.1112699
+                       "lat" : 51.5139284,
+                       "lng" : -0.1113308
                     },
                     "location_type" : "APPROXIMATE",
                     "viewport" : {
                        "northeast" : {
-                          "lat" : 51.51529748029149,
-                          "lng" : -0.109886819708498
+                          "lat" : 51.51531928029149,
+                          "lng" : -0.110036819708498
                        },
                        "southwest" : {
-                          "lat" : 51.5125995197085,
-                          "lng" : -0.112584780291502
+                          "lat" : 51.51262131970849,
+                          "lng" : -0.112734780291502
                        }
                     }
                  },
@@ -117,6 +112,6 @@ http_interactions:
            ],
            "status" : "OK"
         }
-    http_version:
-  recorded_at: Mon, 09 Jan 2023 14:21:46 GMT
-recorded_with: VCR 5.0.0
+    http_version: 
+  recorded_at: Thu, 28 Mar 2019 11:20:21 GMT
+recorded_with: VCR 4.0.0

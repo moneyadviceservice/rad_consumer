@@ -275,7 +275,7 @@ http_interactions:
   recorded_at: Thu, 14 Mar 2019 02:52:52 GMT
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A%202AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=EC4A2AH,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
     body:
       encoding: US-ASCII
       string: ''

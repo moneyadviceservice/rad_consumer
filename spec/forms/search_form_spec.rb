@@ -260,6 +260,16 @@ RSpec.describe SearchForm do
         end
       end
 
+      context 'and a badly spaced postcode is given' do
+        it 'is valid' do
+          form.postcode = ' R G 2  1 A A  '
+
+          VCR.use_cassette(:geocoded_postcode) do
+            expect(form).to be_valid
+          end
+        end
+      end
+
       it 'does not pass on any advice methods' do
         expect(form.remote_advice_method_ids).to be_empty
       end
