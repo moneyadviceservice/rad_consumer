@@ -21,7 +21,7 @@ module Filters
     end
 
     def coordinates
-      @coordinates ||= Geocode.call(postcode)
+      @coordinates ||= Geocode.call(stripped_postcode)
     end
 
     def postcode
@@ -35,13 +35,17 @@ module Filters
     private
 
     def geocode_postcode
-      return if postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
+      return if stripped_postcode =~ /\A[A-Z\d]{1,4} ?[A-Z\d]{1,3}\z/ && coordinates
 
       errors.add(:postcode, I18n.t('search.errors.geocode_failure'))
     end
 
     def upcase_postcode
       postcode.try(:upcase!)
+    end
+
+    def stripped_postcode
+      postcode&.gsub(' ', '')
     end
   end
 end

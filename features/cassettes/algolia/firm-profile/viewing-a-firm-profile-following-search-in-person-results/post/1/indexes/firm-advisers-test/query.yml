@@ -60,8 +60,8 @@ http_interactions:
         Schaden","travel_distance":100,"firm":{"id":3},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76510,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76510}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22_geoloc%22%2C%22name%22%2C%22travel_distance%22%2C%22firm.id%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","serverUsed":"c11-eu-2.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
-'
-    http_version: 
+        '
+    http_version:
   recorded_at: Thu, 25 Apr 2019 15:32:07 GMT
 - request:
     method: post
@@ -124,8 +124,8 @@ http_interactions:
         Firm Brighton","postcode_searchable":true,"website_address":null,"telephone_number":null,"email_address":null,"free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[3],"in_person_advice_methods":[2],"adviser_qualification_ids":[],"adviser_accreditation_ids":[],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":false,"non_uk_residents_flag":false,"languages":[],"total_offices":0,"total_advisers":1},"objectID":"5","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Brighton","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":4,"geoDistance":76510,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":2,"matchedGeoLocation":{"lat":50.8263,"lng":-0.1409,"distance":76510}}}],"nbHits":3,"page":0,"nbPages":1,"hitsPerPage":10,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&aroundRadius=1207008&attributesToRetrieve=%5B%22firm%22%5D&distinct=true&facetFilters=%5B%22firm.postcode_searchable%3Atrue%22%2C%5B%22firm.id%3A1%22%2C%22firm.id%3A2%22%2C%22firm.id%3A3%22%5D%5D&getRankingInfo=true&page=0&hitsPerPage=10&query=","serverUsed":"c11-eu-2.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
-'
-    http_version: 
+        '
+    http_version:
   recorded_at: Thu, 25 Apr 2019 15:32:07 GMT
 - request:
     method: post
@@ -189,7 +189,62 @@ http_interactions:
         333 135","email_address":"office135@example.org","free_initial_meeting":true,"minimum_fixed_fee":0,"retirement_income_products_flag":true,"pension_transfer_flag":false,"long_term_care_flag":false,"equity_release_flag":true,"inheritance_tax_and_estate_planning_flag":false,"wills_and_probate_flag":false,"other_advice_methods":[],"investment_sizes":[1],"in_person_advice_methods":[2],"adviser_qualification_ids":[3,4],"adviser_accreditation_ids":[1,2],"ethical_investing_flag":false,"sharia_investing_flag":false,"workplace_financial_advice_flag":true,"non_uk_residents_flag":false,"languages":["ita"],"total_offices":2,"total_advisers":2},"objectID":"1","_highlightResult":{"firm":{"registered_name":{"value":"Test
         Firm Central London","matchLevel":"none","matchedWords":[]}}},"_rankingInfo":{"nbTypos":0,"firstMatchedWord":0,"proximityDistance":0,"userScore":0,"geoDistance":1139,"geoPrecision":1,"nbExactWords":0,"words":0,"filters":1,"matchedGeoLocation":{"lat":51.5119,"lng":-0.0952,"distance":1139}}}],"nbHits":2,"page":0,"nbPages":1,"hitsPerPage":1000,"processingTimeMS":1,"exhaustiveNbHits":true,"query":"","params":"aroundLatLng=%5B51.5139284%2C-0.1113308%5D&distinct=false&facetFilters=%5B%22firm.id%3A1%22%5D&getRankingInfo=true&page=0&hitsPerPage=1000&query=","automaticRadius":"15740070","serverUsed":"c11-eu-2.algolia.net","indexUsed":"firm-advisers-test","parsedQuery":"","timeoutCounts":false,"timeoutHits":false}
 
-'
-    http_version: 
+        '
+    http_version:
   recorded_at: Thu, 25 Apr 2019 15:32:08 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: post
+    uri: https://bhpslyij2l-dsn.algolia.net/1/indexes/firm-advisers-test/query
+    body:
+      encoding: UTF-8
+      string: '{"params":"aroundLatLng=%5B51.5139684%2C-0.1112699%5D\u0026distinct=false\u0026facetFilters=%5B%22firm.id%3A1%22%5D\u0026getRankingInfo=true\u0026page=0\u0026hitsPerPage=1000\u0026query="}'
+    headers:
+      User-Agent:
+      - Algolia for Ruby (1.27.1); Ruby (2.6.5)
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip,deflate
+      Date:
+      - Mon, 09 Jan 2023 14:21:46 GMT
+      X-Algolia-Api-Key:
+      - "<API_KEY>"
+      X-Algolia-Application-Id:
+      - "<APP_ID>"
+      Content-Type:
+      - application/json; charset=utf-8
+  response:
+    status:
+      code: 403
+      message: Forbidden
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Jan 2023 14:21:47 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '60'
+      Connection:
+      - keep-alive
+      Accept-Encoding:
+      - deflate, gzip
+      Cache-Control:
+      - no-store
+      Access-Control-Allow-Origin:
+      - "*"
+      Timing-Allow-Origin:
+      - "*"
+      X-Content-Type-Options:
+      - nosniff
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Content-Disposition:
+      - inline; filename=a.txt
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid Application-ID or API key","status":403}'
+    http_version:
+  recorded_at: Mon, 09 Jan 2023 14:21:47 GMT
+recorded_with: VCR 5.0.0

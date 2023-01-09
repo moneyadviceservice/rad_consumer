@@ -105,7 +105,7 @@ http_interactions:
            ],
            "status" : "OK"
         }
-    http_version: 
+    http_version:
   recorded_at: Mon, 18 Mar 2019 10:51:34 GMT
 - request:
     method: get
@@ -216,6 +216,99 @@ http_interactions:
            ],
            "status" : "OK"
         }
-    http_version: 
+    http_version:
   recorded_at: Mon, 18 Mar 2019 10:51:34 GMT
-recorded_with: VCR 4.0.0
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=RG21AA,%20United%20Kingdom&key=<GOOGLE_GEOCODER_API_KEY>&language=en&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 09 Jan 2023 13:43:55 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Access-Control-Allow-Origin:
+      - "*"
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=61
+      Alt-Svc:
+      - h3=":443"; ma=2592000,h3-29=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "United Kingdom",
+                       "short_name" : "GB",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "United Kingdom",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 60.91569999999999,
+                          "lng" : 33.9165549
+                       },
+                       "southwest" : {
+                          "lat" : 34.5614,
+                          "lng" : -8.8988999
+                       }
+                    },
+                    "location" : {
+                       "lat" : 55.378051,
+                       "lng" : -3.435973
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 61.5471111,
+                          "lng" : 9.584415699999999
+                       },
+                       "southwest" : {
+                          "lat" : 47.5554486,
+                          "lng" : -18.5319589
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "place_id" : "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
+                 "types" : [ "country", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version:
+  recorded_at: Mon, 09 Jan 2023 13:43:55 GMT
+recorded_with: VCR 5.0.0
