@@ -51,7 +51,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rb-readline'
   gem 'rspec-rails', '~> 3.8'
-  gem 'rubocop', '0.62.0'
+  gem 'rubocop', '0.80.0', require: false
   gem 'spring'
 end
 
