@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: https://github.com/moneyadviceservice/dough.git
-  revision: 4a52cb8e15c7dd6c0f30c81e0bfd685dfb5c7f77
-  ref: 4a52cb8
-  branch: PostMessages_v6.2
+  revision: c84c153e3365c811475ed18877d61dcae4e8c7ea
+  ref: c84c153
+  branch: html-options-fix
   specs:
     dough-ruby (6.2.0)
       activemodel
@@ -428,7 +428,7 @@ DEPENDENCIES
   webmock
 
 RUBY VERSION
-   ruby 2.6.5p114
+   ruby 2.7.7p221
 
 BUNDLED WITH
    1.17.3
