@@ -7,9 +7,9 @@ GIT
 
 GIT
   remote: https://github.com/moneyadviceservice/dough.git
-  revision: c84c153e3365c811475ed18877d61dcae4e8c7ea
-  ref: c84c153
-  branch: html-options-fix
+  revision: 4e173913859544088136c3892bd675b32711b903
+  ref: 4e17391
+  branch: PostMessages_v6.2
   specs:
     dough-ruby (6.2.0)
       activemodel
