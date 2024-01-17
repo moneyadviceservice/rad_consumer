@@ -30,12 +30,12 @@ gem 'mimemagic', '~> 0.3'
 gem 'nokogiri', '1.12.5'
 gem 'opening_hours'
 gem 'pg', '~> 0.20.0'
+gem 'puma'
 gem 'redis', '~> 3.3.5'
 gem 'rollbar', '~> 2.15.5'
 gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'uk_phone_numbers', '~> 0.1.1'
-gem 'unicorn'
 
 group :development do
   gem 'better_errors'
