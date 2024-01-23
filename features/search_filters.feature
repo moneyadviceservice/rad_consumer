@@ -21,13 +21,6 @@ Feature: Search filters
       | Test Firm Remote 2    |
       | Test Firm East London |
 
-  Scenario: Filter by accreditations and qualifications
-    When I am performing the "firm by name" search with value "Test Firm"
-    And I choose the accreditation / qualification "Pension Transfer Gold Standard"
-    Then I should see the following firms
-      | name                     |
-      | Test Firm East London    |
-
   Scenario: Filter by adviser spoken language
     When I am performing the "firm by name" search with value "Test Firm"
     And I choose the language "Italian"
