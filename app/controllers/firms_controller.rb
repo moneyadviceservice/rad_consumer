@@ -1,6 +1,6 @@
 class FirmsController < ApplicationController
   def show
-    json = FetchFirmProfile.call(params: profile_params)
+    json = FetchFirmProfile.new(**profile_params).call
 
     @firm = FirmProfilePresenter.new(json).firm
     return render not_found unless @firm

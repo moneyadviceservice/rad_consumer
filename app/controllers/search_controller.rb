@@ -6,7 +6,7 @@ class SearchController < ApplicationController
 
     if @form.valid?
       json = SearchFirms.new(
-        params: @form.as_json,
+        @form.as_json,
         page: page,
         session: session
       ).call

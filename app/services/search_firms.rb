@@ -5,14 +5,10 @@ class SearchFirms
   include Helpers::Algolia::Queries
   include Helpers::Algolia::Randomisation
 
-  def self.call(*args)
-    new(*args).call
-  end
-
-  def initialize(params:, page:, session:)
-    @raw_params = params.merge(page: page)
-    @page = page
-    @session = session
+  def initialize(params, **args)
+    @raw_params = params.merge(page: args[:page])
+    @page = args[:page]
+    @session = args[:session]
   end
 
   def call
@@ -32,7 +28,7 @@ class SearchFirms
   attr_reader :randomised_firm_ids
 
   def params
-    @params ||= parse(params: raw_params, strategy: :search_firms)
+    @params ||= parse(**raw_params, strategy: :search_firms)
   end
 
   def build_query

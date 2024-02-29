@@ -28,14 +28,13 @@ module Helpers::Algolia
         [
           '',
           paginate(
-            {
-              aroundLatLng: params.coordinates,
-              aroundRadius: MAX_SEARCH_RADIUS,
-              attributesToRetrieve: ['firm'],
-              distinct: true,
-              facetFilters: build_filters(base_filters, params.filters),
-              getRankingInfo: true
-            }, page: params.page
+            page: params.page,
+            aroundLatLng: params.coordinates,
+            aroundRadius: MAX_SEARCH_RADIUS,
+            attributesToRetrieve: ['firm'],
+            distinct: true,
+            facetFilters: build_filters(base_filters, params.filters),
+            getRankingInfo: true
           )
         ]
       )
@@ -85,12 +84,11 @@ module Helpers::Algolia
         [
           '',
           paginate(
-            {
-              aroundLatLng: params.coordinates,
-              distinct: false,
-              facetFilters: ["firm.id:#{params.id}"],
-              getRankingInfo: params.coordinates.present?
-            }, hits_per_page: MAX_HITS_TOTAL
+            aroundLatLng: params.coordinates,
+            distinct: false,
+            facetFilters: ["firm.id:#{params.id}"],
+            getRankingInfo: params.coordinates.present?,
+            hits_per_page: MAX_HITS_TOTAL
           )
         ]
       )
@@ -102,11 +100,10 @@ module Helpers::Algolia
         [
           '',
           paginate(
-            {
-              aroundLatLng: params.coordinates,
-              facetFilters: ["firm_id:#{params.id}"],
-              getRankingInfo: params.coordinates.present?
-            }, hits_per_page: MAX_HITS_TOTAL
+            aroundLatLng: params.coordinates,
+            facetFilters: ["firm_id:#{params.id}"],
+            getRankingInfo: params.coordinates.present?,
+            hits_per_page: MAX_HITS_TOTAL
           )
         ]
       )
