@@ -1,4 +1,5 @@
 require 'cucumber/rails'
+require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/poltergeist'
 require 'capybara/cucumber'
