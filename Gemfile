@@ -12,7 +12,7 @@ ruby File.read('.ruby-version').chomp
 # 3. Place dependencies in the group they belong
 # 4. Only use version specifiers where appropriate
 
-gem 'rails', '~> 6.1.0'
+gem 'rails', '~> 6.1.7'
 
 gem 'active_model_serializers'
 gem 'activerecord-session_store'
@@ -27,6 +27,7 @@ gem 'jquery-rails'
 gem 'kaminari', '>= 1.2.1'
 gem 'language_list', '~> 1.2.1'
 gem 'mimemagic', '~> 0.3'
+gem 'net-http'
 gem 'nokogiri'
 gem 'opening_hours'
 gem 'pg'
@@ -63,7 +64,7 @@ group :test do
   gem 'danger-rubocop', require: false
   gem 'faker'
   gem 'poltergeist'
-  gem 'site_prism', '~> 2.17'
+  gem 'site_prism'
   gem 'tzinfo-data'
   gem 'vcr'
   gem 'webmock'

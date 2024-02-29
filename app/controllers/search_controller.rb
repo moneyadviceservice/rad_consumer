@@ -5,11 +5,11 @@ class SearchController < ApplicationController
     @form = SearchForm.new(search_form_params)
 
     if @form.valid?
-      json = SearchFirms.call(
+      json = SearchFirms.new(
         params: @form.as_json,
         page: page,
         session: session
-      )
+      ).call
       @results = SearchResultsPresenter.new(json, page: page)
       return render not_found if @results.total_pages < page
     else
