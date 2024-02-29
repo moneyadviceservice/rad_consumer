@@ -52,7 +52,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'rb-readline'
   gem 'rspec-rails'
-  gem 'rubocop', '0.80.0', require: false
+  gem 'rubocop', require: false
   gem 'spring'
 end
 

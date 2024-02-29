@@ -24,8 +24,7 @@ class SearchFirms
 
   private
 
-  attr_reader :raw_params, :session, :page
-  attr_reader :randomised_firm_ids
+  attr_reader :raw_params, :session, :page, :randomised_firm_ids
 
   def params
     @params ||= parse(**raw_params, strategy: :search_firms)

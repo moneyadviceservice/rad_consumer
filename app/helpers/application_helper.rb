@@ -19,7 +19,7 @@ module ApplicationHelper
     end
   end
 
-  def firm_map_component(center:, adviser_pin_url:, office_pin_url:)
+  def firm_map_component(center:, adviser_pin_url:, office_pin_url:, &block)
     options = {
       'data-dough-component': 'FirmMap',
       'data-dough-firm-map-config': {
@@ -29,9 +29,7 @@ module ApplicationHelper
         officePinUrl: office_pin_url
       }.to_json
     }
-    content_tag :div, options do
-      yield
-    end
+    content_tag :div, options, &block
   end
 
   def meters_to_miles(meters)

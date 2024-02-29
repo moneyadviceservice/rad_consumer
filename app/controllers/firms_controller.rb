@@ -15,9 +15,7 @@ class FirmsController < ApplicationController
   end
 
   def coordinates
-    @coordinates ||= begin
-      Geocode.call(params[:postcode]) if params[:postcode].present?
-    end
+    @coordinates ||= (Geocode.call(params[:postcode]) if params[:postcode].present?)
   end
 
   def map_center_coordinates

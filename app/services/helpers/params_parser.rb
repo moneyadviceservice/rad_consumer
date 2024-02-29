@@ -88,7 +88,7 @@ module Helpers::ParamsParser
 
     if qualification_or_accreditation
       key = qualification_or_accreditation_key(qualification_or_accreditation)
-      filters[key] = qualification_or_accreditation[1..-1] if key
+      filters[key] = qualification_or_accreditation[1..] if key
     end
 
     filters.except!(:qualification_or_accreditation)

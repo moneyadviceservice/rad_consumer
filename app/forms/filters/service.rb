@@ -5,8 +5,7 @@ module Filters
                             existing_workplace_pension_flag
                             advice_for_employees_flag].freeze
 
-    attr_accessor(*OTHER_SERVICES)
-    attr_accessor(*WORKPLACE_SERVICES)
+    attr_accessor(*OTHER_SERVICES, *WORKPLACE_SERVICES)
 
     def services
       result = selected_checkbox_attributes(OTHER_SERVICES)

@@ -9,7 +9,7 @@ def and_i_am_on_the_results_page_after_a_previous_search
   expect(results_page).to be_displayed
 end
 
-def and_i_clear_any_filters_from_the_previous_search
+def and_i_clear_any_filters_from_the_previous_search # rubocop:disable Metrics/AbcSize
   results_page.search_form.tap do |f|
     f.face_to_face.set false
     f.phone_or_online.set false
