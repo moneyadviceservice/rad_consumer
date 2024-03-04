@@ -12,9 +12,6 @@ module RadConsumer
     Rails.application.config.active_record.belongs_to_required_by_default = false
 
     config.time_zone = 'Europe/London'
-    config.chat_opening_hours = OpeningHours.new('8:00 AM', '6:00 PM')
-    config.chat_opening_hours.update(:sat, '08:00 AM', '3:00 PM')
-    config.chat_opening_hours.closed(:sun)
 
     config.eager_load_paths << Rails.root.join('lib')
 

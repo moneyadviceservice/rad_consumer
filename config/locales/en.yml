@@ -128,29 +128,6 @@ en:
 
   contact_panels:
     language_availability: This service is currently only available in English.
-    webchat:
-      title: Web chat
-      available:
-        call_to_action: Launch chat
-        description: Got a question? Our advisers will point you in the right direction.
-      unavailable:
-        call_to_action: Unavailable
-      busy:
-        call_to_action: Currently busy
-        description: Sorry, all of our advisers are currently busy. Please try again later.
-      nojs_html: |
-        Sorry, web chat is only available on
-        <a href="http://www.enable-javascript.com/">internet browsers with JavaScript</a>.
-      offline:
-        call_to_action: Offline
-        description: Web chat is available from %{hours}.
-      bank_holiday_html: |
-        Sunday and Bank Holidays, closed
-      offline_migration_html: Monday to Friday, 8am to 8pm<br />On Saturday 06/02/2016 Web chat will be unavailable due to maintenance
-      opening_times_html: |
-        <li class="contact-panel__additional-info">Monday to Friday, 8am to 6pm</li>
-        <li class="contact-panel__additional-info">Saturday, 8am to 3pm</li>
-        <li class="contact-panel__additional-info">Sunday and Bank Holidays, closed</li>
     whatsapp:
       title: WhatsApp
       text1: Need help sorting out your debts, have credit questions or want pensions guidance?
