@@ -15,7 +15,7 @@ RSpec.describe 'Search' do
       end
 
       it 'returns firms with in person advisers', :aggregate_failures do
-        get '/en/search', params: params
+        get('/en/search', params:)
 
         expect(response).to have_http_status(:ok)
         expect(response.body).to include(
@@ -40,7 +40,7 @@ RSpec.describe 'Search' do
       end
 
       it 'returns an error message', :aggregate_failures do
-        get '/en/search', params: params
+        get('/en/search', params:)
 
         expect(response).to have_http_status(:ok)
         expect(response.body).to include(
@@ -63,7 +63,7 @@ RSpec.describe 'Search' do
 
     it 'returns firms with exclusively phone or online advisers' do
       aggregate_failures do
-        get '/en/search', params: params
+        get('/en/search', params:)
 
         expect(response).to have_http_status(:ok)
         expect(response.body).to include(
@@ -87,7 +87,7 @@ RSpec.describe 'Search' do
     end
 
     it 'returns firms matching the provided name', :aggregate_failures do
-      get '/en/search', params: params
+      get('/en/search', params:)
 
       expect(response).to have_http_status(:ok)
       expect(response.body).to include(

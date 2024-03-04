@@ -7,10 +7,10 @@ class SearchController < ApplicationController
     if @form.valid?
       json = SearchFirms.new(
         @form.as_json,
-        page: page,
-        session: session
+        page:,
+        session:
       ).call
-      @results = SearchResultsPresenter.new(json, page: page)
+      @results = SearchResultsPresenter.new(json, page:)
       return render not_found if @results.total_pages < page
     else
       render searchable_view

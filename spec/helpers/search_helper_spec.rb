@@ -6,8 +6,8 @@ RSpec.describe SearchHelper, type: :helper do
 
     let(:firm) do
       double(Results::FirmPresenter,
-             adviser_qualification_ids: adviser_qualification_ids,
-             adviser_accreditation_ids: adviser_accreditation_ids)
+             adviser_qualification_ids:,
+             adviser_accreditation_ids:)
     end
 
     let(:no_qualifications) { [] }

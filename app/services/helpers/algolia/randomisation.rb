@@ -4,7 +4,7 @@ module Helpers::Algolia
     include Pagination
 
     def calculate_random_firm_ids(query:, seed:)
-      browse(query: query)
+      browse(query:)
         .map { |hit| hit['firm']['id'] }
         .shuffle(random: Random.new(seed))
         .each_slice(MAX_HITS_PER_PAGE)

@@ -37,9 +37,9 @@ RSpec.describe Helpers::Algolia::Randomisation, type: :helper do
 
     it 'returns groups of 10 or less random ids for the given seed' do
       aggregate_failures do
-        ids_first_run = helper.calculate_random_firm_ids(query: query, seed: 1)
-        ids_second_run = helper.calculate_random_firm_ids(query: query, seed: 1)
-        ids_third_run = helper.calculate_random_firm_ids(query: query, seed: 99)
+        ids_first_run = helper.calculate_random_firm_ids(query:, seed: 1)
+        ids_second_run = helper.calculate_random_firm_ids(query:, seed: 1)
+        ids_third_run = helper.calculate_random_firm_ids(query:, seed: 99)
 
         expect(ids_first_run).to eq(
           [
@@ -78,7 +78,7 @@ RSpec.describe Helpers::Algolia::Randomisation, type: :helper do
     end
 
     subject(:randomise) do
-      helper.randomise(response: response, ids: randomised_ids, page: page)
+      helper.randomise(response:, ids: randomised_ids, page:)
     end
     let(:response_page1) do
       {

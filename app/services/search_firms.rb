@@ -16,10 +16,10 @@ class SearchFirms
 
     update_session
 
-    response = search(query: query)
+    response = search(query:)
     return response unless randomised_firm_ids&.any?
 
-    randomise(response: response, ids: randomised_firm_ids, page: page)
+    randomise(response:, ids: randomised_firm_ids, page:)
   end
 
   private
@@ -49,7 +49,7 @@ class SearchFirms
     browse_query = browse_query_for(:geolocation, source_query: query)
     in_range_ids = fetch_in_consumer_range_firm_ids(query: browse_query)
 
-    filter_query_by_firm_ids!(query: query, ids: in_range_ids)
+    filter_query_by_firm_ids!(query:, ids: in_range_ids)
   end
 
   def with_randomisation
@@ -68,7 +68,7 @@ class SearchFirms
 
     page_random_ids = randomised_firm_ids.fetch(params.page - 1, [])
 
-    filter_query_by_firm_ids!(query: query, ids: page_random_ids)
+    filter_query_by_firm_ids!(query:, ids: page_random_ids)
   end
 
   def filter_query_by_firm_ids!(query:, ids:)

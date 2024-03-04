@@ -1,6 +1,6 @@
 RSpec.describe Helpers::ParamsParser, type: :helper do
   describe '.parse' do
-    subject(:parse) { helper.parse(strategy: strategy, **params) }
+    subject(:parse) { helper.parse(strategy:, **params) }
 
     before do
       allow(Geocode).to receive(:call).and_return([55.378051, -3.435973])

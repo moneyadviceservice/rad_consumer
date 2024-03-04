@@ -11,7 +11,7 @@ class FirmsController < ApplicationController
   private
 
   def profile_params
-    params.permit(:id, :postcode, :locale).merge!(coordinates: coordinates)
+    params.permit(:id, :postcode, :locale).merge!(coordinates:)
   end
 
   def coordinates

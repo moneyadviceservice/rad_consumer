@@ -69,7 +69,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 
@@ -114,7 +114,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 
@@ -168,7 +168,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 

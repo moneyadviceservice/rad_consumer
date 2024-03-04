@@ -15,7 +15,7 @@ class FetchFirmProfile
     advisers = search(query: firm_advisers_query(params))
     offices = search(query: firm_offices_query(params))
 
-    { advisers: advisers, offices: offices }
+    { advisers:, offices: }
   end
 
   private

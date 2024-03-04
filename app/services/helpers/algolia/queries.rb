@@ -112,7 +112,7 @@ module Helpers::Algolia
     private
 
     def query_for(index, query)
-      { index: index, value: query }
+      { index:, value: query }
     end
 
     def build_filters(base_filters, params_filters)

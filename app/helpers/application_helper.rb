@@ -24,7 +24,7 @@ module ApplicationHelper
       'data-dough-component': 'FirmMap',
       'data-dough-firm-map-config': {
         apiKey: ENV['GOOGLE_MAPS_API_KEY'],
-        center: center,
+        center:,
         adviserPinUrl: adviser_pin_url,
         officePinUrl: office_pin_url
       }.to_json
