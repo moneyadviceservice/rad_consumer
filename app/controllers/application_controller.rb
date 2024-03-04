@@ -8,8 +8,6 @@ class ApplicationController < ActionController::Base
   BANNER_DISMISSED_COOKIE_NAME = '_covid_banner'.freeze
   BANNER_DISMISSED_COOKIE_VALUE = 'y'.freeze
 
-  include Chat
-
   def covid_banner_dismissed?
     cookies.permanent[BANNER_DISMISSED_COOKIE_NAME] != BANNER_DISMISSED_COOKIE_VALUE
   end

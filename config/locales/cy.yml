@@ -128,30 +128,6 @@ cy:
 
   contact_panels:
     language_availability: Ar hyn o bryd mae’r gwasanaeth hwn ar gael yn Saesneg yn unig.
-    webchat:
-      title: Gwe-sgwrs
-      available:
-        call_to_action: Lansio sgwrs
-        description: A oes gennych chi gwestiwn? Bydd ein cynghorwyr yn eich arwain i'r cyfeiriad cywir.
-      unavailable:
-        call_to_action: Ddim ar gael
-      busy:
-        call_to_action: Yn brysur ar hyn o bryd
-        description: Mae'n ddrwg gennym, mae pob un o'n cynghorwyr yn brysur ar hyn o bryd. Rhowch gynnig arall arni yn nes ymlaen.
-      nojs_html: |
-        Mae'n ddrwg gennym, mae gwe-sgwrs ar gael ar
-        <a href="http://www.enable-javascript.com/">borwyr rhyngrwyd JavaScript yn unig</a>.
-      offline:
-        call_to_action: All-lein
-        description: Gwe-sgwrs ar gael o %{hours}.
-      smallprint: Dim ond yn Saesneg mae gwe-sgwrsio ar gael.
-      bank_holiday_html: |
-        Dydd Sul a Gwyliau Banc, ar gau
-      offline_migration_html: Dydd Llun i Dydd Gwener, 8am i 8pm<br />Ar ddydd Sadwrn 06/02/2016 bydd gwaith cynnal a chadw’n golygu na fydd y We-sgwrs ar gael
-      opening_times_html: |
-        <li class="contact-panel__additional-info">Llun i Wener, 8am i 6pm</li>
-        <li class="contact-panel__additional-info">Dydd Sadwrn, 8am i 3pm</li>
-        <li class="contact-panel__additional-info">Dydd Sul a Gwyliau Banc, ar gau</li>
     whatsapp:
       title: WhatsApp
       text1: Angen help i gael trefn ar eich dyledion, neu a oes gennych chi gwestiynau credyd neu eisiau arweiniad ar bensiynau?
