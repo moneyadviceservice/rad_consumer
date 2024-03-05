@@ -66,5 +66,6 @@ group :test do
   gem 'site_prism'
   gem 'tzinfo-data'
   gem 'vcr'
+  gem 'warning'
   gem 'webmock'
 end
