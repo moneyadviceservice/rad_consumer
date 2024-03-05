@@ -20,7 +20,7 @@ gem 'algoliasearch'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
 # is the same as the Gem version.
-gem 'dough-ruby', github: 'moneyadviceservice/dough', branch: 'html-options-fix', ref: 'd59e150'
+gem 'dough-ruby', github: 'moneyadviceservice/dough', branch: 'html-options-fix'
 gem 'geocoder', '~> 1.6.3'
 gem 'httpclient', '~> 2.8.3'
 gem 'jquery-rails'

@@ -7,8 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/moneyadviceservice/dough.git
-  revision: d59e150e9c4693f853f2f704167d403a8bd87864
-  ref: d59e150
+  revision: e3ce7d18e0d0f2499fb9080455c77f2873907d4c
   branch: html-options-fix
   specs:
     dough-ruby (6.2.0)
@@ -237,7 +236,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    marcel (1.0.2)
+    marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.0.0)
     mime-types (3.3)
@@ -396,7 +395,7 @@ GEM
       sprockets (>= 3.0.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    thor (1.3.0)
+    thor (1.3.1)
     tilt (2.3.0)
     timeout (0.4.1)
     tzinfo (2.0.6)
