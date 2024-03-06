@@ -52,7 +52,6 @@ group :development, :test do
   gem 'rb-readline'
   gem 'rspec-rails'
   gem 'rubocop', require: false
-  gem 'spring'
 end
 
 group :test do
