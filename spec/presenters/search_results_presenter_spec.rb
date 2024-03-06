@@ -1,5 +1,5 @@
 RSpec.describe SearchResultsPresenter do
-  subject(:presenter) { described_class.new(json, page: page) }
+  subject(:presenter) { described_class.new(json, page:) }
   let(:page) { 1 }
   let(:json) do
     {

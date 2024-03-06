@@ -39,7 +39,7 @@ module Filters
 
     def selected_filter_id_for(filter_type)
       is_desired_type = ->(prefix, item) { !!item[/^#{prefix}/] }
-      extract_id = ->(item) { item[1..-1] }
+      extract_id = ->(item) { item[1..] }
       type_prefix = prefix_for(filter_type)
 
       [qualification_or_accreditation]

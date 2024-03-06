@@ -1,6 +1,6 @@
 class FirmsController < ApplicationController
   def show
-    json = FetchFirmProfile.call(params: profile_params)
+    json = FetchFirmProfile.new(**profile_params).call
 
     @firm = FirmProfilePresenter.new(json).firm
     return render not_found unless @firm
@@ -11,13 +11,11 @@ class FirmsController < ApplicationController
   private
 
   def profile_params
-    params.permit(:id, :postcode, :locale).merge!(coordinates: coordinates)
+    params.permit(:id, :postcode, :locale).merge!(coordinates:)
   end
 
   def coordinates
-    @coordinates ||= begin
-      Geocode.call(params[:postcode]) if params[:postcode].present?
-    end
+    @coordinates ||= (Geocode.call(params[:postcode]) if params[:postcode].present?)
   end
 
   def map_center_coordinates

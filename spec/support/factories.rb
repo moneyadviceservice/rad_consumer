@@ -21,7 +21,7 @@ FactoryBot.define do
     end
 
     after(:create) do |firm, evaluator|
-      create_list(:office, evaluator.offices_count, firm: firm)
+      create_list(:office, evaluator.offices_count, firm:)
       firm.reload
     end
 
@@ -30,7 +30,7 @@ FactoryBot.define do
     end
 
     after(:create) do |firm, evaluator|
-      create_list(:adviser, evaluator.advisers_count, firm: firm)
+      create_list(:adviser, evaluator.advisers_count, firm:)
     end
 
     factory :firm_without_advisers, traits: [:without_advisers]

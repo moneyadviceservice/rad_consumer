@@ -1,9 +1,8 @@
 RSpec.describe SearchFirms do
   describe '.call' do
-    subject(:perform_search) { described_class.call(**args) }
+    subject(:perform_search) { described_class.new(params, **args).call }
     let(:args) do
       {
-        params: params,
         page: 1,
         session: {
           random_search_seed: 137
@@ -70,7 +69,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 
@@ -115,7 +114,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 
@@ -134,7 +133,7 @@ RSpec.describe SearchFirms do
       it 'updates the session with the latest search params' do
         expect_any_instance_of(SessionJar)
           .to receive(:update_most_recent_search)
-          .with(hash_including(args[:params]), [[5, 6, 4]])
+          .with(hash_including(params), [[5, 6, 4]])
           .exactly(:once)
           .and_call_original
 
@@ -169,7 +168,7 @@ RSpec.describe SearchFirms do
       it 'builds and sends a query to Algolia' do
         expect_any_instance_of(described_class)
           .to receive(:search)
-          .with(query: query)
+          .with(query:)
           .exactly(:once)
           .and_call_original
 

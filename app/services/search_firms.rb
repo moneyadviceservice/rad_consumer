@@ -5,14 +5,10 @@ class SearchFirms
   include Helpers::Algolia::Queries
   include Helpers::Algolia::Randomisation
 
-  def self.call(*args)
-    new(*args).call
-  end
-
-  def initialize(params:, page:, session:)
-    @raw_params = params.merge(page: page)
-    @page = page
-    @session = session
+  def initialize(params, **args)
+    @raw_params = params.merge(page: args[:page])
+    @page = args[:page]
+    @session = args[:session]
   end
 
   def call
@@ -20,19 +16,18 @@ class SearchFirms
 
     update_session
 
-    response = search(query: query)
+    response = search(query:)
     return response unless randomised_firm_ids&.any?
 
-    randomise(response: response, ids: randomised_firm_ids, page: page)
+    randomise(response:, ids: randomised_firm_ids, page:)
   end
 
   private
 
-  attr_reader :raw_params, :session, :page
-  attr_reader :randomised_firm_ids
+  attr_reader :raw_params, :session, :page, :randomised_firm_ids
 
   def params
-    @params ||= parse(params: raw_params, strategy: :search_firms)
+    @params ||= parse(**raw_params, strategy: :search_firms)
   end
 
   def build_query
@@ -54,7 +49,7 @@ class SearchFirms
     browse_query = browse_query_for(:geolocation, source_query: query)
     in_range_ids = fetch_in_consumer_range_firm_ids(query: browse_query)
 
-    filter_query_by_firm_ids!(query: query, ids: in_range_ids)
+    filter_query_by_firm_ids!(query:, ids: in_range_ids)
   end
 
   def with_randomisation
@@ -73,7 +68,7 @@ class SearchFirms
 
     page_random_ids = randomised_firm_ids.fetch(params.page - 1, [])
 
-    filter_query_by_firm_ids!(query: query, ids: page_random_ids)
+    filter_query_by_firm_ids!(query:, ids: page_random_ids)
   end
 
   def filter_query_by_firm_ids!(query:, ids:)

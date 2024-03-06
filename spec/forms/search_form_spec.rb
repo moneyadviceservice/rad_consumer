@@ -1,6 +1,6 @@
 RSpec.describe SearchForm do
   describe 'advice method predicates' do
-    let(:form) { described_class.new(advice_method: advice_method) }
+    let(:form) { described_class.new(advice_method:) }
 
     describe 'attributes' do
       it 'allows firm_id to be set and accessed' do
@@ -213,7 +213,7 @@ RSpec.describe SearchForm do
   end
 
   describe 'validation' do
-    let(:form) { described_class.new(advice_method: advice_method) }
+    let(:form) { described_class.new(advice_method:) }
 
     context 'when no advice method is present' do
       let(:advice_method) { nil }
@@ -443,7 +443,7 @@ RSpec.describe SearchForm do
   describe '#pension_transfer_flag' do
     let(:form) do
       described_class.new(
-        pension_transfer_flag: pension_transfer_flag,
+        pension_transfer_flag:,
         long_term_care_flag: '1',
         equity_release_flag: '1',
         inheritance_tax_and_estate_planning_flag: '1',

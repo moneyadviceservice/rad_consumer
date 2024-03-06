@@ -13,7 +13,7 @@ When('I choose the investment size {string}') do |investment_size|
   init_results_page
 end
 
-When('I choose the accreditation / qualification {string}') do |option|
+When('I choose the accreditation \/ qualification {string}') do |option|
   @results_page.search_form.accreditation_or_qualification.select(option)
   @results_page.search_form.search.click
   init_results_page

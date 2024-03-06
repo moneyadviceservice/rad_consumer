@@ -137,7 +137,7 @@ RSpec.describe SessionJar do
           expected_url = search_path(
             page: search_params[:params][:page],
             search_form: search_params[:params].except(:page),
-            locale: locale
+            locale:
           )
           expect(session_jar.last_search_url(locale)).to eq(expected_url)
         end
@@ -171,7 +171,7 @@ RSpec.describe SessionJar do
     subject(:already_stored_search?) do
       session_jar.already_stored_search?(
         current_params,
-        page_sensitive: page_sensitive
+        page_sensitive:
       )
     end
     let(:current_params) { {} }
@@ -361,7 +361,7 @@ RSpec.describe SessionJar do
         update_most_recent_search
         expect(session_jar.last_search).to eq(
           params: search_params,
-          randomised_firm_ids: randomised_firm_ids
+          randomised_firm_ids:
         )
       end
     end
@@ -380,7 +380,7 @@ RSpec.describe SessionJar do
         update_most_recent_search
         expect(session_jar.last_search).to eq(
           params: search_params,
-          randomised_firm_ids: randomised_firm_ids
+          randomised_firm_ids:
         )
       end
     end

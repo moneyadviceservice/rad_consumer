@@ -1,7 +1,7 @@
 RSpec.describe Helpers::Algolia::Index, type: :helper do
   let(:query) do
     {
-      index: index,
+      index:,
       value: [
         '',
         {
@@ -27,7 +27,7 @@ RSpec.describe Helpers::Algolia::Index, type: :helper do
         expect(algolia_instance).to receive(:search)
           .with(*query[:value]).exactly(:once)
 
-        helper.search(query: query)
+        helper.search(query:)
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe Helpers::Algolia::Index, type: :helper do
       let(:index) { :invalid }
 
       it 'raises an error' do
-        expect { helper.search(query: query) }
+        expect { helper.search(query:) }
           .to raise_error(described_class::UnvailableIndexError)
       end
     end
@@ -60,7 +60,7 @@ RSpec.describe Helpers::Algolia::Index, type: :helper do
           expect(algolia_instance).to receive(:search)
             .with(*query[:value]).exactly(:once).and_return(response)
 
-          hits = helper.browse(query: query)
+          hits = helper.browse(query:)
           expect(hits).to eq(%i[uno dos tres])
         end
       end
@@ -87,7 +87,7 @@ RSpec.describe Helpers::Algolia::Index, type: :helper do
         expect(algolia_instance).to receive(:search)
           .with(*query[:value]).exactly(:once).and_return(response1, response2)
 
-        hits = helper.browse(query: query)
+        hits = helper.browse(query:)
         expect(hits).to eq(%i[uno dos tres quatro cinco seis])
       end
     end

@@ -3,7 +3,7 @@ module Helpers::Algolia
     include Index
 
     def fetch_in_consumer_range_firm_ids(query:)
-      browse(query: query)
+      browse(query:)
         .select { |hit| in_range?(hit) }
         .map { |hit| hit['firm']['id'] }
     end

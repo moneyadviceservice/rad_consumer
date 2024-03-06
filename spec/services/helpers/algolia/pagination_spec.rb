@@ -1,7 +1,7 @@
 RSpec.describe Helpers::Algolia::Randomisation, type: :helper do
   describe '.paginate' do
     subject(:paginate) do
-      helper.paginate(hash, page: page, hits_per_page: hits_per_page)
+      helper.paginate(**hash, page:, hits_per_page:)
     end
     let(:hash) { { some: :values } }
     let(:page) { 1 }

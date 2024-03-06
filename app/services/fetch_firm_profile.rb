@@ -7,7 +7,7 @@ class FetchFirmProfile
     new(*args).call
   end
 
-  def initialize(params:)
+  def initialize(**params)
     @raw_params = params
   end
 
@@ -15,7 +15,7 @@ class FetchFirmProfile
     advisers = search(query: firm_advisers_query(params))
     offices = search(query: firm_offices_query(params))
 
-    { advisers: advisers, offices: offices }
+    { advisers:, offices: }
   end
 
   private
@@ -23,6 +23,6 @@ class FetchFirmProfile
   attr_reader :raw_params
 
   def params
-    @params ||= parse(params: raw_params, strategy: :fetch_firm_profile)
+    @params ||= parse(**raw_params, strategy: :fetch_firm_profile)
   end
 end

@@ -30,7 +30,7 @@ module Helpers::Algolia
 
       offset_query_page!(query, page)
 
-      browse(query: query, page: page, pages: pages, hits: hits)
+      browse(query:, page:, pages:, hits:)
     end
 
     private

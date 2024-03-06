@@ -68,7 +68,7 @@ RSpec.describe Helpers::Algolia::Geolocation, type: :helper do
     end
 
     it 'returns firm ids of advisers who can travel the matched distance' do
-      ids = helper.fetch_in_consumer_range_firm_ids(query: query)
+      ids = helper.fetch_in_consumer_range_firm_ids(query:)
       expect(ids).to eq([1, 3])
     end
   end

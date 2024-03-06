@@ -62,7 +62,7 @@ class SessionJar
     search_path(
       page: params[:page],
       search_form: params.except(:page),
-      locale: locale
+      locale:
     )
   end
 

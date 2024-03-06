@@ -1,14 +1,12 @@
 RSpec.describe FetchFirmProfile do
   describe '.call' do
-    subject(:perform_search) { described_class.call(**args) }
+    subject(:perform_search) { described_class.new(**args).call }
     let(:args) do
       {
-        params: {
-          id: 1,
-          postcode: 'EC4A 2AH',
-          coordinates: [51.5139284, -0.1113308],
-          locale: :en
-        }
+        id: 1,
+        postcode: 'EC4A 2AH',
+        coordinates: [51.5139284, -0.1113308],
+        locale: :en
       }
     end
     let(:advisers_query) do
