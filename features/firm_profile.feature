@@ -29,9 +29,9 @@ Feature: Firm profile
     When I am viewing the profile for firm "Test Firm Central London"
     And I click on the "offices" tab
     Then I can see the following offices
-      | postcode | telephone     | email                 | website                        |
-      | EC1N 2TD | 07111 333 789 | office789@example.org | http://example.net/offices/789 |
-      | EC4V 4AY | 07111 333 135 | office135@example.org | http://example.net/offices/135 |
+      | postcode | telephone     | email                 |
+      | EC1N 2TD | 07111 333 789 | office789@example.org |
+      | EC4V 4AY | 07111 333 135 | office135@example.org |
 
   Scenario: View firm advisers
     When I am viewing the profile for firm "Test Firm Central London"

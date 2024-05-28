@@ -16,13 +16,4 @@
       <% end %>
     </li>
   <% end %>
-
-  <% if website_address.present? %>
-    <li>
-      <%= link_to ensure_external_link_has_protocol(website_address), class: 'outline-button t-website', target: '_blank' do %>
-        <%= svg_icon :offsite_link, title: t('firms.show.website_address'), class: 'outline-button__svg-icon'
-        %><%= t('firms.show.website_address') %>
-      <% end %>
-    </li>
-  <% end %>
 </ul>

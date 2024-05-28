@@ -28,12 +28,6 @@
               %><%= t('firms.show.panels.offices.email_office') %>
             <% end %>
           </div>
-          <div class="office__website">
-            <%= link_to website_url(office, firm), class: 'contact-link', target: '_blank' do %>
-              <%= svg_icon :offsite_link, title: t('firms.show.panels.offices.website'), class: 'contact-link__svg-icon'
-              %><%= display_website(office, firm) %>
-            <% end %>
-          </div>
         </div>
       </div>
       <% if office.disabled_access %>
