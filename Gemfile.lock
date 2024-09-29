@@ -334,8 +334,8 @@ GEM
     rb-readline (0.5.5)
     redis (3.3.5)
     regexp_parser (2.9.0)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.3.6)
+      strscan
     rollbar (3.5.1)
     rspec-core (3.13.0)
       rspec-support (~> 3.13.0)
