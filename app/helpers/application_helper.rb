@@ -7,7 +7,7 @@ module ApplicationHelper
     return true if Rails.env.development? || Rails.env.test?
     return false unless ENV['INCLUDE_AEM_ANALYTICS'] == 'true'
 
-    request.original_url.match?(/directory[-preview]?\.moneyhelper\.org\.uk/)
+    request.original_url.match?(/directory(-preview)?\.moneyhelper\.org\.uk/)
   end
 
   def page_tag(tag_name)
