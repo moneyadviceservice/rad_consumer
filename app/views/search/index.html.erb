@@ -1,3 +1,24 @@
+<% content_for(:adobe_data_layer) do %>
+  adobeDataLayer.push({
+    "event": "pageLoadDirectory",
+    "page": {
+    "pageName": "rad-search--<%= @form.advice_method.dasherize %>",
+      "pageTitle": "<%= t('search.page_title') %>",
+      "categoryL1": "Pensions &amp; retirement",
+      "categoryL2": "Taking your pension",
+      "lang": "<%= I18n.locale %>",
+      "site": "moneyhelper",
+      "pageType": "tool page"
+    },
+    "tool": {
+      "toolName": "Retirement Adviser Directory",
+      "toolCategory": "",
+      "toolStep": "2",
+      "stepName": "RAD-Search Results",
+      "adviceMethod": "<%= @form.advice_method.humanize %>"
+    }
+  });
+<% end %>
 <div class="l-constrained">
   <div class="l-results">
     <%= heading_tag( t('search.page_title'), level: 1, class: 'l-results__heading') %>
