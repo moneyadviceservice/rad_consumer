@@ -1,3 +1,21 @@
+<% content_for(:adobe_data_layer) do %>
+  adobeDataLayer.push({
+    "event": "pageLoadDirectory",
+    "page": {
+      "pageName": "rad-glossary",
+      "pageTitle": "<%= t('glossary.page_title') %>",
+      "categoryL1": "Pensions & retirement",
+      "categoryL2": "Taking your pension",
+      "lang": "<%= I18n.locale %>",
+      "site": "moneyhelper",
+      "pageType": "tool page"
+    },
+    "tool": {
+      "toolName": "Retirement Adviser Directory",
+      "toolCategory": ""
+    }
+  });
+<% end %>
 <div class="l-constrained">
   <section class="l-glossary">
     <%= heading_tag(t('glossary.page_title'), level: 1) %>

@@ -1,4 +1,15 @@
 module ApplicationHelper
+  def staging?
+    ENV['MAS_ENVIRONMENT'] == 'staging'
+  end
+
+  def include_adobe_analytics_scripts?(request)
+    return true if Rails.env.development? || Rails.env.test?
+    return false unless ENV['INCLUDE_AEM_ANALYTICS'] == 'true'
+
+    request.original_url.match?(/directory(-preview)?\.moneyhelper\.org\.uk/)
+  end
+
   def page_tag(tag_name)
     t("#{controller_name}.#{action_name}.#{tag_name}")
   end
