@@ -69,5 +69,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Ensure iFrame is mountable in AEM
-  config.action_dispatch.default_headers = {'X-Frame-Options' => 'ALLOWALL'}
+  config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWALL',
+    'X-Content-Type-Options' => 'nosniff'
+  }
 end
