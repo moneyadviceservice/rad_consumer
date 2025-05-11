@@ -18,6 +18,7 @@ gem 'active_model_serializers'
 gem 'activerecord-session_store'
 gem 'algoliasearch'
 gem 'bowndler', github: 'moneyadviceservice/bowndler'
+gem 'concurrent-ruby', '1.3.4'
 # Dough assets are loaded from a CDN instead of from the Gem. Do make sure that the CDN version
 # is the same as the Gem version.
 gem 'dough-ruby', github: 'moneyadviceservice/dough', branch: 'html-options-fix'
