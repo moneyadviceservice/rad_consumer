@@ -170,7 +170,7 @@ GEM
     danger-rubocop (0.7.0)
       danger
       rubocop
-    date (3.3.4)
+    date (3.4.1)
     debug_inspector (1.2.0)
     diff-lcs (1.5.1)
     dotenv (2.8.1)
@@ -253,7 +253,7 @@ GEM
     nap (1.1.0)
     net-http (0.4.1)
       uri
-    net-imap (0.4.10)
+    net-imap (0.4.20)
       date
       net-protocol
     net-pop (0.1.2)
@@ -396,7 +396,7 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     thor (1.3.1)
     tilt (2.3.0)
-    timeout (0.4.1)
+    timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2019.3)
