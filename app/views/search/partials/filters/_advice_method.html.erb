@@ -22,7 +22,7 @@
         <%= f.label :postcode, t('search.filter.receive_advice.postcode_label'),
             class: 'form__label-heading visually-hidden' %>
           <%= f.text_field :postcode,
-            class: 'search-filter__field search-filter__field--padded t-postcode',
+            class: 'search-filter__field search-filter__field--padded t-postcode obfuscate',
             maxlength: 8,
             placeholder: t('search.filter.receive_advice.postcode_placeholder'),
             data: { results_input_target: true } %>
